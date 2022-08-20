@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/config/route/routes.dart';
 import 'package:lazy_engineer/config/theme/bloc/theme_bloc.dart';
 import 'package:lazy_engineer/config/theme/bloc/theme_state.dart';
-import 'package:lazy_engineer/screens/home_screen/home_screen.dart';
+import 'package:lazy_engineer/screens/home_screen/ui/home_screen.dart';
 import 'package:lazy_engineer/screens/splash_screen.dart';
 
 GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();

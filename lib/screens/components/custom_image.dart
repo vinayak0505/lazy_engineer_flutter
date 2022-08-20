@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../assets/images.dart';
@@ -67,7 +66,7 @@ class CustomImage extends StatelessWidget {
                     AppImages.placeholder,
                     height: height,
                     width: width,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
       ),
     );

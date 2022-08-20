@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:lazy_engineer/screens/components/custom_image.dart';
 
 import '../images.dart';
-import 'categories_model.dart';
+import '../../screens/home_screen/modal/categories_model.dart';
 
 class HomeScreenList {
   static List<CategoriesModel> categoriesList = [
