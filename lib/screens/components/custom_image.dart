@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../../assets/images.dart';
 
 class CustomImage extends StatelessWidget {
@@ -53,7 +52,7 @@ class CustomImage extends StatelessWidget {
                 svgImage!,
                 width: width,
                 height: height,
-                // fit: BoxFit.fill,
+                fit: BoxFit.fill,
               )
             : pngImage != null
                 ? Image.asset(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/screens/components/custom_image.dart';
-import 'package:lazy_engineer/screens/components/custom_card.dart';
 
 import '../home_screen/modal/categories_model.dart';
 
@@ -9,9 +8,7 @@ class GridCard extends StatelessWidget {
   final CategoriesModel data;
   @override
   Widget build(BuildContext context) {
-    return CustomCard(
-      radius: 8,
-      padding: const EdgeInsets.only(bottom: 8),
+    return Card(
       margin: EdgeInsets.zero,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

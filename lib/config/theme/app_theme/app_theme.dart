@@ -1,4 +1,3 @@
-import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -63,10 +62,6 @@ class AppThemes {
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
         backgroundColor: whiteColor,
-        shape: SmoothRectangleBorder(
-          borderRadius: SmoothBorderRadius(cornerRadius: 8, cornerSmoothing: 1),
-          side: const BorderSide(color: Color(0xffE3FFFA)),
-        ),
         contentTextStyle: GoogleFonts.roboto(
           color: const Color(0xff314862),
           fontSize: 10,
