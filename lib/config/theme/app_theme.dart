@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 enum AppTheme {
@@ -29,14 +28,6 @@ class AppThemes {
       appBarTheme: AppBarTheme(
         elevation: 0,
         color: Colors.transparent,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.light,
-          statusBarIconBrightness: Brightness.dark,
-          systemNavigationBarColor: whiteColor,
-          systemNavigationBarIconBrightness: Brightness.dark,
-        ),
-        iconTheme: const IconThemeData(color: lightColor),
-        actionsIconTheme: const IconThemeData(color: darkColor),
         titleTextStyle: GoogleFonts.roboto(
           textStyle: const TextStyle(
             fontSize: 18,
@@ -45,19 +36,12 @@ class AppThemes {
           ),
         ),
       ),
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: primaryColor1,
-        foregroundColor: whiteColor,
-      ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.transparent,
         enableFeedback: true,
         selectedItemColor: primaryColor2,
         elevation: 0,
         type: BottomNavigationBarType.fixed,
-      ),
-      sliderTheme: const SliderThemeData(
-        showValueIndicator: ShowValueIndicator.always,
       ),
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,

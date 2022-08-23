@@ -27,7 +27,7 @@ class SplashPage extends StatelessWidget {
     if (isHome) {
       Future.delayed(
         duration,
-        () => Navigator.pushReplacementNamed(context, PageRoutes.homePage),
+        () => Navigator.pushReplacementNamed(context, PageRoutes.homeScreen),
       );
     }
   }

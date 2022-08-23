@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/config/route/routes.dart';
+import 'package:lazy_engineer/screens/home_screen/bloc/user_cubit.dart';
+import 'package:lazy_engineer/screens/home_screen/repo/user_repository.dart';
 import 'package:lazy_engineer/screens/home_screen/ui/home_screen.dart';
-import 'package:lazy_engineer/screens/splash_screen.dart';
-
-import 'config/theme/app_theme/app_theme.dart';
+import 'config/theme/app_theme.dart';
 
 GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -21,7 +22,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => UserCubit(UserRepository()..getUser()),
+        ),
+      ],
+      child: MaterialApp(
         builder: (context, child) => ScrollConfiguration(
           behavior: const ScrollBehaviorModified(),
           child: child!,
@@ -30,10 +37,10 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: AppThemes.appThemeData[AppTheme.lightTheme],
         debugShowCheckedModeBanner: false,
-        // navigatorObservers: [observer],
         home: const HomeScreen(),
         // home: const SplashPage(isHome: true),
         routes: PageRoutes.routes,
+      ),
     );
   }
 }

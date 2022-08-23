@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/screens/components/custom_image.dart';
-
 import '../home_screen/modal/categories_model.dart';
 
 class GridCard extends StatelessWidget {
@@ -11,7 +10,7 @@ class GridCard extends StatelessWidget {
     return Card(
       margin: EdgeInsets.zero,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -25,7 +24,8 @@ class GridCard extends StatelessWidget {
             const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(data.subtitle, style: Theme.of(context).textTheme.subtitle1),
+              child: Text(data.subtitle,
+                  style: Theme.of(context).textTheme.subtitle1),
             ),
             const SizedBox(height: 4),
             Padding(
