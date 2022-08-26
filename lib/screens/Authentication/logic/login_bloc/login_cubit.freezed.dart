@@ -18,24 +18,24 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LoginState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorized,
-    required TResult Function() unathorized,
+    required TResult Function(String name) authorized,
+    required TResult Function(String error) unathorized,
     required TResult Function() loading,
     required TResult Function() initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),
@@ -89,6 +89,7 @@ abstract class _$$LoginAuthorizedCopyWith<$Res> {
   factory _$$LoginAuthorizedCopyWith(
           _$LoginAuthorized value, $Res Function(_$LoginAuthorized) then) =
       __$$LoginAuthorizedCopyWithImpl<$Res>;
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -101,60 +102,83 @@ class __$$LoginAuthorizedCopyWithImpl<$Res>
 
   @override
   _$LoginAuthorized get _value => super._value as _$LoginAuthorized;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+  }) {
+    return _then(_$LoginAuthorized(
+      name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LoginAuthorized implements LoginAuthorized {
-  const _$LoginAuthorized();
+  const _$LoginAuthorized(this.name);
+
+  @override
+  final String name;
 
   @override
   String toString() {
-    return 'LoginState.authorized()';
+    return 'LoginState.authorized(name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginAuthorized);
+        (other.runtimeType == runtimeType &&
+            other is _$LoginAuthorized &&
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$LoginAuthorizedCopyWith<_$LoginAuthorized> get copyWith =>
+      __$$LoginAuthorizedCopyWithImpl<_$LoginAuthorized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorized,
-    required TResult Function() unathorized,
+    required TResult Function(String name) authorized,
+    required TResult Function(String error) unathorized,
     required TResult Function() loading,
     required TResult Function() initial,
   }) {
-    return authorized();
+    return authorized(name);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
   }) {
-    return authorized?.call();
+    return authorized?.call(name);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (authorized != null) {
-      return authorized();
+      return authorized(name);
     }
     return orElse();
   }
@@ -198,7 +222,12 @@ class _$LoginAuthorized implements LoginAuthorized {
 }
 
 abstract class LoginAuthorized implements LoginState {
-  const factory LoginAuthorized() = _$LoginAuthorized;
+  const factory LoginAuthorized(final String name) = _$LoginAuthorized;
+
+  String get name;
+  @JsonKey(ignore: true)
+  _$$LoginAuthorizedCopyWith<_$LoginAuthorized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -206,6 +235,7 @@ abstract class _$$LoginUnAuthorizedCopyWith<$Res> {
   factory _$$LoginUnAuthorizedCopyWith(
           _$LoginUnAuthorized value, $Res Function(_$LoginUnAuthorized) then) =
       __$$LoginUnAuthorizedCopyWithImpl<$Res>;
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -218,60 +248,83 @@ class __$$LoginUnAuthorizedCopyWithImpl<$Res>
 
   @override
   _$LoginUnAuthorized get _value => super._value as _$LoginUnAuthorized;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_$LoginUnAuthorized(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LoginUnAuthorized implements LoginUnAuthorized {
-  const _$LoginUnAuthorized();
+  const _$LoginUnAuthorized(this.error);
+
+  @override
+  final String error;
 
   @override
   String toString() {
-    return 'LoginState.unathorized()';
+    return 'LoginState.unathorized(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginUnAuthorized);
+        (other.runtimeType == runtimeType &&
+            other is _$LoginUnAuthorized &&
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$LoginUnAuthorizedCopyWith<_$LoginUnAuthorized> get copyWith =>
+      __$$LoginUnAuthorizedCopyWithImpl<_$LoginUnAuthorized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorized,
-    required TResult Function() unathorized,
+    required TResult Function(String name) authorized,
+    required TResult Function(String error) unathorized,
     required TResult Function() loading,
     required TResult Function() initial,
   }) {
-    return unathorized();
+    return unathorized(error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
   }) {
-    return unathorized?.call();
+    return unathorized?.call(error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (unathorized != null) {
-      return unathorized();
+      return unathorized(error);
     }
     return orElse();
   }
@@ -315,7 +368,12 @@ class _$LoginUnAuthorized implements LoginUnAuthorized {
 }
 
 abstract class LoginUnAuthorized implements LoginState {
-  const factory LoginUnAuthorized() = _$LoginUnAuthorized;
+  const factory LoginUnAuthorized(final String error) = _$LoginUnAuthorized;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$LoginUnAuthorizedCopyWith<_$LoginUnAuthorized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -358,8 +416,8 @@ class _$LoginLoading implements LoginLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorized,
-    required TResult Function() unathorized,
+    required TResult Function(String name) authorized,
+    required TResult Function(String error) unathorized,
     required TResult Function() loading,
     required TResult Function() initial,
   }) {
@@ -369,8 +427,8 @@ class _$LoginLoading implements LoginLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
   }) {
@@ -380,8 +438,8 @@ class _$LoginLoading implements LoginLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),
@@ -474,8 +532,8 @@ class _$LoginInitial implements LoginInitial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() authorized,
-    required TResult Function() unathorized,
+    required TResult Function(String name) authorized,
+    required TResult Function(String error) unathorized,
     required TResult Function() loading,
     required TResult Function() initial,
   }) {
@@ -485,8 +543,8 @@ class _$LoginInitial implements LoginInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
   }) {
@@ -496,8 +554,8 @@ class _$LoginInitial implements LoginInitial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authorized,
-    TResult Function()? unathorized,
+    TResult Function(String name)? authorized,
+    TResult Function(String error)? unathorized,
     TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),

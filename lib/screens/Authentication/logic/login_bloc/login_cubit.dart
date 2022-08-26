@@ -52,14 +52,12 @@ class LoginCubit extends Cubit<LoginState> {
   //   }
   // }
 
-  // Future<void> logInWithCredentials() async {
-  //   if (!state.emailValidation || !state.emailValidation) return;
-  //   emit(state.copyWith(formStatus: FormSubmitting()));
-  //   try {
-  //     await Future.delayed(const Duration(milliseconds: 500));
-  //     emit(state.copyWith(formStatus: SubmissionSuccess()));
-  //   } on Exception catch (e) {
-  //     emit(state.copyWith(formStatus: SubmissionFailed(error: e.toString())));
-  //   }
-  // }
+  Future<void> logInWithCredentials(String email,String password) async {
+    try {
+      final name = await Future.delayed(const Duration(milliseconds: 500));
+      emit(LoginState.authorized(email));
+    } on Exception catch (e) {
+      emit(LoginState.unathorized(e.toString()));
+    }
+  }
 }
