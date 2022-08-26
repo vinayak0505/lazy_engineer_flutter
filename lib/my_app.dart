@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/config/route/routes.dart';
-import 'package:lazy_engineer/screens/home_screen/bloc/user_cubit.dart';
-import 'package:lazy_engineer/screens/home_screen/repo/user_repository.dart';
-import 'package:lazy_engineer/screens/home_screen/ui/home_screen.dart';
+import 'config/route/routes.dart';
+import 'screens/Authentication/ui/auth_screen.dart';
+import 'screens/home_screen/data/repo/user_repository.dart';
+import 'screens/home_screen/logic/cubit/user_cubit.dart';
 import 'config/theme/app_theme.dart';
 
 GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: AppThemes.appThemeData[AppTheme.lightTheme],
         debugShowCheckedModeBanner: false,
-        home: const HomeScreen(),
+        home: const AuthScreen(),
         // home: const SplashPage(isHome: true),
         routes: PageRoutes.routes,
       ),

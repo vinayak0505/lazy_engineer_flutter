@@ -7,7 +7,7 @@ class NotesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(child: Text("Books"))
+      body: const Center(child: Text("NotesScreen"))
     );
   }
 }

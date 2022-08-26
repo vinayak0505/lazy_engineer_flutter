@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:lazy_engineer/screens/components/custom_image.dart';
-
+import '../../screens/home_screen/data/modal/categories_model.dart';
 import '../images.dart';
-import '../../screens/home_screen/modal/categories_model.dart';
 
 class HomeScreenList {
   static List<CategoriesModel> categoriesList = [
@@ -28,11 +25,11 @@ class HomeScreenList {
     ),
   ];
 
-  static List<Widget> sliderImageList = const [
-    CustomImage(pngImage: AppImages.sliderImage),
-    CustomImage(pngImage: AppImages.sliderImage),
-    CustomImage(pngImage: AppImages.sliderImage),
-    CustomImage(pngImage: AppImages.sliderImage),
-    CustomImage(pngImage: AppImages.sliderImage),
+  static List<String> sliderImageList = const [
+    AppImages.sliderImage,
+    AppImages.sliderImage,
+    AppImages.sliderImage,
+    AppImages.sliderImage,
+    AppImages.sliderImage,
   ];
 }

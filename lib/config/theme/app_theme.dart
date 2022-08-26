@@ -8,6 +8,9 @@ enum AppTheme {
 }
 
 class AppThemes {
+
+  static const Color googlePlusColor = Color(0xffC14949);
+  static const Color facebookColor = Color(0xff284C83);
   //light theme
   static const Color whiteColor = Colors.white;
   static const Color primaryColor1 = Color(0xff4fc3f7);
@@ -18,7 +21,7 @@ class AppThemes {
   static const Color textColorDark = Color(0xff333333);
   static const Color successColor = Color(0xff14C89A);
   static const Color errorColor = Color(0xffE5233B);
-  static const Color hintColor = Color(0xffA3A4A6);
+  static const Color lightDarkColor = Color(0xffA3A4A6);
 
   static final appThemeData = {
     AppTheme.lightTheme: ThemeData(
@@ -66,12 +69,6 @@ class AppThemes {
                 fontWeight: FontWeight.w500,
               ),
               // not considered
-              // subtitle1: const TextStyle(
-              //   fontSize: 18,
-              //   fontWeight: FontWeight.w600,
-              //   color: textColor,
-              //   height: 1.2,
-              // ),
               // headline5: const TextStyle(
               //   fontSize: 27,
               //   fontWeight: FontWeight.w600,

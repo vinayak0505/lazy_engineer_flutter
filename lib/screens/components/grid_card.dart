@@ -1,37 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/screens/components/custom_image.dart';
-import '../home_screen/modal/categories_model.dart';
+import 'package:lazy_engineer/config/theme/app_theme.dart';
+import '../../assets/constants/decoration.dart';
+import 'custom_image.dart';
+
+import '../home_screen/data/modal/categories_model.dart';
 
 class GridCard extends StatelessWidget {
   const GridCard({Key? key, required this.data}) : super(key: key);
   final CategoriesModel data;
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Card(
-      margin: EdgeInsets.zero,
+      shadowColor: Colors.transparent,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        side: const BorderSide(color: AppThemes.lightDarkColor),
+        borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
+      ),
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomImage(
-              borderRadius: 8,
-              innerBorderRadius: 8,
-              height: 100,
+              height: 120,
+              radius: kRoundedRectangleRadius,
               svgImage: data.image,
               onlyTop: true,
             ),
             const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(data.subtitle,
-                  style: Theme.of(context).textTheme.subtitle1),
+              child: Text(data.subtitle, style: theme.textTheme.titleLarge),
             ),
-            const SizedBox(height: 4),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(data.description,
-                  style: Theme.of(context).textTheme.bodySmall),
+              padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+              child: Text(data.description, style: theme.textTheme.bodyMedium),
             ),
           ]),
     );

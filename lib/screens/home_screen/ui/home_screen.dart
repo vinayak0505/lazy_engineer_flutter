@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
-import 'package:lazy_engineer/assets/icons.dart';
-import 'package:lazy_engineer/screens/components/grid_card.dart';
-import 'package:lazy_engineer/screens/home_screen/bloc/user_cubit.dart';
-import 'package:lazy_engineer/screens/home_screen/bloc/user_state.dart';
+import 'package:lazy_engineer/screens/components/custom_text_field.dart';
+import '../../../assets/constants/lists.dart';
+import '../../../assets/icons.dart';
+import '../../components/grid_card.dart';
+import 'components/slider_view.dart';
 import '../../../assets/constants/strings.dart';
 import '../../../config/route/routes.dart';
 import '../../../model/user.dart';
+import '../logic/cubit/user_state.dart';
+import '../logic/cubit/user_cubit.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,18 +19,21 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return BlocBuilder<UserCubit, UserState>(builder: (context, state) {
-      if (state is UserStateLoadingState) {
-        return const Center(child: CircularProgressIndicator());
-      } else if (state is UserStateSuccessState) {
-        return HomeScreenView(user: state.user);
-      } else if (state is UserStateFailureState) {
-        return Center(
-            child: Text(state.e.toString(), style: TextStyle(color: theme.errorColor)));
-      } else {
-        return const SizedBox();
-      }
-    });
+    return Scaffold(
+      body: BlocBuilder<UserCubit, UserState>(builder: (context, state) {
+        if (state is UserFetchLoadingState) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (state is UserFetchSuccessState) {
+          return HomeScreenView(user: state.user);
+        } else if (state is UserFetchFailureState) {
+          return Center(
+              child: Text(state.e.toString(),
+                  style: TextStyle(color: theme.errorColor)));
+        } else {
+          return const SizedBox();
+        }
+      }),
+    );
   }
 }
 
@@ -39,43 +45,52 @@ class HomeScreenView extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50),
+        padding: const EdgeInsets.symmetric(vertical: 54),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           _nametag(theme, user.userName),
           const SizedBox(height: 12),
-          // SearchBar(
-          //   searchController: searchController,
-          // ),
-          const SizedBox(height: 32),
-          // _slider(),
+          _searchBar(theme),
+          const SizedBox(height: 28),
+          SliderView(imageList: HomeScreenList.sliderImageList),
           const SizedBox(height: 24),
-          Container(
-            padding: const EdgeInsets.only(left: 20),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              HomeScreenText.lastOpened,
-              style: theme.textTheme.titleLarge,
-            ),
-          ),
-          const SizedBox(height: 100),
-          Container(
-            padding: const EdgeInsets.only(left: 20),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              HomeScreenText.categories,
-              style: theme.textTheme.titleLarge,
-            ),
-          ),
-          staggeredView()
+          _titleLabel(lastOpened, theme),
+          const SizedBox(height: 140),
+          _titleLabel(categories, theme),
+          const SizedBox(height: 16),
+          _staggeredView()
         ]),
       ),
     );
   }
 
-  Widget staggeredView() {
-    return ListView.builder(
+  Widget _titleLabel(String title, ThemeData theme) {
+    return Container(
+      padding: const EdgeInsets.only(left: 20),
+      alignment: Alignment.centerLeft,
+      child: Text(
+        title,
+        style: theme.textTheme.titleLarge,
+      ),
+    );
+  }
+
+  Widget _searchBar(ThemeData theme) {
+    TextEditingController searchController = TextEditingController();
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: CustomTextField(
+          controller: searchController,
+          hintText: searchCourse,
+          suffixIcon: SvgPicture.asset(AppIcons.searchIcon)),
+    );
+  }
+
+  Widget _staggeredView() {
+    return MasonryGridView.count(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
+      crossAxisCount: 2,
       itemCount: HomeScreenList.categoriesList.length,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
@@ -83,6 +98,9 @@ class HomeScreenView extends StatelessWidget {
           child: GridCard(data: HomeScreenList.categoriesList[index]),
         );
       },
+      // staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
+      mainAxisSpacing: 8,
+      crossAxisSpacing: 8,
     );
   }
 
@@ -104,7 +122,7 @@ class HomeScreenView extends StatelessWidget {
       }
     }
 
-    Navigator.pushReplacementNamed(context, _nav());
+    Navigator.pushNamed(context, _nav());
   }
 
   Widget _nametag(ThemeData theme, String name) {
@@ -119,7 +137,7 @@ class HomeScreenView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    HomeScreenText.hello,
+                    hello,
                     style: theme.textTheme.headline4
                         ?.copyWith(fontSize: 20, fontWeight: FontWeight.w600),
                   ),

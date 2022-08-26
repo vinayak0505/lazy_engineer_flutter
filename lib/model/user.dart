@@ -19,5 +19,12 @@ class User {
         branch: json['branch'],
         year: json['year'],
       );
-  factory User.dummy() => User(userId: "df", userName: "ddf");
+  Map<String, dynamic> toJson() => {
+        'userId': userId,
+        'userName': userName,
+        'university': university,
+        'branch': branch,
+        'year': year
+      };
+  factory User.dummy() => User(userId: "001", userName: "Harman Jaggi", university: "GTBIT", branch: "B.Tech", year: 2);
 }
