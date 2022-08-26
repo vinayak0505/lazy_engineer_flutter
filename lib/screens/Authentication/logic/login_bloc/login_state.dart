@@ -1,33 +1,13 @@
-import 'package:lazy_engineer/screens/Authentication/logic/form_submission_status.dart';
 
-class LoginState {
-  final String email;
-  final String password;
-  final bool emailValidation;
-  final bool passwordValidation;
-  final FormSubmissionStatus? formStatus;
+part of 'login_cubit.dart';
 
-  LoginState({
-    this.email = '',
-    this.password = '',
-    this.emailValidation = false,
-    this.passwordValidation = false,
-    this.formStatus,
-  });
+@freezed
+class LoginState with _$LoginState {
+  const factory LoginState.authorized() = LoginAuthorized;
 
-  LoginState copyWith({
-    String? email,
-    String? password,
-    bool? emailValidation,
-    bool? passwordValidation,
-    FormSubmissionStatus? formStatus,
-  }) {
-    return LoginState(
-      email: email ?? this.email,
-      password: password ?? this.password,
-      emailValidation: emailValidation ?? this.emailValidation,
-      passwordValidation: passwordValidation ?? this.passwordValidation,
-      formStatus: formStatus ?? InitialFormStatus(),
-    );
-  }
+  const factory LoginState.unathorized() = LoginUnAuthorized;
+  
+  const factory LoginState.loading() = LoginLoading;
+
+  const factory LoginState.initial() = LoginInitial;
 }

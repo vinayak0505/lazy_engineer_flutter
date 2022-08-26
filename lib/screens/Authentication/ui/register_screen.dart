@@ -6,13 +6,13 @@ import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/config/theme/app_theme.dart';
 import 'package:lazy_engineer/screens/Authentication/logic/form_submission_status.dart';
+import 'package:lazy_engineer/screens/components/custom_text_field.dart';
 import '../../../assets/icons.dart';
 import '../../../config/route/routes.dart';
 import '../../components/custom_button.dart';
 import '../logic/register_bloc/register_cubit.dart';
 import '../logic/register_bloc/register_state.dart';
 import 'components/rounded_button.dart';
-import 'components/text_feild_box.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -83,10 +83,10 @@ class RegisterAccount extends StatelessWidget {
               const SizedBox(height: 28),
               BlocBuilder<RegisterCubit, RegisterState>(
                   builder: (context, state) {
-                return TextFieldBox(
+                return CustomTextField(
                   controller: fullNameController,
-                  text: fullName,
-                  icon: AppIcons.userIcon,
+                  hintText: fullName,
+                  // prefixIcon: AppIcons.userIcon,
                   keyboardType: TextInputType.name,
                   // validation: context
                   //     .read<RegisterCubit>()
@@ -96,10 +96,10 @@ class RegisterAccount extends StatelessWidget {
               const SizedBox(height: 16),
               BlocBuilder<RegisterCubit, RegisterState>(
                   builder: (context, state) {
-                return TextFieldBox(
+                return CustomTextField(
                   controller: emailController,
-                  text: email,
-                  icon: AppIcons.emailIcon,
+                  hintText: email,
+                  // icon: AppIcons.emailIcon,
                   keyboardType: TextInputType.emailAddress,
                   // validation: context
                   //     .read<RegisterCubit>()
@@ -109,10 +109,10 @@ class RegisterAccount extends StatelessWidget {
               const SizedBox(height: 16),
               BlocBuilder<RegisterCubit, RegisterState>(
                   builder: (context, state) {
-                return TextFieldBox(
+                return CustomTextField(
                   controller: passwordController,
-                  text: password,
-                  icon: AppIcons.passwordIcon,
+                  hintText: password,
+                  // icon: AppIcons.passwordIcon,
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
                   // validation: context
@@ -123,10 +123,10 @@ class RegisterAccount extends StatelessWidget {
               const SizedBox(height: 16),
               BlocBuilder<RegisterCubit, RegisterState>(
                   builder: (context, state) {
-                return TextFieldBox(
+                return CustomTextField(
                   controller: confirmPasswordController,
-                  text: confirmPassword,
-                  icon: AppIcons.passwordIcon,
+                  hintText: confirmPassword,
+                  // icon: AppIcons.passwordIcon,
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
                   // validation: context
