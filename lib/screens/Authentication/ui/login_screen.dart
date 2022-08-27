@@ -65,7 +65,13 @@ class LoginAccount extends StatelessWidget {
             ),
             boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)]),
         padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
-        child: BlocBuilder<AuthCubit, AuthState>(
+        child: BlocConsumer<AuthCubit, AuthState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              authorized: showSnackbar(context, "authorized"),
+              unathorized: showSnackbar(context, "unathorized"),
+            );
+          },
           builder: (context, state) {
             if (state is AuthLoading) {
               return const Center(child: CircularProgressIndicator());
@@ -103,13 +109,9 @@ class LoginAccount extends StatelessWidget {
                   CustomButton(
                     text: login,
                     onPressed: () {
-                      BlocListener<AuthCubit, AuthState>(
-                          listener: (context, state) {
-                        state.whenOrNull(
-                          authorized: showSnackbar(context, "authorized"),
-                          unathorized: showSnackbar(context, "unathorized"),
-                        );
-                      });
+                      context
+                          .read<AuthCubit>()
+                          .logIn(emailController.text, passwordController.text);
                     },
                   ),
                   const SizedBox(height: 16),

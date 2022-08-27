@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/screens/Authentication/ui/login_screen.dart';
 import 'package:lazy_engineer/screens/Authentication/ui/register_screen.dart';

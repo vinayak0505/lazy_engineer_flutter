@@ -15,20 +15,8 @@ class SplashPage extends StatelessWidget {
         child: Lottie.asset(
           Animations.splash,
           repeat: false,
-          onLoaded: (composition) {
-            _splashScreen(context, composition.duration);
-          },
         ),
       ),
     );
-  }
-
-  _splashScreen(BuildContext context, Duration duration) {
-    if (isHome) {
-      Future.delayed(
-        duration,
-        () => Navigator.pushReplacementNamed(context, PageRoutes.homeScreen),
-      );
-    }
   }
 }

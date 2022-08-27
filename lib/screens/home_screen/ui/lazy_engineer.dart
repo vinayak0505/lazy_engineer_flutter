@@ -13,14 +13,12 @@ import 'components/slider_view.dart';
 import '../../../assets/constants/strings.dart';
 import '../../../config/route/routes.dart';
 import '../../../model/user.dart';
-import '../logic/cubit/user_state.dart';
 
 class LazyEngineer extends StatelessWidget {
   const LazyEngineer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
     return Scaffold(
       body: BlocBuilder<AuthCubit, AuthState>(builder: (context, state) {
         return state.map(
@@ -34,10 +32,10 @@ class LazyEngineer extends StatelessWidget {
 }
 
 class HomeScreenView extends StatelessWidget {
-  const HomeScreenView({Key? key, required this.user}) : super(key: key);
-  final User user;
+  const HomeScreenView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final User user = User.dummy();
     ThemeData theme = Theme.of(context);
     return SingleChildScrollView(
       child: Padding(
