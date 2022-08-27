@@ -16,8 +16,8 @@ class AuthRepository {
       //   return null;
       // }
       //
-      await Future.delayed(const Duration(seconds: 3));
       throw ErrorDescription('lol');
+      await Future.delayed(const Duration(seconds: 3));
       User user = User.dummy();
       return user.userId;
     } catch (e) {

@@ -9,7 +9,6 @@ import 'package:lazy_engineer/screens/components/custom_text_field.dart';
 import '../../../assets/icons.dart';
 import '../../../config/route/routes.dart';
 import '../../components/custom_button.dart';
-import 'components/rounded_button.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -114,12 +113,10 @@ class RegisterAccount extends StatelessWidget {
               horizontalOrLine(theme),
               const SizedBox(height: 12),
               Row(children: [
-                RoundedButton(
-                    color: AppThemes.googlePlusColor,
+                CustomButton(
                     icon: AppIcons.gPlusIcon,
                     onPressed: () {}),
-                RoundedButton(
-                    color: AppThemes.facebookColor,
+                CustomButton(
                     icon: AppIcons.fIcon,
                     onPressed: () {}),
               ]),

@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../assets/images.dart';
 
 class CustomImage extends StatelessWidget {
   final double? height;
   final double? width;
   final bool? onlyTop;
   final double? radius;
-  final String? svgImage;
-  final String? pngImage;
+  final String image;
   final BoxFit? boxFit;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
 
-  const CustomImage({
+  const CustomImage(
+    this.image, {
     Key? key,
     this.height,
     this.margin,
     this.padding,
     this.width,
-    this.svgImage,
-    this.pngImage,
     this.onlyTop,
     this.radius,
     this.boxFit,
@@ -28,6 +25,7 @@ class CustomImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isSvg = (image.split('.').last == 'svg');
     return Container(
       margin: margin ?? EdgeInsets.zero,
       padding: padding ?? EdgeInsets.zero,
@@ -38,26 +36,19 @@ class CustomImage extends StatelessWidget {
                 topRight: Radius.circular(radius ?? 0),
               )
             : BorderRadius.circular(radius ?? 0),
-        child: svgImage != null
+        child: isSvg
             ? SvgPicture.asset(
-                svgImage!,
+                image,
                 width: width,
                 height: height,
                 fit: boxFit ?? BoxFit.cover,
               )
-            : pngImage != null
-                ? Image.asset(
-                    pngImage!,
-                    height: height,
-                    width: width,
-                    fit: boxFit ?? BoxFit.cover,
-                  )
-                : Image.asset(
-                    AppImages.placeholder,
-                    height: height,
-                    width: width,
-                    fit: BoxFit.cover,
-                  ),
+            : Image.asset(
+                image,
+                height: height,
+                width: width,
+                fit: boxFit ?? BoxFit.cover,
+              ),
       ),
     );
   }

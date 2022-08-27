@@ -23,9 +23,9 @@ class GridCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomImage(
+              data.image!,
               height: 120,
               radius: kRoundedRectangleRadius,
-              svgImage: data.image,
               onlyTop: true,
             ),
             const SizedBox(height: 16),

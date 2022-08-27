@@ -10,14 +10,14 @@ import 'config/theme/app_theme.dart';
 
 GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();
 
-class ScrollBehaviorModified extends ScrollBehavior {
-  const ScrollBehaviorModified();
+// class ScrollBehaviorModified extends ScrollBehavior {
+//   const ScrollBehaviorModified();
 
-  @override
-  ScrollPhysics getScrollPhysics(BuildContext context) {
-    return const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics());
-  }
-}
+//   @override
+//   ScrollPhysics getScrollPhysics(BuildContext context) {
+//     return const AlwaysScrollableScrollPhysics();
+//   }
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -32,10 +32,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => AuthCubit(AuthRepository()))
       ],
       child: MaterialApp(
-        builder: (context, child) => ScrollConfiguration(
-          behavior: const ScrollBehaviorModified(),
-          child: child!,
-        ),
+        builder: (context, child) => child!,
         navigatorKey: mainNavigatorKey,
         themeMode: ThemeMode.system,
         theme: AppThemes.appThemeData[AppTheme.lightTheme],

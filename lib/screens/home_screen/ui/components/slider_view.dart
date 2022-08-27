@@ -21,7 +21,7 @@ class SliderView extends StatelessWidget {
           return CustomImage(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             radius: kRoundedRectangleRadius,
-            pngImage: imageList[index],
+            imageList[index],
             boxFit: BoxFit.fitHeight,
           );
         },

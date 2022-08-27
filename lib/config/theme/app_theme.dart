@@ -8,9 +8,10 @@ enum AppTheme {
 }
 
 class AppThemes {
-
   static const Color googlePlusColor = Color(0xffC14949);
   static const Color facebookColor = Color(0xff284C83);
+  static const Color secondColor = Color(0xffffffff);
+  static const Color buttonText = Colors.white;
   //light theme
   static const Color whiteColor = Colors.white;
   static const Color primaryColor1 = Color(0xff4fc3f7);
