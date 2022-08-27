@@ -6,7 +6,8 @@ import '../../../../network/dio_client.dart';
 class AuthRepository {
   final DioClient _apiProvider = DioClient();
 
-  Future<String?> autoLogin() async {
+  /// return [Token] in String format
+  Future<String?> getToken() async {
     try {
       // final session = await Amplify.Auth.fetchAuthSession();
       // if (session.isSignedIn) {
@@ -22,20 +23,16 @@ class AuthRepository {
     }
   }
 
-  Future<String?> login() async {
-    try {
-      debugPrint('attempting login');
-      await Future.delayed(const Duration(seconds: 3));
-      debugPrint('logged in');
-      User user = User.dummy();
-      return user.userId;
-    } catch (e) {
-      debugPrint(e.toString());
-      return null;
-    }
+  /// login and return [Token] from internet
+  /// parameter [email, password]
+  Future<String> logIn(String email, String password) async {
+    await Future.delayed(const Duration(seconds: 3));
+    return "token";
   }
 
-  Future<String?> register({fullName, email, password}) async {
+  /// signIn and return [Token] from internet
+  /// parameter [name, email, password]
+  Future<String?> signIn(String fullName, String email, String password) async {
     try {
       User user = User.dummy();
       return user.userId;

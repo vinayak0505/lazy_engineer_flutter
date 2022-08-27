@@ -4,6 +4,9 @@ import '../../../../model/user.dart';
 import '../../../../network/dio_client.dart';
 
 class UserRepository {
+  UserRepository() {
+    getUser();
+  }
   final DioClient _apiProvider = DioClient();
   int id = 21;
   Future<User?> getUser() async {
@@ -16,4 +19,4 @@ class UserRepository {
       return null;
     }
   }
-} 
+}

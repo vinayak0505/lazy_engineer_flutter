@@ -5,9 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/config/theme/app_theme.dart';
-import 'package:lazy_engineer/screens/Authentication/logic/login_bloc/login_cubit.dart';
-import 'package:lazy_engineer/screens/Authentication/logic/validation_cubit/validation_cubit.dart';
-import 'package:lazy_engineer/screens/Authentication/logic/validation_cubit/validation_state.dart';
+import 'package:lazy_engineer/screens/Authentication/logic/login_bloc/auth_cubit.dart';
 import '../../../assets/icons.dart';
 import '../../../config/route/routes.dart';
 import '../../components/custom_button.dart';
@@ -55,17 +53,6 @@ class LoginAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
-    BlocListener<ValidationCubit, ValidationState>(
-      listener: (context, state) {
-        context.watch<ValidationCubit>().addValidators([email, password]);
-        context
-            .watch<ValidationCubit>()
-            .checkValidators(email, emailController.text);
-        context
-            .watch<ValidationCubit>()
-            .checkValidators(password, passwordController.text);
-      },
-    );
     ThemeData theme = Theme.of(context);
 
     return SingleChildScrollView(
@@ -78,9 +65,9 @@ class LoginAccount extends StatelessWidget {
             ),
             boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)]),
         padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
-        child: BlocBuilder<LoginCubit, LoginState>(
+        child: BlocBuilder<AuthCubit, AuthState>(
           builder: (context, state) {
-            if (state is LoginLoading) {
+            if (state is AuthLoading) {
               return const Center(child: CircularProgressIndicator());
             } else {
               return Column(
@@ -116,20 +103,12 @@ class LoginAccount extends StatelessWidget {
                   CustomButton(
                     text: login,
                     onPressed: () {
-                      BlocListener<LoginCubit, LoginState>(
+                      BlocListener<AuthCubit, AuthState>(
                           listener: (context, state) {
                         state.whenOrNull(
                           authorized: showSnackbar(context, "authorized"),
                           unathorized: showSnackbar(context, "unathorized"),
                         );
-                      });
-                      BlocListener<ValidationCubit, ValidationState>(
-                          listener: (context, state) {
-                        List<String> list =
-                            context.read<ValidationCubit>().isValidated();
-                        if (state.isValidated) {
-                          showSnackbar(context, list.toString());
-                        }
                       });
                     },
                   ),

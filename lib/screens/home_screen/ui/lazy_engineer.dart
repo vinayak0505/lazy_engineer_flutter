@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lazy_engineer/screens/Authentication/logic/login_bloc/auth_cubit.dart';
+import 'package:lazy_engineer/screens/Authentication/ui/login_screen.dart';
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
+import 'package:lazy_engineer/screens/splash_screen.dart';
 import '../../../assets/constants/lists.dart';
 import '../../../assets/icons.dart';
 import '../../components/grid_card.dart';
@@ -11,27 +14,20 @@ import '../../../assets/constants/strings.dart';
 import '../../../config/route/routes.dart';
 import '../../../model/user.dart';
 import '../logic/cubit/user_state.dart';
-import '../logic/cubit/user_cubit.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class LazyEngineer extends StatelessWidget {
+  const LazyEngineer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Scaffold(
-      body: BlocBuilder<UserCubit, UserState>(builder: (context, state) {
-        if (state is UserFetchLoadingState) {
-          return const Center(child: CircularProgressIndicator());
-        } else if (state is UserFetchSuccessState) {
-          return HomeScreenView(user: state.user);
-        } else if (state is UserFetchFailureState) {
-          return Center(
-              child: Text(state.e.toString(),
-                  style: TextStyle(color: theme.errorColor)));
-        } else {
-          return const SizedBox();
-        }
+      body: BlocBuilder<AuthCubit, AuthState>(builder: (context, state) {
+        return state.map(
+            authorized: (c) => const SplashPage(),
+            unathorized: (c) => const LoginScreen(),
+            loading: (c) => const Center(child: CircularProgressIndicator()),
+            initial: (c) => const SplashPage());
       }),
     );
   }
