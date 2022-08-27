@@ -16,7 +16,6 @@ class LazyEngineer extends StatelessWidget {
       body: SafeArea(
         child: BlocConsumer<AuthCubit, AuthState>(
           listener: (context, state) {
-            Navigator.popUntil(context, (route) => false)
             state.whenOrNull(
               authorized: (e) => showSnackbar(context, 'Authorized'),
               unathorized: (e) => showSnackbar(context, 'Unathorized $e'),
