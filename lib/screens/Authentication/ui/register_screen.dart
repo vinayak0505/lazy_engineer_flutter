@@ -5,13 +5,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/config/theme/app_theme.dart';
-import 'package:lazy_engineer/screens/Authentication/logic/form_submission_status.dart';
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
 import '../../../assets/icons.dart';
 import '../../../config/route/routes.dart';
 import '../../components/custom_button.dart';
-import '../logic/register_bloc/register_cubit.dart';
-import '../logic/register_bloc/register_state.dart';
 import 'components/rounded_button.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -26,13 +23,10 @@ class RegisterScreen extends StatelessWidget {
         Align(alignment: Alignment.topRight, child: nameWithIcon(theme)),
         Positioned(
             top: 150, child: SvgPicture.asset(AppImages.authBackgroundImage)),
-        Align(
+        const Align(
           alignment: Alignment.bottomCenter,
-          child: BlocProvider(
-            create: (context) => RegisterCubit(),
-            child: const RegisterAccount(),
+          child: RegisterAccount(),
           ),
-        )
       ]),
     );
   }
@@ -81,71 +75,41 @@ class RegisterAccount extends StatelessWidget {
                   child:
                       Text(registerAccount, style: theme.textTheme.headline5)),
               const SizedBox(height: 28),
-              BlocBuilder<RegisterCubit, RegisterState>(
-                  builder: (context, state) {
-                return CustomTextField(
+              CustomTextField(
                   controller: fullNameController,
                   hintText: fullName,
                   // prefixIcon: AppIcons.userIcon,
                   keyboardType: TextInputType.name,
-                  // validation: context
-                  //     .read<RegisterCubit>()
-                  //     .fullNameValidation(fullNameController.text),
-                );
-              }),
+                ),
               const SizedBox(height: 16),
-              BlocBuilder<RegisterCubit, RegisterState>(
-                  builder: (context, state) {
-                return CustomTextField(
+              CustomTextField(
                   controller: emailController,
                   hintText: email,
                   // icon: AppIcons.emailIcon,
                   keyboardType: TextInputType.emailAddress,
-                  // validation: context
-                  //     .read<RegisterCubit>()
-                  //     .emailValidation(emailController.text),
-                );
-              }),
+                ),
               const SizedBox(height: 16),
-              BlocBuilder<RegisterCubit, RegisterState>(
-                  builder: (context, state) {
-                return CustomTextField(
+              CustomTextField(
                   controller: passwordController,
                   hintText: password,
                   // icon: AppIcons.passwordIcon,
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
-                  // validation: context
-                  //     .read<RegisterCubit>()
-                  //     .passwordValidation(passwordController.text),
-                );
-              }),
+                ),
               const SizedBox(height: 16),
-              BlocBuilder<RegisterCubit, RegisterState>(
-                  builder: (context, state) {
-                return CustomTextField(
+              CustomTextField(
                   controller: confirmPasswordController,
                   hintText: confirmPassword,
                   // icon: AppIcons.passwordIcon,
                   obscureText: true,
-                  keyboardType: TextInputType.visiblePassword,
-                  // validation: context
-                  //     .read<RegisterCubit>()
-                  //     .passwordValidation(confirmPasswordController.text),
-                );
-              }),
+                  keyboardType: TextInputType.visiblePassword,),
               const SizedBox(height: 18),
-              BlocBuilder<RegisterCubit, RegisterState>(
-                  builder: (context, state) {
-                return state.formStatus is FormSubmitting
-                    ? const CircularProgressIndicator()
-                    : CustomButton(
+              CustomButton(
                         text: register,
                         onPressed: () {
                           // _showSnacBar(context, "");
                         },
-                      );
-              }),
+                      ),
               const SizedBox(height: 16),
               horizontalOrLine(theme),
               const SizedBox(height: 12),

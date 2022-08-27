@@ -51,7 +51,7 @@ class HomeScreenView extends StatelessWidget {
           const SizedBox(height: 12),
           _searchBar(theme),
           const SizedBox(height: 28),
-          SliderView(imageList: HomeScreenList.sliderImageList),
+          SliderView(imageList: sliderImageList),
           const SizedBox(height: 24),
           _titleLabel(lastOpened, theme),
           const SizedBox(height: 140),
@@ -91,14 +91,13 @@ class HomeScreenView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       crossAxisCount: 2,
-      itemCount: HomeScreenList.categoriesList.length,
+      itemCount: categoriesList.length,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           onTap: () => _navigation(context, index),
-          child: GridCard(data: HomeScreenList.categoriesList[index]),
+          child: GridCard(data: categoriesList[index]),
         );
       },
-      // staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
       mainAxisSpacing: 8,
       crossAxisSpacing: 8,
     );

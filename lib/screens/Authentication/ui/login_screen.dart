@@ -5,8 +5,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/config/theme/app_theme.dart';
-import 'package:lazy_engineer/screens/Authentication/logic/form_submission_status.dart';
 import 'package:lazy_engineer/screens/Authentication/logic/login_bloc/login_cubit.dart';
+import 'package:lazy_engineer/screens/Authentication/logic/validation_cubit/validation_cubit.dart';
+import 'package:lazy_engineer/screens/Authentication/logic/validation_cubit/validation_state.dart';
 import '../../../assets/icons.dart';
 import '../../../config/route/routes.dart';
 import '../../components/custom_button.dart';
@@ -25,13 +26,10 @@ class LoginScreen extends StatelessWidget {
         Align(alignment: Alignment.topRight, child: nameWithIcon(theme)),
         Positioned(
             top: 150, child: SvgPicture.asset(AppImages.authBackgroundImage)),
-        Align(
+        const Align(
           alignment: Alignment.bottomCenter,
-          child: BlocProvider(
-            create: (context) => LoginCubit(),
-            child: const LoginAccount(),
-          ),
-        )
+          child: LoginAccount(),
+        ),
       ]),
     );
   }
@@ -57,7 +55,19 @@ class LoginAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+    BlocListener<ValidationCubit, ValidationState>(
+      listener: (context, state) {
+        context.watch<ValidationCubit>().addValidators([email, password]);
+        context
+            .watch<ValidationCubit>()
+            .checkValidators(email, emailController.text);
+        context
+            .watch<ValidationCubit>()
+            .checkValidators(password, passwordController.text);
+      },
+    );
     ThemeData theme = Theme.of(context);
+
     return SingleChildScrollView(
       child: Container(
         decoration: const BoxDecoration(
@@ -68,86 +78,100 @@ class LoginAccount extends StatelessWidget {
             ),
             boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)]),
         padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SizedBox(height: 18),
-            Align(
-                alignment: Alignment.topCenter,
-                child: Text(loginAccount, style: theme.textTheme.headline5)),
-            const SizedBox(height: 28),
-            BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
-              return CustomTextField(
-                controller: emailController,
-                hintText: email,
-                prefixIcon: SvgPicture.asset(AppIcons.emailIcon),
-                keyboardType: TextInputType.emailAddress,
-              );
-            }),
-            const SizedBox(height: 16),
-            BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
-              return CustomTextField(
-                controller: passwordController,
-                hintText: password,
-                prefixIcon: SvgPicture.asset(AppIcons.passwordIcon),
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-              );
-            }),
-            const SizedBox(height: 4),
-            Align(
-                alignment: Alignment.centerRight,
-                child: Text(forgetPassword,
-                    style: theme.textTheme.bodySmall
-                        ?.copyWith(fontWeight: FontWeight.bold))),
-            const SizedBox(height: 18),
-            BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
-              return state is FormSubmitting
-                  ? const CircularProgressIndicator()
-                  : CustomButton(
-                      text: login,
-                      onPressed: () {
-                        
-                      },
-                    );
-            }),
-            const SizedBox(height: 16),
-            horizontalOrLine(theme),
-            const SizedBox(height: 12),
-            Row(children: [
-              RoundedButton(
-                  color: AppThemes.googlePlusColor,
-                  icon: AppIcons.gPlusIcon,
-                  onPressed: () {}),
-              RoundedButton(
-                  color: AppThemes.facebookColor,
-                  icon: AppIcons.fIcon,
-                  onPressed: () {}),
-            ]),
-            const SizedBox(height: 20),
-            Align(
-              alignment: Alignment.center,
-              child: RichText(
-                text: TextSpan(
-                  style: theme.textTheme.bodyMedium,
-                  children: <TextSpan>[
-                    const TextSpan(text: dontHaveAccount),
-                    TextSpan(
-                      text: createOne,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Navigator.pushReplacementNamed(
-                              context, PageRoutes.registerScreen);
-                        },
+        child: BlocBuilder<LoginCubit, LoginState>(
+          builder: (context, state) {
+            if (state is LoginLoading) {
+              return const Center(child: CircularProgressIndicator());
+            } else {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 18),
+                  Align(
+                      alignment: Alignment.topCenter,
+                      child:
+                          Text(loginAccount, style: theme.textTheme.headline5)),
+                  const SizedBox(height: 28),
+                  CustomTextField(
+                      controller: emailController,
+                      hintText: email,
+                      prefixIcon: SvgPicture.asset(AppIcons.emailIcon),
+                      keyboardType: TextInputType.emailAddress),
+                  const SizedBox(height: 16),
+                  CustomTextField(
+                    controller: passwordController,
+                    hintText: password,
+                    prefixIcon: SvgPicture.asset(AppIcons.passwordIcon),
+                    obscureText: true,
+                    keyboardType: TextInputType.visiblePassword,
+                  ),
+                  const SizedBox(height: 4),
+                  Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(forgetPassword,
+                          style: theme.textTheme.bodySmall
+                              ?.copyWith(fontWeight: FontWeight.bold))),
+                  const SizedBox(height: 18),
+                  CustomButton(
+                    text: login,
+                    onPressed: () {
+                      BlocListener<LoginCubit, LoginState>(
+                          listener: (context, state) {
+                        state.whenOrNull(
+                          authorized: showSnackbar(context, "authorized"),
+                          unathorized: showSnackbar(context, "unathorized"),
+                        );
+                      });
+                      BlocListener<ValidationCubit, ValidationState>(
+                          listener: (context, state) {
+                        List<String> list =
+                            context.read<ValidationCubit>().isValidated();
+                        if (state.isValidated) {
+                          showSnackbar(context, list.toString());
+                        }
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  horizontalOrLine(theme),
+                  const SizedBox(height: 12),
+                  Row(children: [
+                    RoundedButton(
+                        color: AppThemes.googlePlusColor,
+                        icon: AppIcons.gPlusIcon,
+                        onPressed: () {}),
+                    RoundedButton(
+                        color: AppThemes.facebookColor,
+                        icon: AppIcons.fIcon,
+                        onPressed: () {}),
+                  ]),
+                  const SizedBox(height: 20),
+                  Align(
+                    alignment: Alignment.center,
+                    child: RichText(
+                      text: TextSpan(
+                        style: theme.textTheme.bodyMedium,
+                        children: <TextSpan>[
+                          const TextSpan(text: dontHaveAccount),
+                          TextSpan(
+                            text: createOne,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pushReplacementNamed(
+                                    context, PageRoutes.registerScreen);
+                              },
+                          ),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-          ],
+                  ),
+                  const SizedBox(height: 12),
+                ],
+              );
+            }
+          },
         ),
       ),
     );
@@ -168,8 +192,8 @@ class LoginAccount extends StatelessWidget {
     );
   }
 
-  // void _showSnacBar(BuildContext context, String message) {
-  //   final SnackBar = SnackBar(content: Text(message));
-  //   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  // }
+  showSnackbar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
+  }
 }
