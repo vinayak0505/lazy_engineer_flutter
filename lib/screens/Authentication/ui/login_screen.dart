@@ -131,7 +131,7 @@ class LoginAccount extends StatelessWidget {
                         style: const TextStyle(fontWeight: FontWeight.bold),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            Navigator.pushReplacementNamed(
+                            Navigator.pushNamed(
                                 context, PageRoutes.registerScreen);
                           },
                       ),

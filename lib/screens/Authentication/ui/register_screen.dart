@@ -133,8 +133,7 @@ class RegisterAccount extends StatelessWidget {
                             style: const TextStyle(fontWeight: FontWeight.bold),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                Navigator.pushReplacementNamed(
-                                    context, PageRoutes.loginScreen);
+                                Navigator.pop(context);
                               }),
                       ]),
                 ),
