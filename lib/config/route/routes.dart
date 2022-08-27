@@ -6,7 +6,7 @@ import '../../screens/jobs_screen/ui/jobs_screen.dart';
 import '../../screens/notes_screen/ui/notes_screen.dart';
 import '../../screens/practicle_file_screen/ui/practicle_file_screen.dart';
 import '../../screens/question_paper_screen/ui/question_paper_screen.dart';
-import '../../screens/home_screen/ui/lazy_engineer.dart';
+import '../../screens/lazy_engineer/ui/lazy_engineer.dart';
 
 class PageRoutes {
   static const String homeScreen = "home_screen";

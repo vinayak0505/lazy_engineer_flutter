@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../assets/animation.dart';
-import '../config/route/routes.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key, this.isHome = false}) : super(key: key);
@@ -14,7 +13,7 @@ class SplashPage extends StatelessWidget {
       body: Center(
         child: Lottie.asset(
           Animations.splash,
-          repeat: false,
+          repeat: true,
         ),
       ),
     );

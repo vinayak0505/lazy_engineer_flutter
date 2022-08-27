@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/screens/Authentication/data/repo/auth_repository.dart';
 import 'package:lazy_engineer/screens/Authentication/logic/login_bloc/auth_cubit.dart';
-import 'package:lazy_engineer/screens/home_screen/ui/lazy_engineer.dart';
+import 'package:lazy_engineer/screens/lazy_engineer/ui/lazy_engineer.dart';
 import 'config/route/routes.dart';
 import 'screens/home_screen/data/repo/user_repository.dart';
 import 'screens/home_screen/logic/cubit/user_cubit.dart';

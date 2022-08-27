@@ -1,35 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lazy_engineer/screens/Authentication/logic/login_bloc/auth_cubit.dart';
-import 'package:lazy_engineer/screens/Authentication/ui/login_screen.dart';
-import 'package:lazy_engineer/screens/components/custom_text_field.dart';
-import 'package:lazy_engineer/screens/splash_screen.dart';
+import 'package:flutter_svg/svg.dart';
+
 import '../../../assets/constants/lists.dart';
-import '../../../assets/icons.dart';
-import '../../components/grid_card.dart';
-import 'components/slider_view.dart';
 import '../../../assets/constants/strings.dart';
+import '../../../assets/icons.dart';
 import '../../../config/route/routes.dart';
 import '../../../model/user.dart';
+import '../../components/custom_text_field.dart';
+import '../../components/grid_card.dart';
+import 'components/slider_view.dart';
 
-class LazyEngineer extends StatelessWidget {
-  const LazyEngineer({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocBuilder<AuthCubit, AuthState>(builder: (context, state) {
-        return state.map(
-            authorized: (c) => const SplashPage(),
-            unathorized: (c) => const LoginScreen(),
-            loading: (c) => const Center(child: CircularProgressIndicator()),
-            initial: (c) => const SplashPage());
-      }),
-    );
+    return Text("Home Screen");
   }
 }
+
 
 class HomeScreenView extends StatelessWidget {
   const HomeScreenView({Key? key}) : super(key: key);
