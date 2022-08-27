@@ -156,9 +156,4 @@ class RegisterAccount extends StatelessWidget {
       ),
     ]);
   }
-
-  // void _showSnacBar(BuildContext context, String message) {
-  //   final SnackBar = SnackBar(content: Text(message));
-  //   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  // }
 }
