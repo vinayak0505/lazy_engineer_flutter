@@ -1,13 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/images.dart';
-import 'package:lazy_engineer/config/theme/app_theme.dart';
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
 import '../../../assets/icons.dart';
-import '../../../config/route/routes.dart';
 import '../../components/custom_button.dart';
 
 class RegisterScreen extends StatelessWidget {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../assets/constants/decoration.dart';
+import 'custom_image.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
@@ -10,7 +11,7 @@ class CustomTextField extends StatelessWidget {
       this.readOnly = false,
       this.keyboardType,
       this.onSubitted,
-      this.hintText,
+      this.hintText = "Search by Name",
       this.obscureText = false,
       this.labelText,
       this.prefixIcon,
@@ -24,7 +25,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final void Function(String value)? onSubitted;
   final String? hintText, labelText;
-  final Widget? prefixIcon, suffixIcon;
+  final String? prefixIcon, suffixIcon;
   final String? Function(String? value)? validator;
   final void Function(String? value)? onChange;
 
@@ -47,12 +48,16 @@ class CustomTextField extends StatelessWidget {
                 hintText: hintText,
                 labelText: labelText,
                 prefixIcon: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: prefixIcon,
+                  padding: prefixIcon != null
+                      ? const EdgeInsets.symmetric(vertical: 8, horizontal: 12)
+                      : EdgeInsets.zero,
+                  child: prefixIcon != null ? CustomImage(prefixIcon!) : null,
                 ),
                 suffixIcon: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: suffixIcon,
+                  padding: suffixIcon != null
+                      ? const EdgeInsets.symmetric(vertical: 8, horizontal: 12)
+                      : EdgeInsets.zero,
+                  child: suffixIcon != null ? CustomImage(suffixIcon!) : null,
                 )),
           ),
         ],

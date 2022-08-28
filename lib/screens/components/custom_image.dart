@@ -4,8 +4,6 @@ import 'package:flutter_svg/svg.dart';
 class CustomImage extends StatelessWidget {
   final double? height;
   final double? width;
-  final bool? onlyTop;
-  final double? radius;
   final String image;
   final BoxFit? boxFit;
   final EdgeInsetsGeometry? margin;
@@ -18,8 +16,6 @@ class CustomImage extends StatelessWidget {
     this.margin,
     this.padding,
     this.width,
-    this.onlyTop,
-    this.radius,
     this.boxFit,
   }) : super(key: key);
 
@@ -29,27 +25,19 @@ class CustomImage extends StatelessWidget {
     return Container(
       margin: margin ?? EdgeInsets.zero,
       padding: padding ?? EdgeInsets.zero,
-      child: ClipRRect(
-        borderRadius: onlyTop ?? false
-            ? BorderRadius.only(
-                topLeft: Radius.circular(radius ?? 0),
-                topRight: Radius.circular(radius ?? 0),
-              )
-            : BorderRadius.circular(radius ?? 0),
-        child: isSvg
-            ? SvgPicture.asset(
-                image,
-                width: width,
-                height: height,
-                fit: boxFit ?? BoxFit.cover,
-              )
-            : Image.asset(
-                image,
-                height: height,
-                width: width,
-                fit: boxFit ?? BoxFit.cover,
-              ),
-      ),
+      child: isSvg
+          ? SvgPicture.asset(
+              image,
+              width: width,
+              height: height,
+              fit: boxFit ?? BoxFit.contain,
+            )
+          : Image.asset(
+              image,
+              height: height,
+              width: width,
+              fit: boxFit ?? BoxFit.contain,
+            ),
     );
   }
 }

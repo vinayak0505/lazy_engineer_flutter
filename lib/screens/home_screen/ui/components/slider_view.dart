@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/screens/components/cached_image.dart';
 import '../../../../assets/constants/decoration.dart';
 import '../../../components/custom_image.dart';
 
@@ -18,10 +19,10 @@ class SliderView extends StatelessWidget {
         controller: PageController(viewportFraction: 0.8),
         itemCount: imageList.length,
         itemBuilder: (BuildContext context, int index) {
-          return CustomImage(
+          return CachedImage(
             padding: const EdgeInsets.symmetric(horizontal: 8),
+            image: imageList[index],
             radius: kRoundedRectangleRadius,
-            imageList[index],
             boxFit: BoxFit.fitHeight,
           );
         },

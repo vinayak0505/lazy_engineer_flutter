@@ -13,13 +13,11 @@ import 'components/slider_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return Text("Home Screen");
+    return const HomeScreenView();
   }
 }
-
 
 class HomeScreenView extends StatelessWidget {
   const HomeScreenView({Key? key}) : super(key: key);
@@ -29,7 +27,7 @@ class HomeScreenView extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 54),
+        padding: const EdgeInsets.symmetric(vertical: 28),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           _nametag(theme, user.userName),
           const SizedBox(height: 12),
@@ -65,7 +63,7 @@ class HomeScreenView extends StatelessWidget {
       child: CustomTextField(
           controller: searchController,
           hintText: searchCourse,
-          suffixIcon: SvgPicture.asset(AppIcons.searchIcon)),
+          suffixIcon: AppIcons.searchIcon),
     );
   }
 
@@ -91,17 +89,17 @@ class HomeScreenView extends StatelessWidget {
     String _nav() {
       switch (index) {
         case 0:
-          return PageRoutes.notesScreen;
+          return RouteGenerator.notesScreen;
         case 1:
-          return PageRoutes.questionPaperScreen;
+          return RouteGenerator.questionPaperScreen;
         case 2:
-          return PageRoutes.practicleFileScreen;
+          return RouteGenerator.practicleFileScreen;
         case 3:
-          return PageRoutes.booksScreen;
+          return RouteGenerator.booksScreen;
         case 4:
-          return PageRoutes.jobsScreen;
+          return RouteGenerator.jobsScreen;
         default:
-          return PageRoutes.homeScreen;
+          return RouteGenerator.homeScreen;
       }
     }
 
@@ -116,19 +114,15 @@ class HomeScreenView extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    hello,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(hello,
                     style: theme.textTheme.headline4
-                        ?.copyWith(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    name,
-                    style: theme.textTheme.headline4,
-                  ),
-                ]),
+                        ?.copyWith(fontSize: 20, fontWeight: FontWeight.w600)),
+                Text(name, style: theme.textTheme.headline4),
+              ],
+            ),
             const Spacer(),
             GestureDetector(
               child: SvgPicture.asset(
@@ -136,7 +130,7 @@ class HomeScreenView extends StatelessWidget {
                 width: 48,
                 height: 48,
               ),
-              onTap: () {},
+              onTap: () {}
             )
           ]),
     );

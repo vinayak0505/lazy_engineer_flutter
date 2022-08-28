@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/config/theme/app_theme.dart';
+import 'package:lazy_engineer/screens/components/cached_image.dart';
 import '../../assets/constants/decoration.dart';
 import 'custom_image.dart';
 
@@ -11,19 +13,14 @@ class GridCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Card(
-      shadowColor: Colors.transparent,
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        side: const BorderSide(color: AppThemes.lightDarkColor),
-        borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
-      ),
+    return Container(
+      decoration: kRoundedContainer,
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            CustomImage(
-              data.image!,
+            CachedImage(
+              image: data.image,
               height: 120,
               radius: kRoundedRectangleRadius,
               onlyTop: true,

@@ -19,6 +19,7 @@ class AppThemes {
   static const Color lightColor = Colors.grey;
   static const Color darkColor = Color(0xff434343);
   static const Color textColor = Color(0xff3C3A36);
+  static const Color subTitleColor = Color(0xff5BA092);
   static const Color textColorDark = Color(0xff333333);
   static const Color successColor = Color(0xff14C89A);
   static const Color errorColor = Color(0xffE5233B);
@@ -27,7 +28,6 @@ class AppThemes {
   static final appThemeData = {
     AppTheme.lightTheme: ThemeData(
       scaffoldBackgroundColor: whiteColor,
-      // primarySwatch: Colors.blue,
       backgroundColor: whiteColor,
       appBarTheme: AppBarTheme(
         elevation: 0,
@@ -51,7 +51,6 @@ class AppThemes {
         behavior: SnackBarBehavior.floating,
         backgroundColor: whiteColor,
         contentTextStyle: GoogleFonts.roboto(
-          color: const Color(0xff314862),
           fontSize: 10,
         ),
       ),
@@ -69,14 +68,17 @@ class AppThemes {
                 color: textColorDark,
                 fontWeight: FontWeight.w500,
               ),
-              // not considered
-              // headline5: const TextStyle(
-              //   fontSize: 27,
-              //   fontWeight: FontWeight.w600,
-              //   color: textColor,
-              // ),
-              // overline: const TextStyle(letterSpacing: 0, color: hintColor),
-              // bodyText2: const TextStyle(color: hintColor),
+              subtitle2: const TextStyle(
+                color: subTitleColor,
+                fontWeight: FontWeight.bold
+              ),
+              overline: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: subTitleColor,
+              ),
+               bodyText2: const TextStyle(
+                color: lightDarkColor,
+              ),
             ),
       ),
     ),

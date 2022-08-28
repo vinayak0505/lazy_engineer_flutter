@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/screens/components/custom_image.dart';
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
 
-import '../../../config/route/routes.dart';
+import '../../../assets/constants/lists.dart';
 import '../../components/grid_card.dart';
 
 class NotesScreen extends StatelessWidget {
@@ -14,30 +17,54 @@ class NotesScreen extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     return Scaffold(
         appBar: AppBar(
-          title: Text("Notes", style: theme.textTheme.headline5),
-        ),
+            title: Center(
+                child: Text(
+              notes,
+              style: theme.textTheme.headline4,
+              textAlign: TextAlign.center,
+            )),
+            leading: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: const CustomImage(
+                AppIcons.backArrow,
+                margin: EdgeInsets.only(left: 16),
+              ),
+            ),
+            actions: const [
+              CustomImage(
+                AppIcons.filterIcon,
+                boxFit: BoxFit.contain,
+                margin: EdgeInsets.only(right: 16),
+              ),
+            ]),
         body: SafeArea(
-          child: Column(
-            children: [
-              CustomTextField(controller: searchController),
-              const SizedBox(height: 16),
-              _staggeredView(),
-            ],
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  CustomTextField(
+                    controller: searchController,
+                    suffixIcon: AppIcons.searchIcon,
+                  ),
+                  const SizedBox(height: 16),
+                  _staggeredView(),
+                ],
+              ),
+            ),
           ),
         ));
   }
 
   Widget _staggeredView() {
-    var categoriesList;
     return MasonryGridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       crossAxisCount: 2,
       itemCount: categoriesList.length,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
-          onTap: () => _navigation(context, index),
+          onTap: () {},
           child: GridCard(data: categoriesList[index]),
         );
       },
@@ -45,26 +72,5 @@ class NotesScreen extends StatelessWidget {
       mainAxisSpacing: 8,
       crossAxisSpacing: 8,
     );
-  }
-
-  void _navigation(BuildContext context, int index) {
-    String _nav() {
-      switch (index) {
-        case 0:
-          return PageRoutes.notesScreen;
-        case 1:
-          return PageRoutes.questionPaperScreen;
-        case 2:
-          return PageRoutes.practicleFileScreen;
-        case 3:
-          return PageRoutes.booksScreen;
-        case 4:
-          return PageRoutes.jobsScreen;
-        default:
-          return PageRoutes.homeScreen;
-      }
-    }
-
-    Navigator.pushNamed(context, _nav());
   }
 }

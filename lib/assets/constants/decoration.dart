@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/config/theme/app_theme.dart';
 
+const double kRoundedRectangleRadius = 8.0;
+
 /// Text Field Style
 const kTextFieldDecoration = InputDecoration(
   hintText: 'Enter a value',
@@ -15,4 +17,10 @@ const kTextFieldDecoration = InputDecoration(
   filled: true,
 );
 
-const kRoundedRectangleRadius = 8.0;
+BoxDecoration kRoundedContainer = BoxDecoration(
+  color: Colors.white,
+  border: Border.all(color: AppThemes.lightDarkColor),
+  borderRadius: const BorderRadius.all(
+    Radius.circular(kRoundedRectangleRadius),
+  ),
+);

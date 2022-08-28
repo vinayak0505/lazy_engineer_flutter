@@ -1,4 +1,5 @@
 class AppIcons {
+  static const String backArrow = "assets/icons/back_arrow.svg";
   static const String notifications = "assets/icons/notification.svg";
   static const String searchIcon = "assets/icons/search.svg";
   static const String downArrowIcon = "assets/icons/down_arrow.svg";
@@ -8,4 +9,6 @@ class AppIcons {
   static const String lazyEngineerIcon = "assets/icons/lazy_engineer_icon.svg";
   static const String passwordIcon = "assets/icons/password.svg";
   static const String userIcon = "assets/icons/user.svg";
+  static const String filterIcon = "assets/icons/filter.svg";
+  static const String downloadIcon = "assets/icons/download.svg";
 }

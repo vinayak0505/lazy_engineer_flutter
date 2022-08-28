@@ -80,13 +80,13 @@ class LoginAccount extends StatelessWidget {
               CustomTextField(
                   controller: emailController,
                   hintText: email,
-                  prefixIcon: SvgPicture.asset(AppIcons.emailIcon),
+                  prefixIcon: AppIcons.emailIcon,
                   keyboardType: TextInputType.emailAddress),
               const SizedBox(height: 16),
               CustomTextField(
                 controller: passwordController,
                 hintText: password,
-                prefixIcon: SvgPicture.asset(AppIcons.passwordIcon),
+                prefixIcon: AppIcons.passwordIcon,
                 obscureText: true,
                 keyboardType: TextInputType.visiblePassword,
               ),
@@ -132,7 +132,7 @@ class LoginAccount extends StatelessWidget {
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.pushNamed(
-                                context, PageRoutes.registerScreen);
+                                context, RouteGenerator.registerScreen);
                           },
                       ),
                     ],

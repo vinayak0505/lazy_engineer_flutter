@@ -7,8 +7,8 @@ import '../../components/custom_image.dart';
 import '../../components/custom_text_field.dart';
 import '../../components/tile_view.dart';
 
-class JobsScreen extends StatelessWidget {
-  const JobsScreen({Key? key}) : super(key: key);
+class BooksScreen extends StatelessWidget {
+  const BooksScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class JobsScreen extends StatelessWidget {
         appBar: AppBar(
             title: Center(
                 child: Text(
-              jobs,
+              books,
               style: theme.textTheme.headline4,
               textAlign: TextAlign.center,
             )),
@@ -49,17 +49,14 @@ class JobsScreen extends StatelessWidget {
               ListView.separated(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: jobList.length,
+                itemCount: bookList.length,
                 itemBuilder: (context, index) => TileView(
-                  // image: jobList[index].image,
-                  fit: BoxFit.contain,
-                  height: 100,
-                  width: 70,
-                  child: JobDataBox(
-                    jobTitle: jobList[index].jobTitle,
-                    location: jobList[index].location,
-                    companyName: jobList[index].companyName,
-                    date: jobList[index].date,
+                  image: bookList[index].image,
+                  pages: bookList[index].pages,
+                  child: BookDataBox(
+                    writers: bookList[index].writers,
+                    bookName: bookList[index].bookName,
+                    description: bookList[index].description,
                   ),
                 ),
                 separatorBuilder: (context, index) => const SizedBox(
@@ -72,55 +69,35 @@ class JobsScreen extends StatelessWidget {
   }
 }
 
-class JobDataBox extends StatelessWidget {
-  const JobDataBox(
+class BookDataBox extends StatelessWidget {
+  const BookDataBox(
       {Key? key,
-      required this.jobTitle,
-      required this.companyName,
-      required this.location,
-      required this.date})
+      required this.writers,
+      required this.bookName,
+      required this.description})
       : super(key: key);
-  final String jobTitle, companyName, location;
-  final DateTime date;
-
-  String time() {
-    int years = DateTime.now().year - date.year;
-    if (years != 0) return "$years years ago";
-    int months = DateTime.now().month - date.month;
-    if (months != 0) return "$months months ago";
-    int days = DateTime.now().day - date.day;
-    if (days != 0) return "$days days ago";
-    return "Today";
-  }
-
+  final List<String> writers;
+  final String bookName, description;
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    String allWriters = writers.toString();
+    allWriters =
+        "By- ${writers.toString().substring(1, writers.toString().length - 1)}";
     return Flexible(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(jobTitle,
-                  style: theme.textTheme.headline5,
-                  overflow: TextOverflow.ellipsis),
-              const SizedBox(height: 2),
-              Text(companyName, style: theme.textTheme.bodyLarge),
-              const SizedBox(height: 8),
-              Text(
-                location,
-                style: theme.textTheme.bodyText2,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: 8),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Text(time(), style: theme.textTheme.bodySmall),
-              )
-            ]),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(allWriters.toUpperCase(), style: theme.textTheme.overline),
+            const SizedBox(height: 8),
+            Text(bookName, style: theme.textTheme.headline5),
+            const SizedBox(height: 8),
+            Text(description, style: theme.textTheme.bodyMedium),
+          ],
+        ),
       ),
     );
   }

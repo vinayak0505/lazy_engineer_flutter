@@ -20,6 +20,17 @@ const String alreadyHaveAccount = "Already have a account? ";
 const String goToLogin = "Go to Login";
 const String or = "OR";
 
+const String notes = "Notes";
+const String files = "Files";
+const String books = "Books";
+const String jobs = "Jobs";
+const String questionPaper = "Question Paper";
+
+
+const String subjectIntended = "Subject :  ";
+const String collegeIntended = "College :  ";
+const String yearIntended = "Year :        ";
+
 class DummyStrings {
   static const String name = "Harman Jaggi";
 }

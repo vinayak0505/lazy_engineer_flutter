@@ -1,42 +1,62 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/screens/Authentication/ui/login_screen.dart';
 import 'package:lazy_engineer/screens/Authentication/ui/register_screen.dart';
-import '../../screens/books_screen/ui/books_screen.dart';
+import 'package:lazy_engineer/screens/home_screen/ui/home_screen.dart';
+import '../../screens/books_screen/ui/book_screen.dart';
 import '../../screens/jobs_screen/ui/jobs_screen.dart';
 import '../../screens/notes_screen/ui/notes_screen.dart';
 import '../../screens/practicle_file_screen/ui/practicle_file_screen.dart';
 import '../../screens/question_paper_screen/ui/question_paper_screen.dart';
 import '../../screens/lazy_engineer/ui/lazy_engineer.dart';
 
-class PageRoutes {
-  static const String homeScreen = "home_screen";
-  static const String notesScreen = "notes_screen";
-  static const String questionPaperScreen = "question_paper_screen";
-  static const String practicleFileScreen = "practicle_file_screen";
-  static const String booksScreen = "books_screen";
-  static const String jobsScreen = "jobs_screen";
-  static const String authScreen = "auth_screen";
-  static const String loginScreen = "login_screen";
-  static const String registerScreen = "register_screen";
-  static const String lazyEngineer = "lazy_engineer";
+class RouteGenerator {
+  static const String lazyEngineer = "/";
+  static const String registerScreen = "/register";
+  static const String homeScreen = "/home";
+  static const String notesScreen = "/notes";
+  static const String questionPaperScreen = "/question_paper";
+  static const String practicleFileScreen = "/practicle_file";
+  static const String booksScreen = "/books";
+  static const String jobsScreen = "/jobs";
+  static const String loginScreen = "/login";
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    // final args = settings.arguments;
 
-  static Map<String, WidgetBuilder> get routes {
-    return {
-      /// start screen is [HomeScreen]
-      homeScreen: (context) => const LazyEngineer(),
+    switch (settings.name) {
+      case lazyEngineer:
+        return MaterialPageRoute(builder: (_) => const LazyEngineer());
+      case loginScreen:
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
+      case registerScreen:
+        return MaterialPageRoute(builder: (_) => const RegisterScreen());
+      case homeScreen:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case notesScreen:
+        return MaterialPageRoute(builder: (_) => const NotesScreen());
+      case questionPaperScreen:
+        return MaterialPageRoute(builder: (_) => const QuestionPaperScreen());
+      case practicleFileScreen:
+        return MaterialPageRoute(builder: (_) => const PracticleFileScreen());
+      case booksScreen:
+        return MaterialPageRoute(builder: (_) => const BooksScreen());
+      case jobsScreen:
+        return MaterialPageRoute(builder: (_) => const JobsScreen());
+      default:
+        // If there is no such named route in the switch statement
+        return _errorRoute();
+    }
+  }
 
-      /// [AuthScreen]
-      loginScreen: (context) => const LoginScreen(),
-      registerScreen: (context) => const RegisterScreen(),
-
-      // [MainScreen]
-      // Todo add main screen
-      lazyEngineer: (context) => Container(),
-      notesScreen: (context) => const NotesScreen(),
-      questionPaperScreen: (context) => const QuestionPaperScreen(),
-      practicleFileScreen: (context) => const PracticleFileScreen(),
-      booksScreen: (context) => const BooksScreen(),
-      jobsScreen: (context) => const JobsScreen(),
-    };
+  static Route<dynamic> _errorRoute() {
+    return MaterialPageRoute(builder: (_) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text('Error'),
+        ),
+        body: const Center(
+          child: Text('ERROR'),
+        ),
+      );
+    });
   }
 }
