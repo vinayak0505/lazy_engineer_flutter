@@ -25,13 +25,13 @@ class NotesScreen extends StatelessWidget {
             )),
             leading: GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: const CustomImage(
+              child: const CustomIcon(
                 AppIcons.backArrow,
                 margin: EdgeInsets.only(left: 16),
               ),
             ),
             actions: const [
-              CustomImage(
+              CustomIcon(
                 AppIcons.filterIcon,
                 boxFit: BoxFit.contain,
                 margin: EdgeInsets.only(right: 16),

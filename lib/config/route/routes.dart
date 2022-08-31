@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/screens/Authentication/ui/login_screen.dart';
 import 'package:lazy_engineer/screens/Authentication/ui/register_screen.dart';
+import 'package:lazy_engineer/screens/book_description_screen/ui/book_description_screen.dart';
 import 'package:lazy_engineer/screens/home_screen/ui/home_screen.dart';
-import '../../screens/books_screen/ui/book_screen.dart';
+import 'package:lazy_engineer/screens/jobs_description_screen/ui/jobs_description_screen.dart';
+import '../../screens/book_screen/ui/book_screen.dart';
 import '../../screens/jobs_screen/ui/jobs_screen.dart';
 import '../../screens/notes_screen/ui/notes_screen.dart';
 import '../../screens/practicle_file_screen/ui/practicle_file_screen.dart';
@@ -17,7 +19,9 @@ class RouteGenerator {
   static const String questionPaperScreen = "/question_paper";
   static const String practicleFileScreen = "/practicle_file";
   static const String booksScreen = "/books";
+  static const String bookDescriptionScreen = "/book_description";
   static const String jobsScreen = "/jobs";
+  static const String jobsDescriptionScreen = "/jobs_description";
   static const String loginScreen = "/login";
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // final args = settings.arguments;
@@ -38,9 +42,13 @@ class RouteGenerator {
       case practicleFileScreen:
         return MaterialPageRoute(builder: (_) => const PracticleFileScreen());
       case booksScreen:
-        return MaterialPageRoute(builder: (_) => const BooksScreen());
+        return MaterialPageRoute(builder: (_) => const BookScreen());
+       case bookDescriptionScreen:
+        return MaterialPageRoute(builder: (_) => const BookDescriptionScreen());
       case jobsScreen:
         return MaterialPageRoute(builder: (_) => const JobsScreen());
+      case jobsDescriptionScreen:
+        return MaterialPageRoute(builder: (_) => const JobsDescriptionScreen());
       default:
         // If there is no such named route in the switch statement
         return _errorRoute();

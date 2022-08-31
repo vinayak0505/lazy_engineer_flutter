@@ -51,13 +51,13 @@ class CustomTextField extends StatelessWidget {
                   padding: prefixIcon != null
                       ? const EdgeInsets.symmetric(vertical: 8, horizontal: 12)
                       : EdgeInsets.zero,
-                  child: prefixIcon != null ? CustomImage(prefixIcon!) : null,
+                  child: prefixIcon != null ? CustomIcon(prefixIcon!) : null,
                 ),
                 suffixIcon: Padding(
                   padding: suffixIcon != null
                       ? const EdgeInsets.symmetric(vertical: 8, horizontal: 12)
                       : EdgeInsets.zero,
-                  child: suffixIcon != null ? CustomImage(suffixIcon!) : null,
+                  child: suffixIcon != null ? CustomIcon(suffixIcon!) : null,
                 )),
           ),
         ],

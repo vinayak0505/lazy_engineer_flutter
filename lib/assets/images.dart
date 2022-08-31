@@ -5,6 +5,7 @@ class AppImages {
   static const String authBackgroundImage = "assets/images/auth_background.png";
   static const String practicleFileImage = "assets/images/practicle_file.png";
   static const String questionPaperImage = "assets/images/question_paper.svg";
-  static const String google = "assets/images/google.svg";
+  static const String google = "assets/images/google.png";
   static const String apple = "assets/images/apple.svg";
+  static const String questionPaper = "assets/images/question_paper.png";
 }

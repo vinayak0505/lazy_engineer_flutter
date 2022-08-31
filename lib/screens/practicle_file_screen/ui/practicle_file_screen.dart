@@ -24,13 +24,13 @@ class PracticleFileScreen extends StatelessWidget {
             )),
             leading: GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: const CustomImage(
+              child: const CustomIcon(
                 AppIcons.backArrow,
                 margin: EdgeInsets.only(left: 16),
               ),
             ),
             actions: const [
-              CustomImage(
+              CustomIcon(
                 AppIcons.filterIcon,
                 boxFit: BoxFit.contain,
                 margin: EdgeInsets.only(right: 16),
@@ -42,9 +42,11 @@ class PracticleFileScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  FilterContainer(isMultiOption: true, data: multiOptionFileList),
+                  FilterContainer(
+                      isMultiOption: true, data: multiOptionFileList),
                   const SizedBox(height: 8),
-                  FilterContainer(isMultiOption: false, data: singleOptionFileList),
+                  FilterContainer(
+                      isMultiOption: false, data: singleOptionFileList),
                   const SizedBox(height: 16),
                   CustomTextField(
                     controller: searchFileController,
@@ -64,6 +66,7 @@ class PracticleFileScreen extends StatelessWidget {
                         subject: practicleFileList[index].subject,
                         year: practicleFileList[index].year,
                       ),
+                      onPressed: () {},
                     ),
                     separatorBuilder: (context, index) => const SizedBox(
                       height: 8,
@@ -114,8 +117,7 @@ class FileDataBox extends StatelessWidget {
                         style: theme.textTheme.subtitle2),
                     TextSpan(text: '$college\n'),
                     TextSpan(
-                        text: yearIntended,
-                        style: theme.textTheme.subtitle2),
+                        text: yearIntended, style: theme.textTheme.subtitle2),
                     TextSpan(text: year.year.toString()),
                   ],
                 ),

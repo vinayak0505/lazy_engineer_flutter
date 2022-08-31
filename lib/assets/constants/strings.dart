@@ -30,6 +30,7 @@ const String questionPaper = "Question Paper";
 const String subjectIntended = "Subject :  ";
 const String collegeIntended = "College :  ";
 const String yearIntended = "Year :        ";
+const String typeIntended = "Type :        ";
 
 class DummyStrings {
   static const String name = "Harman Jaggi";

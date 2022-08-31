@@ -1,6 +1,7 @@
 import 'package:lazy_engineer/screens/practicle_file_screen/data/modals/file_model.dart';
+import 'package:lazy_engineer/screens/question_paper_screen/data/models/question_paper_model.dart';
 
-import '../../screens/books_screen/data/modals/book_modal.dart';
+import '../../screens/book_screen/data/modals/book_modal.dart';
 import '../../screens/home_screen/data/modal/categories_model.dart';
 import '../../screens/jobs_screen/data/modals/job_modal.dart';
 import '../images.dart';
@@ -136,4 +137,47 @@ List<JobModel> jobList = [
       companyName: "Google",
       location: "Gurugram, Haryana, India",
       date: DateTime.now()),
+];
+
+List<QuestionPaperModel> questionPaperList = [
+  QuestionPaperModel(
+    image: AppImages.questionPaper,
+    title: "Computer Graphics",
+    description:
+        "Important for test covering unit 1 to 4.By ____________Teacher",
+    subject: "Computer Graphics",
+    type: "Class Test",
+    college: "GTBIT",
+    year: DateTime.now(),
+  ),
+  QuestionPaperModel(
+    image: AppImages.questionPaper,
+    title: "Computer Graphics",
+    description:
+        "Important for test covering unit 1 to 4.By ____________Teacher",
+    subject: "Computer Graphics",
+    type: "Class Test",
+    college: "GTBIT",
+    year: DateTime.now(),
+  ),
+  QuestionPaperModel(
+    image: AppImages.questionPaper,
+    title: "Computer Graphics",
+    description:
+        "Important for test covering unit 1 to 4.By ____________Teacher",
+    subject: "Computer Graphics",
+    type: "Class Test",
+    college: "GTBIT",
+    year: DateTime.now(),
+  ),
+  QuestionPaperModel(
+    image: AppImages.questionPaper,
+    title: "Computer Graphics",
+    description:
+        "Important for test covering unit 1 to 4.By ____________Teacher",
+    subject: "Computer Graphics",
+    type: "Class Test",
+    college: "GTBIT",
+    year: DateTime.now(),
+  ),
 ];

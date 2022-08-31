@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/config/route/routes.dart';
 
 import '../../../assets/constants/lists.dart';
 import '../../../assets/icons.dart';
@@ -7,8 +8,8 @@ import '../../components/custom_image.dart';
 import '../../components/custom_text_field.dart';
 import '../../components/tile_view.dart';
 
-class BooksScreen extends StatelessWidget {
-  const BooksScreen({Key? key}) : super(key: key);
+class BookScreen extends StatelessWidget {
+  const BookScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +25,13 @@ class BooksScreen extends StatelessWidget {
             )),
             leading: GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: const CustomImage(
+              child: const CustomIcon(
                 AppIcons.backArrow,
                 margin: EdgeInsets.only(left: 16),
               ),
             ),
             actions: const [
-              CustomImage(
+              CustomIcon(
                 AppIcons.filterIcon,
                 boxFit: BoxFit.contain,
                 margin: EdgeInsets.only(right: 16),
@@ -58,6 +59,7 @@ class BooksScreen extends StatelessWidget {
                     bookName: bookList[index].bookName,
                     description: bookList[index].description,
                   ),
+                  onPressed: () => Navigator.pushNamed(context, RouteGenerator.bookDescriptionScreen),
                 ),
                 separatorBuilder: (context, index) => const SizedBox(
                   height: 8,

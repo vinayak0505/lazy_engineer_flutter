@@ -11,4 +11,7 @@ class AppIcons {
   static const String userIcon = "assets/icons/user.svg";
   static const String filterIcon = "assets/icons/filter.svg";
   static const String downloadIcon = "assets/icons/download.svg";
+  static const String fullTimeIcon = "assets/icons/full_time.svg";
+  static const String employeesIcon = "assets/icons/employees.svg";
+  static const String recruitingIcon = "assets/icons/recruiting.svg";
 }

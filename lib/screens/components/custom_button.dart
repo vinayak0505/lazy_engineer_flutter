@@ -5,15 +5,15 @@ import 'package:lazy_engineer/screens/components/custom_image.dart';
 import '../../config/theme/app_theme.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
-    Key? key,
-    required this.onPressed,
-    this.text,
-    this.icon,
-    this.color = AppThemes.primaryColor1,
-    this.isBig = false,
-    this.borderColor
-  }) : super(key: key);
+  const CustomButton(
+      {Key? key,
+      required this.onPressed,
+      this.text,
+      this.icon,
+      this.color = AppThemes.primaryColor1,
+      this.isBig = false,
+      this.borderColor})
+      : super(key: key);
 
   final void Function() onPressed;
   final String? text;
@@ -38,10 +38,11 @@ class CustomButton extends StatelessWidget {
     );
   }
 
-  factory CustomButton.secondary({required void Function() onPressed,String? icon,String? text}) {
+  factory CustomButton.secondary(
+      {required void Function() onPressed, String? icon, String? text}) {
     return CustomButton(
       onPressed: onPressed,
-      icon:icon,
+      icon: icon,
       text: text,
       color: AppThemes.secondColor,
       borderColor: AppThemes.primaryColor1,
@@ -67,7 +68,7 @@ class CustomButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (icon != null) CustomImage(icon!),
+            if (icon != null) CustomIcon(icon!),
             if (icon != null && text != null) const Spacer(),
             if (text != null)
               Text(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CustomImage extends StatelessWidget {
+class CustomIcon extends StatelessWidget {
   final double? height;
   final double? width;
   final String image;
@@ -9,7 +9,7 @@ class CustomImage extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
 
-  const CustomImage(
+  const CustomIcon(
     this.image, {
     Key? key,
     this.height,
