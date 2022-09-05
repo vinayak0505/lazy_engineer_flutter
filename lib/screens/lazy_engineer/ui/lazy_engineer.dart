@@ -4,7 +4,7 @@ import 'package:lazy_engineer/helper/snackbar.dart';
 
 import '../../Authentication/logic/login_bloc/auth_cubit.dart';
 import '../../Authentication/ui/login_screen.dart';
-import '../../home_screen/ui/home_screen.dart';
+import '../../bottom_navigation/ui/bottom_nav_screen.dart';
 import '../../splash_screen.dart';
 
 class LazyEngineer extends StatelessWidget {
@@ -12,24 +12,20 @@ class LazyEngineer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: BlocConsumer<AuthCubit, AuthState>(
-          listener: (context, state) {
-            state.whenOrNull(
-              authorized: (e) => showSnackbar(context, 'Authorized'),
-              unathorized: (e) => showSnackbar(context, 'Unathorized $e'),
-            );
-          },
-          builder: (context, state) {
-            return state.map(
-              authorized: (c) => const HomeScreen(),
-              unathorized: (c) => const LoginScreen(),
-              initial: (c) => const SplashPage(),
-            );
-          },
-        ),
-      ),
+    return BlocConsumer<AuthCubit, AuthState>(
+      listener: (context, state) {
+        state.whenOrNull(
+          authorized: (e) => showSnackbar(context, 'Authorized'),
+          unathorized: (e) => showSnackbar(context, 'Unathorized $e'),
+        );
+      },
+      builder: (context, state) {
+        return state.map(
+          authorized: (c) => const BottomNavScreen(),
+          unathorized: (c) => const LoginScreen(),
+          initial: (c) => const SplashPage(),
+        );
+      },
     );
   }
 }

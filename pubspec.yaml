@@ -41,6 +41,7 @@ dependencies:
 
   ### logic
   flutter_bloc: ^8.0.1
+  equatable: ^2.0.5
 
   ### network
   dio: ^4.0.6

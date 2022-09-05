@@ -26,5 +26,5 @@ class User {
         'branch': branch,
         'year': year
       };
-  factory User.dummy() => User(userId: "001", userName: "Harman Jaggi", university: "GTBIT", branch: "B.Tech", year: 2);
+  factory User.dummy() => User(userId: '001', userName: 'Harman Jaggi', university: 'GTBIT', branch: 'B.Tech', year: 2);
 }

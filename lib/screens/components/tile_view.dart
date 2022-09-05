@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
-import 'package:lazy_engineer/screens/components/cached_image.dart';
+import 'package:lazy_engineer/screens/components/custom_image.dart';
 
 class TileView extends StatelessWidget {
   const TileView(
@@ -29,7 +29,7 @@ class TileView extends StatelessWidget {
         decoration: kRoundedContainer,
         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
           Stack(alignment: Alignment.bottomRight, children: [
-            CachedImage(
+            CustomImage(
               image: image,
               height: height,
               width: width,
@@ -41,7 +41,7 @@ class TileView extends StatelessWidget {
                 ? Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Text(
-                      "$pages pages",
+                      '$pages pages',
                       style: theme.textTheme.caption?.copyWith(
                         color: Colors.white,
                       ),

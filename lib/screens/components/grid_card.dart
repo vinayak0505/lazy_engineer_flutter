@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/assets/images.dart';
-import 'package:lazy_engineer/config/theme/app_theme.dart';
-import 'package:lazy_engineer/screens/components/cached_image.dart';
+import 'package:lazy_engineer/screens/components/custom_image.dart';
 import '../../assets/constants/decoration.dart';
-import 'custom_image.dart';
 
-import '../home_screen/data/modal/categories_model.dart';
+import '../HomeScreen/home_screen/data/modal/categories_model.dart';
 
 class GridCard extends StatelessWidget {
   const GridCard({Key? key, required this.data}) : super(key: key);
@@ -19,7 +16,7 @@ class GridCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            CachedImage(
+            CustomImage(
               image: data.image,
               height: 120,
               radius: kRoundedRectangleRadius,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/icons.dart';
-import 'package:lazy_engineer/screens/components/custom_image.dart';
+import 'package:lazy_engineer/screens/components/custom_icon.dart';
 
 import '../../config/theme/app_theme.dart';
 
@@ -12,7 +12,8 @@ class CustomButton extends StatelessWidget {
       this.icon,
       this.color = AppThemes.primaryColor1,
       this.isBig = false,
-      this.borderColor})
+      this.borderColor,
+      this.width})
       : super(key: key);
 
   final void Function() onPressed;
@@ -21,6 +22,7 @@ class CustomButton extends StatelessWidget {
   final Color color;
   final bool isBig;
   final Color? borderColor;
+  final double? width;
 
   factory CustomButton.google({required void Function() onPressed}) {
     return CustomButton(
@@ -56,7 +58,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         shadowColor: color,
-        primary: color,
+        backgroundColor: color,
         side: BorderSide(color: borderColor ?? color),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(isBig ? 14 : 20),
@@ -64,6 +66,7 @@ class CustomButton extends StatelessWidget {
       ),
       child: SizedBox(
         height: isBig ? 48 : 34,
+        width: width,
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,

@@ -41,9 +41,9 @@ class AppThemes {
         ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: Colors.transparent,
         enableFeedback: true,
         selectedItemColor: primaryColor2,
+        unselectedItemColor: lightDarkColor,
         elevation: 0,
         type: BottomNavigationBarType.fixed,
       ),
@@ -67,6 +67,9 @@ class AppThemes {
                 fontSize: 38,
                 color: textColorDark,
                 fontWeight: FontWeight.w500,
+              ),
+               headline5: const TextStyle(
+                fontWeight: FontWeight.bold,
               ),
               subtitle2: const TextStyle(
                 color: subTitleColor,

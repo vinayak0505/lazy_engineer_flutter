@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/config/route/routes.dart';
+import 'package:lazy_engineer/screens/AccountsScreen/settings_screen/logic/settings_cubit.dart';
 import 'package:lazy_engineer/screens/Authentication/data/repo/auth_repository.dart';
 import 'package:lazy_engineer/screens/Authentication/logic/login_bloc/auth_cubit.dart';
-import 'screens/home_screen/data/repo/user_repository.dart';
-import 'screens/home_screen/logic/cubit/user_cubit.dart';
+import 'screens/HomeScreen/home_screen/data/repo/user_repository.dart';
+import 'screens/HomeScreen/home_screen/logic/cubit/user_cubit.dart';
 import 'config/theme/app_theme.dart';
 
 GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => UserCubit(UserRepository()),
         ),
-        BlocProvider(create: (context) => AuthCubit(AuthRepository()))
+        BlocProvider(create: (context) => AuthCubit(AuthRepository())),
+        BlocProvider(create: (context) => SettingsCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -4,7 +4,7 @@ import '../model/user.dart';
 import 'authorization_inceptors.dart';
 import 'dio_exception.dart';
 
-const apiBaseUrl = "https://";
+const apiBaseUrl = 'https://';
 
 class DioClient {
   late final Dio _dio;
