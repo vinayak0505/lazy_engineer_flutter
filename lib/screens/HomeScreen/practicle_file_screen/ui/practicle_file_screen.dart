@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_engineer/screens/HomeScreen/practicle_file_screen/bloc/filter_cubit.dart';
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
 import 'package:lazy_engineer/screens/components/filter_container.dart';
 import '../../../../assets/constants/lists.dart';
@@ -6,6 +8,7 @@ import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/tile_view.dart';
+import '../data/repo/filter_repository.dart';
 
 class PracticleFileScreen extends StatelessWidget {
   const PracticleFileScreen({Key? key}) : super(key: key);
@@ -13,15 +16,15 @@ class PracticleFileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController searchFileController = TextEditingController();
+    TextEditingController singleFilterController = TextEditingController();
     ThemeData theme = Theme.of(context);
     return Scaffold(
         appBar: AppBar(
-            title: Center(
-                child: Text(
+            centerTitle: true,
+            title: Text(
               files,
               style: theme.textTheme.headline4,
-              textAlign: TextAlign.center,
-            )),
+            ),
             leading: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: const CustomIcon(
@@ -40,39 +43,42 @@ class PracticleFileScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  FilterContainer(
-                      isMultiOption: true, data: multiOptionFileList),
-                  const SizedBox(height: 8),
-                  FilterContainer(
-                      isMultiOption: false, data: singleOptionFileList),
-                  const SizedBox(height: 16),
-                  CustomTextField(
-                    controller: searchFileController,
-                    suffixIcon: AppIcons.searchIcon,
-                  ),
-                  const SizedBox(height: 16),
-                  ListView.separated(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: practicleFileList.length,
-                    itemBuilder: (context, index) => TileView(
-                      image: practicleFileList[index].image,
-                      pages: practicleFileList[index].pages,
-                      child: FileDataBox(
-                        title: practicleFileList[index].title,
-                        college: practicleFileList[index].college,
-                        subject: practicleFileList[index].subject,
-                        year: practicleFileList[index].year,
+              child: BlocProvider(
+                create: (context) => FilterCubit(FilterRepository()),
+                child: Column(
+                  children: [
+                    FilterContainer.multiOption(data: multiOptionFileList),
+                    const SizedBox(height: 8),
+                    FilterContainer.singleOption(
+                        controller: singleFilterController,
+                        data: singleOptionFileList),
+                    const SizedBox(height: 16),
+                    CustomTextField(
+                      controller: searchFileController,
+                      suffixIcon: AppIcons.searchIcon,
+                    ),
+                    const SizedBox(height: 16),
+                    ListView.separated(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: practicleFileList.length,
+                      itemBuilder: (context, index) => TileView(
+                        image: practicleFileList[index].image,
+                        pages: practicleFileList[index].pages,
+                        child: FileDataBox(
+                          title: practicleFileList[index].title,
+                          college: practicleFileList[index].college,
+                          subject: practicleFileList[index].subject,
+                          year: practicleFileList[index].year,
+                        ),
+                        onPressed: () {},
                       ),
-                      onPressed: () {},
-                    ),
-                    separatorBuilder: (context, index) => const SizedBox(
-                      height: 8,
-                    ),
-                  )
-                ],
+                      separatorBuilder: (context, index) => const SizedBox(
+                        height: 8,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ),

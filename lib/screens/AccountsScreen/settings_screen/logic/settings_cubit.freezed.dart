@@ -18,38 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SettingsState {
   bool get pushNotification => throw _privateConstructorUsedError;
   bool get darkMode => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool pushNotification, bool darkMode) setting,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool pushNotification, bool darkMode)? setting,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool pushNotification, bool darkMode)? setting,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Settings value) setting,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Settings value)? setting,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Settings value)? setting,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SettingsStateCopyWith<SettingsState> get copyWith =>
@@ -141,7 +109,7 @@ class _$_Settings implements _Settings {
 
   @override
   String toString() {
-    return 'SettingsState.setting(pushNotification: $pushNotification, darkMode: $darkMode)';
+    return 'SettingsState(pushNotification: $pushNotification, darkMode: $darkMode)';
   }
 
   @override
@@ -164,62 +132,6 @@ class _$_Settings implements _Settings {
   @override
   _$$_SettingsCopyWith<_$_Settings> get copyWith =>
       __$$_SettingsCopyWithImpl<_$_Settings>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(bool pushNotification, bool darkMode) setting,
-  }) {
-    return setting(pushNotification, darkMode);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool pushNotification, bool darkMode)? setting,
-  }) {
-    return setting?.call(pushNotification, darkMode);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool pushNotification, bool darkMode)? setting,
-    required TResult orElse(),
-  }) {
-    if (setting != null) {
-      return setting(pushNotification, darkMode);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Settings value) setting,
-  }) {
-    return setting(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Settings value)? setting,
-  }) {
-    return setting?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Settings value)? setting,
-    required TResult orElse(),
-  }) {
-    if (setting != null) {
-      return setting(this);
-    }
-    return orElse();
-  }
 }
 
 abstract class _Settings implements SettingsState {

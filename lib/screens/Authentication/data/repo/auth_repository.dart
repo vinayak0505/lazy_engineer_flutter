@@ -17,7 +17,7 @@ class AuthRepository {
       // }
       //
       throw ErrorDescription('lol');
-      await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 1));
       User user = User.dummy();
       return user.userId;
     } catch (e) {
@@ -29,7 +29,7 @@ class AuthRepository {
   /// login and return [Token] from internet
   /// parameter [email, password]
   Future<String> logIn(String email, String password) async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     return "token";
   }
 

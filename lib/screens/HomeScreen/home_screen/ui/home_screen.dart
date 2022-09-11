@@ -19,22 +19,24 @@ class HomeScreen extends StatelessWidget {
     final User user = User.dummy();
     ThemeData theme = Theme.of(context);
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 28),
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            _nametag(theme, user.userName),
-            const SizedBox(height: 12),
-            _searchBar(theme),
-            const SizedBox(height: 28),
-            SliderView(imageList: sliderImageList),
-            const SizedBox(height: 24),
-            _titleLabel(lastOpened, theme),
-            const SizedBox(height: 140),
-            _titleLabel(categories, theme),
-            const SizedBox(height: 16),
-            _staggeredView()
-          ]),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 28),
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              _nametag(theme, user.userName),
+              const SizedBox(height: 12),
+              _searchBar(theme),
+              const SizedBox(height: 28),
+              SliderView(imageList: sliderImageList),
+              const SizedBox(height: 24),
+              _titleLabel(lastOpened, theme),
+              const SizedBox(height: 140),
+              _titleLabel(categories, theme),
+              const SizedBox(height: 16),
+              _staggeredView()
+            ]),
+          ),
         ),
       ),
     );
@@ -121,7 +123,7 @@ class HomeScreen extends StatelessWidget {
             const Spacer(),
             GestureDetector(
                 child: SvgPicture.asset(
-                  AppIcons.notifications,
+                  AppIcons.notificationCircleIcon,
                   width: 48,
                   height: 48,
                 ),

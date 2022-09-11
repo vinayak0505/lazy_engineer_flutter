@@ -28,6 +28,9 @@ class AppIcons {
   static const String profileIcon = 'assets/icons/profile.svg';
   static const String mailIcon = 'assets/icons/mail.svg';
   static const String notificationIcon = 'assets/icons/notification.svg';
+  static const String notificationCircleIcon = 'assets/icons/navigation_circle.svg';
   static const String rateUsIcon = 'assets/icons/rate_us.svg';
   static const String settingsIcon = 'assets/icons/settings.svg';
+  static const String mobileIcon = 'assets/icons/mobile.svg';
+  static const String editIcon = 'assets/icons/edit.svg';
 }

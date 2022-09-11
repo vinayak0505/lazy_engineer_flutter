@@ -54,8 +54,8 @@ class SettingsScreen extends StatelessWidget {
                   value: state.pushNotification,
                   onChanged: (value) {
                     context
-                        .watch<SettingsCubit>()
-                        .togglePushNotification(!value);
+                        .read<SettingsCubit>()
+                        .togglePushNotification(value);
                   },
                   activeColor: theme.primaryColor,
                 );
@@ -68,7 +68,7 @@ class SettingsScreen extends StatelessWidget {
                 return CupertinoSwitch(
                   value: state.darkMode,
                   onChanged: (value) {
-                    context.watch<SettingsCubit>().toggleDarkMode(!value);
+                    context.read<SettingsCubit>().toggleDarkMode(value);
                   },
                   activeColor: theme.primaryColor,
                 );

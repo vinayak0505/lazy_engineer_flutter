@@ -7,7 +7,6 @@ import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/custom_text_field.dart';
 import '../../../components/tile_view.dart';
-
 class BookScreen extends StatelessWidget {
   const BookScreen({Key? key}) : super(key: key);
 

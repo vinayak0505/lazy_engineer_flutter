@@ -60,7 +60,7 @@ class UploadFileScreen extends StatelessWidget {
                 DropdownTab(
                     hintText: searchUniversityOptional, list: universityList),
                 const SizedBox(height: 16),
-                FilterContainer(isMultiOption: true, data: filterNotesList),
+                FilterContainer.multiOption(data: filterNotesList),
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.titleLarge),
                 const SizedBox(height: 8),

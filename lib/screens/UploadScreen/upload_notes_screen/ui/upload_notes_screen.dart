@@ -3,7 +3,6 @@ import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/screens/components/custom_button.dart';
 import 'package:lazy_engineer/screens/components/custom_image.dart';
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
-import 'package:lazy_engineer/screens/components/filter_container.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/icons.dart';
 import '../../../../assets/images.dart';
@@ -20,9 +19,9 @@ class UploadNotesScreen extends StatelessWidget {
 
     TextEditingController titleController = TextEditingController();
     TextEditingController aboutController = TextEditingController();
-    TextEditingController universityController = TextEditingController();
-    TextEditingController multiFilterController = TextEditingController();
-    TextEditingController tagsController = TextEditingController();
+    // TextEditingController universityController = TextEditingController();
+    // TextEditingController multiFilterController = TextEditingController();
+    // TextEditingController tagsController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -38,8 +37,8 @@ class UploadNotesScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: SafeArea(
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -65,7 +64,7 @@ class UploadNotesScreen extends StatelessWidget {
                 DropdownTab(
                     hintText: searchUniversityOptional, list: universityList),
                 const SizedBox(height: 16),
-                FilterContainer(isMultiOption: true, data: filterNotesList),
+                // FilterContainer.multiOption(data: filterNotesList),
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.titleLarge),
                 const SizedBox(height: 8),

@@ -5,9 +5,11 @@ import 'package:lazy_engineer/screens/Authentication/ui/register_screen.dart';
 import 'package:lazy_engineer/screens/AccountsScreen/accounts_screen/ui/account_screen.dart';
 import 'package:lazy_engineer/screens/HomeScreen/book_description_screen/ui/book_description_screen.dart';
 import 'package:lazy_engineer/screens/AccountsScreen/settings_screen/ui/settings_screen.dart';
+import 'package:lazy_engineer/screens/UploadScreen/upload_file_screen/ui/upload_file_screen.dart';
 import 'package:lazy_engineer/screens/UploadScreen/upload_notes_screen/ui/upload_notes_screen.dart';
 import 'package:lazy_engineer/screens/HomeScreen/home_screen/ui/home_screen.dart';
 import 'package:lazy_engineer/screens/HomeScreen/jobs_description_screen/ui/jobs_description_screen.dart';
+import 'package:lazy_engineer/screens/UploadScreen/upload_screen/ui/upload_screen.dart';
 import '../../screens/HomeScreen/book_screen/ui/book_screen.dart';
 import '../../screens/HomeScreen/jobs_screen/ui/jobs_screen.dart';
 import '../../screens/HomeScreen/notes_screen/ui/notes_screen.dart';
@@ -19,7 +21,9 @@ class RouteGenerator {
   static const String lazyEngineer = '/';
   static const String registerScreen = '/register';
   static const String homeScreen = '/home';
-  static const String downloadScreen = '/download';
+  static const String uploadScreen = '/upload';
+  static const String uploadNotesScreen = '/upload_notes';
+  static const String uploadFileScreen = '/upload_file';
   static const String accountScreen = '/account';
   static const String settingsScreen = '/settings';
   static const String profileScreen = '/profile';
@@ -61,8 +65,13 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const JobsDescriptionScreen());
 
       // UploadScreens
-      case downloadScreen:
+      case uploadScreen:
+        return MaterialPageRoute(builder: (_) => const UploadScreen());
+      case uploadNotesScreen:
         return MaterialPageRoute(builder: (_) => const UploadNotesScreen());
+      case uploadFileScreen:
+        return MaterialPageRoute(builder: (_) => const UploadFileScreen
+        ());
 
       // Account Screens
       case accountScreen:

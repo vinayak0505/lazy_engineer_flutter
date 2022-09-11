@@ -1,5 +1,10 @@
 const String lazyEngineer = 'Lazy Engineer';
 
+
+const String home = 'Home';
+const String upload = 'Upload';
+const String accounts = 'Accounts';
+
 const String hello = 'Hello,';
 const String searchCourse = 'Search Course';
 const String lastOpened = 'Last Opened';
@@ -32,10 +37,18 @@ const String collegeIntended = 'College :  ';
 const String yearIntended = 'Year :        ';
 const String typeIntended = 'Type :        ';
 
+const String rateThisBook = 'Rate this book';
+const String similarBooks = 'Similar books';
+const String seeAll = 'SEE ALL';
+const String download = 'Download';
+const String rating = 'Rating';
+const String pages = 'pages';
+const String ebook = 'E-Book';
+const String physicalBook = 'Physical Book';
+
 
 // uplaod
 const String uploadNotes = 'Upload Notes';
-const String upload = 'Upload';
 const String title = 'Title';
 const String about = 'About';
 const String aboutNotes = 'About Notes';
@@ -47,6 +60,7 @@ const String paper = 'Paper';
 const String book = 'Book';
 const String jobRequest = 'Job Request';
 
+// account
 const String settings = 'Settings';
 const String account = 'Account';
 const String profile = 'Profile';
@@ -63,7 +77,12 @@ const String notification = 'Notification';
 const String rateUs = 'Rate us';
 const String invitePeopleToTheSite = 'Invite people to the site';
 const String whatsNew = 'What’s new';
-
+const String contact = 'Contact';
+const String mobile = 'Mobile';
+const String education = 'Education';
+const String experienceLevel = 'Experience Level';
+const String jobType = 'Job Type';
+const String location = 'Location';
 
 class DummyStrings {
   static const String name = 'Harman Jaggi';

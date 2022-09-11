@@ -6,7 +6,7 @@ part 'settings_state.dart';
 part 'settings_cubit.freezed.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
-  SettingsCubit() : super(const SettingsState.setting(false, false));
+  SettingsCubit() : super(const SettingsState(false, false));
 
   void togglePushNotification(bool newValue) {
     emit(state.copyWith(pushNotification: newValue));

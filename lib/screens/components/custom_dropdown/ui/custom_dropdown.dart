@@ -12,24 +12,27 @@ class DropdownTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return DropdownButton<String>(
-        menuMaxHeight: 300,
-        iconSize: 8,
-        elevation: 0,
-        isExpanded: true,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(kRoundedRectangleRadius),
-        ),
-        hint: hintText != null ? Text(hintText!) : null,
-        icon: const CustomIcon(AppIcons.downArrowIcon),
-        items: list
-            .map((String item) => DropdownMenuItem<String>(
-                value: item,
-                child: Text(
-                  item,
-                  style: theme.textTheme.labelMedium,
-                )))
-            .toList(),
-        onChanged: (value) {});
+    return Container(
+      decoration: kRoundedContainer,
+      child: DropdownButton<String>(
+          menuMaxHeight: 300,
+          iconSize: 8,
+          elevation: 0,
+          isExpanded: true,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(kRoundedRectangleRadius),
+          ),
+          hint: hintText != null ? Text(hintText!) : null,
+          icon: const CustomIcon(AppIcons.downArrowIcon),
+          items: list
+              .map((String item) => DropdownMenuItem<String>(
+                  value: item,
+                  child: Text(
+                    item,
+                    style: theme.textTheme.labelMedium,
+                  )))
+              .toList(),
+          onChanged: (value) {}),
+    );
   }
 }

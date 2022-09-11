@@ -17,12 +17,11 @@ class NotesScreen extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     return Scaffold(
         appBar: AppBar(
-            title: Center(
-                child: Text(
+          centerTitle: true,
+            title: Text(
               notes,
               style: theme.textTheme.headline4,
-              textAlign: TextAlign.center,
-            )),
+            ),
             leading: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: const CustomIcon(
