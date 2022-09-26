@@ -35,8 +35,11 @@ class BookDescriptionScreen extends StatelessWidget {
           child: BlocBuilder<BookDescriptionCubit, BookDescriptionState>(
             builder: (context, state) {
               return state.when(
-                  failure: (e) => FailiureScreen(e),
-                  loading: () => const LoadingScreen(),
+                  failure: (e) => FailureScreen(e),
+                  loading: () {
+                    context.read<BookDescriptionCubit>().getData();
+                    return const LoadingScreen();
+                  },
                   success:
                       (BDModal data, double starRating, List<bool> seeAll) {
                     return Column(
@@ -256,7 +259,11 @@ class FiveStarRating extends StatelessWidget {
         return GestureDetector(
           onTap: () {
             context.read<BookDescriptionCubit>().getRating(index);
-            rating = context.read<BookDescriptionCubit>().data!.userRating!.toDouble();
+            rating = context
+                .read<BookDescriptionCubit>()
+                .data!
+                .userRating!
+                .toDouble();
           },
           child: CustomIcon(
               index < rating

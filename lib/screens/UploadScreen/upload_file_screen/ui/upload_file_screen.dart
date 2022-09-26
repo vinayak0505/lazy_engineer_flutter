@@ -8,16 +8,16 @@ import 'package:lazy_engineer/screens/components/filter_container.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/icons.dart';
 import '../../../../assets/images.dart';
-import '../../../components/custom_dropdown/ui/custom_dropdown.dart';
+import '../../../components/custom_dropdown.dart';
 import '../../../components/custom_icon.dart';
 
 class UploadFileScreen extends StatelessWidget {
-  const UploadFileScreen ({Key? key}) : super(key: key);
+  const UploadFileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    
+
     TextEditingController titleController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
@@ -57,7 +57,7 @@ class UploadFileScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 Text(filter, style: theme.textTheme.titleLarge),
                 const SizedBox(height: 16),
-                DropdownTab(
+                CustomDropdown(
                     hintText: searchUniversityOptional, list: universityList),
                 const SizedBox(height: 16),
                 FilterContainer.multiOption(data: filterNotesList),

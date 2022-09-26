@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
@@ -14,19 +15,16 @@ class UploadCubit extends HydratedCubit<UploadState> {
     required String title,
     required String about,
     required String university,
-    required List<String> filterSingleOption,
     required List<String> filterMultiOption,
     required List<String> tags,
   }) {
     data.title = title;
     data.about = about;
     data.university = university;
-    data.filterSingleOption = filterSingleOption;
     data.filterMultiOption = filterMultiOption;
     data.tags = tags;
-
-    // pageSetter = 1;
-    // emit(CBSState.form(_pageNumber, data));
+    emit(UploadState.success(data));
+    debugPrint('========${data.title}, ${data.about}, ${data.university}, ${data.tags}');
   }
 
   @override

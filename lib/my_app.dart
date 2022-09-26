@@ -9,16 +9,6 @@ import 'screens/HomeScreen/home_screen/logic/cubit/user_cubit.dart';
 import 'config/theme/app_theme.dart';
 
 GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();
-
-// class ScrollBehaviorModified extends ScrollBehavior {
-//   const ScrollBehaviorModified();
-
-//   @override
-//   ScrollPhysics getScrollPhysics(BuildContext context) {
-//     return const AlwaysScrollableScrollPhysics();
-//   }
-// }
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 

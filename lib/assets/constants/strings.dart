@@ -59,6 +59,7 @@ const String showMoreC = 'SHOW MORE';
 const String paper = 'Paper';
 const String book = 'Book';
 const String jobRequest = 'Job Request';
+const String searchTags = 'Search Tags';
 
 // account
 const String settings = 'Settings';

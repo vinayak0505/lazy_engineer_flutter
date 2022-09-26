@@ -7,8 +7,9 @@ class BDRepository {
   }
   Future<BDModal?> getInfo() async {
     try {
-      // await Future.delayed(const Duration(seconds: 3));
+      await Future.delayed(const Duration(seconds: 3));
       return BDModal.dummy();
+      // return null;
     } catch (e) {
       debugPrint(e.toString());
       return null;

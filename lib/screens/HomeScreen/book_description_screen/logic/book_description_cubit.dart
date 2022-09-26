@@ -21,10 +21,13 @@ class BookDescriptionCubit extends Cubit<BookDescriptionState> {
     try {
       data = await _repository.getInfo();
       if (data != null) {
-        emit(
-          BookDescriptionState.success(
-              data!, 0, List.filled(data!.reviews?.length ?? 0, false)),
-        );
+        debugPrint('=====${data.toString()}');
+        debugPrint('=====${data!.about}');
+        emit(BookDescriptionState.success(
+          data!,
+          0,
+          List.filled(data!.reviews?.length ?? 0, false),
+        ));
       } else {
         emit(const BookDescriptionState.loading());
       }

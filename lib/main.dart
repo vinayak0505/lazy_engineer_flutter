@@ -8,8 +8,8 @@ import 'my_app.dart';
 void main() async {
   ///remove the leading hash (#) from the URL of your Flutter web app,
   setPathUrlStrategy();
-  runApp(const MyApp());
-  // HydratedBlocOverrides.runZoned(() => runApp(const MyApp()),
-  //     storage: await HydratedStorage.build(
-  //         storageDirectory: await getApplicationDocumentsDirectory()));
+  WidgetsFlutterBinding.ensureInitialized();
+  HydratedBlocOverrides.runZoned(() => runApp(const MyApp()),
+      storage: await HydratedStorage.build(
+          storageDirectory: await getApplicationDocumentsDirectory()));
 }

@@ -2,14 +2,14 @@ class UploadData {
   String? title;
   String? about;
   String? university;
-  List<String>? filterSingleOption;
+  String? filterSingleOption;
   List<String>? filterMultiOption;
   List<String>? tags;
   UploadData({
     String? title,
     String? about,
     String? university,
-    List<String>? filterSingleOption,
+    String? filterSingleOption,
     List<String>? filterMultiOption,
     List<String>? tags,
   });
