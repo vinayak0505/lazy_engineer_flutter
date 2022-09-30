@@ -6,6 +6,7 @@ import 'package:lazy_engineer/screens/components/custom_button.dart';
 
 import '../../../../assets/icons.dart';
 import '../../../../config/route/routes.dart';
+import '../../../Authentication/logic/login_bloc/auth_cubit.dart';
 import '../../../components/custom_icon.dart';
 import '../logic/settings_cubit.dart';
 
@@ -94,7 +95,9 @@ class SettingsScreen extends StatelessWidget {
             Center(
                 child: CustomButton(
               text: logOut,
-              onPressed: () {},
+              onPressed: () {
+                context.read<AuthCubit>().signOut();
+              },
               width: 130,
             ))
           ],

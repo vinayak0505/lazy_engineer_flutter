@@ -7,9 +7,11 @@ import '../../../assets/constants/strings.dart';
 import '../../../assets/icons.dart';
 import '../../../assets/images.dart';
 import '../../../config/route/routes.dart';
+import '../../../model/signin_model/signin_model.dart';
 import '../../components/custom_button.dart';
 import '../../components/custom_text_field.dart';
 import '../logic/login_bloc/auth_cubit.dart';
+import '../logic/validation/input_validation.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -51,11 +53,11 @@ class AuthBackground extends StatelessWidget {
   }
 }
 
-class LoginAccount extends StatelessWidget {
+class LoginAccount extends StatelessWidget with InputValidationMixin {
   const LoginAccount({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    final formGlobalKey = GlobalKey<FormState>();
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
     ThemeData theme = Theme.of(context);
@@ -72,75 +74,84 @@ class LoginAccount extends StatelessWidget {
               ),
               boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)]),
           padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
-          child: Column(
-            children: [
-              const SizedBox(height: 18),
-              Text(loginAccount, style: theme.textTheme.headline5),
-              const SizedBox(height: 28),
-              CustomTextField(
+          child: Form(
+            key: formGlobalKey,
+            child: Column(
+              children: [
+                const SizedBox(height: 18),
+                Text(loginAccount, style: theme.textTheme.headline5),
+                const SizedBox(height: 28),
+                CustomTextField(
                   controller: emailController,
                   hintText: email,
                   prefixIcon: AppIcons.emailIcon,
-                  keyboardType: TextInputType.emailAddress),
-              const SizedBox(height: 16),
-              CustomTextField(
-                controller: passwordController,
-                hintText: password,
-                prefixIcon: AppIcons.passwordIcon,
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-              ),
-              const SizedBox(height: 4),
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(forgetPassword,
-                      style: theme.textTheme.bodySmall
-                          ?.copyWith(fontWeight: FontWeight.bold))),
-              const SizedBox(height: 18),
-              CustomButton(
-                text: login,
-                isBig: true,
-                onPressed: () {
-                  context
-                      .read<AuthCubit>()
-                      .logIn(emailController.text, passwordController.text);
-                },
-              ),
-              const SizedBox(height: 16),
-              horizontalOrLine(theme),
-              const SizedBox(height: 12),
-              Row(children: [
-                Expanded(
-                  child: CustomButton.google(onPressed: () {}),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: emailValidation,
                 ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: CustomButton.facebook(onPressed: () {}),
+                const SizedBox(height: 16),
+                CustomTextField(
+                  controller: passwordController,
+                  hintText: password,
+                  prefixIcon: AppIcons.passwordIcon,
+                  obscureText: true,
+                  keyboardType: TextInputType.visiblePassword,
+                  validator: passwordValidation,
                 ),
-              ]),
-              const SizedBox(height: 20),
-              Align(
-                alignment: Alignment.center,
-                child: RichText(
-                  text: TextSpan(
-                    style: theme.textTheme.bodyMedium,
-                    children: <TextSpan>[
-                      const TextSpan(text: dontHaveAccount),
-                      TextSpan(
-                        text: createOne,
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Navigator.pushNamed(
-                                context, RouteGenerator.registerScreen);
-                          },
-                      ),
-                    ],
+                const SizedBox(height: 4),
+                Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(forgetPassword,
+                        style: theme.textTheme.bodySmall
+                            ?.copyWith(fontWeight: FontWeight.bold))),
+                const SizedBox(height: 18),
+                CustomButton(
+                  text: login,
+                  isBig: true,
+                  onPressed: () {
+                    if (formGlobalKey.currentState!.validate()) {
+                      SignInModel user = SignInModel(
+                          email: emailController.text,
+                          password: passwordController.text);
+                      context.read<AuthCubit>().signIn(user);
+                    }
+                  },
+                ),
+                const SizedBox(height: 16),
+                horizontalOrLine(theme),
+                const SizedBox(height: 12),
+                Row(children: [
+                  Expanded(
+                    child: CustomButton.google(onPressed: () {}),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: CustomButton.facebook(onPressed: () {}),
+                  ),
+                ]),
+                const SizedBox(height: 20),
+                Align(
+                  alignment: Alignment.center,
+                  child: RichText(
+                    text: TextSpan(
+                      style: theme.textTheme.bodyMedium,
+                      children: <TextSpan>[
+                        const TextSpan(text: dontHaveAccount),
+                        TextSpan(
+                          text: createOne,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pushNamed(
+                                  context, RouteGenerator.registerScreen);
+                            },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 12),
-            ],
+                const SizedBox(height: 12),
+              ],
+            ),
           ),
         ),
       ),

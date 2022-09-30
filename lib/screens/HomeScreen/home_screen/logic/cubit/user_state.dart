@@ -1,9 +1,9 @@
-import '../../../../../model/user.dart';
+import 'package:lazy_engineer/model/user/user_model.dart';
 
 abstract class UserState {}
 
 class UserFetchSuccessState extends UserState {
-  User user;
+  UserModel user;
   UserFetchSuccessState(this.user);
 }
 

@@ -1,44 +1,46 @@
 import 'package:flutter/material.dart';
-
-import '../../../../model/user.dart';
+import 'package:lazy_engineer/model/signup_model/signup_model.dart';
+import 'package:lazy_engineer/model/user_dto/user_dto.dart';
+import '../../../../model/signin_model/signin_model.dart';
 import '../../../../network/dio_client.dart';
+import '../datasource/auth_local_datasource.dart';
 
 class AuthRepository {
   final DioClient _apiProvider = DioClient();
+  final AuthLocalDataSource _localDataSource = AuthLocalDataSource();
 
   /// return [Token] in String format
-  Future<String?> getToken() async {
+  String? getToken() {
+    return _localDataSource.getToken();
+  }
+
+  /// login and return [Token] from internet
+  /// parameter [email, password]
+  Future<String?> signUp(SignUpModel user) async {
     try {
-      // final session = await Amplify.Auth.fetchAuthSession();
-      // if (session.isSignedIn) {
-      //   return await fetchUserIdFromAttributes();
-      // } else {
-      //   return null;
-      // }
-      //
-      throw ErrorDescription('lol');
-      await Future.delayed(const Duration(seconds: 1));
-      User user = User.dummy();
-      return user.userId;
+      print('===repository before');
+      UserDto? userDetail = await _apiProvider.signUp(user);
+      print('===repository $userDetail');
+      if (userDetail != null) {
+        _localDataSource.setUser(userDetail);
+        debugPrint('====signUp: ${userDetail.data.token}');
+        return userDetail.data.token;
+      }
+      return null;
     } catch (e) {
       debugPrint(e.toString());
       return null;
     }
   }
 
-  /// login and return [Token] from internet
-  /// parameter [email, password]
-  Future<String> logIn(String email, String password) async {
-    await Future.delayed(const Duration(seconds: 1));
-    return "token";
-  }
-
   /// signIn and return [Token] from internet
   /// parameter [name, email, password]
-  Future<String?> signIn(String fullName, String email, String password) async {
+  Future<String?> signIn(SignInModel user) async {
     try {
-      User user = User.dummy();
-      return user.userId;
+      SignInModel userInput = user;
+      String? token = await _apiProvider.signIn(userInput);
+      debugPrint('====signIn: $token');
+      return token;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -46,7 +48,14 @@ class AuthRepository {
   }
 
   Future logout() async {
-    try {} catch (e) {
+    try {
+      String? token = getToken();
+      if (token != null) {
+        await _apiProvider.signOut(token);
+        _localDataSource.clearUser();
+        debugPrint('====signOut');
+      }
+    } catch (e) {
       debugPrint(e.toString());
       rethrow;
     }

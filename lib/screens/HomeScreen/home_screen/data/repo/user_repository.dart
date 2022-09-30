@@ -1,19 +1,16 @@
 import 'package:flutter/foundation.dart';
-
-import '../../../../../model/user.dart';
-import '../../../../../network/dio_client.dart';
+import 'package:lazy_engineer/model/user/user_model.dart';
 
 class UserRepository {
   UserRepository() {
     getUser();
   }
-  final DioClient _apiProvider = DioClient();
   int id = 21;
-  Future<User?> getUser() async {
+  Future<UserModel?> getUser() async {
     try {
-      User user = User.dummy();
+      UserModel user = UserModel.dummy();
       return user;
-      return _apiProvider.getUser(id: id);
+      // return _apiProvider.getUser(id: id);
     } catch (e) {
       debugPrint(e.toString());
       return null;

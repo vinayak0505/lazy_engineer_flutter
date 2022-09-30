@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/screens/AccountsScreen/profile_screen/ui/profile_screen.dart';
 import 'package:lazy_engineer/screens/Authentication/ui/login_screen.dart';
 import 'package:lazy_engineer/screens/Authentication/ui/register_screen.dart';
 import 'package:lazy_engineer/screens/AccountsScreen/accounts_screen/ui/account_screen.dart';
