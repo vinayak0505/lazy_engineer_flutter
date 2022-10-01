@@ -20,6 +20,7 @@ mixin _$AuthState {
   TResult when<TResult extends Object?>({
     required TResult Function(String token) authorized,
     required TResult Function(String? error) unathorized,
+    required TResult Function() loading,
     required TResult Function() initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$AuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String token)? authorized,
     TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
     TResult Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$AuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String token)? authorized,
     TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),
   }) =>
@@ -42,6 +45,7 @@ mixin _$AuthState {
   TResult map<TResult extends Object?>({
     required TResult Function(Authorized value) authorized,
     required TResult Function(UnAuthorized value) unathorized,
+    required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthInitial value) initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +53,7 @@ mixin _$AuthState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Authorized value)? authorized,
     TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
     TResult Function(AuthInitial value)? initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +61,7 @@ mixin _$AuthState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Authorized value)? authorized,
     TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
     TResult Function(AuthInitial value)? initial,
     required TResult orElse(),
   }) =>
@@ -143,6 +149,7 @@ class _$Authorized implements Authorized {
   TResult when<TResult extends Object?>({
     required TResult Function(String token) authorized,
     required TResult Function(String? error) unathorized,
+    required TResult Function() loading,
     required TResult Function() initial,
   }) {
     return authorized(token);
@@ -153,6 +160,7 @@ class _$Authorized implements Authorized {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String token)? authorized,
     TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
     TResult Function()? initial,
   }) {
     return authorized?.call(token);
@@ -163,6 +171,7 @@ class _$Authorized implements Authorized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String token)? authorized,
     TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),
   }) {
@@ -177,6 +186,7 @@ class _$Authorized implements Authorized {
   TResult map<TResult extends Object?>({
     required TResult Function(Authorized value) authorized,
     required TResult Function(UnAuthorized value) unathorized,
+    required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthInitial value) initial,
   }) {
     return authorized(this);
@@ -187,6 +197,7 @@ class _$Authorized implements Authorized {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Authorized value)? authorized,
     TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
     TResult Function(AuthInitial value)? initial,
   }) {
     return authorized?.call(this);
@@ -197,6 +208,7 @@ class _$Authorized implements Authorized {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Authorized value)? authorized,
     TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
     TResult Function(AuthInitial value)? initial,
     required TResult orElse(),
   }) {
@@ -282,6 +294,7 @@ class _$UnAuthorized implements UnAuthorized {
   TResult when<TResult extends Object?>({
     required TResult Function(String token) authorized,
     required TResult Function(String? error) unathorized,
+    required TResult Function() loading,
     required TResult Function() initial,
   }) {
     return unathorized(error);
@@ -292,6 +305,7 @@ class _$UnAuthorized implements UnAuthorized {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String token)? authorized,
     TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
     TResult Function()? initial,
   }) {
     return unathorized?.call(error);
@@ -302,6 +316,7 @@ class _$UnAuthorized implements UnAuthorized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String token)? authorized,
     TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),
   }) {
@@ -316,6 +331,7 @@ class _$UnAuthorized implements UnAuthorized {
   TResult map<TResult extends Object?>({
     required TResult Function(Authorized value) authorized,
     required TResult Function(UnAuthorized value) unathorized,
+    required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthInitial value) initial,
   }) {
     return unathorized(this);
@@ -326,6 +342,7 @@ class _$UnAuthorized implements UnAuthorized {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Authorized value)? authorized,
     TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
     TResult Function(AuthInitial value)? initial,
   }) {
     return unathorized?.call(this);
@@ -336,6 +353,7 @@ class _$UnAuthorized implements UnAuthorized {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Authorized value)? authorized,
     TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
     TResult Function(AuthInitial value)? initial,
     required TResult orElse(),
   }) {
@@ -353,6 +371,122 @@ abstract class UnAuthorized implements AuthState {
   @JsonKey(ignore: true)
   _$$UnAuthorizedCopyWith<_$UnAuthorized> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AuthLoadingCopyWith<$Res> {
+  factory _$$AuthLoadingCopyWith(
+          _$AuthLoading value, $Res Function(_$AuthLoading) then) =
+      __$$AuthLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AuthLoadingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$AuthLoadingCopyWith<$Res> {
+  __$$AuthLoadingCopyWithImpl(
+      _$AuthLoading _value, $Res Function(_$AuthLoading) _then)
+      : super(_value, (v) => _then(v as _$AuthLoading));
+
+  @override
+  _$AuthLoading get _value => super._value as _$AuthLoading;
+}
+
+/// @nodoc
+
+class _$AuthLoading implements AuthLoading {
+  const _$AuthLoading();
+
+  @override
+  String toString() {
+    return 'AuthState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AuthLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String token) authorized,
+    required TResult Function(String? error) unathorized,
+    required TResult Function() loading,
+    required TResult Function() initial,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String token)? authorized,
+    TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
+    TResult Function()? initial,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String token)? authorized,
+    TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
+    TResult Function()? initial,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Authorized value) authorized,
+    required TResult Function(UnAuthorized value) unathorized,
+    required TResult Function(AuthLoading value) loading,
+    required TResult Function(AuthInitial value) initial,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Authorized value)? authorized,
+    TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthInitial value)? initial,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Authorized value)? authorized,
+    TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
+    TResult Function(AuthInitial value)? initial,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthLoading implements AuthState {
+  const factory AuthLoading() = _$AuthLoading;
 }
 
 /// @nodoc
@@ -397,6 +531,7 @@ class _$AuthInitial implements AuthInitial {
   TResult when<TResult extends Object?>({
     required TResult Function(String token) authorized,
     required TResult Function(String? error) unathorized,
+    required TResult Function() loading,
     required TResult Function() initial,
   }) {
     return initial();
@@ -407,6 +542,7 @@ class _$AuthInitial implements AuthInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String token)? authorized,
     TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
     TResult Function()? initial,
   }) {
     return initial?.call();
@@ -417,6 +553,7 @@ class _$AuthInitial implements AuthInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String token)? authorized,
     TResult Function(String? error)? unathorized,
+    TResult Function()? loading,
     TResult Function()? initial,
     required TResult orElse(),
   }) {
@@ -431,6 +568,7 @@ class _$AuthInitial implements AuthInitial {
   TResult map<TResult extends Object?>({
     required TResult Function(Authorized value) authorized,
     required TResult Function(UnAuthorized value) unathorized,
+    required TResult Function(AuthLoading value) loading,
     required TResult Function(AuthInitial value) initial,
   }) {
     return initial(this);
@@ -441,6 +579,7 @@ class _$AuthInitial implements AuthInitial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Authorized value)? authorized,
     TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
     TResult Function(AuthInitial value)? initial,
   }) {
     return initial?.call(this);
@@ -451,6 +590,7 @@ class _$AuthInitial implements AuthInitial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Authorized value)? authorized,
     TResult Function(UnAuthorized value)? unathorized,
+    TResult Function(AuthLoading value)? loading,
     TResult Function(AuthInitial value)? initial,
     required TResult orElse(),
   }) {

@@ -22,10 +22,12 @@ class AuthLocalDataSource {
   Future setUser(UserDto user) async {
     _initprefs();
     await prefs?.setString(_tokenKey, user.data.token);
-    await prefs?.setString(_userIdKey, user.data.userDetail.id);
     await prefs?.setString(_userNameKey, user.data.userDetail.fullName);
     await prefs?.setString(_emailKey, user.data.userDetail.email);
-    await prefs?.setString(_universityKey, user.data.userDetail.univercity!);
+    String? university = user.data.userDetail.univercity;
+    if (university != null) {
+      await prefs?.setString(_universityKey, university);
+    }
   }
 
   Future<UserModel> getUser() async {

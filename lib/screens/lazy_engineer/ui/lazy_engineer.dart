@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/helper/snackbar.dart';
+import 'package:lazy_engineer/screens/components/loading_screen.dart';
 
 import '../../Authentication/logic/login_bloc/auth_cubit.dart';
 import '../../Authentication/ui/login_screen.dart';
@@ -23,6 +24,7 @@ class LazyEngineer extends StatelessWidget {
         return state.map(
           authorized: (c) => const BottomNavScreen(),
           unathorized: (c) => const LoginScreen(),
+          loading: (c) => const LoadingScreen(),
           initial: (c) => const SplashPage(),
         );
       },

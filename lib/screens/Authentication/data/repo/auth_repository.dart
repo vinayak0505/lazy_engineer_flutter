@@ -18,9 +18,7 @@ class AuthRepository {
   /// parameter [email, password]
   Future<String?> signUp(SignUpModel user) async {
     try {
-      print('===repository before');
       UserDto? userDetail = await _apiProvider.signUp(user);
-      print('===repository $userDetail');
       if (userDetail != null) {
         _localDataSource.setUser(userDetail);
         debugPrint('====signUp: ${userDetail.data.token}');

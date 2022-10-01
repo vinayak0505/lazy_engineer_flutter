@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart' as string;
 import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/model/signup_model/signup_model.dart';
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
@@ -37,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
       child: Row(mainAxisSize: MainAxisSize.min, children: [
         SvgPicture.asset(AppIcons.lazyEngineerIcon),
         const SizedBox(width: 8),
-        Text(lazyEngineer,
+        Text(string.lazyEngineer,
             style: theme.textTheme.headline5
                 ?.copyWith(fontWeight: FontWeight.w600))
       ]),
@@ -75,12 +75,12 @@ class RegisterAccount extends StatelessWidget with InputValidationMixin {
                 const SizedBox(height: 18),
                 Align(
                     alignment: Alignment.topCenter,
-                    child: Text(registerAccount,
+                    child: Text(string.registerAccount,
                         style: theme.textTheme.headline5)),
                 const SizedBox(height: 28),
                 CustomTextField(
                   controller: fullNameController,
-                  hintText: fullName,
+                  hintText: string.fullName,
                   prefixIcon: AppIcons.userIcon,
                   keyboardType: TextInputType.name,
                   validator: usernameValidation,
@@ -88,7 +88,7 @@ class RegisterAccount extends StatelessWidget with InputValidationMixin {
                 const SizedBox(height: 16),
                 CustomTextField(
                   controller: emailController,
-                  hintText: email,
+                  hintText: string.email,
                   prefixIcon: AppIcons.emailIcon,
                   keyboardType: TextInputType.emailAddress,
                   validator: emailValidation,
@@ -96,7 +96,7 @@ class RegisterAccount extends StatelessWidget with InputValidationMixin {
                 const SizedBox(height: 16),
                 CustomTextField(
                   controller: passwordController,
-                  hintText: password,
+                  hintText: string.password,
                   prefixIcon: AppIcons.passwordIcon,
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
@@ -105,7 +105,7 @@ class RegisterAccount extends StatelessWidget with InputValidationMixin {
                 const SizedBox(height: 16),
                 CustomTextField(
                   controller: confirmPasswordController,
-                  hintText: confirmPassword,
+                  hintText: string.confirmPassword,
                   prefixIcon: AppIcons.passwordIcon,
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
@@ -116,23 +116,14 @@ class RegisterAccount extends StatelessWidget with InputValidationMixin {
                 ),
                 const SizedBox(height: 18),
                 CustomButton(
-                  text: register,
+                  text: string.register,
                   onPressed: () {
-                    debugPrint('===onpress');
                     if (formGlobalKey.currentState!.validate()) {
-                      debugPrint('===getvalidated');
                       SignUpModel user = SignUpModel(
-                          userName: fullName, email: email, password: password);
-                          debugPrint('===before');
+                          fullName: fullNameController.text,
+                          email: emailController.text,
+                          password: passwordController.text);
                       context.read<AuthCubit>().signUp(user);
-                      debugPrint('===after');
-                      // BlocListener<AuthCubit, AuthState>(
-                      //   listener: (context, state) {
-                      //     debugPrint('===before');
-                      //     context.read<AuthCubit>().signUp(user);
-                      //     debugPrint('===after');
-                      //   },
-                      // );
                     }
                   },
                 ),
@@ -155,9 +146,9 @@ class RegisterAccount extends StatelessWidget with InputValidationMixin {
                     text: TextSpan(
                         style: theme.textTheme.bodyMedium,
                         children: <TextSpan>[
-                          const TextSpan(text: alreadyHaveAccount),
+                          const TextSpan(text: string.alreadyHaveAccount),
                           TextSpan(
-                              text: goToLogin,
+                              text: string.goToLogin,
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold),
                               recognizer: TapGestureRecognizer()
@@ -179,7 +170,7 @@ class RegisterAccount extends StatelessWidget with InputValidationMixin {
       const Expanded(
         child: Divider(indent: 20.0, endIndent: 10.0, thickness: 1),
       ),
-      Text(or, style: theme.textTheme.bodyMedium),
+      Text(string.or, style: theme.textTheme.bodyMedium),
       const Expanded(
         child: Divider(indent: 10.0, endIndent: 20.0, thickness: 1),
       ),

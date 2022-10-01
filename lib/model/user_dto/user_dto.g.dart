@@ -34,7 +34,6 @@ _$_UserDetail _$$_UserDetailFromJson(Map<String, dynamic> json) =>
       json['password'] as String,
       json['univercity'] as String?,
       DateTime.parse(json['timeCreated'] as String),
-      json['id'] as String,
     );
 
 Map<String, dynamic> _$$_UserDetailToJson(_$_UserDetail instance) =>
@@ -44,5 +43,4 @@ Map<String, dynamic> _$$_UserDetailToJson(_$_UserDetail instance) =>
       'password': instance.password,
       'univercity': instance.univercity,
       'timeCreated': instance.timeCreated.toIso8601String(),
-      'id': instance.id,
     };

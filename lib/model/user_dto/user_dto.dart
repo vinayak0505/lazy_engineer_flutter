@@ -37,7 +37,6 @@ class UserDetail with _$UserDetail {
     String password,
     String? univercity,
     DateTime timeCreated,
-    String id,
   ) = _UserDetail;
 
   factory UserDetail.fromJson(Map<String, dynamic> json) =>

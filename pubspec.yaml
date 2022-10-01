@@ -49,6 +49,7 @@ dependencies:
 
   ### network
   dio: ^4.0.6
+  pretty_dio_logger: ^1.1.1
   retrofit_generator: ^4.1.0+1
   build_runner: ^2.2.0
   freezed_annotation: ^2.0.3

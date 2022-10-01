@@ -6,5 +6,7 @@ class AuthState with _$AuthState {
 
   const factory AuthState.unathorized(String? error) = UnAuthorized;
 
+  const factory AuthState.loading() = AuthLoading;
+
   const factory AuthState.initial() = AuthInitial;
 }

@@ -27,6 +27,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> signIn(SignInModel user) async {
     try {
+      emit(const AuthState.loading());
       token = await repository.signIn(user);
       emit(AuthState.authorized(token!));
     } catch (e) {
@@ -35,11 +36,9 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> signUp(SignUpModel user) async {
-    print('===cubit before');
     try {
-    print('===cubit before');
+      emit(const AuthState.loading());
       token = await repository.signUp(user);
-    print('===cubit after');
       emit(AuthState.authorized(token!));
     } catch (e) {
       emit(AuthState.unathorized(e.toString()));

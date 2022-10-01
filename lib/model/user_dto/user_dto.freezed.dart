@@ -338,7 +338,6 @@ mixin _$UserDetail {
   String get password => throw _privateConstructorUsedError;
   String? get univercity => throw _privateConstructorUsedError;
   DateTime get timeCreated => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -356,8 +355,7 @@ abstract class $UserDetailCopyWith<$Res> {
       String email,
       String password,
       String? univercity,
-      DateTime timeCreated,
-      String id});
+      DateTime timeCreated});
 }
 
 /// @nodoc
@@ -375,7 +373,6 @@ class _$UserDetailCopyWithImpl<$Res> implements $UserDetailCopyWith<$Res> {
     Object? password = freezed,
     Object? univercity = freezed,
     Object? timeCreated = freezed,
-    Object? id = freezed,
   }) {
     return _then(_value.copyWith(
       fullName: fullName == freezed
@@ -398,10 +395,6 @@ class _$UserDetailCopyWithImpl<$Res> implements $UserDetailCopyWith<$Res> {
           ? _value.timeCreated
           : timeCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -418,8 +411,7 @@ abstract class _$$_UserDetailCopyWith<$Res>
       String email,
       String password,
       String? univercity,
-      DateTime timeCreated,
-      String id});
+      DateTime timeCreated});
 }
 
 /// @nodoc
@@ -439,7 +431,6 @@ class __$$_UserDetailCopyWithImpl<$Res> extends _$UserDetailCopyWithImpl<$Res>
     Object? password = freezed,
     Object? univercity = freezed,
     Object? timeCreated = freezed,
-    Object? id = freezed,
   }) {
     return _then(_$_UserDetail(
       fullName == freezed
@@ -462,10 +453,6 @@ class __$$_UserDetailCopyWithImpl<$Res> extends _$UserDetailCopyWithImpl<$Res>
           ? _value.timeCreated
           : timeCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -474,7 +461,7 @@ class __$$_UserDetailCopyWithImpl<$Res> extends _$UserDetailCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UserDetail implements _UserDetail {
   const _$_UserDetail(this.fullName, this.email, this.password, this.univercity,
-      this.timeCreated, this.id);
+      this.timeCreated);
 
   factory _$_UserDetail.fromJson(Map<String, dynamic> json) =>
       _$$_UserDetailFromJson(json);
@@ -489,12 +476,10 @@ class _$_UserDetail implements _UserDetail {
   final String? univercity;
   @override
   final DateTime timeCreated;
-  @override
-  final String id;
 
   @override
   String toString() {
-    return 'UserDetail(fullName: $fullName, email: $email, password: $password, univercity: $univercity, timeCreated: $timeCreated, id: $id)';
+    return 'UserDetail(fullName: $fullName, email: $email, password: $password, univercity: $univercity, timeCreated: $timeCreated)';
   }
 
   @override
@@ -508,8 +493,7 @@ class _$_UserDetail implements _UserDetail {
             const DeepCollectionEquality()
                 .equals(other.univercity, univercity) &&
             const DeepCollectionEquality()
-                .equals(other.timeCreated, timeCreated) &&
-            const DeepCollectionEquality().equals(other.id, id));
+                .equals(other.timeCreated, timeCreated));
   }
 
   @JsonKey(ignore: true)
@@ -520,8 +504,7 @@ class _$_UserDetail implements _UserDetail {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(univercity),
-      const DeepCollectionEquality().hash(timeCreated),
-      const DeepCollectionEquality().hash(id));
+      const DeepCollectionEquality().hash(timeCreated));
 
   @JsonKey(ignore: true)
   @override
@@ -542,8 +525,7 @@ abstract class _UserDetail implements UserDetail {
       final String email,
       final String password,
       final String? univercity,
-      final DateTime timeCreated,
-      final String id) = _$_UserDetail;
+      final DateTime timeCreated) = _$_UserDetail;
 
   factory _UserDetail.fromJson(Map<String, dynamic> json) =
       _$_UserDetail.fromJson;
@@ -558,8 +540,6 @@ abstract class _UserDetail implements UserDetail {
   String? get univercity;
   @override
   DateTime get timeCreated;
-  @override
-  String get id;
   @override
   @JsonKey(ignore: true)
   _$$_UserDetailCopyWith<_$_UserDetail> get copyWith =>

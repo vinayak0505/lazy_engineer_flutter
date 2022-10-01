@@ -1,29 +1,23 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:lazy_engineer/model/user_dto/user_dto.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../model/signin_model/signin_model.dart';
 import '../model/signup_model/signup_model.dart';
-import 'authorization_inceptors.dart';
 import 'dio_exception.dart';
 
 const apiBaseUrl = 'https://lazy-engineer.herokuapp.com';
 
 class DioClient {
   late final Dio _dio;
-  DioClient()
-      : _dio = Dio(
-          BaseOptions(
-            baseUrl: apiBaseUrl,
-            connectTimeout: 5000,
-            receiveTimeout: 3000,
-            responseType: ResponseType.json,
-          ),
-        )..interceptors.add(AuthorizationInterceptor());
+  DioClient() {
+    _dio = Dio(BaseOptions(baseUrl: apiBaseUrl));
+    // _dio.interceptors.add(AuthorizationInterceptor());
+    _dio.interceptors.add(PrettyDioLogger());
+  }
 
   Future<UserDto?> signUp(SignUpModel user) async {
     try {
-    print('===dio before');
-
       final response = await _dio.post('/auth/signUp', data: user.toJson());
       UserDto userResponse = UserDto.fromJson(response.data);
       return userResponse;
