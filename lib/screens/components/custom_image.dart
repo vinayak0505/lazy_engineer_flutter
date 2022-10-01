@@ -1,72 +1,67 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../assets/images.dart';
+import 'package:lazy_engineer/assets/images.dart';
 
 class CustomImage extends StatelessWidget {
   final double? height;
   final double? width;
-  final bool? onlyTop;
-  final double? borderRadius;
-  final double? innerBorderRadius;
-  final Color? borderColor;
-  final Color? bgColor;
-  final String? svgImage;
-  final String? pngImage;
+  final bool? onlyTop, onlyLeft;
+  final double? radius;
+  final String? image;
+  final BoxFit? boxFit;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
 
   const CustomImage({
     Key? key,
+    this.image,
     this.height,
-    this.bgColor,
     this.margin,
     this.padding,
-    this.borderRadius,
-    this.innerBorderRadius,
-    this.borderColor,
     this.width,
-    this.svgImage,
-    this.pngImage,
     this.onlyTop,
+    this.radius,
+    this.boxFit,
+    this.onlyLeft,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    
     return Container(
       margin: margin ?? EdgeInsets.zero,
       padding: padding ?? EdgeInsets.zero,
-      decoration: BoxDecoration(
-        color: bgColor,
+      child: ClipRRect(
         borderRadius: onlyTop ?? false
             ? BorderRadius.only(
-                topLeft: Radius.circular(borderRadius ?? 12),
-                topRight: Radius.circular(borderRadius ?? 12))
-            : BorderRadius.circular(borderRadius ?? 12),
-        border: Border.all(color: borderColor ?? Colors.transparent),
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(innerBorderRadius ?? 12),
-        child: svgImage != null
-            ? SvgPicture.asset(
-                svgImage!,
-                width: width,
-                height: height,
-                fit: BoxFit.fill,
+                topLeft: Radius.circular(radius ?? 0),
+                topRight: Radius.circular(radius ?? 0),
               )
-            : pngImage != null
-                ? Image.asset(
-                    pngImage!,
-                    height: height,
+            : onlyLeft ?? false
+                ? BorderRadius.only(
+                    topLeft: Radius.circular(radius ?? 0),
+                    bottomLeft: Radius.circular(radius ?? 0),
+                  )
+                : BorderRadius.circular(radius ?? 0),
+        child: image != null
+            ? (image!.split('.').last == 'svg')
+                ? SvgPicture.asset(
+                    image!,
                     width: width,
-                    fit: BoxFit.fill,
+                    height: height,
+                    fit: boxFit ?? BoxFit.contain,
                   )
                 : Image.asset(
-                    AppImages.placeholder,
+                    image!,
                     height: height,
                     width: width,
-                    fit: BoxFit.fill,
-                  ),
+                    fit: boxFit ?? BoxFit.contain,
+                  )
+            : Image.asset(
+                AppImages.placeholder,
+                height: height,
+                width: width,
+                fit: boxFit ?? BoxFit.cover,
+              ),
       ),
     );
   }

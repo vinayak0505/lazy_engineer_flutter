@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../assets/animation.dart';
-import '../config/route/routes.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key, this.isHome = false}) : super(key: key);
@@ -14,21 +13,9 @@ class SplashPage extends StatelessWidget {
       body: Center(
         child: Lottie.asset(
           Animations.splash,
-          repeat: false,
-          onLoaded: (composition) {
-            _splashScreen(context, composition.duration);
-          },
+          repeat: true,
         ),
       ),
     );
-  }
-
-  _splashScreen(BuildContext context, Duration duration) {
-    if (isHome) {
-      Future.delayed(
-        duration,
-        () => Navigator.pushReplacementNamed(context, PageRoutes.homePage),
-      );
-    }
   }
 }

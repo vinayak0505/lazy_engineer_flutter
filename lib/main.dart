@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/my_app.dart';
+import 'my_app.dart';
 
-void main() {
+void main() async {
+  ///remove the leading hash (#) from the URL of your Flutter web app,
   runApp(const MyApp());
 }

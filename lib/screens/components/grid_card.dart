@@ -1,37 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/screens/components/custom_image.dart';
+import '../../assets/constants/decoration.dart';
 
-import '../home_screen/modal/categories_model.dart';
+import '../HomeScreen/home_screen/data/modal/categories_model.dart';
 
 class GridCard extends StatelessWidget {
   const GridCard({Key? key, required this.data}) : super(key: key);
   final CategoriesModel data;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.zero,
+    ThemeData theme = Theme.of(context);
+    return Container(
+      decoration: kRoundedContainer,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomImage(
-              borderRadius: 8,
-              innerBorderRadius: 8,
-              height: 100,
-              svgImage: data.image,
+              image: data.image,
+              height: 120,
+              radius: kRoundedRectangleRadius,
               onlyTop: true,
             ),
             const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(data.subtitle, style: Theme.of(context).textTheme.subtitle1),
+              child: Text(data.subtitle, style: theme.textTheme.titleLarge),
             ),
-            const SizedBox(height: 4),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(data.description,
-                  style: Theme.of(context).textTheme.bodySmall),
+              padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+              child: Text(data.description, style: theme.textTheme.bodyMedium),
             ),
           ]),
     );
