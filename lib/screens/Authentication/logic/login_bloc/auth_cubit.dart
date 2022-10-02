@@ -14,6 +14,7 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> getToken() async {
+    emit(const AuthState.authorized('token'));
     token = await repository.getToken();
     if (token != null) {
       emit(AuthState.authorized(token!));
