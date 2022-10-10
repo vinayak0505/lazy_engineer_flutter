@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lazy_engineer/model/user/user_model.dart';
-
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
-import '../../../../config/route/routes.dart';
+import '../../../../config/navigation/routes.dart';
+import '../../../../features/auth/data/models/user/user_model.dart';
 import '../../../components/custom_text_field.dart';
 import '../../../components/grid_card.dart';
 import 'components/slider_view.dart';

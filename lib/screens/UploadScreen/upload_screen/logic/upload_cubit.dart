@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 import '../data/upload_data.dart';
 
 part 'upload_state.dart';
 part 'upload_cubit.freezed.dart';
 
-class UploadCubit extends HydratedCubit<UploadState> {
+class UploadCubit extends Cubit<UploadState> {
   UploadCubit() : super(const UploadState.initial());
   UploadData data = UploadData();
 
@@ -27,7 +27,6 @@ class UploadCubit extends HydratedCubit<UploadState> {
     debugPrint('========${data.title}, ${data.about}, ${data.university}, ${data.tags}');
   }
 
-  @override
   UploadState? fromJson(Map<String, dynamic> json) {
     if (json.containsKey('data')) {
       print(json['data']);
@@ -37,7 +36,6 @@ class UploadCubit extends HydratedCubit<UploadState> {
     return const UploadInitial();
   }
 
-  @override
   Map<String, dynamic>? toJson(UploadState state) {
     return {'data': data.toJson()};
   }

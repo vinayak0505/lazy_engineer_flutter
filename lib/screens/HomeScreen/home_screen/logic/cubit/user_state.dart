@@ -1,4 +1,6 @@
-import 'package:lazy_engineer/model/user/user_model.dart';
+
+
+import '../../../../../features/auth/data/models/user/user_model.dart';
 
 abstract class UserState {}
 

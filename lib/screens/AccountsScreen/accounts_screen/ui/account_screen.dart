@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
-import 'package:lazy_engineer/config/route/routes.dart';
+import 'package:lazy_engineer/config/navigation/routes.dart';
 import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 

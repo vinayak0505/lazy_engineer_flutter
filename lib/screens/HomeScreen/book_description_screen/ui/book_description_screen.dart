@@ -14,13 +14,14 @@ import '../data/repo/bd_repository.dart';
 import '../logic/book_description_cubit.dart';
 
 class BookDescriptionScreen extends StatelessWidget {
-  const BookDescriptionScreen({Key? key}) : super(key: key);
-
+  const BookDescriptionScreen({Key? key, this.id}) : super(key: key);
+  final int? id;
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
+        title: Text(id.toString()),
         leading: GestureDetector(
           onTap: () => Navigator.pop(context),
           child: const CustomIcon(

@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/model/user/user_model.dart';
+import '../../../../../features/auth/data/models/user/user_model.dart';
 import '../../data/repo/user_repository.dart';
 import '../cubit/user_state.dart';
 

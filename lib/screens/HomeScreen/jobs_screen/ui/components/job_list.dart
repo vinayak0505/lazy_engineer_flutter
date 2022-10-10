@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../config/route/routes.dart';
+import '../../../../../config/navigation/routes.dart';
 import '../../../../components/tile_view.dart';
 import '../../data/modals/job_modal.dart';
 

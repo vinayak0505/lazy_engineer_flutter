@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
-import 'package:lazy_engineer/config/route/routes.dart';
+import 'package:lazy_engineer/config/navigation/routes.dart';
 
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/custom_text_field.dart';
 import '../../../components/tile_view.dart';
+
 class BookScreen extends StatelessWidget {
   const BookScreen({Key? key}) : super(key: key);
 
@@ -58,7 +59,12 @@ class BookScreen extends StatelessWidget {
                     bookName: bookList[index].bookName,
                     description: bookList[index].description,
                   ),
-                  onPressed: () => Navigator.pushNamed(context, RouteGenerator.bookDescriptionScreen),
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      RouteGenerator.bookDescriptionScreen,
+                    );
+                  },
                 ),
                 separatorBuilder: (context, index) => const SizedBox(
                   height: 8,

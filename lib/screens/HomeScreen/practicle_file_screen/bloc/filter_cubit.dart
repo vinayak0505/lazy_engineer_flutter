@@ -15,8 +15,8 @@ class FilterCubit extends Cubit<FilterState> {
   void getFilter(List<String> multiOption, String singleOption) async {
     emit(const FilterState.loading());
     try {
-          bool? getFilter = await _repository.getFilter(multiOption, singleOption);
-          emit(FilterState.success(multiOption, singleOption));
+      bool? getFilter = await _repository.getFilter(multiOption, singleOption);
+      emit(FilterState.success(multiOption, singleOption));
     } catch (e) {
       emit(FilterState.failure(e));
     }

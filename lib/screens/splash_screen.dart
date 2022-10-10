@@ -3,9 +3,7 @@ import 'package:lottie/lottie.dart';
 import '../assets/animation.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key, this.isHome = false}) : super(key: key);
-
-  final bool isHome;
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +11,10 @@ class SplashPage extends StatelessWidget {
       body: Center(
         child: Lottie.asset(
           Animations.splash,
-          repeat: true,
+          repeat: false,
+          onLoaded: (composition) {
+            Future.delayed(composition.duration);
+          },
         ),
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
-import '../../../../config/route/routes.dart';
+import '../../../../config/navigation/routes.dart';
 import '../../../components/grid_card.dart';
 
 class UploadScreen extends StatelessWidget {

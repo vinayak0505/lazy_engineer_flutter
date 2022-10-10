@@ -44,7 +44,6 @@ dependencies:
   ### logic
   flutter_bloc: ^8.0.1
   equatable: ^2.0.5
-  hydrated_bloc: ^8.1.0
   sqflite: ^2.1.0
 
   ### network

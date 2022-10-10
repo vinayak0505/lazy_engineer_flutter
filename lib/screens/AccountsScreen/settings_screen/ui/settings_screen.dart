@@ -5,8 +5,8 @@ import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/screens/components/custom_button.dart';
 
 import '../../../../assets/icons.dart';
-import '../../../../config/route/routes.dart';
-import '../../../Authentication/logic/login_bloc/auth_cubit.dart';
+import '../../../../config/navigation/routes.dart';
+import '../../../../features/auth/presentation/auth_cubit/auth_cubit.dart';
 import '../../../components/custom_icon.dart';
 import '../logic/settings_cubit.dart';
 
@@ -38,8 +38,8 @@ class SettingsScreen extends StatelessWidget {
             ListTile(
               title: Text(profile, style: theme.textTheme.titleMedium),
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
-
-              onTap: () => Navigator.pushNamed(context, RouteGenerator.profileScreen),
+              onTap: () =>
+                  Navigator.pushNamed(context, RouteGenerator.profileScreen),
             ),
             ListTile(
               title: Text(changePassword, style: theme.textTheme.titleMedium),
@@ -57,9 +57,7 @@ class SettingsScreen extends StatelessWidget {
                 return CupertinoSwitch(
                   value: state.pushNotification,
                   onChanged: (value) {
-                    context
-                        .read<SettingsCubit>()
-                        .togglePushNotification(value);
+                    context.read<SettingsCubit>().togglePushNotification(value);
                   },
                   activeColor: theme.primaryColor,
                 );
@@ -97,6 +95,7 @@ class SettingsScreen extends StatelessWidget {
               text: logOut,
               onPressed: () {
                 context.read<AuthCubit>().signOut();
+                Navigator.pop(context);
               },
               width: 130,
             ))
