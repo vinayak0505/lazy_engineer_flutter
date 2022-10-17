@@ -18,10 +18,11 @@ class BookDescriptionScreen extends StatelessWidget {
   final int? id;
   @override
   Widget build(BuildContext context) {
+    int? args = ModalRoute.of(context)!.settings.arguments as int?;
     ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(id.toString()),
+        title: Text('${id.toString()} ${args.toString()}'),
         leading: GestureDetector(
           onTap: () => Navigator.pop(context),
           child: const CustomIcon(

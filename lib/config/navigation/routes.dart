@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/config/navigation/routing_data.dart';
+import 'package:lazy_engineer/features/auth/presentation/pages/auth_screen.dart';
+import 'package:lazy_engineer/features/auth/presentation/pages/lazy_engineer.dart';
 import 'package:lazy_engineer/screens/AccountsScreen/accounts_screen/ui/account_screen.dart';
 import 'package:lazy_engineer/screens/HomeScreen/book_description_screen/ui/book_description_screen.dart';
 import 'package:lazy_engineer/screens/AccountsScreen/settings_screen/ui/settings_screen.dart';
 import 'package:lazy_engineer/screens/UploadScreen/upload_file_screen/ui/upload_file_screen.dart';
 import 'package:lazy_engineer/screens/UploadScreen/upload_notes_screen/ui/upload_notes_screen.dart';
-import 'package:lazy_engineer/screens/HomeScreen/home_screen/ui/home_screen.dart';
 import 'package:lazy_engineer/screens/HomeScreen/jobs_description_screen/ui/jobs_description_screen.dart';
 import 'package:lazy_engineer/screens/UploadScreen/upload_screen/ui/upload_screen.dart';
+import 'package:lazy_engineer/screens/splash_screen.dart';
 import '../../features/auth/presentation/pages/login_screen.dart';
-import '../../features/auth/presentation/pages/register_screen.dart';
 import '../../screens/AccountsScreen/profile_screen/ui/edit_profile_screen.dart';
 import '../../screens/HomeScreen/book_screen/ui/book_screen.dart';
 import '../../screens/HomeScreen/jobs_screen/ui/jobs_screen.dart';
 import '../../screens/HomeScreen/notes_screen/ui/notes_screen.dart';
 import '../../screens/HomeScreen/practicle_file_screen/ui/practicle_file_screen.dart';
 import '../../screens/HomeScreen/question_paper_screen/ui/question_paper_screen.dart';
-import '../../features/auth/presentation/pages/lazy_engineer.dart';
+import '../../screens/bottom_navigation/ui/bottom_nav_screen.dart';
 
 class RouteGenerator {
-  static const String lazyEngineer = '/';
+  static const String splashPage = '/splashPage';
+  static const String lazyEngineerScreen = '/';
+  static const String authScreen = '/auth';
   static const String loginScreen = '/login';
   static const String registerScreen = '/register';
   static const String homeScreen = '/home';
@@ -36,29 +38,44 @@ class RouteGenerator {
   static const String bookDescriptionScreen = '/book_description';
   static const String jobsScreen = '/jobs';
   static const String jobsDescriptionScreen = '/jobs_description';
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    // String? route;
-    // Map<String, String>? queryParameters;
-    // if (settings.name != null) {
-    //   var uriData = Uri.parse(settings.name!);
-    //   route = uriData.path;
-    //   queryParameters = uriData.queryParameters;
-    // }
-    // var message =
-    //     'generateRoute: Route $route, QueryParameters $queryParameters';
-    // print(message);
+  static Route<dynamic> generateRoute(
+      RouteSettings settings, bool isAuthenticated) {
+    String? route;
+    Map<String, String>? queryParameters;
+    if (settings.name != null) {
+      Uri uriData = Uri.parse(settings.name!);
+      route = uriData.path;
+      queryParameters = uriData.queryParameters;
+    }
+    String message =
+        'generateRoute: Route $route, QueryParameters $queryParameters';
+    print(message);
+
+    // if (!isAuthenticated) {
+    //   switch (settings.name) {
+    //     case splashPage:
+    //       return _getPageRoute(const SplashPage(), settings);
+    //     case loginScreen:
+    //       return _getPageRoute(const LoginScreen(), settings);
+    //     case registerScreen:
+    //       return _getPageRoute(const RegisterScreen(), settings);
+
+    //     default:
+    //       return _getPageRoute(const LoginScreen(), settings);
+    //   }
+    // } else {
     switch (settings.name) {
-      case lazyEngineer:
+      case lazyEngineerScreen:
         return _getPageRoute(const LazyEngineer(), settings);
-      // Authentication Screen
+      case splashPage:
+        return _getPageRoute(const SplashPage(), settings);
+      case authScreen:
+        return _getPageRoute(const AuthScreen(), settings);
       case loginScreen:
         return _getPageRoute(const LoginScreen(), settings);
-      case registerScreen:
-        return _getPageRoute(const RegisterScreen(), settings);
-
       // Home Screen
       case homeScreen:
-        return _getPageRoute(const HomeScreen(), settings);
+        return _getPageRoute(const BottomNavScreen(), settings);
       case notesScreen:
         return _getPageRoute(const NotesScreen(), settings);
       case questionPaperScreen:
@@ -68,9 +85,9 @@ class RouteGenerator {
       case booksScreen:
         return _getPageRoute(const BookScreen(), settings);
       case bookDescriptionScreen:
-        // int? id = int.tryParse(queryParameters!.keys.last);
-        // print('===============$id');
-        return _getPageRoute(BookDescriptionScreen(), settings);
+        int? id = int.tryParse(queryParameters!.keys.last);
+        print('===============$id');
+        return _getPageRoute(BookDescriptionScreen(id: id), settings);
       case jobsScreen:
         return _getPageRoute(const JobsScreen(), settings);
       case jobsDescriptionScreen:
@@ -93,9 +110,9 @@ class RouteGenerator {
         return _getPageRoute(const EditProfileView(), settings);
 
       default:
-        // If there is no such named route in the switch statement
         return _errorRoute();
     }
+    // }
   }
 
   static Route<dynamic> _errorRoute() {

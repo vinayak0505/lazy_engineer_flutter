@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/config/navigation/routes.dart';
@@ -17,20 +19,33 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => UserCubit(UserRepository()),
-        ),
+        BlocProvider(create: (context) => UserCubit(UserRepository())),
         BlocProvider(create: (context) => AuthCubit(AuthRepository())),
         BlocProvider(create: (context) => SettingsCubit()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.system,
-        theme: AppThemes.appThemeData[AppTheme.lightTheme],
-        builder: (context, child) => LayoutTemplate(child: child!),
-        navigatorKey: NavigationService().navigatorKey,
-        onGenerateRoute: RouteGenerator.generateRoute,
-      ),
+      child: Builder(builder: (context) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          scrollBehavior: MyScrollBehavior(),
+          themeMode: ThemeMode.system,
+          theme: AppThemes.appThemeData[AppTheme.lightTheme],
+          builder: (context, child) => LayoutTemplate(child: child!),
+          navigatorKey: NavigationService().navigatorKey,
+          onGenerateRoute: (settings) => RouteGenerator.generateRoute(
+            settings,
+            // context.read<AuthCubit>().getToken(),
+            true
+          ),
+        );
+      }),
     );
   }
+}
+
+class MyScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => { 
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+  };
 }

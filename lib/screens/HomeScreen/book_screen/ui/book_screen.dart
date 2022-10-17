@@ -63,6 +63,7 @@ class BookScreen extends StatelessWidget {
                     Navigator.pushNamed(
                       context,
                       RouteGenerator.bookDescriptionScreen,
+                      arguments: index
                     );
                   },
                 ),

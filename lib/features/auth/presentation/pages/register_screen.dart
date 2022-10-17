@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart' as string;
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
 import '../../../../assets/icons.dart';
@@ -9,36 +8,8 @@ import '../../data/models/sign_up_model/sign_up_model.dart';
 import '../auth_cubit/auth_cubit.dart';
 import '../widgets/widgets.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatelessWidget with InputValidationMixin {
   const RegisterScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueAccent,
-      body: Stack(children: const [
-        AuthBackground(),
-        RegisterAccount(),
-      ]),
-    );
-  }
-
-  Widget nameWithIcon(ThemeData theme) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 50, 16, 0),
-      child: Row(mainAxisSize: MainAxisSize.min, children: [
-        SvgPicture.asset(AppIcons.lazyEngineerIcon),
-        const SizedBox(width: 8),
-        Text(string.lazyEngineer,
-            style: theme.textTheme.headline5
-                ?.copyWith(fontWeight: FontWeight.w600))
-      ]),
-    );
-  }
-}
-
-class RegisterAccount extends StatelessWidget with InputValidationMixin {
-  const RegisterAccount({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

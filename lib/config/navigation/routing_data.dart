@@ -1,11 +1,9 @@
 class RoutingData {
-  final String route;
-  final Map<String, String> _queryParameters;
+  String? route;
+  Map<String, String>? queryParameters;
 
   RoutingData({
-    required this.route,
-    required Map<String, String> queryParameters,
-  }) : _queryParameters = queryParameters;
-
-  operator [](String key) => _queryParameters[key];
+    this.route,
+    this.queryParameters,
+  });
 }

@@ -14,7 +14,6 @@ class BottomNavScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // int currentIndex = context.watch<BottomNavCubit>().index;
     List<Widget> pages = const [
       HomeScreen(),
       UploadScreen(),
@@ -44,8 +43,8 @@ class BottomNavScreen extends StatelessWidget {
                 ),
                 child: BottomNavigationBar(
                     currentIndex: state.index,
-                    onTap: (index)
-                      => context.read<BottomNavCubit>().changeIndex(index),
+                    onTap: (index) =>
+                        context.read<BottomNavCubit>().changeIndex(index),
                     items: const [
                       BottomNavigationBarItem(
                           icon: CustomIcon(
@@ -54,11 +53,16 @@ class BottomNavScreen extends StatelessWidget {
                           ),
                           label: home),
                       BottomNavigationBarItem(
-                          icon: CustomIcon(AppIcons.uploadIcon,
-                              color: Colors.grey),
+                          icon: CustomIcon(
+                            AppIcons.uploadIcon,
+                            color: Colors.grey,
+                          ),
                           label: upload),
                       BottomNavigationBarItem(
-                          icon: CustomIcon(AppIcons.accounts), label: accounts),
+                          icon: CustomIcon(
+                            AppIcons.accounts,
+                          ),
+                          label: accounts),
                     ]),
               ),
             ),

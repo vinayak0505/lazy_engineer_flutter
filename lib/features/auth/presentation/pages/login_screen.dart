@@ -8,25 +8,8 @@ import '../../data/models/sign_in_model/sign_in_model.dart';
 import '../auth_cubit/auth_cubit.dart';
 import '../widgets/widgets.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatelessWidget with InputValidationMixin {
   const LoginScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueAccent,
-      body: Stack(children: const [
-        AuthBackground(),
-        LoginAccount(),
-      ]),
-    );
-  }
-}
-
-
-
-class LoginAccount extends StatelessWidget with InputValidationMixin {
-  const LoginAccount({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final formGlobalKey = GlobalKey<FormState>();
@@ -102,5 +85,4 @@ class LoginAccount extends StatelessWidget with InputValidationMixin {
       ),
     );
   }
-
 }

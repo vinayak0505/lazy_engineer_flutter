@@ -16,6 +16,12 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    context.watch<AuthCubit>().state.whenOrNull(
+      unathorized: (c) {
+        Navigator.pop(context);
+        Navigator.popAndPushNamed(context, RouteGenerator.loginScreen);
+      },
+    );
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -42,7 +48,10 @@ class SettingsScreen extends StatelessWidget {
                   Navigator.pushNamed(context, RouteGenerator.profileScreen),
             ),
             ListTile(
-              title: Text(changePassword, style: theme.textTheme.titleMedium),
+              title: Text(
+                changePassword,
+                style: theme.textTheme.titleMedium,
+              ),
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             ListTile(
@@ -86,19 +95,19 @@ class SettingsScreen extends StatelessWidget {
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             ListTile(
-              title:
-                  Text(termsAndConditions, style: theme.textTheme.titleMedium),
+              title: Text(
+                termsAndConditions,
+                style: theme.textTheme.titleMedium,
+              ),
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             Center(
-                child: CustomButton(
-              text: logOut,
-              onPressed: () {
-                context.read<AuthCubit>().signOut();
-                Navigator.pop(context);
-              },
-              width: 130,
-            ))
+              child: CustomButton(
+                text: logOut,
+                onPressed: () => context.read<AuthCubit>().signOut(),
+                width: 130,
+              ),
+            )
           ],
         ),
       ),
