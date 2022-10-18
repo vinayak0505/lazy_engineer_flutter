@@ -85,17 +85,17 @@ class HomeScreen extends StatelessWidget {
     String nav() {
       switch (index) {
         case 0:
-          return RouteGenerator.notesScreen;
+          return RouteGenerator.notesRoute;
         case 1:
-          return RouteGenerator.questionPaperScreen;
+          return RouteGenerator.questionPaperRoute;
         case 2:
-          return RouteGenerator.practicleFileScreen;
+          return RouteGenerator.fileRoute;
         case 3:
-          return RouteGenerator.booksScreen;
+          return RouteGenerator.booksRoute;
         case 4:
-          return RouteGenerator.jobsScreen;
+          return RouteGenerator.jobsRoute;
         default:
-          return RouteGenerator.homeScreen;
+          return RouteGenerator.homeRoute;
       }
     }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/config/navigation/routes.dart';
 
@@ -60,10 +61,9 @@ class BookScreen extends StatelessWidget {
                     description: bookList[index].description,
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      RouteGenerator.bookDescriptionScreen,
-                      arguments: index
+                    context.push(
+                      RouteGenerator.bookDescriptionRoute,
+                      extra: index
                     );
                   },
                 ),

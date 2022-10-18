@@ -10,13 +10,13 @@ import 'features/layout_template/layout_template.dart';
 import 'screens/HomeScreen/home_screen/data/repo/user_repository.dart';
 import 'screens/HomeScreen/home_screen/logic/cubit/user_cubit.dart';
 import 'config/theme/app_theme.dart';
-import 'config/navigation/navigation_service.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
+    final route = RouteGenerator().goRouter;
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => UserCubit(UserRepository())),
@@ -24,18 +24,21 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => SettingsCubit()),
       ],
       child: Builder(builder: (context) {
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
+          routerDelegate: route.routerDelegate,
+          routeInformationParser: route.routeInformationParser,
+          routeInformationProvider: route.routeInformationProvider,
           scrollBehavior: MyScrollBehavior(),
           themeMode: ThemeMode.system,
           theme: AppThemes.appThemeData[AppTheme.lightTheme],
           builder: (context, child) => LayoutTemplate(child: child!),
-          navigatorKey: NavigationService().navigatorKey,
-          onGenerateRoute: (settings) => RouteGenerator.generateRoute(
-            settings,
-            // context.read<AuthCubit>().getToken(),
-            true
-          ),
+          // navigatorKey: NavigationService().navigatorKey,
+          // onGenerateRoute: (settings) => RouteGenerator.generateRoute(
+          // settings,
+          // context.read<AuthCubit>().getToken(),
+          // true
+          // ),
         );
       }),
     );
@@ -44,8 +47,8 @@ class MyApp extends StatelessWidget {
 
 class MyScrollBehavior extends MaterialScrollBehavior {
   @override
-  Set<PointerDeviceKind> get dragDevices => { 
-    PointerDeviceKind.touch,
-    PointerDeviceKind.mouse,
-  };
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }

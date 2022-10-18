@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/login_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/register_screen.dart';
@@ -21,7 +22,7 @@ class AuthScreen extends StatelessWidget {
         state.whenOrNull(
           authorized: (c) {
             print('is Authorized');
-            Navigator.pushReplacementNamed(context, RouteGenerator.homeScreen);
+            context.go(RouteGenerator.desktopRoute);
           },
         );
       },
@@ -38,11 +39,11 @@ class AuthScreen extends StatelessWidget {
                       LoginScreen(),
                     ]),
                     Stack(
-                      alignment: AlignmentDirectional.bottomCenter,
-                      children: const [
-                      AuthBackground(),
-                      RegisterScreen(),
-                    ]),
+                        alignment: AlignmentDirectional.bottomCenter,
+                        children: const [
+                          AuthBackground(),
+                          RegisterScreen(),
+                        ]),
                   ],
                 ),
               ),
@@ -58,9 +59,12 @@ class AuthScreen extends StatelessWidget {
       child: Row(mainAxisSize: MainAxisSize.min, children: [
         SvgPicture.asset(AppIcons.lazyEngineerIcon),
         const SizedBox(width: 8),
-        Text(string.lazyEngineer,
-            style: theme.textTheme.headline5
-                ?.copyWith(fontWeight: FontWeight.w600))
+        Text(
+          string.lazyEngineer,
+          style: theme.textTheme.headline5?.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ]),
     );
   }

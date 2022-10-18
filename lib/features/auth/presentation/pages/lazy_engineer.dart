@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/screens/splash_screen.dart';
 import '../../../../config/navigation/routes.dart';
 import '../../../../screens/components/loading_screen.dart';
@@ -15,11 +16,11 @@ class LazyEngineer extends StatelessWidget {
       listener: (context, state) {
         if (state is UnAuthorized) {
           print('unauthorized');
-          Navigator.pushReplacementNamed(context, RouteGenerator.authScreen);
+          context.go(RouteGenerator.authRoute);
         }
         if (state is Authorized) {
           print('authorized');
-          Navigator.pushReplacementNamed(context, RouteGenerator.homeScreen);
+          context.go(RouteGenerator.desktopRoute);
         }
       },
       builder: (context, state) {

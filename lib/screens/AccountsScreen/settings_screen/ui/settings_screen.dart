@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/screens/components/custom_button.dart';
 
@@ -19,7 +20,7 @@ class SettingsScreen extends StatelessWidget {
     context.watch<AuthCubit>().state.whenOrNull(
       unathorized: (c) {
         Navigator.pop(context);
-        Navigator.popAndPushNamed(context, RouteGenerator.loginScreen);
+        context.go(RouteGenerator.loginRoute);
       },
     );
     return Scaffold(
@@ -45,7 +46,7 @@ class SettingsScreen extends StatelessWidget {
               title: Text(profile, style: theme.textTheme.titleMedium),
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
               onTap: () =>
-                  Navigator.pushNamed(context, RouteGenerator.profileScreen),
+                  context.push(RouteGenerator.profileRoute),
             ),
             ListTile(
               title: Text(
