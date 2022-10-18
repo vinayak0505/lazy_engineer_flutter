@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../features/auth/data/models/user/user_model.dart';
+
+import '../../../../../model/user.dart';
 import '../../data/repo/user_repository.dart';
 import '../cubit/user_state.dart';
 
@@ -11,7 +12,7 @@ class UserCubit extends Cubit<UserState> {
   void getUser() async {
     emit(UserFetchLoadingState());
     try {
-      UserModel? user = await _repository.getUser();
+      User? user = await _repository.getUser();
       if (user != null) {
         emit(UserFetchSuccessState(user));
       } else {

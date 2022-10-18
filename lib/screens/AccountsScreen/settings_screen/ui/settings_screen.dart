@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/screens/components/custom_button.dart';
 
 import '../../../../assets/icons.dart';
-import '../../../../config/navigation/routes.dart';
-import '../../../../features/auth/presentation/auth_cubit/auth_cubit.dart';
+import '../../../../config/route/routes.dart';
 import '../../../components/custom_icon.dart';
 import '../logic/settings_cubit.dart';
 
@@ -17,12 +15,6 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    context.watch<AuthCubit>().state.whenOrNull(
-      unathorized: (c) {
-        Navigator.pop(context);
-        context.go(RouteGenerator.loginRoute);
-      },
-    );
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -45,14 +37,11 @@ class SettingsScreen extends StatelessWidget {
             ListTile(
               title: Text(profile, style: theme.textTheme.titleMedium),
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
-              onTap: () =>
-                  context.push(RouteGenerator.profileRoute),
+
+              onTap: () => Navigator.pushNamed(context, RouteGenerator.profileScreen),
             ),
             ListTile(
-              title: Text(
-                changePassword,
-                style: theme.textTheme.titleMedium,
-              ),
+              title: Text(changePassword, style: theme.textTheme.titleMedium),
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             ListTile(
@@ -67,7 +56,9 @@ class SettingsScreen extends StatelessWidget {
                 return CupertinoSwitch(
                   value: state.pushNotification,
                   onChanged: (value) {
-                    context.read<SettingsCubit>().togglePushNotification(value);
+                    context
+                        .read<SettingsCubit>()
+                        .togglePushNotification(value);
                   },
                   activeColor: theme.primaryColor,
                 );
@@ -96,19 +87,16 @@ class SettingsScreen extends StatelessWidget {
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             ListTile(
-              title: Text(
-                termsAndConditions,
-                style: theme.textTheme.titleMedium,
-              ),
+              title:
+                  Text(termsAndConditions, style: theme.textTheme.titleMedium),
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             Center(
-              child: CustomButton(
-                text: logOut,
-                onPressed: () => context.read<AuthCubit>().signOut(),
-                width: 130,
-              ),
-            )
+                child: CustomButton(
+              text: logOut,
+              onPressed: () {},
+              width: 130,
+            ))
           ],
         ),
       ),

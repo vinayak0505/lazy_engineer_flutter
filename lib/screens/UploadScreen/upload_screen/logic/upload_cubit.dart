@@ -27,6 +27,7 @@ class UploadCubit extends Cubit<UploadState> {
     debugPrint('========${data.title}, ${data.about}, ${data.university}, ${data.tags}');
   }
 
+  @override
   UploadState? fromJson(Map<String, dynamic> json) {
     if (json.containsKey('data')) {
       print(json['data']);
@@ -36,6 +37,7 @@ class UploadCubit extends Cubit<UploadState> {
     return const UploadInitial();
   }
 
+  @override
   Map<String, dynamic>? toJson(UploadState state) {
     return {'data': data.toJson()};
   }

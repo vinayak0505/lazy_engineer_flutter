@@ -5,6 +5,7 @@ import 'package:lazy_engineer/screens/UploadScreen/upload_screen/logic/upload_cu
 import 'package:lazy_engineer/screens/components/custom_button.dart';
 import 'package:lazy_engineer/screens/components/custom_image.dart';
 import 'package:lazy_engineer/screens/components/custom_text_field.dart';
+import 'package:lazy_engineer/screens/tags/logic/tags_cubit.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/icons.dart';
 import '../../../../assets/images.dart';

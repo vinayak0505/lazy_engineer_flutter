@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
+import 'package:lottie/lottie.dart';
+import '../assets/animation.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -9,7 +9,12 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isAuthorised = context.read<AuthCubit>().getToken();
     return Scaffold(
-      backgroundColor: Colors.amber,
+      body: Center(
+        child: Lottie.asset(
+          Animations.splash,
+          repeat: true,
+        ),
+      ),
     );
   }
 }

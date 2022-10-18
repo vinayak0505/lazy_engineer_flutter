@@ -1,11 +1,9 @@
-
-
-import '../../../../../features/auth/data/models/user/user_model.dart';
+import '../../../../../model/user.dart';
 
 abstract class UserState {}
 
 class UserFetchSuccessState extends UserState {
-  UserModel user;
+  User user;
   UserFetchSuccessState(this.user);
 }
 

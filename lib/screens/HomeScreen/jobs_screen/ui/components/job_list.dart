@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../../../config/navigation/routes.dart';
+import '../../../../../config/route/routes.dart';
 import '../../../../components/tile_view.dart';
 import '../../data/modals/job_modal.dart';
 
@@ -26,7 +25,7 @@ class JobList extends StatelessWidget {
           date: data[index].date,
         ),
         onPressed: () =>
-            context.push(RouteGenerator.jobsDescriptionRoute),
+            Navigator.pushNamed(context, RouteGenerator.jobsDescriptionScreen),
       ),
       separatorBuilder: (context, index) => const SizedBox(
         height: 8,

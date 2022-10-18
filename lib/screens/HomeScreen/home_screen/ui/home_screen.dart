@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
-import '../../../../config/navigation/routes.dart';
-import '../../../../features/auth/data/models/user/user_model.dart';
+import '../../../../config/route/routes.dart';
+import '../../../../model/user.dart';
 import '../../../components/custom_text_field.dart';
 import '../../../components/grid_card.dart';
 import 'components/slider_view.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final UserModel user = UserModel.dummy();
+    final User user = User.dummy();
     ThemeData theme = Theme.of(context);
     return Scaffold(
       body: SafeArea(
@@ -85,17 +86,17 @@ class HomeScreen extends StatelessWidget {
     String nav() {
       switch (index) {
         case 0:
-          return RouteGenerator.notesRoute;
+          return RouteGenerator.notesScreen;
         case 1:
-          return RouteGenerator.questionPaperRoute;
+          return RouteGenerator.questionPaperScreen;
         case 2:
-          return RouteGenerator.fileRoute;
+          return RouteGenerator.practicleFileScreen;
         case 3:
-          return RouteGenerator.booksRoute;
+          return RouteGenerator.booksScreen;
         case 4:
-          return RouteGenerator.jobsRoute;
+          return RouteGenerator.jobsScreen;
         default:
-          return RouteGenerator.homeRoute;
+          return RouteGenerator.homeScreen;
       }
     }
 

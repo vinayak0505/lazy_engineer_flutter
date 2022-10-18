@@ -36,9 +36,11 @@ class CustomTextField extends StatelessWidget {
 
   factory CustomTextField.secondary(
       {required TextEditingController controller,
+      String? prefixIcon,
       String hintText = 'Enter Value'}) {
     return CustomTextField(
       controller: controller,
+      prefixIcon: prefixIcon,
       hintText: hintText,
       showBorder: false,
       underline: true,
