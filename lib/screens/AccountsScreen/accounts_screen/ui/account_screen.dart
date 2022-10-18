@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
-import 'package:lazy_engineer/config/route/routes.dart';
 import '../../../../assets/icons.dart';
+import '../../../../config/navigation/routes.dart';
 import '../../../components/custom_icon.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -30,7 +30,7 @@ class AccountScreen extends StatelessWidget {
               leading: const CustomIcon(AppIcons.profileIcon),
               title: Text(profile, style: theme.textTheme.titleMedium),
               onTap: () =>
-                  Navigator.pushNamed(context, RouteGenerator.profileScreen),
+                  Navigator.pushNamed(context, RouteGenerator.profileRoute),
             ),
             ListTile(
               leading: const CustomIcon(AppIcons.mailIcon),
@@ -53,7 +53,7 @@ class AccountScreen extends StatelessWidget {
               leading: const CustomIcon(AppIcons.settingsIcon),
               title: Text(settings, style: theme.textTheme.titleMedium),
               onTap: () =>
-                  Navigator.pushNamed(context, RouteGenerator.settingsScreen),
+                  Navigator.pushNamed(context, RouteGenerator.settingsRoute),
             ),
             ListTile(
               leading: const CustomIcon(AppIcons.starIcon),

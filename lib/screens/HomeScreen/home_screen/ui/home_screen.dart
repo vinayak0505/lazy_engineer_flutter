@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
-import '../../../../config/route/routes.dart';
+import '../../../../config/navigation/routes.dart';
 import '../../../../model/user.dart';
 import '../../../components/custom_text_field.dart';
 import '../../../components/grid_card.dart';
@@ -86,17 +86,17 @@ class HomeScreen extends StatelessWidget {
     String nav() {
       switch (index) {
         case 0:
-          return RouteGenerator.notesScreen;
+          return RouteGenerator.notesRoute;
         case 1:
-          return RouteGenerator.questionPaperScreen;
+          return RouteGenerator.questionPaperRoute;
         case 2:
-          return RouteGenerator.practicleFileScreen;
+          return RouteGenerator.fileRoute;
         case 3:
-          return RouteGenerator.booksScreen;
+          return RouteGenerator.booksRoute;
         case 4:
-          return RouteGenerator.jobsScreen;
+          return RouteGenerator.jobsRoute;
         default:
-          return RouteGenerator.homeScreen;
+          return RouteGenerator.homeRoute;
       }
     }
 

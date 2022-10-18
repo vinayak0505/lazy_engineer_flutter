@@ -52,7 +52,7 @@ class EditProfileView extends StatelessWidget {
             Text(fullName, style: theme.textTheme.headline6),
             CustomTextField.secondary(controller: fullNameController),
             const SizedBox(height: 16.0),
-            Text(description, style: theme.textTheme.headline6),
+            Text('description', style: theme.textTheme.headline6),
             const SizedBox(height: 16.0),
             CustomTextField.secondary(controller: descriptionController),
             const SizedBox(height: 16.0),

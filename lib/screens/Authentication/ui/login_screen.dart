@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../assets/constants/strings.dart';
 import '../../../assets/icons.dart';
 import '../../../assets/images.dart';
-import '../../../config/route/routes.dart';
+import '../../../config/navigation/routes.dart';
 import '../../components/custom_button.dart';
 import '../../components/custom_text_field.dart';
 import '../logic/login_bloc/auth_cubit.dart';
@@ -132,7 +132,7 @@ class LoginAccount extends StatelessWidget {
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.pushNamed(
-                                context, RouteGenerator.registerScreen);
+                                context, RouteGenerator.registerRoute);
                           },
                       ),
                     ],

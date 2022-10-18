@@ -10,7 +10,8 @@ import '../../HomeScreen/home_screen/ui/home_screen.dart';
 import '../logic/bottom_nav_cubit.dart';
 
 class BottomNavScreen extends StatelessWidget {
-  const BottomNavScreen({Key? key}) : super(key: key);
+  const BottomNavScreen({this.child, Key? key}) : super(key: key);
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +45,8 @@ class BottomNavScreen extends StatelessWidget {
                 ),
                 child: BottomNavigationBar(
                     currentIndex: state.index,
-                    onTap: (index)
-                      => context.read<BottomNavCubit>().changeIndex(index),
+                    onTap: (index) =>
+                        context.read<BottomNavCubit>().changeIndex(index),
                     items: const [
                       BottomNavigationBarItem(
                           icon: CustomIcon(
