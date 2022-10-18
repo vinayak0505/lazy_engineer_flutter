@@ -32,13 +32,6 @@ class MyApp extends StatelessWidget {
           scrollBehavior: MyScrollBehavior(),
           themeMode: ThemeMode.system,
           theme: AppThemes.appThemeData[AppTheme.lightTheme],
-          builder: (context, child) => LayoutTemplate(child: child!),
-          // navigatorKey: NavigationService().navigatorKey,
-          // onGenerateRoute: (settings) => RouteGenerator.generateRoute(
-          // settings,
-          // context.read<AuthCubit>().getToken(),
-          // true
-          // ),
         );
       }),
     );
