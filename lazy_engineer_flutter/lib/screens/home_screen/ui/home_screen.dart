@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/assets/icons.dart';
-import 'package:lazy_engineer/screens/components/grid_card.dart';
 import '../../../assets/constants/strings.dart';
 
 class HomeScreen extends StatelessWidget {

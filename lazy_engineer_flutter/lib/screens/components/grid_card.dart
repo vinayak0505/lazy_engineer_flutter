@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/screens/components/custom_image.dart';
-
 import '../home_screen/modal/categories_model.dart';
+import 'custom_image.dart';
 
 class GridCard extends StatelessWidget {
   const GridCard({Key? key, required this.data}) : super(key: key);

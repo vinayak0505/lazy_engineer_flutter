@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/config/route/routes.dart';
-import 'package:lazy_engineer/screens/home_screen/ui/home_screen.dart';
-import 'package:lazy_engineer/screens/splash_screen.dart';
 
+import 'config/route/routes.dart';
 import 'config/theme/app_theme/app_theme.dart';
+import 'screens/home_screen/ui/home_screen.dart';
 
 GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();
 
