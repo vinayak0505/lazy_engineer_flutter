@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
-import '../../../../config/route/routes.dart';
+import '../../../../config/navigation/routes.dart';
 import '../../../components/grid_card.dart';
 
 class UploadScreen extends StatelessWidget {
@@ -50,20 +51,20 @@ class UploadScreen extends StatelessWidget {
     String nav() {
       switch (index) {
         case 0:
-          return RouteGenerator.uploadNotesScreen;
+          return RouteGenerator.uploadNotesRoute;
         case 1:
-          return RouteGenerator.questionPaperScreen;
+          return RouteGenerator.questionPaperRoute;
         case 2:
-          return RouteGenerator.uploadFileScreen;
+          return RouteGenerator.uploadFileRoute;
         case 3:
-          return RouteGenerator.booksScreen;
+          return RouteGenerator.booksRoute;
         case 4:
-          return RouteGenerator.jobsScreen;
+          return RouteGenerator.jobsRoute;
         default:
-          return RouteGenerator.homeScreen;
+          return RouteGenerator.homeRoute;
       }
     }
 
-    Navigator.pushNamed(context, nav());
+    context.push(nav());
   }
 }

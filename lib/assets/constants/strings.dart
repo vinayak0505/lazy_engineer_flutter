@@ -84,7 +84,16 @@ const String education = 'Education';
 const String experienceLevel = 'Experience Level';
 const String jobType = 'Job Type';
 const String location = 'Location';
-const String description = 'Description';
+
+// validation
+const String enterValidEmail = 'Enter a valid email address';
+const String enterEmail = 'Enter email';
+const String enterValidPassword = 'Enter a valid password';
+const String enterPassword = 'Enter password';
+const String enterValidConfirmPassword = 'Confirm password is not same as password';
+const String enterConfirmPassword = 'Enter Confirm password';
+const String enterUsername = 'Enter username';
+const String enterValidUsername = 'Enter a valid username';
 
 class DummyStrings {
   static const String name = 'Harman Jaggi';

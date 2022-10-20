@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+// ignore: depend_on_referenced_packages
 import 'package:url_strategy/url_strategy.dart';
 import 'my_app.dart';
 

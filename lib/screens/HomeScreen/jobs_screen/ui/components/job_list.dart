@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/config/navigation/routes.dart';
 
-import '../../../../../config/route/routes.dart';
 import '../../../../components/tile_view.dart';
 import '../../data/modals/job_modal.dart';
 
@@ -25,7 +25,7 @@ class JobList extends StatelessWidget {
           date: data[index].date,
         ),
         onPressed: () =>
-            Navigator.pushNamed(context, RouteGenerator.jobsDescriptionScreen),
+            Navigator.pushNamed(context, RouteGenerator.jobsDescriptionRoute),
       ),
       separatorBuilder: (context, index) => const SizedBox(
         height: 8,

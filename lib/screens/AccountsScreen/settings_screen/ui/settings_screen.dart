@@ -5,7 +5,7 @@ import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/screens/components/custom_button.dart';
 
 import '../../../../assets/icons.dart';
-import '../../../../config/route/routes.dart';
+import '../../../../config/navigation/routes.dart';
 import '../../../components/custom_icon.dart';
 import '../logic/settings_cubit.dart';
 
@@ -38,7 +38,7 @@ class SettingsScreen extends StatelessWidget {
               title: Text(profile, style: theme.textTheme.titleMedium),
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
 
-              onTap: () => Navigator.pushNamed(context, RouteGenerator.profileScreen),
+              onTap: () => Navigator.pushNamed(context, RouteGenerator.profileRoute),
             ),
             ListTile(
               title: Text(changePassword, style: theme.textTheme.titleMedium),

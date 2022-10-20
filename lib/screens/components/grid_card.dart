@@ -21,6 +21,7 @@ class GridCard extends StatelessWidget {
               height: 120,
               radius: kRoundedRectangleRadius,
               onlyTop: true,
+              boxFit: BoxFit.fill,
             ),
             const SizedBox(height: 16),
             Padding(

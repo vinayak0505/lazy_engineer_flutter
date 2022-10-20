@@ -19,7 +19,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   getProfileData() async {
     emit(const ProfileState.profileLoading());
     try {
-      data = await _repository.getProfileData();
+      data = _repository.getProfileData();
       if (data != null) {
         emit(ProfileState.profileSuccess(data!));
       } else {
