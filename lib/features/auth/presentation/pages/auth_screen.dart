@@ -5,11 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/login_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/register_screen.dart';
-import 'package:lazy_engineer/screens/components/loading_screen.dart';
 
 import '../../../../assets/constants/strings.dart' as string;
 import '../../../../assets/icons.dart';
-import '../../../../config/navigation/routes.dart';
 import '../widgets/widgets.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -17,39 +15,22 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          authorized: (c) {
-            print('is Authorized');
-            context.go(RouteGenerator.desktopRoute);
-          },
-        );
-      },
-      builder: (context, state) {
-        return state.whenOrNull(
-              unathorized: (c) => Scaffold(
-                backgroundColor: Colors.blueAccent,
-                body: PageView(
-                  physics: const NeverScrollableScrollPhysics(),
-                  controller: context.read<AuthCubit>().controller,
-                  children: [
-                    Stack(children: const [
-                      AuthBackground(),
-                      LoginScreen(),
-                    ]),
-                    Stack(
-                        alignment: AlignmentDirectional.bottomCenter,
-                        children: const [
-                          AuthBackground(),
-                          RegisterScreen(),
-                        ]),
-                  ],
-                ),
-              ),
-            ) ??
-            const LoadingScreen();
-      },
+    return Scaffold(
+      backgroundColor: Colors.blueAccent,
+      body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: context.read<AuthCubit>().controller,
+        children: [
+          Stack(children: const [
+            AuthBackground(),
+            LoginScreen(),
+          ]),
+          Stack(alignment: AlignmentDirectional.bottomCenter, children: const [
+            AuthBackground(),
+            RegisterScreen(),
+          ]),
+        ],
+      ),
     );
   }
 

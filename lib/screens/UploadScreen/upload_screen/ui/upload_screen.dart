@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../config/navigation/routes.dart';
@@ -64,6 +65,6 @@ class UploadScreen extends StatelessWidget {
       }
     }
 
-    Navigator.pushNamed(context, nav());
+    context.push(nav());
   }
 }

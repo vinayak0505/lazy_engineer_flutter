@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
@@ -100,7 +101,7 @@ class HomeScreen extends StatelessWidget {
       }
     }
 
-    Navigator.pushNamed(context, nav());
+    context.push(nav());
   }
 
   Widget _nametag(ThemeData theme, String name) {

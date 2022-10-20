@@ -53,7 +53,6 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> signIn(SignInModel user) async {
     try {
       emit(const AuthState.loading());
-      print('after');
       token = await repository.signIn(user);
       print(token);
       if (token != null) {

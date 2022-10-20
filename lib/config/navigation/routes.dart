@@ -16,15 +16,15 @@ import 'package:lazy_engineer/screens/UploadScreen/upload_notes_screen/ui/upload
 import 'package:lazy_engineer/screens/UploadScreen/upload_screen/ui/upload_screen.dart';
 import 'package:lazy_engineer/screens/bottom_navigation/ui/bottom_nav_screen.dart';
 import 'package:lazy_engineer/screens/components/error_screen.dart';
-
-
+import 'package:lazy_engineer/screens/components/loading_screen.dart';
 class RouteGenerator {
-  static const String splashPage = '/splashPage';
   static const String initialRoute = '/';
+  static const String splashPage = '/splashPage';
   static const String authRoute = '/auth';
   static const String loginRoute = '/login';
   static const String registerRoute = '/register';
   static const String desktopRoute = '/desktop';
+  static const String loadingRoute = '/loading';
 
   /// Home Screen
   static const String homeRoute = '/home';
@@ -66,8 +66,13 @@ class RouteGenerator {
         path: authRoute,
         builder: (_, __) => const AuthScreen(),
       ),
+      GoRoute(
+        path: loadingRoute,
+        builder: (_, __) => const LoadingScreen(),
+      ),
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
+        // path: desktopRoute,
         builder: (context, state, child) {
           return BottomNavScreen(child: child);
         },
@@ -78,23 +83,23 @@ class RouteGenerator {
             builder: (_, __) => const HomeScreen(),
             routes: [
               GoRoute(
-                path: notesRoute,
+                path: notesRoute.substring(1),
                 builder: (_, __) => const NotesScreen(),
               ),
               GoRoute(
-                path: fileRoute,
+                path: fileRoute.substring(1),
                 builder: (_, __) => const PracticleFileScreen(),
               ),
               GoRoute(
-                path: questionPaperRoute,
+                path: questionPaperRoute.substring(1),
                 builder: (_, __) => const QuestionPaperScreen(),
               ),
               GoRoute(
-                path: booksRoute,
+                path: booksRoute.substring(1),
                 builder: (_, __) => const BookScreen(),
               ),
               GoRoute(
-                path: jobsRoute,
+                path: jobsRoute.substring(1),
                 builder: (_, __) => const JobsScreen(),
               ),
             ],
@@ -105,23 +110,23 @@ class RouteGenerator {
             builder: (_, __) => const UploadScreen(),
             routes: [
               GoRoute(
-                path: uploadNotesRoute,
+                path: uploadNotesRoute.substring(1),
                 builder: (_, __) => const UploadNotesScreen(),
               ),
               GoRoute(
-                path: uploadFileRoute,
+                path: uploadFileRoute.substring(1),
                 builder: (_, __) => const UploadFileScreen(),
               ),
               GoRoute(
-                path: uploadQuestionPaperRoute,
+                path: uploadQuestionPaperRoute.substring(1),
                 builder: (_, __) => Container(),
               ),
               GoRoute(
-                path: uploadBooksRoute,
+                path: uploadBooksRoute.substring(1),
                 builder: (_, __) => Container(),
               ),
               GoRoute(
-                path: uploadJobsRoute,
+                path: uploadJobsRoute.substring(1),
                 builder: (_, __) => Container(),
               ),
             ],
@@ -132,11 +137,11 @@ class RouteGenerator {
             builder: (_, __) => const AccountScreen(),
             routes: [
               GoRoute(
-                path: settingsRoute,
+                path: settingsRoute.substring(1),
                 builder: (_, __) => const SettingsScreen(),
               ),
               GoRoute(
-                path: profileRoute,
+                path: profileRoute.substring(1),
                 builder: (_, __) => const ProfileScreen(),
               ),
             ],
