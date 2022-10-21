@@ -1,6 +1,5 @@
 const String lazyEngineer = 'Lazy Engineer';
 
-
 const String home = 'Home';
 const String upload = 'Upload';
 const String accounts = 'Accounts';
@@ -31,7 +30,6 @@ const String books = 'Books';
 const String jobs = 'Jobs';
 const String questionPaper = 'Question Paper';
 
-
 const String subjectIntended = 'Subject :  ';
 const String collegeIntended = 'College :  ';
 const String yearIntended = 'Year :        ';
@@ -46,14 +44,33 @@ const String pages = 'pages';
 const String ebook = 'E-Book';
 const String physicalBook = 'Physical Book';
 
-
 // uplaod
 const String uploadNotes = 'Upload Notes';
+const String uploadPaper = 'Upload Paper';
+const String uploadFile = 'Upload File';
+const String uploadBook = 'Upload Book';
+const String uploadJobRequest = 'Upload Job Request';
 const String title = 'Title';
+const String subject = 'Subject';
+const String writter = 'Writter';
+const String company = 'Company';
+const String noOfEmployees = 'No. of Employees';
+const String payRange = 'Pay Range';
+const String salary = 'Salary';
+const String jobDescription = 'Job Description';
+const String minimumQualification = 'Minimum Qualification';
+const String aboutTheCompany = 'About the Company';
+const String companyPhotos = 'Company Photos';
+const String viewAll = 'View All';
+const String no = 'No.';
 const String about = 'About';
 const String aboutNotes = 'About Notes';
+const String aboutPaper = 'About Paper';
+const String aboutBook = 'About Book';
 const String filter = 'Filter';
 const String searchUniversityOptional = 'Search University (Optional)';
+const String searchUniversity = 'Search University';
+const String searchByName = 'Search by Name';
 const String tags = 'Tags';
 const String showMoreC = 'SHOW MORE';
 const String paper = 'Paper';
@@ -84,16 +101,7 @@ const String education = 'Education';
 const String experienceLevel = 'Experience Level';
 const String jobType = 'Job Type';
 const String location = 'Location';
-
-// validation
-const String enterValidEmail = 'Enter a valid email address';
-const String enterEmail = 'Enter email';
-const String enterValidPassword = 'Enter a valid password';
-const String enterPassword = 'Enter password';
-const String enterValidConfirmPassword = 'Confirm password is not same as password';
-const String enterConfirmPassword = 'Enter Confirm password';
-const String enterUsername = 'Enter username';
-const String enterValidUsername = 'Enter a valid username';
+const String description = 'Description';
 
 class DummyStrings {
   static const String name = 'Harman Jaggi';

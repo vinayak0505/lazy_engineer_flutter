@@ -12,8 +12,8 @@ import '../../../components/custom_text_field.dart';
 import '../../../components/tags/ui/tags_widget.dart';
 import '../cubit/upload_cubit.dart';
 
-class UploadFileScreen extends StatelessWidget {
-  const UploadFileScreen({Key? key}) : super(key: key);
+class UploadPaperScreen extends StatelessWidget {
+  const UploadPaperScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,7 @@ class UploadFileScreen extends StatelessWidget {
     List<String> listTags = [];
     TextEditingController titleController = TextEditingController();
     TextEditingController subjectController = TextEditingController();
+    TextEditingController aboutController = TextEditingController();
     TextEditingController yearController = TextEditingController();
     TextEditingController universityController = TextEditingController();
 
@@ -28,7 +29,7 @@ class UploadFileScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          uploadFile,
+          uploadPaper,
           style: theme.textTheme.headline5,
         ),
         leading: GestureDetector(
@@ -47,13 +48,13 @@ class UploadFileScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: BlocBuilder<UploadCubit, UploadState>(
                 builder: (context, state) {
-                  var uploadFile;
+                  var uploadPaper;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Center(
-                        child: CustomImage(image: AppImages.book),
-                      ),
+                          child: CustomImage(image: AppImages.book),
+                          ),
                       const SizedBox(height: 16),
                       Text(title, style: theme.textTheme.titleLarge),
                       CustomTextField.secondary(
@@ -65,6 +66,13 @@ class UploadFileScreen extends StatelessWidget {
                       CustomTextField.secondary(
                         controller: subjectController,
                         hintText: subject,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(about, style: theme.textTheme.titleLarge),
+                      const SizedBox(height: 12),
+                      CustomTextField.multiLine(
+                        controller: aboutController,
+                        hintText: aboutPaper,
                       ),
                       const SizedBox(height: 12),
                       SizedBox(
@@ -84,6 +92,8 @@ class UploadFileScreen extends StatelessWidget {
                         controller: universityController,
                       ),
                       const SizedBox(height: 16),
+                      // FilterContainer.multiOption(data: filterPaperList),
+                      const SizedBox(height: 16),
                       Text(tags, style: theme.textTheme.titleLarge),
                       const SizedBox(height: 8),
                       TagsWidget(listTags: (value) {
@@ -92,11 +102,12 @@ class UploadFileScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: CustomButton(
-                          text: uploadFile,
+                          text: uploadPaper,
                           width: 130,
                           onPressed: () {
-                            context.read<UploadCubit>().uploadFile(
+                            context.read<UploadCubit>().uploadPaper(
                                   title: titleController.text,
+                                  about: aboutController.text,
                                   subject: subjectController.text,
                                   filterMultiOption: [],
                                   tags: listTags,

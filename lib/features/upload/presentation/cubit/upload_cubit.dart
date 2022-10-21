@@ -24,7 +24,56 @@ class UploadCubit extends Cubit<UploadState> {
     data.filterMultiOption = filterMultiOption;
     data.tags = tags;
     emit(UploadState.success(data));
-    debugPrint('========${data.title}, ${data.about}, ${data.university}, ${data.tags}');
+    debugPrint(
+        '========${data.title}, ${data.about}, ${data.university}, ${data.tags}');
+  }
+
+  void uploadPaper({
+    required String title,
+    required String about,
+    required String subject,
+    required List<String> filterMultiOption,
+    required List<String> tags,
+  }) {
+    data.title = title;
+    data.about = about;
+    data.subject = subject;
+    data.filterMultiOption = filterMultiOption;
+    data.tags = tags;
+    emit(UploadState.success(data));
+    debugPrint(
+        '========${data.title}, ${data.about}, ${data.subject}, ${data.tags}');
+  }
+
+  void uploadBook({
+    required String title,
+    required String about,
+    required String writter,
+    required List<String> filterMultiOption,
+    required List<String> tags,
+  }) {
+    data.title = title;
+    data.about = about;
+    data.writter = writter;
+    data.filterMultiOption = filterMultiOption;
+    data.tags = tags;
+    emit(UploadState.success(data));
+    debugPrint(
+        '========${data.title}, ${data.about}, ${data.writter}, ${data.tags}');
+  }
+
+  void uploadFile({
+    required String title,
+    required String subject,
+    required List<String> filterMultiOption,
+    required List<String> tags,
+  }) {
+    data.title = title;
+    data.subject = subject;
+    data.filterMultiOption = filterMultiOption;
+    data.tags = tags;
+    emit(UploadState.success(data));
+    debugPrint('========${data.title}, ${data.subject}, ${data.tags}');
   }
 
   @override

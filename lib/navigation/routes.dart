@@ -13,12 +13,15 @@ import 'package:lazy_engineer/features/home/presentation/pages/jobs_screen.dart'
 import 'package:lazy_engineer/features/home/presentation/pages/notes_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/question_paper_screen.dart';
+import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
+import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_request_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_notes_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_screen.dart';
 import 'package:lazy_engineer/features/components/error_screen.dart';
 
 import '../features/bottom_navigation/ui/bottom_nav_screen.dart';
+import '../features/upload/presentation/pages/upload_paper_screen.dart';
 
 class RouteGenerator {
   static const String initialRoute = '/';
@@ -48,6 +51,8 @@ class RouteGenerator {
       '/upload/upload_question_paper';
   static const String uploadBooksRoute = '/upload/books';
   static const String uploadJobsRoute = '/upload/jobs';
+  static const String uploadPaperRoute = '/upload/question_paper';
+  static const String uploadBookRoute = '/upload/books';
 
   /// Account Screen
   static const String accountRoute = '/account';
@@ -143,15 +148,15 @@ class RouteGenerator {
               ),
               GoRoute(
                 path: 'question_paper',
-                builder: (_, __) => Container(),
+                builder: (_, __) => const UploadPaperScreen(),
               ),
               GoRoute(
                 path: 'books',
-                builder: (_, __) => Container(),
+                builder: (_, __) => const UploadBookScreen(),
               ),
               GoRoute(
                 path: 'jobs',
-                builder: (_, __) => Container(),
+                builder: (_, __) => const UploadJobRequestScreen(),
               ),
             ],
           ),

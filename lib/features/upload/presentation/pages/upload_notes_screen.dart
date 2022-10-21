@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
-import 'package:lazy_engineer/features/components/custom_button.dart';
-import 'package:lazy_engineer/features/components/custom_image.dart';
-import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/icons.dart';
 import '../../../../assets/images.dart';
+import '../../../components/custom_button.dart';
 import '../../../components/custom_dropdown.dart';
 import '../../../components/custom_icon.dart';
+import '../../../components/custom_image.dart';
+import '../../../components/custom_text_field.dart';
 import '../../../components/tags/ui/tags_widget.dart';
 import '../cubit/upload_cubit.dart';
 
@@ -58,7 +58,7 @@ class UploadNotesScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(about, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: 12),
                       CustomTextField.multiLine(
                         controller: aboutController,
                         hintText: aboutNotes,
@@ -82,18 +82,19 @@ class UploadNotesScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: CustomButton(
-                            text: uploadNotes,
-                            onPressed: () {
-                              context.read<UploadCubit>().uploadNotes(
-                                    title: titleController.text,
-                                    about: aboutController.text,
-                                    university: universityController.text,
-                                    filterMultiOption: [],
-                                    tags: listTags,
-                                  );
-                            },
-                            width: 130),
-                      )
+                          text: uploadNotes,
+                          width: 130,
+                          onPressed: () {
+                            context.read<UploadCubit>().uploadNotes(
+                                  title: titleController.text,
+                                  about: aboutController.text,
+                                  university: universityController.text,
+                                  filterMultiOption: [],
+                                  tags: listTags,
+                                );
+                          },
+                        ),
+                      ),
                     ],
                   );
                 },

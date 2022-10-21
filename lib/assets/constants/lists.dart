@@ -196,6 +196,7 @@ List<String> universityList = [
   'IIIT',
   'NSIT',
 ];
+
 List<String> filterNotesList = [
   'Topic',
   'Chapter',
@@ -207,4 +208,22 @@ List<String> tagList = [
   'Geometry',
   'Unit 1',
   'Circle',
+];
+
+List<String> yearList = [
+  '1st Year',
+  '2nd Year',
+  '3rd Year',
+  '4th Year',
+];
+
+List<String> locationList = [
+  'Gurugram',
+  'Delhi',
+  'Gurgoan',
+  'Pune',
+  'Mumbai',
+  'Chennai',
+  'Bangalore',
+  'Hyderabad',
 ];

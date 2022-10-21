@@ -28,7 +28,6 @@ class UploadScreen extends StatelessWidget {
     );
   }
 
-
   Widget _staggeredView() {
     return MasonryGridView.count(
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -53,13 +52,13 @@ class UploadScreen extends StatelessWidget {
         case 0:
           return RouteGenerator.uploadNotesRoute;
         case 1:
-          return RouteGenerator.questionPaperRoute;
+          return RouteGenerator.uploadPaperRoute;
         case 2:
           return RouteGenerator.uploadFileRoute;
         case 3:
-          return RouteGenerator.booksRoute;
+          return RouteGenerator.uploadBookRoute;
         case 4:
-          return RouteGenerator.jobsRoute;
+          return RouteGenerator.uploadJobsRoute;
         default:
           return RouteGenerator.homeRoute;
       }

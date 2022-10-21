@@ -11,5 +11,8 @@ class AppImages {
   static const String anonymousProfile = 'assets/images/anonymous_profile.png';
   static const String profileImage = 'assets/images/profile_pic.png';
   static const String uploadNotes = 'assets/images/upload_notes.png';
+  static const String book = 'assets/images/book.png';
+  static const String companyimage = 'assets/images/company_photo.png';
   static const String header = 'assets/images/header.png';
 }
+

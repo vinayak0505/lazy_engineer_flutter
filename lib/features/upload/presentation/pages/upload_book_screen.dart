@@ -12,15 +12,16 @@ import '../../../components/custom_text_field.dart';
 import '../../../components/tags/ui/tags_widget.dart';
 import '../cubit/upload_cubit.dart';
 
-class UploadFileScreen extends StatelessWidget {
-  const UploadFileScreen({Key? key}) : super(key: key);
+class UploadBookScreen extends StatelessWidget {
+  const UploadBookScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     List<String> listTags = [];
     TextEditingController titleController = TextEditingController();
-    TextEditingController subjectController = TextEditingController();
+    TextEditingController writterController = TextEditingController();
+    TextEditingController aboutController = TextEditingController();
     TextEditingController yearController = TextEditingController();
     TextEditingController universityController = TextEditingController();
 
@@ -28,7 +29,7 @@ class UploadFileScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          uploadFile,
+          uploadBook,
           style: theme.textTheme.headline5,
         ),
         leading: GestureDetector(
@@ -47,7 +48,6 @@ class UploadFileScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: BlocBuilder<UploadCubit, UploadState>(
                 builder: (context, state) {
-                  var uploadFile;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -61,10 +61,17 @@ class UploadFileScreen extends StatelessWidget {
                         hintText: title,
                       ),
                       const SizedBox(height: 16),
-                      Text(subject, style: theme.textTheme.titleLarge),
+                      Text(writter, style: theme.textTheme.titleLarge),
                       CustomTextField.secondary(
-                        controller: subjectController,
+                        controller: writterController,
                         hintText: subject,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(about, style: theme.textTheme.titleLarge),
+                      const SizedBox(height: 12),
+                      CustomTextField.multiLine(
+                        controller: aboutController,
+                        hintText: aboutBook,
                       ),
                       const SizedBox(height: 12),
                       SizedBox(
@@ -77,12 +84,7 @@ class UploadFileScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       Text(filter, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 16),
-                      CustomDropdown(
-                        hintText: searchUniversity,
-                        list: universityList,
-                        controller: universityController,
-                      ),
+                      // FilterContainer.multiOption(data: filterBookList),
                       const SizedBox(height: 16),
                       Text(tags, style: theme.textTheme.titleLarge),
                       const SizedBox(height: 8),
@@ -92,12 +94,13 @@ class UploadFileScreen extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: CustomButton(
-                          text: uploadFile,
+                          text: uploadBook,
                           width: 130,
                           onPressed: () {
-                            context.read<UploadCubit>().uploadFile(
+                            context.read<UploadCubit>().uploadBook(
                                   title: titleController.text,
-                                  subject: subjectController.text,
+                                  about: aboutController.text,
+                                  writter: writterController.text,
                                   filterMultiOption: [],
                                   tags: listTags,
                                 );
