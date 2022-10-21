@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
-import '../../../../screens/components/custom_button.dart';
-import '../../../../screens/components/custom_text_field.dart';
+import '../../../components/custom_button.dart';
+import '../../../components/custom_text_field.dart';
 import '../../data/models/sign_in_model/sign_in_model.dart';
 import '../auth_cubit/auth_cubit.dart';
 import '../widgets/widgets.dart';
@@ -22,12 +24,13 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
       child: SingleChildScrollView(
         child: Container(
           decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(36),
-                topRight: Radius.circular(36),
-              ),
-              boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)]),
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(36),
+              topRight: Radius.circular(36),
+            ),
+            boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)],
+          ),
           padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
           child: Form(
             key: formGlobalKey,
@@ -65,9 +68,11 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
                   onPressed: () {
                     if (formGlobalKey.currentState!.validate()) {
                       SignInModel user = SignInModel(
-                          email: emailController.text,
-                          password: passwordController.text);
+                        email: emailController.text,
+                        password: passwordController.text,
+                      );
                       context.read<AuthCubit>().signIn(user);
+                      context.go(RouteGenerator.initialRoute);
                     }
                   },
                 ),

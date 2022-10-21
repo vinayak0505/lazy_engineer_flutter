@@ -80,13 +80,11 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> signOut() async {
-    try {
-      emit(const AuthState.loading());
-      await repository.logout();
-      token = null;
-      emit(const AuthState.unathorized(null));
-    } catch (e) {
-      emit(AuthState.authorized(token!));
-    }
+    emit(const AuthState.loading());
+    await repository.signOut();
+    token = null;
+    // print('before');
+    emit(const AuthState.unathorized(null));
+    // print('after');
   }
 }

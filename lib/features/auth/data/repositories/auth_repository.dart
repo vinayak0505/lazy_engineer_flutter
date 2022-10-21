@@ -19,41 +19,30 @@ class AuthRepository {
   Future<String?> signUp(SignUpModel user) async {
     try {
       UserDto? userDetail = await _remoteDataSource.signUp(user);
-      if (userDetail != null) {
-        _localDataSource.setUser(userDetail);
-        return userDetail.token;
-      }
-      return null;
+      _localDataSource.setUser(userDetail);
+      return userDetail.token;
     } catch (e) {
-      debugPrint('${e.toString()} REPOSITORY');
+      debugPrint('$e REPOSITORY');
       return null;
     }
   }
 
   /// signIn and return [Token] from internet
-  /// parameter [name, email, password]
+  /// parameter [email, password]
   Future<String?> signIn(SignInModel user) async {
     try {
       UserDto? userDetail = await _remoteDataSource.signIn(user);
-      if (userDetail != null) {
-        _localDataSource.setUser(userDetail);
-        return userDetail.token;
-      }
-      return null;
+      _localDataSource.setUser(userDetail);
+      return userDetail.token;
     } catch (e) {
-      debugPrint('${e.toString()} REPOSITORY');
+      debugPrint('$e REPOSITORY');
       return null;
     }
   }
 
-  Future logout() async {
-    try {
-      String? token = getToken();
-        print('=========$token');
-        _localDataSource.clearUser();
-    } catch (e) {
-      debugPrint('${e.toString()} REPOSITORY');
-      rethrow;
-    }
+  Future signOut() async {
+    String? token = getToken();
+    print('=========$token');
+    _localDataSource.clearUser();
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../screens/components/custom_button.dart';
+import '../../../components/custom_button.dart';
 
 class GoogleFacebook extends StatelessWidget {
   const GoogleFacebook({super.key});

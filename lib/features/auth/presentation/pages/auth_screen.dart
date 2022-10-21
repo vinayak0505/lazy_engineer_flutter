@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/login_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/register_screen.dart';
+import 'package:lazy_engineer/features/components/loading_screen.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 
 import '../../../../assets/constants/strings.dart' as string;
 import '../../../../assets/icons.dart';

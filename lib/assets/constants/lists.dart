@@ -1,9 +1,9 @@
-import 'package:lazy_engineer/screens/HomeScreen/practicle_file_screen/data/modals/file_model.dart';
-import 'package:lazy_engineer/screens/HomeScreen/question_paper_screen/data/models/question_paper_model.dart';
+import 'package:lazy_engineer/features/home/data/models/file_model.dart';
+import 'package:lazy_engineer/features/home/data/models/question_paper_model.dart';
 
-import '../../screens/HomeScreen/book_screen/data/modals/book_modal.dart';
-import '../../screens/HomeScreen/home_screen/data/modal/categories_model.dart';
-import '../../screens/HomeScreen/jobs_screen/data/modals/job_modal.dart';
+import '../../features/home/data/models/book_modal.dart';
+import '../../features/home/data/models/categories_model.dart';
+import '../../features/home/data/models/job_modal.dart';
 import '../images.dart';
 
 List<CategoriesModel> categoriesList = [

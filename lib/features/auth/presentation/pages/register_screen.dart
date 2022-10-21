@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart' as string;
-import 'package:lazy_engineer/screens/components/custom_text_field.dart';
+import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import '../../../../assets/icons.dart';
-import '../../../../screens/components/custom_button.dart';
+import '../../../../navigation/routes.dart';
+import '../../../components/custom_button.dart';
 import '../../data/models/sign_up_model/sign_up_model.dart';
 import '../auth_cubit/auth_cubit.dart';
 import '../widgets/widgets.dart';
@@ -88,6 +90,7 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                         university: null,
                         password: passwordController.text);
                     context.read<AuthCubit>().signUp(user);
+                    context.go(RouteGenerator.initialRoute);
                   }
                 },
               ),

@@ -2,13 +2,13 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/config/navigation/routes.dart';
-import 'package:lazy_engineer/screens/AccountsScreen/settings_screen/logic/settings_cubit.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
+import 'features/account/presentation/cubit/settings/settings_cubit.dart';
 import 'features/auth/data/repositories/auth_repository.dart';
 import 'features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'features/layout_template/layout_template.dart';
-import 'screens/HomeScreen/home_screen/data/repo/user_repository.dart';
-import 'screens/HomeScreen/home_screen/logic/cubit/user_cubit.dart';
+import 'features/home/data/repositories/user_repository.dart';
+import 'features/home/presentation/cubit/user/user_cubit.dart';
 import 'config/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {

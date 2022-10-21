@@ -20,13 +20,13 @@ class AuthRemoteDataSource {
     return AuthRemoteDataSource._(client);
   }
 
-  Future<UserDto?> signIn(SignInModel user) async {
-    BaseResponse<UserDto>? response = await _client.signIn(user);
+  Future<UserDto> signIn(SignInModel user) async {
+    BaseResponse<UserDto> response = await _client.signIn(user);
     return response.data;
   }
 
-  Future<UserDto?> signUp(SignUpModel user) async {
-    BaseResponse<UserDto>? response = await _client.signUp(user);
+  Future<UserDto> signUp(SignUpModel user) async {
+    BaseResponse<UserDto> response = await _client.signUp(user);
     return response.data;
   }
 
