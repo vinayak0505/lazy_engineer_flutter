@@ -1,6 +1,5 @@
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'tags_state.dart';
@@ -25,7 +24,6 @@ class TagsCubit extends Cubit<TagsState> {
   void addTag(String tag) {
     List<String> newTags = List.of(state.tags);
     if (!newTags.contains(tag)) newTags.add(tag);
-    debugPrint('=======${newTags.toString()}');
     emit(TagsState(newTags));
   }
 

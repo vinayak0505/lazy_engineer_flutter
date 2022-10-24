@@ -20,7 +20,7 @@ mixin _$UploadState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$UploadState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$UploadState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) =>
@@ -127,7 +127,7 @@ class _$UploadInitial implements UploadInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return initial();
@@ -138,7 +138,7 @@ class _$UploadInitial implements UploadInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return initial?.call();
@@ -149,7 +149,7 @@ class _$UploadInitial implements UploadInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -244,7 +244,7 @@ class _$UploadLoading implements UploadLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return loading();
@@ -255,7 +255,7 @@ class _$UploadLoading implements UploadLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return loading?.call();
@@ -266,7 +266,7 @@ class _$UploadLoading implements UploadLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -323,7 +323,7 @@ abstract class _$$UploadSuccessCopyWith<$Res> {
   factory _$$UploadSuccessCopyWith(
           _$UploadSuccess value, $Res Function(_$UploadSuccess) then) =
       __$$UploadSuccessCopyWithImpl<$Res>;
-  $Res call({UploadData data});
+  $Res call({dynamic data});
 }
 
 /// @nodoc
@@ -345,7 +345,7 @@ class __$$UploadSuccessCopyWithImpl<$Res>
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as UploadData,
+              as dynamic,
     ));
   }
 }
@@ -356,7 +356,7 @@ class _$UploadSuccess implements UploadSuccess {
   const _$UploadSuccess(this.data);
 
   @override
-  final UploadData data;
+  final dynamic data;
 
   @override
   String toString() {
@@ -385,7 +385,7 @@ class _$UploadSuccess implements UploadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return success(data);
@@ -396,7 +396,7 @@ class _$UploadSuccess implements UploadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return success?.call(data);
@@ -407,7 +407,7 @@ class _$UploadSuccess implements UploadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -456,9 +456,9 @@ class _$UploadSuccess implements UploadSuccess {
 }
 
 abstract class UploadSuccess implements UploadState {
-  const factory UploadSuccess(final UploadData data) = _$UploadSuccess;
+  const factory UploadSuccess(final dynamic data) = _$UploadSuccess;
 
-  UploadData get data;
+  dynamic get data;
   @JsonKey(ignore: true)
   _$$UploadSuccessCopyWith<_$UploadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -531,7 +531,7 @@ class _$UploadFailure implements UploadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return failure(e);
@@ -542,7 +542,7 @@ class _$UploadFailure implements UploadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
@@ -553,7 +553,7 @@ class _$UploadFailure implements UploadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {

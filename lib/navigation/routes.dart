@@ -15,7 +15,7 @@ import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_sc
 import 'package:lazy_engineer/features/home/presentation/pages/question_paper_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
-import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_request_screen.dart';
+import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_notes_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_screen.dart';
 import 'package:lazy_engineer/features/components/error_screen.dart';
@@ -63,7 +63,11 @@ class RouteGenerator {
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
   static final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-  final goRouter = GoRouter(
+  final GoRouter goRouter;
+
+  RouteGenerator() : goRouter = router;
+
+  static GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
     debugLogDiagnostics: true,
     initialLocation: initialRoute,
@@ -116,10 +120,10 @@ class RouteGenerator {
                     )
                   ]),
               GoRoute(
-                path: 'jobs',
-                builder: (_, __) => const JobsScreen(),
-                routes: [
-                  GoRoute(
+                  path: 'jobs',
+                  builder: (_, __) => const JobsScreen(),
+                  routes: [
+                    GoRoute(
                       path: 'jobs_description/:id',
                       pageBuilder: (context, state) {
                         int id = int.parse(state.params['id']!);
@@ -129,8 +133,7 @@ class RouteGenerator {
                         );
                       },
                     )
-                ]
-              ),
+                  ]),
             ],
           ),
           GoRoute(

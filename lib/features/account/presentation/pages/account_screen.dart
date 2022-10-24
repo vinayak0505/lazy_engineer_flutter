@@ -14,14 +14,7 @@ class AccountScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(account, style: theme.textTheme.headline5),
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const CustomIcon(
-            AppIcons.backArrow,
-            margin: EdgeInsets.only(left: 16),
-          ),
-        ),
+        title: Text(account, style: theme.textTheme.headline4),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),

@@ -191,7 +191,7 @@ List<QuestionPaperModel> questionPaperList = [
 ];
 
 ///Uploading Screen
-List<String> universityList = [
+List<String> collegeList = [
   'GTBIT',
   'IIIT',
   'NSIT',
@@ -210,11 +210,54 @@ List<String> tagList = [
   'Circle',
 ];
 
+List<String> semisterList = [
+  '1st Semister',
+  '2nd Semister',
+  '3rd Semister',
+  '4th Semister',
+  '5th Semister',
+  '6th Semister',
+  '7th Semister',
+  '8th Semister',
+];
+
+List<String> semisterKeyList = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+];
+
 List<String> yearList = [
   '1st Year',
   '2nd Year',
   '3rd Year',
   '4th Year',
+];
+
+List<String> yearKeyList = [
+  '1',
+  '2',
+  '3',
+  '4',
+];
+
+List<String> unitList = [
+  'Unit 1',
+  'Unit 2',
+  'Unit 3',
+  'Unit 4',
+];
+
+List<String> unitKeyList = [
+  '1',
+  '2',
+  '3',
+  '4',
 ];
 
 List<String> locationList = [

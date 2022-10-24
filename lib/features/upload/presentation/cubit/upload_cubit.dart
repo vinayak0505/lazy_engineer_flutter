@@ -1,93 +1,153 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../data/models/upload_data.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_book_request.dart/upload_book_request.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_files_request.dart/upload_files_request.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_jobs_request.dart/upload_jobs_request.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_notes_request/upload_notes_request.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_paper_request/upload_paper_request.dart';
+import 'package:lazy_engineer/features/upload/data/repositories/upload_repository.dart';
 
 part 'upload_state.dart';
 part 'upload_cubit.freezed.dart';
 
 class UploadCubit extends Cubit<UploadState> {
-  UploadCubit() : super(const UploadState.initial());
-  UploadData data = UploadData();
+  UploadCubit(this.repository) : super(const UploadState.initial());
+  final UploadRepository repository;
 
   void uploadNotes({
     required String title,
-    required String about,
-    required String university,
-    required List<String> filterMultiOption,
+    String? about,
+    int? semister,
+    String? subject,
+    String? unit,
+    String? chapter,
+    String? topic,
+    required String link,
     required List<String> tags,
+    bool? rating,
   }) {
-    data.title = title;
-    data.about = about;
-    data.university = university;
-    data.filterMultiOption = filterMultiOption;
-    data.tags = tags;
-    emit(UploadState.success(data));
-    debugPrint(
-        '========${data.title}, ${data.about}, ${data.university}, ${data.tags}');
+    UploadNotesRequest notesData = UploadNotesRequest(
+      title: title,
+      about: about,
+      semister: semister,
+      subject: subject,
+      unit: unit,
+      chapter: chapter,
+      topic: topic,
+      link: link,
+      tags: tags,
+      rating: rating,
+    );
+    repository.uplaodNotes(notesData);
+    emit(UploadState.success(notesData));
   }
 
   void uploadPaper({
     required String title,
-    required String about,
-    required String subject,
-    required List<String> filterMultiOption,
+    String? subject,
+    String? semister,
+    int? year,
+    required String link,
+    String? type,
+    bool? solved,
     required List<String> tags,
+    bool? rating,
   }) {
-    data.title = title;
-    data.about = about;
-    data.subject = subject;
-    data.filterMultiOption = filterMultiOption;
-    data.tags = tags;
-    emit(UploadState.success(data));
-    debugPrint(
-        '========${data.title}, ${data.about}, ${data.subject}, ${data.tags}');
+    UploadPaperRequest paperData = UploadPaperRequest(
+      title: title,
+      subject: subject,
+      year: year,
+      link: link,
+      type: type,
+      solved: solved,
+      tags: tags,
+      rating: rating,
+    );
+    repository.uplaodPaper(paperData);
+    emit(UploadState.success(paperData));
   }
 
   void uploadBook({
     required String title,
-    required String about,
-    required String writter,
-    required List<String> filterMultiOption,
+    required List<String> writer,
+    required String subject,
+    String? about,
+    int? pages,
+    required int semister,
+    int? bookEdition,
+    int? price,
     required List<String> tags,
+    bool? rating,
   }) {
-    data.title = title;
-    data.about = about;
-    data.writter = writter;
-    data.filterMultiOption = filterMultiOption;
-    data.tags = tags;
-    emit(UploadState.success(data));
-    debugPrint(
-        '========${data.title}, ${data.about}, ${data.writter}, ${data.tags}');
+    UploadBookRequest bookData = UploadBookRequest(
+      title: title,
+      writer: writer,
+      subject: subject,
+      about: about,
+      pages: pages,
+      semister: semister,
+      bookEdition: bookEdition,
+      price: price,
+      rating: rating,
+      tags: tags,
+    );
+    repository.uplaodBook(bookData);
+    emit(UploadState.success(bookData));
   }
 
   void uploadFile({
     required String title,
-    required String subject,
-    required List<String> filterMultiOption,
+    String? subject,
+    String? college,
+    String? semister,
+    required String link,
     required List<String> tags,
+    bool? rating,
   }) {
-    data.title = title;
-    data.subject = subject;
-    data.filterMultiOption = filterMultiOption;
-    data.tags = tags;
-    emit(UploadState.success(data));
-    debugPrint('========${data.title}, ${data.subject}, ${data.tags}');
+    UploadFilesRequest fileData = UploadFilesRequest(
+      title: title,
+      subject: subject,
+      college: college,
+      semister: semister,
+      link: link,
+      tags: tags,
+      rating: rating,
+    );
+    repository.uplaodFiles(fileData);
+    emit(UploadState.success(fileData));
   }
 
-  @override
-  UploadState? fromJson(Map<String, dynamic> json) {
-    if (json.containsKey('data')) {
-      print(json['data']);
-      data = UploadData.fromJson(json['data']);
-      return const UploadInitial();
-    }
-    return const UploadInitial();
-  }
-
-  @override
-  Map<String, dynamic>? toJson(UploadState state) {
-    return {'data': data.toJson()};
+  void uploadJobs({
+    required String title,
+    required String profile,
+    required String company,
+    required String aboutCompany,
+    required String location,
+    required String jobType,
+    required String experienceLevel,
+    required String datePosted,
+    required List<String> skillsNeeded,
+    required int expectedSalary,
+    required int numOfEmployees,
+    required List<String> companyPhoto,
+    bool? rating,
+  }) {
+    UploadJobsRequest jobsData = UploadJobsRequest(
+      title: title,
+      profile: profile,
+      company: company,
+      aboutCompany: aboutCompany,
+      location: location,
+      jobType: jobType,
+      experienceLevel: experienceLevel,
+      datePosted: datePosted,
+      skillsNeeded: skillsNeeded,
+      expectedSalary: expectedSalary,
+      numOfEmployees: numOfEmployees,
+      companyPhoto: companyPhoto,
+      rating: rating,
+    );
+    repository.uplaodJobs(jobsData);
+    emit(UploadState.success(jobsData));
   }
 }

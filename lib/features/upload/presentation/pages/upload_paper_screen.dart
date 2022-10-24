@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/images.dart';
+import 'package:lazy_engineer/features/upload/data/repositories/upload_repository.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
@@ -23,45 +24,49 @@ class UploadPaperScreen extends StatelessWidget {
     TextEditingController subjectController = TextEditingController();
     TextEditingController aboutController = TextEditingController();
     TextEditingController yearController = TextEditingController();
-    TextEditingController universityController = TextEditingController();
+    TextEditingController linkController = TextEditingController();
+    TextEditingController typeController = TextEditingController();
+    bool? solvedController, ratingController;
+    List<String> tagsController = [];
 
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          uploadPaper,
-          style: theme.textTheme.headline5,
-        ),
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const CustomIcon(
-            AppIcons.backArrow,
-            margin: EdgeInsets.only(left: 16),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            uploadPaper,
+            style: theme.textTheme.headline5,
+          ),
+          leading: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: const CustomIcon(
+              AppIcons.backArrow,
+              margin: EdgeInsets.only(left: 16),
+            ),
           ),
         ),
-      ),
-      body: BlocProvider(
-        create: (context) => UploadCubit(),
-        child: SafeArea(
+        body: BlocProvider(
+          create: (context) => UploadCubit(UploadRepository()),
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: BlocBuilder<UploadCubit, UploadState>(
                 builder: (context, state) {
-                  var uploadPaper;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Center(
-                          child: CustomImage(image: AppImages.book),
-                          ),
+                        child: CustomImage(image: AppImages.book),
+                      ), 
                       const SizedBox(height: 16),
+                      //* title
                       Text(title, style: theme.textTheme.titleLarge),
                       CustomTextField.secondary(
                         controller: titleController,
                         hintText: title,
                       ),
                       const SizedBox(height: 16),
+                      //* Subject
                       Text(subject, style: theme.textTheme.titleLarge),
                       CustomTextField.secondary(
                         controller: subjectController,
@@ -84,14 +89,6 @@ class UploadPaperScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      Text(filter, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 16),
-                      CustomDropdown(
-                        hintText: searchUniversity,
-                        list: universityList,
-                        controller: universityController,
-                      ),
-                      const SizedBox(height: 16),
                       // FilterContainer.multiOption(data: filterPaperList),
                       const SizedBox(height: 16),
                       Text(tags, style: theme.textTheme.titleLarge),
@@ -105,13 +102,16 @@ class UploadPaperScreen extends StatelessWidget {
                           text: uploadPaper,
                           width: 130,
                           onPressed: () {
-                            context.read<UploadCubit>().uploadPaper(
-                                  title: titleController.text,
-                                  about: aboutController.text,
-                                  subject: subjectController.text,
-                                  filterMultiOption: [],
-                                  tags: listTags,
-                                );
+                            // context.read<UploadCubit>().uploadPaper(
+                            //     title: title,
+                            //     subject: subjectController.text,
+                            //     year: int.parse(yearController.text),
+                            //     link: linkController.text,
+                            //     type: typeController.text,
+                            //     solved: solvedController,
+                            //     tags: tagsController,
+                            //     rating: ratingController,
+                            //     );
                           },
                         ),
                       ),
