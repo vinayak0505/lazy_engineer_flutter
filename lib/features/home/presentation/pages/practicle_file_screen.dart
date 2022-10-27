@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
-import 'package:lazy_engineer/features/components/filter_container.dart';
+import 'package:lazy_engineer/features/components/single_option_filter.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
@@ -47,11 +47,11 @@ class PracticleFileScreen extends StatelessWidget {
                 create: (context) => FilterCubit(FilterRepository()),
                 child: Column(
                   children: [
-                    FilterContainer.multiOption(data: multiOptionFileList),
                     const SizedBox(height: 8),
-                    FilterContainer.singleOption(
-                        controller: singleFilterController,
-                        data: singleOptionFileList),
+                    SingleOptionFilter(
+                      controller: singleFilterController,
+                      data: singleOptionFileList,
+                    ),
                     const SizedBox(height: 16),
                     CustomTextField(
                       controller: searchFileController,

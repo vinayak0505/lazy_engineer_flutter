@@ -83,8 +83,6 @@ class AuthCubit extends Cubit<AuthState> {
     emit(const AuthState.loading());
     await repository.signOut();
     token = null;
-    // print('before');
     emit(const AuthState.unathorized(null));
-    // print('after');
   }
 }

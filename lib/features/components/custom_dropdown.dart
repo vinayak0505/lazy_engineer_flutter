@@ -3,6 +3,8 @@ import 'package:lazy_engineer/features/components/custom_icon.dart';
 import '../../assets/constants/decoration.dart';
 import '../../assets/icons.dart';
 
+// String? dropdownValue;
+
 // class CustomDropdown extends FormField<String> {
 //   CustomDropdown({
 //     Key? key,
@@ -16,49 +18,46 @@ import '../../assets/icons.dart';
 //   }) : super(
 //           key: key,
 //           validator: validator,
-//           initialValue: controller!.text,
+//           initialValue: dropdownValue,
 //           builder: (FormFieldState<String> state) {
 //             final theme = Theme.of(state.context);
-//             TextEditingController valueController =
-//                 TextEditingController(text: '');
-// return Container(
-//   width: width,
-//   decoration: kRoundedContainer,
-//   padding: const EdgeInsets.symmetric(horizontal: 16),
-//   child: DropdownButton<String>(
-//       elevation: 0,
-//       underline: const SizedBox(),
-//       isExpanded: isExpanded,
-//       hint: hintText != null ? Text(hintText) : null,
-//       value:
-//           valueController.text != '' ? valueController.text : null,
-//       icon: const CustomIcon(
-//         AppIcons.downArrowIcon,
-//         height: 8,
-//       ),
-//       items: list
-//           .map(
-//             (String item) => DropdownMenuItem<String>(
-//               value: item,
-//               child: Text(
-//                 item,
-//                 style: theme.textTheme.labelMedium,
-//               ),
-//             ),
-//           )
-//           .toList(),
-//       onChanged: (value) {
-//         if (keyList != null) {
-//           valueController.text = value!;
-//           controller.text = keyList[list.indexOf(value)];
-//         } else {
-//           valueController.text = value!;
-//           controller.text = value;
-//         }
-//         print(
-//             '=======${valueController.text} || ${controller.text}');
-//       }),
-// );
+//             return Container(
+//               width: width,
+//               decoration: kRoundedContainer,
+//               padding: const EdgeInsets.symmetric(horizontal: 16),
+//               child: DropdownButton<String>(
+//                   elevation: 0,
+//                   underline: const SizedBox(),
+//                   isExpanded: isExpanded,
+//                   hint: hintText != null ? Text(hintText) : null,
+//                   value: dropdownValue,
+//                   icon: const CustomIcon(
+//                     AppIcons.downArrowIcon,
+//                     height: 8,
+//                   ),
+//                   items: list
+//                       .map(
+//                         (String item) => DropdownMenuItem<String>(
+//                           value: item,
+//                           child: Text(
+//                             item,
+//                             style: theme.textTheme.labelMedium,
+//                           ),
+//                         ),
+//                       )
+//                       .toList(),
+//                   onChanged: (value) {
+//                     if (keyList != null) {
+//                       dropdownValue = value!;
+//                       controller.text = keyList[list.indexOf(value)];
+//                     } else {
+//                       dropdownValue = value!;
+//                       controller.text = value;
+//                     }
+//                     print(
+//                         '=======$dropdownValue || ${controller.text}');
+//                   }),
+//             );
 //           },
 //         );
 // }
@@ -87,10 +86,10 @@ class CustomDropdown extends StatefulWidget {
 }
 
 class _CustomDropdownState extends State<CustomDropdown> {
+  String? dropdownValue;
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    TextEditingController valueController = TextEditingController();
     return Container(
       width: widget.width,
       decoration: kRoundedContainer,
@@ -100,7 +99,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
           underline: const SizedBox(),
           isExpanded: widget.isExpanded,
           hint: widget.hintText != null ? Text(widget.hintText!) : null,
-          value: valueController.text != '' ? valueController.text : null,
+          value: dropdownValue,
           icon: const CustomIcon(
             AppIcons.downArrowIcon,
             height: 8,
@@ -119,18 +118,16 @@ class _CustomDropdownState extends State<CustomDropdown> {
           onChanged: (value) {
             if (widget.keyList != null) {
               setState(() {
-                valueController.text = value!;
+                dropdownValue = value!;
                 widget.controller.text =
                     widget.keyList![widget.list.indexOf(value)];
               });
             } else {
               setState(() {
-                valueController.text = value!;
+                dropdownValue = value!;
                 widget.controller.text = value;
               });
             }
-            print(
-                '=======${valueController.text} || ${widget.controller.text}');
           }),
     );
   }

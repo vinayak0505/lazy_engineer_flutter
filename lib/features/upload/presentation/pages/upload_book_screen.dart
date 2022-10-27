@@ -11,14 +11,28 @@ import '../../../components/custom_dropdown.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/custom_image.dart';
 import '../../../components/custom_text_field.dart';
-import '../../../components/tags/ui/tags_widget.dart';
+import '../../../components/tags_widget.dart';
 import '../cubit/upload_cubit.dart';
+import '../widgets/writers_list.dart';
 
-class UploadBookScreen extends StatelessWidget with InputValidationMixin {
-  const UploadBookScreen({Key? key}) : super(key: key);
+class UploadBookScreen extends StatelessWidget {
+  const UploadBookScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => UploadCubit(UploadRepository()),
+      child: const UploadBookScreenView(),
+    );
+  }
+}
+
+class UploadBookScreenView extends StatelessWidget with InputValidationMixin {
+  const UploadBookScreenView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final formGlobalKey = GlobalKey<FormState>();
     ThemeData theme = Theme.of(context);
     TextEditingController titleController = TextEditingController();
     List<String> writerController = [];
@@ -29,7 +43,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
     TextEditingController bookEditionController = TextEditingController();
     TextEditingController priceController = TextEditingController();
     bool? ratingController;
-    List<String> listTags = [];
+    List<String> tagsController = [];
 
     return SafeArea(
       child: Scaffold(
@@ -47,11 +61,11 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
             ),
           ),
         ),
-        body: BlocProvider(
-          create: (context) => UploadCubit(UploadRepository()),
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Form(
+              key: formGlobalKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -61,61 +75,81 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
                   Align(
                     alignment: Alignment.center,
                     child: CustomButton(
-                      onPressed: (() {}),
+                      onPressed: () {},
                       text: upload,
                       width: 100,
                     ),
                   ),
                   const SizedBox(height: 16),
-                  //* title
+                  //* Title
                   Text(title, style: theme.textTheme.titleLarge),
                   CustomTextField.secondary(
                     controller: titleController,
                     hintText: title,
+                    validator: (value) => nullCheckValidation(
+                      value,
+                      title,
+                    ),
                   ),
                   const SizedBox(height: 16),
-                  //* writer
+                  //* Writer
                   Text(writer, style: theme.textTheme.titleLarge),
                   WriterListWidget(writerList: (value) {
                     writerController = value;
                   }),
                   const SizedBox(height: 16),
-                  //* subject
+                  //* Subject
                   Text(subject, style: theme.textTheme.titleLarge),
                   CustomTextField.secondary(
                     controller: subjectController,
                     hintText: subject,
+                    validator: (value) => nullCheckValidation(
+                      value,
+                      subject,
+                    ),
                   ),
                   const SizedBox(height: 16),
-                  //* about
+                  //* About Book
                   Text(about, style: theme.textTheme.titleLarge),
                   const SizedBox(height: 12),
                   CustomTextField.multiLine(
                     controller: aboutController,
                     hintText: aboutBook,
+                    validator: (value) => nullCheckValidation(
+                      value,
+                      aboutBook,
+                    ),
                   ),
                   const SizedBox(height: 16),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        //* pages
+                        //* Pages
                         CustomTextField(
                           controller: pagesController,
                           keyboardType: TextInputType.number,
                           hintText: pages,
                           width: 100,
+                          validator: (value) => nullCheckValidation(
+                            value,
+                            pages,
+                          ),
                         ),
-                        //* semister
+                        //* Semister
                         CustomDropdown(
                           list: semisterList,
                           keyList: semisterKeyList,
                           width: 130,
                           hintText: semister,
                           controller: semisterController,
+                          validator: (value) => nullCheckValidation(
+                            value,
+                            semister,
+                          ),
                         ),
                       ]),
                   const SizedBox(height: 16),
-                  //* bookEdition
+                  //* BookEdition
                   Text(
                     bookEdition,
                     style: theme.textTheme.titleLarge,
@@ -124,31 +158,36 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
                     controller: bookEditionController,
                     hintText: bookEdition,
                     keyboardType: TextInputType.number,
+                    validator: (value) => nullCheckValidation(
+                      value,
+                      bookEdition,
+                    ),
                   ),
                   const SizedBox(height: 16),
-                  //* price
+                  //* Price
                   Text(price, style: theme.textTheme.titleLarge),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      CustomTextField.secondary(
-                        controller: priceController,
-                        hintText: price,
-                        width: 100,
-                        keyboardType: TextInputType.number,
+                  Row(mainAxisSize: MainAxisSize.min, children: [
+                    CustomTextField.secondary(
+                      controller: priceController,
+                      hintText: price,
+                      width: 100,
+                      keyboardType: TextInputType.number,
+                      validator: (value) => nullCheckValidation(
+                        value,
+                        price,
                       ),
-                      Text(
-                        rs,
-                        style: theme.textTheme.titleLarge,
-                      )
-                    ],
-                  ),
+                    ),
+                    Text(
+                      rs,
+                      style: theme.textTheme.titleLarge,
+                    )
+                  ]),
                   const SizedBox(height: 16),
-                  //* tags
+                  //* Tags
                   Text(tags, style: theme.textTheme.titleLarge),
                   const SizedBox(height: 8),
                   TagsWidget(listTags: (value) {
-                    listTags = value;
+                    tagsController = value;
                   }),
                   Align(
                     alignment: Alignment.bottomCenter,
@@ -156,22 +195,24 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
                       text: submit,
                       width: 130,
                       onPressed: () {
-                        // context.read<UploadCubit>().uploadBook(
-                        //       title: title,
-                        //       writer: writerController,
-                        //       subject: subjectController.text,
-                        //       about: aboutController.text,
-                        //       pages: int.parse(pagesController.text),
-                        //       semister: int.parse(
-                        //         semisterController.text,
-                        //       ),
-                        //       bookEdition: int.parse(
-                        //         bookEditionController.text,
-                        //       ),
-                        //       price: int.parse(priceController.text),
-                        //       rating: ratingController,
-                        //       tags: listTags,
-                        //     );
+                        if (formGlobalKey.currentState!.validate()) {
+                          context.read<UploadCubit>().uploadBook(
+                                title: titleController.text,
+                                writer: writerController,
+                                subject: subjectController.text,
+                                about: aboutController.text,
+                                pages: int.parse(pagesController.text),
+                                semister: int.parse(
+                                  semisterController.text,
+                                ),
+                                bookEdition: int.parse(
+                                  bookEditionController.text,
+                                ),
+                                price: int.parse(priceController.text),
+                                rating: ratingController,
+                                tags: tagsController,
+                              );
+                        }
                       },
                     ),
                   ),
@@ -181,46 +222,6 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
       ),
-    );
-  }
-}
-
-class WriterListWidget extends StatefulWidget {
-  const WriterListWidget({super.key, required this.writerList});
-  final void Function(List<String>)? writerList;
-
-  @override
-  State<WriterListWidget> createState() => _WriterListWidgetState();
-}
-
-class _WriterListWidgetState extends State<WriterListWidget> {
-  @override
-  Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
-    List<String> list = [];
-    return Column(
-      children: [
-        CustomTextField.secondary(
-          controller: controller,
-          hintText: writer,
-          onSubitted: (value) {
-            setState(() {
-              list.add(value);
-            });
-            controller.clear();
-          },
-        ),
-        ListView.separated(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: list.length,
-          itemBuilder: (context, index) => ListTile(
-            dense: true,
-            title: Text(list[index]),
-          ),
-          separatorBuilder: (_, __) => const Divider(),
-        ),
-      ],
     );
   }
 }

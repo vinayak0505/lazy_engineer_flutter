@@ -87,6 +87,8 @@ const String rs = 'Rs';
 const String unit = 'Unit';
 const String chapter = 'Chapter';
 const String topic = 'Topic';
+const String aboutCompany = 'About Company';
+const String skillsRequired = 'Skills Required';
 
 // account
 const String settings = 'Settings';

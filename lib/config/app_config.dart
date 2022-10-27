@@ -12,4 +12,7 @@ class AppConfig {
   static const String uploadQuestionPaper = '/upload/question_paper';
   static const String uploadBooks = '/upload/books';
   static const String uploadJobs = '/upload/jobs';
+
+  /// tag
+  static const String companyPhotoTag = 'company_photo';
 }

@@ -23,11 +23,13 @@ dependencies:
   path_provider: ^2.0.11
   shared_preferences: ^2.0.15
   go_router: ^5.1.0
+  image_picker: ^0.8.6
+  file_picker: ^5.2.2
 
   ### logic
   flutter_bloc: ^8.0.1
   equatable: ^2.0.5
-  sqflite: ^2.1.0
+  sqflite: ^2.1.0+1
 
   ### network
   dio: ^4.0.6

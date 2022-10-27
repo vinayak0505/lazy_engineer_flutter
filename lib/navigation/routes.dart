@@ -51,6 +51,7 @@ class RouteGenerator {
       '/upload/upload_question_paper';
   static const String uploadBooksRoute = '/upload/books';
   static const String uploadJobsRoute = '/upload/jobs';
+  // static const String uploadJobsCompanyPhotoRoute = '/upload/jobs/fullscreen_view';
   static const String uploadPaperRoute = '/upload/question_paper';
   static const String uploadBookRoute = '/upload/books';
 
@@ -160,6 +161,15 @@ class RouteGenerator {
               GoRoute(
                 path: 'jobs',
                 builder: (_, __) => const UploadJobRequestScreen(),
+                // routes: [
+                //   GoRoute(
+                //     path: 'fullscreen_view',
+                //     builder: (context, state) => FullScreenPhoto(
+                //       index: 1,
+                //       list: [],
+                //     ),
+                //   )
+                // ],
               ),
             ],
           ),

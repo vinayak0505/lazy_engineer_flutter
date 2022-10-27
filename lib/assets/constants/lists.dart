@@ -29,12 +29,19 @@ List<CategoriesModel> categoriesList = [
   ),
 ];
 
-List<String> sliderImageList = const [
+List<String> sliderImageList = [
   AppImages.sliderImage,
   AppImages.sliderImage,
   AppImages.sliderImage,
   AppImages.sliderImage,
   AppImages.sliderImage,
+];
+
+List<String> tagsList = [
+  'tag1',
+  'tag2',
+  'tag3',
+  'tag4',
 ];
 
 List<String> bookImageList = const [
@@ -45,8 +52,21 @@ List<String> bookImageList = const [
   AppImages.bookCoverImage,
 ];
 
-// file
+List<String> companyImageList = const [
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+];
 
+// file
 List<String> multiOptionFileList = ['Only IP University'];
 
 List<String> singleOptionFileList = [
@@ -269,4 +289,22 @@ List<String> locationList = [
   'Chennai',
   'Bangalore',
   'Hyderabad',
+];
+
+List<String> jobTypeList = [
+  'Full Time',
+  'Part Time',
+  'Contract',
+  'Temporary',
+  'Internship',
+  'Other',
+];
+
+List<String> experienceLevelList = [
+  'Internship',
+  'Entery Level',
+  'Associate',
+  'Mid-Senior Level',
+  'Director',
+  'Executive',
 ];

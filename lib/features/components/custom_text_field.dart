@@ -42,6 +42,7 @@ class CustomTextField extends StatelessWidget {
     String? prefixIcon,
     String? hintText,
     double? width,
+    String? Function(String? value)? validator,
     void Function(String)? onSubitted,
   }) {
     return CustomTextField(
@@ -54,11 +55,13 @@ class CustomTextField extends StatelessWidget {
       showBorder: false,
       underline: true,
       filled: false,
+      validator: validator,
     );
   }
 
   factory CustomTextField.multiLine({
     required TextEditingController controller,
+    String? Function(String? value)? validator,
     String hintText = 'Enter Value',
   }) {
     return CustomTextField(
@@ -67,6 +70,7 @@ class CustomTextField extends StatelessWidget {
       hintText: hintText,
       filled: false,
       maxLines: 3,
+      validator: validator,
     );
   }
 

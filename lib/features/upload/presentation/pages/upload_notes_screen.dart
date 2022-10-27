@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/features/upload/data/repositories/upload_repository.dart';
+import 'package:lazy_engineer/helper/input_validation.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/icons.dart';
 import '../../../../assets/images.dart';
@@ -10,14 +11,15 @@ import '../../../components/custom_dropdown.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/custom_image.dart';
 import '../../../components/custom_text_field.dart';
-import '../../../components/tags/ui/tags_widget.dart';
+import '../../../components/tags_widget.dart';
 import '../cubit/upload_cubit.dart';
 
-class UploadNotesScreen extends StatelessWidget {
+class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
   const UploadNotesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final formGlobalKey = GlobalKey<FormState>();
     ThemeData theme = Theme.of(context);
     TextEditingController titleController = TextEditingController();
     TextEditingController aboutController = TextEditingController();
@@ -53,113 +55,150 @@ class UploadNotesScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: BlocBuilder<UploadCubit, UploadState>(
                 builder: (context, state) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Center(
-                        child: CustomImage(image: AppImages.uploadNotes),
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: CustomButton(
-                          onPressed: (() {}),
-                          text: upload,
-                          width: 100,
+                  return Form(
+                    key: formGlobalKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Center(
+                          child: CustomImage(image: AppImages.uploadNotes),
                         ),
+                        Align(
+                          alignment: Alignment.center,
+                          child: CustomButton(
+                            onPressed: (() {}),
+                            text: upload,
+                            width: 100,
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        //* Title
+                        Text(title, style: theme.textTheme.titleLarge),
+                        CustomTextField.secondary(
+                          controller: titleController,
+                          hintText: title,
+                          validator: (value) => nullCheckValidation(
+                          value,
+                          title,
+                        ),
+                        ),
+                        const SizedBox(height: 16),
+                        //* About
+                        Text(about, style: theme.textTheme.titleLarge),
+                        const SizedBox(height: 12),
+                        CustomTextField.multiLine(
+                          controller: aboutController,
+                          hintText: aboutNotes,
+                           validator: (value) => nullCheckValidation(
+                        value,
+                        about,
                       ),
-                      const SizedBox(height: 16),
-                      //* Title
-                      Text(title, style: theme.textTheme.titleLarge),
-                      CustomTextField.secondary(
-                        controller: titleController,
-                        hintText: title,
-                      ),
-                      const SizedBox(height: 16),
-                      //* About
-                      Text(about, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 12),
-                      CustomTextField.multiLine(
-                        controller: aboutController,
-                        hintText: aboutNotes,
-                      ),
-                      const SizedBox(height: 16),
-                      //* Semister
-                      CustomDropdown(
+                        ),
+                        const SizedBox(height: 16),
+                        //* Semister
+                        CustomDropdown(
                           list: semisterList,
                           keyList: semisterKeyList,
                           width: 130,
                           hintText: semister,
                           controller: semisterController,
+                           validator: (value) => nullCheckValidation(
+                        value,
+                        semister,
+                      ),
                         ),
-                      const SizedBox(height: 16),
-                      //* Subject
-                       Text(subject, style: theme.textTheme.titleLarge),
-                      CustomTextField.secondary(
-                        controller: subjectController,
-                        hintText: subject,
+                        const SizedBox(height: 16),
+                        //* Subject
+                        Text(subject, style: theme.textTheme.titleLarge),
+                        CustomTextField.secondary(
+                          controller: subjectController,
+                          hintText: subject,
+                           validator: (value) => nullCheckValidation(
+                        value,
+                        subject,
                       ),
-                      const SizedBox(height: 16),
-                      //* College
-                      Text(college, style: theme.textTheme.titleLarge),
-                      CustomTextField.secondary(
-                        controller: collegeController,
-                        hintText: college,
+                        ),
+                        const SizedBox(height: 16),
+                        //* College
+                        Text(college, style: theme.textTheme.titleLarge),
+                        CustomTextField.secondary(
+                          controller: collegeController,
+                          hintText: college,
+                           validator: (value) => nullCheckValidation(
+                        value,
+                        college,
                       ),
-                      const SizedBox(height: 16),
-                      //* Unit
-                      Text(unit, style: theme.textTheme.titleLarge),
-                      CustomDropdown(
+                        ),
+                        const SizedBox(height: 16),
+                        //* Unit
+                        Text(unit, style: theme.textTheme.titleLarge),
+                        CustomDropdown(
                           list: unitList,
                           keyList: unitKeyList,
                           width: 130,
                           hintText: unit,
                           controller: unitController,
+                           validator: (value) => nullCheckValidation(
+                        value,
+                        unit,
+                      ),
                         ),
-                      const SizedBox(height: 16),
-                      //* Chapter
-                      Text(chapter, style: theme.textTheme.titleLarge),
-                      CustomTextField.secondary(
-                        controller: chapterController,
-                        hintText: chapter,
+                        const SizedBox(height: 16),
+                        //* Chapter
+                        Text(chapter, style: theme.textTheme.titleLarge),
+                        CustomTextField.secondary(
+                          controller: chapterController,
+                          hintText: chapter,
+                           validator: (value) => nullCheckValidation(
+                        value,
+                        chapter,
                       ),
-                      const SizedBox(height: 16),
-                      //* Topic
-                      Text(topic, style: theme.textTheme.titleLarge),
-                      CustomTextField.secondary(
-                        controller: topicController,
-                        hintText: topic,
-                      ),
-                      const SizedBox(height: 16),
-                      //* Tags
-                      Text(tags, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 8),
-                      TagsWidget(listTags: (value) {
-                        tagsController = value;
-                      }),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: CustomButton(
-                          text: uploadNotes,
-                          width: 130,
-                          onPressed: () {
-                            context.read<UploadCubit>().uploadNotes(
-                                title: titleController.text,
-                                about: aboutController.text,
-                                semister: int.parse(
-                                  semisterController.text,
-                                ),
-                                subject: subjectController.text,
-                                unit: unitController.text,
-                                chapter: chapterController.text,
-                                topic: topicController.text,
-                                link: linkController.text,
-                                tags: tagsController,
-                                rating: ratingController,
-                                );
-                          },
                         ),
+                        const SizedBox(height: 16),
+                        //* Topic
+                        Text(topic, style: theme.textTheme.titleLarge),
+                        CustomTextField.secondary(
+                          controller: topicController,
+                          hintText: topic,
+                           validator: (value) => nullCheckValidation(
+                        value,
+                        topic,
                       ),
-                    ],
+                        ),
+                        const SizedBox(height: 16),
+                        //* Tags
+                        Text(tags, style: theme.textTheme.titleLarge),
+                        const SizedBox(height: 8),
+                        TagsWidget(listTags: (value) {
+                          tagsController = value;
+                        }),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: CustomButton(
+                            text: submit,
+                            width: 130,
+                            onPressed: () {
+                              if (formGlobalKey.currentState!.validate()) {
+                                context.read<UploadCubit>().uploadNotes(
+                                      title: titleController.text,
+                                      about: aboutController.text,
+                                      semister: int.parse(
+                                        semisterController.text,
+                                      ),
+                                      subject: subjectController.text,
+                                      unit: unitController.text,
+                                      chapter: chapterController.text,
+                                      topic: topicController.text,
+                                      link: linkController.text,
+                                      tags: tagsController,
+                                      rating: ratingController,
+                                    );
+                              }
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   );
                 },
               ),
