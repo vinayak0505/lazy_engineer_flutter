@@ -24,8 +24,8 @@ class AppIcons {
   static const String yellowFilledIcon = 'assets/icons/yellow_filled_star.svg';
   static const String closeIcon = 'assets/icons/close.svg';
   static const String plusIcon = 'assets/icons/plus.svg';
-  static const String likeIcon = 'assests/icons/like.png';
-  static const String dislikeIcon = 'assests/icons/dislike.png';
+  static const String likeIcon = 'assets/icons/like.png';
+  static const String dislikeIcon = 'assets/icons/dislike.png';
   static const String sideArrowIcon = 'assets/icons/side_arrow.svg';
   static const String profileIcon = 'assets/icons/profile.svg';
   static const String mailIcon = 'assets/icons/mail.svg';

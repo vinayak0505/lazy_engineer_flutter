@@ -63,14 +63,14 @@ class NotesDescriptionScreen extends StatelessWidget {
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Column(children: [
-                                        const CustomIcon(AppIcons.likeIcon),
+                                        const CustomIcon(AppIcons.likeIcon, width: 12,),
                                         Text(
                                           'Like',
-                                          style: theme.textTheme.bodyText1,
+                                          style: theme.textTheme.bodyText1, 
                                         )
                                       ]),
                                       Column(children: [
-                                        const CustomIcon(AppIcons.dislikeIcon),
+                                        const CustomIcon(AppIcons.dislikeIcon, width: 12,),
                                         Text(
                                           'Dislike',
                                           style: theme.textTheme.bodyText1,
@@ -84,7 +84,7 @@ class NotesDescriptionScreen extends StatelessWidget {
                                         )
                                       ]),
                                       Column(children: [
-                                        const CustomIcon(AppIcons.pageIcon),
+                                        const CustomIcon(AppIcons.pageIcon,),
                                         Text(
                                           'pages',
                                           style: theme.textTheme.bodyText1,

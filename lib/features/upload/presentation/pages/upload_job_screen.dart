@@ -175,7 +175,7 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
         ),
         const SizedBox(height: 12),
         BlocProvider(
-          create: (context) => ListCubit<File>(),
+          create: (context) => ListCubit(),
           child: CompanyImage(
             list: companyPhotoController,
             onSubmit: (list) {

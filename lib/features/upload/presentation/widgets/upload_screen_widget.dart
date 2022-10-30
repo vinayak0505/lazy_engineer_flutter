@@ -50,8 +50,7 @@ class UploadScreenWidget extends StatelessWidget {
             builder: (context, state) {
               return state.whenOrNull(
                       loading: () => const LoadingScreen(),
-                      failure: (e) => FailureScreen(e)
-                      ) ??
+                      failure: (e) => FailureScreen(e)) ??
                   SingleChildScrollView(
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -62,20 +61,21 @@ class UploadScreenWidget extends StatelessWidget {
                           children: [
                             Center(
                               child: state.whenOrNull(
-                                documentFailure: (e) => FailureScreen(e),
-                                documentLoading: () => Stack(
-                                  alignment: Alignment.center,
-                                  children: const [
-                                    CustomImage(
-                                      image: AppImages.book,
-                                      disableImage: true,
+                                    documentFailure: (e) => FailureScreen(e),
+                                    documentLoading: () => Stack(
+                                      alignment: Alignment.center,
+                                      children: const [
+                                        CustomImage(
+                                          image: AppImages.book,
+                                          disableImage: true,
+                                        ),
+                                        CircularProgressIndicator()
+                                      ],
                                     ),
-                                    CircularProgressIndicator()
-                                  ],
-                                ),
-                              ) ?? const CustomImage(
-                                      image: AppImages.book,
-                                    ),
+                                  ) ??
+                                  const CustomImage(
+                                    image: AppImages.book,
+                                  ),
                             ),
                             Align(
                               alignment: Alignment.center,
@@ -87,17 +87,23 @@ class UploadScreenWidget extends StatelessWidget {
                                 width: 100,
                               ),
                             ),
-                            state.whenOrNull(
-                                    documentSuccess: (data) => Align(
-                                          alignment: Alignment.center,
-                                          child: CustomButton.secondary(
-                                            width: 100,
-                                            text: 'file1.pdf',
-                                            onPressed: () {},
-                                          ),
-                                        ),
-                                    documentFailure: (e) => Text(e)) ??
-                                const SizedBox(),
+                            AnimatedSwitcher(
+                              switchInCurve: Curves.easeIn,
+                              duration: const Duration(
+                                milliseconds: 500,
+                              ),
+                              child: state.whenOrNull(
+                                documentSuccess: (data) => Align(
+                                  alignment: Alignment.center,
+                                  child: CustomButton.secondary(
+                                    width: 100,
+                                    text: 'file1.pdf',
+                                    onPressed: () {},
+                                  ),
+                                ),
+                                documentFailure: (e) => FailureScreen(e),
+                              ) ?? const SizedBox()
+                            ),
                             const SizedBox(height: 16),
                             ...body,
                             const SizedBox(height: 16),

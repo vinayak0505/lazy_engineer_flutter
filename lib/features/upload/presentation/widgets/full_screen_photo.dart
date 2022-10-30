@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 
-
 class FullScreenPhoto extends StatefulWidget {
   const FullScreenPhoto({
     super.key,
@@ -36,9 +35,7 @@ class _FullScreenPhotoState extends State<FullScreenPhoto>
       vsync: this,
       duration: const Duration(milliseconds: 300),
     )..addListener(
-        () {
-          controller.value = animation!.value;
-        },
+        () => controller.value = animation!.value
       );
     pageController = PageController(initialPage: widget.index);
   }

@@ -13,8 +13,6 @@ import 'package:lazy_engineer/features/home/presentation/pages/jobs_description_
 import 'package:lazy_engineer/features/home/presentation/pages/jobs_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/notes_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/notes_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/question_paper_description_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_screen.dart';

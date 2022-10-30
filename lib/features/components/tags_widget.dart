@@ -15,8 +15,8 @@ class TagsWidget extends StatelessWidget {
     TextEditingController tagsController = TextEditingController();
     var theme = Theme.of(context);
     return BlocProvider(
-      create: (context) => ListCubit<String>(),
-      child: BlocBuilder<ListCubit<String>, ListState>(
+      create: (context) => ListCubit(),
+      child: BlocBuilder<ListCubit, ListState>(
         builder: (context, state) {
           List<String> tags = tagsList;
           return Wrap(direction: Axis.horizontal, children: [
@@ -29,7 +29,7 @@ class TagsWidget extends StatelessWidget {
                     text: state.list[index],
                     onDelete: () {
                       context
-                          .read<ListCubit<String>>()
+                          .read<ListCubit>()
                           .removeElement(state.list[index]);
                     },
                   ),
@@ -61,7 +61,7 @@ class TagsWidget extends StatelessWidget {
                                   dense: true,
                                   onTap: () {
                                     context
-                                        .read<ListCubit<String>>()
+                                        .read<ListCubit>()
                                         .addElement(tag);
                                     tagsController.text = tag;
                                     Navigator.pop(context);
