@@ -331,3 +331,13 @@ List<String> experienceLevelList = [
   'Director',
   'Executive',
 ];
+List<String> classList = [
+  'Aeronautical Engineering',
+  'Automobile Engineering',
+  'Biotechnology',
+  'Civil Engineering',
+  'Computer Science and Engineering',
+  'Electrical and Electronics Engineering',
+  'Mechanical Engineering',
+  'Electronics & Communication'
+];

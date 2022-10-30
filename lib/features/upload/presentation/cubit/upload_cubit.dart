@@ -14,6 +14,16 @@ class UploadCubit extends Cubit<UploadState> {
   UploadCubit(this.repository) : super(const UploadState.initial());
   final UploadRepository repository;
 
+  void uploadDocument() async {
+    emit(const UploadState.documentLoading());
+    try {
+      await Future.delayed(const Duration(seconds: 2));
+      emit(const UploadState.documentSuccess(1));
+    } catch (e) {
+      emit(UploadState.documentFailure(e));
+    }
+  }
+
   void uploadNotes({
     required String title,
     String? about,
@@ -24,7 +34,6 @@ class UploadCubit extends Cubit<UploadState> {
     String? topic,
     required String link,
     required List<String> tags,
-    bool? rating,
   }) {
     UploadNotesRequest notesData = UploadNotesRequest(
       title: title,
@@ -36,7 +45,6 @@ class UploadCubit extends Cubit<UploadState> {
       topic: topic,
       link: link,
       tags: tags,
-      rating: rating,
     );
     repository.uplaodNotes(notesData);
     emit(UploadState.success(notesData));
@@ -51,7 +59,6 @@ class UploadCubit extends Cubit<UploadState> {
     String? type,
     bool? solved,
     required List<String> tags,
-    bool? rating,
   }) {
     UploadPaperRequest paperData = UploadPaperRequest(
       title: title,
@@ -61,7 +68,6 @@ class UploadCubit extends Cubit<UploadState> {
       type: type,
       solved: solved,
       tags: tags,
-      rating: rating,
     );
     repository.uplaodPaper(paperData);
     emit(UploadState.success(paperData));
@@ -72,12 +78,11 @@ class UploadCubit extends Cubit<UploadState> {
     required List<String> writer,
     required String subject,
     String? about,
-    int? pages,
-    required int semister,
-    int? bookEdition,
+    required int pages,
+    int? semister,
+    required int bookEdition,
     int? price,
     required List<String> tags,
-    bool? rating,
   }) {
     UploadBookRequest bookData = UploadBookRequest(
       title: title,
@@ -88,7 +93,6 @@ class UploadCubit extends Cubit<UploadState> {
       semister: semister,
       bookEdition: bookEdition,
       price: price,
-      rating: rating,
       tags: tags,
     );
     repository.uplaodBook(bookData);
@@ -102,7 +106,6 @@ class UploadCubit extends Cubit<UploadState> {
     String? semister,
     required String link,
     required List<String> tags,
-    bool? rating,
   }) {
     UploadFilesRequest fileData = UploadFilesRequest(
       title: title,
@@ -111,7 +114,6 @@ class UploadCubit extends Cubit<UploadState> {
       semister: semister,
       link: link,
       tags: tags,
-      rating: rating,
     );
     repository.uplaodFiles(fileData);
     emit(UploadState.success(fileData));
@@ -130,7 +132,6 @@ class UploadCubit extends Cubit<UploadState> {
     required int expectedSalary,
     required int numOfEmployees,
     required List<String> companyPhoto,
-    bool? rating,
   }) {
     UploadJobsRequest jobsData = UploadJobsRequest(
       title: title,
@@ -145,7 +146,6 @@ class UploadCubit extends Cubit<UploadState> {
       expectedSalary: expectedSalary,
       numOfEmployees: numOfEmployees,
       companyPhoto: companyPhoto,
-      rating: rating,
     );
     repository.uplaodJobs(jobsData);
     emit(UploadState.success(jobsData));

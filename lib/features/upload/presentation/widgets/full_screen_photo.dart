@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 
-import '../../../components/custom_image.dart';
 
 class FullScreenPhoto extends StatefulWidget {
   const FullScreenPhoto({

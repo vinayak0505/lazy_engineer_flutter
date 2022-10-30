@@ -16,7 +16,6 @@ class UploadFilesRequest with _$UploadFilesRequest {
         String? semister,
         required String link,
         required List<String> tags,
-        bool? rating,
     }) = _UploadFilesRequest;
 
     factory UploadFilesRequest.fromJson(Map<String, dynamic> json) => _$UploadFilesRequestFromJson(json);

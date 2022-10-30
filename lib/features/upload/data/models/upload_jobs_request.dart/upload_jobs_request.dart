@@ -18,7 +18,6 @@ class UploadJobsRequest with _$UploadJobsRequest {
         required int expectedSalary,
         required int numOfEmployees,
         required List<String> companyPhoto,
-        bool? rating,
     }) = _UploadJobsRequest;
 
     factory UploadJobsRequest.fromJson(Map<String, dynamic> json) => _$UploadJobsRequestFromJson(json);

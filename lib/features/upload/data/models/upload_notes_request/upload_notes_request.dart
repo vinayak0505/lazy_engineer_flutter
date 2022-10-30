@@ -15,7 +15,6 @@ class UploadNotesRequest with _$UploadNotesRequest {
         String? topic,
         required String link,
         required List<String> tags,
-        bool? rating,
     }) = _UploadNotesRequest;
 
     factory UploadNotesRequest.fromJson(Map<String, dynamic> json) => _$UploadNotesRequestFromJson(json);

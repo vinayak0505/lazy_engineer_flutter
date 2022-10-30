@@ -10,12 +10,11 @@ class UploadBookRequest with _$UploadBookRequest {
     required List<String> writer,
     required String subject,
     String? about,
-    int? pages,
-    required int semister,
-    int? bookEdition,
+    required int pages,
+    int? semister,
+    required int bookEdition,
     int? price,
     required List<String> tags,
-    bool? rating,
   }) = _UploadBookRequest;
 
   factory UploadBookRequest.fromJson(Map<String, dynamic> json) =>

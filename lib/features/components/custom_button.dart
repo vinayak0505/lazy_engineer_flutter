@@ -40,12 +40,17 @@ class CustomButton extends StatelessWidget {
     );
   }
 
-  factory CustomButton.secondary(
-      {required void Function() onPressed, String? icon, String? text}) {
+  factory CustomButton.secondary({
+    required void Function() onPressed,
+    String? icon,
+    String? text,
+    double? width,
+  }) {
     return CustomButton(
       onPressed: onPressed,
       icon: icon,
       text: text,
+      width: width,
       color: AppThemes.secondColor,
       borderColor: AppThemes.primaryColor1,
     );

@@ -14,9 +14,8 @@ class UploadRepository {
 
   Future<bool?> uplaodBook(UploadBookRequest data) async {
     try {
-      // String? status = await _remoteDataSource.uploadBook(data);
+      String? status = await _remoteDataSource.uploadBook(data);
       if(!kIsWeb) {
-        _localDataSource.setName(data.title);
       }
       return true;
       // return (status == '200')? true : false;
