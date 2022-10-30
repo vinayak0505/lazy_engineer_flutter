@@ -6,6 +6,7 @@ import 'package:lazy_engineer/features/account/presentation/pages/account_screen
 import 'package:lazy_engineer/features/account/presentation/pages/profile_screen.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/settings_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/book_description_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/practical_file_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/book_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/home_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/jobs_description_screen.dart';
@@ -13,7 +14,7 @@ import 'package:lazy_engineer/features/home/presentation/pages/jobs_screen.dart'
 import 'package:lazy_engineer/features/home/presentation/pages/notes_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/notes_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/question_paper_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/question_paper_description_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_screen.dart';
@@ -40,6 +41,7 @@ class RouteGenerator {
   static const String booksRoute = '/home/books';
   static const String notesDescriptionRoute = '/home/notes/notes_description';
   static const String bookDescriptionRoute = '/home/books/book_description';
+  static const String fileDescriptionRoute = '/home/practicle_file_description';
   static const String jobsRoute = '/home/jobs';
   static const String jobsDescriptionRoute = '/home/jobs/jobs_description';
 
@@ -94,18 +96,6 @@ class RouteGenerator {
             builder: (_, __) => const HomeScreen(),
             routes: [
               GoRoute(
-                path: 'notes',
-                builder: (_, __) => const NotesScreen(),
-              ),
-              GoRoute(
-                path: 'practicle_file',
-                builder: (_, __) => const PracticleFileScreen(),
-              ),
-              GoRoute(
-                path: 'question_paper',
-                builder: (_, __) => const QuestionPaperScreen(),
-              ),
-              GoRoute(
                   path: 'books',
                   builder: (_, __) => const BookScreen(),
                   routes: [
@@ -146,6 +136,21 @@ class RouteGenerator {
                         return MaterialPage<void>(
                           key: state.pageKey,
                           child: NotesDescriptionScreen(id: id),
+                        );
+                      },
+                    )
+                  ]),
+              GoRoute(
+                  path: 'practile_file',
+                  builder: (_, __) => const NotesScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'practicle_file_description/:id',
+                      pageBuilder: (context, state) {
+                        int id = int.parse(state.params['id']!);
+                        return MaterialPage<void>(
+                          key: state.pageKey,
+                          child: FileDescriptionScreen(id: id),
                         );
                       },
                     )

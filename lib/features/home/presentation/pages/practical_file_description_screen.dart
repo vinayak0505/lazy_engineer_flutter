@@ -9,8 +9,8 @@ import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 
 class FileDescriptionScreen extends StatelessWidget {
-  const FileDescriptionScreen({Key? key}) : super(key: key);
-
+  const FileDescriptionScreen({Key? key, required this.id}) : super(key: key);
+  final int id;
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
