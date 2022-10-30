@@ -9,7 +9,8 @@ import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 
 class NotesDescriptionScreen extends StatelessWidget {
-  const NotesDescriptionScreen({Key? key}) : super(key: key);
+  const NotesDescriptionScreen({Key? key, required this.id}) : super(key: key);
+  final int id;
 
   @override
   Widget build(BuildContext context) {

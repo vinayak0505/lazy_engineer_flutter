@@ -10,6 +10,7 @@ import 'package:lazy_engineer/features/home/presentation/pages/book_screen.dart'
 import 'package:lazy_engineer/features/home/presentation/pages/home_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/jobs_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/jobs_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/notes_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/notes_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/question_paper_screen.dart';
@@ -37,7 +38,7 @@ class RouteGenerator {
   static const String fileRoute = '/home/practicle_file';
   static const String questionPaperRoute = '/home/question_paper';
   static const String booksRoute = '/home/books';
-  static const String notesDescriptionRoute = '/home/books/notes_description';
+  static const String notesDescriptionRoute = '/home/notes/notes_description';
   static const String bookDescriptionRoute = '/home/books/book_description';
   static const String jobsRoute = '/home/jobs';
   static const String jobsDescriptionRoute = '/home/jobs/jobs_description';
@@ -130,6 +131,21 @@ class RouteGenerator {
                         return MaterialPage<void>(
                           key: state.pageKey,
                           child: JobsDescriptionScreen(id: id),
+                        );
+                      },
+                    )
+                  ]),
+              GoRoute(
+                  path: 'notes',
+                  builder: (_, __) => const NotesScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'notes_description/:id',
+                      pageBuilder: (context, state) {
+                        int id = int.parse(state.params['id']!);
+                        return MaterialPage<void>(
+                          key: state.pageKey,
+                          child: NotesDescriptionScreen(id: id),
                         );
                       },
                     )
