@@ -29,6 +29,29 @@ List<CategoriesModel> categoriesList = [
   ),
 ];
 
+List<CategoriesModel> notesList = [
+  CategoriesModel(
+    subtitle: 'Document 1',
+    description: 'You can find handwriten notes from all students',
+  ),
+  CategoriesModel(
+    subtitle: 'Document 2',
+    description: 'Official Notice',
+  ),
+  CategoriesModel(
+    subtitle: 'Document 3',
+    description: 'You can find handwriten notes from all students',
+  ),
+  CategoriesModel(
+    subtitle: 'Document 4',
+    description: 'Official Notice',
+  ),
+  CategoriesModel(
+    subtitle: 'Document 5',
+    description: 'You can find handwriten notes from all students',
+  ),
+];
+
 List<String> sliderImageList = [
   AppImages.sliderImage,
   AppImages.sliderImage,

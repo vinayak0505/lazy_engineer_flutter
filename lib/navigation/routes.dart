@@ -38,7 +38,7 @@ class RouteGenerator {
   static const String fileRoute = '/home/practicle_file';
   static const String questionPaperRoute = '/home/question_paper';
   static const String booksRoute = '/home/books';
-
+  static const String notesDescriptionRoute = '/home/books/notes_description';
   static const String bookDescriptionRoute = '/home/books/book_description';
   static const String jobsRoute = '/home/jobs';
   static const String jobsDescriptionRoute = '/home/jobs/jobs_description';

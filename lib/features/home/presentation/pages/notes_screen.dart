@@ -4,7 +4,7 @@ import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
-
+import 'package:lazy_engineer/navigation/routes.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../components/grid_card.dart';
 
@@ -17,7 +17,7 @@ class NotesScreen extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
+            centerTitle: true,
             title: Text(
               notes,
               style: theme.textTheme.headline4,
@@ -60,11 +60,12 @@ class NotesScreen extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       crossAxisCount: 2,
-      itemCount: categoriesList.length,
+      itemCount: notesList.length,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
-          onTap: () {},
-          child: GridCard(data: categoriesList[index]),
+          onTap: () => Navigator.pushNamed(
+              context, RouteGenerator.notesDescriptionRoute),
+          child: GridCard(data: notesList[index]),
         );
       },
       // staggeredTileBuilder: (index) => const StaggeredTile.fit(1),

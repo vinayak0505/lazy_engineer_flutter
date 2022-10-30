@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/components/tags_widget.dart';
 import '../../../../assets/icons.dart';
-import '../../../../assets/images.dart';
 import '../../../components/custom_icon.dart';
 
-class BookDescriptionScreen extends StatelessWidget {
-  const BookDescriptionScreen({Key? key, required this.id}) : super(key: key);
-  final int id;
+class NotesDescriptionScreen extends StatelessWidget {
+  const NotesDescriptionScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    List<String> listTags = [];
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -38,7 +39,7 @@ class BookDescriptionScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const CustomImage(
-                          image: AppImages.bookCoverImage,
+                          image: AppImages.questionPaper,
                           radius: kRoundedRectangleRadius,
                           height: 180,
                         ),
@@ -49,7 +50,7 @@ class BookDescriptionScreen extends StatelessWidget {
                               children: [
                                 const SizedBox(height: 12),
                                 Text(
-                                  'Computer Graphics and Multimedia',
+                                  'Computer Graphics Class Notes',
                                   style: theme.textTheme.headline5,
                                 ),
                                 const SizedBox(height: 12),
@@ -77,7 +78,7 @@ class BookDescriptionScreen extends StatelessWidget {
                                       Column(children: [
                                         const CustomIcon(AppIcons.bookIcon),
                                         Text(
-                                          'E-Book',
+                                          'pdf',
                                           style: theme.textTheme.bodyText1,
                                         )
                                       ]),
@@ -109,34 +110,41 @@ class BookDescriptionScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'THE BOOK THAT INSPIRED THE AWARD-WINNING MOVIE Nominated for 12 OSCARS including BEST PICTURE, BEST DIRECTOR and BEST ACTOR Winner of 5 BAFTAS including Best Actor, Best Director and Best Film Winner of the 2016 Golden Globes for Best Motion Picture - Drama, Best Actor - Drama, and Best Director The novel that inspired the epic new movie starring Leonardo DiCaprio and Tom Hardy.',
+                  'THE FILE CONTAINS ALL THE IMPORTANT POINTS THAT ARE TAUGHT IN UNIT 1 COMPUTER GRAPHICS CLASS IN THIRD SEMESTER',
                   style: theme.textTheme.bodyMedium,
                   textAlign: TextAlign.justify,
                 ),
                 const SizedBox(height: 16),
                 Row(children: [
-                  Text('Writers', style: theme.textTheme.headlineSmall),
+                  Text('Unit', style: theme.textTheme.headlineSmall),
                   const SizedBox(width: 80),
-                  Text('By Vinayak agarwal', style: theme.textTheme.bodyText2),
+                  Text('Unit - 1', style: theme.textTheme.bodyText2),
                 ]),
                 const SizedBox(height: 16),
                 Row(children: [
                   Text('Semester', style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 60),
+                  const SizedBox(width: 20),
                   Text('3rd Semester', style: theme.textTheme.bodyText2),
                 ]),
                 const SizedBox(height: 16),
                 Row(children: [
-                  Text('Book Edition', style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 30),
-                  Text('Second Edition', style: theme.textTheme.bodyText2),
+                  Text('Chapter', style: theme.textTheme.headlineSmall),
+                  const SizedBox(width: 40),
+                  Text('3D Transformations', style: theme.textTheme.bodyText2),
                 ]),
                 const SizedBox(height: 16),
                 Row(children: [
-                  Text('Price', style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 110),
-                  Text('Rs. 500', style: theme.textTheme.bodyText2),
+                  Text('Topic', style: theme.textTheme.headlineSmall),
+                  const SizedBox(width: 68),
+                  Text('Translation, Scaling, Rotation, Shear',
+                      style: theme.textTheme.bodyText2),
                 ]),
+                const SizedBox(height: 16),
+                Text(tags, style: theme.textTheme.headlineSmall),
+                const SizedBox(height: 16),
+                TagsWidget(listTags: (value) {
+                  listTags = value;
+                }),
               ],
             ),
           ),
