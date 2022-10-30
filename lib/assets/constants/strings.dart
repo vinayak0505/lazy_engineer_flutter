@@ -23,6 +23,9 @@ const String createOne = 'create one!';
 const String alreadyHaveAccount = 'Already have a account? ';
 const String goToLogin = 'Go to Login';
 const String or = 'OR';
+const String next = 'Next';
+const String classD = 'Class';
+const String university = 'University';
 
 const String notes = 'Notes';
 const String files = 'Files';
