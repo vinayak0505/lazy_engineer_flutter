@@ -30,7 +30,6 @@ class RouteGenerator {
   static const String loginRoute = '/login';
   static const String registerRoute = '/register';
   static const String dashboardRoute = '/dashboard';
-  static const String loadingRoute = '/loading';
 
   /// Home Screen
   static const String homeRoute = '/home';

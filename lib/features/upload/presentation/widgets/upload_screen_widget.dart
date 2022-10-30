@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/images.dart';
+// import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/upload/data/repositories/upload_repository.dart';
 import '../../../../assets/constants/strings.dart';
@@ -8,6 +9,7 @@ import '../../../../assets/icons.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/custom_image.dart';
+import '../../../components/failiure_screen.dart';
 import '../cubit/upload_cubit.dart';
 
 class UploadScreenWidget extends StatelessWidget {
@@ -47,8 +49,9 @@ class UploadScreenWidget extends StatelessWidget {
           child: BlocBuilder<UploadCubit, UploadState>(
             builder: (context, state) {
               return state.whenOrNull(
-                    loading: () => const LoadingScreen(),
-                  ) ??
+                      loading: () => const LoadingScreen(),
+                      failure: (e) => FailureScreen(e)
+                      ) ??
                   SingleChildScrollView(
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -57,8 +60,22 @@ class UploadScreenWidget extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Center(
-                              child: CustomImage(image: AppImages.book),
+                            Center(
+                              child: state.whenOrNull(
+                                documentFailure: (e) => FailureScreen(e),
+                                documentLoading: () => Stack(
+                                  alignment: Alignment.center,
+                                  children: const [
+                                    CustomImage(
+                                      image: AppImages.book,
+                                      disableImage: true,
+                                    ),
+                                    CircularProgressIndicator()
+                                  ],
+                                ),
+                              ) ?? const CustomImage(
+                                      image: AppImages.book,
+                                    ),
                             ),
                             Align(
                               alignment: Alignment.center,
@@ -71,8 +88,6 @@ class UploadScreenWidget extends StatelessWidget {
                               ),
                             ),
                             state.whenOrNull(
-                                    documentLoading: () =>
-                                        const LoadingScreen(),
                                     documentSuccess: (data) => Align(
                                           alignment: Alignment.center,
                                           child: CustomButton.secondary(
