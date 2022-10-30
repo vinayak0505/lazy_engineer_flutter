@@ -14,7 +14,6 @@ class UploadPaperRequest with _$UploadPaperRequest {
         String? type,
         bool? solved,
         required List<String> tags,
-        bool? rating,
     }) = _UploadPaperRequest;
 
     factory UploadPaperRequest.fromJson(Map<String, dynamic> json) => _$UploadPaperRequestFromJson(json);

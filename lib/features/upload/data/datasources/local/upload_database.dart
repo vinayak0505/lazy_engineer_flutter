@@ -1,15 +1,61 @@
-import 'package:lazy_engineer/features/upload/data/datasources/local/upload_data.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-class UploadDatabase {
-  static final UploadDatabase instance = UploadDatabase._init();
+import '../../../../../core/models/book_database_model/book_database_model.dart';
+
+const String tableBook = 'book';
+const String tableBookWriter = 'book_writer';
+const String tableBookTag = 'book_tag';
+
+class BookFields {
+  static final List<String> values = [
+    id,
+    title,
+    writer,
+    subject,
+    about,
+    pages,
+    semister,
+    bookEdition,
+    price,
+    tags,
+    rating
+  ];
+  static const String id = '_id';
+  static const String title = 'title';
+  static const String writer = 'writer';
+  static const String subject = 'subject';
+  static const String about = 'about';
+  static const String pages = 'pages';
+  static const String semister = 'semister';
+  static const String bookEdition = 'book_edition';
+  static const String price = 'price';
+  static const String tags = 'tags';
+  static const String rating = 'rating';
+}
+
+class BookWriterFeilds {
+  static final List<String> values = [writerId, id, writer];
+  static const String id = '_id';
+  static const String writerId = 'writer_id';
+  static const String writer = 'writer';
+}
+
+class BookTagFeilds {
+  static final List<String> values = [tagId, id, tag];
+  static const String id = '_id';
+  static const String tagId = 'tag_id';
+  static const String tag = 'tag';
+}
+
+class MyDatabase {
+  static final MyDatabase instance = MyDatabase._init();
   static Database? _database;
-  UploadDatabase._init();
+  MyDatabase._init();
 
   Future<Database> get database async {
     if (_database != null) return _database!;
-    _database = await _initDB('upload.db');
+    _database = await _initDB('Book.db');
     return _database!;
   }
 
@@ -19,59 +65,80 @@ class UploadDatabase {
     return await openDatabase(path, version: 1, onCreate: _createDB);
   }
 
+  BookDatabaseModel declareId(BookDatabaseModel data, int id) {
+    return BookDatabaseModel(
+      id: data.id ?? id,
+      title: data.title,
+      subject: data.subject,
+      about: data.about,
+      pages: data.pages,
+      semister: data.semister,
+      bookEdition: data.bookEdition,
+      price: data.price,
+      rating: data.rating,
+    );
+  }
+
   Future _createDB(Database db, int version) async {
     const idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
+    const intType = 'INTEGER NOT NULL';
+    const nullableIntType = 'INTEGER';
     const textType = 'TEXT NOT NULL';
+    const nullableTextType = 'TEXT';
     await db.execute(
-        'CREATE TABLE $tableUploadData(${UploadFields.id} $idType, ${UploadFields.name} $textType)');
+        'CREATE TABLE $tableBook(${BookFields.id} $idType, ${BookFields.title} $textType, ${BookFields.subject} $textType, ${BookFields.about} $nullableTextType, ${BookFields.pages} $nullableIntType, ${BookFields.semister} $intType, ${BookFields.bookEdition} $nullableIntType, ${BookFields.price} $nullableIntType, ${BookFields.rating} $intType)');
+    await db.execute(
+        'CREATE TABLE $tableBookWriter(${BookWriterFeilds.writerId} $idType, ${BookWriterFeilds.id} $idType, ${BookWriterFeilds.writer} $textType)');
+    await db.execute(
+        'CREATE TABLE $tableBookTag(${BookTagFeilds.tagId} $idType, ${BookTagFeilds.id} $idType, ${BookTagFeilds.tag} $textType)');
   }
 
-  Future<Upload> create(Upload uploadData) async {
+  Future<BookDatabaseModel> create(BookDatabaseModel data) async {
     final db = await instance.database;
-    final id = await db.insert(tableUploadData, uploadData.toJson());
-    return uploadData.copy(id: id);
+    final id = await db.insert(tableBook, data.toJson());
+    return declareId(data, id);
   }
 
-  Future<Upload> readUpload(int id) async {
+  Future<BookDatabaseModel> read(int id) async {
     final db = await instance.database;
 
     final maps = await db.query(
-      tableUploadData,
-      columns: UploadFields.values,
-      where: '${UploadFields.id} = ?',
+      tableBook,
+      columns: BookFields.values,
+      where: '${BookFields.id} = ?',
       whereArgs: [id],
     );
 
     if (maps.isNotEmpty) {
-      return Upload.fromJson(maps.first);
+      return BookDatabaseModel.fromJson(maps.first);
     } else {
       throw Exception('ID $id not found');
     }
   }
 
-  Future<List<Upload>> readAllUpload() async {
+  Future<List<BookDatabaseModel>> readAll() async {
     final db = await instance.database;
-    const orderBy = '${UploadFields.name} ASC';
-    // final result = await db.rawQuery('SELECT * FROM $tableUploadData ORDER BY $orderBy');
-    final result = await db.query(tableUploadData, orderBy: orderBy);
-    return result.map((json) => Upload.fromJson(json)).toList();
+    const orderBy = '${BookFields.id} ASC';
+    // final result = await db.rawQuery('SELECT * FROM $tableBook ORDER BY $orderBy');
+    final result = await db.query(tableBook, orderBy: orderBy);
+    return result.map((json) => BookDatabaseModel.fromJson(json)).toList();
   }
 
-  Future<int> update(Upload upload) async {
+  Future<int> update(BookDatabaseModel book) async {
     final db = await instance.database;
     return db.update(
-      tableUploadData,
-      upload.toJson(),
-      where: '${UploadFields.id} = ?',
-      whereArgs: [upload.id],
+      tableBook,
+      book.toJson(),
+      where: '${BookFields.id} = ?',
+      whereArgs: [book.id],
     );
   }
 
   Future<int> delete(int id) async {
     final db = await instance.database;
     return await db.delete(
-      tableUploadData,
-      where: '${UploadFields.id} = ?',
+      tableBook,
+      where: '${BookFields.id} = ?',
       whereArgs: [id],
     );
   }

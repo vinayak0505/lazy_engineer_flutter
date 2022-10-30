@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'upload_book_request.dart';
+part of 'book_database_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,75 +14,75 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UploadBookRequest _$UploadBookRequestFromJson(Map<String, dynamic> json) {
-  return _UploadBookRequest.fromJson(json);
+BookDatabaseModel _$BookDatabaseModelFromJson(Map<String, dynamic> json) {
+  return _BookDatabaseModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$UploadBookRequest {
+mixin _$BookDatabaseModel {
+  int? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  List<String> get writer => throw _privateConstructorUsedError;
   String get subject => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
   int get pages => throw _privateConstructorUsedError;
   int? get semister => throw _privateConstructorUsedError;
   int get bookEdition => throw _privateConstructorUsedError;
   int? get price => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
+  int get rating => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UploadBookRequestCopyWith<UploadBookRequest> get copyWith =>
+  $BookDatabaseModelCopyWith<BookDatabaseModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UploadBookRequestCopyWith<$Res> {
-  factory $UploadBookRequestCopyWith(
-          UploadBookRequest value, $Res Function(UploadBookRequest) then) =
-      _$UploadBookRequestCopyWithImpl<$Res>;
+abstract class $BookDatabaseModelCopyWith<$Res> {
+  factory $BookDatabaseModelCopyWith(
+          BookDatabaseModel value, $Res Function(BookDatabaseModel) then) =
+      _$BookDatabaseModelCopyWithImpl<$Res>;
   $Res call(
-      {String title,
-      List<String> writer,
+      {int? id,
+      String title,
       String subject,
       String? about,
       int pages,
       int? semister,
       int bookEdition,
       int? price,
-      List<String> tags});
+      int rating});
 }
 
 /// @nodoc
-class _$UploadBookRequestCopyWithImpl<$Res>
-    implements $UploadBookRequestCopyWith<$Res> {
-  _$UploadBookRequestCopyWithImpl(this._value, this._then);
+class _$BookDatabaseModelCopyWithImpl<$Res>
+    implements $BookDatabaseModelCopyWith<$Res> {
+  _$BookDatabaseModelCopyWithImpl(this._value, this._then);
 
-  final UploadBookRequest _value;
+  final BookDatabaseModel _value;
   // ignore: unused_field
-  final $Res Function(UploadBookRequest) _then;
+  final $Res Function(BookDatabaseModel) _then;
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
-    Object? writer = freezed,
     Object? subject = freezed,
     Object? about = freezed,
     Object? pages = freezed,
     Object? semister = freezed,
     Object? bookEdition = freezed,
     Object? price = freezed,
-    Object? tags = freezed,
+    Object? rating = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      writer: writer == freezed
-          ? _value.writer
-          : writer // ignore: cast_nullable_to_non_nullable
-              as List<String>,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -107,65 +107,65 @@ class _$UploadBookRequestCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int?,
-      tags: tags == freezed
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      rating: rating == freezed
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_UploadBookRequestCopyWith<$Res>
-    implements $UploadBookRequestCopyWith<$Res> {
-  factory _$$_UploadBookRequestCopyWith(_$_UploadBookRequest value,
-          $Res Function(_$_UploadBookRequest) then) =
-      __$$_UploadBookRequestCopyWithImpl<$Res>;
+abstract class _$$_BookDatabaseModelCopyWith<$Res>
+    implements $BookDatabaseModelCopyWith<$Res> {
+  factory _$$_BookDatabaseModelCopyWith(_$_BookDatabaseModel value,
+          $Res Function(_$_BookDatabaseModel) then) =
+      __$$_BookDatabaseModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String title,
-      List<String> writer,
+      {int? id,
+      String title,
       String subject,
       String? about,
       int pages,
       int? semister,
       int bookEdition,
       int? price,
-      List<String> tags});
+      int rating});
 }
 
 /// @nodoc
-class __$$_UploadBookRequestCopyWithImpl<$Res>
-    extends _$UploadBookRequestCopyWithImpl<$Res>
-    implements _$$_UploadBookRequestCopyWith<$Res> {
-  __$$_UploadBookRequestCopyWithImpl(
-      _$_UploadBookRequest _value, $Res Function(_$_UploadBookRequest) _then)
-      : super(_value, (v) => _then(v as _$_UploadBookRequest));
+class __$$_BookDatabaseModelCopyWithImpl<$Res>
+    extends _$BookDatabaseModelCopyWithImpl<$Res>
+    implements _$$_BookDatabaseModelCopyWith<$Res> {
+  __$$_BookDatabaseModelCopyWithImpl(
+      _$_BookDatabaseModel _value, $Res Function(_$_BookDatabaseModel) _then)
+      : super(_value, (v) => _then(v as _$_BookDatabaseModel));
 
   @override
-  _$_UploadBookRequest get _value => super._value as _$_UploadBookRequest;
+  _$_BookDatabaseModel get _value => super._value as _$_BookDatabaseModel;
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
-    Object? writer = freezed,
     Object? subject = freezed,
     Object? about = freezed,
     Object? pages = freezed,
     Object? semister = freezed,
     Object? bookEdition = freezed,
     Object? price = freezed,
-    Object? tags = freezed,
+    Object? rating = freezed,
   }) {
-    return _then(_$_UploadBookRequest(
+    return _then(_$_BookDatabaseModel(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      writer: writer == freezed
-          ? _value._writer
-          : writer // ignore: cast_nullable_to_non_nullable
-              as List<String>,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -190,42 +190,35 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int?,
-      tags: tags == freezed
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      rating: rating == freezed
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_UploadBookRequest implements _UploadBookRequest {
-  const _$_UploadBookRequest(
-      {required this.title,
-      required final List<String> writer,
+class _$_BookDatabaseModel implements _BookDatabaseModel {
+  const _$_BookDatabaseModel(
+      {this.id,
+      required this.title,
       required this.subject,
       this.about,
       required this.pages,
       this.semister,
       required this.bookEdition,
       this.price,
-      required final List<String> tags})
-      : _writer = writer,
-        _tags = tags;
+      required this.rating});
 
-  factory _$_UploadBookRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UploadBookRequestFromJson(json);
+  factory _$_BookDatabaseModel.fromJson(Map<String, dynamic> json) =>
+      _$$_BookDatabaseModelFromJson(json);
 
+  @override
+  final int? id;
   @override
   final String title;
-  final List<String> _writer;
-  @override
-  List<String> get writer {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_writer);
-  }
-
   @override
   final String subject;
   @override
@@ -238,25 +231,21 @@ class _$_UploadBookRequest implements _UploadBookRequest {
   final int bookEdition;
   @override
   final int? price;
-  final List<String> _tags;
   @override
-  List<String> get tags {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tags);
-  }
+  final int rating;
 
   @override
   String toString() {
-    return 'UploadBookRequest(title: $title, writer: $writer, subject: $subject, about: $about, pages: $pages, semister: $semister, bookEdition: $bookEdition, price: $price, tags: $tags)';
+    return 'BookDatabaseModel(id: $id, title: $title, subject: $subject, about: $about, pages: $pages, semister: $semister, bookEdition: $bookEdition, price: $price, rating: $rating)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UploadBookRequest &&
+            other is _$_BookDatabaseModel &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other._writer, _writer) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.pages, pages) &&
@@ -264,56 +253,56 @@ class _$_UploadBookRequest implements _UploadBookRequest {
             const DeepCollectionEquality()
                 .equals(other.bookEdition, bookEdition) &&
             const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality().equals(other._tags, _tags));
+            const DeepCollectionEquality().equals(other.rating, rating));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(_writer),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(pages),
       const DeepCollectionEquality().hash(semister),
       const DeepCollectionEquality().hash(bookEdition),
       const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(_tags));
+      const DeepCollectionEquality().hash(rating));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UploadBookRequestCopyWith<_$_UploadBookRequest> get copyWith =>
-      __$$_UploadBookRequestCopyWithImpl<_$_UploadBookRequest>(
+  _$$_BookDatabaseModelCopyWith<_$_BookDatabaseModel> get copyWith =>
+      __$$_BookDatabaseModelCopyWithImpl<_$_BookDatabaseModel>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UploadBookRequestToJson(
+    return _$$_BookDatabaseModelToJson(
       this,
     );
   }
 }
 
-abstract class _UploadBookRequest implements UploadBookRequest {
-  const factory _UploadBookRequest(
-      {required final String title,
-      required final List<String> writer,
+abstract class _BookDatabaseModel implements BookDatabaseModel {
+  const factory _BookDatabaseModel(
+      {final int? id,
+      required final String title,
       required final String subject,
       final String? about,
       required final int pages,
       final int? semister,
       required final int bookEdition,
       final int? price,
-      required final List<String> tags}) = _$_UploadBookRequest;
+      required final int rating}) = _$_BookDatabaseModel;
 
-  factory _UploadBookRequest.fromJson(Map<String, dynamic> json) =
-      _$_UploadBookRequest.fromJson;
+  factory _BookDatabaseModel.fromJson(Map<String, dynamic> json) =
+      _$_BookDatabaseModel.fromJson;
 
+  @override
+  int? get id;
   @override
   String get title;
-  @override
-  List<String> get writer;
   @override
   String get subject;
   @override
@@ -327,9 +316,9 @@ abstract class _UploadBookRequest implements UploadBookRequest {
   @override
   int? get price;
   @override
-  List<String> get tags;
+  int get rating;
   @override
   @JsonKey(ignore: true)
-  _$$_UploadBookRequestCopyWith<_$_UploadBookRequest> get copyWith =>
+  _$$_BookDatabaseModelCopyWith<_$_BookDatabaseModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

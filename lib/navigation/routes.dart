@@ -160,7 +160,7 @@ class RouteGenerator {
               ),
               GoRoute(
                 path: 'jobs',
-                builder: (_, __) => const UploadJobRequestScreen(),
+                builder: (_, __) => const UploadJobScreen(),
                 // routes: [
                 //   GoRoute(
                 //     path: 'fullscreen_view',
