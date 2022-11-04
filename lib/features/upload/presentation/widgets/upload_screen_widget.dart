@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/images.dart';
@@ -48,37 +51,47 @@ class UploadScreenWidget extends StatelessWidget {
           create: (context) => UploadCubit(UploadRepository()),
           child: BlocBuilder<UploadCubit, UploadState>(
             builder: (context, state) {
+              var cubit = context.read<UploadCubit>();
               return state.whenOrNull(
-                      loading: () => const LoadingScreen(),
-                      failure: (e) => FailureScreen(e)) ??
+                    loading: () => const LoadingScreen(),
+                  ) ??
                   SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                       child: Form(
                         key: formGlobalKey,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Center(
-                              child: state.whenOrNull(
-                                    documentFailure: (e) => FailureScreen(e),
-                                    documentLoading: () => Stack(
-                                      alignment: Alignment.center,
-                                      children: const [
-                                        CustomImage(
-                                          image: AppImages.book,
-                                          disableImage: true,
-                                        ),
-                                        CircularProgressIndicator()
-                                      ],
-                                    ),
-                                  ) ??
-                                  const CustomImage(
-                                    image: AppImages.book,
+                                child: state.whenOrNull(
+                              documentLoading: () => Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  CustomImage(
+                                    width: 200,
+                                    height: 200,
+                                    file: (cubit.pickedFile != null &&
+                                            cubit.pickedFile!.extension != 'pdf')
+                                        ? File(
+                                            cubit.pickedFile!.path.toString(),
+                                          )
+                                        : null,
+                                    disableImage: true,
                                   ),
-                            ),
-                            Align(
-                              alignment: Alignment.center,
+                                  const CircularProgressIndicator()
+                                ],
+                              ),
+                              documentSuccess: (data) => CustomImage(
+                                file: (data.extension != 'pdf')
+                                    ? File(data.path.toString())
+                                    : null,
+                                width: 200,
+                                height: 200,
+                              ),
+                            )),
+                            const SizedBox(height: 8),
+                            Center(
                               child: CustomButton(
                                 onPressed: () => context
                                     .read<UploadCubit>()
@@ -88,22 +101,26 @@ class UploadScreenWidget extends StatelessWidget {
                               ),
                             ),
                             AnimatedSwitcher(
-                              switchInCurve: Curves.easeIn,
-                              duration: const Duration(
-                                milliseconds: 500,
-                              ),
-                              child: state.whenOrNull(
-                                documentSuccess: (data) => Align(
-                                  alignment: Alignment.center,
-                                  child: CustomButton.secondary(
-                                    width: 100,
-                                    text: 'file1.pdf',
-                                    onPressed: () {},
-                                  ),
+                                switchInCurve: Curves.easeIn,
+                                duration: const Duration(
+                                  milliseconds: 500,
                                 ),
-                                documentFailure: (e) => FailureScreen(e),
-                              ) ?? const SizedBox()
-                            ),
+                                child: state.whenOrNull(
+                                      documentSuccess: (data) => Center(
+                                        child: CustomButton.secondary(
+                                          // width: 100,
+                                          constraints: const BoxConstraints(
+                                            maxWidth: 150,
+                                            minWidth: 100,
+                                          ),
+                                          text: data.name,
+                                          overflow: TextOverflow.ellipsis,
+                                          onPressed: () => cubit.openFile(),
+                                        ),
+                                      ),
+                                      documentFailure: (e) => FailureScreen(e),
+                                    ) ??
+                                    const SizedBox()),
                             const SizedBox(height: 16),
                             ...body,
                             const SizedBox(height: 16),
@@ -114,20 +131,16 @@ class UploadScreenWidget extends StatelessWidget {
                                 width: 130,
                                 onPressed: () {
                                   if (formGlobalKey.currentState!.validate()) {
-                                    onPressed(context.read<UploadCubit>());
+                                    onPressed(cubit);
                                   }
                                 },
                               ),
                             ),
+                            const SizedBox(height: 16),
                             state.whenOrNull(
-                                  failure: (e) => Text(
-                                    e.toString(),
-                                    style: TextStyle(
-                                      color: theme.errorColor,
-                                    ),
-                                  ),
+                                  failure: (e) => FailureScreen(e),
                                 ) ??
-                                const SizedBox(),
+                                const SizedBox()
                           ],
                         ),
                       ),

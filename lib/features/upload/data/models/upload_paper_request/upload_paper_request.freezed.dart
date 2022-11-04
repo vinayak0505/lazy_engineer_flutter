@@ -28,7 +28,6 @@ mixin _$UploadPaperRequest {
   String? get type => throw _privateConstructorUsedError;
   bool? get solved => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
-  bool? get rating => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,8 +48,7 @@ abstract class $UploadPaperRequestCopyWith<$Res> {
       String link,
       String? type,
       bool? solved,
-      List<String> tags,
-      bool? rating});
+      List<String> tags});
 }
 
 /// @nodoc
@@ -72,7 +70,6 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
     Object? type = freezed,
     Object? solved = freezed,
     Object? tags = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -107,10 +104,6 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -130,8 +123,7 @@ abstract class _$$_UploadPaperRequestCopyWith<$Res>
       String link,
       String? type,
       bool? solved,
-      List<String> tags,
-      bool? rating});
+      List<String> tags});
 }
 
 /// @nodoc
@@ -155,7 +147,6 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
     Object? type = freezed,
     Object? solved = freezed,
     Object? tags = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_$_UploadPaperRequest(
       title: title == freezed
@@ -190,10 +181,6 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -209,8 +196,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
       required this.link,
       this.type,
       this.solved,
-      required final List<String> tags,
-      this.rating})
+      required final List<String> tags})
       : _tags = tags;
 
   factory _$_UploadPaperRequest.fromJson(Map<String, dynamic> json) =>
@@ -238,11 +224,8 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   }
 
   @override
-  final bool? rating;
-
-  @override
   String toString() {
-    return 'UploadPaperRequest(title: $title, subject: $subject, semister: $semister, year: $year, link: $link, type: $type, solved: $solved, tags: $tags, rating: $rating)';
+    return 'UploadPaperRequest(title: $title, subject: $subject, semister: $semister, year: $year, link: $link, type: $type, solved: $solved, tags: $tags)';
   }
 
   @override
@@ -257,8 +240,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
             const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.solved, solved) &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
   @JsonKey(ignore: true)
@@ -272,8 +254,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
       const DeepCollectionEquality().hash(link),
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(solved),
-      const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(rating));
+      const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
   @override
@@ -298,8 +279,7 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
       required final String link,
       final String? type,
       final bool? solved,
-      required final List<String> tags,
-      final bool? rating}) = _$_UploadPaperRequest;
+      required final List<String> tags}) = _$_UploadPaperRequest;
 
   factory _UploadPaperRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadPaperRequest.fromJson;
@@ -320,8 +300,6 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
   bool? get solved;
   @override
   List<String> get tags;
-  @override
-  bool? get rating;
   @override
   @JsonKey(ignore: true)
   _$$_UploadPaperRequestCopyWith<_$_UploadPaperRequest> get copyWith =>

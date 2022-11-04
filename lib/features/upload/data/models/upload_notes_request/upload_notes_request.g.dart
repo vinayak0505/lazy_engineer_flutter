@@ -18,7 +18,6 @@ _$_UploadNotesRequest _$$_UploadNotesRequestFromJson(
       topic: json['topic'] as String?,
       link: json['link'] as String,
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-      rating: json['rating'] as bool?,
     );
 
 Map<String, dynamic> _$$_UploadNotesRequestToJson(
@@ -33,5 +32,4 @@ Map<String, dynamic> _$$_UploadNotesRequestToJson(
       'topic': instance.topic,
       'link': instance.link,
       'tags': instance.tags,
-      'rating': instance.rating,
     };

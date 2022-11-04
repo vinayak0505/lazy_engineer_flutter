@@ -7,13 +7,11 @@ class FailureScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return Scaffold(
-      body: Center(
-        child: Text(
-          error.toString(),
-          style: theme.textTheme.bodyLarge?.copyWith(
-            color: theme.errorColor,
-          ),
+    return Center(
+      child: Text(
+        error.toString(),
+        style: theme.textTheme.bodyLarge?.copyWith(
+          color: theme.errorColor,
         ),
       ),
     );

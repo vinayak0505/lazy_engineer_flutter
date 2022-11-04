@@ -26,7 +26,6 @@ mixin _$UploadFilesRequest {
   String? get semister => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
-  bool? get rating => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,8 +44,7 @@ abstract class $UploadFilesRequestCopyWith<$Res> {
       String? college,
       String? semister,
       String link,
-      List<String> tags,
-      bool? rating});
+      List<String> tags});
 }
 
 /// @nodoc
@@ -66,7 +64,6 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
     Object? semister = freezed,
     Object? link = freezed,
     Object? tags = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -93,10 +90,6 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -114,8 +107,7 @@ abstract class _$$_UploadFilesRequestCopyWith<$Res>
       String? college,
       String? semister,
       String link,
-      List<String> tags,
-      bool? rating});
+      List<String> tags});
 }
 
 /// @nodoc
@@ -137,7 +129,6 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
     Object? semister = freezed,
     Object? link = freezed,
     Object? tags = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_$_UploadFilesRequest(
       title: title == freezed
@@ -164,10 +155,6 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -181,8 +168,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
       this.college,
       this.semister,
       required this.link,
-      required final List<String> tags,
-      this.rating})
+      required final List<String> tags})
       : _tags = tags;
 
   factory _$_UploadFilesRequest.fromJson(Map<String, dynamic> json) =>
@@ -206,11 +192,8 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
   }
 
   @override
-  final bool? rating;
-
-  @override
   String toString() {
-    return 'UploadFilesRequest(title: $title, subject: $subject, college: $college, semister: $semister, link: $link, tags: $tags, rating: $rating)';
+    return 'UploadFilesRequest(title: $title, subject: $subject, college: $college, semister: $semister, link: $link, tags: $tags)';
   }
 
   @override
@@ -223,8 +206,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
             const DeepCollectionEquality().equals(other.college, college) &&
             const DeepCollectionEquality().equals(other.semister, semister) &&
             const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
   @JsonKey(ignore: true)
@@ -236,8 +218,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
       const DeepCollectionEquality().hash(college),
       const DeepCollectionEquality().hash(semister),
       const DeepCollectionEquality().hash(link),
-      const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(rating));
+      const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
   @override
@@ -260,8 +241,7 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
       final String? college,
       final String? semister,
       required final String link,
-      required final List<String> tags,
-      final bool? rating}) = _$_UploadFilesRequest;
+      required final List<String> tags}) = _$_UploadFilesRequest;
 
   factory _UploadFilesRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadFilesRequest.fromJson;
@@ -278,8 +258,6 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
   String get link;
   @override
   List<String> get tags;
-  @override
-  bool? get rating;
   @override
   @JsonKey(ignore: true)
   _$$_UploadFilesRequestCopyWith<_$_UploadFilesRequest> get copyWith =>

@@ -17,7 +17,6 @@ _$_UploadPaperRequest _$$_UploadPaperRequestFromJson(
       type: json['type'] as String?,
       solved: json['solved'] as bool?,
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-      rating: json['rating'] as bool?,
     );
 
 Map<String, dynamic> _$$_UploadPaperRequestToJson(
@@ -31,5 +30,4 @@ Map<String, dynamic> _$$_UploadPaperRequestToJson(
       'type': instance.type,
       'solved': instance.solved,
       'tags': instance.tags,
-      'rating': instance.rating,
     };

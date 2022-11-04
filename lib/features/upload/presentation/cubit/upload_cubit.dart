@@ -1,3 +1,5 @@
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lazy_engineer/features/upload/data/models/upload_book_request.dart/upload_book_request.dart';
@@ -6,22 +8,33 @@ import 'package:lazy_engineer/features/upload/data/models/upload_jobs_request.da
 import 'package:lazy_engineer/features/upload/data/models/upload_notes_request/upload_notes_request.dart';
 import 'package:lazy_engineer/features/upload/data/models/upload_paper_request/upload_paper_request.dart';
 import 'package:lazy_engineer/features/upload/data/repositories/upload_repository.dart';
+import 'package:open_file/open_file.dart';
 
 part 'upload_state.dart';
 part 'upload_cubit.freezed.dart';
 
 class UploadCubit extends Cubit<UploadState> {
-  UploadCubit(this.repository) : super(const UploadState.initial());
   final UploadRepository repository;
+  UploadCubit(this.repository) : super(const UploadState.initial());
+
+  PlatformFile? pickedFile;
 
   void uploadDocument() async {
     emit(const UploadState.documentLoading());
     try {
-      await Future.delayed(const Duration(seconds: 2));
-      emit(const UploadState.documentSuccess(1));
+      final result = await FilePicker.platform.pickFiles(
+        allowedExtensions: ['jpg', 'pdf'],
+        type: FileType.custom,
+      );
+      if (result != null) pickedFile = result.files.first;
+      emit(UploadState.documentSuccess(pickedFile!));
     } catch (e) {
       emit(UploadState.documentFailure(e));
     }
+  }
+
+  void openFile() {
+    if (pickedFile != null) OpenFile.open(pickedFile!.path);
   }
 
   void uploadNotes({

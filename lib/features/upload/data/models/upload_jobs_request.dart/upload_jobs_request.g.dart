@@ -24,7 +24,6 @@ _$_UploadJobsRequest _$$_UploadJobsRequestFromJson(Map<String, dynamic> json) =>
       companyPhoto: (json['companyPhoto'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      rating: json['rating'] as bool?,
     );
 
 Map<String, dynamic> _$$_UploadJobsRequestToJson(
@@ -42,5 +41,4 @@ Map<String, dynamic> _$$_UploadJobsRequestToJson(
       'expectedSalary': instance.expectedSalary,
       'numOfEmployees': instance.numOfEmployees,
       'companyPhoto': instance.companyPhoto,
-      'rating': instance.rating,
     };

@@ -29,7 +29,6 @@ mixin _$UploadNotesRequest {
   String? get topic => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
-  bool? get rating => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,8 +50,7 @@ abstract class $UploadNotesRequestCopyWith<$Res> {
       String? chapter,
       String? topic,
       String link,
-      List<String> tags,
-      bool? rating});
+      List<String> tags});
 }
 
 /// @nodoc
@@ -75,7 +73,6 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
     Object? topic = freezed,
     Object? link = freezed,
     Object? tags = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -114,10 +111,6 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -138,8 +131,7 @@ abstract class _$$_UploadNotesRequestCopyWith<$Res>
       String? chapter,
       String? topic,
       String link,
-      List<String> tags,
-      bool? rating});
+      List<String> tags});
 }
 
 /// @nodoc
@@ -164,7 +156,6 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
     Object? topic = freezed,
     Object? link = freezed,
     Object? tags = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_$_UploadNotesRequest(
       title: title == freezed
@@ -203,10 +194,6 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -223,8 +210,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
       this.chapter,
       this.topic,
       required this.link,
-      required final List<String> tags,
-      this.rating})
+      required final List<String> tags})
       : _tags = tags;
 
   factory _$_UploadNotesRequest.fromJson(Map<String, dynamic> json) =>
@@ -254,11 +240,8 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
   }
 
   @override
-  final bool? rating;
-
-  @override
   String toString() {
-    return 'UploadNotesRequest(title: $title, about: $about, semister: $semister, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, link: $link, tags: $tags, rating: $rating)';
+    return 'UploadNotesRequest(title: $title, about: $about, semister: $semister, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, link: $link, tags: $tags)';
   }
 
   @override
@@ -274,8 +257,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
             const DeepCollectionEquality().equals(other.chapter, chapter) &&
             const DeepCollectionEquality().equals(other.topic, topic) &&
             const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
   @JsonKey(ignore: true)
@@ -290,8 +272,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
       const DeepCollectionEquality().hash(chapter),
       const DeepCollectionEquality().hash(topic),
       const DeepCollectionEquality().hash(link),
-      const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(rating));
+      const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
   @override
@@ -317,8 +298,7 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
       final String? chapter,
       final String? topic,
       required final String link,
-      required final List<String> tags,
-      final bool? rating}) = _$_UploadNotesRequest;
+      required final List<String> tags}) = _$_UploadNotesRequest;
 
   factory _UploadNotesRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadNotesRequest.fromJson;
@@ -341,8 +321,6 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
   String get link;
   @override
   List<String> get tags;
-  @override
-  bool? get rating;
   @override
   @JsonKey(ignore: true)
   _$$_UploadNotesRequestCopyWith<_$_UploadNotesRequest> get copyWith =>

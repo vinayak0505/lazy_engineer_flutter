@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lazy_engineer/assets/images.dart';
@@ -9,6 +10,7 @@ class CustomImage extends StatelessWidget {
   final bool? onlyTop, onlyLeft;
   final double? radius;
   final String? image;
+  final File? file;
   final BoxFit? boxFit;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
@@ -16,6 +18,7 @@ class CustomImage extends StatelessWidget {
   const CustomImage({
     Key? key,
     this.image,
+    this.file,
     this.height,
     this.margin,
     this.padding,
@@ -46,26 +49,33 @@ class CustomImage extends StatelessWidget {
                       bottomLeft: Radius.circular(radius ?? 0),
                     )
                   : BorderRadius.circular(radius ?? 0),
-          child: image != null
-              ? (image!.split('.').last == 'svg')
-                  ? SvgPicture.asset(
-                      image!,
-                      width: width,
-                      height: height,
-                      fit: boxFit ?? BoxFit.contain,
-                    )
-                  : Image.asset(
-                      image!,
-                      height: height,
-                      width: width,
-                      fit: boxFit ?? BoxFit.contain,
-                    )
-              : Image.asset(
-                  AppImages.placeholder,
-                  height: height,
+          child: (file != null)
+              ? Image.file(
+                  file!,
                   width: width,
-                  fit: boxFit ?? BoxFit.cover,
-                ),
+                  height: height,
+                  fit: boxFit ?? BoxFit.contain,
+                )
+              : image != null
+                  ? (image!.split('.').last == 'svg')
+                      ? SvgPicture.asset(
+                          image!,
+                          width: width,
+                          height: height,
+                          fit: boxFit ?? BoxFit.contain,
+                        )
+                      : Image.asset(
+                          image!,
+                          height: height,
+                          width: width,
+                          fit: boxFit ?? BoxFit.contain,
+                        )
+                  : Image.asset(
+                      AppImages.placeholder,
+                      height: height,
+                      width: width,
+                      fit: boxFit ?? BoxFit.cover,
+                    ),
         ),
       ),
     );

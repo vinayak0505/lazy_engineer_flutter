@@ -23,8 +23,9 @@ dependencies:
   path_provider: ^2.0.11
   shared_preferences: ^2.0.15
   go_router: ^5.1.0
-  image_picker: ^0.8.6
-  file_picker: ^5.2.2
+  image_picker: ^0.8.6 # to be removed
+  file_picker:
+  open_file: ^3.2.1
 
   ### logic
   flutter_bloc: ^8.0.1
@@ -36,6 +37,8 @@ dependencies:
   pretty_dio_logger: ^1.1.1
   retrofit: ^3.0.1+1
   freezed_annotation: ^2.0.3
+
+  ###
 
 dev_dependencies:
   flutter_test:

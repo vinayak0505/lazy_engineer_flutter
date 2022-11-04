@@ -32,7 +32,6 @@ mixin _$UploadJobsRequest {
   int get expectedSalary => throw _privateConstructorUsedError;
   int get numOfEmployees => throw _privateConstructorUsedError;
   List<String> get companyPhoto => throw _privateConstructorUsedError;
-  bool? get rating => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -57,8 +56,7 @@ abstract class $UploadJobsRequestCopyWith<$Res> {
       List<String> skillsNeeded,
       int expectedSalary,
       int numOfEmployees,
-      List<String> companyPhoto,
-      bool? rating});
+      List<String> companyPhoto});
 }
 
 /// @nodoc
@@ -84,7 +82,6 @@ class _$UploadJobsRequestCopyWithImpl<$Res>
     Object? expectedSalary = freezed,
     Object? numOfEmployees = freezed,
     Object? companyPhoto = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -135,10 +132,6 @@ class _$UploadJobsRequestCopyWithImpl<$Res>
           ? _value.companyPhoto
           : companyPhoto // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -162,8 +155,7 @@ abstract class _$$_UploadJobsRequestCopyWith<$Res>
       List<String> skillsNeeded,
       int expectedSalary,
       int numOfEmployees,
-      List<String> companyPhoto,
-      bool? rating});
+      List<String> companyPhoto});
 }
 
 /// @nodoc
@@ -191,7 +183,6 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
     Object? expectedSalary = freezed,
     Object? numOfEmployees = freezed,
     Object? companyPhoto = freezed,
-    Object? rating = freezed,
   }) {
     return _then(_$_UploadJobsRequest(
       title: title == freezed
@@ -242,10 +233,6 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
           ? _value._companyPhoto
           : companyPhoto // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -265,8 +252,7 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
       required final List<String> skillsNeeded,
       required this.expectedSalary,
       required this.numOfEmployees,
-      required final List<String> companyPhoto,
-      this.rating})
+      required final List<String> companyPhoto})
       : _skillsNeeded = skillsNeeded,
         _companyPhoto = companyPhoto;
 
@@ -308,11 +294,8 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
   }
 
   @override
-  final bool? rating;
-
-  @override
   String toString() {
-    return 'UploadJobsRequest(title: $title, profile: $profile, company: $company, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, expectedSalary: $expectedSalary, numOfEmployees: $numOfEmployees, companyPhoto: $companyPhoto, rating: $rating)';
+    return 'UploadJobsRequest(title: $title, profile: $profile, company: $company, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, expectedSalary: $expectedSalary, numOfEmployees: $numOfEmployees, companyPhoto: $companyPhoto)';
   }
 
   @override
@@ -338,8 +321,7 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
             const DeepCollectionEquality()
                 .equals(other.numOfEmployees, numOfEmployees) &&
             const DeepCollectionEquality()
-                .equals(other._companyPhoto, _companyPhoto) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+                .equals(other._companyPhoto, _companyPhoto));
   }
 
   @JsonKey(ignore: true)
@@ -357,8 +339,7 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
       const DeepCollectionEquality().hash(_skillsNeeded),
       const DeepCollectionEquality().hash(expectedSalary),
       const DeepCollectionEquality().hash(numOfEmployees),
-      const DeepCollectionEquality().hash(_companyPhoto),
-      const DeepCollectionEquality().hash(rating));
+      const DeepCollectionEquality().hash(_companyPhoto));
 
   @JsonKey(ignore: true)
   @override
@@ -387,8 +368,7 @@ abstract class _UploadJobsRequest implements UploadJobsRequest {
       required final List<String> skillsNeeded,
       required final int expectedSalary,
       required final int numOfEmployees,
-      required final List<String> companyPhoto,
-      final bool? rating}) = _$_UploadJobsRequest;
+      required final List<String> companyPhoto}) = _$_UploadJobsRequest;
 
   factory _UploadJobsRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadJobsRequest.fromJson;
@@ -417,8 +397,6 @@ abstract class _UploadJobsRequest implements UploadJobsRequest {
   int get numOfEmployees;
   @override
   List<String> get companyPhoto;
-  @override
-  bool? get rating;
   @override
   @JsonKey(ignore: true)
   _$$_UploadJobsRequestCopyWith<_$_UploadJobsRequest> get copyWith =>
