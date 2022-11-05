@@ -15,7 +15,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
     ThemeData theme = Theme.of(context);
     TextEditingController titleController = TextEditingController();
     TextEditingController aboutController = TextEditingController();
-    TextEditingController semisterController = TextEditingController();
+    TextEditingController semesterController = TextEditingController();
     TextEditingController subjectController = TextEditingController();
     TextEditingController collegeController = TextEditingController();
     TextEditingController unitController = TextEditingController();
@@ -50,16 +50,16 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        //* Semister
+        //* Semester
         CustomDropdown(
-          list: semisterList,
-          keyList: semisterKeyList,
+          list: semesterList,
+          keyList: semesterKeyList,
           width: 130,
-          hintText: semister,
-          controller: semisterController,
+          hintText: semester,
+          controller: semesterController,
           validator: (value) => nullCheckTextValidation(
             value,
-            semister,
+            semester,
           ),
         ),
         const SizedBox(height: 16),
@@ -132,8 +132,8 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         cubit.uploadNotes(
           title: titleController.text,
           about: aboutController.text,
-          semister: int.parse(
-            semisterController.text,
+          semester: int.parse(
+            semesterController.text,
           ),
           subject: subjectController.text,
           unit: unitController.text,

@@ -40,7 +40,7 @@ class UploadCubit extends Cubit<UploadState> {
   void uploadNotes({
     required String title,
     String? about,
-    int? semister,
+    int? semester,
     String? subject,
     String? unit,
     String? chapter,
@@ -51,7 +51,7 @@ class UploadCubit extends Cubit<UploadState> {
     UploadNotesRequest notesData = UploadNotesRequest(
       title: title,
       about: about,
-      semister: semister,
+      semister: semester,
       subject: subject,
       unit: unit,
       chapter: chapter,
