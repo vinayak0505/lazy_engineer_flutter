@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../data/models/sign_in_model/sign_in_model.dart';
 import '../../data/models/sign_up_model/sign_up_model.dart';
-import '../../data/repositories/auth_repository.dart';
+import '../../data/repositories/auth_repository_impl.dart';
 
 part 'auth_cubit.freezed.dart';
 part 'auth_state.dart';
@@ -11,7 +11,7 @@ part 'auth_state.dart';
 enum Status { login, register }
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthRepository repository;
+  AuthRepositoryImpl repository;
   String? token;
   PageController controller = PageController();
 

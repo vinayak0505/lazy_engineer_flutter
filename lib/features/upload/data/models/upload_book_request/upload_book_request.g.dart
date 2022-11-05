@@ -9,6 +9,7 @@ part of 'upload_book_request.dart';
 _$_UploadBookRequest _$$_UploadBookRequestFromJson(Map<String, dynamic> json) =>
     _$_UploadBookRequest(
       title: json['title'] as String,
+      link: json['link'],
       writer:
           (json['writer'] as List<dynamic>).map((e) => e as String).toList(),
       subject: json['subject'] as String,
@@ -24,6 +25,7 @@ Map<String, dynamic> _$$_UploadBookRequestToJson(
         _$_UploadBookRequest instance) =>
     <String, dynamic>{
       'title': instance.title,
+      'link': instance.link,
       'writer': instance.writer,
       'subject': instance.subject,
       'about': instance.about,

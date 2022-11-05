@@ -27,7 +27,7 @@ mixin _$UploadNotesRequest {
   String? get unit => throw _privateConstructorUsedError;
   String? get chapter => throw _privateConstructorUsedError;
   String? get topic => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
+  dynamic get link => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ abstract class $UploadNotesRequestCopyWith<$Res> {
       String? unit,
       String? chapter,
       String? topic,
-      String link,
+      dynamic link,
       List<String> tags});
 }
 
@@ -106,7 +106,7 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       tags: tags == freezed
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -130,7 +130,7 @@ abstract class _$$_UploadNotesRequestCopyWith<$Res>
       String? unit,
       String? chapter,
       String? topic,
-      String link,
+      dynamic link,
       List<String> tags});
 }
 
@@ -189,7 +189,7 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       tags: tags == freezed
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -231,7 +231,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
   @override
   final String? topic;
   @override
-  final String link;
+  final dynamic link;
   final List<String> _tags;
   @override
   List<String> get tags {
@@ -297,7 +297,7 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
       final String? unit,
       final String? chapter,
       final String? topic,
-      required final String link,
+      required final dynamic link,
       required final List<String> tags}) = _$_UploadNotesRequest;
 
   factory _UploadNotesRequest.fromJson(Map<String, dynamic> json) =
@@ -318,7 +318,7 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
   @override
   String? get topic;
   @override
-  String get link;
+  dynamic get link;
   @override
   List<String> get tags;
   @override

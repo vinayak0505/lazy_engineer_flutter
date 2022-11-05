@@ -13,7 +13,7 @@ _$_UploadFilesRequest _$$_UploadFilesRequestFromJson(
       subject: json['subject'] as String?,
       college: json['college'] as String?,
       semister: json['semister'] as String?,
-      link: json['link'] as String,
+      link: json['link'],
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
     );
 

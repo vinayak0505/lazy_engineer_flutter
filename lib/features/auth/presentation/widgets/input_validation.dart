@@ -1,4 +1,4 @@
-mixin InputValidationMixin {
+mixin InputAuthValidationMixin {
   bool isPasswordValid(String password) => password.length == 6;
   String? emailValidation(String? value) {
     RegExp emailRegExp = RegExp(

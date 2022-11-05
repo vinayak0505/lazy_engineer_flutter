@@ -129,9 +129,13 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
         //* Tags
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
-        TagsWidget(listTags: (value) {
-          tagsController = value;
-        }),
+       TagsWidget(
+          listTags: (value) => tagsController = value,
+          // validator: (value) => emptyListCheckValidation(
+          //   value,
+          //   tags,
+          // ),
+        ),
       ],
       onPressed: (cubit) {
         cubit.uploadBook(

@@ -21,6 +21,7 @@ UploadBookRequest _$UploadBookRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UploadBookRequest {
   String get title => throw _privateConstructorUsedError;
+  dynamic get link => throw _privateConstructorUsedError;
   List<String> get writer => throw _privateConstructorUsedError;
   String get subject => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
@@ -43,6 +44,7 @@ abstract class $UploadBookRequestCopyWith<$Res> {
       _$UploadBookRequestCopyWithImpl<$Res>;
   $Res call(
       {String title,
+      dynamic link,
       List<String> writer,
       String subject,
       String? about,
@@ -65,6 +67,7 @@ class _$UploadBookRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? link = freezed,
     Object? writer = freezed,
     Object? subject = freezed,
     Object? about = freezed,
@@ -79,6 +82,10 @@ class _$UploadBookRequestCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      link: link == freezed
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       writer: writer == freezed
           ? _value.writer
           : writer // ignore: cast_nullable_to_non_nullable
@@ -124,6 +131,7 @@ abstract class _$$_UploadBookRequestCopyWith<$Res>
   @override
   $Res call(
       {String title,
+      dynamic link,
       List<String> writer,
       String subject,
       String? about,
@@ -148,6 +156,7 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? link = freezed,
     Object? writer = freezed,
     Object? subject = freezed,
     Object? about = freezed,
@@ -162,6 +171,10 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      link: link == freezed
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       writer: writer == freezed
           ? _value._writer
           : writer // ignore: cast_nullable_to_non_nullable
@@ -203,6 +216,7 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
 class _$_UploadBookRequest implements _UploadBookRequest {
   const _$_UploadBookRequest(
       {required this.title,
+      required this.link,
       required final List<String> writer,
       required this.subject,
       this.about,
@@ -219,6 +233,8 @@ class _$_UploadBookRequest implements _UploadBookRequest {
 
   @override
   final String title;
+  @override
+  final dynamic link;
   final List<String> _writer;
   @override
   List<String> get writer {
@@ -247,7 +263,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
 
   @override
   String toString() {
-    return 'UploadBookRequest(title: $title, writer: $writer, subject: $subject, about: $about, pages: $pages, semister: $semister, bookEdition: $bookEdition, price: $price, tags: $tags)';
+    return 'UploadBookRequest(title: $title, link: $link, writer: $writer, subject: $subject, about: $about, pages: $pages, semister: $semister, bookEdition: $bookEdition, price: $price, tags: $tags)';
   }
 
   @override
@@ -256,6 +272,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
         (other.runtimeType == runtimeType &&
             other is _$_UploadBookRequest &&
             const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality().equals(other._writer, _writer) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.about, about) &&
@@ -272,6 +289,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(link),
       const DeepCollectionEquality().hash(_writer),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(about),
@@ -298,6 +316,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
 abstract class _UploadBookRequest implements UploadBookRequest {
   const factory _UploadBookRequest(
       {required final String title,
+      required final dynamic link,
       required final List<String> writer,
       required final String subject,
       final String? about,
@@ -312,6 +331,8 @@ abstract class _UploadBookRequest implements UploadBookRequest {
 
   @override
   String get title;
+  @override
+  dynamic get link;
   @override
   List<String> get writer;
   @override

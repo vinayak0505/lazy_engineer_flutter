@@ -21,9 +21,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
     TextEditingController unitController = TextEditingController();
     TextEditingController chapterController = TextEditingController();
     TextEditingController topicController = TextEditingController();
-    TextEditingController linkController = TextEditingController();
     List<String> tagsController = [];
-    bool? ratingController;
     return UploadScreenWidget(
       title: uploadNotes,
       body: [
@@ -124,9 +122,13 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         //* Tags
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
-        TagsWidget(listTags: (value) {
-          tagsController = value;
-        }),
+        TagsWidget(
+          listTags: (value) => tagsController = value,
+          // validator: (value) => emptyListCheckValidation(
+          //   value,
+          //   tags,
+          // ),
+        ),
       ],
       onPressed: (cubit) {
         cubit.uploadNotes(
@@ -139,7 +141,6 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
           unit: unitController.text,
           chapter: chapterController.text,
           topic: topicController.text,
-          link: linkController.text,
           tags: tagsController,
         );
       },

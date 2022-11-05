@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
 import 'features/account/presentation/cubit/settings/settings_cubit.dart';
-import 'features/auth/data/repositories/auth_repository.dart';
+import 'features/auth/data/repositories/auth_repository_impl.dart';
 import 'features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'features/layout_template/layout_template.dart';
 import 'features/home/data/repositories/user_repository.dart';
@@ -13,14 +13,16 @@ import 'config/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     final route = RouteGenerator().goRouter;
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => UserCubit(UserRepository())),
-        BlocProvider(create: (context) => AuthCubit(AuthRepository())),
+        BlocProvider(
+          create: (context) => AuthCubit(AuthRepositoryImpl()),
+        ),
         BlocProvider(create: (context) => SettingsCubit()),
       ],
       child: Builder(builder: (context) {

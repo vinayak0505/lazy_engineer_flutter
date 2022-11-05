@@ -156,7 +156,13 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
           skillsRequired,
           style: theme.textTheme.titleLarge,
         ),
-        TagsWidget(listTags: (value) {}),
+        TagsWidget(
+          listTags: (value) => skillsController = value,
+          // validator: (value) => emptyListCheckValidation(
+          //   value,
+          //   tags,
+          // ),
+        ),
         //* Location
         CustomDropdown(
           hintText: location,

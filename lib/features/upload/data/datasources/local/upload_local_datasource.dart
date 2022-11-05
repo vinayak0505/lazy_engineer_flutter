@@ -1,6 +1,6 @@
 import 'package:lazy_engineer/core/models/book_database_model/book_database_model.dart';
 import 'package:lazy_engineer/features/upload/data/datasources/local/upload_database.dart';
-import 'package:lazy_engineer/features/upload/data/models/upload_book_request.dart/upload_book_request.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_book_request/upload_book_request.dart';
 
 class UploadLocalDataSource {
   MyDatabase uploadDatabase = MyDatabase.instance;

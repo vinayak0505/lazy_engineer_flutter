@@ -9,4 +9,9 @@ mixin InputValidationMixin {
     if (value?.isEmpty ?? true) return 'Enter $message';
     return (numRegExp.hasMatch(value!) ? null : 'Enter Valid $message');
   }
+
+  String? emptyListCheckValidation(List<String>? list, String message) {
+    if (list?.isEmpty ?? true) return 'Enter $message';
+    return null;
+  }
 }

@@ -13,7 +13,7 @@ _$_UploadPaperRequest _$$_UploadPaperRequestFromJson(
       subject: json['subject'] as String?,
       semister: json['semister'] as String?,
       year: json['year'] as int?,
-      link: json['link'] as String,
+      link: json['link'],
       type: json['type'] as String?,
       solved: json['solved'] as bool?,
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),

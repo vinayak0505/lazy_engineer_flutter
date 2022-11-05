@@ -145,7 +145,7 @@ class NotesDescriptionScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 TagsWidget(listTags: (value) {
                   listTags = value;
-                }),
+                },),
               ],
             ),
           ),
