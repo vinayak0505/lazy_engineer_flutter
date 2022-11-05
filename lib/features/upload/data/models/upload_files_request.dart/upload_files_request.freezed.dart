@@ -23,7 +23,7 @@ mixin _$UploadFilesRequest {
   String get title => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   String? get college => throw _privateConstructorUsedError;
-  String? get semister => throw _privateConstructorUsedError;
+  String? get semester => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
@@ -42,7 +42,7 @@ abstract class $UploadFilesRequestCopyWith<$Res> {
       {String title,
       String? subject,
       String? college,
-      String? semister,
+      String? semester,
       String link,
       List<String> tags});
 }
@@ -61,7 +61,7 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
     Object? title = freezed,
     Object? subject = freezed,
     Object? college = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? link = freezed,
     Object? tags = freezed,
   }) {
@@ -78,9 +78,9 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semister: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
       link: link == freezed
           ? _value.link
@@ -105,7 +105,7 @@ abstract class _$$_UploadFilesRequestCopyWith<$Res>
       {String title,
       String? subject,
       String? college,
-      String? semister,
+      String? semester,
       String link,
       List<String> tags});
 }
@@ -126,7 +126,7 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
     Object? title = freezed,
     Object? subject = freezed,
     Object? college = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? link = freezed,
     Object? tags = freezed,
   }) {
@@ -143,9 +143,9 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
       link: link == freezed
           ? _value.link
@@ -166,7 +166,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
       {required this.title,
       this.subject,
       this.college,
-      this.semister,
+      this.semester,
       required this.link,
       required final List<String> tags})
       : _tags = tags;
@@ -181,7 +181,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
   @override
   final String? college;
   @override
-  final String? semister;
+  final String? semester;
   @override
   final String link;
   final List<String> _tags;
@@ -193,7 +193,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
 
   @override
   String toString() {
-    return 'UploadFilesRequest(title: $title, subject: $subject, college: $college, semister: $semister, link: $link, tags: $tags)';
+    return 'UploadFilesRequest(title: $title, subject: $subject, college: $college, semester: $semester, link: $link, tags: $tags)';
   }
 
   @override
@@ -204,7 +204,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.college, college) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
@@ -216,7 +216,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(college),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(link),
       const DeepCollectionEquality().hash(_tags));
 
@@ -239,7 +239,7 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
       {required final String title,
       final String? subject,
       final String? college,
-      final String? semister,
+      final String? semester,
       required final String link,
       required final List<String> tags}) = _$_UploadFilesRequest;
 
@@ -253,7 +253,7 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
   @override
   String? get college;
   @override
-  String? get semister;
+  String? get semester;
   @override
   String get link;
   @override

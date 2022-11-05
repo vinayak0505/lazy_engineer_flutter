@@ -13,7 +13,7 @@ class UploadFilesRequest with _$UploadFilesRequest {
         required String title,
         String? subject,
         String? college,
-        String? semister,
+        String? semester,
         required String link,
         required List<String> tags,
     }) = _UploadFilesRequest;

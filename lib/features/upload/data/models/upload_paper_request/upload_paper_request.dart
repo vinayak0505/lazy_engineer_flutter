@@ -8,7 +8,7 @@ class UploadPaperRequest with _$UploadPaperRequest {
     const factory UploadPaperRequest({
         required String title,
         String? subject,
-        String? semister,
+        String? semester,
         int? year,
         required String link,
         String? type,

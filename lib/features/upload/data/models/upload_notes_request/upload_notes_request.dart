@@ -8,7 +8,7 @@ class UploadNotesRequest with _$UploadNotesRequest {
     const factory UploadNotesRequest({
         required String title,
         String? about,
-        int? semister,
+        int? semester,
         String? subject,
         String? unit,
         String? chapter,
