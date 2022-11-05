@@ -12,13 +12,8 @@ _$_UploadFilesRequest _$$_UploadFilesRequestFromJson(
       title: json['title'] as String,
       subject: json['subject'] as String?,
       college: json['college'] as String?,
-<<<<<<< HEAD:lib/features/upload/data/models/upload_files_request.dart/upload_files_request.g.dart
       semester: json['semester'] as String?,
       link: json['link'] as String,
-=======
-      semister: json['semister'] as String?,
-      link: json['link'],
->>>>>>> 83f110c709cfbcc3aec2d391aacf05656f1aa23b:lib/features/upload/data/models/upload_files_request/upload_files_request.g.dart
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
     );
 

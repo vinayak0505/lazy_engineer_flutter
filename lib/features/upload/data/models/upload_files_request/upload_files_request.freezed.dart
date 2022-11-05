@@ -23,13 +23,8 @@ mixin _$UploadFilesRequest {
   String get title => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   String? get college => throw _privateConstructorUsedError;
-<<<<<<< HEAD:lib/features/upload/data/models/upload_files_request.dart/upload_files_request.freezed.dart
   String? get semester => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
-=======
-  String? get semister => throw _privateConstructorUsedError;
-  dynamic get link => throw _privateConstructorUsedError;
->>>>>>> 83f110c709cfbcc3aec2d391aacf05656f1aa23b:lib/features/upload/data/models/upload_files_request/upload_files_request.freezed.dart
   List<String> get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,13 +42,8 @@ abstract class $UploadFilesRequestCopyWith<$Res> {
       {String title,
       String? subject,
       String? college,
-<<<<<<< HEAD:lib/features/upload/data/models/upload_files_request.dart/upload_files_request.freezed.dart
       String? semester,
       String link,
-=======
-      String? semister,
-      dynamic link,
->>>>>>> 83f110c709cfbcc3aec2d391aacf05656f1aa23b:lib/features/upload/data/models/upload_files_request/upload_files_request.freezed.dart
       List<String> tags});
 }
 
@@ -88,7 +78,7 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semester == freezed
+      semester: semester == freezed
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -115,13 +105,8 @@ abstract class _$$_UploadFilesRequestCopyWith<$Res>
       {String title,
       String? subject,
       String? college,
-<<<<<<< HEAD:lib/features/upload/data/models/upload_files_request.dart/upload_files_request.freezed.dart
       String? semester,
       String link,
-=======
-      String? semister,
-      dynamic link,
->>>>>>> 83f110c709cfbcc3aec2d391aacf05656f1aa23b:lib/features/upload/data/models/upload_files_request/upload_files_request.freezed.dart
       List<String> tags});
 }
 
@@ -254,13 +239,8 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
       {required final String title,
       final String? subject,
       final String? college,
-<<<<<<< HEAD:lib/features/upload/data/models/upload_files_request.dart/upload_files_request.freezed.dart
       final String? semester,
       required final String link,
-=======
-      final String? semister,
-      required final dynamic link,
->>>>>>> 83f110c709cfbcc3aec2d391aacf05656f1aa23b:lib/features/upload/data/models/upload_files_request/upload_files_request.freezed.dart
       required final List<String> tags}) = _$_UploadFilesRequest;
 
   factory _UploadFilesRequest.fromJson(Map<String, dynamic> json) =

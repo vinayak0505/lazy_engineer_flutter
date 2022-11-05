@@ -102,12 +102,7 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
           title: title,
           subject: subjectController.text,
           college: collegeController.text,
-<<<<<<< HEAD
-          semister: semisterController.text,
-=======
-          semister: semesterController.text,
-          link: linkController.text,
->>>>>>> ef31bacab75e57ef5fb3287e7839a265647028bc
+          semester: semesterController.text,
           tags: tagsController,
         );
       },
