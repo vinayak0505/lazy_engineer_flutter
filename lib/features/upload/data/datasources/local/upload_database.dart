@@ -34,14 +34,14 @@ class BookFields {
   static const String rating = 'rating';
 }
 
-class BookWriterFeilds {
+class BookWriterFields {
   static final List<String> values = [writerId, id, writer];
   static const String id = '_id';
   static const String writerId = 'writer_id';
   static const String writer = 'writer';
 }
 
-class BookTagFeilds {
+class BookTagFields {
   static final List<String> values = [tagId, id, tag];
   static const String id = '_id';
   static const String tagId = 'tag_id';
@@ -88,9 +88,9 @@ class MyDatabase {
     await db.execute(
         'CREATE TABLE $tableBook(${BookFields.id} $idType, ${BookFields.title} $textType, ${BookFields.subject} $textType, ${BookFields.about} $nullableTextType, ${BookFields.pages} $nullableIntType, ${BookFields.semister} $intType, ${BookFields.bookEdition} $nullableIntType, ${BookFields.price} $nullableIntType, ${BookFields.rating} $intType)');
     await db.execute(
-        'CREATE TABLE $tableBookWriter(${BookWriterFeilds.writerId} $idType, ${BookWriterFeilds.id} $idType, ${BookWriterFeilds.writer} $textType)');
+        'CREATE TABLE $tableBookWriter(${BookWriterFields.writerId} $idType, ${BookWriterFields.id} $idType, ${BookWriterFields.writer} $textType)');
     await db.execute(
-        'CREATE TABLE $tableBookTag(${BookTagFeilds.tagId} $idType, ${BookTagFeilds.id} $idType, ${BookTagFeilds.tag} $textType)');
+        'CREATE TABLE $tableBookTag(${BookTagFields.tagId} $idType, ${BookTagFields.id} $idType, ${BookTagFields.tag} $textType)');
   }
 
   Future<BookDatabaseModel> create(BookDatabaseModel data) async {
