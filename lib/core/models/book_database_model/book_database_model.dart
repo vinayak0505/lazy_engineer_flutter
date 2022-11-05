@@ -11,7 +11,7 @@ class BookDatabaseModel with _$BookDatabaseModel {
     required String subject,
     String? about,
     required int pages,
-    int? semister,
+    int? semester,
     required int bookEdition,
     int? price,
     required int rating,

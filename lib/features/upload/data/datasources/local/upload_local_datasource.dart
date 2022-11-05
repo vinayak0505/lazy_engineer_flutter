@@ -12,7 +12,7 @@ class UploadLocalDataSource {
         subject: data.subject,
         about: data.about,
         pages: data.pages,
-        semister: data.semister,
+        semester: data.semester,
         bookEdition: data.bookEdition,
         price: data.price,
         rating: 5,
