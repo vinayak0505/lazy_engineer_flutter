@@ -3,8 +3,6 @@ import 'package:lazy_engineer/features/components/custom_icon.dart';
 import '../../assets/constants/decoration.dart';
 import '../../assets/icons.dart';
 
-// String? dropdownValue;
-
 // class CustomDropdown extends FormField<String> {
 //   CustomDropdown({
 //     Key? key,
@@ -13,50 +11,60 @@ import '../../assets/icons.dart';
 //     String? hintText,
 //     FormFieldValidator<String>? validator,
 //     double? width,
-//     bool isExpanded = true,
-//     TextEditingController? controller,
+//     bool isExpanded = false,
+//     required TextEditingController controller,
 //   }) : super(
 //           key: key,
 //           validator: validator,
-//           initialValue: dropdownValue,
 //           builder: (FormFieldState<String> state) {
 //             final theme = Theme.of(state.context);
-//             return Container(
-//               width: width,
-//               decoration: kRoundedContainer,
-//               padding: const EdgeInsets.symmetric(horizontal: 16),
-//               child: DropdownButton<String>(
-//                   elevation: 0,
-//                   underline: const SizedBox(),
-//                   isExpanded: isExpanded,
-//                   hint: hintText != null ? Text(hintText) : null,
-//                   value: dropdownValue,
-//                   icon: const CustomIcon(
-//                     AppIcons.downArrowIcon,
-//                     height: 8,
-//                   ),
-//                   items: list
-//                       .map(
-//                         (String item) => DropdownMenuItem<String>(
-//                           value: item,
-//                           child: Text(
-//                             item,
-//                             style: theme.textTheme.labelMedium,
+//             String? dropdownValue;
+//             return Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Container(
+//                   width: width,
+//                   decoration: kRoundedContainer,
+//                   padding: const EdgeInsets.symmetric(horizontal: 16),
+//                   child: DropdownButton<String>(
+//                     elevation: 0,
+//                     underline: const SizedBox(),
+//                     isExpanded: isExpanded,
+//                     hint: hintText != null ? Text(hintText) : null,
+//                     value: dropdownValue,
+//                     icon: const CustomIcon(
+//                       AppIcons.downArrowIcon,
+//                       height: 8,
+//                     ),
+//                     items: list
+//                         .map(
+//                           (String item) => DropdownMenuItem<String>(
+//                             value: item,
+//                             child: Text(
+//                               item,
+//                               style: theme.textTheme.labelMedium,
+//                             ),
 //                           ),
-//                         ),
-//                       )
-//                       .toList(),
-//                   onChanged: (value) {
-//                     if (keyList != null) {
-//                       dropdownValue = value!;
-//                       controller.text = keyList[list.indexOf(value)];
-//                     } else {
-//                       dropdownValue = value!;
-//                       controller.text = value;
-//                     }
-//                     print(
-//                         '=======$dropdownValue || ${controller.text}');
-//                   }),
+//                         )
+//                         .toList(),
+//                     onChanged: (value) {
+//                       state.setState(() {
+//                         if (keyList != null) {
+//                           dropdownValue = value!;
+//                           controller.text = keyList[list.indexOf(value)];
+//                         } else {
+//                           dropdownValue = value!;
+//                           controller.text = value;
+//                         }
+//                       });
+//                     },
+//                   ),
+//                 ),
+//                 if (state.hasError && state.errorText != null) ...[
+//                   const SizedBox(height: 8),
+//                   Text(state.errorText!, style: errorStyle),
+//                 ]
+//               ],
 //             );
 //           },
 //         );

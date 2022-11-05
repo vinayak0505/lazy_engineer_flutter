@@ -24,7 +24,7 @@ mixin _$UploadPaperRequest {
   String? get subject => throw _privateConstructorUsedError;
   String? get semester => throw _privateConstructorUsedError;
   int? get year => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
+  dynamic get link => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   bool? get solved => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ abstract class $UploadPaperRequestCopyWith<$Res> {
       String? subject,
       String? semester,
       int? year,
-      String link,
+      dynamic link,
       String? type,
       bool? solved,
       List<String> tags});
@@ -91,7 +91,7 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -120,7 +120,7 @@ abstract class _$$_UploadPaperRequestCopyWith<$Res>
       String? subject,
       String? semester,
       int? year,
-      String link,
+      dynamic link,
       String? type,
       bool? solved,
       List<String> tags});
@@ -168,7 +168,7 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
+              as dynamic,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -211,7 +211,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   @override
   final int? year;
   @override
-  final String link;
+  final dynamic link;
   @override
   final String? type;
   @override
@@ -276,7 +276,7 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
       final String? subject,
       final String? semester,
       final int? year,
-      required final String link,
+      required final dynamic link,
       final String? type,
       final bool? solved,
       required final List<String> tags}) = _$_UploadPaperRequest;
@@ -293,7 +293,7 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
   @override
   int? get year;
   @override
-  String get link;
+  dynamic get link;
   @override
   String? get type;
   @override

@@ -16,7 +16,7 @@ _$_UploadNotesRequest _$$_UploadNotesRequestFromJson(
       unit: json['unit'] as String?,
       chapter: json['chapter'] as String?,
       topic: json['topic'] as String?,
-      link: json['link'] as String,
+      link: json['link'],
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
     );
 

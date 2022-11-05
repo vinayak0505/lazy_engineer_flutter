@@ -89,17 +89,25 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
         //* Tags
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
-        TagsWidget(listTags: (value) {
-          tagsController = value;
-        }),
+        TagsWidget(
+          listTags: (value) => tagsController = value,
+          // validator: (value) => emptyListCheckValidation(
+          //   value,
+          //   tags,
+          // ),
+        ),
       ],
       onPressed: (cubit) {
         cubit.uploadFile(
           title: title,
           subject: subjectController.text,
           college: collegeController.text,
+<<<<<<< HEAD
+          semister: semisterController.text,
+=======
           semister: semesterController.text,
           link: linkController.text,
+>>>>>>> ef31bacab75e57ef5fb3287e7839a265647028bc
           tags: tagsController,
         );
       },

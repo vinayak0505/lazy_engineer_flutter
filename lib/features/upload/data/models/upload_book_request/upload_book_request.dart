@@ -7,6 +7,7 @@ part 'upload_book_request.g.dart';
 class UploadBookRequest with _$UploadBookRequest {
   const factory UploadBookRequest({
     required String title,
+    required dynamic link,
     required List<String> writer,
     required String subject,
     String? about,

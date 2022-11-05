@@ -13,14 +13,13 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    List<String> listTags = [];
     TextEditingController titleController = TextEditingController();
     TextEditingController subjectController = TextEditingController();
     TextEditingController aboutController = TextEditingController();
     TextEditingController yearController = TextEditingController();
     TextEditingController linkController = TextEditingController();
     TextEditingController typeController = TextEditingController();
-    bool? solvedController, ratingController;
+    bool? solvedController;
     List<String> tagsController = [];
     return UploadScreenWidget(
       title: uploadPaper,
@@ -63,6 +62,7 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
         CustomDropdown(
           width: 120,
           list: yearList,
+          keyList: yearKeyList,
           hintText: year,
           controller: yearController,
           validator: (value) => nullCheckTextValidation(
@@ -74,16 +74,19 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
         //* Tags
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
-        TagsWidget(listTags: (value) {
-          listTags = value;
-        }),
+        TagsWidget(
+          listTags: (value) => tagsController = value,
+          // validator: (value) => emptyListCheckValidation(
+          //   value,
+          //   tags,
+          // ),
+        ),
       ],
       onPressed: (cubit) {
         cubit.uploadPaper(
           title: title,
           subject: subjectController.text,
           year: int.parse(yearController.text),
-          link: linkController.text,
           type: typeController.text,
           solved: solvedController,
           tags: tagsController,
