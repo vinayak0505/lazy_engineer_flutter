@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/features/components/single_option_filter.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
@@ -71,7 +73,8 @@ class PracticleFileScreen extends StatelessWidget {
                           subject: practicleFileList[index].subject,
                           year: practicleFileList[index].year,
                         ),
-                        onPressed: () {},
+                        onPressed: () =>
+            context.push('${RouteGenerator.fileDescriptionRoute}/${index + 4}'),
                       ),
                       separatorBuilder: (context, index) => const SizedBox(
                         height: 8,

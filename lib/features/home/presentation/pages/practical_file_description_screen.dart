@@ -62,7 +62,8 @@ class FileDescriptionScreen extends StatelessWidget {
                                             MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Column(children: [
-                                            const CustomIcon(AppIcons.likeIcon),
+                                            const CustomIcon(AppIcons.likeIcon,
+                                                width: 18),
                                             Text(
                                               'Like',
                                               style: theme.textTheme.bodyText1,
@@ -70,7 +71,8 @@ class FileDescriptionScreen extends StatelessWidget {
                                           ]),
                                           Column(children: [
                                             const CustomIcon(
-                                                AppIcons.dislikeIcon),
+                                                AppIcons.dislikeIcon,
+                                                width: 18),
                                             Text(
                                               'Dislike',
                                               style: theme.textTheme.bodyText1,

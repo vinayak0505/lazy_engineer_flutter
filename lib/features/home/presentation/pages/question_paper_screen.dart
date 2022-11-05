@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
@@ -61,7 +63,8 @@ class QuestionPaperScreen extends StatelessWidget {
                     year: questionPaperList[index].year,
                     type: questionPaperList[index].type,
                   ),
-                  onPressed: () {},
+                  onPressed: () => context.push(
+                      '${RouteGenerator.questionPaperDescriptionRoute}/${index + 3}'),
                 ),
                 separatorBuilder: (context, index) => const SizedBox(
                   height: 8,
