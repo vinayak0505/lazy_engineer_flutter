@@ -64,7 +64,7 @@ class QuestionPaperScreen extends StatelessWidget {
                     type: questionPaperList[index].type,
                   ),
                   onPressed: () => context.push(
-                      '${RouteGenerator.questionPaperDescriptionRoute}/${index + 3}'),
+                      '${RouteGenerator.questionPaperDescriptionRoute}/${index + 1}'),
                 ),
                 separatorBuilder: (context, index) => const SizedBox(
                   height: 8,

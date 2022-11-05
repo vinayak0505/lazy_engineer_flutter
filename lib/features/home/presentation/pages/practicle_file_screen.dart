@@ -73,8 +73,8 @@ class PracticleFileScreen extends StatelessWidget {
                           subject: practicleFileList[index].subject,
                           year: practicleFileList[index].year,
                         ),
-                        onPressed: () =>
-            context.push('${RouteGenerator.fileDescriptionRoute}/${index + 4}'),
+                        onPressed: () => context.push(
+                            '${RouteGenerator.fileDescriptionRoute}/${index + 1}'),
                       ),
                       separatorBuilder: (context, index) => const SizedBox(
                         height: 8,
