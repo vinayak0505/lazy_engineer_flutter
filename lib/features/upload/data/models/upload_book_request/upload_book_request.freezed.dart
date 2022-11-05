@@ -26,7 +26,7 @@ mixin _$UploadBookRequest {
   String get subject => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
   int get pages => throw _privateConstructorUsedError;
-  int? get semister => throw _privateConstructorUsedError;
+  int? get semester => throw _privateConstructorUsedError;
   int get bookEdition => throw _privateConstructorUsedError;
   int? get price => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ abstract class $UploadBookRequestCopyWith<$Res> {
       String subject,
       String? about,
       int pages,
-      int? semister,
+      int? semester,
       int bookEdition,
       int? price,
       List<String> tags});
@@ -72,7 +72,7 @@ class _$UploadBookRequestCopyWithImpl<$Res>
     Object? subject = freezed,
     Object? about = freezed,
     Object? pages = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? bookEdition = freezed,
     Object? price = freezed,
     Object? tags = freezed,
@@ -102,9 +102,9 @@ class _$UploadBookRequestCopyWithImpl<$Res>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
       bookEdition: bookEdition == freezed
           ? _value.bookEdition
@@ -136,7 +136,7 @@ abstract class _$$_UploadBookRequestCopyWith<$Res>
       String subject,
       String? about,
       int pages,
-      int? semister,
+      int? semester,
       int bookEdition,
       int? price,
       List<String> tags});
@@ -161,7 +161,7 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
     Object? subject = freezed,
     Object? about = freezed,
     Object? pages = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? bookEdition = freezed,
     Object? price = freezed,
     Object? tags = freezed,
@@ -191,9 +191,9 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
       bookEdition: bookEdition == freezed
           ? _value.bookEdition
@@ -221,7 +221,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
       required this.subject,
       this.about,
       required this.pages,
-      this.semister,
+      this.semester,
       required this.bookEdition,
       this.price,
       required final List<String> tags})
@@ -249,7 +249,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
   @override
   final int pages;
   @override
-  final int? semister;
+  final int? semester;
   @override
   final int bookEdition;
   @override
@@ -263,7 +263,11 @@ class _$_UploadBookRequest implements _UploadBookRequest {
 
   @override
   String toString() {
+<<<<<<< HEAD:lib/features/upload/data/models/upload_book_request/upload_book_request.freezed.dart
     return 'UploadBookRequest(title: $title, link: $link, writer: $writer, subject: $subject, about: $about, pages: $pages, semister: $semister, bookEdition: $bookEdition, price: $price, tags: $tags)';
+=======
+    return 'UploadBookRequest(title: $title, writer: $writer, subject: $subject, about: $about, pages: $pages, semester: $semester, bookEdition: $bookEdition, price: $price, tags: $tags)';
+>>>>>>> ef31bacab75e57ef5fb3287e7839a265647028bc:lib/features/upload/data/models/upload_book_request.dart/upload_book_request.freezed.dart
   }
 
   @override
@@ -277,7 +281,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.pages, pages) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality()
                 .equals(other.bookEdition, bookEdition) &&
             const DeepCollectionEquality().equals(other.price, price) &&
@@ -294,7 +298,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(pages),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(bookEdition),
       const DeepCollectionEquality().hash(price),
       const DeepCollectionEquality().hash(_tags));
@@ -321,7 +325,7 @@ abstract class _UploadBookRequest implements UploadBookRequest {
       required final String subject,
       final String? about,
       required final int pages,
-      final int? semister,
+      final int? semester,
       required final int bookEdition,
       final int? price,
       required final List<String> tags}) = _$_UploadBookRequest;
@@ -342,7 +346,7 @@ abstract class _UploadBookRequest implements UploadBookRequest {
   @override
   int get pages;
   @override
-  int? get semister;
+  int? get semester;
   @override
   int get bookEdition;
   @override

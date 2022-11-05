@@ -253,18 +253,18 @@ List<String> tagList = [
   'Circle',
 ];
 
-List<String> semisterList = [
-  '1st Semister',
-  '2nd Semister',
-  '3rd Semister',
-  '4th Semister',
-  '5th Semister',
-  '6th Semister',
-  '7th Semister',
-  '8th Semister',
+List<String> semesterList = [
+  '1st Semester',
+  '2nd Semester',
+  '3rd Semester',
+  '4th Semester',
+  '5th Semester',
+  '6th Semester',
+  '7th Semester',
+  '8th Semester',
 ];
 
-List<String> semisterKeyList = [
+List<String> semesterKeyList = [
   '1',
   '2',
   '3',

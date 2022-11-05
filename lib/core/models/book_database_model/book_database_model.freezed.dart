@@ -25,7 +25,7 @@ mixin _$BookDatabaseModel {
   String get subject => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
   int get pages => throw _privateConstructorUsedError;
-  int? get semister => throw _privateConstructorUsedError;
+  int? get semester => throw _privateConstructorUsedError;
   int get bookEdition => throw _privateConstructorUsedError;
   int? get price => throw _privateConstructorUsedError;
   int get rating => throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ abstract class $BookDatabaseModelCopyWith<$Res> {
       String subject,
       String? about,
       int pages,
-      int? semister,
+      int? semester,
       int bookEdition,
       int? price,
       int rating});
@@ -69,7 +69,7 @@ class _$BookDatabaseModelCopyWithImpl<$Res>
     Object? subject = freezed,
     Object? about = freezed,
     Object? pages = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? bookEdition = freezed,
     Object? price = freezed,
     Object? rating = freezed,
@@ -95,9 +95,9 @@ class _$BookDatabaseModelCopyWithImpl<$Res>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
       bookEdition: bookEdition == freezed
           ? _value.bookEdition
@@ -128,7 +128,7 @@ abstract class _$$_BookDatabaseModelCopyWith<$Res>
       String subject,
       String? about,
       int pages,
-      int? semister,
+      int? semester,
       int bookEdition,
       int? price,
       int rating});
@@ -152,7 +152,7 @@ class __$$_BookDatabaseModelCopyWithImpl<$Res>
     Object? subject = freezed,
     Object? about = freezed,
     Object? pages = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? bookEdition = freezed,
     Object? price = freezed,
     Object? rating = freezed,
@@ -178,9 +178,9 @@ class __$$_BookDatabaseModelCopyWithImpl<$Res>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
       bookEdition: bookEdition == freezed
           ? _value.bookEdition
@@ -207,7 +207,7 @@ class _$_BookDatabaseModel implements _BookDatabaseModel {
       required this.subject,
       this.about,
       required this.pages,
-      this.semister,
+      this.semester,
       required this.bookEdition,
       this.price,
       required this.rating});
@@ -226,7 +226,7 @@ class _$_BookDatabaseModel implements _BookDatabaseModel {
   @override
   final int pages;
   @override
-  final int? semister;
+  final int? semester;
   @override
   final int bookEdition;
   @override
@@ -236,7 +236,7 @@ class _$_BookDatabaseModel implements _BookDatabaseModel {
 
   @override
   String toString() {
-    return 'BookDatabaseModel(id: $id, title: $title, subject: $subject, about: $about, pages: $pages, semister: $semister, bookEdition: $bookEdition, price: $price, rating: $rating)';
+    return 'BookDatabaseModel(id: $id, title: $title, subject: $subject, about: $about, pages: $pages, semester: $semester, bookEdition: $bookEdition, price: $price, rating: $rating)';
   }
 
   @override
@@ -249,7 +249,7 @@ class _$_BookDatabaseModel implements _BookDatabaseModel {
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.pages, pages) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality()
                 .equals(other.bookEdition, bookEdition) &&
             const DeepCollectionEquality().equals(other.price, price) &&
@@ -265,7 +265,7 @@ class _$_BookDatabaseModel implements _BookDatabaseModel {
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(pages),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(bookEdition),
       const DeepCollectionEquality().hash(price),
       const DeepCollectionEquality().hash(rating));
@@ -291,7 +291,7 @@ abstract class _BookDatabaseModel implements BookDatabaseModel {
       required final String subject,
       final String? about,
       required final int pages,
-      final int? semister,
+      final int? semester,
       required final int bookEdition,
       final int? price,
       required final int rating}) = _$_BookDatabaseModel;
@@ -310,7 +310,7 @@ abstract class _BookDatabaseModel implements BookDatabaseModel {
   @override
   int get pages;
   @override
-  int? get semister;
+  int? get semester;
   @override
   int get bookEdition;
   @override

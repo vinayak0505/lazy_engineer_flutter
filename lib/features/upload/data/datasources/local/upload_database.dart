@@ -15,7 +15,7 @@ class BookFields {
     subject,
     about,
     pages,
-    semister,
+    semester,
     bookEdition,
     price,
     tags,
@@ -27,21 +27,21 @@ class BookFields {
   static const String subject = 'subject';
   static const String about = 'about';
   static const String pages = 'pages';
-  static const String semister = 'semister';
+  static const String semester = 'semester';
   static const String bookEdition = 'book_edition';
   static const String price = 'price';
   static const String tags = 'tags';
   static const String rating = 'rating';
 }
 
-class BookWriterFeilds {
+class BookWriterFields {
   static final List<String> values = [writerId, id, writer];
   static const String id = '_id';
   static const String writerId = 'writer_id';
   static const String writer = 'writer';
 }
 
-class BookTagFeilds {
+class BookTagFields {
   static final List<String> values = [tagId, id, tag];
   static const String id = '_id';
   static const String tagId = 'tag_id';
@@ -72,7 +72,7 @@ class MyDatabase {
       subject: data.subject,
       about: data.about,
       pages: data.pages,
-      semister: data.semister,
+      semester: data.semester,
       bookEdition: data.bookEdition,
       price: data.price,
       rating: data.rating,
@@ -86,11 +86,11 @@ class MyDatabase {
     const textType = 'TEXT NOT NULL';
     const nullableTextType = 'TEXT';
     await db.execute(
-        'CREATE TABLE $tableBook(${BookFields.id} $idType, ${BookFields.title} $textType, ${BookFields.subject} $textType, ${BookFields.about} $nullableTextType, ${BookFields.pages} $nullableIntType, ${BookFields.semister} $intType, ${BookFields.bookEdition} $nullableIntType, ${BookFields.price} $nullableIntType, ${BookFields.rating} $intType)');
+        'CREATE TABLE $tableBook(${BookFields.id} $idType, ${BookFields.title} $textType, ${BookFields.subject} $textType, ${BookFields.about} $nullableTextType, ${BookFields.pages} $nullableIntType, ${BookFields.semester} $intType, ${BookFields.bookEdition} $nullableIntType, ${BookFields.price} $nullableIntType, ${BookFields.rating} $intType)');
     await db.execute(
-        'CREATE TABLE $tableBookWriter(${BookWriterFeilds.writerId} $idType, ${BookWriterFeilds.id} $idType, ${BookWriterFeilds.writer} $textType)');
+        'CREATE TABLE $tableBookWriter(${BookWriterFields.writerId} $idType, ${BookWriterFields.id} $idType, ${BookWriterFields.writer} $textType)');
     await db.execute(
-        'CREATE TABLE $tableBookTag(${BookTagFeilds.tagId} $idType, ${BookTagFeilds.id} $idType, ${BookTagFeilds.tag} $textType)');
+        'CREATE TABLE $tableBookTag(${BookTagFields.tagId} $idType, ${BookTagFields.id} $idType, ${BookTagFields.tag} $textType)');
   }
 
   Future<BookDatabaseModel> create(BookDatabaseModel data) async {

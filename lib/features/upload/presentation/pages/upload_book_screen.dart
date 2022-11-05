@@ -19,7 +19,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
     TextEditingController subjectController = TextEditingController();
     TextEditingController aboutController = TextEditingController();
     TextEditingController pagesController = TextEditingController();
-    TextEditingController semisterController = TextEditingController();
+    TextEditingController semesterController = TextEditingController();
     TextEditingController bookEditionController = TextEditingController();
     TextEditingController priceController = TextEditingController();
     List<String> tagsController = [];
@@ -78,16 +78,16 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
               pages,
             ),
           ),
-          //* Semister
+          //* Semester
           CustomDropdown(
-            list: semisterList,
-            keyList: semisterKeyList,
+            list: semesterList,
+            keyList: semesterKeyList,
             width: 130,
-            hintText: semister,
-            controller: semisterController,
+            hintText: semester,
+            controller: semesterController,
             validator: (value) => nullCheckNumValidation(
               value,
-              semister,
+              semester,
             ),
           ),
         ]),

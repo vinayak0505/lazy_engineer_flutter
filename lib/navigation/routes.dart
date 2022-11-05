@@ -13,6 +13,9 @@ import 'package:lazy_engineer/features/home/presentation/pages/jobs_description_
 import 'package:lazy_engineer/features/home/presentation/pages/jobs_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/notes_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/notes_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/question_paper_description_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/question_paper_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_screen.dart';
@@ -36,6 +39,8 @@ class RouteGenerator {
   static const String notesRoute = '/home/notes';
   static const String fileRoute = '/home/practicle_file';
   static const String questionPaperRoute = '/home/question_paper';
+  static const String questionPaperDescriptionRoute =
+      '/home/question_paper_description';
   static const String booksRoute = '/home/books';
   static const String notesDescriptionRoute = '/home/notes/notes_description';
   static const String bookDescriptionRoute = '/home/books/book_description';
@@ -139,11 +144,26 @@ class RouteGenerator {
                     )
                   ]),
               GoRoute(
-                  path: 'practile_file',
-                  builder: (_, __) => const NotesScreen(),
+                  path: 'question_paper',
+                  builder: (_, __) => const QuestionPaperScreen(),
                   routes: [
                     GoRoute(
-                      path: 'practicle_file_description/:id',
+                      path: 'question_paper_description/:id',
+                      pageBuilder: (context, state) {
+                        int id = int.parse(state.params['id']!);
+                        return MaterialPage<void>(
+                          key: state.pageKey,
+                          child: PaperDescriptionScreen(id: id),
+                        );
+                      },
+                    )
+                  ]),
+              GoRoute(
+                  path: 'practical_file',
+                  builder: (_, __) => const PracticleFileScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'practical_file_description/:id',
                       pageBuilder: (context, state) {
                         int id = int.parse(state.params['id']!);
                         return MaterialPage<void>(

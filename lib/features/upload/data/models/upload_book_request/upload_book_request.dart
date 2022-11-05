@@ -12,7 +12,7 @@ class UploadBookRequest with _$UploadBookRequest {
     required String subject,
     String? about,
     required int pages,
-    int? semister,
+    int? semester,
     required int bookEdition,
     int? price,
     required List<String> tags,

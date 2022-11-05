@@ -61,14 +61,16 @@ class BookDescriptionScreen extends StatelessWidget {
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Column(children: [
-                                        const CustomIcon(AppIcons.likeIcon),
+                                        const CustomIcon(AppIcons.likeIcon,
+                                            width: 18),
                                         Text(
                                           'Like',
                                           style: theme.textTheme.bodyText1,
                                         )
                                       ]),
                                       Column(children: [
-                                        const CustomIcon(AppIcons.dislikeIcon),
+                                        const CustomIcon(AppIcons.dislikeIcon,
+                                            width: 18),
                                         Text(
                                           'Dislike',
                                           style: theme.textTheme.bodyText1,
