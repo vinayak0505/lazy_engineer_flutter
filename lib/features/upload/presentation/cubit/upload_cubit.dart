@@ -23,7 +23,11 @@ class UploadCubit extends Cubit<UploadState> {
         type: FileType.custom,
       );
       if (result != null) pickedFile = result.files.first;
-      emit(UploadState.documentSuccess(pickedFile!));
+      if (pickedFile != null) {
+        emit(UploadState.documentSuccess(pickedFile!));
+      } else {
+        emit(const UploadState.initial());
+      }
     } catch (e) {
       emit(UploadState.documentFailure(e));
     }
@@ -51,7 +55,8 @@ class UploadCubit extends Cubit<UploadState> {
       unit: unit,
       chapter: chapter,
       topic: topic,
-      link: await MultipartFile.fromFile(pickedFile!.path!, filename: pickedFile!.name),
+      link: await MultipartFile.fromFile(pickedFile!.path!,
+          filename: pickedFile!.name),
       tags: tags,
     );
     repository.uplaodNotes(notesData);
@@ -71,7 +76,8 @@ class UploadCubit extends Cubit<UploadState> {
       title: title,
       subject: subject,
       year: year,
-      link: await MultipartFile.fromFile(pickedFile!.path!, filename: pickedFile!.name),
+      link: await MultipartFile.fromFile(pickedFile!.path!,
+          filename: pickedFile!.name),
       type: type,
       solved: solved,
       tags: tags,
@@ -93,12 +99,17 @@ class UploadCubit extends Cubit<UploadState> {
   }) async {
     UploadBookRequest bookData = UploadBookRequest(
       title: title,
-      link: await MultipartFile.fromFile(pickedFile!.path!, filename: pickedFile!.name),
+      link: await MultipartFile.fromFile(pickedFile!.path!,
+          filename: pickedFile!.name),
       writer: writer,
       subject: subject,
       about: about,
       pages: pages,
+<<<<<<< HEAD
+      semester: semister,
+=======
       semester: semester,
+>>>>>>> e5da4c2272ef97c50f2c53ebbe94a4b31455a986
       bookEdition: bookEdition,
       price: price,
       tags: tags,
@@ -118,8 +129,14 @@ class UploadCubit extends Cubit<UploadState> {
       title: title,
       subject: subject,
       college: college,
+<<<<<<< HEAD
+      semister: semister,
+      link: await MultipartFile.fromFile(pickedFile!.path!,
+          filename: pickedFile!.name),
+=======
       semester: semester,
       link: await MultipartFile.fromFile(pickedFile!.path!, filename: pickedFile!.name),
+>>>>>>> e5da4c2272ef97c50f2c53ebbe94a4b31455a986
       tags: tags,
     );
     repository.uplaodFiles(fileData);

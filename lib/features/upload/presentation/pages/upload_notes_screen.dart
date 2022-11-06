@@ -49,6 +49,8 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         ),
         const SizedBox(height: 16),
         //* Semester
+        Text(semister, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
         CustomDropdown(
           list: semesterList,
           keyList: semesterKeyList,
@@ -85,6 +87,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         const SizedBox(height: 16),
         //* Unit
         Text(unit, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
         CustomDropdown(
           list: unitList,
           keyList: unitKeyList,
@@ -124,10 +127,10 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         const SizedBox(height: 8),
         TagsWidget(
           listTags: (value) => tagsController = value,
-          // validator: (value) => emptyListCheckValidation(
-          //   value,
-          //   tags,
-          // ),
+          validator: (_) => emptyListCheckValidation(
+            tagsController,
+            tags,
+          ),
         ),
       ],
       onPressed: (cubit) {

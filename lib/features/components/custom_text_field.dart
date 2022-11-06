@@ -85,7 +85,6 @@ class CustomTextField extends StatelessWidget {
           autofocus: autofocus,
           readOnly: readOnly,
           keyboardType: TextInputType.text,
-          // textInputAction: TextInputAction.search,
           onFieldSubmitted: onSubitted,
           validator: validator,
           maxLines: maxLines,

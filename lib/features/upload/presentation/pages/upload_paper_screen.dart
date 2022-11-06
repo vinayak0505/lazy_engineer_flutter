@@ -17,7 +17,6 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
     TextEditingController subjectController = TextEditingController();
     TextEditingController aboutController = TextEditingController();
     TextEditingController yearController = TextEditingController();
-    TextEditingController linkController = TextEditingController();
     TextEditingController typeController = TextEditingController();
     bool? solvedController;
     List<String> tagsController = [];
@@ -57,8 +56,10 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
             about,
           ),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 16),
         //* Year
+        Text(year, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
         CustomDropdown(
           width: 120,
           list: yearList,
@@ -76,10 +77,10 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
         const SizedBox(height: 8),
         TagsWidget(
           listTags: (value) => tagsController = value,
-          // validator: (value) => emptyListCheckValidation(
-          //   value,
-          //   tags,
-          // ),
+          validator: (_) => emptyListCheckValidation(
+            tagsController,
+            tags,
+          ),
         ),
       ],
       onPressed: (cubit) {
