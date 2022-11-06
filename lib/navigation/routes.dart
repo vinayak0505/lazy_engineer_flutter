@@ -6,16 +6,19 @@ import 'package:lazy_engineer/features/account/presentation/pages/account_screen
 import 'package:lazy_engineer/features/account/presentation/pages/profile_screen.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/settings_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/book_description_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/practical_file_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/book_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/home_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/jobs_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/jobs_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/notes_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/notes_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_screen.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/question_paper_description_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/question_paper_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
-import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_request_screen.dart';
+import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_notes_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_screen.dart';
 import 'package:lazy_engineer/features/components/error_screen.dart';
@@ -30,16 +33,18 @@ class RouteGenerator {
   static const String loginRoute = '/login';
   static const String registerRoute = '/register';
   static const String dashboardRoute = '/dashboard';
-  static const String loadingRoute = '/loading';
 
   /// Home Screen
   static const String homeRoute = '/home';
   static const String notesRoute = '/home/notes';
   static const String fileRoute = '/home/practicle_file';
   static const String questionPaperRoute = '/home/question_paper';
+  static const String questionPaperDescriptionRoute =
+      '/home/question_paper_description';
   static const String booksRoute = '/home/books';
-
+  static const String notesDescriptionRoute = '/home/notes/notes_description';
   static const String bookDescriptionRoute = '/home/books/book_description';
+  static const String fileDescriptionRoute = '/home/practicle_file_description';
   static const String jobsRoute = '/home/jobs';
   static const String jobsDescriptionRoute = '/home/jobs/jobs_description';
 
@@ -51,6 +56,7 @@ class RouteGenerator {
       '/upload/upload_question_paper';
   static const String uploadBooksRoute = '/upload/books';
   static const String uploadJobsRoute = '/upload/jobs';
+  // static const String uploadJobsCompanyPhotoRoute = '/upload/jobs/fullscreen_view';
   static const String uploadPaperRoute = '/upload/question_paper';
   static const String uploadBookRoute = '/upload/books';
 
@@ -63,7 +69,11 @@ class RouteGenerator {
   static final _rootNavigatorKey = GlobalKey<NavigatorState>();
   static final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-  final goRouter = GoRouter(
+  final GoRouter goRouter;
+
+  RouteGenerator() : goRouter = router;
+
+  static GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
     debugLogDiagnostics: true,
     initialLocation: initialRoute,
@@ -89,18 +99,6 @@ class RouteGenerator {
             builder: (_, __) => const HomeScreen(),
             routes: [
               GoRoute(
-                path: 'notes',
-                builder: (_, __) => const NotesScreen(),
-              ),
-              GoRoute(
-                path: 'practicle_file',
-                builder: (_, __) => const PracticleFileScreen(),
-              ),
-              GoRoute(
-                path: 'question_paper',
-                builder: (_, __) => const QuestionPaperScreen(),
-              ),
-              GoRoute(
                   path: 'books',
                   builder: (_, __) => const BookScreen(),
                   routes: [
@@ -116,10 +114,10 @@ class RouteGenerator {
                     )
                   ]),
               GoRoute(
-                path: 'jobs',
-                builder: (_, __) => const JobsScreen(),
-                routes: [
-                  GoRoute(
+                  path: 'jobs',
+                  builder: (_, __) => const JobsScreen(),
+                  routes: [
+                    GoRoute(
                       path: 'jobs_description/:id',
                       pageBuilder: (context, state) {
                         int id = int.parse(state.params['id']!);
@@ -129,8 +127,52 @@ class RouteGenerator {
                         );
                       },
                     )
-                ]
-              ),
+                  ]),
+              GoRoute(
+                  path: 'notes',
+                  builder: (_, __) => const NotesScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'notes_description/:id',
+                      pageBuilder: (context, state) {
+                        int id = int.parse(state.params['id']!);
+                        return MaterialPage<void>(
+                          key: state.pageKey,
+                          child: NotesDescriptionScreen(id: id),
+                        );
+                      },
+                    )
+                  ]),
+              GoRoute(
+                  path: 'question_paper',
+                  builder: (_, __) => const QuestionPaperScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'question_paper_description/:id',
+                      pageBuilder: (context, state) {
+                        int id = int.parse(state.params['id']!);
+                        return MaterialPage<void>(
+                          key: state.pageKey,
+                          child: PaperDescriptionScreen(id: id),
+                        );
+                      },
+                    )
+                  ]),
+              GoRoute(
+                  path: 'practical_file',
+                  builder: (_, __) => const PracticleFileScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'practical_file_description/:id',
+                      pageBuilder: (context, state) {
+                        int id = int.parse(state.params['id']!);
+                        return MaterialPage<void>(
+                          key: state.pageKey,
+                          child: FileDescriptionScreen(id: id),
+                        );
+                      },
+                    )
+                  ]),
             ],
           ),
           GoRoute(
@@ -156,7 +198,16 @@ class RouteGenerator {
               ),
               GoRoute(
                 path: 'jobs',
-                builder: (_, __) => const UploadJobRequestScreen(),
+                builder: (_, __) => const UploadJobScreen(),
+                // routes: [
+                //   GoRoute(
+                //     path: 'fullscreen_view',
+                //     builder: (context, state) => FullScreenPhoto(
+                //       index: 1,
+                //       list: [],
+                //     ),
+                //   )
+                // ],
               ),
             ],
           ),

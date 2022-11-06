@@ -5,8 +5,8 @@ import '../../../../assets/icons.dart';
 import '../../../../assets/images.dart';
 
 class AuthBackground extends StatelessWidget {
-  const AuthBackground({super.key});
-
+  const AuthBackground({super.key, this.image});
+  final String? image;
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -14,15 +14,18 @@ class AuthBackground extends StatelessWidget {
       padding: const EdgeInsets.all(30.0),
       child: Column(
         children: [
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-            SvgPicture.asset(AppIcons.lazyEngineerIcon),
-            const SizedBox(width: 8),
-            Text(string.lazyEngineer,
-                style: theme.textTheme.headline5
-                    ?.copyWith(fontWeight: FontWeight.w600))
-          ]),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SvgPicture.asset(AppIcons.lazyEngineerIcon),
+              const SizedBox(width: 16),
+              Text(string.lazyEngineer,
+                  style: theme.textTheme.headline5
+                      ?.copyWith(fontWeight: FontWeight.w600))
+            ],
+          ),
           const SizedBox(height: 50),
-          Image.asset(AppImages.authBackgroundImage)
+          Image.asset(image ?? AppImages.authBackgroundImage)
         ],
       ),
     );

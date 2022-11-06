@@ -1,36 +1,33 @@
-
-import '../../../../assets/constants/strings.dart';
-
-mixin InputValidationMixin {
+mixin InputAuthValidationMixin {
   bool isPasswordValid(String password) => password.length == 6;
   String? emailValidation(String? value) {
     RegExp emailRegExp = RegExp(
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-    if (value?.isEmpty ?? true) return 'enterEmail';
-    return (emailRegExp.hasMatch(value!) ? null : 'enterValidEmail');
+    if (value?.isEmpty ?? true) return 'Enter Email';
+    return (emailRegExp.hasMatch(value!) ? null : 'Enter Valid Email');
   }
 
   String? passwordValidation(String? value) {
     if (value?.isEmpty ?? true) {
-      return 'enterPassword';
+      return 'Enter Password';
     } else if (value!.length < 6) {
-      return 'enterValidPassword';
+      return 'Enter Valid Password';
     }
     return null;
   }
 
   String? confirmPasswordValidation(String? value, String? password) {
     if (value?.isEmpty ?? true) {
-      return 'enterConfirmPassword';
+      return 'Enter Confirm Password';
     } else if (value != password) {
-      return 'enterValidConfirmPassword';
+      return 'Enter Valid Confirm Password';
     }
     return null;
   }
 
   String? usernameValidation(String? value) {
     RegExp nameRegExp = RegExp('[a-zA-Z]');
-    if (value?.isEmpty ?? true) return 'enterUsername';
-    return (nameRegExp.hasMatch(value!) ? null : 'enterValidUsername');
+    if (value?.isEmpty ?? true) return 'Enter Username';
+    return (nameRegExp.hasMatch(value!) ? null : 'Enter Valid Username');
   }
 }

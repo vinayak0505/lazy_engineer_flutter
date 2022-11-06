@@ -12,7 +12,8 @@ class AppImages {
   static const String profileImage = 'assets/images/profile_pic.png';
   static const String uploadNotes = 'assets/images/upload_notes.png';
   static const String book = 'assets/images/book.png';
-  static const String companyimage = 'assets/images/company_photo.png';
+  static const String companyImage = 'assets/images/company_photo.png';
+  static const String addImage = 'assets/images/add_image.png';
   static const String header = 'assets/images/header.png';
+  static const String registerExtended = 'assets/images/register_extended.png';
 }
-

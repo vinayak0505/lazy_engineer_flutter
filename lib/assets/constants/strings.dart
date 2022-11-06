@@ -23,6 +23,9 @@ const String createOne = 'create one!';
 const String alreadyHaveAccount = 'Already have a account? ';
 const String goToLogin = 'Go to Login';
 const String or = 'OR';
+const String next = 'Next';
+const String classD = 'Class';
+const String university = 'University';
 
 const String notes = 'Notes';
 const String files = 'Files';
@@ -40,7 +43,7 @@ const String similarBooks = 'Similar books';
 const String seeAll = 'SEE ALL';
 const String download = 'Download';
 const String rating = 'Rating';
-const String pages = 'pages';
+const String pages = 'Pages';
 const String ebook = 'E-Book';
 const String physicalBook = 'Physical Book';
 
@@ -52,7 +55,7 @@ const String uploadBook = 'Upload Book';
 const String uploadJobRequest = 'Upload Job Request';
 const String title = 'Title';
 const String subject = 'Subject';
-const String writter = 'Writter';
+const String writer = 'Writer';
 const String company = 'Company';
 const String noOfEmployees = 'No. of Employees';
 const String payRange = 'Pay Range';
@@ -77,6 +80,18 @@ const String paper = 'Paper';
 const String book = 'Book';
 const String jobRequest = 'Job Request';
 const String searchTags = 'Search Tags';
+const String submit = 'Submit';
+const String college = 'College';
+const String semester = 'Semester';
+const String year = 'Year';
+const String price = 'Price';
+const String bookEdition = 'Book Edition';
+const String rs = 'Rs';
+const String unit = 'Unit';
+const String chapter = 'Chapter';
+const String topic = 'Topic';
+const String aboutCompany = 'About Company';
+const String skillsRequired = 'Skills Required';
 
 // account
 const String settings = 'Settings';

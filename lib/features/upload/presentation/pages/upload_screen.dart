@@ -12,13 +12,13 @@ class UploadScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(upload, style: theme.textTheme.headline4),
-      ),
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text(upload, style: theme.textTheme.headline4),
+        ),
+        body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 28),
             child: _staggeredView(),
@@ -63,7 +63,6 @@ class UploadScreen extends StatelessWidget {
           return RouteGenerator.homeRoute;
       }
     }
-
     context.push(nav());
   }
 }

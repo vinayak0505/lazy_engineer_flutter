@@ -19,24 +19,33 @@ mixin _$UploadState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() documentLoading,
+    required TResult Function(PlatformFile data) documentSuccess,
+    required TResult Function(dynamic e) documentFailure,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) =>
@@ -44,6 +53,9 @@ mixin _$UploadState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UploadInitial value) initial,
+    required TResult Function(DocumentLoading value) documentLoading,
+    required TResult Function(DocumentSuccess value) documentSuccess,
+    required TResult Function(DocumentFailure value) documentFailure,
     required TResult Function(UploadLoading value) loading,
     required TResult Function(UploadSuccess value) success,
     required TResult Function(UploadFailure value) failure,
@@ -52,6 +64,9 @@ mixin _$UploadState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -60,6 +75,9 @@ mixin _$UploadState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -126,8 +144,11 @@ class _$UploadInitial implements UploadInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() documentLoading,
+    required TResult Function(PlatformFile data) documentSuccess,
+    required TResult Function(dynamic e) documentFailure,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return initial();
@@ -137,8 +158,11 @@ class _$UploadInitial implements UploadInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return initial?.call();
@@ -148,8 +172,11 @@ class _$UploadInitial implements UploadInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -163,6 +190,9 @@ class _$UploadInitial implements UploadInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UploadInitial value) initial,
+    required TResult Function(DocumentLoading value) documentLoading,
+    required TResult Function(DocumentSuccess value) documentSuccess,
+    required TResult Function(DocumentFailure value) documentFailure,
     required TResult Function(UploadLoading value) loading,
     required TResult Function(UploadSuccess value) success,
     required TResult Function(UploadFailure value) failure,
@@ -174,6 +204,9 @@ class _$UploadInitial implements UploadInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -185,6 +218,9 @@ class _$UploadInitial implements UploadInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -199,6 +235,469 @@ class _$UploadInitial implements UploadInitial {
 
 abstract class UploadInitial implements UploadState {
   const factory UploadInitial() = _$UploadInitial;
+}
+
+/// @nodoc
+abstract class _$$DocumentLoadingCopyWith<$Res> {
+  factory _$$DocumentLoadingCopyWith(
+          _$DocumentLoading value, $Res Function(_$DocumentLoading) then) =
+      __$$DocumentLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DocumentLoadingCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res>
+    implements _$$DocumentLoadingCopyWith<$Res> {
+  __$$DocumentLoadingCopyWithImpl(
+      _$DocumentLoading _value, $Res Function(_$DocumentLoading) _then)
+      : super(_value, (v) => _then(v as _$DocumentLoading));
+
+  @override
+  _$DocumentLoading get _value => super._value as _$DocumentLoading;
+}
+
+/// @nodoc
+
+class _$DocumentLoading implements DocumentLoading {
+  const _$DocumentLoading();
+
+  @override
+  String toString() {
+    return 'UploadState.documentLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DocumentLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() documentLoading,
+    required TResult Function(PlatformFile data) documentSuccess,
+    required TResult Function(dynamic e) documentFailure,
+    required TResult Function() loading,
+    required TResult Function(dynamic data) success,
+    required TResult Function(dynamic e) failure,
+  }) {
+    return documentLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
+    TResult Function()? loading,
+    TResult Function(dynamic data)? success,
+    TResult Function(dynamic e)? failure,
+  }) {
+    return documentLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
+    TResult Function()? loading,
+    TResult Function(dynamic data)? success,
+    TResult Function(dynamic e)? failure,
+    required TResult orElse(),
+  }) {
+    if (documentLoading != null) {
+      return documentLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UploadInitial value) initial,
+    required TResult Function(DocumentLoading value) documentLoading,
+    required TResult Function(DocumentSuccess value) documentSuccess,
+    required TResult Function(DocumentFailure value) documentFailure,
+    required TResult Function(UploadLoading value) loading,
+    required TResult Function(UploadSuccess value) success,
+    required TResult Function(UploadFailure value) failure,
+  }) {
+    return documentLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
+    TResult Function(UploadLoading value)? loading,
+    TResult Function(UploadSuccess value)? success,
+    TResult Function(UploadFailure value)? failure,
+  }) {
+    return documentLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
+    TResult Function(UploadLoading value)? loading,
+    TResult Function(UploadSuccess value)? success,
+    TResult Function(UploadFailure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (documentLoading != null) {
+      return documentLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DocumentLoading implements UploadState {
+  const factory DocumentLoading() = _$DocumentLoading;
+}
+
+/// @nodoc
+abstract class _$$DocumentSuccessCopyWith<$Res> {
+  factory _$$DocumentSuccessCopyWith(
+          _$DocumentSuccess value, $Res Function(_$DocumentSuccess) then) =
+      __$$DocumentSuccessCopyWithImpl<$Res>;
+  $Res call({PlatformFile data});
+}
+
+/// @nodoc
+class __$$DocumentSuccessCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res>
+    implements _$$DocumentSuccessCopyWith<$Res> {
+  __$$DocumentSuccessCopyWithImpl(
+      _$DocumentSuccess _value, $Res Function(_$DocumentSuccess) _then)
+      : super(_value, (v) => _then(v as _$DocumentSuccess));
+
+  @override
+  _$DocumentSuccess get _value => super._value as _$DocumentSuccess;
+
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$DocumentSuccess(
+      data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as PlatformFile,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DocumentSuccess implements DocumentSuccess {
+  const _$DocumentSuccess(this.data);
+
+  @override
+  final PlatformFile data;
+
+  @override
+  String toString() {
+    return 'UploadState.documentSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DocumentSuccess &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$DocumentSuccessCopyWith<_$DocumentSuccess> get copyWith =>
+      __$$DocumentSuccessCopyWithImpl<_$DocumentSuccess>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() documentLoading,
+    required TResult Function(PlatformFile data) documentSuccess,
+    required TResult Function(dynamic e) documentFailure,
+    required TResult Function() loading,
+    required TResult Function(dynamic data) success,
+    required TResult Function(dynamic e) failure,
+  }) {
+    return documentSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
+    TResult Function()? loading,
+    TResult Function(dynamic data)? success,
+    TResult Function(dynamic e)? failure,
+  }) {
+    return documentSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
+    TResult Function()? loading,
+    TResult Function(dynamic data)? success,
+    TResult Function(dynamic e)? failure,
+    required TResult orElse(),
+  }) {
+    if (documentSuccess != null) {
+      return documentSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UploadInitial value) initial,
+    required TResult Function(DocumentLoading value) documentLoading,
+    required TResult Function(DocumentSuccess value) documentSuccess,
+    required TResult Function(DocumentFailure value) documentFailure,
+    required TResult Function(UploadLoading value) loading,
+    required TResult Function(UploadSuccess value) success,
+    required TResult Function(UploadFailure value) failure,
+  }) {
+    return documentSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
+    TResult Function(UploadLoading value)? loading,
+    TResult Function(UploadSuccess value)? success,
+    TResult Function(UploadFailure value)? failure,
+  }) {
+    return documentSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
+    TResult Function(UploadLoading value)? loading,
+    TResult Function(UploadSuccess value)? success,
+    TResult Function(UploadFailure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (documentSuccess != null) {
+      return documentSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DocumentSuccess implements UploadState {
+  const factory DocumentSuccess(final PlatformFile data) = _$DocumentSuccess;
+
+  PlatformFile get data;
+  @JsonKey(ignore: true)
+  _$$DocumentSuccessCopyWith<_$DocumentSuccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DocumentFailureCopyWith<$Res> {
+  factory _$$DocumentFailureCopyWith(
+          _$DocumentFailure value, $Res Function(_$DocumentFailure) then) =
+      __$$DocumentFailureCopyWithImpl<$Res>;
+  $Res call({dynamic e});
+}
+
+/// @nodoc
+class __$$DocumentFailureCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res>
+    implements _$$DocumentFailureCopyWith<$Res> {
+  __$$DocumentFailureCopyWithImpl(
+      _$DocumentFailure _value, $Res Function(_$DocumentFailure) _then)
+      : super(_value, (v) => _then(v as _$DocumentFailure));
+
+  @override
+  _$DocumentFailure get _value => super._value as _$DocumentFailure;
+
+  @override
+  $Res call({
+    Object? e = freezed,
+  }) {
+    return _then(_$DocumentFailure(
+      e == freezed
+          ? _value.e
+          : e // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DocumentFailure implements DocumentFailure {
+  const _$DocumentFailure(this.e);
+
+  @override
+  final dynamic e;
+
+  @override
+  String toString() {
+    return 'UploadState.documentFailure(e: $e)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DocumentFailure &&
+            const DeepCollectionEquality().equals(other.e, e));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(e));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$DocumentFailureCopyWith<_$DocumentFailure> get copyWith =>
+      __$$DocumentFailureCopyWithImpl<_$DocumentFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() documentLoading,
+    required TResult Function(PlatformFile data) documentSuccess,
+    required TResult Function(dynamic e) documentFailure,
+    required TResult Function() loading,
+    required TResult Function(dynamic data) success,
+    required TResult Function(dynamic e) failure,
+  }) {
+    return documentFailure(e);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
+    TResult Function()? loading,
+    TResult Function(dynamic data)? success,
+    TResult Function(dynamic e)? failure,
+  }) {
+    return documentFailure?.call(e);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
+    TResult Function()? loading,
+    TResult Function(dynamic data)? success,
+    TResult Function(dynamic e)? failure,
+    required TResult orElse(),
+  }) {
+    if (documentFailure != null) {
+      return documentFailure(e);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UploadInitial value) initial,
+    required TResult Function(DocumentLoading value) documentLoading,
+    required TResult Function(DocumentSuccess value) documentSuccess,
+    required TResult Function(DocumentFailure value) documentFailure,
+    required TResult Function(UploadLoading value) loading,
+    required TResult Function(UploadSuccess value) success,
+    required TResult Function(UploadFailure value) failure,
+  }) {
+    return documentFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
+    TResult Function(UploadLoading value)? loading,
+    TResult Function(UploadSuccess value)? success,
+    TResult Function(UploadFailure value)? failure,
+  }) {
+    return documentFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
+    TResult Function(UploadLoading value)? loading,
+    TResult Function(UploadSuccess value)? success,
+    TResult Function(UploadFailure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (documentFailure != null) {
+      return documentFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DocumentFailure implements UploadState {
+  const factory DocumentFailure(final dynamic e) = _$DocumentFailure;
+
+  dynamic get e;
+  @JsonKey(ignore: true)
+  _$$DocumentFailureCopyWith<_$DocumentFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -243,8 +742,11 @@ class _$UploadLoading implements UploadLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() documentLoading,
+    required TResult Function(PlatformFile data) documentSuccess,
+    required TResult Function(dynamic e) documentFailure,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return loading();
@@ -254,8 +756,11 @@ class _$UploadLoading implements UploadLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return loading?.call();
@@ -265,8 +770,11 @@ class _$UploadLoading implements UploadLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -280,6 +788,9 @@ class _$UploadLoading implements UploadLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UploadInitial value) initial,
+    required TResult Function(DocumentLoading value) documentLoading,
+    required TResult Function(DocumentSuccess value) documentSuccess,
+    required TResult Function(DocumentFailure value) documentFailure,
     required TResult Function(UploadLoading value) loading,
     required TResult Function(UploadSuccess value) success,
     required TResult Function(UploadFailure value) failure,
@@ -291,6 +802,9 @@ class _$UploadLoading implements UploadLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -302,6 +816,9 @@ class _$UploadLoading implements UploadLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -323,7 +840,7 @@ abstract class _$$UploadSuccessCopyWith<$Res> {
   factory _$$UploadSuccessCopyWith(
           _$UploadSuccess value, $Res Function(_$UploadSuccess) then) =
       __$$UploadSuccessCopyWithImpl<$Res>;
-  $Res call({UploadData data});
+  $Res call({dynamic data});
 }
 
 /// @nodoc
@@ -345,7 +862,7 @@ class __$$UploadSuccessCopyWithImpl<$Res>
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as UploadData,
+              as dynamic,
     ));
   }
 }
@@ -356,7 +873,7 @@ class _$UploadSuccess implements UploadSuccess {
   const _$UploadSuccess(this.data);
 
   @override
-  final UploadData data;
+  final dynamic data;
 
   @override
   String toString() {
@@ -384,8 +901,11 @@ class _$UploadSuccess implements UploadSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() documentLoading,
+    required TResult Function(PlatformFile data) documentSuccess,
+    required TResult Function(dynamic e) documentFailure,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return success(data);
@@ -395,8 +915,11 @@ class _$UploadSuccess implements UploadSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return success?.call(data);
@@ -406,8 +929,11 @@ class _$UploadSuccess implements UploadSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -421,6 +947,9 @@ class _$UploadSuccess implements UploadSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UploadInitial value) initial,
+    required TResult Function(DocumentLoading value) documentLoading,
+    required TResult Function(DocumentSuccess value) documentSuccess,
+    required TResult Function(DocumentFailure value) documentFailure,
     required TResult Function(UploadLoading value) loading,
     required TResult Function(UploadSuccess value) success,
     required TResult Function(UploadFailure value) failure,
@@ -432,6 +961,9 @@ class _$UploadSuccess implements UploadSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -443,6 +975,9 @@ class _$UploadSuccess implements UploadSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -456,9 +991,9 @@ class _$UploadSuccess implements UploadSuccess {
 }
 
 abstract class UploadSuccess implements UploadState {
-  const factory UploadSuccess(final UploadData data) = _$UploadSuccess;
+  const factory UploadSuccess(final dynamic data) = _$UploadSuccess;
 
-  UploadData get data;
+  dynamic get data;
   @JsonKey(ignore: true)
   _$$UploadSuccessCopyWith<_$UploadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -530,8 +1065,11 @@ class _$UploadFailure implements UploadFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() documentLoading,
+    required TResult Function(PlatformFile data) documentSuccess,
+    required TResult Function(dynamic e) documentFailure,
     required TResult Function() loading,
-    required TResult Function(UploadData data) success,
+    required TResult Function(dynamic data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return failure(e);
@@ -541,8 +1079,11 @@ class _$UploadFailure implements UploadFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
@@ -552,8 +1093,11 @@ class _$UploadFailure implements UploadFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? documentLoading,
+    TResult Function(PlatformFile data)? documentSuccess,
+    TResult Function(dynamic e)? documentFailure,
     TResult Function()? loading,
-    TResult Function(UploadData data)? success,
+    TResult Function(dynamic data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -567,6 +1111,9 @@ class _$UploadFailure implements UploadFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(UploadInitial value) initial,
+    required TResult Function(DocumentLoading value) documentLoading,
+    required TResult Function(DocumentSuccess value) documentSuccess,
+    required TResult Function(DocumentFailure value) documentFailure,
     required TResult Function(UploadLoading value) loading,
     required TResult Function(UploadSuccess value) success,
     required TResult Function(UploadFailure value) failure,
@@ -578,6 +1125,9 @@ class _$UploadFailure implements UploadFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,
@@ -589,6 +1139,9 @@ class _$UploadFailure implements UploadFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(UploadInitial value)? initial,
+    TResult Function(DocumentLoading value)? documentLoading,
+    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult Function(DocumentFailure value)? documentFailure,
     TResult Function(UploadLoading value)? loading,
     TResult Function(UploadSuccess value)? success,
     TResult Function(UploadFailure value)? failure,

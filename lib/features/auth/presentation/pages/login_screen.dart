@@ -10,7 +10,7 @@ import '../../data/models/sign_in_model/sign_in_model.dart';
 import '../auth_cubit/auth_cubit.dart';
 import '../widgets/widgets.dart';
 
-class LoginScreen extends StatelessWidget with InputValidationMixin {
+class LoginScreen extends StatelessWidget with InputAuthValidationMixin {
   const LoginScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {

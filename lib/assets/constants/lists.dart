@@ -29,12 +29,42 @@ List<CategoriesModel> categoriesList = [
   ),
 ];
 
-List<String> sliderImageList = const [
+List<CategoriesModel> notesList = [
+  CategoriesModel(
+    subtitle: 'Document 1',
+    description: 'You can find handwriten notes from all students',
+  ),
+  CategoriesModel(
+    subtitle: 'Document 2',
+    description: 'Official Notice',
+  ),
+  CategoriesModel(
+    subtitle: 'Document 3',
+    description: 'You can find handwriten notes from all students',
+  ),
+  CategoriesModel(
+    subtitle: 'Document 4',
+    description: 'Official Notice',
+  ),
+  CategoriesModel(
+    subtitle: 'Document 5',
+    description: 'You can find handwriten notes from all students',
+  ),
+];
+
+List<String> sliderImageList = [
   AppImages.sliderImage,
   AppImages.sliderImage,
   AppImages.sliderImage,
   AppImages.sliderImage,
   AppImages.sliderImage,
+];
+
+List<String> tagsList = [
+  'tag1',
+  'tag2',
+  'tag3',
+  'tag4',
 ];
 
 List<String> bookImageList = const [
@@ -45,8 +75,21 @@ List<String> bookImageList = const [
   AppImages.bookCoverImage,
 ];
 
-// file
+List<String> companyImageList = const [
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+  AppImages.companyImage,
+];
 
+// file
 List<String> multiOptionFileList = ['Only IP University'];
 
 List<String> singleOptionFileList = [
@@ -191,7 +234,7 @@ List<QuestionPaperModel> questionPaperList = [
 ];
 
 ///Uploading Screen
-List<String> universityList = [
+List<String> collegeList = [
   'GTBIT',
   'IIIT',
   'NSIT',
@@ -210,11 +253,54 @@ List<String> tagList = [
   'Circle',
 ];
 
+List<String> semesterList = [
+  '1st Semester',
+  '2nd Semester',
+  '3rd Semester',
+  '4th Semester',
+  '5th Semester',
+  '6th Semester',
+  '7th Semester',
+  '8th Semester',
+];
+
+List<String> semesterKeyList = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+];
+
 List<String> yearList = [
   '1st Year',
   '2nd Year',
   '3rd Year',
   '4th Year',
+];
+
+List<String> yearKeyList = [
+  '1',
+  '2',
+  '3',
+  '4',
+];
+
+List<String> unitList = [
+  'Unit 1',
+  'Unit 2',
+  'Unit 3',
+  'Unit 4',
+];
+
+List<String> unitKeyList = [
+  '1',
+  '2',
+  '3',
+  '4',
 ];
 
 List<String> locationList = [
@@ -226,4 +312,32 @@ List<String> locationList = [
   'Chennai',
   'Bangalore',
   'Hyderabad',
+];
+
+List<String> jobTypeList = [
+  'Full Time',
+  'Part Time',
+  'Contract',
+  'Temporary',
+  'Internship',
+  'Other',
+];
+
+List<String> experienceLevelList = [
+  'Internship',
+  'Entery Level',
+  'Associate',
+  'Mid-Senior Level',
+  'Director',
+  'Executive',
+];
+List<String> classList = [
+  'Aeronautical Engineering',
+  'Automobile Engineering',
+  'Biotechnology',
+  'Civil Engineering',
+  'Computer Science and Engineering',
+  'Electrical and Electronics Engineering',
+  'Mechanical Engineering',
+  'Electronics & Communication'
 ];

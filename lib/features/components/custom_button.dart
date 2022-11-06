@@ -5,29 +5,33 @@ import 'package:lazy_engineer/features/components/custom_icon.dart';
 import '../../config/theme/app_theme.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton(
-      {Key? key,
-      required this.onPressed,
-      this.text,
-      this.icon,
-      this.color = AppThemes.primaryColor1,
-      this.isBig = false,
-      this.borderColor,
-      this.width})
-      : super(key: key);
+  const CustomButton({
+    Key? key,
+    required this.onPressed,
+    this.widget,
+    this.overflow,
+    this.text,
+    this.color = AppThemes.primaryColor1,
+    this.isBig = false,
+    this.borderColor,
+    this.constraints,
+    this.width,
+  }) : super(key: key);
 
   final void Function() onPressed;
+  final TextOverflow? overflow;
+  final Widget? widget;
   final String? text;
-  final String? icon;
   final Color color;
   final bool isBig;
   final Color? borderColor;
   final double? width;
+  final BoxConstraints? constraints;
 
   factory CustomButton.google({required void Function() onPressed}) {
     return CustomButton(
       onPressed: onPressed,
-      icon: AppIcons.gPlusIcon,
+      widget: const CustomIcon(AppIcons.gPlusIcon),
       color: AppThemes.googlePlusColor,
     );
   }
@@ -35,17 +39,26 @@ class CustomButton extends StatelessWidget {
   factory CustomButton.facebook({required void Function() onPressed}) {
     return CustomButton(
       onPressed: onPressed,
-      icon: AppIcons.fIcon,
+      widget: const CustomIcon(AppIcons.fIcon),
       color: AppThemes.facebookColor,
     );
   }
 
-  factory CustomButton.secondary(
-      {required void Function() onPressed, String? icon, String? text}) {
+  factory CustomButton.secondary({
+    required void Function() onPressed,
+    BoxConstraints? constraints,
+    String? text,
+    double? width,
+    Widget? widget,
+    TextOverflow? overflow,
+  }) {
     return CustomButton(
       onPressed: onPressed,
-      icon: icon,
+      constraints: constraints,
       text: text,
+      overflow: overflow,
+      width: width,
+      widget: widget,
       color: AppThemes.secondColor,
       borderColor: AppThemes.primaryColor1,
     );
@@ -64,27 +77,23 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(isBig ? 14 : 20),
         ),
       ),
-      child: SizedBox(
+      child: Container(
+        alignment: Alignment.center,
         height: isBig ? 48 : 34,
         width: width,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (icon != null) CustomIcon(icon!),
-            if (icon != null && text != null) const Spacer(),
-            if (text != null)
-              Text(
-                text!,
-                style: theme.textTheme.button?.copyWith(
-                  fontWeight: FontWeight.w900,
-                  color: borderColor ?? AppThemes.buttonText,
-                  fontSize: 18,
-                ),
-              ),
-            if (icon != null && text != null) const Spacer(),
-          ],
-        ),
+        constraints: constraints,
+        child: widget ??
+            (text != null
+                ? Text(
+                    text!,
+                    style: theme.textTheme.button?.copyWith(
+                      overflow: overflow,
+                      fontWeight: FontWeight.w900,
+                      color: borderColor ?? AppThemes.buttonText,
+                      fontSize: 18,
+                    ),
+                  )
+                : const SizedBox()),
       ),
     );
   }

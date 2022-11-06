@@ -1,108 +1,149 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/features/upload/presentation/widgets/upload_screen_widget.dart';
 import '../../../../assets/constants/lists.dart';
-import '../../../../assets/icons.dart';
-import '../../../../assets/images.dart';
-import '../../../components/custom_button.dart';
+import '../../../../assets/constants/strings.dart';
+import '../../../../helper/input_validation.dart';
 import '../../../components/custom_dropdown.dart';
-import '../../../components/custom_icon.dart';
-import '../../../components/custom_image.dart';
 import '../../../components/custom_text_field.dart';
-import '../../../components/tags/ui/tags_widget.dart';
-import '../cubit/upload_cubit.dart';
+import '../../../components/tags_widget.dart';
 
-class UploadNotesScreen extends StatelessWidget {
-  const UploadNotesScreen({Key? key}) : super(key: key);
+class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
+  const UploadNotesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    List<String> listTags = [];
     TextEditingController titleController = TextEditingController();
     TextEditingController aboutController = TextEditingController();
-    TextEditingController universityController = TextEditingController();
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          uploadNotes,
-          style: theme.textTheme.headline5,
-        ),
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const CustomIcon(
-            AppIcons.backArrow,
-            margin: EdgeInsets.only(left: 16),
+    TextEditingController semesterController = TextEditingController();
+    TextEditingController subjectController = TextEditingController();
+    TextEditingController collegeController = TextEditingController();
+    TextEditingController unitController = TextEditingController();
+    TextEditingController chapterController = TextEditingController();
+    TextEditingController topicController = TextEditingController();
+    List<String> tagsController = [];
+    return UploadScreenWidget(
+      title: uploadNotes,
+      body: [
+        //* Title
+        Text(title, style: theme.textTheme.titleLarge),
+        CustomTextField.secondary(
+          controller: titleController,
+          hintText: title,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            title,
           ),
         ),
-      ),
-      body: BlocProvider(
-        create: (context) => UploadCubit(),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: BlocBuilder<UploadCubit, UploadState>(
-                builder: (context, state) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Center(
-                          child: CustomImage(image: AppImages.uploadNotes)),
-                      const SizedBox(height: 16),
-                      Text(title, style: theme.textTheme.titleLarge),
-                      CustomTextField.secondary(
-                        controller: titleController,
-                        hintText: title,
-                      ),
-                      const SizedBox(height: 16),
-                      Text(about, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 12),
-                      CustomTextField.multiLine(
-                        controller: aboutController,
-                        hintText: aboutNotes,
-                      ),
-                      const SizedBox(height: 16),
-                      Text(filter, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 16),
-                      CustomDropdown(
-                        hintText: searchUniversityOptional,
-                        list: universityList,
-                        controller: universityController,
-                      ),
-                      const SizedBox(height: 16),
-                      // FilterContainer.multiOption(data: filterNotesList),
-                      const SizedBox(height: 16),
-                      Text(tags, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 8),
-                      TagsWidget(listTags: (value) {
-                        listTags = value;
-                      }),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: CustomButton(
-                          text: uploadNotes,
-                          width: 130,
-                          onPressed: () {
-                            context.read<UploadCubit>().uploadNotes(
-                                  title: titleController.text,
-                                  about: aboutController.text,
-                                  university: universityController.text,
-                                  filterMultiOption: [],
-                                  tags: listTags,
-                                );
-                          },
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
-            ),
+        const SizedBox(height: 16),
+        //* About
+        Text(about, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        CustomTextField.multiLine(
+          controller: aboutController,
+          hintText: aboutNotes,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            about,
           ),
         ),
-      ),
+        const SizedBox(height: 16),
+        //* Semester
+        CustomDropdown(
+          list: semesterList,
+          keyList: semesterKeyList,
+          width: 130,
+          hintText: semester,
+          controller: semesterController,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            semester,
+          ),
+        ),
+        const SizedBox(height: 16),
+        //* Subject
+        Text(subject, style: theme.textTheme.titleLarge),
+        CustomTextField.secondary(
+          controller: subjectController,
+          hintText: subject,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            subject,
+          ),
+        ),
+        const SizedBox(height: 16),
+        //* College
+        Text(college, style: theme.textTheme.titleLarge),
+        CustomTextField.secondary(
+          controller: collegeController,
+          hintText: college,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            college,
+          ),
+        ),
+        const SizedBox(height: 16),
+        //* Unit
+        Text(unit, style: theme.textTheme.titleLarge),
+        CustomDropdown(
+          list: unitList,
+          keyList: unitKeyList,
+          width: 130,
+          hintText: unit,
+          controller: unitController,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            unit,
+          ),
+        ),
+        const SizedBox(height: 16),
+        //* Chapter
+        Text(chapter, style: theme.textTheme.titleLarge),
+        CustomTextField.secondary(
+          controller: chapterController,
+          hintText: chapter,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            chapter,
+          ),
+        ),
+        const SizedBox(height: 16),
+        //* Topic
+        Text(topic, style: theme.textTheme.titleLarge),
+        CustomTextField.secondary(
+          controller: topicController,
+          hintText: topic,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            topic,
+          ),
+        ),
+        const SizedBox(height: 16),
+        //* Tags
+        Text(tags, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 8),
+        TagsWidget(
+          listTags: (value) => tagsController = value,
+          // validator: (value) => emptyListCheckValidation(
+          //   value,
+          //   tags,
+          // ),
+        ),
+      ],
+      onPressed: (cubit) {
+        cubit.uploadNotes(
+          title: titleController.text,
+          about: aboutController.text,
+          semester: int.parse(
+            semesterController.text,
+          ),
+          subject: subjectController.text,
+          unit: unitController.text,
+          chapter: chapterController.text,
+          topic: topicController.text,
+          tags: tagsController,
+        );
+      },
     );
   }
 }

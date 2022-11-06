@@ -29,3 +29,4 @@ BoxDecoration kRoundedBottomContainer = BoxDecoration(
   ),
 );
 
+TextStyle? errorStyle = ThemeData.light().textTheme.labelSmall?.copyWith(color: ThemeData.light().errorColor, fontSize: 12);
