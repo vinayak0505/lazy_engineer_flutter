@@ -1,6 +1,6 @@
 {
-    "name": "lazy_engineer",
-    "short_name": "lazy_engineer",
+    "name": "lazy_engineer_flutter",
+    "short_name": "lazy_engineer_flutter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

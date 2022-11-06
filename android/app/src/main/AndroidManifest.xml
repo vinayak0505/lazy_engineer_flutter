@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lazy_engineer">
+    package="com.example.lazy_engineer_flutter">
    <application
-        android:label="lazy_engineer"
+        android:label="lazy_engineer_flutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

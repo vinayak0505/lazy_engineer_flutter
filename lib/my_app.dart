@@ -1,39 +1,50 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/config/route/routes.dart';
-import 'package:lazy_engineer/screens/home_screen/ui/home_screen.dart';
-import 'package:lazy_engineer/screens/splash_screen.dart';
-
-import 'config/theme/app_theme/app_theme.dart';
-
-GlobalKey<NavigatorState> mainNavigatorKey = GlobalKey<NavigatorState>();
-
-class ScrollBehaviorModified extends ScrollBehavior {
-  const ScrollBehaviorModified();
-
-  @override
-  ScrollPhysics getScrollPhysics(BuildContext context) {
-    return const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics());
-  }
-}
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
+import 'features/account/presentation/cubit/settings/settings_cubit.dart';
+import 'features/auth/data/repositories/auth_repository_impl.dart';
+import 'features/auth/presentation/auth_cubit/auth_cubit.dart';
+import 'features/layout_template/layout_template.dart';
+import 'features/home/data/repositories/user_repository.dart';
+import 'features/home/presentation/cubit/user/user_cubit.dart';
+import 'config/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        builder: (context, child) => ScrollConfiguration(
-          behavior: const ScrollBehaviorModified(),
-          child: child!,
+    final route = RouteGenerator().goRouter;
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => UserCubit(UserRepository())),
+        BlocProvider(
+          create: (context) => AuthCubit(AuthRepositoryImpl()),
         ),
-        navigatorKey: mainNavigatorKey,
-        themeMode: ThemeMode.system,
-        theme: AppThemes.appThemeData[AppTheme.lightTheme],
-        debugShowCheckedModeBanner: false,
-        // navigatorObservers: [observer],
-        home: const HomeScreen(),
-        // home: const SplashPage(isHome: true),
-        routes: PageRoutes.routes,
+        BlocProvider(create: (context) => SettingsCubit()),
+      ],
+      child: Builder(builder: (context) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routerDelegate: route.routerDelegate,
+          routeInformationParser: route.routeInformationParser,
+          routeInformationProvider: route.routeInformationProvider,
+          scrollBehavior: MyScrollBehavior(),
+          themeMode: ThemeMode.system,
+          theme: AppThemes.appThemeData[AppTheme.lightTheme],
+          builder: (context, child) => LayoutTemplate(child: child!),
+        );
+      }),
     );
   }
+}
+
+class MyScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
