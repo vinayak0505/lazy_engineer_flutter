@@ -26,6 +26,7 @@ const String or = 'OR';
 const String next = 'Next';
 const String classD = 'Class';
 const String university = 'University';
+const String semister = 'Semister';
 
 const String notes = 'Notes';
 const String files = 'Files';
@@ -52,7 +53,7 @@ const String uploadNotes = 'Upload Notes';
 const String uploadPaper = 'Upload Paper';
 const String uploadFile = 'Upload File';
 const String uploadBook = 'Upload Book';
-const String uploadJobRequest = 'Upload Job Request';
+const String uploadJob = 'Upload Job';
 const String title = 'Title';
 const String subject = 'Subject';
 const String writer = 'Writer';

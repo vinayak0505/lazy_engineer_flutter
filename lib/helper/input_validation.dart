@@ -11,6 +11,7 @@ mixin InputValidationMixin {
   }
 
   String? emptyListCheckValidation(List<String>? list, String message) {
+    print('validation $list');
     if (list?.isEmpty ?? true) return 'Enter $message';
     return null;
   }

@@ -263,11 +263,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
 
   @override
   String toString() {
-<<<<<<< HEAD:lib/features/upload/data/models/upload_book_request/upload_book_request.freezed.dart
-    return 'UploadBookRequest(title: $title, link: $link, writer: $writer, subject: $subject, about: $about, pages: $pages, semister: $semister, bookEdition: $bookEdition, price: $price, tags: $tags)';
-=======
-    return 'UploadBookRequest(title: $title, writer: $writer, subject: $subject, about: $about, pages: $pages, semester: $semester, bookEdition: $bookEdition, price: $price, tags: $tags)';
->>>>>>> ef31bacab75e57ef5fb3287e7839a265647028bc:lib/features/upload/data/models/upload_book_request.dart/upload_book_request.freezed.dart
+    return 'UploadBookRequest(title: $title, link: $link, writer: $writer, subject: $subject, about: $about, pages: $pages, semester: $semester, bookEdition: $bookEdition, price: $price, tags: $tags)';
   }
 
   @override

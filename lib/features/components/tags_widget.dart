@@ -15,14 +15,19 @@ class TagsWidget extends FormField<List<String>> {
   }) : super(
           key: key,
           validator: validator,
-          builder: (FormFieldState<List<String>> formFeildState) {
+          builder: (FormFieldState<List<String>> formState) {
             TextEditingController tagsController = TextEditingController();
             return BlocProvider(
               create: (context) => ListCubit(),
-              child: BlocBuilder<ListCubit, ListState>(
-                builder: (context, state) {
+              child: BlocConsumer<ListCubit, List<String>>(
+                listener: (context, list) {
+                  listTags.call(list);
+                  if (validator != null) validator.call(list);
+                },
+                builder: (context, list) {
                   List<String> tags = tagsList;
                   final cubit = context.read<ListCubit>();
+
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -30,14 +35,17 @@ class TagsWidget extends FormField<List<String>> {
                         direction: Axis.horizontal,
                         children: [
                           ...List.generate(
-                            state.list.length,
+                            list.length,
                             (index) {
                               return Padding(
                                 padding: const EdgeInsets.only(right: 8),
                                 child: CustomChip(
-                                  text: state.list[index],
+                                  text: list[index],
                                   onDelete: () {
-                                    cubit.removeElement(state.list[index]);
+                                    cubit.removeElement(list[index]);
+                                    // cubit.add(
+                                    //   ListEvent.remove(state.list[index]),
+                                    // );
                                   },
                                 ),
                               );
@@ -46,18 +54,15 @@ class TagsWidget extends FormField<List<String>> {
                           InkWell(
                             child: CustomChip.addTags(),
                             onTap: () {
-                              showModalBottomSheet<void>(
+                              showModalBottomSheet(
                                 backgroundColor: Colors.transparent,
                                 context: context,
-                                builder: (BuildContext bottomSheetContext) {
+                                builder: (_) {
                                   var theme = Theme.of(context);
                                   List<Widget> tagWidget() {
                                     void onTapTag(String tag) {
                                       cubit.addElement(tag);
-                                      listTags.call(state.list);
-                                      if (validator != null) {
-                                        validator.call(state.list);
-                                      }
+                                      // cubit.add(ListEvent.add(tag));
                                       tagsController.text = tag;
                                       Navigator.pop(context);
                                     }
@@ -102,10 +107,9 @@ class TagsWidget extends FormField<List<String>> {
                           ),
                         ],
                       ),
-                      if (formFeildState.hasError &&
-                          formFeildState.errorText != null)
+                      if (formState.hasError && formState.errorText != null)
                         Text(
-                          formFeildState.errorText!,
+                          formState.errorText!,
                           style: errorStyle,
                         ),
                     ],

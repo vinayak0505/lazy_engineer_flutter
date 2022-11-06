@@ -13,8 +13,9 @@ class WriterListWidget extends StatelessWidget {
     TextEditingController controller = TextEditingController();
     return BlocProvider(
       create: (context) => ListCubit(),
-      child: BlocBuilder<ListCubit, ListState>(
-        builder: (context, state) {
+      child: BlocConsumer<ListCubit, List<String>>(
+        listener: (context, list) => writerList.call(list),
+        builder: (context, list) {
           return Column(
             children: [
               CustomTextField.secondary(
@@ -28,15 +29,13 @@ class WriterListWidget extends StatelessWidget {
               ListView.separated(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: state.list.length,
+                itemCount: list.length,
                 itemBuilder: (context, index) => ListTile(
                   onLongPress: () {
-                    context.read<ListCubit>().removeElement(
-                          state.list[index],
-                        );
+                    context.read<ListCubit>().removeElement(list[index]);
                   },
                   dense: true,
-                  title: Text(state.list[index]),
+                  title: Text(list[index]),
                 ),
                 separatorBuilder: (_, __) => const Divider(),
               ),
