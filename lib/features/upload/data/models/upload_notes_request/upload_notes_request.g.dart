@@ -11,7 +11,7 @@ _$_UploadNotesRequest _$$_UploadNotesRequestFromJson(
     _$_UploadNotesRequest(
       title: json['title'] as String,
       about: json['about'] as String?,
-      semister: json['semister'] as int?,
+      semester: json['semester'] as int?,
       subject: json['subject'] as String?,
       unit: json['unit'] as String?,
       chapter: json['chapter'] as String?,
@@ -25,7 +25,7 @@ Map<String, dynamic> _$$_UploadNotesRequestToJson(
     <String, dynamic>{
       'title': instance.title,
       'about': instance.about,
-      'semister': instance.semister,
+      'semester': instance.semester,
       'subject': instance.subject,
       'unit': instance.unit,
       'chapter': instance.chapter,

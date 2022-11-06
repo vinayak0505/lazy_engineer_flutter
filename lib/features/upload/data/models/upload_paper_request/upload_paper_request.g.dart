@@ -11,7 +11,7 @@ _$_UploadPaperRequest _$$_UploadPaperRequestFromJson(
     _$_UploadPaperRequest(
       title: json['title'] as String,
       subject: json['subject'] as String?,
-      semister: json['semister'] as String?,
+      semester: json['semester'] as String?,
       year: json['year'] as int?,
       link: json['link'],
       type: json['type'] as String?,
@@ -24,7 +24,7 @@ Map<String, dynamic> _$$_UploadPaperRequestToJson(
     <String, dynamic>{
       'title': instance.title,
       'subject': instance.subject,
-      'semister': instance.semister,
+      'semester': instance.semester,
       'year': instance.year,
       'link': instance.link,
       'type': instance.type,

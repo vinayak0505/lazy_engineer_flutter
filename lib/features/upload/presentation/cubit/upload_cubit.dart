@@ -50,7 +50,7 @@ class UploadCubit extends Cubit<UploadState> {
     UploadNotesRequest notesData = UploadNotesRequest(
       title: title,
       about: about,
-      semister: semester,
+      semester: semester,
       subject: subject,
       unit: unit,
       chapter: chapter,
@@ -66,7 +66,7 @@ class UploadCubit extends Cubit<UploadState> {
   void uploadPaper({
     required String title,
     String? subject,
-    String? semister,
+    String? semester,
     int? year,
     String? type,
     bool? solved,
@@ -92,7 +92,7 @@ class UploadCubit extends Cubit<UploadState> {
     required String subject,
     String? about,
     required int pages,
-    int? semister,
+    int? semester,
     required int bookEdition,
     int? price,
     required List<String> tags,
@@ -105,7 +105,11 @@ class UploadCubit extends Cubit<UploadState> {
       subject: subject,
       about: about,
       pages: pages,
+<<<<<<< HEAD
       semester: semister,
+=======
+      semester: semester,
+>>>>>>> e5da4c2272ef97c50f2c53ebbe94a4b31455a986
       bookEdition: bookEdition,
       price: price,
       tags: tags,
@@ -118,16 +122,21 @@ class UploadCubit extends Cubit<UploadState> {
     required String title,
     String? subject,
     String? college,
-    String? semister,
+    String? semester,
     required List<String> tags,
   }) async {
     UploadFilesRequest fileData = UploadFilesRequest(
       title: title,
       subject: subject,
       college: college,
+<<<<<<< HEAD
       semister: semister,
       link: await MultipartFile.fromFile(pickedFile!.path!,
           filename: pickedFile!.name),
+=======
+      semester: semester,
+      link: await MultipartFile.fromFile(pickedFile!.path!, filename: pickedFile!.name),
+>>>>>>> e5da4c2272ef97c50f2c53ebbe94a4b31455a986
       tags: tags,
     );
     repository.uplaodFiles(fileData);

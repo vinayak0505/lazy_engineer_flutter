@@ -22,7 +22,7 @@ UploadPaperRequest _$UploadPaperRequestFromJson(Map<String, dynamic> json) {
 mixin _$UploadPaperRequest {
   String get title => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
-  String? get semister => throw _privateConstructorUsedError;
+  String? get semester => throw _privateConstructorUsedError;
   int? get year => throw _privateConstructorUsedError;
   dynamic get link => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $UploadPaperRequestCopyWith<$Res> {
   $Res call(
       {String title,
       String? subject,
-      String? semister,
+      String? semester,
       int? year,
       dynamic link,
       String? type,
@@ -64,7 +64,7 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
   $Res call({
     Object? title = freezed,
     Object? subject = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? year = freezed,
     Object? link = freezed,
     Object? type = freezed,
@@ -80,9 +80,9 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
       year: year == freezed
           ? _value.year
@@ -118,7 +118,7 @@ abstract class _$$_UploadPaperRequestCopyWith<$Res>
   $Res call(
       {String title,
       String? subject,
-      String? semister,
+      String? semester,
       int? year,
       dynamic link,
       String? type,
@@ -141,7 +141,7 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
   $Res call({
     Object? title = freezed,
     Object? subject = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? year = freezed,
     Object? link = freezed,
     Object? type = freezed,
@@ -157,9 +157,9 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
       year: year == freezed
           ? _value.year
@@ -191,7 +191,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   const _$_UploadPaperRequest(
       {required this.title,
       this.subject,
-      this.semister,
+      this.semester,
       this.year,
       required this.link,
       this.type,
@@ -207,7 +207,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   @override
   final String? subject;
   @override
-  final String? semister;
+  final String? semester;
   @override
   final int? year;
   @override
@@ -225,7 +225,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
 
   @override
   String toString() {
-    return 'UploadPaperRequest(title: $title, subject: $subject, semister: $semister, year: $year, link: $link, type: $type, solved: $solved, tags: $tags)';
+    return 'UploadPaperRequest(title: $title, subject: $subject, semester: $semester, year: $year, link: $link, type: $type, solved: $solved, tags: $tags)';
   }
 
   @override
@@ -235,7 +235,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
             other is _$_UploadPaperRequest &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.year, year) &&
             const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality().equals(other.type, type) &&
@@ -249,7 +249,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
       runtimeType,
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(year),
       const DeepCollectionEquality().hash(link),
       const DeepCollectionEquality().hash(type),
@@ -274,7 +274,7 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
   const factory _UploadPaperRequest(
       {required final String title,
       final String? subject,
-      final String? semister,
+      final String? semester,
       final int? year,
       required final dynamic link,
       final String? type,
@@ -289,7 +289,7 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
   @override
   String? get subject;
   @override
-  String? get semister;
+  String? get semester;
   @override
   int? get year;
   @override
