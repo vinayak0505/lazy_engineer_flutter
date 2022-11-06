@@ -10,7 +10,7 @@ class UploadPaperRequest with _$UploadPaperRequest {
         String? subject,
         String? semester,
         int? year,
-        required String link,
+        required dynamic link,
         String? type,
         bool? solved,
         required List<String> tags,

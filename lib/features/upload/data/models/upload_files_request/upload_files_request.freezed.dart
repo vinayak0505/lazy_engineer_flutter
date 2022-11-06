@@ -24,7 +24,7 @@ mixin _$UploadFilesRequest {
   String? get subject => throw _privateConstructorUsedError;
   String? get college => throw _privateConstructorUsedError;
   String? get semester => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
+  dynamic get link => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $UploadFilesRequestCopyWith<$Res> {
       String? subject,
       String? college,
       String? semester,
-      String link,
+      dynamic link,
       List<String> tags});
 }
 
@@ -106,7 +106,7 @@ abstract class _$$_UploadFilesRequestCopyWith<$Res>
       String? subject,
       String? college,
       String? semester,
-      String link,
+      dynamic link,
       List<String> tags});
 }
 
@@ -240,7 +240,7 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
       final String? subject,
       final String? college,
       final String? semester,
-      required final String link,
+      required final dynamic link,
       required final List<String> tags}) = _$_UploadFilesRequest;
 
   factory _UploadFilesRequest.fromJson(Map<String, dynamic> json) =
