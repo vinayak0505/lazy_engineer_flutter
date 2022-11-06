@@ -25,7 +25,8 @@ dependencies:
   go_router: ^5.1.0
   image_picker: ^0.8.6 # to be removed
   file_picker:
-  open_file: ^3.2.1
+  # open_file: ^3.2.1
+  open_app_file: ^4.0.1
 
   ### logic
   flutter_bloc: ^8.0.1
