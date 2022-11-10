@@ -93,6 +93,8 @@ const String chapter = 'Chapter';
 const String topic = 'Topic';
 const String aboutCompany = 'About Company';
 const String skillsRequired = 'Skills Required';
+const String apply = 'Apply';
+const String pdf = 'PDF';
 
 // account
 const String settings = 'Settings';

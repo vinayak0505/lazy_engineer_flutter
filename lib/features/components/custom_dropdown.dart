@@ -20,7 +20,6 @@ class CustomDropdown extends FormField<String> {
           initialValue: dropdownValue,
           builder: (FormFieldState<String> state) {
             final theme = Theme.of(state.context);
-
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

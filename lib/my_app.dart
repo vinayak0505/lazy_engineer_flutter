@@ -7,8 +7,6 @@ import 'features/account/presentation/cubit/settings/settings_cubit.dart';
 import 'features/auth/data/repositories/auth_repository_impl.dart';
 import 'features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'features/layout_template/layout_template.dart';
-import 'features/home/data/repositories/user_repository.dart';
-import 'features/home/presentation/cubit/user/user_cubit.dart';
 import 'config/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
     final route = RouteGenerator().goRouter;
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => UserCubit(UserRepository())),
+        // BlocProvider(create: (context) => UserCubit(UserRepository())),
         BlocProvider(
           create: (context) => AuthCubit(AuthRepositoryImpl()),
         ),

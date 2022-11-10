@@ -5,6 +5,7 @@ import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../navigation/routes.dart';
 import '../../../components/grid_card.dart';
+import '../../../components/staggered_view.dart';
 
 class UploadScreen extends StatelessWidget {
   const UploadScreen({Key? key}) : super(key: key);
@@ -21,28 +22,15 @@ class UploadScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 28),
-            child: _staggeredView(),
+            child: StaggeredView(
+              categoriesList
+                  .map((element) => GridCard.category(element))
+                  .toList(),
+              onTap: (context, index) => _navigation(context, index),
+            ),
           ),
         ),
       ),
-    );
-  }
-
-  Widget _staggeredView() {
-    return MasonryGridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      crossAxisCount: 2,
-      itemCount: categoriesList.length,
-      itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-          onTap: () => _navigation(context, index),
-          child: GridCard(data: categoriesList[index]),
-        );
-      },
-      mainAxisSpacing: 8,
-      crossAxisSpacing: 8,
     );
   }
 

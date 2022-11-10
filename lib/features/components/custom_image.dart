@@ -7,27 +7,27 @@ class CustomImage extends StatelessWidget {
   final double? height;
   final double? width;
   final bool disableImage;
-  final bool? onlyTop, onlyLeft;
-  final double? radius;
+  final bool onlyTop, onlyLeft;
+  final double radius;
   final String? image;
   final File? file;
-  final BoxFit? boxFit;
-  final EdgeInsetsGeometry? margin;
-  final EdgeInsetsGeometry? padding;
+  final BoxFit boxFit;
+  final EdgeInsetsGeometry margin;
+  final EdgeInsetsGeometry padding;
 
   const CustomImage({
     Key? key,
     this.image,
     this.file,
     this.height,
-    this.margin,
-    this.padding,
+    this.margin = EdgeInsets.zero,
+    this.padding = EdgeInsets.zero,
     this.width,
     this.disableImage = false,
-    this.onlyTop,
-    this.radius,
-    this.boxFit,
-    this.onlyLeft,
+    this.onlyTop = false,
+    this.radius = 0,
+    this.boxFit = BoxFit.contain,
+    this.onlyLeft = false,
   }) : super(key: key);
 
   @override
@@ -35,26 +35,26 @@ class CustomImage extends StatelessWidget {
     return Opacity(
       opacity: disableImage ? 0.4 : 1,
       child: Container(
-        margin: margin ?? EdgeInsets.zero,
-        padding: padding ?? EdgeInsets.zero,
+        margin: margin,
+        padding: padding,
         child: ClipRRect(
-          borderRadius: onlyTop ?? false
+          borderRadius: onlyTop
               ? BorderRadius.only(
-                  topLeft: Radius.circular(radius ?? 0),
-                  topRight: Radius.circular(radius ?? 0),
+                  topLeft: Radius.circular(radius),
+                  topRight: Radius.circular(radius),
                 )
-              : onlyLeft ?? false
+              : onlyLeft
                   ? BorderRadius.only(
-                      topLeft: Radius.circular(radius ?? 0),
-                      bottomLeft: Radius.circular(radius ?? 0),
+                      topLeft: Radius.circular(radius),
+                      bottomLeft: Radius.circular(radius),
                     )
-                  : BorderRadius.circular(radius ?? 0),
+                  : BorderRadius.circular(radius),
           child: (file != null)
               ? Image.file(
                   file!,
                   width: width,
                   height: height,
-                  fit: boxFit ?? BoxFit.contain,
+                  fit: boxFit,
                 )
               : image != null
                   ? (image!.split('.').last == 'svg')
@@ -62,19 +62,19 @@ class CustomImage extends StatelessWidget {
                           image!,
                           width: width,
                           height: height,
-                          fit: boxFit ?? BoxFit.contain,
+                          fit: boxFit,
                         )
                       : Image.asset(
                           image!,
                           height: height,
                           width: width,
-                          fit: boxFit ?? BoxFit.contain,
+                          fit: boxFit,
                         )
                   : Image.asset(
                       AppImages.placeholder,
                       height: height,
                       width: width,
-                      fit: boxFit ?? BoxFit.cover,
+                      fit: boxFit,
                     ),
         ),
       ),

@@ -1,12 +1,10 @@
 import 'dart:io';
-import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/upload/data/repositories/upload_repository_impl.dart';
-import 'package:open_app_file/open_app_file.dart';
 import '../../../../assets/constants/decoration.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
@@ -119,7 +117,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                               ),
                             ),
                             //* File
-                            if(!kIsWeb)
+                            if (!kIsWeb)
                               AnimatedSwitcher(
                                 switchInCurve: Curves.easeIn,
                                 duration: const Duration(

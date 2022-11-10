@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
@@ -10,6 +9,7 @@ import '../../../../navigation/routes.dart';
 import '../../../../model/user.dart';
 import '../../../components/custom_text_field.dart';
 import '../../../components/grid_card.dart';
+import '../../../components/staggered_view.dart';
 import '../widgets/slider_view.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,19 +24,29 @@ class HomeScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 28),
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-              _nametag(theme, user.userName),
-              const SizedBox(height: 12),
-              _searchBar(theme),
-              const SizedBox(height: 28),
-              SliderView(imageList: sliderImageList),
-              const SizedBox(height: 24),
-              _titleLabel(lastOpened, theme),
-              const SizedBox(height: 140),
-              _titleLabel(categories, theme),
-              const SizedBox(height: 16),
-              _staggeredView()
-            ]),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _nametag(theme, user.userName),
+                const SizedBox(height: 12),
+                _searchBar(theme),
+                const SizedBox(height: 28),
+                SliderView(imageList: sliderImageList),
+                const SizedBox(height: 24),
+                _titleLabel(lastOpened, theme),
+                const SizedBox(height: 140),
+                _titleLabel(categories, theme),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: StaggeredView(
+                    categoriesList
+                        .map((element) => GridCard.category(element))
+                        .toList(),
+                    onTap: (context, index) => _navigation(context, index),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -65,24 +75,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _staggeredView() {
-    return MasonryGridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      crossAxisCount: 2,
-      itemCount: categoriesList.length,
-      itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-          onTap: () => _navigation(context, index),
-          child: GridCard(data: categoriesList[index]),
-        );
-      },
-      mainAxisSpacing: 8,
-      crossAxisSpacing: 8,
-    );
-  }
-
   void _navigation(BuildContext context, int index) {
     String nav() {
       switch (index) {
@@ -100,6 +92,7 @@ class HomeScreen extends StatelessWidget {
           return RouteGenerator.homeRoute;
       }
     }
+
     context.push(nav());
   }
 

@@ -1,22 +1,22 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../data/repositories/filter_repository.dart';
 
-part 'filter_state.dart';
-part 'filter_cubit.freezed.dart';
+class FilterCubit extends Cubit<bool> {
+  FilterCubit() : super(false);
 
-class FilterCubit extends Cubit<FilterState> {
-  FilterCubit(this._repository) : super(const FilterState.initial(false));
+  List<String>? textFeild;
+  List<String>? multiOption;
 
-  final FilterRepository _repository;
+  void toggle() {
+    emit(!state);
+  }
 
-  void getFilter(List<String> multiOption, String singleOption) async {
-    emit(const FilterState.loading());
-    try {
-          bool? getFilter = await _repository.getFilter(multiOption, singleOption);
-          emit(FilterState.success(multiOption, singleOption));
-    } catch (e) {
-      emit(FilterState.failure(e));
-    }
+  void modifyTextFeild(List<String> list) {
+    textFeild = list;
+    print('cubit $textFeild');
+  }
+
+  void modifyMultiOption(List<String> list) {
+    multiOption = list;
+    print('cubit $multiOption');
   }
 }

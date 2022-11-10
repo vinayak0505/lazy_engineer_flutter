@@ -6,39 +6,40 @@ class CustomIcon extends StatelessWidget {
   final double? width;
   final Color? color;
   final String image;
-  final BoxFit? boxFit;
-  final EdgeInsetsGeometry? margin;
-  final EdgeInsetsGeometry? padding;
+  final BoxFit boxFit;
+  final EdgeInsetsGeometry margin;
+  final EdgeInsetsGeometry padding;
 
   const CustomIcon(
     this.image, {
     Key? key,
     this.height,
-    this.margin,
-    this.padding,
+    this.margin = EdgeInsets.zero,
+    this.padding = EdgeInsets.zero,
     this.width,
-    this.boxFit, this.color,
+    this.boxFit = BoxFit.contain,
+    this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final bool isSvg = (image.split('.').last == 'svg');
     return Container(
-      margin: margin ?? EdgeInsets.zero,
-      padding: padding ?? EdgeInsets.zero,
+      margin: margin,
+      padding: padding,
       child: isSvg
           ? SvgPicture.asset(
               image,
               width: width,
               height: height,
               color: color,
-              fit: boxFit ?? BoxFit.contain,
+              fit: boxFit,
             )
           : Image.asset(
               image,
               height: height,
               width: width,
-              fit: boxFit ?? BoxFit.contain,
+              fit: boxFit,
             ),
     );
   }

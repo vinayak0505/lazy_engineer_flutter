@@ -2,14 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/features/components/logic/list/list_cubit.dart';
+import 'package:lazy_engineer/core/logic/list/list_cubit.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/upload_screen_widget.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../helper/input_validation.dart';
 import '../../../components/custom_dropdown.dart';
 import '../../../components/custom_text_field.dart';
-import '../../../components/tags_widget.dart';
+import '../../../components/edit_tags_widget.dart';
 import '../widgets/company_image.dart';
 
 class UploadJobScreen extends StatelessWidget with InputValidationMixin {
@@ -170,7 +170,7 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
           style: theme.textTheme.titleLarge,
         ),
         const SizedBox(height: 12),
-        TagsWidget(
+        EditTagsWidget(
           listTags: (value) => skillsController = value,
           validator: (_) => emptyListCheckValidation(
             skillsController,

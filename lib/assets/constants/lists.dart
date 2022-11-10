@@ -1,9 +1,9 @@
-import 'package:lazy_engineer/features/home/data/models/file_model.dart';
-import 'package:lazy_engineer/features/home/data/models/question_paper_model.dart';
-
-import '../../features/home/data/models/book_modal.dart';
+import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
+import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_response.dart';
 import '../../features/home/data/models/categories_model.dart';
-import '../../features/home/data/models/job_modal.dart';
+import '../../features/jobs/data/models/jobs_response/jobs_response.dart';
 import '../images.dart';
 
 List<CategoriesModel> categoriesList = [
@@ -29,28 +29,46 @@ List<CategoriesModel> categoriesList = [
   ),
 ];
 
-List<CategoriesModel> notesList = [
-  CategoriesModel(
-    subtitle: 'Document 1',
-    description: 'You can find handwriten notes from all students',
+List<NotesResponse> notesList = [
+  const NotesResponse(
+    'Document 1',
+    AppImages.book,
+    'You can find handwriten notes from all students',
   ),
-  CategoriesModel(
-    subtitle: 'Document 2',
-    description: 'Official Notice',
+  const NotesResponse(
+    'Document 1',
+    AppImages.book,
+    'You can find handwriten notes from all students',
   ),
-  CategoriesModel(
-    subtitle: 'Document 3',
-    description: 'You can find handwriten notes from all students',
+  const NotesResponse(
+    'Document 1',
+    AppImages.book,
+    'You can find handwriten notes from all students',
   ),
-  CategoriesModel(
-    subtitle: 'Document 4',
-    description: 'Official Notice',
+  const NotesResponse(
+    'Document 1',
+    AppImages.book,
+    'You can find handwriten notes from all students',
   ),
-  CategoriesModel(
-    subtitle: 'Document 5',
-    description: 'You can find handwriten notes from all students',
+  const NotesResponse(
+    'Document 1',
+    AppImages.book,
+    'You can find handwriten notes from all students',
   ),
 ];
+
+NotesDetailResponse notesDetail = const NotesDetailResponse(
+  'Computer Graphics Class Notes',
+  AppImages.book,
+  'THE FILE CONTAINS ALL THE IMPORTANT POINTS THAT ARE TAUGHT IN UNIT 1 COMPUTER GRAPHICS CLASS IN THIRD SEMESTER',
+  3,
+  'Computer Graphics',
+  1,
+  'Chapter',
+  'topic',
+  ['handwritten', 'maths', 'fun'],
+  4.5,
+);
 
 List<String> sliderImageList = [
   AppImages.sliderImage,
@@ -99,139 +117,113 @@ List<String> singleOptionFileList = [
   'Newest'
 ];
 
-List<FileModel> practicleFileList = [
-  FileModel(
-      image: AppImages.bookCoverImage,
-      title: 'Computer Graphics Practicle File',
-      subject: 'Computer Graphics',
-      college: 'GTBIT',
-      year: DateTime.now(),
-      pages: 200),
-  FileModel(
-      image: AppImages.bookCoverImage,
-      title: 'Computer Graphics Practicle File',
-      subject: 'Computer Graphics',
-      college: 'GTBIT',
-      year: DateTime.now(),
-      pages: 200),
-  FileModel(
-      image: AppImages.bookCoverImage,
-      title: 'Computer Graphics Practicle File',
-      subject: 'Computer Graphics',
-      college: 'GTBIT',
-      year: DateTime.now(),
-      pages: 200),
-  FileModel(
-      image: AppImages.bookCoverImage,
-      title: 'Computer Graphics Practicle File',
-      subject: 'Computer Graphics',
-      college: 'GTBIT',
-      year: DateTime.now(),
-      pages: 200),
+List<FilesResponse> practicleFileList = [
+  const FilesResponse(
+    'Computer Graphics Practicle File',
+    'Computer Graphics',
+    'GTBIT',
+    'Computer Graphics',
+    AppImages.bookCoverImage,
+  ),
 ];
 
-List<BookModel> bookList = [
-  BookModel(
-      image: AppImages.bookCoverImage,
-      writers: ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-      bookName: 'Computer Graphics',
-      description: 'You can find handwriten notes from all students.',
-      pages: 200),
-  BookModel(
-      image: AppImages.bookCoverImage,
-      writers: ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-      bookName: 'Computer Graphics',
-      description: 'You can find handwriten notes from all students.',
-      pages: 200),
-  BookModel(
-      image: AppImages.bookCoverImage,
-      writers: ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-      bookName: 'Computer Graphics',
-      description: 'You can find handwriten notes from all students.',
-      pages: 200),
-  BookModel(
-      image: AppImages.bookCoverImage,
-      writers: ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-      bookName: 'Computer Graphics',
-      description: 'You can find handwriten notes from all students.',
-      pages: 200),
-  BookModel(
-      image: AppImages.bookCoverImage,
-      writers: ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-      bookName: 'Computer Graphics',
-      description: 'You can find handwriten notes from all students.',
-      pages: 200),
+List<BooksResponse> bookList = [
+  const BooksResponse(
+    'Computer Graphics',
+    ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
+    'You can find handwriten notes from all students.',
+    200,
+    AppImages.bookCoverImage,
+  ),
+  const BooksResponse(
+    'Computer Graphics',
+    ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
+    'You can find handwriten notes from all students.',
+    200,
+    AppImages.bookCoverImage,
+  ),
+  const BooksResponse(
+    'Computer Graphics',
+    ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
+    'You can find handwriten notes from all students.',
+    200,
+    AppImages.bookCoverImage,
+  ),
+  const BooksResponse(
+    'Computer Graphics',
+    ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
+    'You can find handwriten notes from all students.',
+    200,
+    AppImages.bookCoverImage,
+  ),
 ];
 
-List<JobModel> jobList = [
-  JobModel(
-      image: AppImages.google,
-      jobTitle: 'Android Developer',
-      companyName: 'Google',
-      location: 'Gurugram, Haryana, India',
-      date: DateTime.now()),
-  JobModel(
-      image: AppImages.apple,
-      jobTitle: 'Android Developer',
-      companyName: 'Google',
-      location: 'Gurugram, Haryana, India',
-      date: DateTime.now()),
-  JobModel(
-      image: AppImages.google,
-      jobTitle: 'Android Developer',
-      companyName: 'Google',
-      location: 'Gurugram, Haryana, India',
-      date: DateTime.now()),
-  JobModel(
-      image: AppImages.google,
-      jobTitle: 'Android Developer',
-      companyName: 'Google',
-      location: 'Gurugram, Haryana, India',
-      date: DateTime.now()),
+List<JobsResponse> jobList = [
+  JobsResponse(
+    'Android Developer',
+    'Google',
+    'Gurugram, Haryana, India',
+    [],
+    DateTime.now().toIso8601String(),
+  ),
+  JobsResponse(
+    'Android Developer',
+    'Google',
+    'Gurugram, Haryana, India',
+    [],
+    DateTime.now().toIso8601String(),
+  ),
+  JobsResponse(
+    'Android Developer',
+    'Google',
+    'Gurugram, Haryana, India',
+    [],
+    DateTime.now().toIso8601String(),
+  ),
 ];
 
-List<QuestionPaperModel> questionPaperList = [
-  QuestionPaperModel(
-    image: AppImages.questionPaper,
-    title: 'Computer Graphics',
-    description:
-        'Important for test covering unit 1 to 4.By ____________Teacher',
-    subject: 'Computer Graphics',
-    type: 'Class Test',
-    college: 'GTBIT',
-    year: DateTime.now(),
-  ),
-  QuestionPaperModel(
-    image: AppImages.questionPaper,
-    title: 'Computer Graphics',
-    description:
-        'Important for test covering unit 1 to 4.By ____________Teacher',
-    subject: 'Computer Graphics',
-    type: 'Class Test',
-    college: 'GTBIT',
-    year: DateTime.now(),
-  ),
-  QuestionPaperModel(
-    image: AppImages.questionPaper,
-    title: 'Computer Graphics',
-    description:
-        'Important for test covering unit 1 to 4.By ____________Teacher',
-    subject: 'Computer Graphics',
-    type: 'Class Test',
-    college: 'GTBIT',
-    year: DateTime.now(),
-  ),
-  QuestionPaperModel(
-    image: AppImages.questionPaper,
-    title: 'Computer Graphics',
-    description:
-        'Important for test covering unit 1 to 4.By ____________Teacher',
-    subject: 'Computer Graphics',
-    type: 'Class Test',
-    college: 'GTBIT',
-    year: DateTime.now(),
-  ),
-];
+// List<> questionPaperList = [
+//   QuestionPaperModel(
+//     image: AppImages.questionPaper,
+//     title: 'Computer Graphics',
+//     description:
+//         'Important for test covering unit 1 to 4.By ____________Teacher',
+//     subject: 'Computer Graphics',
+//     type: 'Class Test',
+//     college: 'GTBIT',
+//     year: DateTime.now(),
+//   ),
+//   QuestionPaperModel(
+//     image: AppImages.questionPaper,
+//     title: 'Computer Graphics',
+//     description:
+//         'Important for test covering unit 1 to 4.By ____________Teacher',
+//     subject: 'Computer Graphics',
+//     type: 'Class Test',
+//     college: 'GTBIT',
+//     year: DateTime.now(),
+//   ),
+//   QuestionPaperModel(
+//     image: AppImages.questionPaper,
+//     title: 'Computer Graphics',
+//     description:
+//         'Important for test covering unit 1 to 4.By ____________Teacher',
+//     subject: 'Computer Graphics',
+//     type: 'Class Test',
+//     college: 'GTBIT',
+//     year: DateTime.now(),
+//   ),
+//   QuestionPaperModel(
+//     image: AppImages.questionPaper,
+//     title: 'Computer Graphics',
+//     description:
+//         'Important for test covering unit 1 to 4.By ____________Teacher',
+//     subject: 'Computer Graphics',
+//     type: 'Class Test',
+//     college: 'GTBIT',
+//     year: DateTime.now(),
+//   ),
+// ];
 
 ///Uploading Screen
 List<String> collegeList = [

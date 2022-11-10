@@ -6,6 +6,12 @@ class AppConfig {
   static const String signIn = '/auth/signIn';
   static const String signOut = '/auth/signOut';
 
+  /// home
+  static const String notes = '/home/notes';
+  static const String notesSearch = '/upload/notes/search';
+  static const String notesFilter = '/upload/notes/filter';
+  static const String notesDetail = '/home/notes/notesDetail';
+
   /// upload
   static const String uploadNotes = '/upload/notes';
   static const String uploadFiles = '/upload/files';

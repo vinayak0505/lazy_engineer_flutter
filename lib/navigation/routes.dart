@@ -5,17 +5,6 @@ import 'package:lazy_engineer/features/auth/presentation/pages/lazy_engineer.dar
 import 'package:lazy_engineer/features/account/presentation/pages/account_screen.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/profile_screen.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/settings_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/book_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/practical_file_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/book_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/home_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/jobs_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/jobs_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/notes_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/notes_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/question_paper_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/question_paper_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_screen.dart';
@@ -23,7 +12,18 @@ import 'package:lazy_engineer/features/upload/presentation/pages/upload_notes_sc
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_screen.dart';
 import 'package:lazy_engineer/features/components/error_screen.dart';
 
+import '../features/books/presentation/pages/book_description_screen.dart';
+import '../features/books/presentation/pages/book_screen.dart';
 import '../features/bottom_navigation/ui/bottom_nav_screen.dart';
+import '../features/file/presentation/pages/practical_file_description_screen.dart';
+import '../features/file/presentation/pages/practicle_file_screen.dart';
+import '../features/home/presentation/pages/home_screen.dart';
+import '../features/jobs/presentation/pages/jobs_description_screen.dart';
+import '../features/jobs/presentation/pages/jobs_screen.dart';
+import '../features/notes/presentation/pages/notes_detail_screen.dart';
+import '../features/notes/presentation/pages/notes_screen.dart';
+import '../features/papers/presentation/pages/question_paper_description_screen.dart';
+import '../features/papers/presentation/pages/question_paper_screen.dart';
 import '../features/upload/presentation/pages/upload_paper_screen.dart';
 
 class RouteGenerator {
@@ -37,7 +37,7 @@ class RouteGenerator {
   /// Home Screen
   static const String homeRoute = '/home';
   static const String notesRoute = '/home/notes';
-  static const String fileRoute = '/home/practicle_file';
+  static const String fileRoute = '/home/practical_file';
   static const String questionPaperRoute = '/home/question_paper';
   static const String questionPaperDescriptionRoute =
       '/home/question_paper_description';
@@ -56,7 +56,6 @@ class RouteGenerator {
       '/upload/upload_question_paper';
   static const String uploadBooksRoute = '/upload/books';
   static const String uploadJobsRoute = '/upload/jobs';
-  // static const String uploadJobsCompanyPhotoRoute = '/upload/jobs/fullscreen_view';
   static const String uploadPaperRoute = '/upload/question_paper';
   static const String uploadBookRoute = '/upload/books';
 
@@ -135,10 +134,10 @@ class RouteGenerator {
                     GoRoute(
                       path: 'notes_description/:id',
                       pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
+                        String? id = state.params['id'];
                         return MaterialPage<void>(
                           key: state.pageKey,
-                          child: NotesDescriptionScreen(id: id),
+                          child: NotesDetailScreen(id: id),
                         );
                       },
                     )

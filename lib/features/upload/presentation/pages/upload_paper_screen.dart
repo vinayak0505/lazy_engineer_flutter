@@ -5,7 +5,7 @@ import '../../../../assets/constants/strings.dart';
 import '../../../../helper/input_validation.dart';
 import '../../../components/custom_dropdown.dart';
 import '../../../components/custom_text_field.dart';
-import '../../../components/tags_widget.dart';
+import '../../../components/edit_tags_widget.dart';
 
 class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
   const UploadPaperScreen({super.key});
@@ -75,7 +75,7 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
         //* Tags
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
-        TagsWidget(
+        EditTagsWidget(
           listTags: (value) => tagsController = value,
           validator: (_) => emptyListCheckValidation(
             tagsController,

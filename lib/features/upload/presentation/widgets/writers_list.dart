@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/features/components/logic/list/list_cubit.dart';
+import 'package:lazy_engineer/core/logic/list/list_cubit.dart';
 
 import '../../../../assets/constants/strings.dart';
 import '../../../components/custom_text_field.dart';
