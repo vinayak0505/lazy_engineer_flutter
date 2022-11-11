@@ -34,7 +34,8 @@ class HomeScreen extends StatelessWidget {
                 SliderView(imageList: sliderImageList),
                 const SizedBox(height: 24),
                 _titleLabel(lastOpened, theme),
-                const SizedBox(height: 140),
+                const SizedBox(height: 24),
+                const LastOpened(),
                 _titleLabel(categories, theme),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -128,5 +129,15 @@ class HomeScreen extends StatelessWidget {
             )
           ]),
     );
+  }
+}
+
+
+class LastOpened extends StatelessWidget {
+  const LastOpened({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

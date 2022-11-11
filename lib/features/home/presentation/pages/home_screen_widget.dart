@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/components/animated_icon_button.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/multi_option_filter.dart';
 import 'package:lazy_engineer/features/components/text_feild_filter.dart';
-import 'package:lazy_engineer/features/home/presentation/cubit/filter/filter_cubit.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
-
 import '../../../components/custom_icon.dart';
 import '../../../components/single_option_filter.dart';
+import '../cubit/filter/filter_cubit.dart';
 
 class HomeScreenWidget extends StatelessWidget {
   const HomeScreenWidget(
@@ -32,10 +32,16 @@ class HomeScreenWidget extends StatelessWidget {
     return SafeArea(
       child: BlocProvider(
         create: (context) => FilterCubit(),
-        child: BlocBuilder<FilterCubit, bool>(
+        child: BlocBuilder<FilterCubit, FilterState>(
           builder: (context, state) {
-            var textFeild = context.read<FilterCubit>().textFeild;
-            var multiOption = context.read<FilterCubit>().multiOption;
+            void onPressed() => applyFilter!.call(
+                  FilterRequest(
+                    textFeild: state.textFeild,
+                    multiOption: state.multiOption,
+                    singleOption: singleOption.text,
+                  ),
+                );
+
             return Scaffold(
               appBar: AppBar(
                   centerTitle: true,
@@ -52,12 +58,8 @@ class HomeScreenWidget extends StatelessWidget {
                     ),
                   ),
                   actions: [
-                    IconButton(
-                      padding: EdgeInsets.zero,
-                      onPressed: () => context.read<FilterCubit>().toggle(),
-                      icon: !state
-                          ? const CustomIcon(AppIcons.filterIcon)
-                          : const CustomIcon(AppIcons.closeIcon),
+                    AnimatedIconButton.menuCross(
+                      () => context.read<FilterCubit>().toggle(),
                     ),
                     const SizedBox(width: 16),
                   ]),
@@ -66,49 +68,36 @@ class HomeScreenWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     children: [
-                      if (state)
-                        AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 500),
-                          switchInCurve: Curves.easeIn,
-                          child: Column(
-                            children: [
-                              if (textFeildFilter != null) ...[
-                                TextFeildFilter(textFeildFilter!),
-                                const SizedBox(height: 16),
-                              ],
-                              if (multiOptionFilter != null) ...[
-                                MultiOptionFilter(multiOptionFilter!),
-                                const SizedBox(height: 16),
-                              ],
-                              if (singleOptionFilter != null) ...[
-                                SingleOptionFilter(
-                                  controller: singleOption,
-                                  data: singleOptionFilter!,
-                                ),
-                                const SizedBox(height: 16),
-                              ],
+                      //* Filter Menu
+                      if (state.isOpen)
+                        Column(
+                          children: [
+                            if (textFeildFilter != null) ...[
+                              TextFeildFilter(textFeildFilter!),
                               const SizedBox(height: 16),
-                              if (applyFilter != null)
-                                CustomButton(
-                                    width: 100,
-                                    text: apply,
-                                    onPressed: () {
-                                      print(
-                                        '||||||||||$textFeild and $multiOption',
-                                      );
-                                      applyFilter!.call(
-                                        FilterRequest(
-                                          textFeild: textFeild,
-                                          multiOption: multiOption,
-                                          singleOption: singleOption.text,
-                                        ),
-                                      );
-                                    }),
-                              const SizedBox(height: 16),
-                              const Divider(),
-                              const SizedBox(height: 24),
                             ],
-                          ),
+                            if (multiOptionFilter != null) ...[
+                              MultiOptionFilter(multiOptionFilter!),
+                              const SizedBox(height: 16),
+                            ],
+                            if (singleOptionFilter != null) ...[
+                              SingleOptionFilter(
+                                controller: singleOption,
+                                data: singleOptionFilter!,
+                              ),
+                              const SizedBox(height: 16),
+                            ],
+                            const SizedBox(height: 16),
+                            if (applyFilter != null)
+                              CustomButton(
+                                width: 100,
+                                text: apply,
+                                onPressed: () => onPressed(),
+                              ),
+                            const SizedBox(height: 16),
+                            const Divider(),
+                            const SizedBox(height: 24),
+                          ],
                         ),
                       ...body,
                     ],

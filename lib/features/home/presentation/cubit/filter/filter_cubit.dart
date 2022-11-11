@@ -1,22 +1,38 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class FilterCubit extends Cubit<bool> {
-  FilterCubit() : super(false);
+part 'filter_state.dart';
+part 'filter_cubit.freezed.dart';
 
-  List<String>? textFeild;
-  List<String>? multiOption;
+class FilterCubit extends Cubit<FilterState> {
+  FilterCubit()
+      : super(const FilterState(
+          false,
+          textFeild: null,
+          multiOption: null,
+        ));
 
   void toggle() {
-    emit(!state);
+    emit(FilterState(
+      !state.isOpen,
+      textFeild: state.textFeild,
+      multiOption: state.multiOption,
+    ));
   }
 
   void modifyTextFeild(List<String> list) {
-    textFeild = list;
-    print('cubit $textFeild');
+    emit(FilterState(
+      state.isOpen,
+      textFeild: list,
+      multiOption: state.multiOption,
+    ));
   }
 
   void modifyMultiOption(List<String> list) {
-    multiOption = list;
-    print('cubit $multiOption');
+    emit(FilterState(
+      state.isOpen,
+      textFeild: state.textFeild,
+      multiOption: list,
+    ));
   }
 }

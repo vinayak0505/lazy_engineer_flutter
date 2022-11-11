@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'home_cubit.dart';
+part of 'user_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$UserState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -40,75 +40,75 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeSuccess value) success,
-    required TResult Function(HomeFailure value) failure,
+    required TResult Function(UserLoading value) loading,
+    required TResult Function(UserSuccess value) success,
+    required TResult Function(UserFailure value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeSuccess value)? success,
-    TResult Function(HomeFailure value)? failure,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserSuccess value)? success,
+    TResult Function(UserFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeSuccess value)? success,
-    TResult Function(HomeFailure value)? failure,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserSuccess value)? success,
+    TResult Function(UserFailure value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res>;
+abstract class $UserStateCopyWith<$Res> {
+  factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
+      _$UserStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
+  _$UserStateCopyWithImpl(this._value, this._then);
 
-  final HomeState _value;
+  final UserState _value;
   // ignore: unused_field
-  final $Res Function(HomeState) _then;
+  final $Res Function(UserState) _then;
 }
 
 /// @nodoc
-abstract class _$$HomeLoadingCopyWith<$Res> {
-  factory _$$HomeLoadingCopyWith(
-          _$HomeLoading value, $Res Function(_$HomeLoading) then) =
-      __$$HomeLoadingCopyWithImpl<$Res>;
+abstract class _$$UserLoadingCopyWith<$Res> {
+  factory _$$UserLoadingCopyWith(
+          _$UserLoading value, $Res Function(_$UserLoading) then) =
+      __$$UserLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomeLoadingCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
-    implements _$$HomeLoadingCopyWith<$Res> {
-  __$$HomeLoadingCopyWithImpl(
-      _$HomeLoading _value, $Res Function(_$HomeLoading) _then)
-      : super(_value, (v) => _then(v as _$HomeLoading));
+class __$$UserLoadingCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
+    implements _$$UserLoadingCopyWith<$Res> {
+  __$$UserLoadingCopyWithImpl(
+      _$UserLoading _value, $Res Function(_$UserLoading) _then)
+      : super(_value, (v) => _then(v as _$UserLoading));
 
   @override
-  _$HomeLoading get _value => super._value as _$HomeLoading;
+  _$UserLoading get _value => super._value as _$UserLoading;
 }
 
 /// @nodoc
 
-class _$HomeLoading implements HomeLoading {
-  const _$HomeLoading();
+class _$UserLoading implements UserLoading {
+  const _$UserLoading();
 
   @override
   String toString() {
-    return 'HomeState.loading()';
+    return 'UserState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomeLoading);
+        (other.runtimeType == runtimeType && other is _$UserLoading);
   }
 
   @override
@@ -151,9 +151,9 @@ class _$HomeLoading implements HomeLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeSuccess value) success,
-    required TResult Function(HomeFailure value) failure,
+    required TResult Function(UserLoading value) loading,
+    required TResult Function(UserSuccess value) success,
+    required TResult Function(UserFailure value) failure,
   }) {
     return loading(this);
   }
@@ -161,9 +161,9 @@ class _$HomeLoading implements HomeLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeSuccess value)? success,
-    TResult Function(HomeFailure value)? failure,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserSuccess value)? success,
+    TResult Function(UserFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -171,9 +171,9 @@ class _$HomeLoading implements HomeLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeSuccess value)? success,
-    TResult Function(HomeFailure value)? failure,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserSuccess value)? success,
+    TResult Function(UserFailure value)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -183,33 +183,33 @@ class _$HomeLoading implements HomeLoading {
   }
 }
 
-abstract class HomeLoading implements HomeState {
-  const factory HomeLoading() = _$HomeLoading;
+abstract class UserLoading implements UserState {
+  const factory UserLoading() = _$UserLoading;
 }
 
 /// @nodoc
-abstract class _$$HomeSuccessCopyWith<$Res> {
-  factory _$$HomeSuccessCopyWith(
-          _$HomeSuccess value, $Res Function(_$HomeSuccess) then) =
-      __$$HomeSuccessCopyWithImpl<$Res>;
+abstract class _$$UserSuccessCopyWith<$Res> {
+  factory _$$UserSuccessCopyWith(
+          _$UserSuccess value, $Res Function(_$UserSuccess) then) =
+      __$$UserSuccessCopyWithImpl<$Res>;
   $Res call({dynamic data});
 }
 
 /// @nodoc
-class __$$HomeSuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
-    implements _$$HomeSuccessCopyWith<$Res> {
-  __$$HomeSuccessCopyWithImpl(
-      _$HomeSuccess _value, $Res Function(_$HomeSuccess) _then)
-      : super(_value, (v) => _then(v as _$HomeSuccess));
+class __$$UserSuccessCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
+    implements _$$UserSuccessCopyWith<$Res> {
+  __$$UserSuccessCopyWithImpl(
+      _$UserSuccess _value, $Res Function(_$UserSuccess) _then)
+      : super(_value, (v) => _then(v as _$UserSuccess));
 
   @override
-  _$HomeSuccess get _value => super._value as _$HomeSuccess;
+  _$UserSuccess get _value => super._value as _$UserSuccess;
 
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$HomeSuccess(
+    return _then(_$UserSuccess(
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -220,22 +220,22 @@ class __$$HomeSuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeSuccess implements HomeSuccess {
-  const _$HomeSuccess(this.data);
+class _$UserSuccess implements UserSuccess {
+  const _$UserSuccess(this.data);
 
   @override
   final dynamic data;
 
   @override
   String toString() {
-    return 'HomeState.success(data: $data)';
+    return 'UserState.success(data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomeSuccess &&
+            other is _$UserSuccess &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -245,8 +245,8 @@ class _$HomeSuccess implements HomeSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$HomeSuccessCopyWith<_$HomeSuccess> get copyWith =>
-      __$$HomeSuccessCopyWithImpl<_$HomeSuccess>(this, _$identity);
+  _$$UserSuccessCopyWith<_$UserSuccess> get copyWith =>
+      __$$UserSuccessCopyWithImpl<_$UserSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -285,9 +285,9 @@ class _$HomeSuccess implements HomeSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeSuccess value) success,
-    required TResult Function(HomeFailure value) failure,
+    required TResult Function(UserLoading value) loading,
+    required TResult Function(UserSuccess value) success,
+    required TResult Function(UserFailure value) failure,
   }) {
     return success(this);
   }
@@ -295,9 +295,9 @@ class _$HomeSuccess implements HomeSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeSuccess value)? success,
-    TResult Function(HomeFailure value)? failure,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserSuccess value)? success,
+    TResult Function(UserFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -305,9 +305,9 @@ class _$HomeSuccess implements HomeSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeSuccess value)? success,
-    TResult Function(HomeFailure value)? failure,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserSuccess value)? success,
+    TResult Function(UserFailure value)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -317,38 +317,38 @@ class _$HomeSuccess implements HomeSuccess {
   }
 }
 
-abstract class HomeSuccess implements HomeState {
-  const factory HomeSuccess(final dynamic data) = _$HomeSuccess;
+abstract class UserSuccess implements UserState {
+  const factory UserSuccess(final dynamic data) = _$UserSuccess;
 
   dynamic get data;
   @JsonKey(ignore: true)
-  _$$HomeSuccessCopyWith<_$HomeSuccess> get copyWith =>
+  _$$UserSuccessCopyWith<_$UserSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HomeFailureCopyWith<$Res> {
-  factory _$$HomeFailureCopyWith(
-          _$HomeFailure value, $Res Function(_$HomeFailure) then) =
-      __$$HomeFailureCopyWithImpl<$Res>;
+abstract class _$$UserFailureCopyWith<$Res> {
+  factory _$$UserFailureCopyWith(
+          _$UserFailure value, $Res Function(_$UserFailure) then) =
+      __$$UserFailureCopyWithImpl<$Res>;
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$HomeFailureCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
-    implements _$$HomeFailureCopyWith<$Res> {
-  __$$HomeFailureCopyWithImpl(
-      _$HomeFailure _value, $Res Function(_$HomeFailure) _then)
-      : super(_value, (v) => _then(v as _$HomeFailure));
+class __$$UserFailureCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
+    implements _$$UserFailureCopyWith<$Res> {
+  __$$UserFailureCopyWithImpl(
+      _$UserFailure _value, $Res Function(_$UserFailure) _then)
+      : super(_value, (v) => _then(v as _$UserFailure));
 
   @override
-  _$HomeFailure get _value => super._value as _$HomeFailure;
+  _$UserFailure get _value => super._value as _$UserFailure;
 
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$HomeFailure(
+    return _then(_$UserFailure(
       e == freezed
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
@@ -359,22 +359,22 @@ class __$$HomeFailureCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeFailure implements HomeFailure {
-  const _$HomeFailure(this.e);
+class _$UserFailure implements UserFailure {
+  const _$UserFailure(this.e);
 
   @override
   final dynamic e;
 
   @override
   String toString() {
-    return 'HomeState.failure(e: $e)';
+    return 'UserState.failure(e: $e)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomeFailure &&
+            other is _$UserFailure &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -384,8 +384,8 @@ class _$HomeFailure implements HomeFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$HomeFailureCopyWith<_$HomeFailure> get copyWith =>
-      __$$HomeFailureCopyWithImpl<_$HomeFailure>(this, _$identity);
+  _$$UserFailureCopyWith<_$UserFailure> get copyWith =>
+      __$$UserFailureCopyWithImpl<_$UserFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -424,9 +424,9 @@ class _$HomeFailure implements HomeFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeLoading value) loading,
-    required TResult Function(HomeSuccess value) success,
-    required TResult Function(HomeFailure value) failure,
+    required TResult Function(UserLoading value) loading,
+    required TResult Function(UserSuccess value) success,
+    required TResult Function(UserFailure value) failure,
   }) {
     return failure(this);
   }
@@ -434,9 +434,9 @@ class _$HomeFailure implements HomeFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeSuccess value)? success,
-    TResult Function(HomeFailure value)? failure,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserSuccess value)? success,
+    TResult Function(UserFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -444,9 +444,9 @@ class _$HomeFailure implements HomeFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeLoading value)? loading,
-    TResult Function(HomeSuccess value)? success,
-    TResult Function(HomeFailure value)? failure,
+    TResult Function(UserLoading value)? loading,
+    TResult Function(UserSuccess value)? success,
+    TResult Function(UserFailure value)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -456,11 +456,11 @@ class _$HomeFailure implements HomeFailure {
   }
 }
 
-abstract class HomeFailure implements HomeState {
-  const factory HomeFailure(final dynamic e) = _$HomeFailure;
+abstract class UserFailure implements UserState {
+  const factory UserFailure(final dynamic e) = _$UserFailure;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$HomeFailureCopyWith<_$HomeFailure> get copyWith =>
+  _$$UserFailureCopyWith<_$UserFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -3,24 +3,24 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lazy_engineer/features/home/domain/repositories/home_repository.dart';
 import '../../../../../model/user.dart';
 
-part 'home_state.dart';
-part 'home_cubit.freezed.dart';
+part 'user_state.dart';
+part 'user_cubit.freezed.dart';
 
-class HomeCubit extends Cubit<HomeState> {
+class UserCubit extends Cubit<UserState> {
   final HomeRepository _repository;
-  HomeCubit(this._repository) : super(const HomeState.loading()) {
+  UserCubit(this._repository) : super(const UserState.loading()) {
     getUser();
   }
   void getUser() async {
     try {
       User? user = await _repository.getUser();
       if (user != null) {
-        emit(HomeState.success(user));
+        emit(UserState.success(user));
       } else {
-        emit(const HomeState.loading());
+        emit(const UserState.loading());
       }
     } catch (e) {
-      emit(HomeState.failure(e));
+      emit(UserState.failure(e));
     }
   }
 }

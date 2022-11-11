@@ -1,9 +1,10 @@
-// part of 'filter_cubit.dart';
+part of 'filter_cubit.dart';
 
-// @freezed
-// class FilterState with _$FilterState {
-//   const factory FilterState(
-//     List<String> textFeild,
-//     List<String> multiOption,
-//   ) = Filter;
-// }
+@freezed
+abstract class FilterState with _$FilterState {
+  const factory FilterState(
+    bool isOpen, {
+    List<String>? textFeild,
+    List<String>? multiOption,
+  }) = _FilterState;
+}

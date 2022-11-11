@@ -1,30 +1,25 @@
-class User {
-  final String userId;
-  final String userName;
-  final String? university;
-  final String? branch;
-  final int? year;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  User(
-      {required this.userId,
-      required this.userName,
-      this.university,
-      this.branch,
-      this.year});
+part 'user.freezed.dart';
+part 'user.g.dart';
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
-        userId: json['userId'],
-        userName: json['userName'],
-        university: json['university'],
-        branch: json['branch'],
-        year: json['year'],
+@freezed
+class User with _$User {
+  const factory User({
+    required String userId,
+    required String userName,
+    String? university,
+    String? branch,
+    int? semister,
+  }) = _User;
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  factory User.dummy() => const User(
+        userId: '1233',
+        userName: 'Harman Singh',
+        university: 'GTBIT',
+        branch: 'CSE',
+        semister: 1,
       );
-  Map<String, dynamic> toJson() => {
-        'userId': userId,
-        'userName': userName,
-        'university': university,
-        'branch': branch,
-        'year': year
-      };
-  factory User.dummy() => User(userId: '001', userName: 'Harman Jaggi', university: 'GTBIT', branch: 'B.Tech', year: 2);
 }

@@ -21,7 +21,10 @@ class UploadScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 28),
+            padding: const EdgeInsets.symmetric(
+              vertical: 28,
+              horizontal: 16,
+            ),
             child: StaggeredView(
               categoriesList
                   .map((element) => GridCard.category(element))
@@ -51,6 +54,7 @@ class UploadScreen extends StatelessWidget {
           return RouteGenerator.homeRoute;
       }
     }
+
     context.push(nav());
   }
 }

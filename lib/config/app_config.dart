@@ -7,9 +7,10 @@ class AppConfig {
   static const String signOut = '/auth/signOut';
 
   /// home
+  static const String user = '/home/user';
   static const String notes = '/home/notes';
-  static const String notesSearch = '/upload/notes/search';
-  static const String notesFilter = '/upload/notes/filter';
+  static const String notesSearch = '/home/notes/search';
+  static const String notesFilter = '/home/notes/filter';
   static const String notesDetail = '/home/notes/notesDetail';
 
   /// upload

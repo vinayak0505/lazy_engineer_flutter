@@ -20,7 +20,7 @@ class SingleOptionFilter extends FormField<String> {
           initialValue: controller!.text,
           autovalidateMode: autovalidateMode,
           builder: (FormFieldState<String> state) {
-            final theme = Theme.of(state.context);
+            ThemeData theme = Theme.of(state.context);
             return Container(
               padding: const EdgeInsets.all(8),
               decoration: kRoundedContainer,
@@ -47,7 +47,10 @@ class SingleOptionFilter extends FormField<String> {
                           FocusScope.of(state.context).nextFocus();
                         }
                       }),
-                  title: Text(data[index], style: theme.textTheme.titleMedium),
+                  title: Text(
+                    data[index],
+                    style: theme.textTheme.titleMedium,
+                  ),
                 ),
               ),
             );
