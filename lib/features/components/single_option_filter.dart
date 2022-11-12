@@ -36,11 +36,11 @@ class SingleOptionFilter extends FormField<String> {
                   leading: Radio<String>(
                       focusNode: focusNode,
                       focusColor: Colors.green,
+                      toggleable: true,
                       value: data[index],
                       groupValue: controller.text,
                       onChanged: (String? value) {
-                        if (value == null) return;
-                        controller.text = value;
+                        controller.text = value ?? '';
                         state.didChange(value);
                         focusNode?.requestFocus();
                         if (focusNode != null) {

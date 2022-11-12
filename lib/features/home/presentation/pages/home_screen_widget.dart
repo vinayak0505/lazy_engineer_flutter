@@ -3,12 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/animated_icon_button.dart';
-import 'package:lazy_engineer/features/components/custom_button.dart';
-import 'package:lazy_engineer/features/components/multi_option_filter.dart';
-import 'package:lazy_engineer/features/components/text_feild_filter.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
+import '../../../components/custom_button.dart';
 import '../../../components/custom_icon.dart';
+import '../../../components/multi_option_filter.dart';
 import '../../../components/single_option_filter.dart';
+import '../../../components/slide_transition_animation.dart';
+import '../../../components/text_feild_filter.dart';
 import '../cubit/filter/filter_cubit.dart';
 
 class HomeScreenWidget extends StatelessWidget {
@@ -69,8 +70,12 @@ class HomeScreenWidget extends StatelessWidget {
                   child: Column(
                     children: [
                       //* Filter Menu
-                      if (state.isOpen)
-                        Column(
+                      SlideTransitionAnimation(
+                        open: state.isOpen,
+                        horizontalAnimation: false,
+                        duration: const Duration(milliseconds: 200),
+                        curve: Curves.ease,
+                        child: Column(
                           children: [
                             if (textFeildFilter != null) ...[
                               TextFeildFilter(textFeildFilter!),
@@ -95,10 +100,11 @@ class HomeScreenWidget extends StatelessWidget {
                                 onPressed: () => onPressed(),
                               ),
                             const SizedBox(height: 16),
-                            const Divider(),
+                            const Divider(thickness: 1),
                             const SizedBox(height: 24),
                           ],
                         ),
+                      ),
                       ...body,
                     ],
                   ),

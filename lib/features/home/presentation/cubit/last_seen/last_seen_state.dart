@@ -4,5 +4,5 @@ part of 'last_seen_cubit.dart';
 abstract class LastSeenState with _$LastSeenState {
   const factory LastSeenState.loading() = _LastSeenLoading;
   const factory LastSeenState.failure(dynamic e) = _LastSeenFailure;
-  const factory LastSeenState.success(dynamic data) = _LastSeenSuccess;
+  const factory LastSeenState.success(List<LastSeenResponse> data) = _LastSeenSuccess;
 }

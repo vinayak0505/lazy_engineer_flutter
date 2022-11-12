@@ -39,13 +39,12 @@ class NotesScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   StaggeredView(
-                    data
-                        .map((element) => GridCard(
-                              body: element.about,
-                              image: element.link,
-                              title: element.title,
-                            ))
-                        .toList(),
+                    data.map((element) {
+                      return GridCard(
+                          body: element.about,
+                          image: element.link,
+                          title: element.title);
+                    }).toList(),
                     onTap: (context, index) {
                       context.push(
                         '${RouteGenerator.notesDescriptionRoute}/${index + 1}',
@@ -58,11 +57,6 @@ class NotesScreen extends StatelessWidget {
                   'Unit',
                   'Chapter',
                   'Topic',
-                ],
-                multiOptionFilter: const [
-                  'temp1',
-                  'temp2',
-                  'temp3',
                 ],
                 singleOptionFilter: const [
                   'Smart Sort',

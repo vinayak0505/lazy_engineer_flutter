@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../assets/constants/lists.dart';
@@ -10,6 +9,7 @@ import '../../../../model/user.dart';
 import '../../../components/custom_text_field.dart';
 import '../../../components/grid_card.dart';
 import '../../../components/staggered_view.dart';
+import '../widgets/last_opened.dart';
 import '../widgets/slider_view.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,6 +36,7 @@ class HomeScreen extends StatelessWidget {
                 _titleLabel(lastOpened, theme),
                 const SizedBox(height: 24),
                 const LastOpened(),
+                const SizedBox(height: 24),
                 _titleLabel(categories, theme),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -129,15 +130,5 @@ class HomeScreen extends StatelessWidget {
             )
           ]),
     );
-  }
-}
-
-
-class LastOpened extends StatelessWidget {
-  const LastOpened({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

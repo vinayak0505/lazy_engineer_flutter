@@ -2,31 +2,40 @@ import 'package:lazy_engineer/features/books/data/models/books_response/books_re
 import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_response.dart';
-import '../../features/home/data/models/categories_model.dart';
+import '../../features/home/data/models/categories_model/categories_model.dart';
+import '../../features/home/data/models/last_seen_response/last_seen_response.dart';
 import '../../features/jobs/data/models/jobs_response/jobs_response.dart';
 import '../images.dart';
 
 List<CategoriesModel> categoriesList = [
-  CategoriesModel(
-    subtitle: 'Notes',
+  const CategoriesModel(
+    title: 'Notes',
     description: 'You can find handwriten notes from all students',
   ),
-  CategoriesModel(
-    subtitle: 'Question Paper',
+  const CategoriesModel(
+    title: 'Question Paper',
     description: 'Last years Queation paper from all univercities',
   ),
-  CategoriesModel(
-    subtitle: 'Practicle File',
+  const CategoriesModel(
+    title: 'Practicle File',
     description: 'See other sutudents practical file',
   ),
-  CategoriesModel(
-    subtitle: 'Books',
+  const CategoriesModel(
+    title: 'Books',
     description: 'Downlod books for free',
   ),
-  CategoriesModel(
-    subtitle: 'Jobs',
+  const CategoriesModel(
+    title: 'Jobs',
     description: 'Get all latest jobs post here',
   ),
+];
+
+List<LastSeenResponse> lastSeenList = [
+  LastSeenResponse.dummy(),
+  LastSeenResponse.dummy(),
+  LastSeenResponse.dummy(),
+  LastSeenResponse.dummy(),
+  LastSeenResponse.dummy(),
 ];
 
 List<NotesResponse> notesList = [

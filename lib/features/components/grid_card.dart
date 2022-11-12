@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import '../../assets/constants/decoration.dart';
-import '../home/data/models/categories_model.dart';
+import '../home/data/models/categories_model/categories_model.dart';
 
 class GridCard extends StatelessWidget {
   const GridCard({
@@ -17,7 +17,7 @@ class GridCard extends StatelessWidget {
   factory GridCard.category(CategoriesModel data) {
     return GridCard(
       image: data.image,
-      title: data.subtitle,
+      title: data.title,
       body: data.description,
     );
   }

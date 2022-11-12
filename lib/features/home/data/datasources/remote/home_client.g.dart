@@ -16,21 +16,21 @@ class _HomeClient implements HomeClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<List<dynamic>>> getHome() async {
+  Future<BaseResponse<List<User>>> getUser() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<dynamic>>>(
+        _setStreamType<BaseResponse<List<User>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/user',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<dynamic>>.fromJson(
+    final value = BaseResponse<List<User>>.fromJson(
       _result.data!,
       (json) => (json as List<dynamic>)
-          .map<dynamic>((i) => i as Map<String, dynamic>)
+          .map<User>((i) => User.fromJson(i as Map<String, dynamic>))
           .toList(),
     );
     return value;

@@ -15,34 +15,29 @@ class NotesCubit extends Cubit<NotesState> {
     getNotes();
   }
   void getNotes() async {
-    emit(NotesState.success(notesList));
-    //   try {
-    //     List<NotesResponse>? data = await _repository.getNotesData();
-    //     if (data != null) {
-    //       emit(NotesState.success(data));
-    //     } else {
-    //       emit(const NotesState.loading());
-    //     }
-    //   } catch (e) {
-    //     emit(NotesState.failure(e));
-    //   }
+    try {
+      List<NotesResponse>? data = await _repository.getNotesData();
+      if (data != null) {
+        emit(NotesState.success(data));
+      } else {
+        emit(const NotesState.loading());
+      }
+    } catch (e) {
+      emit(NotesState.failure(e));
+    }
   }
 
   void applyFilter(FilterRequest filterRequest) async {
-    emit(const NotesState.loading());
-    await Future.delayed(const Duration(seconds: 1));
-    emit(NotesState.success(notesList));
-    // try {
-    //   emit(const NotesState.loading());
-    //   List<NotesResponse>? data =
-    //     await _repository.applyFilter(filterRequest);
-    //   if (data != null) {
-    //     emit(NotesState.success(data));
-    //   } else {
-    //     emit(const NotesState.loading());
-    //   }
-    // } catch (e) {
-    //   emit(NotesState.failure(e));
-    // }
+    try {
+      emit(const NotesState.loading());
+      List<NotesResponse>? data = await _repository.applyFilter(filterRequest);
+      if (data != null) {
+        emit(NotesState.success(data));
+      } else {
+        emit(const NotesState.loading());
+      }
+    } catch (e) {
+      emit(NotesState.failure(e));
+    }
   }
 }

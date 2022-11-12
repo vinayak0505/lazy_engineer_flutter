@@ -35,7 +35,7 @@ class _AnimatedIconButtonState extends State<AnimatedIconButton>
     );
 
     _myAnimation = CurvedAnimation(
-      curve: Curves.linear,
+      curve: Curves.ease,
       parent: _controller,
     );
   }

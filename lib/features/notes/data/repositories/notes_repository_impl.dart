@@ -1,3 +1,4 @@
+import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/local/notes_local_datasource.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/remote/notes_remote_datasource.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
@@ -13,14 +14,15 @@ class NotesRepositoryImpl extends NotesRepository {
 
   @override
   Future<List<NotesResponse>?> getNotesData() async {
-    try {
-      BaseResponse<List<NotesResponse>> listNotes =
-          await _remoteDataSource.getNotes();
-      return listNotes.data;
-    } catch (e) {
-      print(e.toString());
-      return null;
-    }
+    return notesList;
+    // try {
+    //   BaseResponse<List<NotesResponse>> listNotes =
+    //       await _remoteDataSource.getNotes();
+    //   return listNotes.data;
+    // } catch (e) {
+    //   print(e.toString());
+    //   return null;
+    // }
   }
 
   @override
@@ -28,18 +30,14 @@ class NotesRepositoryImpl extends NotesRepository {
     try {
       BaseResponse<List<NotesResponse>> listNotes =
           await _remoteDataSource.searchNotes(query);
-      if (listNotes.data != null) {
-        return listNotes.data;
-      } else {
-        throw listNotes.status;
-      }
+      return listNotes.data;
     } catch (e) {
       print(e.toString());
       return null;
     }
   }
 
-  List<String>? removeNull(List<String>? list) {
+  List<String>? removeNullList(List<String>? list) {
     if (list == null) return null;
     List<String> ans = [];
     for (String ele in list) {
@@ -48,17 +46,23 @@ class NotesRepositoryImpl extends NotesRepository {
     return ans;
   }
 
+  String? removeNull(String? element) {
+    if (element == null || element == '') return null;
+    return element;
+  }
+
   @override
   Future<List<NotesResponse>?> applyFilter(FilterRequest filterRequest) async {
     try {
-      filterRequest = FilterRequest(
-        multiOption: removeNull(filterRequest.multiOption),
-        textFeild: removeNull(filterRequest.multiOption),
-        singleOption: filterRequest.singleOption,
-      );
-      BaseResponse<List<NotesResponse>> listNotes =
-          await _remoteDataSource.applyFilter(filterRequest);
-      return listNotes.data;
+      return notesList;
+      // filterRequest = FilterRequest(
+      //   multiOption: removeNullList(filterRequest.multiOption),
+      //   textFeild: removeNullList(filterRequest.multiOption),
+      //   singleOption: removeNull(filterRequest.singleOption),
+      // );
+      // BaseResponse<List<NotesResponse>> listNotes =
+      //     await _remoteDataSource.applyFilter(filterRequest);
+      // return listNotes.data;
     } catch (e) {
       print(e.toString());
       return null;

@@ -20,21 +20,21 @@ mixin _$LastSeenState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(dynamic data) success,
+    required TResult Function(List<LastSeenResponse> data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult Function(List<LastSeenResponse> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult Function(List<LastSeenResponse> data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -122,7 +122,7 @@ class _$_LastSeenLoading implements _LastSeenLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(dynamic data) success,
+    required TResult Function(List<LastSeenResponse> data) success,
   }) {
     return loading();
   }
@@ -132,7 +132,7 @@ class _$_LastSeenLoading implements _LastSeenLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult Function(List<LastSeenResponse> data)? success,
   }) {
     return loading?.call();
   }
@@ -142,7 +142,7 @@ class _$_LastSeenLoading implements _LastSeenLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult Function(List<LastSeenResponse> data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -257,7 +257,7 @@ class _$_LastSeenFailure implements _LastSeenFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(dynamic data) success,
+    required TResult Function(List<LastSeenResponse> data) success,
   }) {
     return failure(e);
   }
@@ -267,7 +267,7 @@ class _$_LastSeenFailure implements _LastSeenFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult Function(List<LastSeenResponse> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -277,7 +277,7 @@ class _$_LastSeenFailure implements _LastSeenFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult Function(List<LastSeenResponse> data)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -335,7 +335,7 @@ abstract class _$$_LastSeenSuccessCopyWith<$Res> {
   factory _$$_LastSeenSuccessCopyWith(
           _$_LastSeenSuccess value, $Res Function(_$_LastSeenSuccess) then) =
       __$$_LastSeenSuccessCopyWithImpl<$Res>;
-  $Res call({dynamic data});
+  $Res call({List<LastSeenResponse> data});
 }
 
 /// @nodoc
@@ -355,9 +355,9 @@ class __$$_LastSeenSuccessCopyWithImpl<$Res>
   }) {
     return _then(_$_LastSeenSuccess(
       data == freezed
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as List<LastSeenResponse>,
     ));
   }
 }
@@ -365,10 +365,14 @@ class __$$_LastSeenSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LastSeenSuccess implements _LastSeenSuccess {
-  const _$_LastSeenSuccess(this.data);
+  const _$_LastSeenSuccess(final List<LastSeenResponse> data) : _data = data;
 
+  final List<LastSeenResponse> _data;
   @override
-  final dynamic data;
+  List<LastSeenResponse> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString() {
@@ -380,12 +384,12 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_LastSeenSuccess &&
-            const DeepCollectionEquality().equals(other.data, data));
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -397,7 +401,7 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(dynamic data) success,
+    required TResult Function(List<LastSeenResponse> data) success,
   }) {
     return success(data);
   }
@@ -407,7 +411,7 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult Function(List<LastSeenResponse> data)? success,
   }) {
     return success?.call(data);
   }
@@ -417,7 +421,7 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult Function(List<LastSeenResponse> data)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -462,9 +466,10 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
 }
 
 abstract class _LastSeenSuccess implements LastSeenState {
-  const factory _LastSeenSuccess(final dynamic data) = _$_LastSeenSuccess;
+  const factory _LastSeenSuccess(final List<LastSeenResponse> data) =
+      _$_LastSeenSuccess;
 
-  dynamic get data;
+  List<LastSeenResponse> get data;
   @JsonKey(ignore: true)
   _$$_LastSeenSuccessCopyWith<_$_LastSeenSuccess> get copyWith =>
       throw _privateConstructorUsedError;

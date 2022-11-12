@@ -1,3 +1,5 @@
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/features/home/data/models/last_seen_response/last_seen_response.dart';
 import 'package:lazy_engineer/model/user.dart';
 import '../../domain/repositories/home_repository.dart';
 
@@ -14,14 +16,13 @@ class HomeRepositoryImpl extends HomeRepository {
   }
 
   @override
-  Future<dynamic> getLastSeen() {
+  Future<List<LastSeenResponse>?> getLastSeen() async {
     try {
-      dynamic lastSeenData = User.dummy();
+      List<LastSeenResponse> lastSeenData = lastSeenList;
       return lastSeenData;
     } catch (e) {
       print(e.toString());
-      dynamic data;
-      return data;
+      return null;
     }
   }
 
