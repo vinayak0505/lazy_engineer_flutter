@@ -16,6 +16,10 @@ class AppConfig {
   static const String filesSearch = '/home/files/search';
   static const String filesFilter = '/home/files/filter';
   static const String filesDetail = '/home/files/filesDetail';
+  static const String papers = '/home/papers';
+  static const String papersSearch = '/home/papers/search';
+  static const String papersFilter = '/home/papers/filter';
+  static const String papersDetail = '/home/papers/filesDetail';
 
   /// upload
   static const String uploadNotes = '/upload/notes';

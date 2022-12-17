@@ -21,9 +21,9 @@ PaperResponse _$PaperResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PaperResponse {
   String get title => throw _privateConstructorUsedError;
-  String? get subject => throw _privateConstructorUsedError;
+  String get subject => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
-  String? get semister => throw _privateConstructorUsedError;
+  int? get semester => throw _privateConstructorUsedError;
   int? get year => throw _privateConstructorUsedError;
   dynamic get link => throw _privateConstructorUsedError;
 
@@ -40,9 +40,9 @@ abstract class $PaperResponseCopyWith<$Res> {
       _$PaperResponseCopyWithImpl<$Res>;
   $Res call(
       {String title,
-      String? subject,
+      String subject,
       String? type,
-      String? semister,
+      int? semester,
       int? year,
       dynamic link});
 }
@@ -61,7 +61,7 @@ class _$PaperResponseCopyWithImpl<$Res>
     Object? title = freezed,
     Object? subject = freezed,
     Object? type = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? year = freezed,
     Object? link = freezed,
   }) {
@@ -73,15 +73,15 @@ class _$PaperResponseCopyWithImpl<$Res>
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
-              as String?,
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
+              as int?,
       year: year == freezed
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
@@ -103,9 +103,9 @@ abstract class _$$_PaperResponseCopyWith<$Res>
   @override
   $Res call(
       {String title,
-      String? subject,
+      String subject,
       String? type,
-      String? semister,
+      int? semester,
       int? year,
       dynamic link});
 }
@@ -126,7 +126,7 @@ class __$$_PaperResponseCopyWithImpl<$Res>
     Object? title = freezed,
     Object? subject = freezed,
     Object? type = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? year = freezed,
     Object? link = freezed,
   }) {
@@ -138,15 +138,15 @@ class __$$_PaperResponseCopyWithImpl<$Res>
       subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
-              as String?,
+      semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
+              as int?,
       year == freezed
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
@@ -163,7 +163,7 @@ class __$$_PaperResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PaperResponse implements _PaperResponse {
   const _$_PaperResponse(
-      this.title, this.subject, this.type, this.semister, this.year, this.link);
+      this.title, this.subject, this.type, this.semester, this.year, this.link);
 
   factory _$_PaperResponse.fromJson(Map<String, dynamic> json) =>
       _$$_PaperResponseFromJson(json);
@@ -171,11 +171,11 @@ class _$_PaperResponse implements _PaperResponse {
   @override
   final String title;
   @override
-  final String? subject;
+  final String subject;
   @override
   final String? type;
   @override
-  final String? semister;
+  final int? semester;
   @override
   final int? year;
   @override
@@ -183,7 +183,7 @@ class _$_PaperResponse implements _PaperResponse {
 
   @override
   String toString() {
-    return 'PaperResponse(title: $title, subject: $subject, type: $type, semister: $semister, year: $year, link: $link)';
+    return 'PaperResponse(title: $title, subject: $subject, type: $type, semester: $semester, year: $year, link: $link)';
   }
 
   @override
@@ -194,7 +194,7 @@ class _$_PaperResponse implements _PaperResponse {
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.year, year) &&
             const DeepCollectionEquality().equals(other.link, link));
   }
@@ -206,7 +206,7 @@ class _$_PaperResponse implements _PaperResponse {
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(year),
       const DeepCollectionEquality().hash(link));
 
@@ -226,9 +226,9 @@ class _$_PaperResponse implements _PaperResponse {
 abstract class _PaperResponse implements PaperResponse {
   const factory _PaperResponse(
       final String title,
-      final String? subject,
+      final String subject,
       final String? type,
-      final String? semister,
+      final int? semester,
       final int? year,
       final dynamic link) = _$_PaperResponse;
 
@@ -238,11 +238,11 @@ abstract class _PaperResponse implements PaperResponse {
   @override
   String get title;
   @override
-  String? get subject;
+  String get subject;
   @override
   String? get type;
   @override
-  String? get semister;
+  int? get semester;
   @override
   int? get year;
   @override

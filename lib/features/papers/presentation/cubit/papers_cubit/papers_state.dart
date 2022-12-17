@@ -1,0 +1,8 @@
+part of 'papers_cubit.dart';
+
+@freezed
+abstract class PapersState with _$PapersState {
+  const factory PapersState.loading() = _PapersLoading;
+  const factory PapersState.success(List<PaperResponse> data) = _PapersSuccess;
+  const factory PapersState.failure(dynamic e) = _PapersFailure;
+}

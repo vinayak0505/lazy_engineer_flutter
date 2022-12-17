@@ -6,6 +6,8 @@ import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_re
 import '../../features/home/data/models/categories_model/categories_model.dart';
 import '../../features/home/data/models/last_seen_response/last_seen_response.dart';
 import '../../features/jobs/data/models/jobs_response/jobs_response.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
 import '../images.dart';
 
 List<CategoriesModel> categoriesList = [
@@ -80,6 +82,41 @@ NotesDetailResponse notesDetail = const NotesDetailResponse(
   4.5,
 );
 
+List<PaperResponse> papersList = [
+  const PaperResponse(
+    'Computer Graphics',
+    'Computer Graphics',
+    'Class Test',
+    3,
+    2,
+    AppImages.book,
+  ),
+  const PaperResponse(
+    'Computer Graphics',
+    'Computer Graphics',
+    'Class Test',
+    3,
+    2,
+    AppImages.book,
+  ),
+  const PaperResponse(
+    'Computer Graphics',
+    'Computer Graphics',
+    'Class Test',
+    3,
+    2,
+    AppImages.book,
+  ),
+  const PaperResponse(
+    'Computer Graphics',
+    'Computer Graphics',
+    'Class Test',
+    3,
+    2,
+    AppImages.book,
+  ),
+];
+
 List<FilesResponse> practicalFileList = [
   const FilesResponse(
     'Computer Graphics Practicle File',
@@ -103,6 +140,18 @@ List<FilesResponse> practicalFileList = [
     AppImages.bookCoverImage,
   ),
 ];
+
+PaperDetailResponse papersDetail = const PaperDetailResponse(
+  'Computer Graphics Question Paper',
+  AppImages.book,
+  3,
+  2,
+  'Computer Graphics',
+  'Class Test',
+  'No',
+  ['Ms. Jasleen Kaur', 'Unit - 1 & 2', '2019'],
+  4.5,
+);
 
 FilesDetailResponse filesDetail = const FilesDetailResponse(
   'Computer Graphics Practical File',
@@ -216,49 +265,6 @@ List<JobsResponse> jobList = [
     DateTime.now().toIso8601String(),
   ),
 ];
-
-// List<> questionPaperList = [
-//   QuestionPaperModel(
-//     image: AppImages.questionPaper,
-//     title: 'Computer Graphics',
-//     description:
-//         'Important for test covering unit 1 to 4.By ____________Teacher',
-//     subject: 'Computer Graphics',
-//     type: 'Class Test',
-//     college: 'GTBIT',
-//     year: DateTime.now(),
-//   ),
-//   QuestionPaperModel(
-//     image: AppImages.questionPaper,
-//     title: 'Computer Graphics',
-//     description:
-//         'Important for test covering unit 1 to 4.By ____________Teacher',
-//     subject: 'Computer Graphics',
-//     type: 'Class Test',
-//     college: 'GTBIT',
-//     year: DateTime.now(),
-//   ),
-//   QuestionPaperModel(
-//     image: AppImages.questionPaper,
-//     title: 'Computer Graphics',
-//     description:
-//         'Important for test covering unit 1 to 4.By ____________Teacher',
-//     subject: 'Computer Graphics',
-//     type: 'Class Test',
-//     college: 'GTBIT',
-//     year: DateTime.now(),
-//   ),
-//   QuestionPaperModel(
-//     image: AppImages.questionPaper,
-//     title: 'Computer Graphics',
-//     description:
-//         'Important for test covering unit 1 to 4.By ____________Teacher',
-//     subject: 'Computer Graphics',
-//     type: 'Class Test',
-//     college: 'GTBIT',
-//     year: DateTime.now(),
-//   ),
-// ];
 
 ///Uploading Screen
 List<String> collegeList = [
