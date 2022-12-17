@@ -8,8 +8,8 @@ import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
 import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 
-class FileDescriptionScreen extends StatelessWidget {
-  const FileDescriptionScreen({Key? key, required this.id}) : super(key: key);
+class FileDetailScreen extends StatelessWidget {
+  const FileDetailScreen({Key? key, required this.id}) : super(key: key);
   final int id;
   @override
   Widget build(BuildContext context) {

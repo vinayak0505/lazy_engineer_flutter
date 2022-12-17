@@ -38,8 +38,7 @@ class ProfileModal {
     ExperienceLevel? experienceLevel,
     JobType? jobType,
     String? userAddress,
-  }
-  );
+  });
   factory ProfileModal.dummy() {
     return ProfileModal(
       userPic: AppImages.anonymousProfile,

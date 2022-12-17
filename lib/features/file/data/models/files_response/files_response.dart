@@ -9,7 +9,7 @@ class FilesResponse with _$FilesResponse {
     String title,
     String? subject,
     String? college,
-    String? semister,
+    String? semester,
     dynamic link,
   ) = _FilesResponse;
 

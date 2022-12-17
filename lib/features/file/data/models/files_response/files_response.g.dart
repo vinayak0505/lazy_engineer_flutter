@@ -11,7 +11,7 @@ _$_FilesResponse _$$_FilesResponseFromJson(Map<String, dynamic> json) =>
       json['title'] as String,
       json['subject'] as String?,
       json['college'] as String?,
-      json['semister'] as String?,
+      json['semester'] as String?,
       json['link'],
     );
 
@@ -20,6 +20,6 @@ Map<String, dynamic> _$$_FilesResponseToJson(_$_FilesResponse instance) =>
       'title': instance.title,
       'subject': instance.subject,
       'college': instance.college,
-      'semister': instance.semister,
+      'semester': instance.semester,
       'link': instance.link,
     };
