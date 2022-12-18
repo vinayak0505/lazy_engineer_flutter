@@ -80,8 +80,8 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
           ),
           //* Semester
           CustomDropdown(
-            list: semesterList,
-            keyList: semesterKeyList,
+            list: semisterList,
+            keyList: semisterKeyList,
             width: 130,
             hintText: semester,
             controller: semesterController,

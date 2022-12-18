@@ -5,7 +5,8 @@ import '../home/presentation/cubit/filter/filter_cubit.dart';
 
 class MultiOptionFilter extends FormField<List<bool>> {
   MultiOptionFilter(
-    List<String> list, {
+    List<String> list,
+    Function(List<String>? list) valueList, {
     Key? key,
   }) : super(
           key: key,
@@ -13,11 +14,11 @@ class MultiOptionFilter extends FormField<List<bool>> {
           builder: (state) {
             ThemeData theme = Theme.of(state.context);
             void updateList() {
-              state.context
-                  .read<FilterCubit>()
-                  .modifyMultiOption(list.map((ele) {
-                    return state.value![list.indexOf(ele)] ? ele : '';
-                  }).toList());
+              var cubit = state.context.read<FilterCubit>();
+              cubit.modifyMultiOption(list.map((ele) {
+                return state.value![list.indexOf(ele)] ? ele : '';
+              }).toList());
+              valueList.call(cubit.state.multiOption);
             }
 
             return Container(

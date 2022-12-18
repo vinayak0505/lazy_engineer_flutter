@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
-import 'package:lazy_engineer/navigation/routes.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
-import '../../../components/tile_view.dart';
 
 class QuestionPaperScreen extends StatelessWidget {
   const QuestionPaperScreen({Key? key}) : super(key: key);

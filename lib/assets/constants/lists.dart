@@ -254,7 +254,7 @@ List<String> tagList = [
   'Circle',
 ];
 
-List<String> semesterList = [
+List<String> semisterList = [
   '1st Semester',
   '2nd Semester',
   '3rd Semester',
@@ -265,7 +265,18 @@ List<String> semesterList = [
   '8th Semester',
 ];
 
-List<String> semesterKeyList = [
+List<String> yearOfAdmissionList = [
+  '2020',
+  '2021',
+  '2022',
+  '2023',
+  '2024',
+  '2025',
+  '2026',
+  '2027',
+];
+
+List<String> semisterKeyList = [
   '1',
   '2',
   '3',
@@ -332,6 +343,11 @@ List<String> experienceLevelList = [
   'Director',
   'Executive',
 ];
+
+List<String> universityList = [
+  'GTBIT',
+];
+
 List<String> classList = [
   'Aeronautical Engineering',
   'Automobile Engineering',
@@ -341,4 +357,16 @@ List<String> classList = [
   'Electrical and Electronics Engineering',
   'Mechanical Engineering',
   'Electronics & Communication'
+];
+
+List<String> branchList = [
+  'CSE 1',
+  'CSE 2',
+  'CSE 3',
+  'IT 1',
+  'IT 2',
+  'IT 3',
+  'ECE 1',
+  'ECE 2',
+  'ECE 3',
 ];

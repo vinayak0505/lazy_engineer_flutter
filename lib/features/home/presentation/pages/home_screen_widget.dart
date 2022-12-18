@@ -82,7 +82,7 @@ class HomeScreenWidget extends StatelessWidget {
                               const SizedBox(height: 16),
                             ],
                             if (multiOptionFilter != null) ...[
-                              MultiOptionFilter(multiOptionFilter!),
+                              // MultiOptionFilter(multiOptionFilter!),
                               const SizedBox(height: 16),
                             ],
                             if (singleOptionFilter != null) ...[

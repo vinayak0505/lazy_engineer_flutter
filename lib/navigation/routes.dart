@@ -3,8 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/auth_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/lazy_engineer.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/account_screen.dart';
-import 'package:lazy_engineer/features/account/presentation/pages/profile_screen.dart';
-import 'package:lazy_engineer/features/account/presentation/pages/settings_screen.dart';
+import 'package:lazy_engineer/features/settings/presentation/pages/settings_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_screen.dart';
@@ -24,6 +23,7 @@ import '../features/notes/presentation/pages/notes_detail_screen.dart';
 import '../features/notes/presentation/pages/notes_screen.dart';
 import '../features/papers/presentation/pages/question_paper_description_screen.dart';
 import '../features/papers/presentation/pages/question_paper_screen.dart';
+import '../features/profile/presentation/pages/profile_screen.dart';
 import '../features/upload/presentation/pages/upload_paper_screen.dart';
 
 class RouteGenerator {

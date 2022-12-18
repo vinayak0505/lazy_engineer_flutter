@@ -9,7 +9,7 @@ import '../../../../assets/icons.dart';
 import '../../../../navigation/routes.dart';
 import '../../../auth/presentation/auth_cubit/auth_cubit.dart';
 import '../../../components/custom_icon.dart';
-import '../cubit/settings/settings_cubit.dart';
+import '../../../account/presentation/cubit/settings/settings_cubit.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
