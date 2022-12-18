@@ -20,6 +20,10 @@ class AppConfig {
   static const String papersSearch = '/home/papers/search';
   static const String papersFilter = '/home/papers/filter';
   static const String papersDetail = '/home/papers/filesDetail';
+  static const String jobs = '/home/jobs';
+  static const String jobsSearch = '/home/jobs/search';
+  static const String jobsFilter = '/home/jobs/filter';
+  static const String jobsDetail = '/home/jobs/filesDetail';
 
   /// upload
   static const String uploadNotes = '/upload/notes';

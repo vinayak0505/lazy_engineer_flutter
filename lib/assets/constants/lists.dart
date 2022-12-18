@@ -6,6 +6,7 @@ import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_re
 import '../../features/home/data/models/categories_model/categories_model.dart';
 import '../../features/home/data/models/last_seen_response/last_seen_response.dart';
 import '../../features/jobs/data/models/jobs_response/jobs_response.dart';
+import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
 import '../images.dart';
@@ -265,6 +266,23 @@ List<JobsResponse> jobList = [
     DateTime.now().toIso8601String(),
   ),
 ];
+
+JobsDetailResponse jobsDetail = const JobsDetailResponse(
+  'Android Developer',
+  'Software Developer Engineer',
+  'Google',
+  AppImages.book,
+  'Google is a global company and, in order to facilitate efficient collaboration and communication globally, English proficiency is a requirement for all roles.',
+  'Gurugram, Haryana, India',
+  'Full Time',
+  '2 years of experience',
+  '3 days ago',
+  '2 years of experience with software development in one or more programming languages, or 1 year of experience with an advanced degree.',
+  2000000,
+  40000,
+  ['AppImages.companyImage', 'AppImages.companyImage'],
+  4.5,
+);
 
 ///Uploading Screen
 List<String> collegeList = [
