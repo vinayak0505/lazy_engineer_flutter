@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'book_description_cubit.dart';
+part of 'books_description_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$BookDescriptionState {
+mixin _$BooksDescriptionState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -67,20 +67,20 @@ mixin _$BookDescriptionState {
 }
 
 /// @nodoc
-abstract class $BookDescriptionStateCopyWith<$Res> {
-  factory $BookDescriptionStateCopyWith(BookDescriptionState value,
-          $Res Function(BookDescriptionState) then) =
-      _$BookDescriptionStateCopyWithImpl<$Res>;
+abstract class $BooksDescriptionStateCopyWith<$Res> {
+  factory $BooksDescriptionStateCopyWith(BooksDescriptionState value,
+          $Res Function(BooksDescriptionState) then) =
+      _$BooksDescriptionStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$BookDescriptionStateCopyWithImpl<$Res>
-    implements $BookDescriptionStateCopyWith<$Res> {
-  _$BookDescriptionStateCopyWithImpl(this._value, this._then);
+class _$BooksDescriptionStateCopyWithImpl<$Res>
+    implements $BooksDescriptionStateCopyWith<$Res> {
+  _$BooksDescriptionStateCopyWithImpl(this._value, this._then);
 
-  final BookDescriptionState _value;
+  final BooksDescriptionState _value;
   // ignore: unused_field
-  final $Res Function(BookDescriptionState) _then;
+  final $Res Function(BooksDescriptionState) _then;
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ abstract class _$$BDLoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$BDLoadingCopyWithImpl<$Res>
-    extends _$BookDescriptionStateCopyWithImpl<$Res>
+    extends _$BooksDescriptionStateCopyWithImpl<$Res>
     implements _$$BDLoadingCopyWith<$Res> {
   __$$BDLoadingCopyWithImpl(
       _$BDLoading _value, $Res Function(_$BDLoading) _then)
@@ -109,7 +109,7 @@ class _$BDLoading implements BDLoading {
 
   @override
   String toString() {
-    return 'BookDescriptionState.loading()';
+    return 'BooksDescriptionState.loading()';
   }
 
   @override
@@ -194,7 +194,7 @@ class _$BDLoading implements BDLoading {
   }
 }
 
-abstract class BDLoading implements BookDescriptionState {
+abstract class BDLoading implements BooksDescriptionState {
   const factory BDLoading() = _$BDLoading;
 }
 
@@ -208,7 +208,7 @@ abstract class _$$BDSuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$BDSuccessCopyWithImpl<$Res>
-    extends _$BookDescriptionStateCopyWithImpl<$Res>
+    extends _$BooksDescriptionStateCopyWithImpl<$Res>
     implements _$$BDSuccessCopyWith<$Res> {
   __$$BDSuccessCopyWithImpl(
       _$BDSuccess _value, $Res Function(_$BDSuccess) _then)
@@ -259,7 +259,7 @@ class _$BDSuccess implements BDSuccess {
 
   @override
   String toString() {
-    return 'BookDescriptionState.success(data: $data, starRating: $starRating, seeAll: $seeAll)';
+    return 'BooksDescriptionState.success(data: $data, starRating: $starRating, seeAll: $seeAll)';
   }
 
   @override
@@ -358,7 +358,7 @@ class _$BDSuccess implements BDSuccess {
   }
 }
 
-abstract class BDSuccess implements BookDescriptionState {
+abstract class BDSuccess implements BooksDescriptionState {
   const factory BDSuccess(final BDModal data, final double starRating,
       final List<bool> seeAll) = _$BDSuccess;
 
@@ -380,7 +380,7 @@ abstract class _$$BDFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$BDFailureCopyWithImpl<$Res>
-    extends _$BookDescriptionStateCopyWithImpl<$Res>
+    extends _$BooksDescriptionStateCopyWithImpl<$Res>
     implements _$$BDFailureCopyWith<$Res> {
   __$$BDFailureCopyWithImpl(
       _$BDFailure _value, $Res Function(_$BDFailure) _then)
@@ -412,7 +412,7 @@ class _$BDFailure implements BDFailure {
 
   @override
   String toString() {
-    return 'BookDescriptionState.failure(e: $e)';
+    return 'BooksDescriptionState.failure(e: $e)';
   }
 
   @override
@@ -505,7 +505,7 @@ class _$BDFailure implements BDFailure {
   }
 }
 
-abstract class BDFailure implements BookDescriptionState {
+abstract class BDFailure implements BooksDescriptionState {
   const factory BDFailure(final dynamic e) = _$BDFailure;
 
   dynamic get e;
