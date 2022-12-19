@@ -3,20 +3,20 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lazy_engineer/features/home/domain/repositories/home_repository.dart';
 
-import '../../../data/models/bd_modal.dart';
+import '../../../data/models/books_response/bd_modal.dart';
 
-part 'book_description_state.dart';
-part 'book_description_cubit.freezed.dart';
+part 'books_description_state.dart';
+part 'books_description_cubit.freezed.dart';
 
-class BookDescriptionCubit extends Cubit<BookDescriptionState> {
+class BookDescriptionCubit extends Cubit<BooksDescriptionState> {
   final HomeRepository _repository;
   BookDescriptionCubit(this._repository)
-      : super(const BookDescriptionState.loading()) {
+      : super(const BooksDescriptionState.loading()) {
     getData();
   }
   BDModal? data;
   void getData() async {
-    emit(const BookDescriptionState.loading());
+    emit(const BooksDescriptionState.loading());
     // try {
     //   data = await _repository.getBookDetailInfo();
     //   if (data != null) {

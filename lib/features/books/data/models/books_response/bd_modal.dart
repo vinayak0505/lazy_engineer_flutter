@@ -1,4 +1,4 @@
-import '../../../../assets/constants/lists.dart';
+import '../../../../../assets/constants/lists.dart';
 
 class BDModal {
   List<String>? writer;
