@@ -37,7 +37,7 @@ class HomeScreenWidget extends StatelessWidget {
           builder: (context, state) {
             void onPressed() => applyFilter!.call(
                   FilterRequest(
-                    textFeild: state.textFeild,
+                    textField: state.textFeild,
                     multiOption: state.multiOption,
                     singleOption: singleOption.text,
                   ),

@@ -23,7 +23,7 @@ mixin _$FilesResponse {
   String get title => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   String? get college => throw _privateConstructorUsedError;
-  String? get semister => throw _privateConstructorUsedError;
+  String? get semester => throw _privateConstructorUsedError;
   dynamic get link => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $FilesResponseCopyWith<$Res> {
       {String title,
       String? subject,
       String? college,
-      String? semister,
+      String? semester,
       dynamic link});
 }
 
@@ -59,7 +59,7 @@ class _$FilesResponseCopyWithImpl<$Res>
     Object? title = freezed,
     Object? subject = freezed,
     Object? college = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? link = freezed,
   }) {
     return _then(_value.copyWith(
@@ -75,9 +75,9 @@ class _$FilesResponseCopyWithImpl<$Res>
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
       link: link == freezed
           ? _value.link
@@ -98,7 +98,7 @@ abstract class _$$_FilesResponseCopyWith<$Res>
       {String title,
       String? subject,
       String? college,
-      String? semister,
+      String? semester,
       dynamic link});
 }
 
@@ -118,7 +118,7 @@ class __$$_FilesResponseCopyWithImpl<$Res>
     Object? title = freezed,
     Object? subject = freezed,
     Object? college = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? link = freezed,
   }) {
     return _then(_$_FilesResponse(
@@ -134,9 +134,9 @@ class __$$_FilesResponseCopyWithImpl<$Res>
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
       link == freezed
           ? _value.link
@@ -150,7 +150,7 @@ class __$$_FilesResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FilesResponse implements _FilesResponse {
   const _$_FilesResponse(
-      this.title, this.subject, this.college, this.semister, this.link);
+      this.title, this.subject, this.college, this.semester, this.link);
 
   factory _$_FilesResponse.fromJson(Map<String, dynamic> json) =>
       _$$_FilesResponseFromJson(json);
@@ -162,13 +162,13 @@ class _$_FilesResponse implements _FilesResponse {
   @override
   final String? college;
   @override
-  final String? semister;
+  final String? semester;
   @override
   final dynamic link;
 
   @override
   String toString() {
-    return 'FilesResponse(title: $title, subject: $subject, college: $college, semister: $semister, link: $link)';
+    return 'FilesResponse(title: $title, subject: $subject, college: $college, semester: $semester, link: $link)';
   }
 
   @override
@@ -179,7 +179,7 @@ class _$_FilesResponse implements _FilesResponse {
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.college, college) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.link, link));
   }
 
@@ -190,7 +190,7 @@ class _$_FilesResponse implements _FilesResponse {
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(college),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(link));
 
   @JsonKey(ignore: true)
@@ -211,7 +211,7 @@ abstract class _FilesResponse implements FilesResponse {
       final String title,
       final String? subject,
       final String? college,
-      final String? semister,
+      final String? semester,
       final dynamic link) = _$_FilesResponse;
 
   factory _FilesResponse.fromJson(Map<String, dynamic> json) =
@@ -224,7 +224,7 @@ abstract class _FilesResponse implements FilesResponse {
   @override
   String? get college;
   @override
-  String? get semister;
+  String? get semester;
   @override
   dynamic get link;
   @override

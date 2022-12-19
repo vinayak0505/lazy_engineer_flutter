@@ -7,9 +7,9 @@ part 'paper_response.g.dart';
 class PaperResponse with _$PaperResponse {
   const factory PaperResponse(
     String title,
-    String? subject,
+    String subject,
     String? type,
-    String? semister,
+    int? semester,
     int? year,
     dynamic link,
   ) = _PaperResponse;

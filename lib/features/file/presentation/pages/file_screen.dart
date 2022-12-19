@@ -9,8 +9,8 @@ import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/tile_view.dart';
 
-class PracticleFileScreen extends StatelessWidget {
-  const PracticleFileScreen({Key? key}) : super(key: key);
+class FileScreen extends StatelessWidget {
+  const FileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,15 +58,15 @@ class PracticleFileScreen extends StatelessWidget {
                 ListView.separated(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: practicleFileList.length,
+                  itemCount: practicalFileList.length,
                   itemBuilder: (context, index) => TileView(
-                    image: practicleFileList[index].link,
+                    image: practicalFileList[index].link,
                     child: FileDataBox(
-                      title: practicleFileList[index].title,
-                      college: practicleFileList[index].college ?? '',
-                      subject: practicleFileList[index].subject ?? '',
+                      title: practicalFileList[index].title,
+                      college: practicalFileList[index].college ?? '',
+                      subject: practicalFileList[index].subject ?? '',
                       year: DateTime.now(),
-                      // year: practicleFileList[index].semister ?? '',
+                      // year: practicleFileList[index].semester ?? '',
                     ),
                     onPressed: () => context.push(
                         '${RouteGenerator.fileDescriptionRoute}/${index + 1}'),

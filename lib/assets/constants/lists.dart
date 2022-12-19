@@ -126,16 +126,6 @@ List<String> singleOptionFileList = [
   'Newest'
 ];
 
-List<FilesResponse> practicleFileList = [
-  const FilesResponse(
-    'Computer Graphics Practicle File',
-    'Computer Graphics',
-    'GTBIT',
-    'Computer Graphics',
-    AppImages.bookCoverImage,
-  ),
-];
-
 List<BooksResponse> bookList = [
   const BooksResponse(
     'Computer Graphics',

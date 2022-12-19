@@ -14,8 +14,8 @@ import 'package:lazy_engineer/features/components/error_screen.dart';
 import '../features/books/presentation/pages/book_description_screen.dart';
 import '../features/books/presentation/pages/book_screen.dart';
 import '../features/bottom_navigation/ui/bottom_nav_screen.dart';
-import '../features/file/presentation/pages/practical_file_description_screen.dart';
-import '../features/file/presentation/pages/practicle_file_screen.dart';
+import '../features/file/presentation/pages/file_detail_screen.dart';
+import '../features/file/presentation/pages/file_screen.dart';
 import '../features/home/presentation/pages/home_screen.dart';
 import '../features/jobs/presentation/pages/jobs_description_screen.dart';
 import '../features/jobs/presentation/pages/jobs_screen.dart';
@@ -159,7 +159,7 @@ class RouteGenerator {
                   ]),
               GoRoute(
                   path: 'practical_file',
-                  builder: (_, __) => const PracticleFileScreen(),
+                  builder: (_, __) => const FileScreen(),
                   routes: [
                     GoRoute(
                       path: 'practical_file_description/:id',
@@ -167,7 +167,7 @@ class RouteGenerator {
                         int id = int.parse(state.params['id']!);
                         return MaterialPage<void>(
                           key: state.pageKey,
-                          child: FileDescriptionScreen(id: id),
+                          child: FileDetailScreen(id: id),
                         );
                       },
                     )
