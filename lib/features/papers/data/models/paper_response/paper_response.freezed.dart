@@ -23,6 +23,8 @@ mixin _$PaperResponse {
   String get title => throw _privateConstructorUsedError;
   String get subject => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
+  String get descirption => throw _privateConstructorUsedError;
+  String get college => throw _privateConstructorUsedError;
   int? get semester => throw _privateConstructorUsedError;
   int? get year => throw _privateConstructorUsedError;
   dynamic get link => throw _privateConstructorUsedError;
@@ -42,6 +44,8 @@ abstract class $PaperResponseCopyWith<$Res> {
       {String title,
       String subject,
       String? type,
+      String descirption,
+      String college,
       int? semester,
       int? year,
       dynamic link});
@@ -61,6 +65,8 @@ class _$PaperResponseCopyWithImpl<$Res>
     Object? title = freezed,
     Object? subject = freezed,
     Object? type = freezed,
+    Object? descirption = freezed,
+    Object? college = freezed,
     Object? semester = freezed,
     Object? year = freezed,
     Object? link = freezed,
@@ -78,6 +84,14 @@ class _$PaperResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
+      descirption: descirption == freezed
+          ? _value.descirption
+          : descirption // ignore: cast_nullable_to_non_nullable
+              as String,
+      college: college == freezed
+          ? _value.college
+          : college // ignore: cast_nullable_to_non_nullable
+              as String,
       semester: semester == freezed
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
@@ -105,6 +119,8 @@ abstract class _$$_PaperResponseCopyWith<$Res>
       {String title,
       String subject,
       String? type,
+      String descirption,
+      String college,
       int? semester,
       int? year,
       dynamic link});
@@ -126,6 +142,8 @@ class __$$_PaperResponseCopyWithImpl<$Res>
     Object? title = freezed,
     Object? subject = freezed,
     Object? type = freezed,
+    Object? descirption = freezed,
+    Object? college = freezed,
     Object? semester = freezed,
     Object? year = freezed,
     Object? link = freezed,
@@ -143,6 +161,14 @@ class __$$_PaperResponseCopyWithImpl<$Res>
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
+      descirption == freezed
+          ? _value.descirption
+          : descirption // ignore: cast_nullable_to_non_nullable
+              as String,
+      college == freezed
+          ? _value.college
+          : college // ignore: cast_nullable_to_non_nullable
+              as String,
       semester == freezed
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
@@ -162,8 +188,8 @@ class __$$_PaperResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_PaperResponse implements _PaperResponse {
-  const _$_PaperResponse(
-      this.title, this.subject, this.type, this.semester, this.year, this.link);
+  const _$_PaperResponse(this.title, this.subject, this.type, this.descirption,
+      this.college, this.semester, this.year, this.link);
 
   factory _$_PaperResponse.fromJson(Map<String, dynamic> json) =>
       _$$_PaperResponseFromJson(json);
@@ -175,6 +201,10 @@ class _$_PaperResponse implements _PaperResponse {
   @override
   final String? type;
   @override
+  final String descirption;
+  @override
+  final String college;
+  @override
   final int? semester;
   @override
   final int? year;
@@ -183,7 +213,7 @@ class _$_PaperResponse implements _PaperResponse {
 
   @override
   String toString() {
-    return 'PaperResponse(title: $title, subject: $subject, type: $type, semester: $semester, year: $year, link: $link)';
+    return 'PaperResponse(title: $title, subject: $subject, type: $type, descirption: $descirption, college: $college, semester: $semester, year: $year, link: $link)';
   }
 
   @override
@@ -194,6 +224,9 @@ class _$_PaperResponse implements _PaperResponse {
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality()
+                .equals(other.descirption, descirption) &&
+            const DeepCollectionEquality().equals(other.college, college) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.year, year) &&
             const DeepCollectionEquality().equals(other.link, link));
@@ -206,6 +239,8 @@ class _$_PaperResponse implements _PaperResponse {
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(descirption),
+      const DeepCollectionEquality().hash(college),
       const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(year),
       const DeepCollectionEquality().hash(link));
@@ -228,6 +263,8 @@ abstract class _PaperResponse implements PaperResponse {
       final String title,
       final String subject,
       final String? type,
+      final String descirption,
+      final String college,
       final int? semester,
       final int? year,
       final dynamic link) = _$_PaperResponse;
@@ -241,6 +278,10 @@ abstract class _PaperResponse implements PaperResponse {
   String get subject;
   @override
   String? get type;
+  @override
+  String get descirption;
+  @override
+  String get college;
   @override
   int? get semester;
   @override

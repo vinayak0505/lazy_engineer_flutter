@@ -6,7 +6,6 @@ import 'package:lazy_engineer/features/components/animated_icon_button.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_icon.dart';
-import '../../../components/multi_option_filter.dart';
 import '../../../components/single_option_filter.dart';
 import '../../../components/slide_transition_animation.dart';
 import '../../../components/text_feild_filter.dart';

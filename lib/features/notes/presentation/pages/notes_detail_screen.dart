@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
-import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/core/logic/download/download_cubit.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
-import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
 import 'package:lazy_engineer/features/notes/presentation/cubit/notes_detail_cubit/notes_detail_cubit.dart';
 import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
@@ -16,7 +14,7 @@ import '../../../components/show_tags_widget.dart';
 import '../../data/repositories/notes_repository_impl.dart';
 
 class NotesDetailScreen extends StatelessWidget {
-  const NotesDetailScreen({Key? key, this.id}) : super(key: key);
+  const NotesDetailScreen(this.id, {Key? key}) : super(key: key);
   final String? id;
 
   @override

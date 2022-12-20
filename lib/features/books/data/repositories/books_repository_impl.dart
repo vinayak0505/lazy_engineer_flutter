@@ -1,5 +1,4 @@
 import 'package:lazy_engineer/assets/constants/lists.dart';
-import 'package:lazy_engineer/features/books/data/datasources/local/books_local_datasource.dart';
 import 'package:lazy_engineer/features/books/data/datasources/remote/books_remote_datasource.dart';
 import 'package:lazy_engineer/features/books/data/models/books_detail_response/books_detail_response.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
@@ -10,7 +9,7 @@ import '../../../../core/models/base_response/base_response.dart';
 
 class BooksRepositoryImpl extends BooksRepository {
   final BooksRemoteDatasource _remoteDataSource = BooksRemoteDatasource();
-  final BooksLocalDatasource _localDataSource = BooksLocalDatasource();
+  // final BooksLocalDatasource _localDataSource = BooksLocalDatasource();
 
   @override
   Future<List<BooksResponse>?> getBooksData() async {
@@ -72,9 +71,9 @@ class BooksRepositoryImpl extends BooksRepository {
   @override
   Future<BooksDetailResponse?> getBooksDetailData(String id) async {
     try {
-      BaseResponse<BooksDetailResponse> BooksDetail =
+      BaseResponse<BooksDetailResponse> booksDetail =
           await _remoteDataSource.getBooksDetail(id);
-      return BooksDetail.data;
+      return booksDetail.data;
     } catch (e) {
       print(e.toString());
       return null;

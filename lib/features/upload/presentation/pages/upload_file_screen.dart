@@ -18,7 +18,6 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
     TextEditingController yearController = TextEditingController();
     TextEditingController collegeController = TextEditingController();
     TextEditingController semesterController = TextEditingController();
-    TextEditingController linkController = TextEditingController();
     List<String> tagsController = [];
     return UploadScreenWidget(
       title: uploadFile,
@@ -63,7 +62,7 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
             CustomDropdown(
               width: 130,
               hintText: semester,
-              list: semisterList,
+              list: semesterList,
               controller: semesterController,
               validator: (value) => nullCheckTextValidation(
                 value,

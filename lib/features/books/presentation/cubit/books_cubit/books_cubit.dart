@@ -4,8 +4,6 @@ import 'package:lazy_engineer/features/books/data/models/books_response/books_re
 import 'package:lazy_engineer/features/books/data/models/filter_request.dart/filter_request.dart';
 import 'package:lazy_engineer/features/books/domain/repositories/books_repository.dart';
 
-import '../../../../../assets/constants/lists.dart';
-
 part 'books_state.dart';
 part 'books_cubit.freezed.dart';
 

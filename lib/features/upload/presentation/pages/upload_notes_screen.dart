@@ -52,8 +52,8 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         Text(semister, style: theme.textTheme.titleLarge),
         const SizedBox(height: 12),
         CustomDropdown(
-          list: semisterList,
-          keyList: semisterKeyList,
+          list: semesterList,
+          keyList: semesterKeyList,
           width: 130,
           hintText: semester,
           controller: semesterController,

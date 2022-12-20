@@ -4,8 +4,6 @@ import 'package:lazy_engineer/features/file/data/models/filter_request/filter_re
 import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
 import 'package:lazy_engineer/features/file/domain/repositories/files_repository.dart';
 
-import '../../../../../assets/constants/lists.dart';
-
 part 'files_state.dart';
 part 'files_cubit.freezed.dart';
 

@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lazy_engineer/features/papers/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/papers/domain/repositories/papers_repository.dart';
+import 'package:lazy_engineer/features/papers/presentation/pages/question_paper_screen.dart';
 
 import '../../../../../assets/constants/lists.dart';
 
@@ -18,6 +19,7 @@ class PapersCubit extends Cubit<PapersState> {
     try {
       List<PaperResponse>? data = await _repository.getPapersData();
       if (data != null) {
+        data = papersList; // need to remove when integrated
         emit(PapersState.success(data));
       } else {
         emit(const PapersState.loading());

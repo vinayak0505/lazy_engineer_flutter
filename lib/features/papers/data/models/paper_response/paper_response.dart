@@ -9,6 +9,8 @@ class PaperResponse with _$PaperResponse {
     String title,
     String subject,
     String? type,
+    String descirption,
+    String college,
     int? semester,
     int? year,
     dynamic link,

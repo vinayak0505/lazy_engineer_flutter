@@ -9,8 +9,8 @@ import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 
 class PaperDescriptionScreen extends StatelessWidget {
-  const PaperDescriptionScreen({Key? key, required this.id}) : super(key: key);
-  final int id;
+  const PaperDescriptionScreen(this.id, {Key? key}) : super(key: key);
+  final String? id;
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);

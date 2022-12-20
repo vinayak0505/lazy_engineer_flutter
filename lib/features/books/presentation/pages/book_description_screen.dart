@@ -8,8 +8,8 @@ import '../../../../assets/images.dart';
 import '../../../components/custom_icon.dart';
 
 class BookDescriptionScreen extends StatelessWidget {
-  const BookDescriptionScreen({Key? key, required this.id}) : super(key: key);
-  final int id;
+  const BookDescriptionScreen(this.id, {Key? key}) : super(key: key);
+  final String? id;
 
   @override
   Widget build(BuildContext context) {

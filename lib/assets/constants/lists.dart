@@ -1,10 +1,14 @@
 import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
+import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_response.dart';
 import '../../features/home/data/models/categories_model/categories_model.dart';
 import '../../features/home/data/models/last_seen_response/last_seen_response.dart';
 import '../../features/jobs/data/models/jobs_response/jobs_response.dart';
+import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
 import '../images.dart';
 
 List<CategoriesModel> categoriesList = [
@@ -76,6 +80,96 @@ NotesDetailResponse notesDetail = const NotesDetailResponse(
   'Chapter',
   'topic',
   ['handwritten', 'maths', 'fun'],
+  4.5,
+);
+
+List<PaperResponse> papersList = [
+  const PaperResponse(
+    'Computer Graphics',
+    'Computer Graphics',
+    'Class Test',
+    'description',
+    'GTBIT',
+    3,
+    2,
+    AppImages.book,
+  ),
+  const PaperResponse(
+    'Computer Graphics',
+    'Computer Graphics',
+    'Class Test',
+    'description',
+    'GTBIT',
+    3,
+    2,
+    AppImages.book,
+  ),
+  const PaperResponse(
+    'Computer Graphics',
+    'Computer Graphics',
+    'Class Test',
+    'description',
+    'GTBIT',
+    3,
+    2,
+    AppImages.book,
+  ),
+  const PaperResponse(
+    'Computer Graphics',
+    'Computer Graphics',
+    'Class Test',
+    'description',
+    'GTBIT',
+    3,
+    2,
+    AppImages.book,
+  ),
+];
+
+List<FilesResponse> practicalFileList = [
+  const FilesResponse(
+    'Computer Graphics Practicle File',
+    'Computer Graphics',
+    'GTBIT',
+    'Computer Graphics',
+    AppImages.bookCoverImage,
+  ),
+  const FilesResponse(
+    'Computer Graphics Practicle File',
+    'Computer Graphics',
+    'GTBIT',
+    'Computer Graphics',
+    AppImages.bookCoverImage,
+  ),
+  const FilesResponse(
+    'Computer Graphics Practical File',
+    'Computer Graphics',
+    'GTBIT',
+    'Computer Graphics',
+    AppImages.bookCoverImage,
+  ),
+];
+
+PaperDetailResponse papersDetail = const PaperDetailResponse(
+  'Computer Graphics Question Paper',
+  AppImages.book,
+  3,
+  2,
+  'Computer Graphics',
+  'Class Test',
+  'No',
+  ['Ms. Jasleen Kaur', 'Unit - 1 & 2', '2019'],
+  4.5,
+);
+
+FilesDetailResponse filesDetail = const FilesDetailResponse(
+  'Computer Graphics Practical File',
+  AppImages.book,
+  'THE FILE CONTAINS ALL THE EXPERIMENTS THAT ARE DONE IN COMPUTER GRAPHICS LAB IN THIRD SEMESTER',
+  'GTBIT',
+  3,
+  'Computer Graphics',
+  ['handwritten', 'made under Ms. Jasleen Kaur', 'completed'],
   4.5,
 );
 
@@ -181,48 +275,22 @@ List<JobsResponse> jobList = [
   ),
 ];
 
-// List<> questionPaperList = [
-//   QuestionPaperModel(
-//     image: AppImages.questionPaper,
-//     title: 'Computer Graphics',
-//     description:
-//         'Important for test covering unit 1 to 4.By ____________Teacher',
-//     subject: 'Computer Graphics',
-//     type: 'Class Test',
-//     college: 'GTBIT',
-//     year: DateTime.now(),
-//   ),
-//   QuestionPaperModel(
-//     image: AppImages.questionPaper,
-//     title: 'Computer Graphics',
-//     description:
-//         'Important for test covering unit 1 to 4.By ____________Teacher',
-//     subject: 'Computer Graphics',
-//     type: 'Class Test',
-//     college: 'GTBIT',
-//     year: DateTime.now(),
-//   ),
-//   QuestionPaperModel(
-//     image: AppImages.questionPaper,
-//     title: 'Computer Graphics',
-//     description:
-//         'Important for test covering unit 1 to 4.By ____________Teacher',
-//     subject: 'Computer Graphics',
-//     type: 'Class Test',
-//     college: 'GTBIT',
-//     year: DateTime.now(),
-//   ),
-//   QuestionPaperModel(
-//     image: AppImages.questionPaper,
-//     title: 'Computer Graphics',
-//     description:
-//         'Important for test covering unit 1 to 4.By ____________Teacher',
-//     subject: 'Computer Graphics',
-//     type: 'Class Test',
-//     college: 'GTBIT',
-//     year: DateTime.now(),
-//   ),
-// ];
+JobsDetailResponse jobsDetail = const JobsDetailResponse(
+  'Android Developer',
+  'Software Developer Engineer',
+  'Google',
+  AppImages.book,
+  'Google is a global company and, in order to facilitate efficient collaboration and communication globally, English proficiency is a requirement for all roles.',
+  'Gurugram, Haryana, India',
+  'Full Time',
+  '2 years of experience',
+  '3 days ago',
+  '2 years of experience with software development in one or more programming languages, or 1 year of experience with an advanced degree.',
+  2000000,
+  40000,
+  ['AppImages.companyImage', 'AppImages.companyImage'],
+  4.5,
+);
 
 ///Uploading Screen
 List<String> collegeList = [
@@ -244,7 +312,7 @@ List<String> tagList = [
   'Circle',
 ];
 
-List<String> semisterList = [
+List<String> semesterList = [
   '1st Semester',
   '2nd Semester',
   '3rd Semester',
@@ -255,18 +323,7 @@ List<String> semisterList = [
   '8th Semester',
 ];
 
-List<String> yearOfAdmissionList = [
-  '2020',
-  '2021',
-  '2022',
-  '2023',
-  '2024',
-  '2025',
-  '2026',
-  '2027',
-];
-
-List<String> semisterKeyList = [
+List<String> semesterKeyList = [
   '1',
   '2',
   '3',
@@ -333,11 +390,6 @@ List<String> experienceLevelList = [
   'Director',
   'Executive',
 ];
-
-List<String> universityList = [
-  'GTBIT',
-];
-
 List<String> classList = [
   'Aeronautical Engineering',
   'Automobile Engineering',
@@ -349,14 +401,8 @@ List<String> classList = [
   'Electronics & Communication'
 ];
 
-List<String> branchList = [
-  'CSE 1',
-  'CSE 2',
-  'CSE 3',
-  'IT 1',
-  'IT 2',
-  'IT 3',
-  'ECE 1',
-  'ECE 2',
-  'ECE 3',
+List<String> universityList = ['GTBIT'];
+List<String> yearOfAdmissionList = [
+  '2020',
+  '2021',
 ];

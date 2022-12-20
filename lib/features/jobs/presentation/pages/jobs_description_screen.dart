@@ -10,8 +10,8 @@ import '../../../../assets/icons.dart';
 import '../../../components/custom_icon.dart';
 
 class JobsDescriptionScreen extends StatelessWidget {
-  const JobsDescriptionScreen({Key? key, required this.id}) : super(key: key);
-  final int id;
+  const JobsDescriptionScreen(this.id, {Key? key}) : super(key: key);
+  final String? id;
 
   @override
   Widget build(BuildContext context) {

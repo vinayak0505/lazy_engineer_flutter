@@ -56,7 +56,7 @@ class EditProfileView extends StatelessWidget {
       );
     }
 
-    int semisterIndex = semisterKeyList.indexOf(data.semister.toString());
+    int semisterIndex = semesterKeyList.indexOf(data.semister.toString());
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -116,11 +116,11 @@ class EditProfileView extends StatelessWidget {
               const SizedBox(width: 16),
               CustomDropdown(
                 width: 150,
-                list: semisterList,
-                keyList: semisterKeyList,
+                list: semesterList,
+                keyList: semesterKeyList,
                 hintText: semister,
                 controller: semisterController,
-                dropdownValue: semisterList[semisterIndex],
+                dropdownValue: semesterList[semisterIndex],
               ),
             ],
           ),

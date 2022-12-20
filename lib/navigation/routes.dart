@@ -37,14 +37,14 @@ class RouteGenerator {
   /// Home Screen
   static const String homeRoute = '/home';
   static const String notesRoute = '/home/notes';
+  static const String notesDescriptionRoute = '/home/notes/notes_description';
   static const String fileRoute = '/home/practical_file';
+  static const String fileDescriptionRoute = '/home/practical_file/practicle_file_description';
   static const String questionPaperRoute = '/home/question_paper';
   static const String questionPaperDescriptionRoute =
-      '/home/question_paper_description';
+      '/home/question_paper/question_paper_description';
   static const String booksRoute = '/home/books';
-  static const String notesDescriptionRoute = '/home/notes/notes_description';
   static const String bookDescriptionRoute = '/home/books/book_description';
-  static const String fileDescriptionRoute = '/home/practicle_file_description';
   static const String jobsRoute = '/home/jobs';
   static const String jobsDescriptionRoute = '/home/jobs/jobs_description';
 
@@ -104,10 +104,10 @@ class RouteGenerator {
                     GoRoute(
                       path: 'book_description/:id',
                       pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
+                        String? id = state.params['id'];
                         return MaterialPage<void>(
                           key: state.pageKey,
-                          child: BookDescriptionScreen(id: id),
+                          child: BookDescriptionScreen(id),
                         );
                       },
                     )
@@ -119,10 +119,10 @@ class RouteGenerator {
                     GoRoute(
                       path: 'jobs_description/:id',
                       pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
+                        String? id = state.params['id'];
                         return MaterialPage<void>(
                           key: state.pageKey,
-                          child: JobsDescriptionScreen(id: id),
+                          child: JobsDescriptionScreen(id),
                         );
                       },
                     )
@@ -137,7 +137,7 @@ class RouteGenerator {
                         String? id = state.params['id'];
                         return MaterialPage<void>(
                           key: state.pageKey,
-                          child: NotesDetailScreen(id: id),
+                          child: NotesDetailScreen(id),
                         );
                       },
                     )
@@ -149,10 +149,10 @@ class RouteGenerator {
                     GoRoute(
                       path: 'question_paper_description/:id',
                       pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
+                        String? id = state.params['id'];
                         return MaterialPage<void>(
                           key: state.pageKey,
-                          child: PaperDescriptionScreen(id: id),
+                          child: PaperDescriptionScreen(id),
                         );
                       },
                     )
@@ -162,12 +162,12 @@ class RouteGenerator {
                   builder: (_, __) => const FileScreen(),
                   routes: [
                     GoRoute(
-                      path: 'practical_file_description/:id',
+                      path: 'practicle_file_description/:id',
                       pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
+                        String? id = state.params['id'];
                         return MaterialPage<void>(
                           key: state.pageKey,
-                          child: FileDetailScreen(id: id),
+                          child: FileDetailScreen(id),
                         );
                       },
                     )

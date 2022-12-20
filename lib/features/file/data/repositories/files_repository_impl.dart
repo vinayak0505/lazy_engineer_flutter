@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:lazy_engineer/assets/constants/lists.dart';
-import 'package:lazy_engineer/features/file/data/datasources/local/files_local_database.dart';
 import 'package:lazy_engineer/features/file/data/datasources/remote/files_remote_datasource.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
 import 'package:lazy_engineer/features/file/data/models/filter_request/filter_request.dart';
@@ -11,7 +10,7 @@ import '../../../../core/models/base_response/base_response.dart';
 
 class FilesRepositoryImpl extends FilesRepository {
   final FilesRemoteDatasource _remoteDataSource = FilesRemoteDatasource();
-  final FilesLocalDatasource _localDataSource = FilesLocalDatasource();
+  // final FilesLocalDatasource _localDataSource = FilesLocalDatasource();
 
   @override
   Future<List<FilesResponse>?> getFilesData() async {
