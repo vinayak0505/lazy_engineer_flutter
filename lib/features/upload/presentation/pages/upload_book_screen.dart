@@ -109,22 +109,25 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
         const SizedBox(height: 16),
         //* Price
         Text(price, style: theme.textTheme.titleLarge),
-        Row(mainAxisSize: MainAxisSize.min, children: [
-          CustomTextField.secondary(
-            controller: priceController,
-            hintText: price,
-            width: 100,
-            keyboardType: TextInputType.number,
-            validator: (value) => nullCheckNumValidation(
-              value,
-              price,
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            CustomTextField.secondary(
+              controller: priceController,
+              hintText: price,
+              width: 100,
+              keyboardType: TextInputType.number,
+              validator: (value) => nullCheckNumValidation(
+                value,
+                price,
+              ),
             ),
-          ),
-          Text(
-            rs,
-            style: theme.textTheme.titleLarge,
-          )
-        ]),
+            Text(
+              rs,
+              style: theme.textTheme.titleLarge,
+            )
+          ],
+        ),
         const SizedBox(height: 16),
         //* Tags
         Text(tags, style: theme.textTheme.titleLarge),

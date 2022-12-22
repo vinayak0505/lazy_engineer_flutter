@@ -47,6 +47,9 @@ const String rating = 'Rating';
 const String pages = 'Pages';
 const String ebook = 'E-Book';
 const String physicalBook = 'Physical Book';
+const String save = 'Save';
+const String similarCompanies = 'Similar Companies';
+const String activelyRecruiting = 'Actively recruiting';
 
 // uplaod
 const String uploadNotes = 'Upload Notes';

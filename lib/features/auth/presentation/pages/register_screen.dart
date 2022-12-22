@@ -10,7 +10,7 @@ import '../../data/models/sign_up_model/sign_up_model.dart';
 import '../auth_cubit/auth_cubit.dart';
 import '../widgets/widgets.dart';
 
-class RegisterScreen extends StatelessWidget with InputAuthValidationMixin {
+class RegisterScreen extends StatelessWidget with InputValidationMixin {
   const RegisterScreen({Key? key}) : super(key: key);
 
   @override

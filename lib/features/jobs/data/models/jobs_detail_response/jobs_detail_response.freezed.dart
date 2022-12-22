@@ -29,9 +29,13 @@ mixin _$JobsDetailResponse {
   String? get jobType => throw _privateConstructorUsedError;
   String get experienceLevel => throw _privateConstructorUsedError;
   String? get datePosted => throw _privateConstructorUsedError;
+  int? get applicants => throw _privateConstructorUsedError;
+  bool? get isActivelyRecruiting => throw _privateConstructorUsedError;
+  PayRange? get payRange => throw _privateConstructorUsedError;
   String get skillsNeeded => throw _privateConstructorUsedError;
   int? get exceptedSalary => throw _privateConstructorUsedError;
   int? get noOfEmployees => throw _privateConstructorUsedError;
+  int? get noOfFollowers => throw _privateConstructorUsedError;
   List<String> get companyImages => throw _privateConstructorUsedError;
   double get rating => throw _privateConstructorUsedError;
 
@@ -56,11 +60,17 @@ abstract class $JobsDetailResponseCopyWith<$Res> {
       String? jobType,
       String experienceLevel,
       String? datePosted,
+      int? applicants,
+      bool? isActivelyRecruiting,
+      PayRange? payRange,
       String skillsNeeded,
       int? exceptedSalary,
       int? noOfEmployees,
+      int? noOfFollowers,
       List<String> companyImages,
       double rating});
+
+  $PayRangeCopyWith<$Res>? get payRange;
 }
 
 /// @nodoc
@@ -83,9 +93,13 @@ class _$JobsDetailResponseCopyWithImpl<$Res>
     Object? jobType = freezed,
     Object? experienceLevel = freezed,
     Object? datePosted = freezed,
+    Object? applicants = freezed,
+    Object? isActivelyRecruiting = freezed,
+    Object? payRange = freezed,
     Object? skillsNeeded = freezed,
     Object? exceptedSalary = freezed,
     Object? noOfEmployees = freezed,
+    Object? noOfFollowers = freezed,
     Object? companyImages = freezed,
     Object? rating = freezed,
   }) {
@@ -126,6 +140,18 @@ class _$JobsDetailResponseCopyWithImpl<$Res>
           ? _value.datePosted
           : datePosted // ignore: cast_nullable_to_non_nullable
               as String?,
+      applicants: applicants == freezed
+          ? _value.applicants
+          : applicants // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isActivelyRecruiting: isActivelyRecruiting == freezed
+          ? _value.isActivelyRecruiting
+          : isActivelyRecruiting // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      payRange: payRange == freezed
+          ? _value.payRange
+          : payRange // ignore: cast_nullable_to_non_nullable
+              as PayRange?,
       skillsNeeded: skillsNeeded == freezed
           ? _value.skillsNeeded
           : skillsNeeded // ignore: cast_nullable_to_non_nullable
@@ -138,6 +164,10 @@ class _$JobsDetailResponseCopyWithImpl<$Res>
           ? _value.noOfEmployees
           : noOfEmployees // ignore: cast_nullable_to_non_nullable
               as int?,
+      noOfFollowers: noOfFollowers == freezed
+          ? _value.noOfFollowers
+          : noOfFollowers // ignore: cast_nullable_to_non_nullable
+              as int?,
       companyImages: companyImages == freezed
           ? _value.companyImages
           : companyImages // ignore: cast_nullable_to_non_nullable
@@ -147,6 +177,17 @@ class _$JobsDetailResponseCopyWithImpl<$Res>
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
     ));
+  }
+
+  @override
+  $PayRangeCopyWith<$Res>? get payRange {
+    if (_value.payRange == null) {
+      return null;
+    }
+
+    return $PayRangeCopyWith<$Res>(_value.payRange!, (value) {
+      return _then(_value.copyWith(payRange: value));
+    });
   }
 }
 
@@ -167,11 +208,18 @@ abstract class _$$_JobsDetailResponseCopyWith<$Res>
       String? jobType,
       String experienceLevel,
       String? datePosted,
+      int? applicants,
+      bool? isActivelyRecruiting,
+      PayRange? payRange,
       String skillsNeeded,
       int? exceptedSalary,
       int? noOfEmployees,
+      int? noOfFollowers,
       List<String> companyImages,
       double rating});
+
+  @override
+  $PayRangeCopyWith<$Res>? get payRange;
 }
 
 /// @nodoc
@@ -196,9 +244,13 @@ class __$$_JobsDetailResponseCopyWithImpl<$Res>
     Object? jobType = freezed,
     Object? experienceLevel = freezed,
     Object? datePosted = freezed,
+    Object? applicants = freezed,
+    Object? isActivelyRecruiting = freezed,
+    Object? payRange = freezed,
     Object? skillsNeeded = freezed,
     Object? exceptedSalary = freezed,
     Object? noOfEmployees = freezed,
+    Object? noOfFollowers = freezed,
     Object? companyImages = freezed,
     Object? rating = freezed,
   }) {
@@ -239,6 +291,18 @@ class __$$_JobsDetailResponseCopyWithImpl<$Res>
           ? _value.datePosted
           : datePosted // ignore: cast_nullable_to_non_nullable
               as String?,
+      applicants == freezed
+          ? _value.applicants
+          : applicants // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isActivelyRecruiting == freezed
+          ? _value.isActivelyRecruiting
+          : isActivelyRecruiting // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      payRange == freezed
+          ? _value.payRange
+          : payRange // ignore: cast_nullable_to_non_nullable
+              as PayRange?,
       skillsNeeded == freezed
           ? _value.skillsNeeded
           : skillsNeeded // ignore: cast_nullable_to_non_nullable
@@ -250,6 +314,10 @@ class __$$_JobsDetailResponseCopyWithImpl<$Res>
       noOfEmployees == freezed
           ? _value.noOfEmployees
           : noOfEmployees // ignore: cast_nullable_to_non_nullable
+              as int?,
+      noOfFollowers == freezed
+          ? _value.noOfFollowers
+          : noOfFollowers // ignore: cast_nullable_to_non_nullable
               as int?,
       companyImages == freezed
           ? _value._companyImages
@@ -276,9 +344,13 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
       this.jobType,
       this.experienceLevel,
       this.datePosted,
+      this.applicants,
+      this.isActivelyRecruiting,
+      this.payRange,
       this.skillsNeeded,
       this.exceptedSalary,
       this.noOfEmployees,
+      this.noOfFollowers,
       final List<String> companyImages,
       this.rating)
       : _companyImages = companyImages;
@@ -305,11 +377,19 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
   @override
   final String? datePosted;
   @override
+  final int? applicants;
+  @override
+  final bool? isActivelyRecruiting;
+  @override
+  final PayRange? payRange;
+  @override
   final String skillsNeeded;
   @override
   final int? exceptedSalary;
   @override
   final int? noOfEmployees;
+  @override
+  final int? noOfFollowers;
   final List<String> _companyImages;
   @override
   List<String> get companyImages {
@@ -322,7 +402,7 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
 
   @override
   String toString() {
-    return 'JobsDetailResponse(title: $title, jobProfile: $jobProfile, company: $company, link: $link, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, exceptedSalary: $exceptedSalary, noOfEmployees: $noOfEmployees, companyImages: $companyImages, rating: $rating)';
+    return 'JobsDetailResponse(title: $title, jobProfile: $jobProfile, company: $company, link: $link, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, applicants: $applicants, isActivelyRecruiting: $isActivelyRecruiting, payRange: $payRange, skillsNeeded: $skillsNeeded, exceptedSalary: $exceptedSalary, noOfEmployees: $noOfEmployees, noOfFollowers: $noOfFollowers, companyImages: $companyImages, rating: $rating)';
   }
 
   @override
@@ -344,11 +424,18 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
             const DeepCollectionEquality()
                 .equals(other.datePosted, datePosted) &&
             const DeepCollectionEquality()
+                .equals(other.applicants, applicants) &&
+            const DeepCollectionEquality()
+                .equals(other.isActivelyRecruiting, isActivelyRecruiting) &&
+            const DeepCollectionEquality().equals(other.payRange, payRange) &&
+            const DeepCollectionEquality()
                 .equals(other.skillsNeeded, skillsNeeded) &&
             const DeepCollectionEquality()
                 .equals(other.exceptedSalary, exceptedSalary) &&
             const DeepCollectionEquality()
                 .equals(other.noOfEmployees, noOfEmployees) &&
+            const DeepCollectionEquality()
+                .equals(other.noOfFollowers, noOfFollowers) &&
             const DeepCollectionEquality()
                 .equals(other._companyImages, _companyImages) &&
             const DeepCollectionEquality().equals(other.rating, rating));
@@ -367,9 +454,13 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
       const DeepCollectionEquality().hash(jobType),
       const DeepCollectionEquality().hash(experienceLevel),
       const DeepCollectionEquality().hash(datePosted),
+      const DeepCollectionEquality().hash(applicants),
+      const DeepCollectionEquality().hash(isActivelyRecruiting),
+      const DeepCollectionEquality().hash(payRange),
       const DeepCollectionEquality().hash(skillsNeeded),
       const DeepCollectionEquality().hash(exceptedSalary),
       const DeepCollectionEquality().hash(noOfEmployees),
+      const DeepCollectionEquality().hash(noOfFollowers),
       const DeepCollectionEquality().hash(_companyImages),
       const DeepCollectionEquality().hash(rating));
 
@@ -398,9 +489,13 @@ abstract class _JobsDetailResponse implements JobsDetailResponse {
       final String? jobType,
       final String experienceLevel,
       final String? datePosted,
+      final int? applicants,
+      final bool? isActivelyRecruiting,
+      final PayRange? payRange,
       final String skillsNeeded,
       final int? exceptedSalary,
       final int? noOfEmployees,
+      final int? noOfFollowers,
       final List<String> companyImages,
       final double rating) = _$_JobsDetailResponse;
 
@@ -426,11 +521,19 @@ abstract class _JobsDetailResponse implements JobsDetailResponse {
   @override
   String? get datePosted;
   @override
+  int? get applicants;
+  @override
+  bool? get isActivelyRecruiting;
+  @override
+  PayRange? get payRange;
+  @override
   String get skillsNeeded;
   @override
   int? get exceptedSalary;
   @override
   int? get noOfEmployees;
+  @override
+  int? get noOfFollowers;
   @override
   List<String> get companyImages;
   @override
@@ -438,5 +541,152 @@ abstract class _JobsDetailResponse implements JobsDetailResponse {
   @override
   @JsonKey(ignore: true)
   _$$_JobsDetailResponseCopyWith<_$_JobsDetailResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PayRange _$PayRangeFromJson(Map<String, dynamic> json) {
+  return _PayRange.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PayRange {
+  int? get high => throw _privateConstructorUsedError;
+  int? get low => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PayRangeCopyWith<PayRange> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PayRangeCopyWith<$Res> {
+  factory $PayRangeCopyWith(PayRange value, $Res Function(PayRange) then) =
+      _$PayRangeCopyWithImpl<$Res>;
+  $Res call({int? high, int? low});
+}
+
+/// @nodoc
+class _$PayRangeCopyWithImpl<$Res> implements $PayRangeCopyWith<$Res> {
+  _$PayRangeCopyWithImpl(this._value, this._then);
+
+  final PayRange _value;
+  // ignore: unused_field
+  final $Res Function(PayRange) _then;
+
+  @override
+  $Res call({
+    Object? high = freezed,
+    Object? low = freezed,
+  }) {
+    return _then(_value.copyWith(
+      high: high == freezed
+          ? _value.high
+          : high // ignore: cast_nullable_to_non_nullable
+              as int?,
+      low: low == freezed
+          ? _value.low
+          : low // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_PayRangeCopyWith<$Res> implements $PayRangeCopyWith<$Res> {
+  factory _$$_PayRangeCopyWith(
+          _$_PayRange value, $Res Function(_$_PayRange) then) =
+      __$$_PayRangeCopyWithImpl<$Res>;
+  @override
+  $Res call({int? high, int? low});
+}
+
+/// @nodoc
+class __$$_PayRangeCopyWithImpl<$Res> extends _$PayRangeCopyWithImpl<$Res>
+    implements _$$_PayRangeCopyWith<$Res> {
+  __$$_PayRangeCopyWithImpl(
+      _$_PayRange _value, $Res Function(_$_PayRange) _then)
+      : super(_value, (v) => _then(v as _$_PayRange));
+
+  @override
+  _$_PayRange get _value => super._value as _$_PayRange;
+
+  @override
+  $Res call({
+    Object? high = freezed,
+    Object? low = freezed,
+  }) {
+    return _then(_$_PayRange(
+      high: high == freezed
+          ? _value.high
+          : high // ignore: cast_nullable_to_non_nullable
+              as int?,
+      low: low == freezed
+          ? _value.low
+          : low // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_PayRange implements _PayRange {
+  const _$_PayRange({this.high, this.low});
+
+  factory _$_PayRange.fromJson(Map<String, dynamic> json) =>
+      _$$_PayRangeFromJson(json);
+
+  @override
+  final int? high;
+  @override
+  final int? low;
+
+  @override
+  String toString() {
+    return 'PayRange(high: $high, low: $low)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PayRange &&
+            const DeepCollectionEquality().equals(other.high, high) &&
+            const DeepCollectionEquality().equals(other.low, low));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(high),
+      const DeepCollectionEquality().hash(low));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PayRangeCopyWith<_$_PayRange> get copyWith =>
+      __$$_PayRangeCopyWithImpl<_$_PayRange>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PayRangeToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PayRange implements PayRange {
+  const factory _PayRange({final int? high, final int? low}) = _$_PayRange;
+
+  factory _PayRange.fromJson(Map<String, dynamic> json) = _$_PayRange.fromJson;
+
+  @override
+  int? get high;
+  @override
+  int? get low;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PayRangeCopyWith<_$_PayRange> get copyWith =>
       throw _privateConstructorUsedError;
 }

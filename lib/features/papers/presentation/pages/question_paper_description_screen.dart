@@ -33,8 +33,7 @@ class PaperDescriptionScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-                  // ignore: prefer_const_literals_to_create_immutables
+                  padding: const EdgeInsets.all(8),
                   child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -57,39 +56,6 @@ class PaperDescriptionScreen extends StatelessWidget {
                                 Text('Computer Graphics',
                                     style: theme.textTheme.titleLarge),
                                 const SizedBox(height: 16),
-                                Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Column(children: [
-                                        const CustomIcon(AppIcons.likeIcon),
-                                        Text(
-                                          'Like',
-                                          style: theme.textTheme.bodyText1,
-                                        )
-                                      ]),
-                                      Column(children: [
-                                        const CustomIcon(AppIcons.dislikeIcon),
-                                        Text(
-                                          'Dislike',
-                                          style: theme.textTheme.bodyText1,
-                                        )
-                                      ]),
-                                      Column(children: [
-                                        const CustomIcon(AppIcons.bookIcon),
-                                        Text(
-                                          'pdf',
-                                          style: theme.textTheme.bodyText1,
-                                        )
-                                      ]),
-                                      Column(children: [
-                                        const CustomIcon(AppIcons.pageIcon),
-                                        Text(
-                                          'pages',
-                                          style: theme.textTheme.bodyText1,
-                                        )
-                                      ])
-                                    ]),
                                 const SizedBox(height: 16),
                                 Align(
                                   alignment: Alignment.center,
@@ -99,6 +65,7 @@ class PaperDescriptionScreen extends StatelessWidget {
                                     width: 120,
                                   ),
                                 ),
+                                const BottomPage()
                               ]),
                         )
                       ]),
@@ -138,5 +105,52 @@ class PaperDescriptionScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class BottomPage extends StatelessWidget {
+  const BottomPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+      Column(children: [
+        const CustomIcon(
+          AppIcons.likeIcon,
+          height: 16,
+          width: 16,
+        ),
+        Text(
+          'Like',
+          style: theme.textTheme.bodyText1,
+        )
+      ]),
+      Column(children: [
+        const CustomIcon(
+          AppIcons.dislikeIcon,
+          height: 16,
+          width: 16,
+        ),
+        Text(
+          'Dislike',
+          style: theme.textTheme.bodyText1,
+        )
+      ]),
+      Column(children: [
+        const CustomIcon(AppIcons.bookIcon),
+        Text(
+          'pdf',
+          style: theme.textTheme.bodyText1,
+        )
+      ]),
+      Column(children: [
+        const CustomIcon(AppIcons.pageIcon),
+        Text(
+          'pages',
+          style: theme.textTheme.bodyText1,
+        )
+      ])
+    ]);
   }
 }

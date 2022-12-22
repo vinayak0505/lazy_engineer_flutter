@@ -285,9 +285,13 @@ JobsDetailResponse jobsDetail = const JobsDetailResponse(
   'Full Time',
   '2 years of experience',
   '3 days ago',
+  1000,
+  true,
+  PayRange(high: 1000, low: 500),
   '2 years of experience with software development in one or more programming languages, or 1 year of experience with an advanced degree.',
   2000000,
   40000,
+  1000000,
   ['AppImages.companyImage', 'AppImages.companyImage'],
   4.5,
 );
