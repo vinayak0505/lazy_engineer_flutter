@@ -50,15 +50,15 @@ class ProfileScreen extends StatelessWidget {
                                   .read<ProfileCubit>()
                                   .togleIsEditProfile();
                             },
-                            icon: const CustomIcon(AppIcons.editIcon),
+                            icon: isNotEdit
+                                ? const CustomIcon(AppIcons.editIcon)
+                                : const CustomIcon(AppIcons.backArrow),
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 16),
-                    isNotEdit
-                        ? ProfileScreenView(data)
-                        : EditProfileView(data),
+                    isNotEdit ? ProfileScreenView(data) : EditProfileView(data),
                   ],
                 );
               },

@@ -86,7 +86,7 @@ class CustomImage extends StatelessWidget {
 
   Widget _networkImage() {
     return Image.network(
-      image!,
+      networkImage!,
       height: height,
       width: width,
       fit: boxFit,

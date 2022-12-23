@@ -24,12 +24,8 @@ class NotesScreen extends StatelessWidget {
       child: BlocBuilder<NotesCubit, NotesState>(
         builder: (context, state) {
           return state.when(
-            loading: () => const HomeScreenWidget([
-              LoadingScreen(),
-            ]),
-            failure: (error) => HomeScreenWidget([
-              FailureScreen(error),
-            ]),
+            loading: () => const HomeScreenWidget([LoadingScreen()]),
+            failure: (error) => HomeScreenWidget([FailureScreen(error)]),
             success: (data) {
               return HomeScreenWidget(
                 [

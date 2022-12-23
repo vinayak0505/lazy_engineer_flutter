@@ -172,13 +172,13 @@ FilesDetailResponse filesDetail = const FilesDetailResponse(
   ['handwritten', 'made under Ms. Jasleen Kaur', 'completed'],
   4.5,
 );
-
+String jobImage =
+    'https://img.fresherslive.com/assets-images/job-alert/origin/2022/05/25/google-inc-recruitment-2022-apply-online-program-manager-job-vacancy-1653464735.png';
 List<String> sliderImageList = [
-  AppImages.sliderImage,
-  AppImages.sliderImage,
-  AppImages.sliderImage,
-  AppImages.sliderImage,
-  AppImages.sliderImage,
+  jobImage,
+  jobImage,
+  jobImage,
+  jobImage,
 ];
 
 List<String> tagsList = [

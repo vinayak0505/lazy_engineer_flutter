@@ -7,7 +7,7 @@ import '../../../config/theme/app_theme.dart';
 import '../../components/custom_icon.dart';
 
 class BottomNavScreen extends StatefulWidget {
-  const BottomNavScreen({Key? key, required this.child}) : super(key: key);
+  const BottomNavScreen(this.child, {Key? key}) : super(key: key);
   final Widget child;
 
   @override
@@ -15,31 +15,37 @@ class BottomNavScreen extends StatefulWidget {
 }
 
 class _BottomNavScreenState extends State<BottomNavScreen> {
+  int _selectedIndex = 0;
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     const tabs = [
       ScaffoldWithNavBarTabItem(
         initialLocation: RouteGenerator.homeRoute,
-        icon: CustomIcon(
-          AppIcons.home,
-          color: Colors.grey,
-        ),
+        icon: CustomIcon(AppIcons.home, color: Colors.grey),
         label: string.home,
       ),
       ScaffoldWithNavBarTabItem(
         initialLocation: RouteGenerator.uploadRoute,
-        icon: CustomIcon(
-          AppIcons.uploadIcon,
-          color: Colors.grey,
-        ),
+        icon: CustomIcon(AppIcons.uploadIcon, color: Colors.grey),
         label: string.upload,
       ),
       ScaffoldWithNavBarTabItem(
         initialLocation: RouteGenerator.accountRoute,
-        icon: CustomIcon(
-          AppIcons.accounts,
-          color: Colors.grey,
-        ),
+        icon: CustomIcon(AppIcons.accounts, color: Colors.grey),
         label: string.account,
       ),
     ];
@@ -57,6 +63,13 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       if (tabIndex != currentIndex) {
         // go to the initial location of the selected tab (by index)
         context.go(tabs[tabIndex].initialLocation);
+        setState(() {
+          _pageController.animateToPage(
+            tabIndex,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeOut,
+          );
+        });
       }
     }
 

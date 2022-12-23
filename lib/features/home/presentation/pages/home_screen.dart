@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 12),
                 _searchBar(theme),
                 const SizedBox(height: 28),
-                SliderView(imageList: sliderImageList),
+                SliderView(sliderImageList),
                 const SizedBox(height: 24),
                 _titleLabel(lastOpened, theme),
                 const SizedBox(height: 24),

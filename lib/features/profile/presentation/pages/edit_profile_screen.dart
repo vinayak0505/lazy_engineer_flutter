@@ -35,28 +35,28 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
     List<String>? jobTypeValueList, experienceLevelValueList;
 
     void onPress() {
+      print('|||||||$experienceLevelValueList');
       if (formGlobalKey.currentState!.validate()) {
         BlocProvider(
-        create: (context) => EditProfileCubit(),
-        child: BlocListener(
-          bloc: EditProfileCubit(),
-          listener: (context, state) {
-            return context.read<EditProfileCubit>().editData(
-                  userName: fullNameController.text,
-                  branch: classController.text,
-                  semister: int.parse(semisterController.text),
-                  universityName: universityController.text,
-                  userDescription: descriptionController.text,
-                  email: emailController.text,
-                  mobileNumber: mobileController.text,
-                  yearOfAdmission: int.parse(yearOfAdmissionController.text),
-                  experienceLevel: experienceLevelValueList ?? [],
-                  jobType: jobTypeValueList ?? [],
-                  userAddress: locationController.text,
-                );
-          },
-        ),
-      );
+          create: (context) => EditProfileCubit(),
+          child: BlocListener<EditProfileCubit, EditProfileState>(
+            listener: (context, state) {
+              return context.read<EditProfileCubit>().editData(
+                    userName: fullNameController.text,
+                    branch: classController.text,
+                    semister: int.parse(semisterController.text),
+                    universityName: universityController.text,
+                    userDescription: descriptionController.text,
+                    email: emailController.text,
+                    mobileNumber: mobileController.text,
+                    yearOfAdmission: int.parse(yearOfAdmissionController.text),
+                    experienceLevel: experienceLevelValueList ?? [],
+                    jobType: jobTypeValueList ?? [],
+                    userAddress: locationController.text,
+                  );
+            },
+          ),
+        );
       }
     }
 
@@ -153,10 +153,10 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
               style: theme.textTheme.headline6,
             ),
             const SizedBox(height: 12.0),
-            MultiOptionFilter(
-              experienceLevelList,
-              (list) => experienceLevelValueList = list,
-            ),
+            MultiOptionFilter(experienceLevelList, (list) {
+              print('||||||||||$list');
+              experienceLevelValueList = list;
+            }),
             const SizedBox(height: 16.0),
             Text(
               jobType,

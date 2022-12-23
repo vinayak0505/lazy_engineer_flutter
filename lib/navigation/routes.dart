@@ -10,7 +10,6 @@ import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_scre
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_notes_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_screen.dart';
 import 'package:lazy_engineer/features/components/error_screen.dart';
-
 import '../features/books/presentation/pages/book_description_screen.dart';
 import '../features/books/presentation/pages/book_screen.dart';
 import '../features/bottom_navigation/ui/bottom_nav_screen.dart';
@@ -39,7 +38,8 @@ class RouteGenerator {
   static const String notesRoute = '/home/notes';
   static const String notesDescriptionRoute = '/home/notes/notes_description';
   static const String fileRoute = '/home/practical_file';
-  static const String fileDescriptionRoute = '/home/practical_file/practicle_file_description';
+  static const String fileDescriptionRoute =
+      '/home/practical_file/practicle_file_description';
   static const String questionPaperRoute = '/home/question_paper';
   static const String questionPaperDescriptionRoute =
       '/home/question_paper/question_paper_description';
@@ -87,15 +87,16 @@ class RouteGenerator {
       ),
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
-        // path: dashboardRoute,
         builder: (context, state, child) {
-          return BottomNavScreen(child: child);
+          return BottomNavScreen(child);
         },
         routes: [
           GoRoute(
             name: 'Home',
             path: homeRoute,
-            builder: (_, __) => const HomeScreen(),
+            pageBuilder: (_, __) => const NoTransitionPage(
+              child: HomeScreen(),
+            ),
             routes: [
               GoRoute(
                   path: 'books',
@@ -177,7 +178,9 @@ class RouteGenerator {
           GoRoute(
             name: 'Upload',
             path: uploadRoute,
-            builder: (_, __) => const UploadScreen(),
+            pageBuilder: (_, __) => const NoTransitionPage(
+              child: UploadScreen(),
+            ),
             routes: [
               GoRoute(
                 path: 'notes',
@@ -213,7 +216,9 @@ class RouteGenerator {
           GoRoute(
             name: 'Account',
             path: accountRoute,
-            builder: (_, __) => const AccountScreen(),
+            pageBuilder: (_, __) => const NoTransitionPage(
+              child: AccountScreen(),
+            ),
             routes: [
               GoRoute(
                 path: 'settings',
@@ -229,5 +234,18 @@ class RouteGenerator {
       ),
     ],
     errorBuilder: (_, __) => const ErrorScreen(),
+  );
+}
+
+CustomTransitionPage buildPageWithDefaultTransition<T>({
+  required BuildContext context,
+  required GoRouterState state,
+  required Widget child,
+}) {
+  return CustomTransitionPage<T>(
+    key: state.pageKey,
+    child: child,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+        FadeTransition(opacity: animation, child: child),
   );
 }
