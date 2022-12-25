@@ -68,18 +68,16 @@ class AppThemes {
                 color: textColorDark,
                 fontWeight: FontWeight.w500,
               ),
-               headline5: const TextStyle(
+              headline5: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
               subtitle2: const TextStyle(
-                color: subTitleColor,
-                fontWeight: FontWeight.bold
-              ),
+                  color: subTitleColor, fontWeight: FontWeight.bold),
               overline: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: subTitleColor,
               ),
-               bodyText2: const TextStyle(
+              bodyText2: const TextStyle(
                 color: lightDarkColor,
               ),
             ),

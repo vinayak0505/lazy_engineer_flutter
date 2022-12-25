@@ -23,18 +23,19 @@ class CustomTextField extends StatelessWidget {
     this.filled = true,
     this.maxLines = 1,
     this.width,
+    this.focusNode,
   }) : super(key: key);
 
   final TextEditingController controller;
   final bool autofocus, readOnly, obscureText, showBorder, filled, underline;
   final TextInputType? keyboardType;
   final void Function(String value)? onSubitted;
-  final String? hintText, labelText;
-  final String? prefixIcon, suffixIcon;
+  final String? hintText, labelText, prefixIcon, suffixIcon;
   final String? Function(String? value)? validator;
   final void Function(String? value)? onChange;
   final int maxLines;
   final double? width;
+  final FocusNode? focusNode;
 
   factory CustomTextField.secondary({
     required TextEditingController controller,
@@ -81,6 +82,7 @@ class CustomTextField extends StatelessWidget {
         width: width,
         child: TextFormField(
           controller: controller,
+          focusNode: focusNode,
           obscureText: obscureText,
           autofocus: autofocus,
           readOnly: readOnly,

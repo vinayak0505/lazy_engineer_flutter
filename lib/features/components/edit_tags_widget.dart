@@ -84,7 +84,7 @@ class EditTagsWidget extends FormField<List<String>> {
                                     padding: const EdgeInsets.symmetric(
                                       horizontal: 18,
                                     ),
-                                    decoration: kRoundedBottomContainer,
+                                    decoration: kRoundedTopContainer,
                                     child: ListView(
                                       children: [
                                         const SizedBox(height: 18),

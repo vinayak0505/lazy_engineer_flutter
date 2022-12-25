@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/features/components/custom_image.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
 import '../../../../navigation/routes.dart';
 import '../../../../model/user.dart';
-import '../../../components/custom_text_field.dart';
 import '../../../components/grid_card.dart';
+import '../../../components/search_bar.dart';
 import '../../../components/staggered_view.dart';
 import '../widgets/last_opened.dart';
 import '../widgets/slider_view.dart';
@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 _nametag(theme, user.userName),
                 const SizedBox(height: 12),
-                _searchBar(theme),
+                SearchBar(classList),
                 const SizedBox(height: 28),
                 SliderView(sliderImageList),
                 const SizedBox(height: 24),
@@ -63,17 +63,6 @@ class HomeScreen extends StatelessWidget {
         title,
         style: theme.textTheme.titleLarge,
       ),
-    );
-  }
-
-  Widget _searchBar(ThemeData theme) {
-    TextEditingController searchController = TextEditingController();
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: CustomTextField(
-          controller: searchController,
-          hintText: searchCourse,
-          suffixIcon: AppIcons.searchIcon),
     );
   }
 
@@ -121,8 +110,8 @@ class HomeScreen extends StatelessWidget {
             ),
             const Spacer(),
             GestureDetector(
-              child: SvgPicture.asset(
-                AppIcons.notificationCircleIcon,
+              child: const CustomImage(
+                image: AppIcons.notificationCircleIcon,
                 width: 48,
                 height: 48,
               ),

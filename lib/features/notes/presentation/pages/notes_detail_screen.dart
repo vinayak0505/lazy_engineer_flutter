@@ -9,6 +9,7 @@ import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/notes/presentation/cubit/notes_detail_cubit/notes_detail_cubit.dart';
 import '../../../../assets/icons.dart';
+import '../../../../core/helper_function.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/show_tags_widget.dart';
 import '../../data/repositories/notes_repository_impl.dart';
@@ -21,20 +22,7 @@ class NotesDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
 
-    String addOrdinals(int num) {
-      String ans = num.toString();
-      switch (num) {
-        case 1:
-          return '${ans}st';
-        case 2:
-          return '${ans}nd';
-        case 3:
-          return '${ans}rd';
-        default:
-          return '${ans}th';
-      }
-    }
-
+    
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(

@@ -20,7 +20,7 @@ BoxDecoration kRoundedBottomNavigator = BoxDecoration(
   ),
 );
 
-BoxDecoration kRoundedBottomContainer = BoxDecoration(
+BoxDecoration kRoundedTopContainer = BoxDecoration(
   color: Colors.white,
   border: Border.all(color: AppThemes.lightDarkColor),
   borderRadius: const BorderRadius.only(
@@ -29,4 +29,16 @@ BoxDecoration kRoundedBottomContainer = BoxDecoration(
   ),
 );
 
-TextStyle? errorStyle = ThemeData.light().textTheme.labelSmall?.copyWith(color: ThemeData.light().errorColor, fontSize: 12);
+BoxDecoration kRoundedBottomContainer = BoxDecoration(
+  color: Colors.white,
+  border: Border.all(color: AppThemes.lightDarkColor),
+  borderRadius: const BorderRadius.only(
+    bottomLeft: Radius.circular(8),
+    bottomRight: Radius.circular(8),
+  ),
+);
+
+TextStyle? errorStyle = ThemeData.light()
+    .textTheme
+    .labelSmall
+    ?.copyWith(color: ThemeData.light().errorColor, fontSize: 12);

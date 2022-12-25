@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/full_screen_photo.dart';
 import '../../../../assets/constants/decoration.dart';
@@ -30,7 +29,6 @@ class SliderView extends StatelessWidget {
                 ),
               );
             },
-            // child: Image.network(imageList[index]),
             child: CustomImage(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               networkImage: imageList[index],

@@ -50,6 +50,7 @@ const String physicalBook = 'Physical Book';
 const String save = 'Save';
 const String similarCompanies = 'Similar Companies';
 const String activelyRecruiting = 'Actively recruiting';
+const String noData = 'No Data';
 
 // uplaod
 const String uploadNotes = 'Upload Notes';

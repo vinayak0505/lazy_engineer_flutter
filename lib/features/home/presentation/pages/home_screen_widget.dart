@@ -71,9 +71,7 @@ class HomeScreenWidget extends StatelessWidget {
                       //* Filter Menu
                       SlideTransitionAnimation(
                         open: state.isOpen,
-                        horizontalAnimation: false,
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.ease,
+                        verticalAnimation: true,
                         child: Column(
                           children: [
                             if (textFeildFilter != null) ...[

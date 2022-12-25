@@ -4,9 +4,6 @@ import 'package:lazy_engineer/features/jobs/data/models/filter_request/filter_re
 import 'package:lazy_engineer/features/jobs/data/models/jobs_response/jobs_response.dart';
 import 'package:lazy_engineer/features/jobs/domain/jobs_repository.dart';
 
-
-import '../../../../../assets/constants/lists.dart';
-
 part 'jobs_state.dart';
 part 'jobs_cubit.freezed.dart';
 
