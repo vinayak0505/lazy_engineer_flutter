@@ -16,7 +16,7 @@ class UploadRemoteDataSource {
 
   factory UploadRemoteDataSource() {
     Dio dio = Dio();
-    dio.interceptors.add(PrettyDioLogger(responseBody: true));
+    dio.interceptors.add(PrettyDioLogger(requestBody: true, responseBody: true));
     dio.options.headers = {};
     UploadClient client = UploadClient(
       dio,

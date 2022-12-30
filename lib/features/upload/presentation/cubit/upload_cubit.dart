@@ -49,7 +49,7 @@ class UploadCubit extends Cubit<UploadState> {
 
   /// -------------------NOTES-----------------------
   void uploadNotes(UploadNotesRequest notesData) {
-    repository.uplaodNotes(notesData);
+    repository.uplaodNotes(notesData.copyWith(file: file));
     emit(UploadState.success(notesData));
   }
 
