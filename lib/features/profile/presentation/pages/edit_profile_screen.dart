@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_dropdown.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/features/components/multi_option_filter.dart';
 import 'package:lazy_engineer/features/profile/data/models/profile_modal/profile_modal.dart';
-
-import '../../../../assets/constants/lists.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../assets/icons.dart';
-import '../../../../helper/input_validation.dart';
-import '../../../components/custom_button.dart';
-import '../cubit/edit_profile/edit_profile_cubit.dart';
+import 'package:lazy_engineer/features/profile/presentation/cubit/edit_profile/edit_profile_cubit.dart';
+import 'package:lazy_engineer/helper/input_validation.dart';
 
 class EditProfileView extends StatelessWidget with InputValidationMixin {
-  const EditProfileView(this.data, {Key? key}) : super(key: key);
+  const EditProfileView(this.data, {super.key});
   final ProfileModal data;
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final theme = Theme.of(context);
     final formGlobalKey = GlobalKey<FormState>();
     final fullNameController = TextEditingController(text: data.userName);
     final descriptionController =
@@ -32,16 +31,19 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
     final locationController = TextEditingController(text: data.userAddress);
     final universityController =
         TextEditingController(text: data.universityName);
-    List<String>? jobTypeValueList, experienceLevelValueList;
+
+    final ValueNotifier<List<String>> jobTypeValueList =
+        ValueNotifier(List.empty(growable: true));
+    final ValueNotifier<List<String>> experienceLevelValueList =
+        ValueNotifier(List.empty(growable: true));
 
     void onPress() {
-      print('|||||||$experienceLevelValueList');
       if (formGlobalKey.currentState!.validate()) {
         BlocProvider(
           create: (context) => EditProfileCubit(),
           child: BlocListener<EditProfileCubit, EditProfileState>(
             listener: (context, state) {
-              return context.read<EditProfileCubit>().editData(
+              context.read<EditProfileCubit>().editData(
                     userName: fullNameController.text,
                     branch: classController.text,
                     semister: int.parse(semisterController.text),
@@ -50,8 +52,8 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
                     email: emailController.text,
                     mobileNumber: mobileController.text,
                     yearOfAdmission: int.parse(yearOfAdmissionController.text),
-                    experienceLevel: experienceLevelValueList ?? [],
-                    jobType: jobTypeValueList ?? [],
+                    experienceLevel: experienceLevelValueList.value,
+                    jobType: jobTypeValueList.value,
                     userAddress: locationController.text,
                   );
             },
@@ -60,7 +62,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
       }
     }
 
-    int semisterIndex = semesterKeyList.indexOf(data.semister.toString());
+    final semisterIndex = semesterKeyList.indexOf(data.semister.toString());
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Form(
@@ -153,10 +155,10 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
               style: theme.textTheme.headline6,
             ),
             const SizedBox(height: 12.0),
-            MultiOptionFilter(experienceLevelList, (list) {
-              print('||||||||||$list');
-              experienceLevelValueList = list;
-            }),
+            MultiOptionFilter(
+              list: experienceLevelList,
+              selected: experienceLevelValueList,
+            ),
             const SizedBox(height: 16.0),
             Text(
               jobType,
@@ -164,8 +166,8 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             ),
             const SizedBox(height: 12.0),
             MultiOptionFilter(
-              jobTypeList,
-              (list) => jobTypeValueList = list,
+              list: jobTypeList,
+              selected: jobTypeValueList,
             ),
             const SizedBox(height: 16.0),
             Text(

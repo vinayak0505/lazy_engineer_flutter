@@ -1,59 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../assets/constants/decoration.dart';
-import '../home/presentation/cubit/filter/filter_cubit.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 
-class MultiOptionFilter extends FormField<List<bool>> {
-  MultiOptionFilter(
-    List<String> list,
-    void Function(List<String>? list) valueList, {
-    Key? key,
-  }) : super(
-          key: key,
-          initialValue: List.generate(list.length, (index) => false),
-          builder: (state) {
-            ThemeData theme = Theme.of(state.context);
+class MultiOptionFilter extends StatelessWidget {
+  final List<String> list;
+  final ValueNotifier<List<String>> selected;
 
-            return BlocProvider(
-              create: (context) => FilterCubit(),
-              child: BlocBuilder<FilterCubit, FilterState>(
-                  builder: (context, blocstate) {
-                void updateList() {
-                  var cubit = context.read<FilterCubit>();
-                  cubit.modifyMultiOption(list.map((ele) {
-                    return state.value![list.indexOf(ele)] ? ele : '';
-                  }).toList());
-                  valueList.call(cubit.state.multiOption);
-                  print('|||${cubit.state.multiOption}');
-                }
+  const MultiOptionFilter({
+    required this.list,
+    required this.selected,
+    super.key,
+  }) : super();
 
-                return Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: kRoundedContainer,
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    children: list
-                        .map((ele) => CheckboxListTile(
-                              contentPadding: EdgeInsets.zero,
-                              dense: true,
-                              controlAffinity: ListTileControlAffinity.leading,
-                              value: state.value![list.indexOf(ele)],
-                              onChanged: (value) {
-                                state.value![list.indexOf(ele)] = value!;
-                                state.didChange(state.value);
-                                updateList();
-                              },
-                              title: Text(
-                                ele,
-                                style: theme.textTheme.titleMedium,
-                              ),
-                            ))
-                        .toList(),
-                  ),
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: kRoundedContainer,
+        child: ValueListenableBuilder(
+          builder: (context, _, __) {
+            return ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) {
+                return OptionFilter(
+                  title: list[index],
+                  isSelected: selected.value.contains(list[index]),
+                  onTap: (changed) {
+                    // final value = selected.value;
+                    // value[index] = changed;
+                    // selected.value = value;
+                    if (changed) {
+                      selected.value.add(list[index]);
+                    } else {
+                      selected.value.remove(list[index]);
+                    }
+                  },
                 );
-              }),
+              },
             );
           },
-        );
+          valueListenable: selected,
+        ),
+      ),
+    );
+  }
+}
+
+class OptionFilter extends StatelessWidget {
+  final String title;
+  final bool isSelected;
+  final void Function(bool) onTap;
+
+  const OptionFilter({
+    super.key,
+    required this.title,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final style = Theme.of(context).textTheme.titleMedium;
+    return CheckboxListTile(
+      dense: true,
+      value: false,
+      title: Text(title, style: style),
+      contentPadding: EdgeInsets.zero,
+      controlAffinity: ListTileControlAffinity.leading,
+      onChanged: (value) => (value != null) ? onTap(value) : null,
+    );
+  }
 }
