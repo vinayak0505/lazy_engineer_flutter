@@ -41,14 +41,7 @@ class UploadRemoteDataSource {
   }
 
   Future<String> uploadNotes(UploadNotesRequest data) async {
-    BaseResponse response = await _client.uploadNotes(
-      FormData.fromMap({
-        'about': data.about,
-        'file': data.file,
-        'semister': data.semester.toString(),
-        'title': data.title,
-      }),
-    );
+    BaseResponse response = await _client.uploadNotes(data.toFormData());
     return response.status;
   }
 
