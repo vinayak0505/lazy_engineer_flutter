@@ -16,76 +16,71 @@ class _NotesClient implements NotesClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<List<NotesResponse>>> getNotes() async {
+  Future<BaseResponse<NotesResponse>> getNotes(
+      [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<NotesResponse>>>(
+        _setStreamType<BaseResponse<NotesResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/home/notes',
+                .compose(_dio.options, '/note',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<NotesResponse>>.fromJson(
+    final value = BaseResponse<NotesResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<NotesResponse>(
-              (i) => NotesResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => NotesResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<List<NotesResponse>>> searchNotes(query) async {
+  Future<BaseResponse<NotesResponse>> searchNotes(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<NotesResponse>>>(
+        _setStreamType<BaseResponse<NotesResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/notes/search',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<NotesResponse>>.fromJson(
+    final value = BaseResponse<NotesResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<NotesResponse>(
-              (i) => NotesResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => NotesResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<List<NotesResponse>>> applyFilter(query) async {
+  Future<BaseResponse<NotesResponse>> applyFilter(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query.toJson()};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<NotesResponse>>>(
+        _setStreamType<BaseResponse<NotesResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/notes/search',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<NotesResponse>>.fromJson(
+    final value = BaseResponse<NotesResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<NotesResponse>(
-              (i) => NotesResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => NotesResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<NotesDetailResponse>> getNotesDetail(id) async {
+  Future<BaseResponse<NotesDetailResponse>> getNotesDetail(id,
+      [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = id;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<NotesDetailResponse>>(

@@ -14,7 +14,7 @@ class NotesCubit extends Cubit<NotesState> {
   }
   void getNotes() async {
     try {
-      List<NotesResponse>? data = await _repository.getNotesData();
+      NotesResponse? data = await _repository.getNotesData();
       if (data != null) {
         emit(NotesState.success(data));
       } else {
@@ -28,7 +28,7 @@ class NotesCubit extends Cubit<NotesState> {
   void applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const NotesState.loading());
-      List<NotesResponse>? data = await _repository.applyFilter(filterRequest);
+      NotesResponse? data = await _repository.applyFilter(filterRequest);
       if (data != null) {
         emit(NotesState.success(data));
       } else {

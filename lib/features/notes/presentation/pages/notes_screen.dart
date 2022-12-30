@@ -35,11 +35,11 @@ class NotesScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   StaggeredView(
-                    data.map((element) {
+                    data.result.map((element) {
                       return GridCard(
-                          body: element.about,
-                          image: element.link,
-                          title: element.title);
+                          body: element.about ?? '',
+                          image: '',
+                          title: element.title ?? '');
                     }).toList(),
                     onTap: (context, index) {
                       context.push(

@@ -13,7 +13,7 @@ class UploadNotesRequest with _$UploadNotesRequest {
         String? unit,
         String? chapter,
         String? topic,
-        required dynamic link,
+        required dynamic file,
         required List<String> tags,
     }) = _UploadNotesRequest;
 

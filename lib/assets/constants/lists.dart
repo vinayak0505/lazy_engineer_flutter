@@ -2,7 +2,6 @@ import 'package:lazy_engineer/features/books/data/models/books_response/books_re
 import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
-import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_response.dart';
 import '../../features/home/data/models/categories_model/categories_model.dart';
 import '../../features/home/data/models/last_seen_response/last_seen_response.dart';
 import '../../features/jobs/data/models/jobs_response/jobs_response.dart';
@@ -40,34 +39,6 @@ List<LastSeenResponse> lastSeenList = [
   LastSeenResponse.dummy(),
   LastSeenResponse.dummy(),
   LastSeenResponse.dummy(),
-];
-
-List<NotesResponse> notesList = [
-  const NotesResponse(
-    'Document 1',
-    AppImages.book,
-    'You can find handwriten notes from all students',
-  ),
-  const NotesResponse(
-    'Document 1',
-    AppImages.book,
-    'You can find handwriten notes from all students',
-  ),
-  const NotesResponse(
-    'Document 1',
-    AppImages.book,
-    'You can find handwriten notes from all students',
-  ),
-  const NotesResponse(
-    'Document 1',
-    AppImages.book,
-    'You can find handwriten notes from all students',
-  ),
-  const NotesResponse(
-    'Document 1',
-    AppImages.book,
-    'You can find handwriten notes from all students',
-  ),
 ];
 
 NotesDetailResponse notesDetail = const NotesDetailResponse(

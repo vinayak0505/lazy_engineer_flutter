@@ -19,10 +19,12 @@ class UploadCubit extends Cubit<UploadState> {
     emit(const UploadState.documentLoading());
     try {
       final result = await FilePicker.platform.pickFiles(
-        allowedExtensions: ['jpg', 'pdf'],
+        allowedExtensions: ['png', 'jpg', 'pdf'],
         type: FileType.custom,
       );
+      print('1|||||||$result');
       if (result != null) pickedFile = result.files.first;
+      print('2|||||||$pickedFile');
       if (pickedFile != null) {
         emit(UploadState.documentSuccess(pickedFile!));
       } else {
@@ -37,10 +39,16 @@ class UploadCubit extends Cubit<UploadState> {
     if (pickedFile != null) OpenAppFile.open(pickedFile!.path!);
   }
 
-  dynamic get uploadLink => MultipartFile.fromBytes(
-    pickedFile!.bytes as List<int>,
-    filename: pickedFile!.name,
-  );
+  dynamic get uploadLink {
+    if (pickedFile != null) {
+      print('||||||$pickedFile');
+      return MultipartFile.fromFile(pickedFile!.path!);
+      // return MultipartFile.fromBytes(
+      //   pickedFile!.bytes as List<int>,
+      //   filename: pickedFile!.name,
+      // );
+    }
+  }
 
   void uploadNotes({
     required String title,
@@ -60,7 +68,7 @@ class UploadCubit extends Cubit<UploadState> {
       unit: unit,
       chapter: chapter,
       topic: topic,
-      link: uploadLink,
+      file: uploadLink,
       tags: tags,
     );
     repository.uplaodNotes(notesData);

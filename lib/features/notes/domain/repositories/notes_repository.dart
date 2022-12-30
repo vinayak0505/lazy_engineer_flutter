@@ -4,8 +4,8 @@ import '../../data/models/filter_request/filter_request.dart';
 import '../../data/models/notes_response/notes_response.dart';
 
 abstract class NotesRepository {
-  Future<List<NotesResponse>?> getNotesData();
-  Future<List<NotesResponse>?> searchNotes(String query);
-  Future<List<NotesResponse>?> applyFilter(FilterRequest filterRequest);
+  Future<NotesResponse?> getNotesData();
+  Future<NotesResponse?> searchNotes(String query);
+  Future<NotesResponse?> applyFilter(FilterRequest filterRequest);
   Future<NotesDetailResponse?> getNotesDetailData(String id);
 }

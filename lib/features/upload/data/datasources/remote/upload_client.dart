@@ -8,6 +8,7 @@ import 'package:retrofit/http.dart';
 
 import '../../../../../config/app_config.dart';
 import '../../../../../core/models/base_response/base_response.dart';
+import '../../../../../navigation/dio/token_interceptor.dart';
 
 part 'upload_client.g.dart';
 
@@ -25,7 +26,8 @@ abstract class UploadClient {
   Future<BaseResponse> uploadJobs(@Body() UploadJobsRequest body);
 
   @POST(AppConfig.uploadNotes)
-  Future<BaseResponse> uploadNotes(@Body() UploadNotesRequest body);
+  Future<BaseResponse> uploadNotes(@Body() UploadNotesRequest body, [@Header(HeaderKeys.tokenHeaderKey)
+          String token = HeaderValues.tempToken]);
 
   @POST(AppConfig.uploadQuestionPaper)
   Future<BaseResponse> uploadQuestionPaper(@Body() UploadPaperRequest body);

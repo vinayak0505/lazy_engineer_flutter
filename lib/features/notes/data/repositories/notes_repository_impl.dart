@@ -13,22 +13,21 @@ class NotesRepositoryImpl extends NotesRepository {
   final NotesLocalDatasource _localDataSource = NotesLocalDatasource();
 
   @override
-  Future<List<NotesResponse>?> getNotesData() async {
-    return notesList;
-    // try {
-    //   BaseResponse<List<NotesResponse>> listNotes =
-    //       await _remoteDataSource.getNotes();
-    //   return listNotes.data;
-    // } catch (e) {
-    //   print(e.toString());
-    //   return null;
-    // }
+  Future<NotesResponse?> getNotesData() async {
+    try {
+      BaseResponse<NotesResponse> listNotes =
+          await _remoteDataSource.getNotes();
+      return listNotes.data;
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
   }
 
   @override
-  Future<List<NotesResponse>?> searchNotes(String query) async {
+  Future<NotesResponse?> searchNotes(String query) async {
     try {
-      BaseResponse<List<NotesResponse>> listNotes =
+      BaseResponse<NotesResponse> listNotes =
           await _remoteDataSource.searchNotes(query);
       return listNotes.data;
     } catch (e) {
@@ -52,17 +51,16 @@ class NotesRepositoryImpl extends NotesRepository {
   }
 
   @override
-  Future<List<NotesResponse>?> applyFilter(FilterRequest filterRequest) async {
+  Future<NotesResponse?> applyFilter(FilterRequest filterRequest) async {
     try {
-      return notesList;
-      // filterRequest = FilterRequest(
-      //   multiOption: removeNullList(filterRequest.multiOption),
-      //   textFeild: removeNullList(filterRequest.multiOption),
-      //   singleOption: removeNull(filterRequest.singleOption),
-      // );
-      // BaseResponse<List<NotesResponse>> listNotes =
-      //     await _remoteDataSource.applyFilter(filterRequest);
-      // return listNotes.data;
+      filterRequest = FilterRequest(
+        multiOption: removeNullList(filterRequest.multiOption),
+        // textFeild: removeNullList(filterRequest.multiOption),
+        singleOption: removeNull(filterRequest.singleOption),
+      );
+      BaseResponse<NotesResponse> listNotes =
+          await _remoteDataSource.applyFilter(filterRequest);
+      return listNotes.data;
     } catch (e) {
       print(e.toString());
       return null;

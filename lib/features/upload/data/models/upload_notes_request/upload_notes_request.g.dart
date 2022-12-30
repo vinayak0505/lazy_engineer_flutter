@@ -16,7 +16,7 @@ _$_UploadNotesRequest _$$_UploadNotesRequestFromJson(
       unit: json['unit'] as String?,
       chapter: json['chapter'] as String?,
       topic: json['topic'] as String?,
-      link: json['link'],
+      file: json['file'],
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
@@ -30,6 +30,6 @@ Map<String, dynamic> _$$_UploadNotesRequestToJson(
       'unit': instance.unit,
       'chapter': instance.chapter,
       'topic': instance.topic,
-      'link': instance.link,
+      'file': instance.file,
       'tags': instance.tags,
     };

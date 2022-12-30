@@ -135,7 +135,7 @@ mixin _$SearchNotesState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<NotesResponse> data) success,
+    required TResult Function(NotesResponse data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -143,7 +143,7 @@ mixin _$SearchNotesState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -151,7 +151,7 @@ mixin _$SearchNotesState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -243,7 +243,7 @@ class _$_SearchNotesInitial implements _SearchNotesInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<NotesResponse> data) success,
+    required TResult Function(NotesResponse data) success,
   }) {
     return initial();
   }
@@ -254,7 +254,7 @@ class _$_SearchNotesInitial implements _SearchNotesInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
   }) {
     return initial?.call();
   }
@@ -265,7 +265,7 @@ class _$_SearchNotesInitial implements _SearchNotesInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -360,7 +360,7 @@ class _$_SearchNotesLoading implements _SearchNotesLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<NotesResponse> data) success,
+    required TResult Function(NotesResponse data) success,
   }) {
     return loading();
   }
@@ -371,7 +371,7 @@ class _$_SearchNotesLoading implements _SearchNotesLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
   }) {
     return loading?.call();
   }
@@ -382,7 +382,7 @@ class _$_SearchNotesLoading implements _SearchNotesLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -502,7 +502,7 @@ class _$_SearchNotesFailure implements _SearchNotesFailure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<NotesResponse> data) success,
+    required TResult Function(NotesResponse data) success,
   }) {
     return failure(e);
   }
@@ -513,7 +513,7 @@ class _$_SearchNotesFailure implements _SearchNotesFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
   }) {
     return failure?.call(e);
   }
@@ -524,7 +524,7 @@ class _$_SearchNotesFailure implements _SearchNotesFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -585,7 +585,9 @@ abstract class _$$_SearchNotesSuccessCopyWith<$Res> {
   factory _$$_SearchNotesSuccessCopyWith(_$_SearchNotesSuccess value,
           $Res Function(_$_SearchNotesSuccess) then) =
       __$$_SearchNotesSuccessCopyWithImpl<$Res>;
-  $Res call({List<NotesResponse> data});
+  $Res call({NotesResponse data});
+
+  $NotesResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -605,24 +607,27 @@ class __$$_SearchNotesSuccessCopyWithImpl<$Res>
   }) {
     return _then(_$_SearchNotesSuccess(
       data == freezed
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<NotesResponse>,
+              as NotesResponse,
     ));
+  }
+
+  @override
+  $NotesResponseCopyWith<$Res> get data {
+    return $NotesResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_SearchNotesSuccess implements _SearchNotesSuccess {
-  const _$_SearchNotesSuccess(final List<NotesResponse> data) : _data = data;
+  const _$_SearchNotesSuccess(this.data);
 
-  final List<NotesResponse> _data;
   @override
-  List<NotesResponse> get data {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+  final NotesResponse data;
 
   @override
   String toString() {
@@ -634,12 +639,12 @@ class _$_SearchNotesSuccess implements _SearchNotesSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SearchNotesSuccess &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -653,7 +658,7 @@ class _$_SearchNotesSuccess implements _SearchNotesSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<NotesResponse> data) success,
+    required TResult Function(NotesResponse data) success,
   }) {
     return success(data);
   }
@@ -664,7 +669,7 @@ class _$_SearchNotesSuccess implements _SearchNotesSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
   }) {
     return success?.call(data);
   }
@@ -675,7 +680,7 @@ class _$_SearchNotesSuccess implements _SearchNotesSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<NotesResponse> data)? success,
+    TResult Function(NotesResponse data)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -723,10 +728,10 @@ class _$_SearchNotesSuccess implements _SearchNotesSuccess {
 }
 
 abstract class _SearchNotesSuccess implements SearchNotesState {
-  const factory _SearchNotesSuccess(final List<NotesResponse> data) =
+  const factory _SearchNotesSuccess(final NotesResponse data) =
       _$_SearchNotesSuccess;
 
-  List<NotesResponse> get data;
+  NotesResponse get data;
   @JsonKey(ignore: true)
   _$$_SearchNotesSuccessCopyWith<_$_SearchNotesSuccess> get copyWith =>
       throw _privateConstructorUsedError;
