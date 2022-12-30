@@ -48,27 +48,7 @@ class UploadCubit extends Cubit<UploadState> {
   }
 
   /// -------------------NOTES-----------------------
-  void uploadNotes({
-    required String title,
-    String? about,
-    int? semester,
-    String? subject,
-    String? unit,
-    String? chapter,
-    String? topic,
-    required List<String> tags,
-  }) {
-    UploadNotesRequest notesData = UploadNotesRequest(
-      title: title,
-      about: about ?? '',
-      semester: semester ?? 0,
-      subject: subject,
-      unit: unit,
-      chapter: chapter,
-      topic: topic,
-      file: file!,
-      tags: tags,
-    );
+  void uploadNotes(UploadNotesRequest notesData) {
     repository.uplaodNotes(notesData);
     emit(UploadState.success(notesData));
   }

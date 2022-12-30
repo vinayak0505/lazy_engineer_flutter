@@ -8,14 +8,14 @@ part 'upload_notes_request.g.dart';
 class UploadNotesRequest with _$UploadNotesRequest {
   const factory UploadNotesRequest({
     required String title,
-    String? about,
-    int? semester,
+    required String? about,
+    required String semester,
+    dynamic file,
+    List<String>? tags,
     String? subject,
     String? unit,
     String? chapter,
     String? topic,
-    required dynamic file,
-    required List<String> tags,
   }) = _UploadNotesRequest;
 
   factory UploadNotesRequest.fromJson(Map<String, dynamic> json) =>

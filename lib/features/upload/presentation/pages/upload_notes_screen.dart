@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_models.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/upload_screen_widget.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
@@ -134,18 +135,16 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         ),
       ],
       onPressed: (cubit) {
-        cubit.uploadNotes(
+        cubit.uploadNotes(UploadNotesRequest(
           title: titleController.text,
           about: aboutController.text,
-          semester: int.parse(
-            semesterController.text,
-          ),
+          semester: semesterController.text,
           subject: subjectController.text,
           unit: unitController.text,
           chapter: chapterController.text,
           topic: topicController.text,
           tags: tagsController,
-        );
+        ),);
       },
     );
   }
