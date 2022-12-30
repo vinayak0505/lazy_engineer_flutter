@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'upload_notes_request.freezed.dart';

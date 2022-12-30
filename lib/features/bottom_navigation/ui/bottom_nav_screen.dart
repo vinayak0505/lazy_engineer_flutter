@@ -63,13 +63,13 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       if (tabIndex != currentIndex) {
         // go to the initial location of the selected tab (by index)
         context.go(tabs[tabIndex].initialLocation);
-        setState(() {
+        if(mounted) {
           _pageController.animateToPage(
             tabIndex,
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeOut,
           );
-        });
+        }
       }
     }
 

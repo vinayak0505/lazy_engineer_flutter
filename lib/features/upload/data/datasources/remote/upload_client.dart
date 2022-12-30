@@ -25,8 +25,9 @@ abstract class UploadClient {
   @POST(AppConfig.uploadJobs)
   Future<BaseResponse> uploadJobs(@Body() UploadJobsRequest body);
 
+  @MultiPart()
   @POST(AppConfig.uploadNotes)
-  Future<BaseResponse> uploadNotes(@Body() UploadNotesRequest body, [@Header(HeaderKeys.tokenHeaderKey)
+  Future<BaseResponse> uploadNotes(@Body() FormData body, [@Header(HeaderKeys.tokenHeaderKey)
           String token = HeaderValues.tempToken]);
 
   @POST(AppConfig.uploadQuestionPaper)

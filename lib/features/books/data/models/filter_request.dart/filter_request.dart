@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part '../filter_request.dart/filter_request.freezed.dart';
-part '../filter_request.dart/filter_request.g.dart';
+part 'filter_request.freezed.dart';
+part 'filter_request.g.dart';
 
 @freezed
 class FilterRequest with _$FilterRequest {

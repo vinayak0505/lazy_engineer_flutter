@@ -14,6 +14,7 @@ class UploadCubit extends Cubit<UploadState> {
   UploadCubit(this.repository) : super(const UploadState.initial());
 
   PlatformFile? pickedFile;
+  MultipartFile? file;
 
   void uploadDocument() async {
     emit(const UploadState.documentLoading());
@@ -22,10 +23,9 @@ class UploadCubit extends Cubit<UploadState> {
         allowedExtensions: ['png', 'jpg', 'pdf'],
         type: FileType.custom,
       );
-      print('1|||||||$result');
-      if (result != null) pickedFile = result.files.first;
-      print('2|||||||$pickedFile');
-      if (pickedFile != null) {
+      if (result != null) {
+        pickedFile = result.files.first;
+        file = await getMultiPath(pickedFile);
         emit(UploadState.documentSuccess(pickedFile!));
       } else {
         emit(const UploadState.initial());
@@ -39,17 +39,15 @@ class UploadCubit extends Cubit<UploadState> {
     if (pickedFile != null) OpenAppFile.open(pickedFile!.path!);
   }
 
-  dynamic get uploadLink {
-    if (pickedFile != null) {
-      print('||||||$pickedFile');
+  Future<MultipartFile?> getMultiPath(PlatformFile? file) async {
+    try {
       return MultipartFile.fromFile(pickedFile!.path!);
-      // return MultipartFile.fromBytes(
-      //   pickedFile!.bytes as List<int>,
-      //   filename: pickedFile!.name,
-      // );
+    } catch (e) {
+      return null;
     }
   }
 
+  /// -------------------NOTES-----------------------
   void uploadNotes({
     required String title,
     String? about,
@@ -62,13 +60,13 @@ class UploadCubit extends Cubit<UploadState> {
   }) {
     UploadNotesRequest notesData = UploadNotesRequest(
       title: title,
-      about: about,
-      semester: semester,
+      about: about ?? '',
+      semester: semester ?? 0,
       subject: subject,
       unit: unit,
       chapter: chapter,
       topic: topic,
-      file: uploadLink,
+      file: file!,
       tags: tags,
     );
     repository.uplaodNotes(notesData);
@@ -88,7 +86,7 @@ class UploadCubit extends Cubit<UploadState> {
       title: title,
       subject: subject,
       year: year,
-      link: uploadLink,
+      link: getMultiPath(pickedFile),
       type: type,
       solved: solved,
       tags: tags,
@@ -110,7 +108,7 @@ class UploadCubit extends Cubit<UploadState> {
   }) {
     UploadBookRequest bookData = UploadBookRequest(
       title: title,
-      link: uploadLink,
+      link: getMultiPath(pickedFile),
       writer: writer,
       subject: subject,
       about: about,
@@ -136,7 +134,7 @@ class UploadCubit extends Cubit<UploadState> {
       subject: subject,
       college: college,
       semester: semester,
-      link: uploadLink,
+      link: getMultiPath(pickedFile),
       tags: tags,
     );
     repository.uplaodFiles(fileData);
