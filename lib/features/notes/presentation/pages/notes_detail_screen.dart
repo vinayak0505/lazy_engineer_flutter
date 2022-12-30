@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/core/logic/download/download_cubit.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
+import 'package:lazy_engineer/features/components/show_tags_widget.dart';
+import 'package:lazy_engineer/features/notes/data/repositories/notes_repository_impl.dart';
 import 'package:lazy_engineer/features/notes/presentation/cubit/notes_detail_cubit/notes_detail_cubit.dart';
-import '../../../../assets/icons.dart';
-import '../../../../core/helper_function.dart';
-import '../../../components/custom_icon.dart';
-import '../../../components/show_tags_widget.dart';
-import '../../data/repositories/notes_repository_impl.dart';
 
 class NotesDetailScreen extends StatelessWidget {
-  const NotesDetailScreen(this.id, {Key? key}) : super(key: key);
+  const NotesDetailScreen(this.id, {super.key});
   final String? id;
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
 
     
     return Scaffold(
@@ -84,7 +85,7 @@ class NotesDetailScreen extends StatelessWidget {
                                   'Unit - ${data.unit}',
                                   style: theme.textTheme.bodyText2,
                                 )
-                              ]),
+                              ],),
                             if (data.semister != null)
                               TableRow(children: [
                                 Text(
@@ -95,7 +96,7 @@ class NotesDetailScreen extends StatelessWidget {
                                   '${addOrdinals(data.semister!)} Semester',
                                   style: theme.textTheme.bodyText2,
                                 )
-                              ]),
+                              ],),
                             if (data.chapter != null)
                               TableRow(children: [
                                 Text(
@@ -106,7 +107,7 @@ class NotesDetailScreen extends StatelessWidget {
                                   data.chapter!,
                                   style: theme.textTheme.bodyText2,
                                 )
-                              ]),
+                              ],),
                             if (data.topic != null)
                               TableRow(children: [
                                 Text(
@@ -117,7 +118,7 @@ class NotesDetailScreen extends StatelessWidget {
                                   data.topic!,
                                   style: theme.textTheme.bodyText2,
                                 )
-                              ]),
+                              ],),
                           ],
                         ),
                         const SizedBox(height: 16),
@@ -128,7 +129,7 @@ class NotesDetailScreen extends StatelessWidget {
                     );
                   },
                 );
-              }),
+              },),
             ),
           ),
         ),
@@ -151,7 +152,7 @@ class NotesDetailHeader extends StatelessWidget {
   final bool? rating;
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.all(8),
       child: Row(
@@ -202,7 +203,7 @@ class NotesDetailHeader extends StatelessWidget {
                             pdf,
                             style: theme.textTheme.bodyText1,
                           )
-                        ]),
+                        ],),
                         Column(children: [
                           const CustomIcon(
                             AppIcons.pageIcon,
@@ -211,11 +212,10 @@ class NotesDetailHeader extends StatelessWidget {
                             pages,
                             style: theme.textTheme.bodyText1,
                           )
-                        ])
-                      ]),
+                        ],)
+                      ],),
                   const SizedBox(height: 16),
                   Align(
-                    alignment: Alignment.center,
                     child: CustomButton(
                       text: download,
                       onPressed: () {
@@ -224,7 +224,7 @@ class NotesDetailHeader extends StatelessWidget {
                       width: 120,
                     ),
                   ),
-                ]),
+                ],),
           )
         ],
       ),

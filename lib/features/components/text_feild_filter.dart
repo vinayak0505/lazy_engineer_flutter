@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
-import '../../assets/constants/decoration.dart';
-import '../home/presentation/cubit/filter/filter_cubit.dart';
+import 'package:lazy_engineer/features/home/presentation/cubit/filter/filter_cubit.dart';
 
 class TextFeildFilter extends StatefulWidget {
   const TextFeildFilter(this.list, {super.key});
@@ -40,7 +40,7 @@ class _TextFeildFilterState extends State<TextFeildFilter> {
             .map((str) => CustomTextField.secondary(
                   hintText: str,
                   controller: controllerList[widget.list.indexOf(str)],
-                ))
+                ),)
             .toList(),
       ),
     );

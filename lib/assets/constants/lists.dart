@@ -1,14 +1,14 @@
+import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
-import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
-import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
-import '../../features/home/data/models/categories_model/categories_model.dart';
-import '../../features/home/data/models/last_seen_response/last_seen_response.dart';
-import '../../features/jobs/data/models/jobs_response/jobs_response.dart';
+import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
+import 'package:lazy_engineer/features/home/data/models/categories_model/categories_model.dart';
+import 'package:lazy_engineer/features/home/data/models/last_seen_response/last_seen_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
-import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
+import 'package:lazy_engineer/features/jobs/data/models/jobs_response/jobs_response.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
-import '../images.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 
 List<CategoriesModel> categoriesList = [
   const CategoriesModel(
