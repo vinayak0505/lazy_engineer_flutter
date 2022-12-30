@@ -10,7 +10,7 @@ class FilesResponse with _$FilesResponse {
     String? subject,
     String? college,
     String? semester,
-    dynamic link,
+    String? link,
   ) = _FilesResponse;
 
   factory FilesResponse.fromJson(Map<String, dynamic> json) =>

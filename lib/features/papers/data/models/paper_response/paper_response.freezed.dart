@@ -27,7 +27,7 @@ mixin _$PaperResponse {
   String get college => throw _privateConstructorUsedError;
   int? get semester => throw _privateConstructorUsedError;
   int? get year => throw _privateConstructorUsedError;
-  dynamic get link => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +48,7 @@ abstract class $PaperResponseCopyWith<$Res> {
       String college,
       int? semester,
       int? year,
-      dynamic link});
+      String? link});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class _$PaperResponseCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
     ));
   }
 }
@@ -123,7 +123,7 @@ abstract class _$$_PaperResponseCopyWith<$Res>
       String college,
       int? semester,
       int? year,
-      dynamic link});
+      String? link});
 }
 
 /// @nodoc
@@ -180,7 +180,7 @@ class __$$_PaperResponseCopyWithImpl<$Res>
       link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
     ));
   }
 }
@@ -209,7 +209,7 @@ class _$_PaperResponse implements _PaperResponse {
   @override
   final int? year;
   @override
-  final dynamic link;
+  final String? link;
 
   @override
   String toString() {
@@ -267,7 +267,7 @@ abstract class _PaperResponse implements PaperResponse {
       final String college,
       final int? semester,
       final int? year,
-      final dynamic link) = _$_PaperResponse;
+      final String? link) = _$_PaperResponse;
 
   factory _PaperResponse.fromJson(Map<String, dynamic> json) =
       _$_PaperResponse.fromJson;
@@ -287,7 +287,7 @@ abstract class _PaperResponse implements PaperResponse {
   @override
   int? get year;
   @override
-  dynamic get link;
+  String? get link;
   @override
   @JsonKey(ignore: true)
   _$$_PaperResponseCopyWith<_$_PaperResponse> get copyWith =>

@@ -7,7 +7,7 @@ part 'notes_detail_response.g.dart';
 class NotesDetailResponse with _$NotesDetailResponse {
   const factory NotesDetailResponse(
     String title,
-    dynamic link,
+    String? link,
     String? about,
     int? semister,
     String? subject,

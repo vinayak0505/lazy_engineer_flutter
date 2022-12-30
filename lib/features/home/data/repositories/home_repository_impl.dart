@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/features/home/data/models/last_seen_response/last_seen_response.dart';
 import 'package:lazy_engineer/model/user.dart';
@@ -29,12 +30,11 @@ class HomeRepositoryImpl extends HomeRepository {
   @override
   Future getNotice() {
     try {
-      dynamic noticeData = User.dummy();
-      return noticeData;
+      final noticeData = User.dummy();
+      return Future.value(noticeData);
     } catch (e) {
-      print(e.toString());
-      dynamic data;
-      return data;
+      debugPrint(e.toString());
+      return Future.error('error');
     }
   }
 }

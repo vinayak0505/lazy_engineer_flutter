@@ -32,7 +32,7 @@ class SlideTransitionAnimation extends StatefulWidget {
 class _SlideTransitionAnimationState extends State<SlideTransitionAnimation>
     with TickerProviderStateMixin {
   late AnimationController _animationController;
-  late Animation _animation;
+  late Animation<double> _animation;
 
   @override
   void dispose() {

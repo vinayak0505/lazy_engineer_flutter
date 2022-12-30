@@ -13,7 +13,7 @@ class PaperResponse with _$PaperResponse {
     String college,
     int? semester,
     int? year,
-    dynamic link,
+    String? link,
   ) = _PaperResponse;
 
   factory PaperResponse.fromJson(Map<String, dynamic> json) =>

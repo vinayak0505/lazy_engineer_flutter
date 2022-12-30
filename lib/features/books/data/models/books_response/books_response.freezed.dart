@@ -24,7 +24,7 @@ mixin _$BooksResponse {
   List<String> get writers => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   int? get pages => throw _privateConstructorUsedError;
-  dynamic get link => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $BooksResponseCopyWith<$Res> {
       List<String> writers,
       String? description,
       int? pages,
-      dynamic link});
+      String? link});
 }
 
 /// @nodoc
@@ -82,7 +82,7 @@ class _$BooksResponseCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
     ));
   }
 }
@@ -99,7 +99,7 @@ abstract class _$$_BooksResponseCopyWith<$Res>
       List<String> writers,
       String? description,
       int? pages,
-      dynamic link});
+      String? link});
 }
 
 /// @nodoc
@@ -141,7 +141,7 @@ class __$$_BooksResponseCopyWithImpl<$Res>
       link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
     ));
   }
 }
@@ -170,7 +170,7 @@ class _$_BooksResponse implements _BooksResponse {
   @override
   final int? pages;
   @override
-  final dynamic link;
+  final String? link;
 
   @override
   String toString() {
@@ -219,7 +219,7 @@ abstract class _BooksResponse implements BooksResponse {
       final List<String> writers,
       final String? description,
       final int? pages,
-      final dynamic link) = _$_BooksResponse;
+      final String? link) = _$_BooksResponse;
 
   factory _BooksResponse.fromJson(Map<String, dynamic> json) =
       _$_BooksResponse.fromJson;
@@ -233,7 +233,7 @@ abstract class _BooksResponse implements BooksResponse {
   @override
   int? get pages;
   @override
-  dynamic get link;
+  String? get link;
   @override
   @JsonKey(ignore: true)
   _$$_BooksResponseCopyWith<_$_BooksResponse> get copyWith =>

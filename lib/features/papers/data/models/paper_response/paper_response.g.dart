@@ -15,7 +15,7 @@ _$_PaperResponse _$$_PaperResponseFromJson(Map<String, dynamic> json) =>
       json['college'] as String,
       json['semester'] as int?,
       json['year'] as int?,
-      json['link'],
+      json['link'] as String?,
     );
 
 Map<String, dynamic> _$$_PaperResponseToJson(_$_PaperResponse instance) =>

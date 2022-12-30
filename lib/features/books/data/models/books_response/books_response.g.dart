@@ -12,7 +12,7 @@ _$_BooksResponse _$$_BooksResponseFromJson(Map<String, dynamic> json) =>
       (json['writers'] as List<dynamic>).map((e) => e as String).toList(),
       json['description'] as String?,
       json['pages'] as int?,
-      json['link'],
+      json['link'] as String?,
     );
 
 Map<String, dynamic> _$$_BooksResponseToJson(_$_BooksResponse instance) =>

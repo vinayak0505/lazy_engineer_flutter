@@ -24,7 +24,7 @@ mixin _$FilesResponse {
   String? get subject => throw _privateConstructorUsedError;
   String? get college => throw _privateConstructorUsedError;
   String? get semester => throw _privateConstructorUsedError;
-  dynamic get link => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $FilesResponseCopyWith<$Res> {
       String? subject,
       String? college,
       String? semester,
-      dynamic link});
+      String? link});
 }
 
 /// @nodoc
@@ -82,7 +82,7 @@ class _$FilesResponseCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
     ));
   }
 }
@@ -99,7 +99,7 @@ abstract class _$$_FilesResponseCopyWith<$Res>
       String? subject,
       String? college,
       String? semester,
-      dynamic link});
+      String? link});
 }
 
 /// @nodoc
@@ -141,7 +141,7 @@ class __$$_FilesResponseCopyWithImpl<$Res>
       link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
     ));
   }
 }
@@ -164,7 +164,7 @@ class _$_FilesResponse implements _FilesResponse {
   @override
   final String? semester;
   @override
-  final dynamic link;
+  final String? link;
 
   @override
   String toString() {
@@ -212,7 +212,7 @@ abstract class _FilesResponse implements FilesResponse {
       final String? subject,
       final String? college,
       final String? semester,
-      final dynamic link) = _$_FilesResponse;
+      final String? link) = _$_FilesResponse;
 
   factory _FilesResponse.fromJson(Map<String, dynamic> json) =
       _$_FilesResponse.fromJson;
@@ -226,7 +226,7 @@ abstract class _FilesResponse implements FilesResponse {
   @override
   String? get semester;
   @override
-  dynamic get link;
+  String? get link;
   @override
   @JsonKey(ignore: true)
   _$$_FilesResponseCopyWith<_$_FilesResponse> get copyWith =>

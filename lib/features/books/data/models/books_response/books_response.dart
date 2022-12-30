@@ -10,7 +10,7 @@ class BooksResponse with _$BooksResponse {
     List<String> writers,
     String? description,
     int? pages,
-    dynamic link,
+    String? link,
   ) = _BooksResponse;
 
   factory BooksResponse.fromJson(Map<String, dynamic> json) =>

@@ -10,7 +10,7 @@ _$_NotesDetailResponse _$$_NotesDetailResponseFromJson(
         Map<String, dynamic> json) =>
     _$_NotesDetailResponse(
       json['title'] as String,
-      json['link'],
+      json['link'] as String?,
       json['about'] as String?,
       json['semister'] as int?,
       json['subject'] as String?,

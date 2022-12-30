@@ -12,7 +12,7 @@ _$_FilesResponse _$$_FilesResponseFromJson(Map<String, dynamic> json) =>
       json['subject'] as String?,
       json['college'] as String?,
       json['semester'] as String?,
-      json['link'],
+      json['link'] as String?,
     );
 
 Map<String, dynamic> _$$_FilesResponseToJson(_$_FilesResponse instance) =>

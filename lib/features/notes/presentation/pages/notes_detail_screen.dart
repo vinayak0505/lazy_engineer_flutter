@@ -54,7 +54,7 @@ class NotesDetailScreen extends StatelessWidget {
                           child: NotesDetailHeader(
                             title: data.title,
                             subject: data.subject,
-                            link: data.link,
+                            link: data.link ?? '',
                             rating: rating,
                           ),
                         ),

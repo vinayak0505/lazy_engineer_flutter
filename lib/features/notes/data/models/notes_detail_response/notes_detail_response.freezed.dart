@@ -21,7 +21,7 @@ NotesDetailResponse _$NotesDetailResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$NotesDetailResponse {
   String get title => throw _privateConstructorUsedError;
-  dynamic get link => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
   int? get semister => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $NotesDetailResponseCopyWith<$Res> {
       _$NotesDetailResponseCopyWithImpl<$Res>;
   $Res call(
       {String title,
-      dynamic link,
+      String? link,
       String? about,
       int? semister,
       String? subject,
@@ -85,7 +85,7 @@ class _$NotesDetailResponseCopyWithImpl<$Res>
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       about: about == freezed
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
@@ -131,7 +131,7 @@ abstract class _$$_NotesDetailResponseCopyWith<$Res>
   @override
   $Res call(
       {String title,
-      dynamic link,
+      String? link,
       String? about,
       int? semister,
       String? subject,
@@ -174,7 +174,7 @@ class __$$_NotesDetailResponseCopyWithImpl<$Res>
       link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       about == freezed
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
@@ -233,7 +233,7 @@ class _$_NotesDetailResponse implements _NotesDetailResponse {
   @override
   final String title;
   @override
-  final dynamic link;
+  final String? link;
   @override
   final String? about;
   @override
@@ -310,7 +310,7 @@ class _$_NotesDetailResponse implements _NotesDetailResponse {
 abstract class _NotesDetailResponse implements NotesDetailResponse {
   const factory _NotesDetailResponse(
       final String title,
-      final dynamic link,
+      final String? link,
       final String? about,
       final int? semister,
       final String? subject,
@@ -326,7 +326,7 @@ abstract class _NotesDetailResponse implements NotesDetailResponse {
   @override
   String get title;
   @override
-  dynamic get link;
+  String? get link;
   @override
   String? get about;
   @override

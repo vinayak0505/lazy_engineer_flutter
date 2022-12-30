@@ -7,23 +7,24 @@ class UserModel {
   final String? university;
   final int? year;
 
-  UserModel(
-      {required this.userName,
-      required this.email,
-      required this.password,
-      this.token,
-      this.userId,
-      this.university,
-      this.year});
+  UserModel({
+    required this.userName,
+    required this.email,
+    required this.password,
+    this.token,
+    this.userId,
+    this.university,
+    this.year,
+  });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-        userName: json['userName'],
-        email: json['email'],
-        password: json['password'],
-        token: json['token'],
-        userId: json['userId'],
-        university: json['university'],
-        year: json['year'],
+        userName: json['userName'] as String,
+        email: json['email'] as String,
+        password: json['password'] as String,
+        token: json['token'] as String,
+        userId: json['userId'] as String,
+        university: json['university'] as String,
+        year: json['year'] as int,
       );
   Map<String, dynamic> toJson() => {
         'userName': userName,
