@@ -14,6 +14,6 @@ class GoogleFacebook extends StatelessWidget {
       Expanded(
         child: CustomButton.facebook(onPressed: () {}),
       ),
-    ]);
+    ],);
   }
 }

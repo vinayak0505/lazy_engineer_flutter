@@ -47,12 +47,12 @@ class _SlideTransitionAnimationState extends State<SlideTransitionAnimation>
         reverseDuration: widget.reverseDuration ?? widget.duration,
         vsync: this,
         value: widget.open ? 1.0 : 0.0,
-        animationBehavior: widget.animationBehavior);
+        animationBehavior: widget.animationBehavior,);
     _animation = Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
       parent: _animationController,
       curve: widget.curve,
       reverseCurve: widget.reverseCurve ?? widget.curve,
-    ));
+    ),);
     super.initState();
   }
 

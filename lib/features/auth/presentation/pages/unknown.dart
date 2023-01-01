@@ -12,7 +12,7 @@ class UnknownRoute extends StatelessWidget {
           height: 80,
           width: 300,
           decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(10)),
+              color: Colors.blue, borderRadius: BorderRadius.circular(10),),
           child: const Text(
             'Route Not Found!!!',
             style: TextStyle(color: Colors.white, fontSize: 25),

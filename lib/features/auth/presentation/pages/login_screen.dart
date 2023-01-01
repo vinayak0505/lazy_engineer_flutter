@@ -61,7 +61,7 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
                     child: Text(forgetPassword,
                         style: theme.textTheme.bodySmall
                             ?.copyWith(fontWeight: FontWeight.bold))),
-                const SizedBox(height: 18),
+                const SizedBox(height: 18,),
                 CustomButton(
                   text: login,
                   isBig: true,

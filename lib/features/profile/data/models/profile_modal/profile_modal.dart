@@ -12,7 +12,7 @@ class ProfileModal with _$ProfileModal {
     String? userPic,
     String? userClass,
     String? branch,
-    int? semister,
+    int? semester,
     String? universityName,
     String? universityAddress,
     String? userDescription,
@@ -32,10 +32,11 @@ class ProfileModal with _$ProfileModal {
       userPic: AppImages.anonymousProfile,
       userClass: 'Aeronautical Engineering',
       branch: 'CSE-3',
-      semister: 3,
+      semester: 3,
       universityName: 'GTBIT',
       universityAddress: 'Delhi, India',
-      userDescription: 'user description ================= =========== ============== ============ ======== =======',
+      userDescription:
+          'user description ================= =========== ============== ============ ======== =======',
       userUploads: UserUploads(
         notes: 1,
         file: 2,

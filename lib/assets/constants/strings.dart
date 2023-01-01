@@ -26,11 +26,12 @@ const String or = 'OR';
 const String next = 'Next';
 const String classD = 'Class';
 const String university = 'University';
-const String semister = 'Semister';
+const String semester = 'Semester';
 
 const String notes = 'Notes';
 const String files = 'Files';
 const String books = 'Books';
+const String downloads = 'Downloads';
 const String jobs = 'Jobs';
 const String questionPaper = 'Question Paper';
 
@@ -38,7 +39,6 @@ const String subjectIntended = 'Subject :  ';
 const String collegeIntended = 'College :  ';
 const String yearIntended = 'Year :        ';
 const String typeIntended = 'Type :        ';
-
 const String rateThisBook = 'Rate this book';
 const String similarBooks = 'Similar books';
 const String seeAll = 'SEE ALL';
@@ -89,7 +89,6 @@ const String jobRequest = 'Job Request';
 const String searchTags = 'Search Tags';
 const String submit = 'Submit';
 const String college = 'College';
-const String semester = 'Semester';
 const String year = 'Year';
 const String yearOfAdmission = 'Year of Admission';
 const String price = 'Price';

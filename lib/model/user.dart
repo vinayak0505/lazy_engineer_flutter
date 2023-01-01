@@ -10,7 +10,7 @@ class User with _$User {
     required String userName,
     String? university,
     String? branch,
-    int? semister,
+    int? semester,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -20,6 +20,6 @@ class User with _$User {
         userName: 'Harman Singh',
         university: 'GTBIT',
         branch: 'CSE',
-        semister: 1,
+        semester: 1,
       );
 }

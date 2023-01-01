@@ -142,7 +142,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                             //* Error formfield
                             FormField<String>(
                               validator: (_) => nullCheckTextValidation(
-                                  cubit.pickedFile?.path, 'File'),
+                                  cubit.pickedFile?.path, 'File',),
                               builder: (state) {
                                 return (state.hasError &&
                                         state.errorText != null)

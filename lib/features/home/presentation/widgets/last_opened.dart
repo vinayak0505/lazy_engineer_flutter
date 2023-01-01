@@ -30,7 +30,7 @@ class LastOpened extends StatelessWidget {
                   title: data[index].title,
                   category: data[index].category,
                   description: data[index].description,
-                  date: data[index].lastSeen
+                  date: data[index].lastSeen,
                 ),
                 separatorBuilder: (_, __) => const SizedBox(width: 16),
               ),

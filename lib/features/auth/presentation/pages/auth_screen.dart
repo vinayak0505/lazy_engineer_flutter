@@ -23,11 +23,11 @@ class AuthScreen extends StatelessWidget {
           Stack(children: const [
             AuthBackground(),
             LoginScreen(),
-          ]),
+          ],),
           Stack(alignment: AlignmentDirectional.bottomCenter, children: const [
             AuthBackground(),
             RegisterScreen(),
-          ]),
+          ],),
         ],
       ),
     );
@@ -45,7 +45,7 @@ class AuthScreen extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-      ]),
+      ],),
     );
   }
 }

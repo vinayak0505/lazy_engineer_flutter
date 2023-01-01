@@ -37,7 +37,7 @@ class FileScreen extends StatelessWidget {
               boxFit: BoxFit.contain,
               margin: EdgeInsets.only(right: 16),
             ),
-          ]),
+          ],),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -69,7 +69,7 @@ class FileScreen extends StatelessWidget {
                       // year: practicleFileList[index].semester ?? '',
                     ),
                     onPressed: () => context.push(
-                        '${RouteGenerator.fileDescriptionRoute}/${index + 1}'),
+                        '${RouteGenerator.fileDescriptionRoute}/${index + 1}',),
                   ),
                   separatorBuilder: (context, index) => const SizedBox(
                     height: 8,
@@ -90,7 +90,7 @@ class FileDataBox extends StatelessWidget {
       required this.subject,
       required this.college,
       required this.title,
-      required this.year})
+      required this.year,})
       : super(key: key);
   final String title, subject, college;
   final DateTime year;
@@ -106,7 +106,7 @@ class FileDataBox extends StatelessWidget {
             children: [
               Text(title,
                   style: theme.textTheme.headline5
-                      ?.copyWith(overflow: TextOverflow.ellipsis)),
+                      ?.copyWith(overflow: TextOverflow.ellipsis),),
               const SizedBox(height: 4),
               RichText(
                 text: TextSpan(
@@ -114,19 +114,19 @@ class FileDataBox extends StatelessWidget {
                   children: <TextSpan>[
                     TextSpan(
                         text: subjectIntended,
-                        style: theme.textTheme.subtitle2),
+                        style: theme.textTheme.subtitle2,),
                     TextSpan(text: '$subject\n'),
                     TextSpan(
                         text: collegeIntended,
-                        style: theme.textTheme.subtitle2),
+                        style: theme.textTheme.subtitle2,),
                     TextSpan(text: '$college\n'),
                     TextSpan(
-                        text: yearIntended, style: theme.textTheme.subtitle2),
+                        text: yearIntended, style: theme.textTheme.subtitle2,),
                     TextSpan(text: year.year.toString()),
                   ],
                 ),
               )
-            ]),
+            ],),
       ),
     );
   }

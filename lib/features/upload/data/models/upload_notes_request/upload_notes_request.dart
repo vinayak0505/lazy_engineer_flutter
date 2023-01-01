@@ -27,7 +27,7 @@ extension UploadNotesRequestFormData on UploadNotesRequest {
     return FormData.fromMap({
       'title': title,
       'about': about,
-      'semister': semester,
+      'semester': semester,
       'file': file,
       'subject': subject,
       'unit': unit,

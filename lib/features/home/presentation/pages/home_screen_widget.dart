@@ -8,20 +8,20 @@ import '../../../components/custom_button.dart';
 import '../../../components/custom_icon.dart';
 import '../../../components/single_option_filter.dart';
 import '../../../components/slide_transition_animation.dart';
-import '../../../components/text_feild_filter.dart';
+import '../../../components/text_Field_filter.dart';
 import '../cubit/filter/filter_cubit.dart';
 
 class HomeScreenWidget extends StatelessWidget {
   const HomeScreenWidget(
     this.body, {
     Key? key,
-    this.textFeildFilter,
+    this.textFieldFilter,
     this.multiOptionFilter,
     this.singleOptionFilter,
     this.applyFilter,
   }) : super(key: key);
   final List<Widget> body;
-  final List<String>? textFeildFilter;
+  final List<String>? textFieldFilter;
   final List<String>? multiOptionFilter;
   final List<String>? singleOptionFilter;
   final Function(FilterRequest filterRequest)? applyFilter;
@@ -36,7 +36,7 @@ class HomeScreenWidget extends StatelessWidget {
           builder: (context, state) {
             void onPressed() => applyFilter!.call(
                   FilterRequest(
-                    textField: state.textFeild,
+                    textField: state.textField,
                     multiOption: state.multiOption,
                     singleOption: singleOption.text,
                   ),
@@ -44,25 +44,26 @@ class HomeScreenWidget extends StatelessWidget {
 
             return Scaffold(
               appBar: AppBar(
-                  centerTitle: true,
-                  title: Text(
-                    notes,
-                    style: theme.textTheme.headline4,
+                centerTitle: true,
+                title: Text(
+                  notes,
+                  style: theme.textTheme.headline4,
+                ),
+                leading: Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: IconButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () => Navigator.pop(context),
+                    icon: const CustomIcon(AppIcons.backArrow),
                   ),
-                  leading: Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: IconButton(
-                      padding: EdgeInsets.zero,
-                      onPressed: () => Navigator.pop(context),
-                      icon: const CustomIcon(AppIcons.backArrow),
-                    ),
+                ),
+                actions: [
+                  AnimatedIconButton.menuCross(
+                    () => context.read<FilterCubit>().toggle(),
                   ),
-                  actions: [
-                    AnimatedIconButton.menuCross(
-                      () => context.read<FilterCubit>().toggle(),
-                    ),
-                    const SizedBox(width: 16),
-                  ]),
+                  const SizedBox(width: 16),
+                ],
+              ),
               body: SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -74,8 +75,8 @@ class HomeScreenWidget extends StatelessWidget {
                         verticalAnimation: true,
                         child: Column(
                           children: [
-                            if (textFeildFilter != null) ...[
-                              TextFeildFilter(textFeildFilter!),
+                            if (textFieldFilter != null) ...[
+                              TextFieldFilter(textFieldFilter!),
                               const SizedBox(height: 16),
                             ],
                             if (multiOptionFilter != null) ...[

@@ -24,7 +24,7 @@ mixin _$User {
   String get userName => throw _privateConstructorUsedError;
   String? get university => throw _privateConstructorUsedError;
   String? get branch => throw _privateConstructorUsedError;
-  int? get semister => throw _privateConstructorUsedError;
+  int? get semester => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,7 +40,7 @@ abstract class $UserCopyWith<$Res> {
       String userName,
       String? university,
       String? branch,
-      int? semister});
+      int? semester});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? userName = freezed,
     Object? university = freezed,
     Object? branch = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed
@@ -76,9 +76,9 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
   }
@@ -94,7 +94,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String userName,
       String? university,
       String? branch,
-      int? semister});
+      int? semester});
 }
 
 /// @nodoc
@@ -112,7 +112,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? userName = freezed,
     Object? university = freezed,
     Object? branch = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
   }) {
     return _then(_$_User(
       userId: userId == freezed
@@ -131,9 +131,9 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
   }
@@ -147,7 +147,7 @@ class _$_User implements _User {
       required this.userName,
       this.university,
       this.branch,
-      this.semister});
+      this.semester});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -160,11 +160,11 @@ class _$_User implements _User {
   @override
   final String? branch;
   @override
-  final int? semister;
+  final int? semester;
 
   @override
   String toString() {
-    return 'User(userId: $userId, userName: $userName, university: $university, branch: $branch, semister: $semister)';
+    return 'User(userId: $userId, userName: $userName, university: $university, branch: $branch, semester: $semester)';
   }
 
   @override
@@ -177,7 +177,7 @@ class _$_User implements _User {
             const DeepCollectionEquality()
                 .equals(other.university, university) &&
             const DeepCollectionEquality().equals(other.branch, branch) &&
-            const DeepCollectionEquality().equals(other.semister, semister));
+            const DeepCollectionEquality().equals(other.semester, semester));
   }
 
   @JsonKey(ignore: true)
@@ -188,7 +188,7 @@ class _$_User implements _User {
       const DeepCollectionEquality().hash(userName),
       const DeepCollectionEquality().hash(university),
       const DeepCollectionEquality().hash(branch),
-      const DeepCollectionEquality().hash(semister));
+      const DeepCollectionEquality().hash(semester));
 
   @JsonKey(ignore: true)
   @override
@@ -209,7 +209,7 @@ abstract class _User implements User {
       required final String userName,
       final String? university,
       final String? branch,
-      final int? semister}) = _$_User;
+      final int? semester}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -222,7 +222,7 @@ abstract class _User implements User {
   @override
   String? get branch;
   @override
-  int? get semister;
+  int? get semester;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

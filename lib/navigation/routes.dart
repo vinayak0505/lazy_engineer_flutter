@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/auth_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/lazy_engineer.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/account_screen.dart';
+import 'package:lazy_engineer/features/download/pages/download_screen.dart';
 import 'package:lazy_engineer/features/settings/presentation/pages/settings_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
@@ -59,6 +60,9 @@ class RouteGenerator {
   static const String uploadPaperRoute = '/upload/question_paper';
   static const String uploadBookRoute = '/upload/books';
 
+  /// Download Screen
+  static const String downloadRoute = '/download';
+
   /// Account Screen
   static const String accountRoute = '/account';
   static const String settingsRoute = '/account/settings';
@@ -99,81 +103,93 @@ class RouteGenerator {
             ),
             routes: [
               GoRoute(
-                  path: 'books',
-                  builder: (_, __) => const BookScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'book_description/:id',
-                      pageBuilder: (context, state) {
-                        String? id = state.params['id'];
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: BookDescriptionScreen(id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'books',
+                builder: (_, __) => const BookScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'book_description/:id',
+                    pageBuilder: (context, state) {
+                      String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: BookDescriptionScreen(id),
+                      );
+                    },
+                  )
+                ],
+              ),
               GoRoute(
-                  path: 'jobs',
-                  builder: (_, __) => const JobsScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'jobs_description/:id',
-                      pageBuilder: (context, state) {
-                        String? id = state.params['id'];
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: JobsDescriptionScreen(id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'jobs',
+                builder: (_, __) => const JobsScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'jobs_description/:id',
+                    pageBuilder: (context, state) {
+                      String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: JobsDescriptionScreen(id),
+                      );
+                    },
+                  )
+                ],
+              ),
               GoRoute(
-                  path: 'notes',
-                  builder: (_, __) => const NotesScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'notes_description/:id',
-                      pageBuilder: (context, state) {
-                        String? id = state.params['id'];
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: NotesDetailScreen(id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'notes',
+                builder: (_, __) => const NotesScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'notes_description/:id',
+                    pageBuilder: (context, state) {
+                      String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: NotesDetailScreen(id),
+                      );
+                    },
+                  )
+                ],
+              ),
               GoRoute(
-                  path: 'question_paper',
-                  builder: (_, __) => const QuestionPaperScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'question_paper_description/:id',
-                      pageBuilder: (context, state) {
-                        String? id = state.params['id'];
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: PaperDescriptionScreen(id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'question_paper',
+                builder: (_, __) => const QuestionPaperScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'question_paper_description/:id',
+                    pageBuilder: (context, state) {
+                      String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: PaperDescriptionScreen(id),
+                      );
+                    },
+                  )
+                ],
+              ),
               GoRoute(
-                  path: 'practical_file',
-                  builder: (_, __) => const FileScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'practicle_file_description/:id',
-                      pageBuilder: (context, state) {
-                        String? id = state.params['id'];
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: FileDetailScreen(id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'practical_file',
+                builder: (_, __) => const FileScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'practicle_file_description/:id',
+                    pageBuilder: (context, state) {
+                      String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: FileDetailScreen(id),
+                      );
+                    },
+                  )
+                ],
+              ),
             ],
+          ),
+          GoRoute(
+            name: 'Download',
+            path: downloadRoute,
+            pageBuilder: (_, __) => const NoTransitionPage(
+              child: DownloadScreen(),
+            ),
           ),
           GoRoute(
             name: 'Upload',

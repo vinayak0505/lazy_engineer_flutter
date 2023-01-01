@@ -23,7 +23,7 @@ mixin _$NotesDetailResponse {
   String get title => throw _privateConstructorUsedError;
   String? get link => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
-  int? get semister => throw _privateConstructorUsedError;
+  int? get semester => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   int? get unit => throw _privateConstructorUsedError;
   String? get chapter => throw _privateConstructorUsedError;
@@ -46,7 +46,7 @@ abstract class $NotesDetailResponseCopyWith<$Res> {
       {String title,
       String? link,
       String? about,
-      int? semister,
+      int? semester,
       String? subject,
       int? unit,
       String? chapter,
@@ -69,7 +69,7 @@ class _$NotesDetailResponseCopyWithImpl<$Res>
     Object? title = freezed,
     Object? link = freezed,
     Object? about = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? subject = freezed,
     Object? unit = freezed,
     Object? chapter = freezed,
@@ -90,9 +90,9 @@ class _$NotesDetailResponseCopyWithImpl<$Res>
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
       subject: subject == freezed
           ? _value.subject
@@ -133,7 +133,7 @@ abstract class _$$_NotesDetailResponseCopyWith<$Res>
       {String title,
       String? link,
       String? about,
-      int? semister,
+      int? semester,
       String? subject,
       int? unit,
       String? chapter,
@@ -158,7 +158,7 @@ class __$$_NotesDetailResponseCopyWithImpl<$Res>
     Object? title = freezed,
     Object? link = freezed,
     Object? about = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? subject = freezed,
     Object? unit = freezed,
     Object? chapter = freezed,
@@ -179,9 +179,9 @@ class __$$_NotesDetailResponseCopyWithImpl<$Res>
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
       subject == freezed
           ? _value.subject
@@ -218,7 +218,7 @@ class _$_NotesDetailResponse implements _NotesDetailResponse {
       this.title,
       this.link,
       this.about,
-      this.semister,
+      this.semester,
       this.subject,
       this.unit,
       this.chapter,
@@ -237,7 +237,7 @@ class _$_NotesDetailResponse implements _NotesDetailResponse {
   @override
   final String? about;
   @override
-  final int? semister;
+  final int? semester;
   @override
   final String? subject;
   @override
@@ -258,7 +258,7 @@ class _$_NotesDetailResponse implements _NotesDetailResponse {
 
   @override
   String toString() {
-    return 'NotesDetailResponse(title: $title, link: $link, about: $about, semister: $semister, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, tags: $tags, rating: $rating)';
+    return 'NotesDetailResponse(title: $title, link: $link, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, tags: $tags, rating: $rating)';
   }
 
   @override
@@ -269,7 +269,7 @@ class _$_NotesDetailResponse implements _NotesDetailResponse {
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.unit, unit) &&
             const DeepCollectionEquality().equals(other.chapter, chapter) &&
@@ -285,7 +285,7 @@ class _$_NotesDetailResponse implements _NotesDetailResponse {
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(link),
       const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(unit),
       const DeepCollectionEquality().hash(chapter),
@@ -312,7 +312,7 @@ abstract class _NotesDetailResponse implements NotesDetailResponse {
       final String title,
       final String? link,
       final String? about,
-      final int? semister,
+      final int? semester,
       final String? subject,
       final int? unit,
       final String? chapter,
@@ -330,7 +330,7 @@ abstract class _NotesDetailResponse implements NotesDetailResponse {
   @override
   String? get about;
   @override
-  int? get semister;
+  int? get semester;
   @override
   String? get subject;
   @override

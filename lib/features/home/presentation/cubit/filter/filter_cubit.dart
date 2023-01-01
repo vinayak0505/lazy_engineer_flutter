@@ -8,31 +8,31 @@ class FilterCubit extends Cubit<FilterState> {
   FilterCubit()
       : super(const FilterState(
           false,
-          textFeild: null,
+          textField: null,
           multiOption: null,
-        ));
+        ),);
 
   void toggle() {
     emit(FilterState(
       !state.isOpen,
-      textFeild: state.textFeild,
+      textField: state.textField,
       multiOption: state.multiOption,
-    ));
+    ),);
   }
 
-  void modifyTextFeild(List<String> list) {
+  void modifyTextField(List<String> list) {
     emit(FilterState(
       state.isOpen,
-      textFeild: list,
+      textField: list,
       multiOption: state.multiOption,
-    ));
+    ),);
   }
 
   void modifyMultiOption(List<String> list) {
     emit(FilterState(
       state.isOpen,
-      textFeild: state.textFeild,
+      textField: state.textField,
       multiOption: list,
-    ));
+    ),);
   }
 }

@@ -57,7 +57,7 @@ class FilesRepositoryImpl extends FilesRepository {
       return practicalFileList;
       // filterRequest = FilterRequest(
       //   multiOption: removeNullList(filterRequest.multiOption),
-      //   textFeild: removeNullList(filterRequest.multiOption),
+      //   textField: removeNullList(filterRequest.multiOption),
       //   singleOption: removeNull(filterRequest.singleOption),
       // );
       // BaseResponse<List<NotesResponse>> listNotes =

@@ -81,7 +81,7 @@ class _CompanyImageState extends State<CompanyImage> {
               image: AppImages.addImage,
             ),
           ),
-        ]);
+        ],);
   }
 
   void navigation(BuildContext context, int index, List<File> list) {

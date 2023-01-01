@@ -32,77 +32,93 @@ class BookDescriptionScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                  padding: const EdgeInsets.all(8.0),
                   // ignore: prefer_const_literals_to_create_immutables
                   child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const CustomImage(
-                          image: AppImages.bookCoverImage,
-                          radius: kRoundedRectangleRadius,
-                          height: 180,
-                        ),
-                        const SizedBox(width: 16),
-                        Flexible(
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const CustomImage(
+                        image: AppImages.bookCoverImage,
+                        radius: kRoundedRectangleRadius,
+                        height: 180,
+                      ),
+                      const SizedBox(width: 16),
+                      Flexible(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(height: 12),
+                            Text(
+                              'Computer Graphics and Multimedia',
+                              style: theme.textTheme.headline5,
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              'Computer Graphics',
+                              style: theme.textTheme.titleLarge,
+                            ),
+                            const SizedBox(height: 16),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                const SizedBox(height: 12),
-                                Text(
-                                  'Computer Graphics and Multimedia',
-                                  style: theme.textTheme.headline5,
+                                Column(
+                                  children: [
+                                    const CustomIcon(
+                                      AppIcons.likeIcon,
+                                      width: 18,
+                                    ),
+                                    Text(
+                                      'Like',
+                                      style: theme.textTheme.bodyText1,
+                                    )
+                                  ],
                                 ),
-                                const SizedBox(height: 12),
-                                Text('Computer Graphics',
-                                    style: theme.textTheme.titleLarge),
-                                const SizedBox(height: 16),
-                                Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Column(children: [
-                                        const CustomIcon(AppIcons.likeIcon,
-                                            width: 18),
-                                        Text(
-                                          'Like',
-                                          style: theme.textTheme.bodyText1,
-                                        )
-                                      ]),
-                                      Column(children: [
-                                        const CustomIcon(AppIcons.dislikeIcon,
-                                            width: 18),
-                                        Text(
-                                          'Dislike',
-                                          style: theme.textTheme.bodyText1,
-                                        )
-                                      ]),
-                                      Column(children: [
-                                        const CustomIcon(AppIcons.bookIcon),
-                                        Text(
-                                          'E-Book',
-                                          style: theme.textTheme.bodyText1,
-                                        )
-                                      ]),
-                                      Column(children: [
-                                        const CustomIcon(AppIcons.pageIcon),
-                                        Text(
-                                          'pages',
-                                          style: theme.textTheme.bodyText1,
-                                        )
-                                      ])
-                                    ]),
-                                const SizedBox(height: 16),
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: CustomButton(
-                                    text: download,
-                                    onPressed: () {},
-                                    width: 120,
-                                  ),
+                                Column(
+                                  children: [
+                                    const CustomIcon(
+                                      AppIcons.dislikeIcon,
+                                      width: 18,
+                                    ),
+                                    Text(
+                                      'Dislike',
+                                      style: theme.textTheme.bodyText1,
+                                    )
+                                  ],
                                 ),
-                              ]),
-                        )
-                      ]),
+                                Column(
+                                  children: [
+                                    const CustomIcon(AppIcons.bookIcon),
+                                    Text(
+                                      'E-Book',
+                                      style: theme.textTheme.bodyText1,
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    const CustomIcon(AppIcons.pageIcon),
+                                    Text(
+                                      'pages',
+                                      style: theme.textTheme.bodyText1,
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 16),
+                            Align(
+                              alignment: Alignment.center,
+                              child: CustomButton(
+                                text: download,
+                                onPressed: () {},
+                                width: 120,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -116,29 +132,38 @@ class BookDescriptionScreen extends StatelessWidget {
                   textAlign: TextAlign.justify,
                 ),
                 const SizedBox(height: 16),
-                Row(children: [
-                  Text('Writers', style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 80),
-                  Text('By Vinayak agarwal', style: theme.textTheme.bodyText2),
-                ]),
+                Row(
+                  children: [
+                    Text('Writers', style: theme.textTheme.headlineSmall),
+                    const SizedBox(width: 80),
+                    Text('By Vinayak agarwal',
+                        style: theme.textTheme.bodyText2,),
+                  ],
+                ),
                 const SizedBox(height: 16),
-                Row(children: [
-                  Text('Semester', style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 60),
-                  Text('3rd Semester', style: theme.textTheme.bodyText2),
-                ]),
+                Row(
+                  children: [
+                    Text('Semester', style: theme.textTheme.headlineSmall),
+                    const SizedBox(width: 60),
+                    Text('3rd Semester', style: theme.textTheme.bodyText2),
+                  ],
+                ),
                 const SizedBox(height: 16),
-                Row(children: [
-                  Text('Book Edition', style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 30),
-                  Text('Second Edition', style: theme.textTheme.bodyText2),
-                ]),
+                Row(
+                  children: [
+                    Text('Book Edition', style: theme.textTheme.headlineSmall),
+                    const SizedBox(width: 30),
+                    Text('Second Edition', style: theme.textTheme.bodyText2),
+                  ],
+                ),
                 const SizedBox(height: 16),
-                Row(children: [
-                  Text('Price', style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 110),
-                  Text('Rs. 500', style: theme.textTheme.bodyText2),
-                ]),
+                Row(
+                  children: [
+                    Text('Price', style: theme.textTheme.headlineSmall),
+                    const SizedBox(width: 110),
+                    Text('Rs. 500', style: theme.textTheme.bodyText2),
+                  ],
+                ),
               ],
             ),
           ),

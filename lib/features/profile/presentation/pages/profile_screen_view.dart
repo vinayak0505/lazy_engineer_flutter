@@ -24,7 +24,7 @@ class ProfileScreenView extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Student of ${data.branch} ${data.semister} semister',
+            'Student of ${data.branch} ${data.semester} semester',
             style: theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 16),

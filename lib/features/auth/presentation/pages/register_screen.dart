@@ -24,12 +24,12 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
     return SingleChildScrollView(
       child: Container(
         decoration: const BoxDecoration(
-            color: Colors.white,
+            color: Color.fromARGB(255, 188, 186, 186),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(36),
               topRight: Radius.circular(36),
             ),
-            boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)]),
+            boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)],),
         padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
         child: Form(
           key: formGlobalKey,
@@ -42,7 +42,7 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                   alignment: Alignment.topCenter,
                   child: Text(string.registerAccount,
                       style: theme.textTheme.headline5)),
-              const SizedBox(height: 28),
+              const SizedBox(height: 28,),
               CustomTextField(
                 controller: fullNameController,
                 hintText: string.fullName,
@@ -88,7 +88,7 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                         fullName: fullNameController.text,
                         email: emailController.text,
                         university: null,
-                        password: passwordController.text);
+                        password: passwordController.text,);
                     context.read<AuthCubit>().signUp(user);
                     context.go(RouteGenerator.initialRoute);
                   }

@@ -13,7 +13,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   void editData({
     required String userName,
     required String branch,
-    required int semister,
+    required int semester,
     required String universityName,
     required String userDescription,
     required String email,
@@ -28,7 +28,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
       data = ProfileModal(
         userName: userName,
         branch: branch,
-        semister: semister,
+        semester: semester,
         universityName: universityName,
         userDescription: userDescription,
         contact: Contact(

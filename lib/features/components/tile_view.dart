@@ -11,7 +11,7 @@ class TileView extends StatelessWidget {
       this.fit = BoxFit.fill,
       this.height = 120,
       this.width = 90,
-      this.onPressed})
+      this.onPressed,})
       : super(key: key);
   final String? image;
   final BoxFit fit;
@@ -48,9 +48,9 @@ class TileView extends StatelessWidget {
                     ),
                   )
                 : const SizedBox(),
-          ]),
+          ],),
           child,
-        ]),
+        ],),
       ),
     );
   }

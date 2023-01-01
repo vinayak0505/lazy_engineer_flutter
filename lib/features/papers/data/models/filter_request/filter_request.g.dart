@@ -8,7 +8,7 @@ part of 'filter_request.dart';
 
 _$_FilterRequest _$$_FilterRequestFromJson(Map<String, dynamic> json) =>
     _$_FilterRequest(
-      textFeild: (json['textFeild'] as List<dynamic>?)
+      textField: (json['textField'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       multiOption: (json['multiOption'] as List<dynamic>?)
@@ -19,7 +19,7 @@ _$_FilterRequest _$$_FilterRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_FilterRequestToJson(_$_FilterRequest instance) =>
     <String, dynamic>{
-      'textFeild': instance.textFeild,
+      'textField': instance.textField,
       'multiOption': instance.multiOption,
       'singleOption': instance.singleOption,
     };

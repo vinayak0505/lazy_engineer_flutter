@@ -20,7 +20,7 @@ class SwitchAccount extends StatelessWidget {
             TextSpan(
                 text: toRegister
                     ? string.dontHaveAccount
-                    : string.alreadyHaveAccount),
+                    : string.alreadyHaveAccount,),
             TextSpan(
               text: toRegister ? string.createOne : string.goToLogin,
               style: const TextStyle(fontWeight: FontWeight.bold),

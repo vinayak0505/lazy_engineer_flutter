@@ -11,7 +11,7 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       userName: json['userName'] as String,
       university: json['university'] as String?,
       branch: json['branch'] as String?,
-      semister: json['semister'] as int?,
+      semester: json['semester'] as int?,
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
@@ -19,5 +19,5 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'userName': instance.userName,
       'university': instance.university,
       'branch': instance.branch,
-      'semister': instance.semister,
+      'semester': instance.semester,
     };

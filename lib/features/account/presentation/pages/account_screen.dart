@@ -41,7 +41,7 @@ class AccountScreen extends StatelessWidget {
             ListTile(
               leading: const CustomIcon(AppIcons.profileIcon),
               title: Text(invitePeopleToTheSite,
-                  style: theme.textTheme.titleMedium),
+                  style: theme.textTheme.titleMedium,),
             ),
             ListTile(
               leading: const CustomIcon(AppIcons.settingsIcon),

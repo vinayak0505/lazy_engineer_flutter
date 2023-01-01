@@ -66,7 +66,7 @@ class SettingsScreen extends StatelessWidget {
                   },
                   activeColor: theme.primaryColor,
                 );
-              }),
+              },),
             ),
             ListTile(
               title: Text(darkMode, style: theme.textTheme.titleMedium),
@@ -79,7 +79,7 @@ class SettingsScreen extends StatelessWidget {
                   },
                   activeColor: theme.primaryColor,
                 );
-              }),
+              },),
             ),
             const Divider(),
             ListTile(

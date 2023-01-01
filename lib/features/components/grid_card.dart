@@ -49,7 +49,7 @@ class GridCard extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
               child: Text(body, style: theme.textTheme.bodyMedium),
             ),
-          ]),
+          ],),
     );
   }
 }

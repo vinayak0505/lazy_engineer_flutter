@@ -9,7 +9,7 @@ class NotesDetailResponse with _$NotesDetailResponse {
     String title,
     String? link,
     String? about,
-    int? semister,
+    int? semester,
     String? subject,
     int? unit,
     String? chapter,

@@ -37,7 +37,7 @@ class BookScreen extends StatelessWidget {
               boxFit: BoxFit.contain,
               margin: EdgeInsets.only(right: 16),
             ),
-          ]),
+          ],),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -67,7 +67,7 @@ class BookScreen extends StatelessWidget {
                   height: 8,
                 ),
               )
-            ]),
+            ],),
           ),
         ),
       ),
@@ -80,7 +80,7 @@ class BookDataBox extends StatelessWidget {
       {Key? key,
       required this.writers,
       required this.bookName,
-      required this.description})
+      required this.description,})
       : super(key: key);
   final List<String> writers;
   final String bookName, description;

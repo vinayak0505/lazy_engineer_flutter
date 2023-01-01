@@ -25,7 +25,7 @@ class UploadView extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: theme.textTheme.bodyMedium,
                   ),
-                ))
+                ),)
             .toList(),
       ),
       TableRow(
@@ -36,9 +36,9 @@ class UploadView extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: theme.textTheme.bodyMedium,
                   ),
-                ))
+                ),)
             .toList(),
       ),
-    ]);
+    ],);
   }
 }

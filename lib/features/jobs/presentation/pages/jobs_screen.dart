@@ -20,7 +20,7 @@ class JobsScreen extends StatelessWidget {
             jobs,
             style: theme.textTheme.headline4,
             textAlign: TextAlign.center,
-          )),
+          ),),
           leading: GestureDetector(
             onTap: () => Navigator.pop(context),
             child: const CustomIcon(
@@ -34,7 +34,7 @@ class JobsScreen extends StatelessWidget {
               boxFit: BoxFit.contain,
               margin: EdgeInsets.only(right: 16),
             ),
-          ]),
+          ],),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -46,7 +46,7 @@ class JobsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               JobList(data: jobList),
-            ]),
+            ],),
           ),
         ),
       ),

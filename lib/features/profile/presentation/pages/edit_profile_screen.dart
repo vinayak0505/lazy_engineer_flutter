@@ -25,7 +25,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
     final mobileController =
         TextEditingController(text: data.contact?.mobileNumber);
     final emailController = TextEditingController(text: data.contact?.email);
-    final semisterController = TextEditingController();
+    final semesterController = TextEditingController();
     final yearOfAdmissionController = TextEditingController();
     final classController = TextEditingController();
     final locationController = TextEditingController(text: data.userAddress);
@@ -46,7 +46,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
               context.read<EditProfileCubit>().editData(
                     userName: fullNameController.text,
                     branch: classController.text,
-                    semister: int.parse(semisterController.text),
+                    semester: int.parse(semesterController.text),
                     universityName: universityController.text,
                     userDescription: descriptionController.text,
                     email: emailController.text,
@@ -62,7 +62,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
       }
     }
 
-    final semisterIndex = semesterKeyList.indexOf(data.semister.toString());
+    final semesterIndex = semesterKeyList.indexOf(data.semester.toString());
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Form(
@@ -139,12 +139,12 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
                   width: 150,
                   list: semesterList,
                   keyList: semesterKeyList,
-                  hintText: semister,
-                  controller: semisterController,
-                  dropdownValue: semesterList[semisterIndex],
+                  hintText: semester,
+                  controller: semesterController,
+                  dropdownValue: semesterList[semesterIndex],
                   validator: (value) => nullCheckTextValidation(
                     value,
-                    semister,
+                    semester,
                   ),
                 ),
               ],

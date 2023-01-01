@@ -23,7 +23,6 @@ class NotesDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
 
-    
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -42,94 +41,103 @@ class NotesDetailScreen extends StatelessWidget {
               create: (context) =>
                   NotesDetailCubit(NotesRepositoryImpl(), id ?? ''),
               child: BlocBuilder<NotesDetailCubit, NotesDetailState>(
-                  builder: (context, state) {
-                return state.when(
-                  loading: () => const LoadingScreen(),
-                  failure: (error) => FailureScreen(error),
-                  success: (data, rating) {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        BlocProvider(
-                          create: (context) => DownloadCubit(),
-                          child: NotesDetailHeader(
-                            title: data.title,
-                            subject: data.subject,
-                            link: data.link ?? '',
-                            rating: rating,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        Text(
-                          about,
-                          style: theme.textTheme.headline5,
-                        ),
-                        const SizedBox(height: 12),
-                        if (data.about != null) ...[
-                          Text(
-                            data.about!,
-                            style: theme.textTheme.bodyMedium,
-                            textAlign: TextAlign.justify,
+                builder: (context, state) {
+                  return state.when(
+                    loading: () => const LoadingScreen(),
+                    failure: (error) => FailureScreen(error),
+                    success: (data, rating) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          BlocProvider(
+                            create: (context) => DownloadCubit(),
+                            child: NotesDetailHeader(
+                              title: data.title,
+                              subject: data.subject,
+                              link: data.link ?? '',
+                              rating: rating,
+                            ),
                           ),
                           const SizedBox(height: 16),
-                        ],
-                        Table(
-                          children: [
-                            if (data.unit != null)
-                              TableRow(children: [
-                                Text(
-                                  unit,
-                                  style: theme.textTheme.headline6,
-                                ),
-                                Text(
-                                  'Unit - ${data.unit}',
-                                  style: theme.textTheme.bodyText2,
-                                )
-                              ],),
-                            if (data.semister != null)
-                              TableRow(children: [
-                                Text(
-                                  semister,
-                                  style: theme.textTheme.headline6,
-                                ),
-                                Text(
-                                  '${addOrdinals(data.semister!)} Semester',
-                                  style: theme.textTheme.bodyText2,
-                                )
-                              ],),
-                            if (data.chapter != null)
-                              TableRow(children: [
-                                Text(
-                                  chapter,
-                                  style: theme.textTheme.headline6,
-                                ),
-                                Text(
-                                  data.chapter!,
-                                  style: theme.textTheme.bodyText2,
-                                )
-                              ],),
-                            if (data.topic != null)
-                              TableRow(children: [
-                                Text(
-                                  topic,
-                                  style: theme.textTheme.headline6,
-                                ),
-                                Text(
-                                  data.topic!,
-                                  style: theme.textTheme.bodyText2,
-                                )
-                              ],),
+                          Text(
+                            about,
+                            style: theme.textTheme.headline5,
+                          ),
+                          const SizedBox(height: 12),
+                          if (data.about != null) ...[
+                            Text(
+                              data.about!,
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
+                            const SizedBox(height: 16),
                           ],
-                        ),
-                        const SizedBox(height: 16),
-                        Text(tags, style: theme.textTheme.headlineSmall),
-                        const SizedBox(height: 12),
-                        ShowTagsWidget(data.tags)
-                      ],
-                    );
-                  },
-                );
-              },),
+                          Table(
+                            children: [
+                              if (data.unit != null)
+                                TableRow(
+                                  children: [
+                                    Text(
+                                      unit,
+                                      style: theme.textTheme.headline6,
+                                    ),
+                                    Text(
+                                      'Unit - ${data.unit}',
+                                      style: theme.textTheme.bodyText2,
+                                    )
+                                  ],
+                                ),
+                              if (data.semester != null)
+                                TableRow(
+                                  children: [
+                                    Text(
+                                      semester,
+                                      style: theme.textTheme.headline6,
+                                    ),
+                                    Text(
+                                      '${addOrdinals(data.semester!)} Semester',
+                                      style: theme.textTheme.bodyText2,
+                                    )
+                                  ],
+                                ),
+                              if (data.chapter != null)
+                                TableRow(
+                                  children: [
+                                    Text(
+                                      chapter,
+                                      style: theme.textTheme.headline6,
+                                    ),
+                                    Text(
+                                      data.chapter!,
+                                      style: theme.textTheme.bodyText2,
+                                    )
+                                  ],
+                                ),
+                              if (data.topic != null)
+                                TableRow(
+                                  children: [
+                                    Text(
+                                      topic,
+                                      style: theme.textTheme.headline6,
+                                    ),
+                                    Text(
+                                      data.topic!,
+                                      style: theme.textTheme.bodyText2,
+                                    )
+                                  ],
+                                ),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+                          Text(tags, style: theme.textTheme.headlineSmall),
+                          const SizedBox(height: 12),
+                          ShowTagsWidget(data.tags)
+                        ],
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ),
         ),
@@ -166,65 +174,71 @@ class NotesDetailHeader extends StatelessWidget {
           const SizedBox(width: 16),
           Flexible(
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: theme.textTheme.headline5,
-                  ),
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: theme.textTheme.headline5,
+                ),
+                const SizedBox(height: 16),
+                if (subject != null) ...[
+                  Text(subject!, style: theme.textTheme.titleLarge),
                   const SizedBox(height: 16),
-                  if (subject != null) ...[
-                    Text(subject!, style: theme.textTheme.titleLarge),
-                    const SizedBox(height: 16),
-                  ],
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            context.read<NotesDetailCubit>().like();
-                          },
-                          icon: rating ?? false
-                              ? const CustomIcon(AppIcons.likeIcon)
-                              : const CustomIcon(AppIcons.likeIcon),
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            context.read<NotesDetailCubit>().dislike();
-                          },
-                          icon: rating ?? true
-                              ? const CustomIcon(AppIcons.dislikeIcon)
-                              : const CustomIcon(AppIcons.dislikeIcon),
-                        ),
-                        Column(children: [
-                          const CustomIcon(AppIcons.bookIcon),
-                          Text(
-                            pdf,
-                            style: theme.textTheme.bodyText1,
-                          )
-                        ],),
-                        Column(children: [
-                          const CustomIcon(
-                            AppIcons.pageIcon,
-                          ),
-                          Text(
-                            pages,
-                            style: theme.textTheme.bodyText1,
-                          )
-                        ],)
-                      ],),
-                  const SizedBox(height: 16),
-                  Align(
-                    child: CustomButton(
-                      text: download,
+                ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    IconButton(
                       onPressed: () {
-                        context.read<DownloadCubit>().download(link);
+                        context.read<NotesDetailCubit>().like();
                       },
-                      width: 120,
+                      icon: rating ?? false
+                          ? const CustomIcon(AppIcons.likeIcon)
+                          : const CustomIcon(AppIcons.likeIcon),
                     ),
+                    IconButton(
+                      onPressed: () {
+                        context.read<NotesDetailCubit>().dislike();
+                      },
+                      icon: rating ?? true
+                          ? const CustomIcon(AppIcons.dislikeIcon)
+                          : const CustomIcon(AppIcons.dislikeIcon),
+                    ),
+                    Column(
+                      children: [
+                        const CustomIcon(AppIcons.bookIcon),
+                        Text(
+                          pdf,
+                          style: theme.textTheme.bodyText1,
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        const CustomIcon(
+                          AppIcons.pageIcon,
+                        ),
+                        Text(
+                          pages,
+                          style: theme.textTheme.bodyText1,
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                const SizedBox(height: 16),
+                Align(
+                  child: CustomButton(
+                    text: download,
+                    onPressed: () {
+                      context.read<DownloadCubit>().download(link);
+                    },
+                    width: 120,
                   ),
-                ],),
+                ),
+              ],
+            ),
           )
         ],
       ),

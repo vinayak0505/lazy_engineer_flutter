@@ -21,7 +21,7 @@ class AuthBackground extends StatelessWidget {
               const SizedBox(width: 16),
               Text(string.lazyEngineer,
                   style: theme.textTheme.headline5
-                      ?.copyWith(fontWeight: FontWeight.w600))
+                      ?.copyWith(fontWeight: FontWeight.w600),),
             ],
           ),
           const SizedBox(height: 50),

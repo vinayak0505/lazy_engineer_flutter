@@ -29,7 +29,7 @@ _$_Result _$$_ResultFromJson(Map<String, dynamic> json) => _$_Result(
       json['id'] as String?,
       json['title'] as String?,
       json['about'] as String?,
-      json['semister'] as String?,
+      json['semester'] as String?,
     );
 
 Map<String, dynamic> _$$_ResultToJson(_$_Result instance) => <String, dynamic>{
@@ -37,5 +37,5 @@ Map<String, dynamic> _$$_ResultToJson(_$_Result instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'about': instance.about,
-      'semister': instance.semister,
+      'semester': instance.semester,
     };

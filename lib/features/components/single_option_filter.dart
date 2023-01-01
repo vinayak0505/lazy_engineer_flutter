@@ -46,7 +46,7 @@ class SingleOptionFilter extends FormField<String> {
                         if (focusNode != null) {
                           FocusScope.of(state.context).nextFocus();
                         }
-                      }),
+                      },),
                   title: Text(
                     data[index],
                     style: theme.textTheme.titleMedium,

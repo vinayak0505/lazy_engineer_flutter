@@ -4,15 +4,15 @@ import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/features/home/presentation/cubit/filter/filter_cubit.dart';
 
-class TextFeildFilter extends StatefulWidget {
-  const TextFeildFilter(this.list, {super.key});
+class TextFieldFilter extends StatefulWidget {
+  const TextFieldFilter(this.list, {super.key});
   final List<String> list;
 
   @override
-  State<TextFeildFilter> createState() => _TextFeildFilterState();
+  State<TextFieldFilter> createState() => _TextFieldFilterState();
 }
 
-class _TextFeildFilterState extends State<TextFeildFilter> {
+class _TextFieldFilterState extends State<TextFieldFilter> {
   late List<TextEditingController> controllerList;
   @override
   void initState() {
@@ -21,7 +21,7 @@ class _TextFeildFilterState extends State<TextFeildFilter> {
         List.generate(widget.list.length, (_) => TextEditingController());
     for (int i = 0; i < widget.list.length; i++) {
       controllerList[i].addListener(() {
-        context.read<FilterCubit>().modifyTextFeild(
+        context.read<FilterCubit>().modifyTextField(
               controllerList.map((ele) => ele.text).toList(),
             );
       });
@@ -37,10 +37,12 @@ class _TextFeildFilterState extends State<TextFeildFilter> {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: widget.list
-            .map((str) => CustomTextField.secondary(
-                  hintText: str,
-                  controller: controllerList[widget.list.indexOf(str)],
-                ),)
+            .map(
+              (str) => CustomTextField.secondary(
+                hintText: str,
+                controller: controllerList[widget.list.indexOf(str)],
+              ),
+            )
             .toList(),
       ),
     );

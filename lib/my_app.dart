@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           theme: AppThemes.appThemeData[AppTheme.lightTheme],
           builder: (context, child) => LayoutTemplate(child: child!),
         );
-      }),
+      },),
     );
   }
 }

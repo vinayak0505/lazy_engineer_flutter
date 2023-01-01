@@ -24,7 +24,7 @@ mixin _$ProfileModal {
   String? get userPic => throw _privateConstructorUsedError;
   String? get userClass => throw _privateConstructorUsedError;
   String? get branch => throw _privateConstructorUsedError;
-  int? get semister => throw _privateConstructorUsedError;
+  int? get semester => throw _privateConstructorUsedError;
   String? get universityName => throw _privateConstructorUsedError;
   String? get universityAddress => throw _privateConstructorUsedError;
   String? get userDescription => throw _privateConstructorUsedError;
@@ -51,7 +51,7 @@ abstract class $ProfileModalCopyWith<$Res> {
       String? userPic,
       String? userClass,
       String? branch,
-      int? semister,
+      int? semester,
       String? universityName,
       String? universityAddress,
       String? userDescription,
@@ -80,7 +80,7 @@ class _$ProfileModalCopyWithImpl<$Res> implements $ProfileModalCopyWith<$Res> {
     Object? userPic = freezed,
     Object? userClass = freezed,
     Object? branch = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? universityName = freezed,
     Object? universityAddress = freezed,
     Object? userDescription = freezed,
@@ -108,9 +108,9 @@ class _$ProfileModalCopyWithImpl<$Res> implements $ProfileModalCopyWith<$Res> {
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
       universityName: universityName == freezed
           ? _value.universityName
@@ -186,7 +186,7 @@ abstract class _$$_ProfileModalCopyWith<$Res>
       String? userPic,
       String? userClass,
       String? branch,
-      int? semister,
+      int? semester,
       String? universityName,
       String? universityAddress,
       String? userDescription,
@@ -220,7 +220,7 @@ class __$$_ProfileModalCopyWithImpl<$Res>
     Object? userPic = freezed,
     Object? userClass = freezed,
     Object? branch = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? universityName = freezed,
     Object? universityAddress = freezed,
     Object? userDescription = freezed,
@@ -248,9 +248,9 @@ class __$$_ProfileModalCopyWithImpl<$Res>
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as int?,
       universityName: universityName == freezed
           ? _value.universityName
@@ -300,7 +300,7 @@ class _$_ProfileModal implements _ProfileModal {
       this.userPic,
       this.userClass,
       this.branch,
-      this.semister,
+      this.semester,
       this.universityName,
       this.universityAddress,
       this.userDescription,
@@ -325,7 +325,7 @@ class _$_ProfileModal implements _ProfileModal {
   @override
   final String? branch;
   @override
-  final int? semister;
+  final int? semester;
   @override
   final String? universityName;
   @override
@@ -361,7 +361,7 @@ class _$_ProfileModal implements _ProfileModal {
 
   @override
   String toString() {
-    return 'ProfileModal(userName: $userName, userPic: $userPic, userClass: $userClass, branch: $branch, semister: $semister, universityName: $universityName, universityAddress: $universityAddress, userDescription: $userDescription, userUploads: $userUploads, contact: $contact, yearOfAdmission: $yearOfAdmission, experienceLevel: $experienceLevel, jobType: $jobType, userAddress: $userAddress)';
+    return 'ProfileModal(userName: $userName, userPic: $userPic, userClass: $userClass, branch: $branch, semester: $semester, universityName: $universityName, universityAddress: $universityAddress, userDescription: $userDescription, userUploads: $userUploads, contact: $contact, yearOfAdmission: $yearOfAdmission, experienceLevel: $experienceLevel, jobType: $jobType, userAddress: $userAddress)';
   }
 
   @override
@@ -373,7 +373,7 @@ class _$_ProfileModal implements _ProfileModal {
             const DeepCollectionEquality().equals(other.userPic, userPic) &&
             const DeepCollectionEquality().equals(other.userClass, userClass) &&
             const DeepCollectionEquality().equals(other.branch, branch) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality()
                 .equals(other.universityName, universityName) &&
             const DeepCollectionEquality()
@@ -400,7 +400,7 @@ class _$_ProfileModal implements _ProfileModal {
       const DeepCollectionEquality().hash(userPic),
       const DeepCollectionEquality().hash(userClass),
       const DeepCollectionEquality().hash(branch),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(universityName),
       const DeepCollectionEquality().hash(universityAddress),
       const DeepCollectionEquality().hash(userDescription),
@@ -430,7 +430,7 @@ abstract class _ProfileModal implements ProfileModal {
       final String? userPic,
       final String? userClass,
       final String? branch,
-      final int? semister,
+      final int? semester,
       final String? universityName,
       final String? universityAddress,
       final String? userDescription,
@@ -453,7 +453,7 @@ abstract class _ProfileModal implements ProfileModal {
   @override
   String? get branch;
   @override
-  int? get semister;
+  int? get semester;
   @override
   String? get universityName;
   @override

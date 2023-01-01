@@ -219,7 +219,7 @@ mixin _$Result {
   String? get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
-  String? get semister => throw _privateConstructorUsedError;
+  String? get semester => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -235,7 +235,7 @@ abstract class $ResultCopyWith<$Res> {
       String? id,
       String? title,
       String? about,
-      String? semister});
+      String? semester});
 }
 
 /// @nodoc
@@ -252,7 +252,7 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
     Object? id = freezed,
     Object? title = freezed,
     Object? about = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
   }) {
     return _then(_value.copyWith(
       tags: tags == freezed
@@ -271,9 +271,9 @@ class _$ResultCopyWithImpl<$Res> implements $ResultCopyWith<$Res> {
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -289,7 +289,7 @@ abstract class _$$_ResultCopyWith<$Res> implements $ResultCopyWith<$Res> {
       String? id,
       String? title,
       String? about,
-      String? semister});
+      String? semester});
 }
 
 /// @nodoc
@@ -307,7 +307,7 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
     Object? id = freezed,
     Object? title = freezed,
     Object? about = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
   }) {
     return _then(_$_Result(
       tags == freezed
@@ -326,9 +326,9 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -338,7 +338,7 @@ class __$$_ResultCopyWithImpl<$Res> extends _$ResultCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Result implements _Result {
   const _$_Result(
-      final List<String> tags, this.id, this.title, this.about, this.semister)
+      final List<String> tags, this.id, this.title, this.about, this.semester)
       : _tags = tags;
 
   factory _$_Result.fromJson(Map<String, dynamic> json) =>
@@ -358,11 +358,11 @@ class _$_Result implements _Result {
   @override
   final String? about;
   @override
-  final String? semister;
+  final String? semester;
 
   @override
   String toString() {
-    return 'Result(tags: $tags, id: $id, title: $title, about: $about, semister: $semister)';
+    return 'Result(tags: $tags, id: $id, title: $title, about: $about, semester: $semester)';
   }
 
   @override
@@ -374,7 +374,7 @@ class _$_Result implements _Result {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.semister, semister));
+            const DeepCollectionEquality().equals(other.semester, semester));
   }
 
   @JsonKey(ignore: true)
@@ -385,7 +385,7 @@ class _$_Result implements _Result {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(semister));
+      const DeepCollectionEquality().hash(semester));
 
   @JsonKey(ignore: true)
   @override
@@ -406,7 +406,7 @@ abstract class _Result implements Result {
       final String? id,
       final String? title,
       final String? about,
-      final String? semister) = _$_Result;
+      final String? semester) = _$_Result;
 
   factory _Result.fromJson(Map<String, dynamic> json) = _$_Result.fromJson;
 
@@ -419,7 +419,7 @@ abstract class _Result implements Result {
   @override
   String? get about;
   @override
-  String? get semister;
+  String? get semester;
   @override
   @JsonKey(ignore: true)
   _$$_ResultCopyWith<_$_Result> get copyWith =>

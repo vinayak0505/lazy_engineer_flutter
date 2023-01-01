@@ -41,7 +41,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
         Text(writer, style: theme.textTheme.titleLarge),
         WriterListWidget(writerList: (value) {
           writerController = value;
-        }),
+        },),
         const SizedBox(height: 16),
         //* Subject
         Text(subject, style: theme.textTheme.titleLarge),
@@ -90,7 +90,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
               semester,
             ),
           ),
-        ]),
+        ],),
         const SizedBox(height: 16),
         //* BookEdition
         Text(

@@ -41,7 +41,7 @@ class QuestionPaperScreen extends StatelessWidget {
               boxFit: BoxFit.contain,
               margin: EdgeInsets.only(right: 16),
             ),
-          ]),
+          ],),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -103,7 +103,7 @@ class QuestionPaperDataBox extends StatelessWidget {
       required this.year,
       required this.descirption,
       required this.type,
-      required this.title})
+      required this.title,})
       : super(key: key);
   final String title, descirption, subject, college;
   final String? type;
@@ -127,7 +127,7 @@ class QuestionPaperDataBox extends StatelessWidget {
               Text(descirption,
                   style: theme.textTheme.caption,
                   maxLines: 3,
-                  overflow: TextOverflow.ellipsis),
+                  overflow: TextOverflow.ellipsis,),
               const SizedBox(height: 8),
               RichText(
                 text: TextSpan(
@@ -135,22 +135,22 @@ class QuestionPaperDataBox extends StatelessWidget {
                   children: <TextSpan>[
                     TextSpan(
                         text: subjectIntended,
-                        style: theme.textTheme.subtitle2),
+                        style: theme.textTheme.subtitle2,),
                     TextSpan(text: '$subject\n'),
                     TextSpan(
-                        text: typeIntended, style: theme.textTheme.subtitle2),
+                        text: typeIntended, style: theme.textTheme.subtitle2,),
                     TextSpan(text: '$type\n'),
                     TextSpan(
                         text: collegeIntended,
-                        style: theme.textTheme.subtitle2),
+                        style: theme.textTheme.subtitle2,),
                     TextSpan(text: '$college\n'),
                     TextSpan(
-                        text: yearIntended, style: theme.textTheme.subtitle2),
+                        text: yearIntended, style: theme.textTheme.subtitle2,),
                     TextSpan(text: year.toString()),
                   ],
                 ),
               )
-            ]),
+            ],),
       ),
     );
   }

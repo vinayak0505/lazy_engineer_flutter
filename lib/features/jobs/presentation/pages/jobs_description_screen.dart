@@ -52,7 +52,7 @@ class JobsDescriptionScreen extends StatelessWidget {
                   CompanyTag(
                       companyName: data.company,
                       icon: AppImages.google,
-                      description: data.location),
+                      description: data.location,),
                   const SizedBox(height: 8),
                   Row(children: [
                     const SizedBox(width: 16),
@@ -67,23 +67,23 @@ class JobsDescriptionScreen extends StatelessWidget {
                       style: theme.textTheme.bodyMedium
                           ?.copyWith(color: AppThemes.subTitleColor),
                     )
-                  ]),
+                  ],),
                   const SizedBox(height: 12),
                   Row(children: [
                     const SizedBox(width: 8),
                     const CustomIcon(AppIcons.fullTimeIcon),
                     const SizedBox(width: 12),
                     Text(data.experienceLevel,
-                        style: theme.textTheme.titleMedium)
-                  ]),
+                        style: theme.textTheme.titleMedium,)
+                  ],),
                   const SizedBox(height: 4),
                   Row(children: [
                     const SizedBox(width: 8),
                     const CustomIcon(AppIcons.employeesIcon),
                     const SizedBox(width: 12),
                     Text('${data.noOfEmployees} employees',
-                        style: theme.textTheme.titleMedium)
-                  ]),
+                        style: theme.textTheme.titleMedium,)
+                  ],),
                   const SizedBox(height: 4),
                   if (data.isActivelyRecruiting ?? false)
                     Row(children: [
@@ -91,8 +91,8 @@ class JobsDescriptionScreen extends StatelessWidget {
                       const CustomIcon(AppIcons.recruitingIcon),
                       const SizedBox(width: 12),
                       Text('Actively recruiting',
-                          style: theme.textTheme.titleMedium)
-                    ]),
+                          style: theme.textTheme.titleMedium,)
+                    ],),
                   const SizedBox(height: 24),
                   Row(children: [
                     const SizedBox(width: 8),
@@ -110,7 +110,7 @@ class JobsDescriptionScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 8),
-                  ]),
+                  ],),
                   const SizedBox(height: 16),
                   Text(
                     jobDescription,
@@ -129,7 +129,7 @@ class JobsDescriptionScreen extends StatelessWidget {
                       'Rs. ${data.payRange?.low} - ${data.payRange?.high}',
                       style: theme.textTheme.bodyText2,
                     ),
-                  ]),
+                  ],),
                   const SizedBox(height: 16),
                   Text(
                     aboutTheCompany,
@@ -175,7 +175,7 @@ class JobsDescriptionScreen extends StatelessWidget {
               );
             },
           );
-        }),
+        },),
       ),
     );
   }

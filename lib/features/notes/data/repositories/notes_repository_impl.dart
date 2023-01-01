@@ -55,7 +55,7 @@ class NotesRepositoryImpl extends NotesRepository {
     try {
       filterRequest = FilterRequest(
         multiOption: removeNullList(filterRequest.multiOption),
-        // textFeild: removeNullList(filterRequest.multiOption),
+        // textField: removeNullList(filterRequest.multiOption),
         singleOption: removeNull(filterRequest.singleOption),
       );
       BaseResponse<NotesResponse> listNotes =

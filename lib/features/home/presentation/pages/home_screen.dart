@@ -117,7 +117,7 @@ class HomeScreen extends StatelessWidget {
               ),
               onTap: () {},
             )
-          ]),
+          ],),
     );
   }
 }

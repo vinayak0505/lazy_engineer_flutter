@@ -20,7 +20,7 @@ FilterRequest _$FilterRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FilterRequest {
-  List<String>? get textFeild => throw _privateConstructorUsedError;
+  List<String>? get textField => throw _privateConstructorUsedError;
   List<String>? get multiOption => throw _privateConstructorUsedError;
   String? get singleOption => throw _privateConstructorUsedError;
 
@@ -36,7 +36,7 @@ abstract class $FilterRequestCopyWith<$Res> {
           FilterRequest value, $Res Function(FilterRequest) then) =
       _$FilterRequestCopyWithImpl<$Res>;
   $Res call(
-      {List<String>? textFeild,
+      {List<String>? textField,
       List<String>? multiOption,
       String? singleOption});
 }
@@ -52,14 +52,14 @@ class _$FilterRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? textFeild = freezed,
+    Object? textField = freezed,
     Object? multiOption = freezed,
     Object? singleOption = freezed,
   }) {
     return _then(_value.copyWith(
-      textFeild: textFeild == freezed
-          ? _value.textFeild
-          : textFeild // ignore: cast_nullable_to_non_nullable
+      textField: textField == freezed
+          ? _value.textField
+          : textField // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       multiOption: multiOption == freezed
           ? _value.multiOption
@@ -81,7 +81,7 @@ abstract class _$$_FilterRequestCopyWith<$Res>
       __$$_FilterRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<String>? textFeild,
+      {List<String>? textField,
       List<String>? multiOption,
       String? singleOption});
 }
@@ -99,14 +99,14 @@ class __$$_FilterRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? textFeild = freezed,
+    Object? textField = freezed,
     Object? multiOption = freezed,
     Object? singleOption = freezed,
   }) {
     return _then(_$_FilterRequest(
-      textFeild: textFeild == freezed
-          ? _value._textFeild
-          : textFeild // ignore: cast_nullable_to_non_nullable
+      textField: textField == freezed
+          ? _value._textField
+          : textField // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       multiOption: multiOption == freezed
           ? _value._multiOption
@@ -124,19 +124,19 @@ class __$$_FilterRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FilterRequest implements _FilterRequest {
   const _$_FilterRequest(
-      {final List<String>? textFeild,
+      {final List<String>? textField,
       final List<String>? multiOption,
       this.singleOption})
-      : _textFeild = textFeild,
+      : _textField = textField,
         _multiOption = multiOption;
 
   factory _$_FilterRequest.fromJson(Map<String, dynamic> json) =>
       _$$_FilterRequestFromJson(json);
 
-  final List<String>? _textFeild;
+  final List<String>? _textField;
   @override
-  List<String>? get textFeild {
-    final value = _textFeild;
+  List<String>? get textField {
+    final value = _textField;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
@@ -156,7 +156,7 @@ class _$_FilterRequest implements _FilterRequest {
 
   @override
   String toString() {
-    return 'FilterRequest(textFeild: $textFeild, multiOption: $multiOption, singleOption: $singleOption)';
+    return 'FilterRequest(textField: $textField, multiOption: $multiOption, singleOption: $singleOption)';
   }
 
   @override
@@ -165,7 +165,7 @@ class _$_FilterRequest implements _FilterRequest {
         (other.runtimeType == runtimeType &&
             other is _$_FilterRequest &&
             const DeepCollectionEquality()
-                .equals(other._textFeild, _textFeild) &&
+                .equals(other._textField, _textField) &&
             const DeepCollectionEquality()
                 .equals(other._multiOption, _multiOption) &&
             const DeepCollectionEquality()
@@ -176,7 +176,7 @@ class _$_FilterRequest implements _FilterRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_textFeild),
+      const DeepCollectionEquality().hash(_textField),
       const DeepCollectionEquality().hash(_multiOption),
       const DeepCollectionEquality().hash(singleOption));
 
@@ -195,7 +195,7 @@ class _$_FilterRequest implements _FilterRequest {
 
 abstract class _FilterRequest implements FilterRequest {
   const factory _FilterRequest(
-      {final List<String>? textFeild,
+      {final List<String>? textField,
       final List<String>? multiOption,
       final String? singleOption}) = _$_FilterRequest;
 
@@ -203,7 +203,7 @@ abstract class _FilterRequest implements FilterRequest {
       _$_FilterRequest.fromJson;
 
   @override
-  List<String>? get textFeild;
+  List<String>? get textField;
   @override
   List<String>? get multiOption;
   @override

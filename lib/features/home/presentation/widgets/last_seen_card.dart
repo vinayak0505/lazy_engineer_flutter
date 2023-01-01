@@ -70,7 +70,7 @@ class LastSeenCard extends StatelessWidget {
                 style: theme.textTheme.overline,
               ),
             )
-          ]),
+          ],),
     );
   }
 }

@@ -39,6 +39,11 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         label: string.home,
       ),
       ScaffoldWithNavBarTabItem(
+        initialLocation: RouteGenerator.downloadRoute,
+        icon: CustomIcon(AppIcons.downloadIcon, color: Colors.grey),
+        label: string.download,
+      ),
+      ScaffoldWithNavBarTabItem(
         initialLocation: RouteGenerator.uploadRoute,
         icon: CustomIcon(AppIcons.uploadIcon, color: Colors.grey),
         label: string.upload,
@@ -63,7 +68,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       if (tabIndex != currentIndex) {
         // go to the initial location of the selected tab (by index)
         context.go(tabs[tabIndex].initialLocation);
-        if(mounted) {
+        if (mounted) {
           _pageController.animateToPage(
             tabIndex,
             duration: const Duration(milliseconds: 500),

@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
     this.readOnly = false,
     this.keyboardType,
     this.onSubitted,
-    this.hintText = 'Enter Value',
+    this.hintText = 'Search',
     this.obscureText = false,
     this.labelText,
     this.prefixIcon,
@@ -133,7 +133,7 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
       );
-    });
+    },);
   }
 
   InputBorder circularBorder(Color color) {

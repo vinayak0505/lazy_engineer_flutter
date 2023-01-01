@@ -37,9 +37,10 @@ class NotesScreen extends StatelessWidget {
                   StaggeredView(
                     data.result.map((element) {
                       return GridCard(
-                          body: element.about ?? '',
-                          image: '',
-                          title: element.title ?? '');
+                        body: element.about ?? '',
+                        image: '',
+                        title: element.title ?? '',
+                      );
                     }).toList(),
                     onTap: (context, index) {
                       context.push(
@@ -48,7 +49,7 @@ class NotesScreen extends StatelessWidget {
                     },
                   ),
                 ],
-                textFeildFilter: const [
+                textFieldFilter: const [
                   'Subject',
                   'Unit',
                   'Chapter',

@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$FilterState {
   bool get isOpen => throw _privateConstructorUsedError;
-  List<String>? get textFeild => throw _privateConstructorUsedError;
+  List<String>? get textField => throw _privateConstructorUsedError;
   List<String>? get multiOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,7 @@ abstract class $FilterStateCopyWith<$Res> {
   factory $FilterStateCopyWith(
           FilterState value, $Res Function(FilterState) then) =
       _$FilterStateCopyWithImpl<$Res>;
-  $Res call({bool isOpen, List<String>? textFeild, List<String>? multiOption});
+  $Res call({bool isOpen, List<String>? textField, List<String>? multiOption});
 }
 
 /// @nodoc
@@ -44,7 +44,7 @@ class _$FilterStateCopyWithImpl<$Res> implements $FilterStateCopyWith<$Res> {
   @override
   $Res call({
     Object? isOpen = freezed,
-    Object? textFeild = freezed,
+    Object? textField = freezed,
     Object? multiOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -52,9 +52,9 @@ class _$FilterStateCopyWithImpl<$Res> implements $FilterStateCopyWith<$Res> {
           ? _value.isOpen
           : isOpen // ignore: cast_nullable_to_non_nullable
               as bool,
-      textFeild: textFeild == freezed
-          ? _value.textFeild
-          : textFeild // ignore: cast_nullable_to_non_nullable
+      textField: textField == freezed
+          ? _value.textField
+          : textField // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       multiOption: multiOption == freezed
           ? _value.multiOption
@@ -71,7 +71,7 @@ abstract class _$$_FilterStateCopyWith<$Res>
           _$_FilterState value, $Res Function(_$_FilterState) then) =
       __$$_FilterStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isOpen, List<String>? textFeild, List<String>? multiOption});
+  $Res call({bool isOpen, List<String>? textField, List<String>? multiOption});
 }
 
 /// @nodoc
@@ -87,7 +87,7 @@ class __$$_FilterStateCopyWithImpl<$Res> extends _$FilterStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isOpen = freezed,
-    Object? textFeild = freezed,
+    Object? textField = freezed,
     Object? multiOption = freezed,
   }) {
     return _then(_$_FilterState(
@@ -95,9 +95,9 @@ class __$$_FilterStateCopyWithImpl<$Res> extends _$FilterStateCopyWithImpl<$Res>
           ? _value.isOpen
           : isOpen // ignore: cast_nullable_to_non_nullable
               as bool,
-      textFeild: textFeild == freezed
-          ? _value._textFeild
-          : textFeild // ignore: cast_nullable_to_non_nullable
+      textField: textField == freezed
+          ? _value._textField
+          : textField // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       multiOption: multiOption == freezed
           ? _value._multiOption
@@ -111,16 +111,16 @@ class __$$_FilterStateCopyWithImpl<$Res> extends _$FilterStateCopyWithImpl<$Res>
 
 class _$_FilterState implements _FilterState {
   const _$_FilterState(this.isOpen,
-      {final List<String>? textFeild, final List<String>? multiOption})
-      : _textFeild = textFeild,
+      {final List<String>? textField, final List<String>? multiOption})
+      : _textField = textField,
         _multiOption = multiOption;
 
   @override
   final bool isOpen;
-  final List<String>? _textFeild;
+  final List<String>? _textField;
   @override
-  List<String>? get textFeild {
-    final value = _textFeild;
+  List<String>? get textField {
+    final value = _textField;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
@@ -137,7 +137,7 @@ class _$_FilterState implements _FilterState {
 
   @override
   String toString() {
-    return 'FilterState(isOpen: $isOpen, textFeild: $textFeild, multiOption: $multiOption)';
+    return 'FilterState(isOpen: $isOpen, textField: $textField, multiOption: $multiOption)';
   }
 
   @override
@@ -147,7 +147,7 @@ class _$_FilterState implements _FilterState {
             other is _$_FilterState &&
             const DeepCollectionEquality().equals(other.isOpen, isOpen) &&
             const DeepCollectionEquality()
-                .equals(other._textFeild, _textFeild) &&
+                .equals(other._textField, _textField) &&
             const DeepCollectionEquality()
                 .equals(other._multiOption, _multiOption));
   }
@@ -156,7 +156,7 @@ class _$_FilterState implements _FilterState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isOpen),
-      const DeepCollectionEquality().hash(_textFeild),
+      const DeepCollectionEquality().hash(_textField),
       const DeepCollectionEquality().hash(_multiOption));
 
   @JsonKey(ignore: true)
@@ -167,13 +167,13 @@ class _$_FilterState implements _FilterState {
 
 abstract class _FilterState implements FilterState {
   const factory _FilterState(final bool isOpen,
-      {final List<String>? textFeild,
+      {final List<String>? textField,
       final List<String>? multiOption}) = _$_FilterState;
 
   @override
   bool get isOpen;
   @override
-  List<String>? get textFeild;
+  List<String>? get textField;
   @override
   List<String>? get multiOption;
   @override

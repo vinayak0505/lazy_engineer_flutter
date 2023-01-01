@@ -22,7 +22,7 @@ class JobList extends StatelessWidget {
           jobTitle: data[index].jobTitle,
           location: data[index].location,
           companyName: data[index].company,
-          date: DateTime.now()
+          date: DateTime.now(),
           // date: data[index].datePosted,
         ),
         onPressed: () =>
@@ -41,7 +41,7 @@ class JobDataBox extends StatelessWidget {
       required this.jobTitle,
       required this.companyName,
       required this.location,
-      required this.date})
+      required this.date,})
       : super(key: key);
   final String jobTitle, companyName, location;
   final DateTime date;
@@ -68,7 +68,7 @@ class JobDataBox extends StatelessWidget {
             children: [
               Text(jobTitle,
                   style: theme.textTheme.headline5,
-                  overflow: TextOverflow.ellipsis),
+                  overflow: TextOverflow.ellipsis,),
               const SizedBox(height: 2),
               Text(companyName, style: theme.textTheme.bodyLarge),
               const SizedBox(height: 8),
@@ -83,7 +83,7 @@ class JobDataBox extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 child: Text(time(), style: theme.textTheme.bodySmall),
               )
-            ]),
+            ],),
       ),
     );
   }

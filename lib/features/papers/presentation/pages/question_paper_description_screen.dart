@@ -54,7 +54,7 @@ class PaperDescriptionScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 12),
                                 Text('Computer Graphics',
-                                    style: theme.textTheme.titleLarge),
+                                    style: theme.textTheme.titleLarge,),
                                 const SizedBox(height: 16),
                                 const SizedBox(height: 16),
                                 Align(
@@ -66,9 +66,9 @@ class PaperDescriptionScreen extends StatelessWidget {
                                   ),
                                 ),
                                 const BottomPage()
-                              ]),
+                              ],),
                         )
-                      ]),
+                      ],),
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -86,19 +86,19 @@ class PaperDescriptionScreen extends StatelessWidget {
                   Text('College', style: theme.textTheme.headlineSmall),
                   const SizedBox(width: 100),
                   Text('GTBIT', style: theme.textTheme.bodyText2),
-                ]),
+                ],),
                 const SizedBox(height: 16),
                 Row(children: [
                   Text('Semester', style: theme.textTheme.headlineSmall),
                   const SizedBox(width: 80),
                   Text('3rd Semester', style: theme.textTheme.bodyText2),
-                ]),
+                ],),
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.headlineSmall),
                 const SizedBox(height: 16),
                 EditTagsWidget(listTags: (value) {
                   listTags = value;
-                }),
+                },),
               ],
             ),
           ),
@@ -125,7 +125,7 @@ class BottomPage extends StatelessWidget {
           'Like',
           style: theme.textTheme.bodyText1,
         )
-      ]),
+      ],),
       Column(children: [
         const CustomIcon(
           AppIcons.dislikeIcon,
@@ -136,21 +136,21 @@ class BottomPage extends StatelessWidget {
           'Dislike',
           style: theme.textTheme.bodyText1,
         )
-      ]),
+      ],),
       Column(children: [
         const CustomIcon(AppIcons.bookIcon),
         Text(
           'pdf',
           style: theme.textTheme.bodyText1,
         )
-      ]),
+      ],),
       Column(children: [
         const CustomIcon(AppIcons.pageIcon),
         Text(
           'pages',
           style: theme.textTheme.bodyText1,
         )
-      ])
-    ]);
+      ],)
+    ],);
   }
 }

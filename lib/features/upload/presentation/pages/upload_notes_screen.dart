@@ -50,7 +50,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         ),
         const SizedBox(height: 16),
         //* Semester
-        Text(semister, style: theme.textTheme.titleLarge),
+        Text(semester, style: theme.textTheme.titleLarge),
         const SizedBox(height: 12),
         CustomDropdown(
           list: semesterList,
@@ -135,16 +135,18 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         ),
       ],
       onPressed: (cubit) {
-        cubit.uploadNotes(UploadNotesRequest(
-          title: titleController.text,
-          about: aboutController.text,
-          semester: semesterController.text,
-          subject: subjectController.text,
-          unit: unitController.text,
-          chapter: chapterController.text,
-          topic: topicController.text,
-          tags: tagsController,
-        ),);
+        cubit.uploadNotes(
+          UploadNotesRequest(
+            title: titleController.text,
+            about: aboutController.text,
+            semester: semesterController.text,
+            subject: subjectController.text,
+            unit: unitController.text,
+            chapter: chapterController.text,
+            topic: topicController.text,
+            tags: tagsController,
+          ),
+        );
       },
     );
   }
