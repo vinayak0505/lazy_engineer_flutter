@@ -18,9 +18,9 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
     final aboutController = TextEditingController();
     final subjectController = TextEditingController();
     final semesterController = TextEditingController();
-    final yearController = TextEditingController();
-    final universityController = TextEditingController();
-    final typeController = TextEditingController();
+    final unitController = TextEditingController();
+    final chapterController = TextEditingController();
+    final topicController = TextEditingController();
     List<String> tagsController = [];
     return UploadScreenWidget(
       title: uploadPaper,
@@ -47,18 +47,6 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        //* About
-        Text(about, style: theme.textTheme.titleLarge),
-        const SizedBox(height: 12),
-        CustomTextField.multiLine(
-          controller: aboutController,
-          hintText: aboutPaper,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            about,
-          ),
-        ),
-        const SizedBox(height: 16),
         //* Semester
         CustomDropdown(
           width: 120,
@@ -72,36 +60,36 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        //* Year
+        //* Unit
         CustomDropdown(
           width: 120,
-          list: yearList,
-          keyList: yearKeyList,
-          hintText: year,
-          controller: yearController,
+          list: unitList,
+          keyList: unitKeyList,
+          hintText: unit,
+          controller: unitController,
           validator: (value) => nullCheckTextValidation(
             value,
-            year,
+            unit,
           ),
         ),
         const SizedBox(height: 16),
-        //* University
+        //* Chapter
         CustomTextField.secondary(
-          controller: universityController,
-          hintText: university,
+          controller: chapterController,
+          hintText: chapter,
           validator: (value) => nullCheckTextValidation(
             value,
-            university,
+            chapter,
           ),
         ),
         const SizedBox(height: 16),
-        //* Type
+        //* Topic
         CustomTextField.secondary(
-          controller: typeController,
-          hintText: type,
+          controller: topicController,
+          hintText: topic,
           validator: (value) => nullCheckTextValidation(
             value,
-            type,
+            topic,
           ),
         ),
         const SizedBox(height: 16),
@@ -123,9 +111,9 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
             about: aboutController.text,
             semester: semesterController.text,
             subject: subjectController.text,
-            year: yearController.text,
-            university: universityController.text,
-            type: typeController.text,
+            unit: unitController.text,
+            chapter: chapterController.text,
+            topic: topicController.text,
             tags: tagsController,
           ),
         );

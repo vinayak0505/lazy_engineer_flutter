@@ -44,18 +44,6 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        //* Job Profile
-        Text(jobProfile, style: theme.textTheme.titleLarge),
-        const SizedBox(height: 12),
-        CustomTextField.multiLine(
-          controller: profileController,
-          hintText: aboutJobProfile,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            jobProfile,
-          ),
-        ),
-        const SizedBox(height: 16),
         //* Company
         Text(company, style: theme.textTheme.titleLarge),
         CustomTextField.secondary(
