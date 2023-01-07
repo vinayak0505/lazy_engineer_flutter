@@ -5,7 +5,7 @@ import 'package:lazy_engineer/features/file/data/models/files_response/files_res
 import 'package:lazy_engineer/features/home/data/models/categories_model/categories_model.dart';
 import 'package:lazy_engineer/features/home/data/models/last_seen_response/last_seen_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
-import 'package:lazy_engineer/features/jobs/data/models/jobs_response/jobs_response.dart';
+import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
@@ -54,48 +54,48 @@ NotesDetailResponse notesDetail = const NotesDetailResponse(
   4.5,
 );
 
-List<PaperResponse> papersList = [
-  const PaperResponse(
-    'Computer Graphics',
-    'Computer Graphics',
-    'Class Test',
-    'description',
-    'GTBIT',
-    3,
-    2,
-    AppImages.book,
-  ),
-  const PaperResponse(
-    'Computer Graphics',
-    'Computer Graphics',
-    'Class Test',
-    'description',
-    'GTBIT',
-    3,
-    2,
-    AppImages.book,
-  ),
-  const PaperResponse(
-    'Computer Graphics',
-    'Computer Graphics',
-    'Class Test',
-    'description',
-    'GTBIT',
-    3,
-    2,
-    AppImages.book,
-  ),
-  const PaperResponse(
-    'Computer Graphics',
-    'Computer Graphics',
-    'Class Test',
-    'description',
-    'GTBIT',
-    3,
-    2,
-    AppImages.book,
-  ),
-];
+// List<PaperResponse> papersList = [
+//   const PaperResponse(
+//     'Computer Graphics',
+//     'Computer Graphics',
+//     'Class Test',
+//     'description',
+//     'GTBIT',
+//     3,
+//     2,
+//     AppImages.book,
+//   ),
+//   const PaperResponse(
+//     'Computer Graphics',
+//     'Computer Graphics',
+//     'Class Test',
+//     'description',
+//     'GTBIT',
+//     3,
+//     2,
+//     AppImages.book,
+//   ),
+//   const PaperResponse(
+//     'Computer Graphics',
+//     'Computer Graphics',
+//     'Class Test',
+//     'description',
+//     'GTBIT',
+//     3,
+//     2,
+//     AppImages.book,
+//   ),
+//   const PaperResponse(
+//     'Computer Graphics',
+//     'Computer Graphics',
+//     'Class Test',
+//     'description',
+//     'GTBIT',
+//     3,
+//     2,
+//     AppImages.book,
+//   ),
+// ];
 
 List<FilesResponse> practicalFileList = [
   const FilesResponse(
@@ -222,29 +222,29 @@ List<BooksResponse> bookList = [
   ),
 ];
 
-List<JobsResponse> jobList = [
-  JobsResponse(
-    'Android Developer',
-    'Google',
-    'Gurugram, Haryana, India',
-    [],
-    DateTime.now().toIso8601String(),
-  ),
-  JobsResponse(
-    'Android Developer',
-    'Google',
-    'Gurugram, Haryana, India',
-    [],
-    DateTime.now().toIso8601String(),
-  ),
-  JobsResponse(
-    'Android Developer',
-    'Google',
-    'Gurugram, Haryana, India',
-    [],
-    DateTime.now().toIso8601String(),
-  ),
-];
+// List<JobsResponse> jobList = [
+//   JobsResponse(
+//     'Android Developer',
+//     'Google',
+//     'Gurugram, Haryana, India',
+//     [],
+//     DateTime.now().toIso8601String(),
+//   ),
+//   JobsResponse(
+//     'Android Developer',
+//     'Google',
+//     'Gurugram, Haryana, India',
+//     [],
+//     DateTime.now().toIso8601String(),
+//   ),
+//   JobsResponse(
+//     'Android Developer',
+//     'Google',
+//     'Gurugram, Haryana, India',
+//     [],
+//     DateTime.now().toIso8601String(),
+//   ),
+// ];
 
 JobsDetailResponse jobsDetail = const JobsDetailResponse(
   'Android Developer',

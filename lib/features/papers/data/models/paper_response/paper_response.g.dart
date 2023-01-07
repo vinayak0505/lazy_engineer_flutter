@@ -8,24 +8,44 @@ part of 'paper_response.dart';
 
 _$_PaperResponse _$$_PaperResponseFromJson(Map<String, dynamic> json) =>
     _$_PaperResponse(
-      json['title'] as String,
-      json['subject'] as String,
-      json['type'] as String?,
-      json['descirption'] as String,
-      json['college'] as String,
-      json['semester'] as int?,
-      json['year'] as int?,
-      json['link'] as String?,
+      (json['result'] as List<dynamic>?)
+          ?.map((e) => PaperDetail.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      json['totalCount'] as int?,
+      json['skip'] as int?,
+      json['limit'] as int?,
     );
 
 Map<String, dynamic> _$$_PaperResponseToJson(_$_PaperResponse instance) =>
     <String, dynamic>{
+      'result': instance.result,
+      'totalCount': instance.totalCount,
+      'skip': instance.skip,
+      'limit': instance.limit,
+    };
+
+_$_PaperDetail _$$_PaperDetailFromJson(Map<String, dynamic> json) =>
+    _$_PaperDetail(
+      json['title'] as String?,
+      json['about'] as String?,
+      json['semester'] as String?,
+      json['subject'] as String?,
+      json['unit'] as String?,
+      json['chapter'] as String?,
+      json['topic'] as String?,
+      (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      json['mediaLink'] as String?,
+    );
+
+Map<String, dynamic> _$$_PaperDetailToJson(_$_PaperDetail instance) =>
+    <String, dynamic>{
       'title': instance.title,
-      'subject': instance.subject,
-      'type': instance.type,
-      'descirption': instance.descirption,
-      'college': instance.college,
+      'about': instance.about,
       'semester': instance.semester,
-      'year': instance.year,
-      'link': instance.link,
+      'subject': instance.subject,
+      'unit': instance.unit,
+      'chapter': instance.chapter,
+      'topic': instance.topic,
+      'tags': instance.tags,
+      'mediaLink': instance.mediaLink,
     };

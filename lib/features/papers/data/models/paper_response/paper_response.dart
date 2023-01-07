@@ -6,16 +6,29 @@ part 'paper_response.g.dart';
 @freezed
 class PaperResponse with _$PaperResponse {
   const factory PaperResponse(
-    String title,
-    String subject,
-    String? type,
-    String descirption,
-    String college,
-    int? semester,
-    int? year,
-    String? link,
+    List<PaperDetail>? result,
+    int? totalCount,
+    int? skip,
+    int? limit,
   ) = _PaperResponse;
 
   factory PaperResponse.fromJson(Map<String, dynamic> json) =>
       _$PaperResponseFromJson(json);
+}
+
+@freezed
+class PaperDetail with _$PaperDetail {
+  const factory PaperDetail(
+    String? title,
+    String? about,
+    String? semester,
+    String? subject,
+    String? unit,
+    String? chapter,
+    String? topic,
+    List<String>? tags,
+    String? mediaLink,
+  ) = _PaperDetail;
+
+  factory PaperDetail.fromJson(Map<String, dynamic> json) => _$PaperDetailFromJson(json);
 }

@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/jobs/data/datasources/remote/jobs_remote_datasource.dart';
 import 'package:lazy_engineer/features/jobs/data/models/filter_request/filter_request.dart';
+import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
-import 'package:lazy_engineer/features/jobs/data/models/jobs_response/jobs_response.dart';
 import 'package:lazy_engineer/features/jobs/domain/jobs_repository.dart';
 
 class JobsRepositoryImpl extends JobsRepository {
@@ -12,11 +11,11 @@ class JobsRepositoryImpl extends JobsRepository {
   // final JobsLocalDatasource _localDataSource = JobsLocalDatasource();
 
   @override
-  Future<List<JobsResponse>?> getJobsData() async {
+  Future<List<JobDetail>?> getJobsData() async {
     try {
-      final BaseResponse<List<JobsResponse>> listJobs =
+      final BaseResponse<JobResponse> listJobs =
           await _remoteDataSource.getJobs();
-      return listJobs.data;
+      return listJobs.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -24,11 +23,11 @@ class JobsRepositoryImpl extends JobsRepository {
   }
 
   @override
-  Future<List<JobsResponse>?> searchJobs(String query) async {
+  Future<List<JobDetail>?> searchJobs(String query) async {
     try {
-      final BaseResponse<List<JobsResponse>> listJobs =
+      final BaseResponse<JobResponse> listJobs =
           await _remoteDataSource.searchJobs(query);
-      return listJobs.data;
+      return listJobs.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -51,15 +50,15 @@ class JobsRepositoryImpl extends JobsRepository {
   }
 
   @override
-  Future<List<JobsResponse>?> applyFilter(FilterRequest filterRequest) async {
+  Future<List<JobDetail>?> applyFilter(FilterRequest filterRequest) async {
     try {
-      return jobList;
+      // return jobList;
       // filterRequest = FilterRequest(
       //   multiOption: removeNullList(filterRequest.multiOption),
       //   textField: removeNullList(filterRequest.multiOption),
       //   singleOption: removeNull(filterRequest.singleOption),
       // );
-      // BaseResponse<List<JobsResponse>> listJobs =
+      // BaseResponse<List<JobDetail>> listJobs =
       //     await _remoteDataSource.applyFilter(filterRequest);
       // return listJobs.data;
     } catch (e) {

@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lazy_engineer/features/jobs/data/models/filter_request/filter_request.dart';
-import 'package:lazy_engineer/features/jobs/data/models/jobs_response/jobs_response.dart';
+import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/jobs/domain/jobs_repository.dart';
 
 part 'jobs_state.dart';
@@ -14,7 +14,7 @@ class JobsCubit extends Cubit<JobsState> {
   }
   Future<void> getJobs() async {
     try {
-      final List<JobsResponse>? data = await _repository.getJobsData();
+      final List<JobDetail>? data = await _repository.getJobsData();
       if (data != null) {
         emit(JobsState.success(data));
       } else {
@@ -28,7 +28,7 @@ class JobsCubit extends Cubit<JobsState> {
   Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const JobsState.loading());
-      final List<JobsResponse>? data = await _repository.applyFilter(filterRequest);
+      final List<JobDetail>? data = await _repository.applyFilter(filterRequest);
       if (data != null) {
         emit(JobsState.success(data));
       } else {

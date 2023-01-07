@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/features/jobs/data/models/jobs_response/jobs_response.dart';
+import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/jobs/domain/jobs_repository.dart';
 
 

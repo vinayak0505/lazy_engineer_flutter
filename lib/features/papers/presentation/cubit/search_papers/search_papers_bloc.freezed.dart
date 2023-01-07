@@ -135,7 +135,7 @@ mixin _$SearchPapersState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -143,7 +143,7 @@ mixin _$SearchPapersState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -151,7 +151,7 @@ mixin _$SearchPapersState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -243,7 +243,7 @@ class _$_SearchPapersInitial implements _SearchPapersInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
   }) {
     return initial();
   }
@@ -254,7 +254,7 @@ class _$_SearchPapersInitial implements _SearchPapersInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
   }) {
     return initial?.call();
   }
@@ -265,7 +265,7 @@ class _$_SearchPapersInitial implements _SearchPapersInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -360,7 +360,7 @@ class _$_SearchPapersLoading implements _SearchPapersLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
   }) {
     return loading();
   }
@@ -371,7 +371,7 @@ class _$_SearchPapersLoading implements _SearchPapersLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
   }) {
     return loading?.call();
   }
@@ -382,7 +382,7 @@ class _$_SearchPapersLoading implements _SearchPapersLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -502,7 +502,7 @@ class _$_SearchPapersFailure implements _SearchPapersFailure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
   }) {
     return failure(e);
   }
@@ -513,7 +513,7 @@ class _$_SearchPapersFailure implements _SearchPapersFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -524,7 +524,7 @@ class _$_SearchPapersFailure implements _SearchPapersFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -585,7 +585,7 @@ abstract class _$$_SearchPapersSuccessCopyWith<$Res> {
   factory _$$_SearchPapersSuccessCopyWith(_$_SearchPapersSuccess value,
           $Res Function(_$_SearchPapersSuccess) then) =
       __$$_SearchPapersSuccessCopyWithImpl<$Res>;
-  $Res call({List<PaperResponse> data});
+  $Res call({List<PaperDetail> data});
 }
 
 /// @nodoc
@@ -607,7 +607,7 @@ class __$$_SearchPapersSuccessCopyWithImpl<$Res>
       data == freezed
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<PaperResponse>,
+              as List<PaperDetail>,
     ));
   }
 }
@@ -615,11 +615,11 @@ class __$$_SearchPapersSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SearchPapersSuccess implements _SearchPapersSuccess {
-  const _$_SearchPapersSuccess(final List<PaperResponse> data) : _data = data;
+  const _$_SearchPapersSuccess(final List<PaperDetail> data) : _data = data;
 
-  final List<PaperResponse> _data;
+  final List<PaperDetail> _data;
   @override
-  List<PaperResponse> get data {
+  List<PaperDetail> get data {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -653,7 +653,7 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
   }) {
     return success(data);
   }
@@ -664,7 +664,7 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
   }) {
     return success?.call(data);
   }
@@ -675,7 +675,7 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -723,10 +723,10 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
 }
 
 abstract class _SearchPapersSuccess implements SearchPapersState {
-  const factory _SearchPapersSuccess(final List<PaperResponse> data) =
+  const factory _SearchPapersSuccess(final List<PaperDetail> data) =
       _$_SearchPapersSuccess;
 
-  List<PaperResponse> get data;
+  List<PaperDetail> get data;
   @JsonKey(ignore: true)
   _$$_SearchPapersSuccessCopyWith<_$_SearchPapersSuccess> get copyWith =>
       throw _privateConstructorUsedError;

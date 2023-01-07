@@ -14,17 +14,17 @@ abstract class PapersClient {
   factory PapersClient(Dio dio, {String baseUrl}) = _PapersClient;
 
   @GET(AppConfig.papers)
-  Future<BaseResponse<List<PaperResponse>>> getPapers([
+  Future<BaseResponse<PaperResponse>> getPapers([
     @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
   ]);
 
   @GET(AppConfig.papersSearch)
-  Future<BaseResponse<List<PaperResponse>>> searchPapers(
+  Future<BaseResponse<PaperResponse>> searchPapers(
     @Query('query') String query,
   );
 
   @GET(AppConfig.papersSearch)
-  Future<BaseResponse<List<PaperResponse>>> applyFilter(
+  Future<BaseResponse<PaperResponse>> applyFilter(
     @Query('query') FilterRequest query,
   );
 
