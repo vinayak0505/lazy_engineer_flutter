@@ -23,10 +23,10 @@ mixin _$UploadPaperRequest {
   String get title => throw _privateConstructorUsedError;
   String get about => throw _privateConstructorUsedError;
   String get semester => throw _privateConstructorUsedError;
-  String? get subject => throw _privateConstructorUsedError;
-  String? get unit => throw _privateConstructorUsedError;
-  String? get chapter => throw _privateConstructorUsedError;
-  String? get topic => throw _privateConstructorUsedError;
+  String get subject => throw _privateConstructorUsedError;
+  String get year => throw _privateConstructorUsedError;
+  String? get university => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
   String? get fileLink => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
   dynamic get file => throw _privateConstructorUsedError;
@@ -46,10 +46,10 @@ abstract class $UploadPaperRequestCopyWith<$Res> {
       {String title,
       String about,
       String semester,
-      String? subject,
-      String? unit,
-      String? chapter,
-      String? topic,
+      String subject,
+      String year,
+      String? university,
+      String? type,
       String? fileLink,
       List<String> tags,
       dynamic file});
@@ -70,9 +70,9 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
     Object? about = freezed,
     Object? semester = freezed,
     Object? subject = freezed,
-    Object? unit = freezed,
-    Object? chapter = freezed,
-    Object? topic = freezed,
+    Object? year = freezed,
+    Object? university = freezed,
+    Object? type = freezed,
     Object? fileLink = freezed,
     Object? tags = freezed,
     Object? file = freezed,
@@ -93,18 +93,18 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
+              as String,
+      year: year == freezed
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as String,
+      university: university == freezed
+          ? _value.university
+          : university // ignore: cast_nullable_to_non_nullable
               as String?,
-      unit: unit == freezed
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String?,
-      chapter: chapter == freezed
-          ? _value.chapter
-          : chapter // ignore: cast_nullable_to_non_nullable
-              as String?,
-      topic: topic == freezed
-          ? _value.topic
-          : topic // ignore: cast_nullable_to_non_nullable
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as String?,
       fileLink: fileLink == freezed
           ? _value.fileLink
@@ -133,10 +133,10 @@ abstract class _$$_UploadPaperRequestCopyWith<$Res>
       {String title,
       String about,
       String semester,
-      String? subject,
-      String? unit,
-      String? chapter,
-      String? topic,
+      String subject,
+      String year,
+      String? university,
+      String? type,
       String? fileLink,
       List<String> tags,
       dynamic file});
@@ -159,9 +159,9 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
     Object? about = freezed,
     Object? semester = freezed,
     Object? subject = freezed,
-    Object? unit = freezed,
-    Object? chapter = freezed,
-    Object? topic = freezed,
+    Object? year = freezed,
+    Object? university = freezed,
+    Object? type = freezed,
     Object? fileLink = freezed,
     Object? tags = freezed,
     Object? file = freezed,
@@ -182,18 +182,18 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
+              as String,
+      year: year == freezed
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as String,
+      university: university == freezed
+          ? _value.university
+          : university // ignore: cast_nullable_to_non_nullable
               as String?,
-      unit: unit == freezed
-          ? _value.unit
-          : unit // ignore: cast_nullable_to_non_nullable
-              as String?,
-      chapter: chapter == freezed
-          ? _value.chapter
-          : chapter // ignore: cast_nullable_to_non_nullable
-              as String?,
-      topic: topic == freezed
-          ? _value.topic
-          : topic // ignore: cast_nullable_to_non_nullable
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
               as String?,
       fileLink: fileLink == freezed
           ? _value.fileLink
@@ -218,10 +218,10 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
       {required this.title,
       required this.about,
       required this.semester,
-      this.subject,
-      this.unit,
-      this.chapter,
-      this.topic,
+      required this.subject,
+      required this.year,
+      this.university,
+      this.type,
       this.fileLink,
       required final List<String> tags,
       this.file})
@@ -237,13 +237,13 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   @override
   final String semester;
   @override
-  final String? subject;
+  final String subject;
   @override
-  final String? unit;
+  final String year;
   @override
-  final String? chapter;
+  final String? university;
   @override
-  final String? topic;
+  final String? type;
   @override
   final String? fileLink;
   final List<String> _tags;
@@ -258,7 +258,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
 
   @override
   String toString() {
-    return 'UploadPaperRequest(title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, fileLink: $fileLink, tags: $tags, file: $file)';
+    return 'UploadPaperRequest(title: $title, about: $about, semester: $semester, subject: $subject, year: $year, university: $university, type: $type, fileLink: $fileLink, tags: $tags, file: $file)';
   }
 
   @override
@@ -270,9 +270,10 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
             const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.unit, unit) &&
-            const DeepCollectionEquality().equals(other.chapter, chapter) &&
-            const DeepCollectionEquality().equals(other.topic, topic) &&
+            const DeepCollectionEquality().equals(other.year, year) &&
+            const DeepCollectionEquality()
+                .equals(other.university, university) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.fileLink, fileLink) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other.file, file));
@@ -286,9 +287,9 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
       const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(unit),
-      const DeepCollectionEquality().hash(chapter),
-      const DeepCollectionEquality().hash(topic),
+      const DeepCollectionEquality().hash(year),
+      const DeepCollectionEquality().hash(university),
+      const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(fileLink),
       const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(file));
@@ -312,10 +313,10 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
       {required final String title,
       required final String about,
       required final String semester,
-      final String? subject,
-      final String? unit,
-      final String? chapter,
-      final String? topic,
+      required final String subject,
+      required final String year,
+      final String? university,
+      final String? type,
       final String? fileLink,
       required final List<String> tags,
       final dynamic file}) = _$_UploadPaperRequest;
@@ -330,13 +331,13 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
   @override
   String get semester;
   @override
-  String? get subject;
+  String get subject;
   @override
-  String? get unit;
+  String get year;
   @override
-  String? get chapter;
+  String? get university;
   @override
-  String? get topic;
+  String? get type;
   @override
   String? get fileLink;
   @override

@@ -7,7 +7,7 @@ import '../../../config/theme/app_theme.dart';
 import '../../components/custom_icon.dart';
 
 class BottomNavScreen extends StatefulWidget {
-  const BottomNavScreen(this.child, {Key? key}) : super(key: key);
+  const BottomNavScreen(this.child, {super.key});
   final Widget child;
 
   @override
@@ -54,7 +54,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         label: string.account,
       ),
     ];
-
+    
     int locationToTabIndex(String location) {
       final index =
           tabs.indexWhere((t) => location.startsWith(t.initialLocation));
@@ -62,7 +62,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       return index < 0 ? 0 : index;
     }
 
-    int currentIndex = locationToTabIndex(GoRouter.of(context).location);
+    final int currentIndex = locationToTabIndex(GoRouter.of(context).location);
     // callback used to navigate to the desired tab
     void onItemTapped(BuildContext context, int tabIndex) {
       if (tabIndex != currentIndex) {
@@ -108,8 +108,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 
 class ScaffoldWithNavBarTabItem extends BottomNavigationBarItem {
   const ScaffoldWithNavBarTabItem(
-      {required this.initialLocation, required Widget icon, String? label})
-      : super(icon: icon, label: label);
+      {required this.initialLocation, required super.icon, super.label});
 
   /// The initial location/path
   final String initialLocation;
