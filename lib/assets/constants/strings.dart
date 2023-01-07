@@ -90,6 +90,7 @@ const String searchTags = 'Search Tags';
 const String submit = 'Submit';
 const String college = 'College';
 const String year = 'Year';
+const String type = 'Type';
 const String yearOfAdmission = 'Year of Admission';
 const String price = 'Price';
 const String bookEdition = 'Book Edition';

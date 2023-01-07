@@ -316,13 +316,6 @@ List<String> yearList = [
   '4th Year',
 ];
 
-List<String> yearKeyList = [
-  '1',
-  '2',
-  '3',
-  '4',
-];
-
 List<String> unitList = [
   'Unit 1',
   'Unit 2',
@@ -331,6 +324,13 @@ List<String> unitList = [
 ];
 
 List<String> unitKeyList = [
+  '1',
+  '2',
+  '3',
+  '4',
+];
+
+List<String> yearKeyList = [
   '1',
   '2',
   '3',
