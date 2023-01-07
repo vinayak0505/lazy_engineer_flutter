@@ -1,14 +1,9 @@
 import 'package:lazy_engineer/assets/images.dart';
-import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
-import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
 import 'package:lazy_engineer/features/home/data/models/categories_model/categories_model.dart';
 import 'package:lazy_engineer/features/home/data/models/last_seen_response/last_seen_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
-import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
-import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
-import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 
 List<CategoriesModel> categoriesList = [
   const CategoriesModel(
@@ -97,41 +92,41 @@ NotesDetailResponse notesDetail = const NotesDetailResponse(
 //   ),
 // ];
 
-List<FilesResponse> practicalFileList = [
-  const FilesResponse(
-    'Computer Graphics Practicle File',
-    'Computer Graphics',
-    'GTBIT',
-    'Computer Graphics',
-    AppImages.bookCoverImage,
-  ),
-  const FilesResponse(
-    'Computer Graphics Practicle File',
-    'Computer Graphics',
-    'GTBIT',
-    'Computer Graphics',
-    AppImages.bookCoverImage,
-  ),
-  const FilesResponse(
-    'Computer Graphics Practical File',
-    'Computer Graphics',
-    'GTBIT',
-    'Computer Graphics',
-    AppImages.bookCoverImage,
-  ),
-];
+// List<FilesResponse> practicalFileList = [
+//   const FilesResponse(
+//     'Computer Graphics Practicle File',
+//     'Computer Graphics',
+//     'GTBIT',
+//     'Computer Graphics',
+//     AppImages.bookCoverImage,
+//   ),
+//   const FilesResponse(
+//     'Computer Graphics Practicle File',
+//     'Computer Graphics',
+//     'GTBIT',
+//     'Computer Graphics',
+//     AppImages.bookCoverImage,
+//   ),
+//   const FilesResponse(
+//     'Computer Graphics Practical File',
+//     'Computer Graphics',
+//     'GTBIT',
+//     'Computer Graphics',
+//     AppImages.bookCoverImage,
+//   ),
+// ];
 
-PaperDetailResponse papersDetail = const PaperDetailResponse(
-  'Computer Graphics Question Paper',
-  AppImages.book,
-  3,
-  2,
-  'Computer Graphics',
-  'Class Test',
-  'No',
-  ['Ms. Jasleen Kaur', 'Unit - 1 & 2', '2019'],
-  4.5,
-);
+// PaperDetailResponse papersDetail = const PaperDetailResponse(
+//   'Computer Graphics Question Paper',
+//   AppImages.book,
+//   3,
+//   2,
+//   'Computer Graphics',
+//   'Class Test',
+//   'No',
+//   ['Ms. Jasleen Kaur', 'Unit - 1 & 2', '2019'],
+//   4.5,
+// );
 
 FilesDetailResponse filesDetail = const FilesDetailResponse(
   'Computer Graphics Practical File',
@@ -191,36 +186,36 @@ List<String> singleOptionFileList = [
   'Newest'
 ];
 
-List<BooksResponse> bookList = [
-  const BooksResponse(
-    'Computer Graphics',
-    ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-    'You can find handwriten notes from all students.',
-    200,
-    AppImages.bookCoverImage,
-  ),
-  const BooksResponse(
-    'Computer Graphics',
-    ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-    'You can find handwriten notes from all students.',
-    200,
-    AppImages.bookCoverImage,
-  ),
-  const BooksResponse(
-    'Computer Graphics',
-    ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-    'You can find handwriten notes from all students.',
-    200,
-    AppImages.bookCoverImage,
-  ),
-  const BooksResponse(
-    'Computer Graphics',
-    ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-    'You can find handwriten notes from all students.',
-    200,
-    AppImages.bookCoverImage,
-  ),
-];
+// List<BooksResponse> bookList = [
+//   const BooksResponse(
+//     'Computer Graphics',
+//     ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
+//     'You can find handwriten notes from all students.',
+//     200,
+//     AppImages.bookCoverImage,
+//   ),
+//   const BooksResponse(
+//     'Computer Graphics',
+//     ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
+//     'You can find handwriten notes from all students.',
+//     200,
+//     AppImages.bookCoverImage,
+//   ),
+//   const BooksResponse(
+//     'Computer Graphics',
+//     ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
+//     'You can find handwriten notes from all students.',
+//     200,
+//     AppImages.bookCoverImage,
+//   ),
+//   const BooksResponse(
+//     'Computer Graphics',
+//     ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
+//     'You can find handwriten notes from all students.',
+//     200,
+//     AppImages.bookCoverImage,
+//   ),
+// ];
 
 // List<JobsResponse> jobList = [
 //   JobsResponse(

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
+import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/books/domain/repositories/books_repository.dart';
 
 part 'search_books_event.dart';

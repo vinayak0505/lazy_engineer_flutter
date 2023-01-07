@@ -16,7 +16,7 @@ class _FilesClient implements FilesClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<List<FilesResponse>>> getFiles(
+  Future<BaseResponse<FileResponse>> getFiles(
       [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -24,61 +24,52 @@ class _FilesClient implements FilesClient {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<FilesResponse>>>(
+        _setStreamType<BaseResponse<FileResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/practicle_file',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<FilesResponse>>.fromJson(
+    final value = BaseResponse<FileResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<FilesResponse>(
-              (i) => FilesResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => FileResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<List<FilesResponse>>> searchFiles(query) async {
+  Future<BaseResponse<FileResponse>> searchFiles(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<FilesResponse>>>(
+        _setStreamType<BaseResponse<FileResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/files/search',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<FilesResponse>>.fromJson(
+    final value = BaseResponse<FileResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<FilesResponse>(
-              (i) => FilesResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => FileResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<List<FilesResponse>>> applyFilter(query) async {
+  Future<BaseResponse<FileResponse>> applyFilter(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query.toJson()};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<FilesResponse>>>(
+        _setStreamType<BaseResponse<FileResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/files/search',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<FilesResponse>>.fromJson(
+    final value = BaseResponse<FileResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<FilesResponse>(
-              (i) => FilesResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => FileResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

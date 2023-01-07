@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/assets/images.dart';
+import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
-import '../../../../assets/icons.dart';
-import '../../../../assets/images.dart';
-import '../../../components/custom_icon.dart';
 
 class BookDescriptionScreen extends StatelessWidget {
-  const BookDescriptionScreen(this.id, {Key? key}) : super(key: key);
-  final String? id;
+  const BookDescriptionScreen(this.data, {super.key});
+  final BookDetail data;
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -33,7 +34,6 @@ class BookDescriptionScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  // ignore: prefer_const_literals_to_create_immutables
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -49,65 +49,18 @@ class BookDescriptionScreen extends StatelessWidget {
                           children: [
                             const SizedBox(height: 12),
                             Text(
-                              'Computer Graphics and Multimedia',
+                              data.title ?? '',
                               style: theme.textTheme.headline5,
                             ),
                             const SizedBox(height: 12),
                             Text(
-                              'Computer Graphics',
+                              data.title ?? '',
                               style: theme.textTheme.titleLarge,
                             ),
                             const SizedBox(height: 16),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Column(
-                                  children: [
-                                    const CustomIcon(
-                                      AppIcons.likeIcon,
-                                      width: 18,
-                                    ),
-                                    Text(
-                                      'Like',
-                                      style: theme.textTheme.bodyText1,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const CustomIcon(
-                                      AppIcons.dislikeIcon,
-                                      width: 18,
-                                    ),
-                                    Text(
-                                      'Dislike',
-                                      style: theme.textTheme.bodyText1,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const CustomIcon(AppIcons.bookIcon),
-                                    Text(
-                                      'E-Book',
-                                      style: theme.textTheme.bodyText1,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    const CustomIcon(AppIcons.pageIcon),
-                                    Text(
-                                      'pages',
-                                      style: theme.textTheme.bodyText1,
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
+                            bookBottom(theme.textTheme.bodyText1),
                             const SizedBox(height: 16),
                             Align(
-                              alignment: Alignment.center,
                               child: CustomButton(
                                 text: download,
                                 onPressed: () {},
@@ -127,7 +80,7 @@ class BookDescriptionScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'THE BOOK THAT INSPIRED THE AWARD-WINNING MOVIE Nominated for 12 OSCARS including BEST PICTURE, BEST DIRECTOR and BEST ACTOR Winner of 5 BAFTAS including Best Actor, Best Director and Best Film Winner of the 2016 Golden Globes for Best Motion Picture - Drama, Best Actor - Drama, and Best Director The novel that inspired the epic new movie starring Leonardo DiCaprio and Tom Hardy.',
+                  data.about ?? '',
                   style: theme.textTheme.bodyMedium,
                   textAlign: TextAlign.justify,
                 ),
@@ -136,16 +89,17 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text('Writers', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 80),
-                    Text('By Vinayak agarwal',
-                        style: theme.textTheme.bodyText2,),
+                    Wrap(
+                      children: data.writer?.map((p) => Text(p)).toList() ?? [],
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
                 Row(
                   children: [
-                    Text('Semester', style: theme.textTheme.headlineSmall),
+                    Text(semester, style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 60),
-                    Text('3rd Semester', style: theme.textTheme.bodyText2),
+                    Text(data.semester ?? '', style: theme.textTheme.bodyText2),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -153,7 +107,7 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text('Book Edition', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 30),
-                    Text('Second Edition', style: theme.textTheme.bodyText2),
+                    Text(data.title ?? '', style: theme.textTheme.bodyText2),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -161,7 +115,7 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text('Price', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 110),
-                    Text('Rs. 500', style: theme.textTheme.bodyText2),
+                    Text(data.title ?? '', style: theme.textTheme.bodyText2),
                   ],
                 ),
               ],
@@ -169,6 +123,38 @@ class BookDescriptionScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget bookBottom(TextStyle? textStyle) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          children: [
+            const CustomIcon(AppIcons.likeIcon, width: 18),
+            Text('Like', style: textStyle)
+          ],
+        ),
+        Column(
+          children: [
+            const CustomIcon(AppIcons.dislikeIcon, width: 18),
+            Text('Dislike', style: textStyle)
+          ],
+        ),
+        Column(
+          children: [
+            const CustomIcon(AppIcons.bookIcon),
+            Text('E-Book', style: textStyle)
+          ],
+        ),
+        Column(
+          children: [
+            const CustomIcon(AppIcons.pageIcon),
+            Text('pages', style: textStyle)
+          ],
+        )
+      ],
     );
   }
 }

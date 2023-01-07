@@ -135,7 +135,7 @@ mixin _$SearchFilesState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -143,7 +143,7 @@ mixin _$SearchFilesState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -151,7 +151,7 @@ mixin _$SearchFilesState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -243,7 +243,7 @@ class _$_SearchFilesInitial implements _SearchFilesInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
   }) {
     return initial();
   }
@@ -254,7 +254,7 @@ class _$_SearchFilesInitial implements _SearchFilesInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
   }) {
     return initial?.call();
   }
@@ -265,7 +265,7 @@ class _$_SearchFilesInitial implements _SearchFilesInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -360,7 +360,7 @@ class _$_SearchFilesLoading implements _SearchFilesLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
   }) {
     return loading();
   }
@@ -371,7 +371,7 @@ class _$_SearchFilesLoading implements _SearchFilesLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
   }) {
     return loading?.call();
   }
@@ -382,7 +382,7 @@ class _$_SearchFilesLoading implements _SearchFilesLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -502,7 +502,7 @@ class _$_SearchFilesFailure implements _SearchFilesFailure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
   }) {
     return failure(e);
   }
@@ -513,7 +513,7 @@ class _$_SearchFilesFailure implements _SearchFilesFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -524,7 +524,7 @@ class _$_SearchFilesFailure implements _SearchFilesFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -585,7 +585,7 @@ abstract class _$$_SearchFilesSuccessCopyWith<$Res> {
   factory _$$_SearchFilesSuccessCopyWith(_$_SearchFilesSuccess value,
           $Res Function(_$_SearchFilesSuccess) then) =
       __$$_SearchFilesSuccessCopyWithImpl<$Res>;
-  $Res call({List<FilesResponse> data});
+  $Res call({List<FileDetail> data});
 }
 
 /// @nodoc
@@ -607,7 +607,7 @@ class __$$_SearchFilesSuccessCopyWithImpl<$Res>
       data == freezed
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<FilesResponse>,
+              as List<FileDetail>,
     ));
   }
 }
@@ -615,11 +615,11 @@ class __$$_SearchFilesSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SearchFilesSuccess implements _SearchFilesSuccess {
-  const _$_SearchFilesSuccess(final List<FilesResponse> data) : _data = data;
+  const _$_SearchFilesSuccess(final List<FileDetail> data) : _data = data;
 
-  final List<FilesResponse> _data;
+  final List<FileDetail> _data;
   @override
-  List<FilesResponse> get data {
+  List<FileDetail> get data {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -653,7 +653,7 @@ class _$_SearchFilesSuccess implements _SearchFilesSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
   }) {
     return success(data);
   }
@@ -664,7 +664,7 @@ class _$_SearchFilesSuccess implements _SearchFilesSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
   }) {
     return success?.call(data);
   }
@@ -675,7 +675,7 @@ class _$_SearchFilesSuccess implements _SearchFilesSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -723,10 +723,10 @@ class _$_SearchFilesSuccess implements _SearchFilesSuccess {
 }
 
 abstract class _SearchFilesSuccess implements SearchFilesState {
-  const factory _SearchFilesSuccess(final List<FilesResponse> data) =
+  const factory _SearchFilesSuccess(final List<FileDetail> data) =
       _$_SearchFilesSuccess;
 
-  List<FilesResponse> get data;
+  List<FileDetail> get data;
   @JsonKey(ignore: true)
   _$$_SearchFilesSuccessCopyWith<_$_SearchFilesSuccess> get copyWith =>
       throw _privateConstructorUsedError;

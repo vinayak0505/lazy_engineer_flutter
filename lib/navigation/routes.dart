@@ -3,7 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/auth_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/lazy_engineer.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/account_screen.dart';
+import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/download/pages/download_screen.dart';
+import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/settings/presentation/pages/settings_screen.dart';
@@ -111,10 +113,10 @@ class RouteGenerator {
                   GoRoute(
                     path: 'book_description/:id',
                     pageBuilder: (context, state) {
-                      String? id = state.params['id'];
+                      // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: BookDescriptionScreen(id),
+                        child: BookDescriptionScreen(state.extra as BookDetail),
                       );
                     },
                   )
@@ -175,10 +177,10 @@ class RouteGenerator {
                   GoRoute(
                     path: 'practicle_file_description/:id',
                     pageBuilder: (context, state) {
-                      String? id = state.params['id'];
+                      // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: FileDetailScreen(id),
+                        child: FileDetailScreen(state.extra as FileDetail),
                       );
                     },
                   )

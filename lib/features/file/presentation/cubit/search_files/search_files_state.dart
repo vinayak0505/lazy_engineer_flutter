@@ -5,5 +5,5 @@ class SearchFilesState with _$SearchFilesState {
   const factory SearchFilesState.initial() = _SearchFilesInitial;
   const factory SearchFilesState.loading() = _SearchFilesLoading;
   const factory SearchFilesState.failure(dynamic e) = _SearchFilesFailure;
-  const factory SearchFilesState.success(List<FilesResponse> data) = _SearchFilesSuccess;
+  const factory SearchFilesState.success(List<FileDetail> data) = _SearchFilesSuccess;
 }

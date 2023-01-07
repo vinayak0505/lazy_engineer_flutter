@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
+import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
 import 'package:lazy_engineer/features/file/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/file/domain/repositories/files_repository.dart';
 
@@ -14,7 +14,7 @@ class FilesCubit extends Cubit<FilesState> {
   }
   Future<void> getFiles() async {
     try {
-      final List<FilesResponse>? data = await _repository.getFilesData();
+      final List<FileDetail>? data = await _repository.getFilesData();
       data != null
           ? emit(FilesState.success(data))
           : emit(const FilesState.loading());
@@ -26,7 +26,7 @@ class FilesCubit extends Cubit<FilesState> {
   Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const FilesState.loading());
-      final List<FilesResponse>? data =
+      final List<FileDetail>? data =
           await _repository.applyFilter(filterRequest);
       data != null
           ? emit(FilesState.success(data))

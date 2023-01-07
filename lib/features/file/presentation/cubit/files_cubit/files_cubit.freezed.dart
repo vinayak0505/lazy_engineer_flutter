@@ -19,21 +19,21 @@ mixin _$FilesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) =>
@@ -119,7 +119,7 @@ class _$_FilesLoading implements _FilesLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return loading();
@@ -129,7 +129,7 @@ class _$_FilesLoading implements _FilesLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return loading?.call();
@@ -139,7 +139,7 @@ class _$_FilesLoading implements _FilesLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -193,7 +193,7 @@ abstract class _$$_FilesSuccessCopyWith<$Res> {
   factory _$$_FilesSuccessCopyWith(
           _$_FilesSuccess value, $Res Function(_$_FilesSuccess) then) =
       __$$_FilesSuccessCopyWithImpl<$Res>;
-  $Res call({List<FilesResponse> data});
+  $Res call({List<FileDetail> data});
 }
 
 /// @nodoc
@@ -214,7 +214,7 @@ class __$$_FilesSuccessCopyWithImpl<$Res> extends _$FilesStateCopyWithImpl<$Res>
       data == freezed
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<FilesResponse>,
+              as List<FileDetail>,
     ));
   }
 }
@@ -222,11 +222,11 @@ class __$$_FilesSuccessCopyWithImpl<$Res> extends _$FilesStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_FilesSuccess implements _FilesSuccess {
-  const _$_FilesSuccess(final List<FilesResponse> data) : _data = data;
+  const _$_FilesSuccess(final List<FileDetail> data) : _data = data;
 
-  final List<FilesResponse> _data;
+  final List<FileDetail> _data;
   @override
-  List<FilesResponse> get data {
+  List<FileDetail> get data {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -257,7 +257,7 @@ class _$_FilesSuccess implements _FilesSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return success(data);
@@ -267,7 +267,7 @@ class _$_FilesSuccess implements _FilesSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return success?.call(data);
@@ -277,7 +277,7 @@ class _$_FilesSuccess implements _FilesSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -323,9 +323,9 @@ class _$_FilesSuccess implements _FilesSuccess {
 }
 
 abstract class _FilesSuccess implements FilesState {
-  const factory _FilesSuccess(final List<FilesResponse> data) = _$_FilesSuccess;
+  const factory _FilesSuccess(final List<FileDetail> data) = _$_FilesSuccess;
 
-  List<FilesResponse> get data;
+  List<FileDetail> get data;
   @JsonKey(ignore: true)
   _$$_FilesSuccessCopyWith<_$_FilesSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -396,7 +396,7 @@ class _$_FilesFailure implements _FilesFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FilesResponse> data) success,
+    required TResult Function(List<FileDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return failure(e);
@@ -406,7 +406,7 @@ class _$_FilesFailure implements _FilesFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
@@ -416,7 +416,7 @@ class _$_FilesFailure implements _FilesFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FilesResponse> data)? success,
+    TResult Function(List<FileDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {

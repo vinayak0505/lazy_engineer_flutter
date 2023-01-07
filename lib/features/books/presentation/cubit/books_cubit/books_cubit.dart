@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
+import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/books/data/models/filter_request.dart/filter_request.dart';
 import 'package:lazy_engineer/features/books/domain/repositories/books_repository.dart';
 
@@ -14,7 +14,7 @@ class BooksCubit extends Cubit<BooksState> {
   }
   Future<void> getBooks() async {
     try {
-      final List<BooksResponse>? data = await _repository.getBooksData();
+      final List<BookDetail>? data = await _repository.getBooksData();
       data != null
           ? emit(BooksState.success(data))
           : emit(const BooksState.loading());
@@ -26,7 +26,7 @@ class BooksCubit extends Cubit<BooksState> {
   Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const BooksState.loading());
-      final List<BooksResponse>? data =
+      final List<BookDetail>? data =
           await _repository.applyFilter(filterRequest);
       data != null
           ? emit(BooksState.success(data))

@@ -135,7 +135,7 @@ mixin _$SearchBooksState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<BooksResponse> data) success,
+    required TResult Function(List<BookDetail> data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -143,7 +143,7 @@ mixin _$SearchBooksState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -151,7 +151,7 @@ mixin _$SearchBooksState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -243,7 +243,7 @@ class _$_SearchBooksInitial implements _SearchBooksInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<BooksResponse> data) success,
+    required TResult Function(List<BookDetail> data) success,
   }) {
     return initial();
   }
@@ -254,7 +254,7 @@ class _$_SearchBooksInitial implements _SearchBooksInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
   }) {
     return initial?.call();
   }
@@ -265,7 +265,7 @@ class _$_SearchBooksInitial implements _SearchBooksInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -360,7 +360,7 @@ class _$_SearchBooksLoading implements _SearchBooksLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<BooksResponse> data) success,
+    required TResult Function(List<BookDetail> data) success,
   }) {
     return loading();
   }
@@ -371,7 +371,7 @@ class _$_SearchBooksLoading implements _SearchBooksLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
   }) {
     return loading?.call();
   }
@@ -382,7 +382,7 @@ class _$_SearchBooksLoading implements _SearchBooksLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -502,7 +502,7 @@ class _$_SearchBooksFailure implements _SearchBooksFailure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<BooksResponse> data) success,
+    required TResult Function(List<BookDetail> data) success,
   }) {
     return failure(e);
   }
@@ -513,7 +513,7 @@ class _$_SearchBooksFailure implements _SearchBooksFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -524,7 +524,7 @@ class _$_SearchBooksFailure implements _SearchBooksFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -585,7 +585,7 @@ abstract class _$$_SearchBooksSuccessCopyWith<$Res> {
   factory _$$_SearchBooksSuccessCopyWith(_$_SearchBooksSuccess value,
           $Res Function(_$_SearchBooksSuccess) then) =
       __$$_SearchBooksSuccessCopyWithImpl<$Res>;
-  $Res call({List<BooksResponse> data});
+  $Res call({List<BookDetail> data});
 }
 
 /// @nodoc
@@ -607,7 +607,7 @@ class __$$_SearchBooksSuccessCopyWithImpl<$Res>
       data == freezed
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<BooksResponse>,
+              as List<BookDetail>,
     ));
   }
 }
@@ -615,11 +615,11 @@ class __$$_SearchBooksSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SearchBooksSuccess implements _SearchBooksSuccess {
-  const _$_SearchBooksSuccess(final List<BooksResponse> data) : _data = data;
+  const _$_SearchBooksSuccess(final List<BookDetail> data) : _data = data;
 
-  final List<BooksResponse> _data;
+  final List<BookDetail> _data;
   @override
-  List<BooksResponse> get data {
+  List<BookDetail> get data {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -653,7 +653,7 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<BooksResponse> data) success,
+    required TResult Function(List<BookDetail> data) success,
   }) {
     return success(data);
   }
@@ -664,7 +664,7 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
   }) {
     return success?.call(data);
   }
@@ -675,7 +675,7 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<BooksResponse> data)? success,
+    TResult Function(List<BookDetail> data)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -723,10 +723,10 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
 }
 
 abstract class _SearchBooksSuccess implements SearchBooksState {
-  const factory _SearchBooksSuccess(final List<BooksResponse> data) =
+  const factory _SearchBooksSuccess(final List<BookDetail> data) =
       _$_SearchBooksSuccess;
 
-  List<BooksResponse> get data;
+  List<BookDetail> get data;
   @JsonKey(ignore: true)
   _$$_SearchBooksSuccessCopyWith<_$_SearchBooksSuccess> get copyWith =>
       throw _privateConstructorUsedError;

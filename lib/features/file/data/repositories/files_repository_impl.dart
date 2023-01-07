@@ -4,7 +4,7 @@ import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/file/data/datasources/remote/files_remote_datasource.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
-import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
+import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
 import 'package:lazy_engineer/features/file/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/file/domain/repositories/files_repository.dart';
 
@@ -13,11 +13,11 @@ class FilesRepositoryImpl extends FilesRepository {
   // final FilesLocalDatasource _localDataSource = FilesLocalDatasource();
 
   @override
-  Future<List<FilesResponse>?> getFilesData() async {
+  Future<List<FileDetail>?> getFilesData() async {
     try {
-      final BaseResponse<List<FilesResponse>> listNotes =
+      final BaseResponse<FileResponse> listNotes =
           await _remoteDataSource.getFiles();
-      return listNotes.data;
+      return listNotes.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -25,11 +25,11 @@ class FilesRepositoryImpl extends FilesRepository {
   }
 
   @override
-  Future<List<FilesResponse>?> searchFiles(String query) async {
+  Future<List<FileDetail>?> searchFiles(String query) async {
     try {
-      final BaseResponse<List<FilesResponse>> listFiles =
+      final BaseResponse<FileResponse> listFiles =
           await _remoteDataSource.searchFiles(query);
-      return listFiles.data;
+      return listFiles.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -52,15 +52,15 @@ class FilesRepositoryImpl extends FilesRepository {
   }
 
   @override
-  Future<List<FilesResponse>?> applyFilter(FilterRequest filterRequest) async {
-    return practicalFileList;
+  Future<List<FileDetail>?> applyFilter(FilterRequest filterRequest) async {
+    // return practicalFileList;
     // try {
     //   filterRequest = FilterRequest(
     //     multiOption: removeNullList(filterRequest.multiOption),
     //     textField: removeNullList(filterRequest.multiOption),
     //     singleOption: removeNull(filterRequest.singleOption),
     //   );
-    //   final BaseResponse<List<FilesResponse>> listNotes =
+    //   final BaseResponse<FileResponse> listNotes =
     //       await _remoteDataSource.applyFilter(filterRequest);
     //   return listNotes.data;
     // } catch (e) {

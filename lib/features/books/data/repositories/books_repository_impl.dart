@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/books/data/datasources/remote/books_remote_datasource.dart';
 import 'package:lazy_engineer/features/books/data/models/books_detail_response/books_detail_response.dart';
-import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
+import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/books/data/models/filter_request.dart/filter_request.dart';
 import 'package:lazy_engineer/features/books/domain/repositories/books_repository.dart';
 
@@ -12,11 +11,11 @@ class BooksRepositoryImpl extends BooksRepository {
   // final BooksLocalDatasource _localDataSource = BooksLocalDatasource();
 
   @override
-  Future<List<BooksResponse>?> getBooksData() async {
+  Future<List<BookDetail>?> getBooksData() async {
     try {
-      final BaseResponse<List<BooksResponse>> listBooks =
+      final BaseResponse<BookResponse> listBooks =
           await _remoteDataSource.getBooks();
-      return listBooks.data;
+      return listBooks.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -24,11 +23,11 @@ class BooksRepositoryImpl extends BooksRepository {
   }
 
   @override
-  Future<List<BooksResponse>?> searchBooks(String query) async {
+  Future<List<BookDetail>?> searchBooks(String query) async {
     try {
-      final BaseResponse<List<BooksResponse>> listBooks =
+      final BaseResponse<BookResponse> listBooks =
           await _remoteDataSource.searchBooks(query);
-      return listBooks.data;
+      return listBooks.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -51,15 +50,14 @@ class BooksRepositoryImpl extends BooksRepository {
   }
 
   @override
-  Future<List<BooksResponse>?> applyFilter(FilterRequest filterRequest) async {
+  Future<List<BookDetail>?> applyFilter(FilterRequest filterRequest) async {
     try {
-      return bookList;
       // filterRequest = FilterRequest(
       //   multiOption: removeNullList(filterRequest.multiOption),
       //   textField: removeNullList(filterRequest.multiOption),
       //   singleOption: removeNull(filterRequest.singleOption),
       // );
-      // BaseResponse<List<BooksResponse>> listBooks =
+      // BaseResponse<BookResponse> listBooks =
       //     await _remoteDataSource.applyFilter(filterRequest);
       // return listBooks.data;
     } catch (e) {

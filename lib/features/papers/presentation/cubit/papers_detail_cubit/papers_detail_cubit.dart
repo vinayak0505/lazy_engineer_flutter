@@ -1,12 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
 import 'package:lazy_engineer/features/papers/domain/repositories/papers_repository.dart';
 
-import '../../../../../assets/constants/lists.dart';
-
-part 'papers_detail_state.dart';
 part 'papers_detail_cubit.freezed.dart';
+part 'papers_detail_state.dart';
 
 class PapersDetailCubit extends Cubit<PapersDetailState> {
   final PapersRepository _repository;
@@ -16,7 +15,7 @@ class PapersDetailCubit extends Cubit<PapersDetailState> {
     getPapersDetail();
   }
   void getPapersDetail() async {
-    emit(PapersDetailState.success(papersDetail, null));
+    // emit(PapersDetailState.success([], null));
     //   try {
     //     PaperDetailResponse? data = await _repository.getPapersDetailData(id);
     //     if (data != null) {
@@ -29,15 +28,15 @@ class PapersDetailCubit extends Cubit<PapersDetailState> {
     //   }
   }
 
-  void like() {
-    emit(PapersDetailState.success(papersDetail, true));
-  }
+  // void like() {
+  //   emit(PapersDetailState.success(papersDetail, true));
+  // }
 
-  void dislike() {
-    emit(PapersDetailState.success(papersDetail, false));
-  }
+  // void dislike() {
+  //   emit(PapersDetailState.success(papersDetail, false));
+  // }
 
-  void ratingNull() {
-    emit(PapersDetailState.success(papersDetail, null));
-  }
+  // void ratingNull() {
+  //   emit(PapersDetailState.success(papersDetail, null));
+  // }
 }
