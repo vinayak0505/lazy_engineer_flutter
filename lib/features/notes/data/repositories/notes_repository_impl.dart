@@ -3,7 +3,7 @@ import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/remote/notes_remote_datasource.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
-import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_response.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
 import 'package:lazy_engineer/features/notes/domain/repositories/notes_repository.dart';
 
 class NotesRepositoryImpl extends NotesRepository {
@@ -11,11 +11,11 @@ class NotesRepositoryImpl extends NotesRepository {
   // final NotesLocalDatasource _localDataSource = NotesLocalDatasource();
 
   @override
-  Future<NotesResponse?> getNotesData() async {
+  Future<List<NoteDetail>?> getNotesData() async {
     try {
-      final BaseResponse<NotesResponse> listNotes =
+      final BaseResponse<NoteResponse> listNotes =
           await _remoteDataSource.getNotes();
-      return listNotes.data;
+      return listNotes.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -23,11 +23,11 @@ class NotesRepositoryImpl extends NotesRepository {
   }
 
   @override
-  Future<NotesResponse?> searchNotes(String query) async {
+  Future<List<NoteDetail>?> searchNotes(String query) async {
     try {
-      final BaseResponse<NotesResponse> listNotes =
+      final BaseResponse<NoteResponse> listNotes =
           await _remoteDataSource.searchNotes(query);
-      return listNotes.data;
+      return listNotes.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -50,16 +50,16 @@ class NotesRepositoryImpl extends NotesRepository {
   }
 
   @override
-  Future<NotesResponse?> applyFilter(FilterRequest filterRequest) async {
+  Future<List<NoteDetail>?> applyFilter(FilterRequest filterRequest) async {
     try {
-      filterRequest = FilterRequest(
-        multiOption: removeNullList(filterRequest.multiOption),
-        // textField: removeNullList(filterRequest.multiOption),
-        singleOption: removeNull(filterRequest.singleOption),
-      );
-      final BaseResponse<NotesResponse> listNotes =
-          await _remoteDataSource.applyFilter(filterRequest);
-      return listNotes.data;
+      // filterRequest = FilterRequest(
+      //   multiOption: removeNullList(filterRequest.multiOption),
+      //   // textField: removeNullList(filterRequest.multiOption),
+      //   singleOption: removeNull(filterRequest.singleOption),
+      // );
+      // final BaseResponse<NoteResponse> listNotes =
+      //     await _remoteDataSource.applyFilter(filterRequest);
+      // return listNotes.data;
     } catch (e) {
       debugPrint(e.toString());
       return null;

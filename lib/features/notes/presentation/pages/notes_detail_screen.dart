@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
@@ -9,15 +8,13 @@ import 'package:lazy_engineer/core/logic/download/download_cubit.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
-import 'package:lazy_engineer/features/components/failiure_screen.dart';
-import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/components/show_tags_widget.dart';
-import 'package:lazy_engineer/features/notes/data/repositories/notes_repository_impl.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
 import 'package:lazy_engineer/features/notes/presentation/cubit/notes_detail_cubit/notes_detail_cubit.dart';
 
 class NotesDetailScreen extends StatelessWidget {
-  const NotesDetailScreen(this.id, {super.key});
-  final String? id;
+  const NotesDetailScreen(this.data, {super.key});
+  final NoteDetail data;
 
   @override
   Widget build(BuildContext context) {
@@ -37,107 +34,93 @@ class NotesDetailScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: BlocProvider(
-              create: (context) =>
-                  NotesDetailCubit(NotesRepositoryImpl(), id ?? ''),
-              child: BlocBuilder<NotesDetailCubit, NotesDetailState>(
-                builder: (context, state) {
-                  return state.when(
-                    loading: () => const LoadingScreen(),
-                    failure: (error) => FailureScreen(error),
-                    success: (data, rating) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                BlocProvider(
+                  create: (context) => DownloadCubit(),
+                  child: NotesDetailHeader(
+                    title: data.title ?? '',
+                    subject: data.subject,
+                    link: data.mediaLink ?? '',
+                    // rating: rating,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  about,
+                  style: theme.textTheme.headline5,
+                ),
+                const SizedBox(height: 12),
+                if (data.about != null) ...[
+                  Text(
+                    data.about!,
+                    style: theme.textTheme.bodyMedium,
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                ],
+                Table(
+                  children: [
+                    if (data.unit != null)
+                      TableRow(
                         children: [
-                          BlocProvider(
-                            create: (context) => DownloadCubit(),
-                            child: NotesDetailHeader(
-                              title: data.title,
-                              subject: data.subject,
-                              link: data.link ?? '',
-                              rating: rating,
-                            ),
-                          ),
-                          const SizedBox(height: 16),
                           Text(
-                            about,
-                            style: theme.textTheme.headline5,
+                            unit,
+                            style: theme.textTheme.headline6,
                           ),
-                          const SizedBox(height: 12),
-                          if (data.about != null) ...[
-                            Text(
-                              data.about!,
-                              style: theme.textTheme.bodyMedium,
-                              textAlign: TextAlign.justify,
-                            ),
-                            const SizedBox(height: 16),
-                          ],
-                          Table(
-                            children: [
-                              if (data.unit != null)
-                                TableRow(
-                                  children: [
-                                    Text(
-                                      unit,
-                                      style: theme.textTheme.headline6,
-                                    ),
-                                    Text(
-                                      'Unit - ${data.unit}',
-                                      style: theme.textTheme.bodyText2,
-                                    )
-                                  ],
-                                ),
-                              if (data.semester != null)
-                                TableRow(
-                                  children: [
-                                    Text(
-                                      semester,
-                                      style: theme.textTheme.headline6,
-                                    ),
-                                    Text(
-                                      '${addOrdinals(data.semester!)} Semester',
-                                      style: theme.textTheme.bodyText2,
-                                    )
-                                  ],
-                                ),
-                              if (data.chapter != null)
-                                TableRow(
-                                  children: [
-                                    Text(
-                                      chapter,
-                                      style: theme.textTheme.headline6,
-                                    ),
-                                    Text(
-                                      data.chapter!,
-                                      style: theme.textTheme.bodyText2,
-                                    )
-                                  ],
-                                ),
-                              if (data.topic != null)
-                                TableRow(
-                                  children: [
-                                    Text(
-                                      topic,
-                                      style: theme.textTheme.headline6,
-                                    ),
-                                    Text(
-                                      data.topic!,
-                                      style: theme.textTheme.bodyText2,
-                                    )
-                                  ],
-                                ),
-                            ],
-                          ),
-                          const SizedBox(height: 16),
-                          Text(tags, style: theme.textTheme.headlineSmall),
-                          const SizedBox(height: 12),
-                          ShowTagsWidget(data.tags)
+                          Text(
+                            'Unit - ${data.unit}',
+                            style: theme.textTheme.bodyText2,
+                          )
                         ],
-                      );
-                    },
-                  );
-                },
-              ),
+                      ),
+                    if (data.semester != null)
+                      TableRow(
+                        children: [
+                          Text(
+                            semester,
+                            style: theme.textTheme.headline6,
+                          ),
+                          Text(
+                            '${addOrdinals( int.parse(data.semester ?? ''))} Semester',
+                            style: theme.textTheme.bodyText2,
+                          )
+                        ],
+                      ),
+                    if (data.chapter != null)
+                      TableRow(
+                        children: [
+                          Text(
+                            chapter,
+                            style: theme.textTheme.headline6,
+                          ),
+                          Text(
+                            data.chapter!,
+                            style: theme.textTheme.bodyText2,
+                          )
+                        ],
+                      ),
+                    if (data.topic != null)
+                      TableRow(
+                        children: [
+                          Text(
+                            topic,
+                            style: theme.textTheme.headline6,
+                          ),
+                          Text(
+                            data.topic!,
+                            style: theme.textTheme.bodyText2,
+                          )
+                        ],
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                Text(tags, style: theme.textTheme.headlineSmall),
+                const SizedBox(height: 12),
+                ShowTagsWidget(data.tags ?? [])
+              ],
             ),
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
-import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_response.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
 import 'package:lazy_engineer/features/notes/domain/repositories/notes_repository.dart';
 
 part 'notes_state.dart';
@@ -14,7 +14,7 @@ class NotesCubit extends Cubit<NotesState> {
   }
   Future<void> getNotes() async {
     try {
-      final NotesResponse? data = await _repository.getNotesData();
+      final List<NoteDetail>? data = await _repository.getNotesData();
       if (data != null) {
         emit(NotesState.success(data));
       } else {
@@ -28,7 +28,7 @@ class NotesCubit extends Cubit<NotesState> {
   Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const NotesState.loading());
-      final NotesResponse? data = await _repository.applyFilter(filterRequest);
+      final List<NoteDetail>? data = await _repository.applyFilter(filterRequest);
       if (data != null) {
         emit(NotesState.success(data));
       } else {

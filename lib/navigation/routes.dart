@@ -7,6 +7,7 @@ import 'package:lazy_engineer/features/books/data/models/books_response/book_res
 import 'package:lazy_engineer/features/download/pages/download_screen.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/settings/presentation/pages/settings_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
@@ -145,10 +146,10 @@ class RouteGenerator {
                   GoRoute(
                     path: 'notes_description/:id',
                     pageBuilder: (context, state) {
-                      String? id = state.params['id'];
+                      // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: NotesDetailScreen(id),
+                        child: NotesDetailScreen(state.extra as NoteDetail),
                       );
                     },
                   )

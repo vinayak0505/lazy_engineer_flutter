@@ -19,21 +19,21 @@ mixin _$NotesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(NotesResponse data) success,
+    required TResult Function(List<NoteDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(NotesResponse data)? success,
+    TResult Function(List<NoteDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(NotesResponse data)? success,
+    TResult Function(List<NoteDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) =>
@@ -119,7 +119,7 @@ class _$_NotesLoading implements _NotesLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(NotesResponse data) success,
+    required TResult Function(List<NoteDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return loading();
@@ -129,7 +129,7 @@ class _$_NotesLoading implements _NotesLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(NotesResponse data)? success,
+    TResult Function(List<NoteDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return loading?.call();
@@ -139,7 +139,7 @@ class _$_NotesLoading implements _NotesLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(NotesResponse data)? success,
+    TResult Function(List<NoteDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -193,9 +193,7 @@ abstract class _$$_NotesSuccessCopyWith<$Res> {
   factory _$$_NotesSuccessCopyWith(
           _$_NotesSuccess value, $Res Function(_$_NotesSuccess) then) =
       __$$_NotesSuccessCopyWithImpl<$Res>;
-  $Res call({NotesResponse data});
-
-  $NotesResponseCopyWith<$Res> get data;
+  $Res call({List<NoteDetail> data});
 }
 
 /// @nodoc
@@ -214,27 +212,24 @@ class __$$_NotesSuccessCopyWithImpl<$Res> extends _$NotesStateCopyWithImpl<$Res>
   }) {
     return _then(_$_NotesSuccess(
       data == freezed
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as NotesResponse,
+              as List<NoteDetail>,
     ));
-  }
-
-  @override
-  $NotesResponseCopyWith<$Res> get data {
-    return $NotesResponseCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
-    });
   }
 }
 
 /// @nodoc
 
 class _$_NotesSuccess implements _NotesSuccess {
-  const _$_NotesSuccess(this.data);
+  const _$_NotesSuccess(final List<NoteDetail> data) : _data = data;
 
+  final List<NoteDetail> _data;
   @override
-  final NotesResponse data;
+  List<NoteDetail> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString() {
@@ -246,12 +241,12 @@ class _$_NotesSuccess implements _NotesSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NotesSuccess &&
-            const DeepCollectionEquality().equals(other.data, data));
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -262,7 +257,7 @@ class _$_NotesSuccess implements _NotesSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(NotesResponse data) success,
+    required TResult Function(List<NoteDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return success(data);
@@ -272,7 +267,7 @@ class _$_NotesSuccess implements _NotesSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(NotesResponse data)? success,
+    TResult Function(List<NoteDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return success?.call(data);
@@ -282,7 +277,7 @@ class _$_NotesSuccess implements _NotesSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(NotesResponse data)? success,
+    TResult Function(List<NoteDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -328,9 +323,9 @@ class _$_NotesSuccess implements _NotesSuccess {
 }
 
 abstract class _NotesSuccess implements NotesState {
-  const factory _NotesSuccess(final NotesResponse data) = _$_NotesSuccess;
+  const factory _NotesSuccess(final List<NoteDetail> data) = _$_NotesSuccess;
 
-  NotesResponse get data;
+  List<NoteDetail> get data;
   @JsonKey(ignore: true)
   _$$_NotesSuccessCopyWith<_$_NotesSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -401,7 +396,7 @@ class _$_NotesFailure implements _NotesFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(NotesResponse data) success,
+    required TResult Function(List<NoteDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return failure(e);
@@ -411,7 +406,7 @@ class _$_NotesFailure implements _NotesFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(NotesResponse data)? success,
+    TResult Function(List<NoteDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
@@ -421,7 +416,7 @@ class _$_NotesFailure implements _NotesFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(NotesResponse data)? success,
+    TResult Function(List<NoteDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
