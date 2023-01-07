@@ -1,46 +1,45 @@
+import 'package:flutter/cupertino.dart';
 import 'package:lazy_engineer/assets/constants/lists.dart';
-import 'package:lazy_engineer/features/jobs/domain/jobs_repository.dart';
-import 'package:lazy_engineer/features/jobs/data/datasources/local/jobs_local_datasource.dart';
+import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/jobs/data/datasources/remote/jobs_remote_datasource.dart';
 import 'package:lazy_engineer/features/jobs/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/jobs_response/jobs_response.dart';
-
-import '../../../../core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/features/jobs/domain/jobs_repository.dart';
 
 class JobsRepositoryImpl extends JobsRepository {
   final JobsRemoteDatasource _remoteDataSource = JobsRemoteDatasource();
-  final JobsLocalDatasource _localDataSource = JobsLocalDatasource();
+  // final JobsLocalDatasource _localDataSource = JobsLocalDatasource();
 
   @override
   Future<List<JobsResponse>?> getJobsData() async {
-    return jobList;
-    // try {
-    //   BaseResponse<List<JobsResponse>> listJobs =
-    //       await _remoteDataSource.getJobs();
-    //   return listJobs.data;
-    // } catch (e) {
-    //   print(e.toString());
-    //   return null;
-    // }
+    try {
+      final BaseResponse<List<JobsResponse>> listJobs =
+          await _remoteDataSource.getJobs();
+      return listJobs.data;
+    } catch (e) {
+      debugPrint(e.toString());
+      return null;
+    }
   }
 
   @override
   Future<List<JobsResponse>?> searchJobs(String query) async {
     try {
-      BaseResponse<List<JobsResponse>> listJobs =
+      final BaseResponse<List<JobsResponse>> listJobs =
           await _remoteDataSource.searchJobs(query);
       return listJobs.data;
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
       return null;
     }
   }
 
   List<String>? removeNullList(List<String>? list) {
     if (list == null) return null;
-    List<String> ans = [];
-    for (String ele in list) {
+    final List<String> ans = [];
+    String ele;
+    for (ele in list) {
       if (ele != '') ans.add(ele);
     }
     return ans;
@@ -64,7 +63,7 @@ class JobsRepositoryImpl extends JobsRepository {
       //     await _remoteDataSource.applyFilter(filterRequest);
       // return listJobs.data;
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
       return null;
     }
   }
@@ -72,11 +71,11 @@ class JobsRepositoryImpl extends JobsRepository {
   @override
   Future<JobsDetailResponse?> getJobsDetailData(String id) async {
     try {
-      BaseResponse<JobsDetailResponse> jobsDetail =
+      final BaseResponse<JobsDetailResponse> jobsDetail =
           await _remoteDataSource.getJobsDetail(id);
       return jobsDetail.data;
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
       return null;
     }
   }

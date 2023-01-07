@@ -12,9 +12,9 @@ class NotesCubit extends Cubit<NotesState> {
   NotesCubit(this._repository) : super(const NotesState.loading()) {
     getNotes();
   }
-  void getNotes() async {
+  Future<void> getNotes() async {
     try {
-      NotesResponse? data = await _repository.getNotesData();
+      final NotesResponse? data = await _repository.getNotesData();
       if (data != null) {
         emit(NotesState.success(data));
       } else {
@@ -25,10 +25,10 @@ class NotesCubit extends Cubit<NotesState> {
     }
   }
 
-  void applyFilter(FilterRequest filterRequest) async {
+  Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const NotesState.loading());
-      NotesResponse? data = await _repository.applyFilter(filterRequest);
+      final NotesResponse? data = await _repository.applyFilter(filterRequest);
       if (data != null) {
         emit(NotesState.success(data));
       } else {

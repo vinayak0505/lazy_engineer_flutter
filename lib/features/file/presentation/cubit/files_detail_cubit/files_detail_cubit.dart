@@ -14,18 +14,17 @@ class FilesDetailCubit extends Cubit<FilesDetailState> {
       : super(const FilesDetailState.loading()) {
     getFilesDetail();
   }
-  void getFilesDetail() async {
+  Future<void> getFilesDetail() async {
     emit(FilesDetailState.success(filesDetail, null));
-    //   try {
-    //     FilesDetailResponse? data = await _repository.getFilesDetailData(id);
-    //     if (data != null) {
-    //       emit(FilesDetailState.success(data));
-    //     } else {
-    //       emit(const FilesDetailState.loading());
-    //     }
-    //   } catch (e) {
-    //     emit(FilesDetailState.failure(e));
-    //   }
+    try {
+      final FilesDetailResponse? data =
+          await _repository.getFilesDetailData(id);
+      data != null
+          ? emit(FilesDetailState.success(data, null))
+          : emit(const FilesDetailState.loading());
+    } catch (e) {
+      emit(FilesDetailState.failure(e));
+    }
   }
 
   void like() {

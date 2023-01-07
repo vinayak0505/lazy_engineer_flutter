@@ -1,7 +1,6 @@
 import 'package:lazy_engineer/features/books/data/models/books_detail_response/books_detail_response.dart';
+import 'package:lazy_engineer/features/books/data/models/books_response/books_response.dart';
 import 'package:lazy_engineer/features/books/data/models/filter_request.dart/filter_request.dart';
-
-import '../../data/models/books_response/books_response.dart';
 
 abstract class BooksRepository {
   Future<List<BooksResponse>?> getBooksData();

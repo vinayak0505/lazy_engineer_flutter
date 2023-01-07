@@ -20,18 +20,17 @@ UploadJobsRequest _$UploadJobsRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UploadJobsRequest {
-  String get title => throw _privateConstructorUsedError;
-  String get profile => throw _privateConstructorUsedError;
-  String get company => throw _privateConstructorUsedError;
-  String get aboutCompany => throw _privateConstructorUsedError;
-  String get location => throw _privateConstructorUsedError;
-  String get jobType => throw _privateConstructorUsedError;
-  String get experienceLevel => throw _privateConstructorUsedError;
-  String get datePosted => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get profile => throw _privateConstructorUsedError;
+  String? get company => throw _privateConstructorUsedError;
+  String? get aboutCompany => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
+  String? get jobType => throw _privateConstructorUsedError;
+  String? get experienceLevel => throw _privateConstructorUsedError;
+  String? get datePosted => throw _privateConstructorUsedError;
   List<String> get skillsNeeded => throw _privateConstructorUsedError;
-  int get expectedSalary => throw _privateConstructorUsedError;
-  int get numOfEmployees => throw _privateConstructorUsedError;
-  List<String> get companyPhoto => throw _privateConstructorUsedError;
+  int? get expectedSalary => throw _privateConstructorUsedError;
+  dynamic get file => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,18 +44,17 @@ abstract class $UploadJobsRequestCopyWith<$Res> {
           UploadJobsRequest value, $Res Function(UploadJobsRequest) then) =
       _$UploadJobsRequestCopyWithImpl<$Res>;
   $Res call(
-      {String title,
-      String profile,
-      String company,
-      String aboutCompany,
-      String location,
-      String jobType,
-      String experienceLevel,
-      String datePosted,
+      {String? title,
+      String? profile,
+      String? company,
+      String? aboutCompany,
+      String? location,
+      String? jobType,
+      String? experienceLevel,
+      String? datePosted,
       List<String> skillsNeeded,
-      int expectedSalary,
-      int numOfEmployees,
-      List<String> companyPhoto});
+      int? expectedSalary,
+      dynamic file});
 }
 
 /// @nodoc
@@ -80,42 +78,41 @@ class _$UploadJobsRequestCopyWithImpl<$Res>
     Object? datePosted = freezed,
     Object? skillsNeeded = freezed,
     Object? expectedSalary = freezed,
-    Object? numOfEmployees = freezed,
-    Object? companyPhoto = freezed,
+    Object? file = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       profile: profile == freezed
           ? _value.profile
           : profile // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       company: company == freezed
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       aboutCompany: aboutCompany == freezed
           ? _value.aboutCompany
           : aboutCompany // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       jobType: jobType == freezed
           ? _value.jobType
           : jobType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       experienceLevel: experienceLevel == freezed
           ? _value.experienceLevel
           : experienceLevel // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       datePosted: datePosted == freezed
           ? _value.datePosted
           : datePosted // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       skillsNeeded: skillsNeeded == freezed
           ? _value.skillsNeeded
           : skillsNeeded // ignore: cast_nullable_to_non_nullable
@@ -123,15 +120,11 @@ class _$UploadJobsRequestCopyWithImpl<$Res>
       expectedSalary: expectedSalary == freezed
           ? _value.expectedSalary
           : expectedSalary // ignore: cast_nullable_to_non_nullable
-              as int,
-      numOfEmployees: numOfEmployees == freezed
-          ? _value.numOfEmployees
-          : numOfEmployees // ignore: cast_nullable_to_non_nullable
-              as int,
-      companyPhoto: companyPhoto == freezed
-          ? _value.companyPhoto
-          : companyPhoto // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as int?,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -144,18 +137,17 @@ abstract class _$$_UploadJobsRequestCopyWith<$Res>
       __$$_UploadJobsRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String title,
-      String profile,
-      String company,
-      String aboutCompany,
-      String location,
-      String jobType,
-      String experienceLevel,
-      String datePosted,
+      {String? title,
+      String? profile,
+      String? company,
+      String? aboutCompany,
+      String? location,
+      String? jobType,
+      String? experienceLevel,
+      String? datePosted,
       List<String> skillsNeeded,
-      int expectedSalary,
-      int numOfEmployees,
-      List<String> companyPhoto});
+      int? expectedSalary,
+      dynamic file});
 }
 
 /// @nodoc
@@ -181,42 +173,41 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
     Object? datePosted = freezed,
     Object? skillsNeeded = freezed,
     Object? expectedSalary = freezed,
-    Object? numOfEmployees = freezed,
-    Object? companyPhoto = freezed,
+    Object? file = freezed,
   }) {
     return _then(_$_UploadJobsRequest(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       profile: profile == freezed
           ? _value.profile
           : profile // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       company: company == freezed
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       aboutCompany: aboutCompany == freezed
           ? _value.aboutCompany
           : aboutCompany // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       location: location == freezed
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       jobType: jobType == freezed
           ? _value.jobType
           : jobType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       experienceLevel: experienceLevel == freezed
           ? _value.experienceLevel
           : experienceLevel // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       datePosted: datePosted == freezed
           ? _value.datePosted
           : datePosted // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       skillsNeeded: skillsNeeded == freezed
           ? _value._skillsNeeded
           : skillsNeeded // ignore: cast_nullable_to_non_nullable
@@ -224,15 +215,11 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
       expectedSalary: expectedSalary == freezed
           ? _value.expectedSalary
           : expectedSalary // ignore: cast_nullable_to_non_nullable
-              as int,
-      numOfEmployees: numOfEmployees == freezed
-          ? _value.numOfEmployees
-          : numOfEmployees // ignore: cast_nullable_to_non_nullable
-              as int,
-      companyPhoto: companyPhoto == freezed
-          ? _value._companyPhoto
-          : companyPhoto // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as int?,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -241,40 +228,38 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UploadJobsRequest implements _UploadJobsRequest {
   const _$_UploadJobsRequest(
-      {required this.title,
-      required this.profile,
-      required this.company,
-      required this.aboutCompany,
-      required this.location,
-      required this.jobType,
-      required this.experienceLevel,
-      required this.datePosted,
+      {this.title,
+      this.profile,
+      this.company,
+      this.aboutCompany,
+      this.location,
+      this.jobType,
+      this.experienceLevel,
+      this.datePosted,
       required final List<String> skillsNeeded,
-      required this.expectedSalary,
-      required this.numOfEmployees,
-      required final List<String> companyPhoto})
-      : _skillsNeeded = skillsNeeded,
-        _companyPhoto = companyPhoto;
+      this.expectedSalary,
+      this.file})
+      : _skillsNeeded = skillsNeeded;
 
   factory _$_UploadJobsRequest.fromJson(Map<String, dynamic> json) =>
       _$$_UploadJobsRequestFromJson(json);
 
   @override
-  final String title;
+  final String? title;
   @override
-  final String profile;
+  final String? profile;
   @override
-  final String company;
+  final String? company;
   @override
-  final String aboutCompany;
+  final String? aboutCompany;
   @override
-  final String location;
+  final String? location;
   @override
-  final String jobType;
+  final String? jobType;
   @override
-  final String experienceLevel;
+  final String? experienceLevel;
   @override
-  final String datePosted;
+  final String? datePosted;
   final List<String> _skillsNeeded;
   @override
   List<String> get skillsNeeded {
@@ -283,19 +268,13 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
   }
 
   @override
-  final int expectedSalary;
+  final int? expectedSalary;
   @override
-  final int numOfEmployees;
-  final List<String> _companyPhoto;
-  @override
-  List<String> get companyPhoto {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_companyPhoto);
-  }
+  final dynamic file;
 
   @override
   String toString() {
-    return 'UploadJobsRequest(title: $title, profile: $profile, company: $company, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, expectedSalary: $expectedSalary, numOfEmployees: $numOfEmployees, companyPhoto: $companyPhoto)';
+    return 'UploadJobsRequest(title: $title, profile: $profile, company: $company, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, expectedSalary: $expectedSalary, file: $file)';
   }
 
   @override
@@ -318,10 +297,7 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
                 .equals(other._skillsNeeded, _skillsNeeded) &&
             const DeepCollectionEquality()
                 .equals(other.expectedSalary, expectedSalary) &&
-            const DeepCollectionEquality()
-                .equals(other.numOfEmployees, numOfEmployees) &&
-            const DeepCollectionEquality()
-                .equals(other._companyPhoto, _companyPhoto));
+            const DeepCollectionEquality().equals(other.file, file));
   }
 
   @JsonKey(ignore: true)
@@ -338,8 +314,7 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
       const DeepCollectionEquality().hash(datePosted),
       const DeepCollectionEquality().hash(_skillsNeeded),
       const DeepCollectionEquality().hash(expectedSalary),
-      const DeepCollectionEquality().hash(numOfEmployees),
-      const DeepCollectionEquality().hash(_companyPhoto));
+      const DeepCollectionEquality().hash(file));
 
   @JsonKey(ignore: true)
   @override
@@ -357,46 +332,43 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
 
 abstract class _UploadJobsRequest implements UploadJobsRequest {
   const factory _UploadJobsRequest(
-      {required final String title,
-      required final String profile,
-      required final String company,
-      required final String aboutCompany,
-      required final String location,
-      required final String jobType,
-      required final String experienceLevel,
-      required final String datePosted,
+      {final String? title,
+      final String? profile,
+      final String? company,
+      final String? aboutCompany,
+      final String? location,
+      final String? jobType,
+      final String? experienceLevel,
+      final String? datePosted,
       required final List<String> skillsNeeded,
-      required final int expectedSalary,
-      required final int numOfEmployees,
-      required final List<String> companyPhoto}) = _$_UploadJobsRequest;
+      final int? expectedSalary,
+      final dynamic file}) = _$_UploadJobsRequest;
 
   factory _UploadJobsRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadJobsRequest.fromJson;
 
   @override
-  String get title;
+  String? get title;
   @override
-  String get profile;
+  String? get profile;
   @override
-  String get company;
+  String? get company;
   @override
-  String get aboutCompany;
+  String? get aboutCompany;
   @override
-  String get location;
+  String? get location;
   @override
-  String get jobType;
+  String? get jobType;
   @override
-  String get experienceLevel;
+  String? get experienceLevel;
   @override
-  String get datePosted;
+  String? get datePosted;
   @override
   List<String> get skillsNeeded;
   @override
-  int get expectedSalary;
+  int? get expectedSalary;
   @override
-  int get numOfEmployees;
-  @override
-  List<String> get companyPhoto;
+  dynamic get file;
   @override
   @JsonKey(ignore: true)
   _$$_UploadJobsRequestCopyWith<_$_UploadJobsRequest> get copyWith =>

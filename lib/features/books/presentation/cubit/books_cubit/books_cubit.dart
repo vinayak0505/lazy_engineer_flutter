@@ -12,28 +12,25 @@ class BooksCubit extends Cubit<BooksState> {
   BooksCubit(this._repository) : super(const BooksState.loading()) {
     getBooks();
   }
-  void getBooks() async {
+  Future<void> getBooks() async {
     try {
-      List<BooksResponse>? data = await _repository.getBooksData();
-      if (data != null) {
-        emit(BooksState.success(data));
-      } else {
-        emit(const BooksState.loading());
-      }
+      final List<BooksResponse>? data = await _repository.getBooksData();
+      data != null
+          ? emit(BooksState.success(data))
+          : emit(const BooksState.loading());
     } catch (e) {
       emit(BooksState.failure(e));
     }
   }
 
-  void applyFilter(FilterRequest filterRequest) async {
+  Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const BooksState.loading());
-      List<BooksResponse>? data = await _repository.applyFilter(filterRequest);
-      if (data != null) {
-        emit(BooksState.success(data));
-      } else {
-        emit(const BooksState.loading());
-      }
+      final List<BooksResponse>? data =
+          await _repository.applyFilter(filterRequest);
+      data != null
+          ? emit(BooksState.success(data))
+          : emit(const BooksState.loading());
     } catch (e) {
       emit(BooksState.failure(e));
     }

@@ -12,9 +12,9 @@ class JobsCubit extends Cubit<JobsState> {
   JobsCubit(this._repository) : super(const JobsState.loading()) {
     getJobs();
   }
-  void getJobs() async {
+  Future<void> getJobs() async {
     try {
-      List<JobsResponse>? data = await _repository.getJobsData();
+      final List<JobsResponse>? data = await _repository.getJobsData();
       if (data != null) {
         emit(JobsState.success(data));
       } else {
@@ -25,10 +25,10 @@ class JobsCubit extends Cubit<JobsState> {
     }
   }
 
-  void applyFilter(FilterRequest filterRequest) async {
+  Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const JobsState.loading());
-      List<JobsResponse>? data = await _repository.applyFilter(filterRequest);
+      final List<JobsResponse>? data = await _repository.applyFilter(filterRequest);
       if (data != null) {
         emit(JobsState.success(data));
       } else {

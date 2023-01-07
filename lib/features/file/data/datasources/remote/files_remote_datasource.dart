@@ -1,44 +1,47 @@
 import 'package:dio/dio.dart';
+import 'package:lazy_engineer/config/app_config.dart';
+import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/features/file/data/datasources/remote/files_client.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
-import 'package:lazy_engineer/features/file/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/files_response.dart';
+import 'package:lazy_engineer/features/file/data/models/filter_request/filter_request.dart';
+import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import '../../../../../config/app_config.dart';
-import '../../../../../core/models/base_response/base_response.dart';
-import 'files_client.dart';
 
 class FilesRemoteDatasource {
   final FilesClient _client;
 
-  FilesRemoteDatasource._(this._client);
-
   factory FilesRemoteDatasource() {
-    Dio dio = Dio();
-    dio.interceptors.add(PrettyDioLogger(responseBody: true));
+    final Dio dio = Dio();
+    dio.interceptors.add(PrettyDioLogger());
+    dio.interceptors.add(TokenInterceptor());
     dio.options.headers = {};
-    FilesClient client = FilesClient(dio, baseUrl: AppConfig.apiBaseUrl);
+    final FilesClient client = FilesClient(dio, baseUrl: AppConfig.apiBaseUrl);
     return FilesRemoteDatasource._(client);
   }
+
+  FilesRemoteDatasource._(this._client);
   Future<BaseResponse<List<FilesResponse>>> getFiles() async {
-    BaseResponse<List<FilesResponse>> response = await _client.getFiles();
+    final BaseResponse<List<FilesResponse>> response = await _client.getFiles();
     return response;
   }
 
   Future<BaseResponse<List<FilesResponse>>> searchFiles(String query) async {
-    BaseResponse<List<FilesResponse>> response =
+    final BaseResponse<List<FilesResponse>> response =
         await _client.searchFiles(query);
     return response;
   }
 
   Future<BaseResponse<List<FilesResponse>>> applyFilter(
-      FilterRequest filterRequest) async {
-    BaseResponse<List<FilesResponse>> response =
+    FilterRequest filterRequest,
+  ) async {
+    final BaseResponse<List<FilesResponse>> response =
         await _client.applyFilter(filterRequest);
     return response;
   }
 
   Future<BaseResponse<FilesDetailResponse>> getFilesDetail(String id) async {
-    BaseResponse<FilesDetailResponse> response =
+    final BaseResponse<FilesDetailResponse> response =
         await _client.getFilesDetail(id);
     return response;
   }

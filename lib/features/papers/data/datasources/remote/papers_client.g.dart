@@ -16,15 +16,17 @@ class _PapersClient implements PapersClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<List<PaperResponse>>> getPapers() async {
+  Future<BaseResponse<List<PaperResponse>>> getPapers(
+      [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<List<PaperResponse>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/home/papers',
+                .compose(_dio.options, '/question_paper',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = BaseResponse<List<PaperResponse>>.fromJson(
@@ -82,10 +84,12 @@ class _PapersClient implements PapersClient {
   }
 
   @override
-  Future<BaseResponse<PaperDetailResponse>> getPapersDetail(id) async {
+  Future<BaseResponse<PaperDetailResponse>> getPapersDetail(id,
+      [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = id;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<PaperDetailResponse>>(

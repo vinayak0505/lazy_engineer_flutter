@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/features/components/custom_dropdown.dart';
+import 'package:lazy_engineer/features/components/custom_text_field.dart';
+import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
 import 'package:lazy_engineer/features/upload/data/models/upload_models.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/upload_screen_widget.dart';
-import '../../../../assets/constants/lists.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../helper/input_validation.dart';
-import '../../../components/custom_dropdown.dart';
-import '../../../components/custom_text_field.dart';
-import '../../../components/edit_tags_widget.dart';
+import 'package:lazy_engineer/helper/input_validation.dart';
 
 class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
   const UploadNotesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    TextEditingController titleController = TextEditingController();
-    TextEditingController aboutController = TextEditingController();
-    TextEditingController semesterController = TextEditingController();
-    TextEditingController subjectController = TextEditingController();
-    TextEditingController collegeController = TextEditingController();
-    TextEditingController unitController = TextEditingController();
-    TextEditingController chapterController = TextEditingController();
-    TextEditingController topicController = TextEditingController();
+    final theme = Theme.of(context);
+    final titleController = TextEditingController();
+    final aboutController = TextEditingController();
+    final semesterController = TextEditingController();
+    final subjectController = TextEditingController();
+    final collegeController = TextEditingController();
+    final unitController = TextEditingController();
+    final chapterController = TextEditingController();
+    final TextEditingController topicController = TextEditingController();
     List<String> tagsController = [];
     return UploadScreenWidget(
       title: uploadNotes,

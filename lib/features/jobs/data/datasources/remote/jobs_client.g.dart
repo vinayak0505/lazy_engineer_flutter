@@ -16,15 +16,17 @@ class _JobsClient implements JobsClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<List<JobsResponse>>> getJobs() async {
+  Future<BaseResponse<List<JobsResponse>>> getJobs(
+      [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<List<JobsResponse>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/home/jobs',
+                .compose(_dio.options, '/jobs',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = BaseResponse<List<JobsResponse>>.fromJson(
@@ -82,10 +84,12 @@ class _JobsClient implements JobsClient {
   }
 
   @override
-  Future<BaseResponse<JobsDetailResponse>> getJobsDetail(id) async {
+  Future<BaseResponse<JobsDetailResponse>> getJobsDetail(id,
+      [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = id;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<JobsDetailResponse>>(

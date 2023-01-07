@@ -6,18 +6,18 @@ class UploadLocalDataSource {
   MyDatabase uploadDatabase = MyDatabase.instance;
   Future setBook(UploadBookRequest data) async {
     await uploadDatabase.database;
-    BookDatabaseModel databaseData = await uploadDatabase.create(
-      BookDatabaseModel(
-        title: data.title,
-        subject: data.subject,
-        about: data.about,
-        pages: data.pages,
-        semester: data.semester,
-        bookEdition: data.bookEdition,
-        price: data.price,
-        rating: 5,
-      ),
-    );
+    // BookDatabaseModel databaseData = await uploadDatabase.create(
+    //   BookDatabaseModel(
+    //     title: data.title,
+    //     subject: data.subject,
+    //     about: data.about,
+    //     pages: data.pages,
+    //     semester: data.semester,
+    //     bookEdition: data.bookEdition,
+    //     price: data.price,
+    //     rating: 5,
+    //   ),
+    // );
     BookDatabaseModel uploadData = await uploadDatabase.read(1);
   }
 }

@@ -16,15 +16,17 @@ class _FilesClient implements FilesClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<List<FilesResponse>>> getFiles() async {
+  Future<BaseResponse<List<FilesResponse>>> getFiles(
+      [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<List<FilesResponse>>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/home/files',
+                .compose(_dio.options, '/practicle_file',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = BaseResponse<List<FilesResponse>>.fromJson(
@@ -82,10 +84,12 @@ class _FilesClient implements FilesClient {
   }
 
   @override
-  Future<BaseResponse<FilesDetailResponse>> getFilesDetail(id) async {
+  Future<BaseResponse<FilesDetailResponse>> getFilesDetail(id,
+      [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'token': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = id;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<FilesDetailResponse>>(

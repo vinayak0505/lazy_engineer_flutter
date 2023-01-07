@@ -1,25 +1,22 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/features/papers/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/papers/domain/repositories/papers_repository.dart';
-import 'package:lazy_engineer/features/papers/presentation/pages/question_paper_screen.dart';
 
-import '../../../../../assets/constants/lists.dart';
-
-part 'papers_state.dart';
 part 'papers_cubit.freezed.dart';
+part 'papers_state.dart';
 
 class PapersCubit extends Cubit<PapersState> {
   final PapersRepository _repository;
   PapersCubit(this._repository) : super(const PapersState.loading()) {
     getPapers();
   }
-  void getPapers() async {
+  Future<void> getPapers() async {
     try {
-      List<PaperResponse>? data = await _repository.getPapersData();
+      final List<PaperResponse>? data = await _repository.getPapersData();
       if (data != null) {
-        data = papersList; // need to remove when integrated
         emit(PapersState.success(data));
       } else {
         emit(const PapersState.loading());
@@ -29,15 +26,14 @@ class PapersCubit extends Cubit<PapersState> {
     }
   }
 
-  void applyFilter(FilterRequest filterRequest) async {
+  Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const PapersState.loading());
-      List<PaperResponse>? data = await _repository.applyFilter(filterRequest);
-      if (data != null) {
-        emit(PapersState.success(data));
-      } else {
-        emit(const PapersState.loading());
-      }
+      final List<PaperResponse>? data =
+          await _repository.applyFilter(filterRequest);
+      data != null
+          ? emit(PapersState.success(data))
+          : emit(const PapersState.loading());
     } catch (e) {
       emit(PapersState.failure(e));
     }
