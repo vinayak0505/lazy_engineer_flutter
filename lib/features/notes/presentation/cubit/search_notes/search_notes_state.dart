@@ -5,5 +5,6 @@ class SearchNotesState with _$SearchNotesState {
   const factory SearchNotesState.initial() = _SearchNotesInitial;
   const factory SearchNotesState.loading() = _SearchNotesLoading;
   const factory SearchNotesState.failure(dynamic e) = _SearchNotesFailure;
-  const factory SearchNotesState.success(NotesResponse data) = _SearchNotesSuccess;
+  const factory SearchNotesState.success(List<NoteDetail> data) =
+      _SearchNotesSuccess;
 }

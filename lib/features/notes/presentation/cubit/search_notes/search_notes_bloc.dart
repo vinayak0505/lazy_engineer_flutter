@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/features/notes/data/models/notes_response/notes_response.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
 import 'package:lazy_engineer/features/notes/domain/repositories/notes_repository.dart';
 
 part 'search_notes_event.dart';
