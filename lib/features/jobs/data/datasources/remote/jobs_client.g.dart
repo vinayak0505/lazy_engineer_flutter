@@ -16,7 +16,7 @@ class _JobsClient implements JobsClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<List<JobsResponse>>> getJobs(
+  Future<BaseResponse<JobResponse>> getJobs(
       [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -24,61 +24,52 @@ class _JobsClient implements JobsClient {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<JobsResponse>>>(
+        _setStreamType<BaseResponse<JobResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/jobs',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<JobsResponse>>.fromJson(
+    final value = BaseResponse<JobResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<JobsResponse>(
-              (i) => JobsResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => JobResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<List<JobsResponse>>> searchJobs(query) async {
+  Future<BaseResponse<JobResponse>> searchJobs(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<JobsResponse>>>(
+        _setStreamType<BaseResponse<JobResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/jobs/search',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<JobsResponse>>.fromJson(
+    final value = BaseResponse<JobResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<JobsResponse>(
-              (i) => JobsResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => JobResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<List<JobsResponse>>> applyFilter(query) async {
+  Future<BaseResponse<JobResponse>> applyFilter(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query.toJson()};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<JobsResponse>>>(
+        _setStreamType<BaseResponse<JobResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/jobs/search',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<JobsResponse>>.fromJson(
+    final value = BaseResponse<JobResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<JobsResponse>(
-              (i) => JobsResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => JobResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

@@ -8,6 +8,7 @@ import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/components/tile_view.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/papers/data/repositories/papers_repository_impl.dart';
 import 'package:lazy_engineer/features/papers/presentation/cubit/papers_cubit/papers_cubit.dart';
 import 'package:lazy_engineer/features/papers/presentation/widgets/question_paper_data_box.dart';
@@ -67,17 +68,10 @@ class QuestionPaperScreen extends StatelessWidget {
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: data.length,
                             itemBuilder: (context, index) => TileView(
-                              image: data[index].link,
-                              child: QuestionPaperDataBox(
-                                title: data[index].title,
-                                descirption: data[index].descirption,
-                                college: data[index].college,
-                                subject: data[index].subject,
-                                year: data[index].year,
-                                type: data[index].type,
-                              ),
+                              // image: data[index].mediaLink,
+                              child: QuestionPaperDataBox(data[index]),
                               onPressed: () => context.push(
-                                '${RouteGenerator.questionPaperDescriptionRoute}/${index + 1}',
+                                '${RouteGenerator.questionPaperDescriptionRoute}/${index + 1}', extra: data[index],
                               ),
                             ),
                             separatorBuilder: (context, index) =>

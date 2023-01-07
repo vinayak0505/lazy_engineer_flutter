@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
-import 'package:lazy_engineer/features/papers/data/datasources/local/papers_local_datasource.dart';
 import 'package:lazy_engineer/features/papers/data/datasources/remote/papers_remote_datasource.dart';
 import 'package:lazy_engineer/features/papers/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
@@ -13,11 +11,11 @@ class PapersRepositoryImpl extends PapersRepository {
   // final PapersLocalDatasource _localDataSource = PapersLocalDatasource();
 
   @override
-  Future<List<PaperResponse>?> getPapersData() async {
+  Future<List<PaperDetail>?> getPapersData() async {
     try {
-      final BaseResponse<List<PaperResponse>> listPapers =
+      final BaseResponse<PaperResponse> listPapers =
           await _remoteDataSource.getPapers();
-      return listPapers.data;
+      return listPapers.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -25,11 +23,11 @@ class PapersRepositoryImpl extends PapersRepository {
   }
 
   @override
-  Future<List<PaperResponse>?> searchPapers(String query) async {
+  Future<List<PaperDetail>?> searchPapers(String query) async {
     try {
-      final BaseResponse<List<PaperResponse>> listPapers =
+      final BaseResponse<PaperResponse> listPapers =
           await _remoteDataSource.searchPapers(query);
-      return listPapers.data;
+      return listPapers.data.result;
     } catch (e) {
       debugPrint(e.toString());
       return null;
@@ -52,15 +50,15 @@ class PapersRepositoryImpl extends PapersRepository {
   }
 
   @override
-  Future<List<PaperResponse>?> applyFilter(FilterRequest filterRequest) async {
+  Future<List<PaperDetail>?> applyFilter(FilterRequest filterRequest) async {
     try {
-      return papersList;
+      // return papersList;
       // filterRequest = FilterRequest(
       //   multiOption: removeNullList(filterRequest.multiOption),
       //   textField: removeNullList(filterRequest.multiOption),
       //   singleOption: removeNull(filterRequest.singleOption),
       // );
-      // BaseResponse<List<PaperResponse>> listPapers =
+      // BaseResponse<List<PaperDetail>> listPapers =
       //     await _remoteDataSource.applyFilter(filterRequest);
       // return listPapers.data;
     } catch (e) {

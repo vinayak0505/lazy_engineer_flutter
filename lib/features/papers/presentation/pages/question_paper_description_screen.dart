@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
-import '../../../../assets/icons.dart';
-import '../../../components/custom_icon.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 
 class PaperDescriptionScreen extends StatelessWidget {
-  const PaperDescriptionScreen(this.id, {Key? key}) : super(key: key);
-  final String? id;
+  const PaperDescriptionScreen(this.data, {super.key});
+  final PaperDetail data;
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    List<String> listTags = [];
+    final ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -49,11 +49,11 @@ class PaperDescriptionScreen extends StatelessWidget {
                               children: [
                                 const SizedBox(height: 12),
                                 Text(
-                                  'Computer Graphics Class Test Question Paper',
+                                  data.title ?? '',
                                   style: theme.textTheme.headline5,
                                 ),
                                 const SizedBox(height: 12),
-                                Text('Computer Graphics',
+                                Text(data.subject ?? '',
                                     style: theme.textTheme.titleLarge,),
                                 const SizedBox(height: 16),
                                 const SizedBox(height: 16),
@@ -72,32 +72,31 @@ class PaperDescriptionScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Description',
+                  description,
                   style: theme.textTheme.headline5,
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'THE FILE CONTAINS ALL THE QUESTIONS THAT ARE CAME IN CLASS TEST OF COMPUTER GRAPHICS IN THIRD SEMESTER IN ABOVE MENTIONED COLLEGE IN MARCH 2020',
+                 data.about ?? '',
                   style: theme.textTheme.bodyMedium,
                   textAlign: TextAlign.justify,
                 ),
                 const SizedBox(height: 16),
-                Row(children: [
-                  Text('College', style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 100),
-                  Text('GTBIT', style: theme.textTheme.bodyText2),
-                ],),
+                // Row(children: [
+                //   Text(college, style: theme.textTheme.headlineSmall),
+                //   const SizedBox(width: 100),
+                //   Text(data., style: theme.textTheme.bodyText2),
+                // ],),
                 const SizedBox(height: 16),
                 Row(children: [
-                  Text('Semester', style: theme.textTheme.headlineSmall),
+                  Text(semester, style: theme.textTheme.headlineSmall),
                   const SizedBox(width: 80),
-                  Text('3rd Semester', style: theme.textTheme.bodyText2),
+                  Text(data.semester ?? '', style: theme.textTheme.bodyText2),
                 ],),
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.headlineSmall),
                 const SizedBox(height: 16),
                 EditTagsWidget(listTags: (value) {
-                  listTags = value;
                 },),
               ],
             ),
@@ -113,7 +112,7 @@ class BottomPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
+    final theme = Theme.of(context);
     return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
       Column(children: [
         const CustomIcon(
@@ -140,14 +139,14 @@ class BottomPage extends StatelessWidget {
       Column(children: [
         const CustomIcon(AppIcons.bookIcon),
         Text(
-          'pdf',
+          pdf,
           style: theme.textTheme.bodyText1,
         )
       ],),
       Column(children: [
         const CustomIcon(AppIcons.pageIcon),
         Text(
-          'pages',
+          pages,
           style: theme.textTheme.bodyText1,
         )
       ],)

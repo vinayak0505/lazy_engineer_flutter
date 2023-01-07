@@ -19,21 +19,21 @@ mixin _$PapersState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) =>
@@ -120,7 +120,7 @@ class _$_PapersLoading implements _PapersLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return loading();
@@ -130,7 +130,7 @@ class _$_PapersLoading implements _PapersLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return loading?.call();
@@ -140,7 +140,7 @@ class _$_PapersLoading implements _PapersLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -194,7 +194,7 @@ abstract class _$$_PapersSuccessCopyWith<$Res> {
   factory _$$_PapersSuccessCopyWith(
           _$_PapersSuccess value, $Res Function(_$_PapersSuccess) then) =
       __$$_PapersSuccessCopyWithImpl<$Res>;
-  $Res call({List<PaperResponse> data});
+  $Res call({List<PaperDetail> data});
 }
 
 /// @nodoc
@@ -216,7 +216,7 @@ class __$$_PapersSuccessCopyWithImpl<$Res>
       data == freezed
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<PaperResponse>,
+              as List<PaperDetail>,
     ));
   }
 }
@@ -224,11 +224,11 @@ class __$$_PapersSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PapersSuccess implements _PapersSuccess {
-  const _$_PapersSuccess(final List<PaperResponse> data) : _data = data;
+  const _$_PapersSuccess(final List<PaperDetail> data) : _data = data;
 
-  final List<PaperResponse> _data;
+  final List<PaperDetail> _data;
   @override
-  List<PaperResponse> get data {
+  List<PaperDetail> get data {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -259,7 +259,7 @@ class _$_PapersSuccess implements _PapersSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return success(data);
@@ -269,7 +269,7 @@ class _$_PapersSuccess implements _PapersSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return success?.call(data);
@@ -279,7 +279,7 @@ class _$_PapersSuccess implements _PapersSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -325,10 +325,9 @@ class _$_PapersSuccess implements _PapersSuccess {
 }
 
 abstract class _PapersSuccess implements PapersState {
-  const factory _PapersSuccess(final List<PaperResponse> data) =
-      _$_PapersSuccess;
+  const factory _PapersSuccess(final List<PaperDetail> data) = _$_PapersSuccess;
 
-  List<PaperResponse> get data;
+  List<PaperDetail> get data;
   @JsonKey(ignore: true)
   _$$_PapersSuccessCopyWith<_$_PapersSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -400,7 +399,7 @@ class _$_PapersFailure implements _PapersFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<PaperResponse> data) success,
+    required TResult Function(List<PaperDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return failure(e);
@@ -410,7 +409,7 @@ class _$_PapersFailure implements _PapersFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
@@ -420,7 +419,7 @@ class _$_PapersFailure implements _PapersFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<PaperResponse> data)? success,
+    TResult Function(List<PaperDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {

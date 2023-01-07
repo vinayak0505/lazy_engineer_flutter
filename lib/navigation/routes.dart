@@ -4,6 +4,8 @@ import 'package:lazy_engineer/features/auth/presentation/pages/auth_screen.dart'
 import 'package:lazy_engineer/features/auth/presentation/pages/lazy_engineer.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/account_screen.dart';
 import 'package:lazy_engineer/features/download/pages/download_screen.dart';
+import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/settings/presentation/pages/settings_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
@@ -125,10 +127,10 @@ class RouteGenerator {
                   GoRoute(
                     path: 'jobs_description/:id',
                     pageBuilder: (context, state) {
-                      String? id = state.params['id'];
+                      // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: JobsDescriptionScreen(id),
+                        child: JobsDescriptionScreen(state.extra as JobDetail),
                       );
                     },
                   )
@@ -157,10 +159,10 @@ class RouteGenerator {
                   GoRoute(
                     path: 'question_paper_description/:id',
                     pageBuilder: (context, state) {
-                      String? id = state.params['id'];
+                      // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: PaperDescriptionScreen(id),
+                        child: PaperDescriptionScreen(state.extra as PaperDetail),
                       );
                     },
                   )

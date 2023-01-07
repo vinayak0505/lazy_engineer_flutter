@@ -3,8 +3,8 @@ import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 
 abstract class PapersRepository {
-  Future<List<PaperResponse>?> getPapersData();
-  Future<List<PaperResponse>?> searchPapers(String query);
-  Future<List<PaperResponse>?> applyFilter(FilterRequest filterRequest);
+  Future<List<PaperDetail>?> getPapersData();
+  Future<List<PaperDetail>?> searchPapers(String query);
+  Future<List<PaperDetail>?> applyFilter(FilterRequest filterRequest);
   Future<PaperDetailResponse?> getPapersDetailData(String id);
 }

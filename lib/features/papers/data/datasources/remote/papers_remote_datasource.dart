@@ -21,18 +21,18 @@ class PapersRemoteDatasource {
   }
 
   PapersRemoteDatasource._(this._client);
-  Future<BaseResponse<List<PaperResponse>>> getPapers() async {
-    final BaseResponse<List<PaperResponse>> response = await _client.getPapers();
+  Future<BaseResponse<PaperResponse>> getPapers() async {
+    final BaseResponse<PaperResponse> response = await _client.getPapers();
     return response;
   }
 
-  Future<BaseResponse<List<PaperResponse>>> searchPapers(String query) async {
-    final BaseResponse<List<PaperResponse>> response = await _client.searchPapers(query);
+  Future<BaseResponse<PaperResponse>> searchPapers(String query) async {
+    final BaseResponse<PaperResponse> response = await _client.searchPapers(query);
     return response;
   }
 
-  Future<BaseResponse<List<PaperResponse>>> applyFilter(FilterRequest filterRequest) async {
-    final BaseResponse<List<PaperResponse>> response = await _client.applyFilter(filterRequest);
+  Future<BaseResponse<PaperResponse>> applyFilter(FilterRequest filterRequest) async {
+    final BaseResponse<PaperResponse> response = await _client.applyFilter(filterRequest);
     return response;
   }
 

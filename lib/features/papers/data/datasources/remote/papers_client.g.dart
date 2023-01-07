@@ -16,7 +16,7 @@ class _PapersClient implements PapersClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<List<PaperResponse>>> getPapers(
+  Future<BaseResponse<PaperResponse>> getPapers(
       [token = HeaderValues.tempToken]) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -24,61 +24,52 @@ class _PapersClient implements PapersClient {
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<PaperResponse>>>(
+        _setStreamType<BaseResponse<PaperResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/question_paper',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<PaperResponse>>.fromJson(
+    final value = BaseResponse<PaperResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<PaperResponse>(
-              (i) => PaperResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => PaperResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<List<PaperResponse>>> searchPapers(query) async {
+  Future<BaseResponse<PaperResponse>> searchPapers(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<PaperResponse>>>(
+        _setStreamType<BaseResponse<PaperResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/papers/search',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<PaperResponse>>.fromJson(
+    final value = BaseResponse<PaperResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<PaperResponse>(
-              (i) => PaperResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => PaperResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }
 
   @override
-  Future<BaseResponse<List<PaperResponse>>> applyFilter(query) async {
+  Future<BaseResponse<PaperResponse>> applyFilter(query) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query.toJson()};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<List<PaperResponse>>>(
+        _setStreamType<BaseResponse<PaperResponse>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/home/papers/search',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = BaseResponse<List<PaperResponse>>.fromJson(
+    final value = BaseResponse<PaperResponse>.fromJson(
       _result.data!,
-      (json) => (json as List<dynamic>)
-          .map<PaperResponse>(
-              (i) => PaperResponse.fromJson(i as Map<String, dynamic>))
-          .toList(),
+      (json) => PaperResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

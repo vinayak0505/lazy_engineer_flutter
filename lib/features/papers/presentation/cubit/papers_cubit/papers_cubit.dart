@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/features/papers/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/papers/domain/repositories/papers_repository.dart';
@@ -15,7 +14,7 @@ class PapersCubit extends Cubit<PapersState> {
   }
   Future<void> getPapers() async {
     try {
-      final List<PaperResponse>? data = await _repository.getPapersData();
+      final List<PaperDetail>? data = await _repository.getPapersData();
       if (data != null) {
         emit(PapersState.success(data));
       } else {
@@ -29,7 +28,7 @@ class PapersCubit extends Cubit<PapersState> {
   Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
       emit(const PapersState.loading());
-      final List<PaperResponse>? data =
+      final List<PaperDetail>? data =
           await _repository.applyFilter(filterRequest);
       data != null
           ? emit(PapersState.success(data))

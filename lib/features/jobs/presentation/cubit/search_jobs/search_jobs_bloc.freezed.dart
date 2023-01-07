@@ -134,7 +134,7 @@ mixin _$SearchJobsState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -142,7 +142,7 @@ mixin _$SearchJobsState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -150,7 +150,7 @@ mixin _$SearchJobsState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -242,7 +242,7 @@ class _$_SearchJobsInitial implements _SearchJobsInitial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
   }) {
     return initial();
   }
@@ -253,7 +253,7 @@ class _$_SearchJobsInitial implements _SearchJobsInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
   }) {
     return initial?.call();
   }
@@ -264,7 +264,7 @@ class _$_SearchJobsInitial implements _SearchJobsInitial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -359,7 +359,7 @@ class _$_SearchJobsLoading implements _SearchJobsLoading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
   }) {
     return loading();
   }
@@ -370,7 +370,7 @@ class _$_SearchJobsLoading implements _SearchJobsLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
   }) {
     return loading?.call();
   }
@@ -381,7 +381,7 @@ class _$_SearchJobsLoading implements _SearchJobsLoading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -501,7 +501,7 @@ class _$_SearchJobsFailure implements _SearchJobsFailure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
   }) {
     return failure(e);
   }
@@ -512,7 +512,7 @@ class _$_SearchJobsFailure implements _SearchJobsFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -523,7 +523,7 @@ class _$_SearchJobsFailure implements _SearchJobsFailure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -584,7 +584,7 @@ abstract class _$$_SearchJobsSuccessCopyWith<$Res> {
   factory _$$_SearchJobsSuccessCopyWith(_$_SearchJobsSuccess value,
           $Res Function(_$_SearchJobsSuccess) then) =
       __$$_SearchJobsSuccessCopyWithImpl<$Res>;
-  $Res call({List<JobsResponse> data});
+  $Res call({List<JobDetail> data});
 }
 
 /// @nodoc
@@ -606,7 +606,7 @@ class __$$_SearchJobsSuccessCopyWithImpl<$Res>
       data == freezed
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<JobsResponse>,
+              as List<JobDetail>,
     ));
   }
 }
@@ -614,11 +614,11 @@ class __$$_SearchJobsSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SearchJobsSuccess implements _SearchJobsSuccess {
-  const _$_SearchJobsSuccess(final List<JobsResponse> data) : _data = data;
+  const _$_SearchJobsSuccess(final List<JobDetail> data) : _data = data;
 
-  final List<JobsResponse> _data;
+  final List<JobDetail> _data;
   @override
-  List<JobsResponse> get data {
+  List<JobDetail> get data {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -652,7 +652,7 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
   }) {
     return success(data);
   }
@@ -663,7 +663,7 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
   }) {
     return success?.call(data);
   }
@@ -674,7 +674,7 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -722,10 +722,10 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
 }
 
 abstract class _SearchJobsSuccess implements SearchJobsState {
-  const factory _SearchJobsSuccess(final List<JobsResponse> data) =
+  const factory _SearchJobsSuccess(final List<JobDetail> data) =
       _$_SearchJobsSuccess;
 
-  List<JobsResponse> get data;
+  List<JobDetail> get data;
   @JsonKey(ignore: true)
   _$$_SearchJobsSuccessCopyWith<_$_SearchJobsSuccess> get copyWith =>
       throw _privateConstructorUsedError;

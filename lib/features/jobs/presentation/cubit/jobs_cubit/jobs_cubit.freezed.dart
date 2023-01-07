@@ -19,21 +19,21 @@ mixin _$JobsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) =>
@@ -118,7 +118,7 @@ class _$_JobsLoading implements _JobsLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return loading();
@@ -128,7 +128,7 @@ class _$_JobsLoading implements _JobsLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return loading?.call();
@@ -138,7 +138,7 @@ class _$_JobsLoading implements _JobsLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -192,7 +192,7 @@ abstract class _$$_JobsSuccessCopyWith<$Res> {
   factory _$$_JobsSuccessCopyWith(
           _$_JobsSuccess value, $Res Function(_$_JobsSuccess) then) =
       __$$_JobsSuccessCopyWithImpl<$Res>;
-  $Res call({List<JobsResponse> data});
+  $Res call({List<JobDetail> data});
 }
 
 /// @nodoc
@@ -213,7 +213,7 @@ class __$$_JobsSuccessCopyWithImpl<$Res> extends _$JobsStateCopyWithImpl<$Res>
       data == freezed
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<JobsResponse>,
+              as List<JobDetail>,
     ));
   }
 }
@@ -221,11 +221,11 @@ class __$$_JobsSuccessCopyWithImpl<$Res> extends _$JobsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_JobsSuccess implements _JobsSuccess {
-  const _$_JobsSuccess(final List<JobsResponse> data) : _data = data;
+  const _$_JobsSuccess(final List<JobDetail> data) : _data = data;
 
-  final List<JobsResponse> _data;
+  final List<JobDetail> _data;
   @override
-  List<JobsResponse> get data {
+  List<JobDetail> get data {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -256,7 +256,7 @@ class _$_JobsSuccess implements _JobsSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return success(data);
@@ -266,7 +266,7 @@ class _$_JobsSuccess implements _JobsSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return success?.call(data);
@@ -276,7 +276,7 @@ class _$_JobsSuccess implements _JobsSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -322,9 +322,9 @@ class _$_JobsSuccess implements _JobsSuccess {
 }
 
 abstract class _JobsSuccess implements JobsState {
-  const factory _JobsSuccess(final List<JobsResponse> data) = _$_JobsSuccess;
+  const factory _JobsSuccess(final List<JobDetail> data) = _$_JobsSuccess;
 
-  List<JobsResponse> get data;
+  List<JobDetail> get data;
   @JsonKey(ignore: true)
   _$$_JobsSuccessCopyWith<_$_JobsSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -395,7 +395,7 @@ class _$_JobsFailure implements _JobsFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<JobsResponse> data) success,
+    required TResult Function(List<JobDetail> data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return failure(e);
@@ -405,7 +405,7 @@ class _$_JobsFailure implements _JobsFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
@@ -415,7 +415,7 @@ class _$_JobsFailure implements _JobsFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<JobsResponse> data)? success,
+    TResult Function(List<JobDetail> data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {

@@ -3,8 +3,8 @@ import 'package:lazy_engineer/config/app_config.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/jobs/data/datasources/remote/jobs_client.dart';
 import 'package:lazy_engineer/features/jobs/data/models/filter_request/filter_request.dart';
+import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
-import 'package:lazy_engineer/features/jobs/data/models/jobs_response/jobs_response.dart';
 import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
@@ -21,18 +21,18 @@ class JobsRemoteDatasource {
   }
 
   JobsRemoteDatasource._(this._client);
-  Future<BaseResponse<List<JobsResponse>>> getJobs() async {
-    final BaseResponse<List<JobsResponse>> response = await _client.getJobs();
+  Future<BaseResponse<JobResponse>> getJobs() async {
+    final BaseResponse<JobResponse> response = await _client.getJobs();
     return response;
   }
 
-  Future<BaseResponse<List<JobsResponse>>> searchJobs(String query) async {
-    final BaseResponse<List<JobsResponse>> response = await _client.searchJobs(query);
+  Future<BaseResponse<JobResponse>> searchJobs(String query) async {
+    final BaseResponse<JobResponse> response = await _client.searchJobs(query);
     return response;
   }
 
-  Future<BaseResponse<List<JobsResponse>>> applyFilter(FilterRequest filterRequest) async {
-    final BaseResponse<List<JobsResponse>> response = await _client.applyFilter(filterRequest);
+  Future<BaseResponse<JobResponse>> applyFilter(FilterRequest filterRequest) async {
+    final BaseResponse<JobResponse> response = await _client.applyFilter(filterRequest);
     return response;
   }
 

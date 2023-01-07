@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 
 class QuestionPaperDataBox extends StatelessWidget {
-  const QuestionPaperDataBox({
-    super.key,
-    required this.subject,
-    required this.college,
-    required this.year,
-    required this.descirption,
-    required this.type,
-    required this.title,
-  });
-  final String title;
-  final String descirption;
-  final String subject;
-  final String college;
-  final String? type;
-  final int? year;
+  const QuestionPaperDataBox(this.paperDetail, {super.key});
+  final PaperDetail paperDetail;
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
@@ -34,7 +22,7 @@ class QuestionPaperDataBox extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              descirption,
+              paperDetail.about ?? '',
               style: theme.textTheme.caption,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
@@ -48,22 +36,22 @@ class QuestionPaperDataBox extends StatelessWidget {
                     text: subjectIntended,
                     style: theme.textTheme.subtitle2,
                   ),
-                  TextSpan(text: '$subject\n'),
+                  TextSpan(text: paperDetail.subject ?? '' + '\n'),
                   TextSpan(
                     text: typeIntended,
                     style: theme.textTheme.subtitle2,
                   ),
-                  TextSpan(text: '$type\n'),
+                  TextSpan(text: paperDetail.topic ?? '' + '\n'),
                   TextSpan(
                     text: collegeIntended,
                     style: theme.textTheme.subtitle2,
                   ),
-                  TextSpan(text: '$college\n'),
+                  TextSpan(text: paperDetail.unit ?? '' + '\n'),
                   TextSpan(
                     text: yearIntended,
                     style: theme.textTheme.subtitle2,
                   ),
-                  TextSpan(text: year.toString()),
+                  TextSpan(text: paperDetail.semester ?? '' + '\n'),
                 ],
               ),
             )

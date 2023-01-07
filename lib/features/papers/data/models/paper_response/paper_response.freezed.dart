@@ -20,14 +20,10 @@ PaperResponse _$PaperResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PaperResponse {
-  String get title => throw _privateConstructorUsedError;
-  String get subject => throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
-  String get descirption => throw _privateConstructorUsedError;
-  String get college => throw _privateConstructorUsedError;
-  int? get semester => throw _privateConstructorUsedError;
-  int? get year => throw _privateConstructorUsedError;
-  String? get link => throw _privateConstructorUsedError;
+  List<PaperDetail>? get result => throw _privateConstructorUsedError;
+  int? get totalCount => throw _privateConstructorUsedError;
+  int? get skip => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,14 +37,7 @@ abstract class $PaperResponseCopyWith<$Res> {
           PaperResponse value, $Res Function(PaperResponse) then) =
       _$PaperResponseCopyWithImpl<$Res>;
   $Res call(
-      {String title,
-      String subject,
-      String? type,
-      String descirption,
-      String college,
-      int? semester,
-      int? year,
-      String? link});
+      {List<PaperDetail>? result, int? totalCount, int? skip, int? limit});
 }
 
 /// @nodoc
@@ -62,48 +51,28 @@ class _$PaperResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? title = freezed,
-    Object? subject = freezed,
-    Object? type = freezed,
-    Object? descirption = freezed,
-    Object? college = freezed,
-    Object? semester = freezed,
-    Object? year = freezed,
-    Object? link = freezed,
+    Object? result = freezed,
+    Object? totalCount = freezed,
+    Object? skip = freezed,
+    Object? limit = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      subject: subject == freezed
-          ? _value.subject
-          : subject // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      descirption: descirption == freezed
-          ? _value.descirption
-          : descirption // ignore: cast_nullable_to_non_nullable
-              as String,
-      college: college == freezed
-          ? _value.college
-          : college // ignore: cast_nullable_to_non_nullable
-              as String,
-      semester: semester == freezed
-          ? _value.semester
-          : semester // ignore: cast_nullable_to_non_nullable
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as List<PaperDetail>?,
+      totalCount: totalCount == freezed
+          ? _value.totalCount
+          : totalCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      year: year == freezed
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
+      skip: skip == freezed
+          ? _value.skip
+          : skip // ignore: cast_nullable_to_non_nullable
               as int?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String?,
+      limit: limit == freezed
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -116,14 +85,7 @@ abstract class _$$_PaperResponseCopyWith<$Res>
       __$$_PaperResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String title,
-      String subject,
-      String? type,
-      String descirption,
-      String college,
-      int? semester,
-      int? year,
-      String? link});
+      {List<PaperDetail>? result, int? totalCount, int? skip, int? limit});
 }
 
 /// @nodoc
@@ -139,48 +101,28 @@ class __$$_PaperResponseCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? title = freezed,
-    Object? subject = freezed,
-    Object? type = freezed,
-    Object? descirption = freezed,
-    Object? college = freezed,
-    Object? semester = freezed,
-    Object? year = freezed,
-    Object? link = freezed,
+    Object? result = freezed,
+    Object? totalCount = freezed,
+    Object? skip = freezed,
+    Object? limit = freezed,
   }) {
     return _then(_$_PaperResponse(
-      title == freezed
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      subject == freezed
-          ? _value.subject
-          : subject // ignore: cast_nullable_to_non_nullable
-              as String,
-      type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      descirption == freezed
-          ? _value.descirption
-          : descirption // ignore: cast_nullable_to_non_nullable
-              as String,
-      college == freezed
-          ? _value.college
-          : college // ignore: cast_nullable_to_non_nullable
-              as String,
-      semester == freezed
-          ? _value.semester
-          : semester // ignore: cast_nullable_to_non_nullable
+      result == freezed
+          ? _value._result
+          : result // ignore: cast_nullable_to_non_nullable
+              as List<PaperDetail>?,
+      totalCount == freezed
+          ? _value.totalCount
+          : totalCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      year == freezed
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
+      skip == freezed
+          ? _value.skip
+          : skip // ignore: cast_nullable_to_non_nullable
               as int?,
-      link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String?,
+      limit == freezed
+          ? _value.limit
+          : limit // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -188,32 +130,32 @@ class __$$_PaperResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_PaperResponse implements _PaperResponse {
-  const _$_PaperResponse(this.title, this.subject, this.type, this.descirption,
-      this.college, this.semester, this.year, this.link);
+  const _$_PaperResponse(
+      final List<PaperDetail>? result, this.totalCount, this.skip, this.limit)
+      : _result = result;
 
   factory _$_PaperResponse.fromJson(Map<String, dynamic> json) =>
       _$$_PaperResponseFromJson(json);
 
+  final List<PaperDetail>? _result;
   @override
-  final String title;
+  List<PaperDetail>? get result {
+    final value = _result;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
-  final String subject;
+  final int? totalCount;
   @override
-  final String? type;
+  final int? skip;
   @override
-  final String descirption;
-  @override
-  final String college;
-  @override
-  final int? semester;
-  @override
-  final int? year;
-  @override
-  final String? link;
+  final int? limit;
 
   @override
   String toString() {
-    return 'PaperResponse(title: $title, subject: $subject, type: $type, descirption: $descirption, college: $college, semester: $semester, year: $year, link: $link)';
+    return 'PaperResponse(result: $result, totalCount: $totalCount, skip: $skip, limit: $limit)';
   }
 
   @override
@@ -221,29 +163,21 @@ class _$_PaperResponse implements _PaperResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PaperResponse &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality().equals(other._result, _result) &&
             const DeepCollectionEquality()
-                .equals(other.descirption, descirption) &&
-            const DeepCollectionEquality().equals(other.college, college) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality().equals(other.year, year) &&
-            const DeepCollectionEquality().equals(other.link, link));
+                .equals(other.totalCount, totalCount) &&
+            const DeepCollectionEquality().equals(other.skip, skip) &&
+            const DeepCollectionEquality().equals(other.limit, limit));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(descirption),
-      const DeepCollectionEquality().hash(college),
-      const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(year),
-      const DeepCollectionEquality().hash(link));
+      const DeepCollectionEquality().hash(_result),
+      const DeepCollectionEquality().hash(totalCount),
+      const DeepCollectionEquality().hash(skip),
+      const DeepCollectionEquality().hash(limit));
 
   @JsonKey(ignore: true)
   @override
@@ -260,36 +194,337 @@ class _$_PaperResponse implements _PaperResponse {
 
 abstract class _PaperResponse implements PaperResponse {
   const factory _PaperResponse(
-      final String title,
-      final String subject,
-      final String? type,
-      final String descirption,
-      final String college,
-      final int? semester,
-      final int? year,
-      final String? link) = _$_PaperResponse;
+      final List<PaperDetail>? result,
+      final int? totalCount,
+      final int? skip,
+      final int? limit) = _$_PaperResponse;
 
   factory _PaperResponse.fromJson(Map<String, dynamic> json) =
       _$_PaperResponse.fromJson;
 
   @override
-  String get title;
+  List<PaperDetail>? get result;
   @override
-  String get subject;
+  int? get totalCount;
   @override
-  String? get type;
+  int? get skip;
   @override
-  String get descirption;
-  @override
-  String get college;
-  @override
-  int? get semester;
-  @override
-  int? get year;
-  @override
-  String? get link;
+  int? get limit;
   @override
   @JsonKey(ignore: true)
   _$$_PaperResponseCopyWith<_$_PaperResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PaperDetail _$PaperDetailFromJson(Map<String, dynamic> json) {
+  return _PaperDetail.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PaperDetail {
+  String? get title => throw _privateConstructorUsedError;
+  String? get about => throw _privateConstructorUsedError;
+  String? get semester => throw _privateConstructorUsedError;
+  String? get subject => throw _privateConstructorUsedError;
+  String? get unit => throw _privateConstructorUsedError;
+  String? get chapter => throw _privateConstructorUsedError;
+  String? get topic => throw _privateConstructorUsedError;
+  List<String>? get tags => throw _privateConstructorUsedError;
+  String? get mediaLink => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PaperDetailCopyWith<PaperDetail> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PaperDetailCopyWith<$Res> {
+  factory $PaperDetailCopyWith(
+          PaperDetail value, $Res Function(PaperDetail) then) =
+      _$PaperDetailCopyWithImpl<$Res>;
+  $Res call(
+      {String? title,
+      String? about,
+      String? semester,
+      String? subject,
+      String? unit,
+      String? chapter,
+      String? topic,
+      List<String>? tags,
+      String? mediaLink});
+}
+
+/// @nodoc
+class _$PaperDetailCopyWithImpl<$Res> implements $PaperDetailCopyWith<$Res> {
+  _$PaperDetailCopyWithImpl(this._value, this._then);
+
+  final PaperDetail _value;
+  // ignore: unused_field
+  final $Res Function(PaperDetail) _then;
+
+  @override
+  $Res call({
+    Object? title = freezed,
+    Object? about = freezed,
+    Object? semester = freezed,
+    Object? subject = freezed,
+    Object? unit = freezed,
+    Object? chapter = freezed,
+    Object? topic = freezed,
+    Object? tags = freezed,
+    Object? mediaLink = freezed,
+  }) {
+    return _then(_value.copyWith(
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      about: about == freezed
+          ? _value.about
+          : about // ignore: cast_nullable_to_non_nullable
+              as String?,
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subject: subject == freezed
+          ? _value.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String?,
+      unit: unit == freezed
+          ? _value.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      chapter: chapter == freezed
+          ? _value.chapter
+          : chapter // ignore: cast_nullable_to_non_nullable
+              as String?,
+      topic: topic == freezed
+          ? _value.topic
+          : topic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mediaLink: mediaLink == freezed
+          ? _value.mediaLink
+          : mediaLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_PaperDetailCopyWith<$Res>
+    implements $PaperDetailCopyWith<$Res> {
+  factory _$$_PaperDetailCopyWith(
+          _$_PaperDetail value, $Res Function(_$_PaperDetail) then) =
+      __$$_PaperDetailCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? title,
+      String? about,
+      String? semester,
+      String? subject,
+      String? unit,
+      String? chapter,
+      String? topic,
+      List<String>? tags,
+      String? mediaLink});
+}
+
+/// @nodoc
+class __$$_PaperDetailCopyWithImpl<$Res> extends _$PaperDetailCopyWithImpl<$Res>
+    implements _$$_PaperDetailCopyWith<$Res> {
+  __$$_PaperDetailCopyWithImpl(
+      _$_PaperDetail _value, $Res Function(_$_PaperDetail) _then)
+      : super(_value, (v) => _then(v as _$_PaperDetail));
+
+  @override
+  _$_PaperDetail get _value => super._value as _$_PaperDetail;
+
+  @override
+  $Res call({
+    Object? title = freezed,
+    Object? about = freezed,
+    Object? semester = freezed,
+    Object? subject = freezed,
+    Object? unit = freezed,
+    Object? chapter = freezed,
+    Object? topic = freezed,
+    Object? tags = freezed,
+    Object? mediaLink = freezed,
+  }) {
+    return _then(_$_PaperDetail(
+      title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      about == freezed
+          ? _value.about
+          : about // ignore: cast_nullable_to_non_nullable
+              as String?,
+      semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subject == freezed
+          ? _value.subject
+          : subject // ignore: cast_nullable_to_non_nullable
+              as String?,
+      unit == freezed
+          ? _value.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      chapter == freezed
+          ? _value.chapter
+          : chapter // ignore: cast_nullable_to_non_nullable
+              as String?,
+      topic == freezed
+          ? _value.topic
+          : topic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tags == freezed
+          ? _value._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mediaLink == freezed
+          ? _value.mediaLink
+          : mediaLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_PaperDetail implements _PaperDetail {
+  const _$_PaperDetail(
+      this.title,
+      this.about,
+      this.semester,
+      this.subject,
+      this.unit,
+      this.chapter,
+      this.topic,
+      final List<String>? tags,
+      this.mediaLink)
+      : _tags = tags;
+
+  factory _$_PaperDetail.fromJson(Map<String, dynamic> json) =>
+      _$$_PaperDetailFromJson(json);
+
+  @override
+  final String? title;
+  @override
+  final String? about;
+  @override
+  final String? semester;
+  @override
+  final String? subject;
+  @override
+  final String? unit;
+  @override
+  final String? chapter;
+  @override
+  final String? topic;
+  final List<String>? _tags;
+  @override
+  List<String>? get tags {
+    final value = _tags;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? mediaLink;
+
+  @override
+  String toString() {
+    return 'PaperDetail(title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, tags: $tags, mediaLink: $mediaLink)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PaperDetail &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.about, about) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
+            const DeepCollectionEquality().equals(other.subject, subject) &&
+            const DeepCollectionEquality().equals(other.unit, unit) &&
+            const DeepCollectionEquality().equals(other.chapter, chapter) &&
+            const DeepCollectionEquality().equals(other.topic, topic) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            const DeepCollectionEquality().equals(other.mediaLink, mediaLink));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(about),
+      const DeepCollectionEquality().hash(semester),
+      const DeepCollectionEquality().hash(subject),
+      const DeepCollectionEquality().hash(unit),
+      const DeepCollectionEquality().hash(chapter),
+      const DeepCollectionEquality().hash(topic),
+      const DeepCollectionEquality().hash(_tags),
+      const DeepCollectionEquality().hash(mediaLink));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PaperDetailCopyWith<_$_PaperDetail> get copyWith =>
+      __$$_PaperDetailCopyWithImpl<_$_PaperDetail>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_PaperDetailToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PaperDetail implements PaperDetail {
+  const factory _PaperDetail(
+      final String? title,
+      final String? about,
+      final String? semester,
+      final String? subject,
+      final String? unit,
+      final String? chapter,
+      final String? topic,
+      final List<String>? tags,
+      final String? mediaLink) = _$_PaperDetail;
+
+  factory _PaperDetail.fromJson(Map<String, dynamic> json) =
+      _$_PaperDetail.fromJson;
+
+  @override
+  String? get title;
+  @override
+  String? get about;
+  @override
+  String? get semester;
+  @override
+  String? get subject;
+  @override
+  String? get unit;
+  @override
+  String? get chapter;
+  @override
+  String? get topic;
+  @override
+  List<String>? get tags;
+  @override
+  String? get mediaLink;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PaperDetailCopyWith<_$_PaperDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }
