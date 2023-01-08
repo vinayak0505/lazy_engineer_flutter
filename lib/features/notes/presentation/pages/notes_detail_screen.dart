@@ -247,7 +247,7 @@ class NotesDetailHeader extends StatelessWidget {
                   child: CustomButton(
                     text: download,
                     onPressed: () {
-                      // context.read<DownloadCubit>().download(link);
+                      /// context.read<DownloadCubit>().download(link);
                     },
                     width: 120,
                   ),
