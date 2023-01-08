@@ -6,9 +6,11 @@ part 'download_model.g.dart';
 @freezed
 class DownloadModel with _$DownloadModel {
   const factory DownloadModel({
-    List<String>? notes,
-    List<String>? files,
-    List<String>? books,
+    required List<String> notes,
+    required List<String> files,
+    required List<String> books,
+    required List<String> jobs,
+    required List<String> papers,
   }) = _DownloadModel;
 
   factory DownloadModel.fromJson(Map<String, dynamic> json) =>

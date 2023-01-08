@@ -20,9 +20,11 @@ DownloadModel _$DownloadModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DownloadModel {
-  List<String>? get notes => throw _privateConstructorUsedError;
-  List<String>? get files => throw _privateConstructorUsedError;
-  List<String>? get books => throw _privateConstructorUsedError;
+  List<String> get notes => throw _privateConstructorUsedError;
+  List<String> get files => throw _privateConstructorUsedError;
+  List<String> get books => throw _privateConstructorUsedError;
+  List<String> get jobs => throw _privateConstructorUsedError;
+  List<String> get papers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +37,12 @@ abstract class $DownloadModelCopyWith<$Res> {
   factory $DownloadModelCopyWith(
           DownloadModel value, $Res Function(DownloadModel) then) =
       _$DownloadModelCopyWithImpl<$Res>;
-  $Res call({List<String>? notes, List<String>? files, List<String>? books});
+  $Res call(
+      {List<String> notes,
+      List<String> files,
+      List<String> books,
+      List<String> jobs,
+      List<String> papers});
 }
 
 /// @nodoc
@@ -52,20 +59,30 @@ class _$DownloadModelCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? files = freezed,
     Object? books = freezed,
+    Object? jobs = freezed,
+    Object? papers = freezed,
   }) {
     return _then(_value.copyWith(
       notes: notes == freezed
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       files: files == freezed
           ? _value.files
           : files // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       books: books == freezed
           ? _value.books
           : books // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
+      jobs: jobs == freezed
+          ? _value.jobs
+          : jobs // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      papers: papers == freezed
+          ? _value.papers
+          : papers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -77,7 +94,12 @@ abstract class _$$_DownloadModelCopyWith<$Res>
           _$_DownloadModel value, $Res Function(_$_DownloadModel) then) =
       __$$_DownloadModelCopyWithImpl<$Res>;
   @override
-  $Res call({List<String>? notes, List<String>? files, List<String>? books});
+  $Res call(
+      {List<String> notes,
+      List<String> files,
+      List<String> books,
+      List<String> jobs,
+      List<String> papers});
 }
 
 /// @nodoc
@@ -96,20 +118,30 @@ class __$$_DownloadModelCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? files = freezed,
     Object? books = freezed,
+    Object? jobs = freezed,
+    Object? papers = freezed,
   }) {
     return _then(_$_DownloadModel(
       notes: notes == freezed
           ? _value._notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       files: files == freezed
           ? _value._files
           : files // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       books: books == freezed
           ? _value._books
           : books // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
+      jobs: jobs == freezed
+          ? _value._jobs
+          : jobs // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      papers: papers == freezed
+          ? _value._papers
+          : papers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -118,46 +150,58 @@ class __$$_DownloadModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_DownloadModel implements _DownloadModel {
   const _$_DownloadModel(
-      {final List<String>? notes,
-      final List<String>? files,
-      final List<String>? books})
+      {required final List<String> notes,
+      required final List<String> files,
+      required final List<String> books,
+      required final List<String> jobs,
+      required final List<String> papers})
       : _notes = notes,
         _files = files,
-        _books = books;
+        _books = books,
+        _jobs = jobs,
+        _papers = papers;
 
   factory _$_DownloadModel.fromJson(Map<String, dynamic> json) =>
       _$$_DownloadModelFromJson(json);
 
-  final List<String>? _notes;
+  final List<String> _notes;
   @override
-  List<String>? get notes {
-    final value = _notes;
-    if (value == null) return null;
+  List<String> get notes {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_notes);
   }
 
-  final List<String>? _files;
+  final List<String> _files;
   @override
-  List<String>? get files {
-    final value = _files;
-    if (value == null) return null;
+  List<String> get files {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_files);
   }
 
-  final List<String>? _books;
+  final List<String> _books;
   @override
-  List<String>? get books {
-    final value = _books;
-    if (value == null) return null;
+  List<String> get books {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_books);
+  }
+
+  final List<String> _jobs;
+  @override
+  List<String> get jobs {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_jobs);
+  }
+
+  final List<String> _papers;
+  @override
+  List<String> get papers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_papers);
   }
 
   @override
   String toString() {
-    return 'DownloadModel(notes: $notes, files: $files, books: $books)';
+    return 'DownloadModel(notes: $notes, files: $files, books: $books, jobs: $jobs, papers: $papers)';
   }
 
   @override
@@ -167,7 +211,9 @@ class _$_DownloadModel implements _DownloadModel {
             other is _$_DownloadModel &&
             const DeepCollectionEquality().equals(other._notes, _notes) &&
             const DeepCollectionEquality().equals(other._files, _files) &&
-            const DeepCollectionEquality().equals(other._books, _books));
+            const DeepCollectionEquality().equals(other._books, _books) &&
+            const DeepCollectionEquality().equals(other._jobs, _jobs) &&
+            const DeepCollectionEquality().equals(other._papers, _papers));
   }
 
   @JsonKey(ignore: true)
@@ -176,7 +222,9 @@ class _$_DownloadModel implements _DownloadModel {
       runtimeType,
       const DeepCollectionEquality().hash(_notes),
       const DeepCollectionEquality().hash(_files),
-      const DeepCollectionEquality().hash(_books));
+      const DeepCollectionEquality().hash(_books),
+      const DeepCollectionEquality().hash(_jobs),
+      const DeepCollectionEquality().hash(_papers));
 
   @JsonKey(ignore: true)
   @override
@@ -193,19 +241,25 @@ class _$_DownloadModel implements _DownloadModel {
 
 abstract class _DownloadModel implements DownloadModel {
   const factory _DownloadModel(
-      {final List<String>? notes,
-      final List<String>? files,
-      final List<String>? books}) = _$_DownloadModel;
+      {required final List<String> notes,
+      required final List<String> files,
+      required final List<String> books,
+      required final List<String> jobs,
+      required final List<String> papers}) = _$_DownloadModel;
 
   factory _DownloadModel.fromJson(Map<String, dynamic> json) =
       _$_DownloadModel.fromJson;
 
   @override
-  List<String>? get notes;
+  List<String> get notes;
   @override
-  List<String>? get files;
+  List<String> get files;
   @override
-  List<String>? get books;
+  List<String> get books;
+  @override
+  List<String> get jobs;
+  @override
+  List<String> get papers;
   @override
   @JsonKey(ignore: true)
   _$$_DownloadModelCopyWith<_$_DownloadModel> get copyWith =>

@@ -5,8 +5,9 @@ import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/features/components/expandable_widget.dart';
-import 'package:lazy_engineer/features/download/presentation/logic/download_cubit/download_cubit.dart';
-import 'package:pdf_thumbnail/pdf_thumbnail.dart';
+import 'package:lazy_engineer/features/components/failiure_screen.dart';
+import 'package:lazy_engineer/features/components/loading_screen.dart';
+import 'package:lazy_engineer/features/download/presentation/logic/download/download_cubit.dart';
 
 class DownloadScreen extends StatelessWidget {
   const DownloadScreen({super.key});
@@ -26,29 +27,45 @@ class DownloadScreen extends StatelessWidget {
         create: (context) => DownloadCubit(),
         child: BlocBuilder<DownloadCubit, DownloadState>(
           builder: (context, state) {
-            return ListView(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 76),
-              children: [
-                CustomTextField(
-                  controller: searchDownloadController,
-                  suffixIcon: AppIcons.searchIcon,
-                ),
-                const SizedBox(height: 24),
-                const ExpandableContainer(
-                  heading: notes,
-                  child: ListOfFile(['File 1', 'File 2']),
-                ),
-                const SizedBox(height: 24),
-                const ExpandableContainer(
-                  heading: files,
-                  child: ListOfFile(['File 1', 'File 2']),
-                ),
-                const SizedBox(height: 24),
-                const ExpandableContainer(
-                  heading: books,
-                  child: ListOfFile(['File 1', 'File 2']),
-                ),
-              ],
+            return state.when(
+              loading: () => const LoadingScreen(),
+              failure: (e) => FailureScreen(e),
+              success: (data) {
+                return ListView(
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 76),
+                  children: [
+                    CustomTextField(
+                      controller: searchDownloadController,
+                      suffixIcon: AppIcons.searchIcon,
+                    ),
+                    const SizedBox(height: 24),
+                    ExpandableContainer(
+                      heading: notes,
+                      child: ListOfFile(data.notes),
+                    ),
+                    const SizedBox(height: 24),
+                    ExpandableContainer(
+                      heading: files,
+                      child: ListOfFile(data.files),
+                    ),
+                    const SizedBox(height: 24),
+                    ExpandableContainer(
+                      heading: books,
+                      child: ListOfFile(data.books),
+                    ),
+                    const SizedBox(height: 24),
+                    ExpandableContainer(
+                      heading: jobs,
+                      child: ListOfFile(data.jobs),
+                    ),
+                    const SizedBox(height: 24),
+                    ExpandableContainer(
+                      heading: paper,
+                      child: ListOfFile(data.papers),
+                    ),
+                  ],
+                );
+              },
             );
           },
         ),

@@ -1,3 +1,5 @@
+const String hiveLazyEngineer = 'lazyEngineer';
+
 const String lazyEngineer = 'Lazy Engineer';
 
 const String home = 'Home';
