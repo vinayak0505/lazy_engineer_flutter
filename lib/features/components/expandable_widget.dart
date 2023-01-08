@@ -30,23 +30,23 @@ class _ExpandableContainerState extends State<ExpandableContainer> {
       ),
       child: Column(
         children: [
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade300,
-              borderRadius: BorderRadius.only(
-                topLeft: const Radius.circular(11),
-                topRight: const Radius.circular(11),
-                bottomLeft: Radius.circular(opened ? 0 : 11),
-                bottomRight: Radius.circular(opened ? 0 : 11),
+          InkWell(
+            onTap: () => setState(() {
+              opened = !opened;
+              turns = turns == 0 ? 0.5 : 0;
+            }),
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade300,
+                borderRadius: BorderRadius.only(
+                  topLeft: const Radius.circular(11),
+                  topRight: const Radius.circular(11),
+                  bottomLeft: Radius.circular(opened ? 0 : 11),
+                  bottomRight: Radius.circular(opened ? 0 : 11),
+                ),
               ),
-            ),
-            child: InkWell(
-              onTap: () => setState(() {
-                opened = !opened;
-                turns = turns == 0 ? 0.5 : 0;
-              }),
               child: Row(
                 children: [
                   Text(
