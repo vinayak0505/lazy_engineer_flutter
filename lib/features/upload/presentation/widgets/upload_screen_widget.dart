@@ -3,8 +3,12 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/upload/data/repositories/upload_repository_impl.dart';
+import 'package:pdf_render/pdf_render_widgets.dart';
+import 'package:pdf_thumbnail/pdf_thumbnail.dart';
+import 'package:sqflite/utils/utils.dart';
 import '../../../../assets/constants/decoration.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
@@ -51,16 +55,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
           create: (context) => UploadCubit(UploadRepositoryImpl()),
           child: BlocBuilder<UploadCubit, UploadState>(
             builder: (context, state) {
-              var cubit = context.read<UploadCubit>();
-              File? uploadFile() {
-                if (cubit.pickedFile != null &&
-                    cubit.pickedFile!.extension != 'pdf') {
-                  return File(
-                    cubit.pickedFile!.path.toString(),
-                  );
-                }
-                return null;
-              }
+              final cubit = context.read<UploadCubit>();
 
               File? openFile(PlatformFile data) {
                 if (kIsWeb) {
@@ -88,21 +83,45 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                               child: state.whenOrNull(
                                 documentLoading: () => Stack(
                                   alignment: Alignment.center,
-                                  children: [
+                                  children: const [
                                     CustomImage(
                                       width: 200,
                                       height: 200,
-                                      file: uploadFile(),
+                                      image: null,
                                       disableImage: true,
                                     ),
-                                    const CircularProgressIndicator()
+                                    CircularProgressIndicator()
                                   ],
                                 ),
-                                documentSuccess: (data) => CustomImage(
-                                  file: openFile(data),
-                                  width: 200,
-                                  height: 200,
-                                ),
+                                documentSuccess: (data) {
+                                  print('====${data.path}');
+                                  if (data.extension == 'pdf') {
+                                    return SizedBox(
+                                      width: 200,
+                                      height: 200,
+                                      child: PdfThumbnail.fromFile(
+                                        data.path!,
+                                        currentPage: 1,
+                                        backgroundColor: Colors.black26,
+                                      ),
+                                    );
+                                    // PdfViewerController controller =
+                                    //     PdfViewerController();
+                                    // return PdfViewer.openFutureFile(
+                                    //   () async => (await DefaultCacheManager()
+                                    //           .getSingleFile(data.path ?? ''))
+                                    //       .path,
+                                    //   viewerController: controller,
+                                    //   params: const PdfViewerParams(padding: 0),
+                                    // );
+                                  } else {
+                                    return CustomImage(
+                                      file: openFile(data),
+                                      width: 200,
+                                      height: 200,
+                                    );
+                                  }
+                                },
                               ),
                             ),
                             const SizedBox(height: 8),
@@ -142,7 +161,9 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                             //* Error formfield
                             FormField<String>(
                               validator: (_) => nullCheckTextValidation(
-                                  cubit.pickedFile?.path, 'File',),
+                                cubit.pickedFile?.path,
+                                'File',
+                              ),
                               builder: (state) {
                                 return (state.hasError &&
                                         state.errorText != null)

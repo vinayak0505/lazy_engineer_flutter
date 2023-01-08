@@ -4,7 +4,6 @@ import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/core/helper_function.dart';
-import 'package:lazy_engineer/core/logic/download/download_cubit.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
@@ -37,14 +36,11 @@ class NotesDetailScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                BlocProvider(
-                  create: (context) => DownloadCubit(),
-                  child: NotesDetailHeader(
+                  NotesDetailHeader(
                     title: data.title ?? '',
                     subject: data.subject,
                     link: data.mediaLink ?? '',
                     // rating: rating,
-                  ),
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -215,7 +211,7 @@ class NotesDetailHeader extends StatelessWidget {
                   child: CustomButton(
                     text: download,
                     onPressed: () {
-                      context.read<DownloadCubit>().download(link);
+                      // context.read<DownloadCubit>().download(link);
                     },
                     width: 120,
                   ),

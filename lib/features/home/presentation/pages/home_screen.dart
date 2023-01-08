@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/download/presentation/pages/download_screen.dart';
 import '../../../../assets/constants/lists.dart';
 import '../../../../assets/constants/strings.dart';
 import '../../../../assets/icons.dart';
 import '../../../../navigation/routes.dart';
 import '../../../../model/user.dart';
+import '../../../components/expandable_widget.dart';
 import '../../../components/grid_card.dart';
 import '../../../components/search_bar.dart';
 import '../../../components/staggered_view.dart';
@@ -91,33 +93,34 @@ class HomeScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  hello,
-                  style: theme.textTheme.headline4?.copyWith(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                  ),
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                hello,
+                style: theme.textTheme.headline4?.copyWith(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
                 ),
-                Text(name, style: theme.textTheme.headline4),
-              ],
-            ),
-            const Spacer(),
-            GestureDetector(
-              child: const CustomImage(
-                image: AppIcons.notificationCircleIcon,
-                width: 48,
-                height: 48,
               ),
-              onTap: () {},
-            )
-          ],),
+              Text(name, style: theme.textTheme.headline4),
+            ],
+          ),
+          const Spacer(),
+          GestureDetector(
+            child: const CustomImage(
+              image: AppIcons.notificationCircleIcon,
+              width: 48,
+              height: 48,
+            ),
+            onTap: () {},
+          )
+        ],
+      ),
     );
   }
 }

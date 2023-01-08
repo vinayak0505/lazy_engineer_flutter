@@ -37,4 +37,5 @@ class AppIcons {
   static const String settingsIcon = 'assets/icons/settings.svg';
   static const String mobileIcon = 'assets/icons/mobile.svg';
   static const String editIcon = 'assets/icons/edit.svg';
+  static const String pdfIcon = 'assets/icons/pdf_file.png';
 }
