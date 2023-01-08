@@ -36,11 +36,11 @@ class NotesDetailScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                  NotesDetailHeader(
-                    title: data.title ?? '',
-                    subject: data.subject,
-                    link: data.mediaLink ?? '',
-                    // rating: rating,
+                NotesDetailHeader(
+                  title: data.title ?? '',
+                  subject: data.subject,
+                  link: data.mediaLink ?? '',
+                  // rating: rating,
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -57,63 +57,97 @@ class NotesDetailScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                 ],
                 Table(
+                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                  defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
                   children: [
-                    if (data.unit != null)
-                      TableRow(
-                        children: [
-                          Text(
-                            unit,
-                            style: theme.textTheme.headline6,
-                          ),
-                          Text(
-                            'Unit - ${data.unit}',
-                            style: theme.textTheme.bodyText2,
-                          )
-                        ],
-                      ),
                     if (data.semester != null)
                       TableRow(
                         children: [
-                          Text(
-                            semester,
-                            style: theme.textTheme.headline6,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              semester,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
                           ),
-                          Text(
-                            '${addOrdinals( int.parse(data.semester ?? ''))} Semester',
-                            style: theme.textTheme.bodyText2,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              '${addOrdinals(int.parse(data.semester ?? ''))} Semester',
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
                           )
+                        ],
+                      ),
+                    if (data.unit != null)
+                      TableRow(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              unit,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              'Unit - ${data.unit}',
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
                         ],
                       ),
                     if (data.chapter != null)
                       TableRow(
                         children: [
-                          Text(
-                            chapter,
-                            style: theme.textTheme.headline6,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              chapter,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
                           ),
-                          Text(
-                            data.chapter!,
-                            style: theme.textTheme.bodyText2,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              data.chapter!,
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
                           )
                         ],
                       ),
                     if (data.topic != null)
                       TableRow(
                         children: [
-                          Text(
-                            topic,
-                            style: theme.textTheme.headline6,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              topic,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
                           ),
-                          Text(
-                            data.topic!,
-                            style: theme.textTheme.bodyText2,
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              data.topic!,
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
                           )
                         ],
                       ),
                   ],
                 ),
                 const SizedBox(height: 16),
-                Text(tags, style: theme.textTheme.headlineSmall),
+                Text(tags, style: theme.textTheme.headline5),
                 const SizedBox(height: 12),
                 ShowTagsWidget(data.tags ?? [])
               ],
@@ -145,11 +179,12 @@ class NotesDetailHeader extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomImage(
-            image: link,
-            radius: kRoundedRectangleRadius,
-            height: 180,
-          ),
+          // TODO: Check whether after addition of Image from Postman UI working right or not.
+          //  CustomImage(
+          //    image: link,
+          //    radius: kRoundedRectangleRadius,
+          //    height: 180,
+          //  ),
           const SizedBox(width: 16),
           Flexible(
             child: Column(
@@ -159,6 +194,7 @@ class NotesDetailHeader extends StatelessWidget {
                 Text(
                   title,
                   style: theme.textTheme.headline5,
+                  textAlign: TextAlign.justify,
                 ),
                 const SizedBox(height: 16),
                 if (subject != null) ...[
