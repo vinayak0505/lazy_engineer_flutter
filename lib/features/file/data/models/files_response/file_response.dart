@@ -23,7 +23,7 @@ class FileDetail with _$FileDetail {
         String? about,
         String? subject,
         String? college,
-        String? semister,
+        String? semester,
         String? mediaLink,
         List<String>? tags,
     ) = _FileDetail;
