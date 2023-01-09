@@ -12,18 +12,18 @@ class CustomIcon extends StatelessWidget {
 
   const CustomIcon(
     this.image, {
-    Key? key,
+    super.key,
     this.height,
+    this.width,
     this.margin = EdgeInsets.zero,
     this.padding = EdgeInsets.zero,
-    this.width,
     this.boxFit = BoxFit.contain,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    final bool isSvg = (image.split('.').last == 'svg');
+    final bool isSvg = image.split('.').last == 'svg';
     return Container(
       margin: margin,
       padding: padding,

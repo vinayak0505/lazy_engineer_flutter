@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/features/notes/data/datasources/local/notes_local_datasource.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/remote/notes_remote_datasource.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
@@ -8,7 +9,7 @@ import 'package:lazy_engineer/features/notes/domain/repositories/notes_repositor
 
 class NotesRepositoryImpl extends NotesRepository {
   final NotesRemoteDatasource _remoteDataSource = NotesRemoteDatasource();
-  // final NotesLocalDatasource _localDataSource = NotesLocalDatasource();
+  final NotesLocalDatasource _localDataSource = NotesLocalDatasource();
 
   @override
   Future<List<NoteDetail>?> getNotesData() async {
@@ -75,6 +76,18 @@ class NotesRepositoryImpl extends NotesRepository {
     } catch (e) {
       debugPrint(e.toString());
       return null;
+    }
+  }
+
+  @override
+  Future<void> download(String fileLink) async {
+    try {
+      final int start = fileLink.indexOf('/o/') + 3;
+      final int end = fileLink.indexOf('?generation');
+      final String name = fileLink.substring(start, end);
+      await _localDataSource.downloadNotes(name, fileLink);
+    } catch (e) {
+      debugPrint(e.toString());
     }
   }
 }

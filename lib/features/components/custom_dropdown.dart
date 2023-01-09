@@ -5,18 +5,16 @@ import '../../assets/icons.dart';
 
 class CustomDropdown extends FormField<String> {
   CustomDropdown({
-    Key? key,
+    super.key,
     required List<String> list,
     List<String>? keyList,
     String? hintText,
-    FormFieldValidator<String>? validator,
+    super.validator,
     double? width,
     bool isExpanded = true,
     required TextEditingController controller,
     String? dropdownValue,
   }) : super(
-          key: key,
-          validator: validator,
           initialValue: dropdownValue,
           builder: (FormFieldState<String> state) {
             final theme = Theme.of(state.context);

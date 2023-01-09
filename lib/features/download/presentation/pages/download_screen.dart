@@ -41,27 +41,27 @@ class DownloadScreen extends StatelessWidget {
                     const SizedBox(height: 24),
                     ExpandableContainer(
                       heading: notes,
-                      child: ListOfFile(data.notes),
+                      child: ListOfFile(data.notes.value, data.notes.key),
                     ),
                     const SizedBox(height: 24),
                     ExpandableContainer(
                       heading: files,
-                      child: ListOfFile(data.files),
+                      child: ListOfFile(data.files.value, data.files.key),
                     ),
                     const SizedBox(height: 24),
                     ExpandableContainer(
                       heading: books,
-                      child: ListOfFile(data.books),
+                      child: ListOfFile(data.books.value, data.books.key),
                     ),
                     const SizedBox(height: 24),
                     ExpandableContainer(
                       heading: jobs,
-                      child: ListOfFile(data.jobs),
+                      child: ListOfFile(data.jobs.value, data.jobs.key),
                     ),
                     const SizedBox(height: 24),
                     ExpandableContainer(
                       heading: paper,
-                      child: ListOfFile(data.papers),
+                      child: ListOfFile(data.papers.value, data.papers.key),
                     ),
                   ],
                 );
@@ -75,8 +75,9 @@ class DownloadScreen extends StatelessWidget {
 }
 
 class ListOfFile extends StatelessWidget {
-  const ListOfFile(this.list, {super.key});
-  final List<String> list;
+  const ListOfFile(this.listValue, this.listKey, {super.key});
+  final List<String> listValue;
+  final List<String> listKey;
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
@@ -87,10 +88,10 @@ class ListOfFile extends StatelessWidget {
       ),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: list.length,
+      itemCount: listValue.length,
       itemBuilder: (context, index) {
         return InkWell(
-          onTap: () => context.read<DownloadCubit>().downloadFile(),
+          onTap: () => context.read<DownloadCubit>().downloadFile(listValue[index]),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -103,7 +104,7 @@ class ListOfFile extends StatelessWidget {
                 const SizedBox(width: 16),
                 Flexible(
                   child: Text(
-                    list[index],
+                    converter(listValue[index]),
                     style: theme.textTheme.titleLarge,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
@@ -116,5 +117,10 @@ class ListOfFile extends StatelessWidget {
       },
       separatorBuilder: (_, __) => const SizedBox(height: 2),
     );
+  }
+
+  String converter(String ele) {
+    final int start = ele.lastIndexOf('/') + 1;
+    return ele.substring(start);
   }
 }
