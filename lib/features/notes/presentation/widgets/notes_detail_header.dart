@@ -32,7 +32,8 @@ class NotesDetailHeader extends StatelessWidget {
             NotesDetailCubit(NotesRepositoryImpl(), userId, link),
         child: BlocBuilder<NotesDetailCubit, NotesDetailState>(
           builder: (context, state) {
-            final cubit = context.read<NotesDetailCubit>();
+            final read = context.read<NotesDetailCubit>();
+            final watch = context.watch<NotesDetailCubit>();
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -64,24 +65,24 @@ class NotesDetailHeader extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           IconButton(
-                            onPressed: () => cubit.like(),
-                            icon: state.rating ?? false
+                            onPressed: () => read.like(),
+                            icon: watch.rating ?? false
                                 ? const CustomIcon(
                                     AppIcons.likeIcon,
                                     height: 26,
                                     width: 26,
                                   )
                                 : const CustomIcon(
-                                    AppIcons.likeIcon,
+                                    AppIcons.closeIcon,
                                     height: 26,
                                     width: 26,
                                   ),
                           ),
                           IconButton(
-                            onPressed: () => cubit.dislike(),
-                            icon: state.rating ?? true
+                            onPressed: () => read.dislike(),
+                            icon: watch.rating ?? true
                                 ? const CustomIcon(
-                                    AppIcons.dislikeIcon,
+                                    AppIcons.closeIcon,
                                     height: 26,
                                     width: 26,
                                   )
@@ -117,15 +118,17 @@ class NotesDetailHeader extends StatelessWidget {
                       Center(
                         child: CustomButton(
                           text: download,
-                          onPressed: () => cubit.download(link),
+                          onPressed: () => read.download(link),
                           width: 120,
                         ),
                       ),
-                      if (cubit.isDownloaded != null)
-                        Text(
-                          cubit.isDownloaded!
-                              ? 'File is Downloaded'
-                              : 'File is not Downloaded',
+                      if (context.watch<NotesDetailCubit>().isDownloaded != null)
+                        Center(
+                          child: Text(
+                            watch.isDownloaded!
+                                ? 'File is Downloaded'
+                                : 'File is not Downloaded',
+                          ),
                         )
                     ],
                   ),

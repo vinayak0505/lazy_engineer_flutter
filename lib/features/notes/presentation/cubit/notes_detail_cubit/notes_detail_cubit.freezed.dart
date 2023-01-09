@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$NotesDetailState {
   bool? get rating => throw _privateConstructorUsedError;
+  bool? get isDownloaded => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NotesDetailStateCopyWith<NotesDetailState> get copyWith =>
@@ -28,7 +29,7 @@ abstract class $NotesDetailStateCopyWith<$Res> {
   factory $NotesDetailStateCopyWith(
           NotesDetailState value, $Res Function(NotesDetailState) then) =
       _$NotesDetailStateCopyWithImpl<$Res>;
-  $Res call({bool? rating});
+  $Res call({bool? rating, bool? isDownloaded});
 }
 
 /// @nodoc
@@ -43,45 +44,55 @@ class _$NotesDetailStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? rating = freezed,
+    Object? isDownloaded = freezed,
   }) {
     return _then(_value.copyWith(
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isDownloaded: isDownloaded == freezed
+          ? _value.isDownloaded
+          : isDownloaded // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_NotesDetailInitialCopyWith<$Res>
+abstract class _$$NotesDetailCopyWith<$Res>
     implements $NotesDetailStateCopyWith<$Res> {
-  factory _$$_NotesDetailInitialCopyWith(_$_NotesDetailInitial value,
-          $Res Function(_$_NotesDetailInitial) then) =
-      __$$_NotesDetailInitialCopyWithImpl<$Res>;
+  factory _$$NotesDetailCopyWith(
+          _$NotesDetail value, $Res Function(_$NotesDetail) then) =
+      __$$NotesDetailCopyWithImpl<$Res>;
   @override
-  $Res call({bool? rating});
+  $Res call({bool? rating, bool? isDownloaded});
 }
 
 /// @nodoc
-class __$$_NotesDetailInitialCopyWithImpl<$Res>
+class __$$NotesDetailCopyWithImpl<$Res>
     extends _$NotesDetailStateCopyWithImpl<$Res>
-    implements _$$_NotesDetailInitialCopyWith<$Res> {
-  __$$_NotesDetailInitialCopyWithImpl(
-      _$_NotesDetailInitial _value, $Res Function(_$_NotesDetailInitial) _then)
-      : super(_value, (v) => _then(v as _$_NotesDetailInitial));
+    implements _$$NotesDetailCopyWith<$Res> {
+  __$$NotesDetailCopyWithImpl(
+      _$NotesDetail _value, $Res Function(_$NotesDetail) _then)
+      : super(_value, (v) => _then(v as _$NotesDetail));
 
   @override
-  _$_NotesDetailInitial get _value => super._value as _$_NotesDetailInitial;
+  _$NotesDetail get _value => super._value as _$NotesDetail;
 
   @override
   $Res call({
     Object? rating = freezed,
+    Object? isDownloaded = freezed,
   }) {
-    return _then(_$_NotesDetailInitial(
+    return _then(_$NotesDetail(
       rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isDownloaded == freezed
+          ? _value.isDownloaded
+          : isDownloaded // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -89,43 +100,51 @@ class __$$_NotesDetailInitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NotesDetailInitial implements _NotesDetailInitial {
-  const _$_NotesDetailInitial(this.rating);
+class _$NotesDetail implements NotesDetail {
+  const _$NotesDetail(this.rating, this.isDownloaded);
 
   @override
   final bool? rating;
+  @override
+  final bool? isDownloaded;
 
   @override
   String toString() {
-    return 'NotesDetailState(rating: $rating)';
+    return 'NotesDetailState(rating: $rating, isDownloaded: $isDownloaded)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesDetailInitial &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            other is _$NotesDetail &&
+            const DeepCollectionEquality().equals(other.rating, rating) &&
+            const DeepCollectionEquality()
+                .equals(other.isDownloaded, isDownloaded));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(rating));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(rating),
+      const DeepCollectionEquality().hash(isDownloaded));
 
   @JsonKey(ignore: true)
   @override
-  _$$_NotesDetailInitialCopyWith<_$_NotesDetailInitial> get copyWith =>
-      __$$_NotesDetailInitialCopyWithImpl<_$_NotesDetailInitial>(
-          this, _$identity);
+  _$$NotesDetailCopyWith<_$NotesDetail> get copyWith =>
+      __$$NotesDetailCopyWithImpl<_$NotesDetail>(this, _$identity);
 }
 
-abstract class _NotesDetailInitial implements NotesDetailState {
-  const factory _NotesDetailInitial(final bool? rating) = _$_NotesDetailInitial;
+abstract class NotesDetail implements NotesDetailState {
+  const factory NotesDetail(final bool? rating, final bool? isDownloaded) =
+      _$NotesDetail;
 
   @override
   bool? get rating;
   @override
+  bool? get isDownloaded;
+  @override
   @JsonKey(ignore: true)
-  _$$_NotesDetailInitialCopyWith<_$_NotesDetailInitial> get copyWith =>
+  _$$NotesDetailCopyWith<_$NotesDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }

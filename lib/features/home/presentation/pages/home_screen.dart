@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
-import 'package:lazy_engineer/features/download/presentation/pages/download_screen.dart';
-import '../../../../assets/constants/lists.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../assets/icons.dart';
-import '../../../../navigation/routes.dart';
-import '../../../../model/user.dart';
-import '../../../components/expandable_widget.dart';
-import '../../../components/grid_card.dart';
-import '../../../components/search_bar.dart';
-import '../../../components/staggered_view.dart';
-import '../widgets/last_opened.dart';
-import '../widgets/slider_view.dart';
+import 'package:lazy_engineer/features/components/grid_card.dart';
+import 'package:lazy_engineer/features/components/search_bar.dart';
+import 'package:lazy_engineer/features/components/staggered_view.dart';
+import 'package:lazy_engineer/features/home/presentation/widgets/last_opened.dart';
+import 'package:lazy_engineer/features/home/presentation/widgets/slider_view.dart';
+import 'package:lazy_engineer/model/user.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final User user = User.dummy();
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -93,11 +91,9 @@ class HomeScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(

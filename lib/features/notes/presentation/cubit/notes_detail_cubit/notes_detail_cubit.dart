@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hive/hive.dart';
 import 'package:lazy_engineer/features/notes/domain/repositories/notes_repository.dart';
 
 part 'notes_detail_state.dart';
@@ -14,22 +13,36 @@ class NotesDetailCubit extends Cubit<NotesDetailState> {
     this._repository,
     this.id,
     this.fileLink,
-  ) : super(const NotesDetailState(null));
-  
+  ) : super(const NotesDetailState(null, null));
+
   bool? isDownloaded;
+  bool? rating;
   Future<void> download(String fileLink) async {
-    isDownloaded = await _repository.download(fileLink);
+    try {
+      isDownloaded = await _repository.download(fileLink);
+      emit(const NotesDetailState(null, true));
+    } catch (e) {
+      emit(const NotesDetailState(null, false));
+    }
   }
 
   void like() {
-    emit(const NotesDetailState(true));
+    if (rating == true) {
+      rating = null;
+      emit(const NotesDetailState(null, null));
+    } else {
+      rating = true;
+      emit(const NotesDetailState(true, null));
+    }
   }
 
   void dislike() {
-    emit(const NotesDetailState(false));
-  }
-
-  void ratingNull() {
-    emit(const NotesDetailState(null));
+    if (rating == false) {
+      rating = null;
+      emit(const NotesDetailState(null, null));
+    } else {
+      rating = false;
+      emit(const NotesDetailState(false, null));
+    }
   }
 }

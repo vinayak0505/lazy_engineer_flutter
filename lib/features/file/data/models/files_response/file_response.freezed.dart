@@ -224,7 +224,7 @@ mixin _$FileDetail {
   String? get about => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   String? get college => throw _privateConstructorUsedError;
-  String? get semister => throw _privateConstructorUsedError;
+  String? get semester => throw _privateConstructorUsedError;
   String? get mediaLink => throw _privateConstructorUsedError;
   List<String>? get tags => throw _privateConstructorUsedError;
 
@@ -245,7 +245,7 @@ abstract class $FileDetailCopyWith<$Res> {
       String? about,
       String? subject,
       String? college,
-      String? semister,
+      String? semester,
       String? mediaLink,
       List<String>? tags});
 }
@@ -265,7 +265,7 @@ class _$FileDetailCopyWithImpl<$Res> implements $FileDetailCopyWith<$Res> {
     Object? about = freezed,
     Object? subject = freezed,
     Object? college = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? mediaLink = freezed,
     Object? tags = freezed,
   }) {
@@ -290,9 +290,9 @@ class _$FileDetailCopyWithImpl<$Res> implements $FileDetailCopyWith<$Res> {
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister: semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
       mediaLink: mediaLink == freezed
           ? _value.mediaLink
@@ -319,7 +319,7 @@ abstract class _$$_FileDetailCopyWith<$Res>
       String? about,
       String? subject,
       String? college,
-      String? semister,
+      String? semester,
       String? mediaLink,
       List<String>? tags});
 }
@@ -341,7 +341,7 @@ class __$$_FileDetailCopyWithImpl<$Res> extends _$FileDetailCopyWithImpl<$Res>
     Object? about = freezed,
     Object? subject = freezed,
     Object? college = freezed,
-    Object? semister = freezed,
+    Object? semester = freezed,
     Object? mediaLink = freezed,
     Object? tags = freezed,
   }) {
@@ -366,9 +366,9 @@ class __$$_FileDetailCopyWithImpl<$Res> extends _$FileDetailCopyWithImpl<$Res>
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semister == freezed
-          ? _value.semister
-          : semister // ignore: cast_nullable_to_non_nullable
+      semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
               as String?,
       mediaLink == freezed
           ? _value.mediaLink
@@ -386,7 +386,7 @@ class __$$_FileDetailCopyWithImpl<$Res> extends _$FileDetailCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FileDetail implements _FileDetail {
   const _$_FileDetail(this.userId, this.title, this.about, this.subject,
-      this.college, this.semister, this.mediaLink, final List<String>? tags)
+      this.college, this.semester, this.mediaLink, final List<String>? tags)
       : _tags = tags;
 
   factory _$_FileDetail.fromJson(Map<String, dynamic> json) =>
@@ -403,7 +403,7 @@ class _$_FileDetail implements _FileDetail {
   @override
   final String? college;
   @override
-  final String? semister;
+  final String? semester;
   @override
   final String? mediaLink;
   final List<String>? _tags;
@@ -417,7 +417,7 @@ class _$_FileDetail implements _FileDetail {
 
   @override
   String toString() {
-    return 'FileDetail(userId: $userId, title: $title, about: $about, subject: $subject, college: $college, semister: $semister, mediaLink: $mediaLink, tags: $tags)';
+    return 'FileDetail(userId: $userId, title: $title, about: $about, subject: $subject, college: $college, semester: $semester, mediaLink: $mediaLink, tags: $tags)';
   }
 
   @override
@@ -430,7 +430,7 @@ class _$_FileDetail implements _FileDetail {
             const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.college, college) &&
-            const DeepCollectionEquality().equals(other.semister, semister) &&
+            const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.mediaLink, mediaLink) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
@@ -444,7 +444,7 @@ class _$_FileDetail implements _FileDetail {
       const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(college),
-      const DeepCollectionEquality().hash(semister),
+      const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(mediaLink),
       const DeepCollectionEquality().hash(_tags));
 
@@ -468,7 +468,7 @@ abstract class _FileDetail implements FileDetail {
       final String? about,
       final String? subject,
       final String? college,
-      final String? semister,
+      final String? semester,
       final String? mediaLink,
       final List<String>? tags) = _$_FileDetail;
 
@@ -486,7 +486,7 @@ abstract class _FileDetail implements FileDetail {
   @override
   String? get college;
   @override
-  String? get semister;
+  String? get semester;
   @override
   String? get mediaLink;
   @override
