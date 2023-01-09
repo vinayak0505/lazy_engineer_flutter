@@ -1,9 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
-import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
 import 'package:lazy_engineer/features/notes/domain/repositories/notes_repository.dart';
 
 part 'notes_detail_state.dart';
@@ -18,9 +15,10 @@ class NotesDetailCubit extends Cubit<NotesDetailState> {
     this.id,
     this.fileLink,
   ) : super(const NotesDetailState(null));
-  final notes = Hive.box('notes');
+  
+  bool? isDownloaded;
   Future<void> download(String fileLink) async {
-    await _repository.download(fileLink);
+    isDownloaded = await _repository.download(fileLink);
   }
 
   void like() {

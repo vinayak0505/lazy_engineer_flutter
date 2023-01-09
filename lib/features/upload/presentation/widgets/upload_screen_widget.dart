@@ -1,29 +1,32 @@
 import 'dart:io';
+import 'dart:ui';
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
+import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/upload/data/repositories/upload_repository_impl.dart';
-import 'package:pdf_thumbnail/pdf_thumbnail.dart';
-import 'package:sqflite/utils/utils.dart';
-import '../../../../assets/constants/decoration.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../assets/icons.dart';
-import '../../../../helper/input_validation.dart';
-import '../../../components/custom_button.dart';
-import '../../../components/custom_icon.dart';
-import '../../../components/custom_image.dart';
-import '../../../components/failiure_screen.dart';
-import '../cubit/upload_cubit.dart';
+import 'package:lazy_engineer/features/upload/presentation/cubit/pdf_to_img/pdf_to_img_cubit.dart';
+import 'package:lazy_engineer/features/upload/presentation/cubit/upload/upload_cubit.dart';
+import 'package:lazy_engineer/features/upload/presentation/widgets/success_page.dart';
+import 'package:lazy_engineer/helper/input_validation.dart';
+import 'package:pdf_render/pdf_render.dart';
 
 class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
   const UploadScreenWidget({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.title,
     required this.body,
-  }) : super(key: key);
+  });
   final void Function(UploadCubit) onPressed;
   final String title;
   final List<Widget> body;
@@ -31,7 +34,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
   @override
   Widget build(BuildContext context) {
     final formGlobalKey = GlobalKey<FormState>();
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
 
     return SafeArea(
       child: Scaffold(
@@ -67,6 +70,8 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
 
               return state.whenOrNull(
                     loading: () => const LoadingScreen(),
+                    failure: (e) => FailureScreen(e),
+                    success: () => const SuccessPage(),
                   ) ??
                   SingleChildScrollView(
                     child: Padding(
@@ -92,26 +97,8 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                                   ],
                                 ),
                                 documentSuccess: (data) {
-                                  print('====${data.path}');
                                   if (data.extension == 'pdf') {
-                                    return SizedBox(
-                                      width: 200,
-                                      height: 200,
-                                      child: PdfThumbnail.fromFile(
-                                        data.path!,
-                                        currentPage: 1,
-                                        backgroundColor: Colors.black26,
-                                      ),
-                                    );
-                                    // PdfViewerController controller =
-                                    //     PdfViewerController();
-                                    // return PdfViewer.openFutureFile(
-                                    //   () async => (await DefaultCacheManager()
-                                    //           .getSingleFile(data.path ?? ''))
-                                    //       .path,
-                                    //   viewerController: controller,
-                                    //   params: const PdfViewerParams(padding: 0),
-                                    // );
+                                    return PdfImage(data);
                                   } else {
                                     return CustomImage(
                                       file: openFile(data),
@@ -202,6 +189,38 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
             },
           ),
         ),
+      ),
+    );
+  }
+}
+
+class PdfImage extends StatelessWidget {
+  const PdfImage(this.data, {super.key});
+  final PlatformFile data;
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => PdfToImgCubit(data),
+      child: BlocBuilder<PdfToImgCubit, PdfToImgState>(
+        builder: (context, state) {
+          return state.when(
+            loading: () => const LoadingScreen(),
+            failure: (e) => FailureScreen(e),
+            success: (ByteData data) {
+              final Uint8List imageData = data.buffer.asUint8List();
+              return SizedBox(
+                width: 200,
+                height: 200,
+                child: Image.memory(imageData),
+                // child: PdfThumbnail.fromFile(
+                //   data.path!,
+                //   currentPage: 1,
+                //   backgroundColor: Colors.black26,
+                // ),
+              );
+            },
+          );
+        },
       ),
     );
   }

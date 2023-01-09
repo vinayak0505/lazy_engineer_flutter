@@ -16,4 +16,5 @@ class AppImages {
   static const String addImage = 'assets/images/add_image.png';
   static const String header = 'assets/images/header.png';
   static const String registerExtended = 'assets/images/register_extended.png';
+  static const String uploadedImage = 'assets/images/uploaded_file.png';
 }

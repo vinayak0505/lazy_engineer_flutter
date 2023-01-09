@@ -31,102 +31,109 @@ class NotesDetailHeader extends StatelessWidget {
         create: (context) =>
             NotesDetailCubit(NotesRepositoryImpl(), userId, link),
         child: BlocBuilder<NotesDetailCubit, NotesDetailState>(
-            builder: (context, state) {
-              final cubit = context.read<NotesDetailCubit>();
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomImage(
-                networkImage: linkString,
-                radius: kRoundedRectangleRadius,
-                width: 130,
-                height: 180,
-                isBorder: true,
-                color: Colors.grey.shade100,
-              ),
-              const SizedBox(width: 16),
-              Flexible(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: theme.textTheme.headline5,
-                      textAlign: TextAlign.justify,
-                    ),
-                    const SizedBox(height: 16),
-                    if (subject != null) ...[
-                      Text(subject!, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 16),
-                    ],
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(
-                          onPressed: () => cubit.like(),
-                          icon: state.rating ?? false
-                              ? const CustomIcon(
-                                  AppIcons.likeIcon,
-                                  height: 26,
-                                  width: 26,
-                                )
-                              : const CustomIcon(
-                                  AppIcons.likeIcon,
-                                  height: 26,
-                                  width: 26,
-                                ),
-                        ),
-                        IconButton(
-                          onPressed: () => cubit.dislike(),
-                          icon: state.rating ?? true
-                              ? const CustomIcon(
-                                  AppIcons.dislikeIcon,
-                                  height: 26,
-                                  width: 26,
-                                )
-                              : const CustomIcon(
-                                  AppIcons.dislikeIcon,
-                                  height: 26,
-                                  width: 26,
-                                ),
-                        ),
-                        Column(
-                          children: [
-                            const CustomIcon(
-                              AppIcons.bookIcon,
-                              height: 22,
-                              width: 22,
-                            ),
-                            Text(pdf, style: theme.textTheme.bodyText1)
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            const CustomIcon(
-                              AppIcons.pageIcon,
-                              height: 22,
-                              width: 22,
-                            ),
-                            Text(pages, style: theme.textTheme.bodyText1)
-                          ],
-                        )
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    Align(
-                      child: CustomButton(
-                        text: download,
-                        onPressed: () => cubit.download(link),
-                        width: 120,
-                      ),
-                    ),
-                  ],
+          builder: (context, state) {
+            final cubit = context.read<NotesDetailCubit>();
+            return Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomImage(
+                  networkImage: linkString,
+                  radius: kRoundedRectangleRadius,
+                  width: 130,
+                  height: 180,
+                  isBorder: true,
+                  color: Colors.grey.shade100,
                 ),
-              )
-            ],
-          );
-        }),
+                const SizedBox(width: 16),
+                Flexible(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: theme.textTheme.headline5,
+                        textAlign: TextAlign.justify,
+                      ),
+                      const SizedBox(height: 16),
+                      if (subject != null) ...[
+                        Text(subject!, style: theme.textTheme.titleLarge),
+                        const SizedBox(height: 16),
+                      ],
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          IconButton(
+                            onPressed: () => cubit.like(),
+                            icon: state.rating ?? false
+                                ? const CustomIcon(
+                                    AppIcons.likeIcon,
+                                    height: 26,
+                                    width: 26,
+                                  )
+                                : const CustomIcon(
+                                    AppIcons.likeIcon,
+                                    height: 26,
+                                    width: 26,
+                                  ),
+                          ),
+                          IconButton(
+                            onPressed: () => cubit.dislike(),
+                            icon: state.rating ?? true
+                                ? const CustomIcon(
+                                    AppIcons.dislikeIcon,
+                                    height: 26,
+                                    width: 26,
+                                  )
+                                : const CustomIcon(
+                                    AppIcons.dislikeIcon,
+                                    height: 26,
+                                    width: 26,
+                                  ),
+                          ),
+                          Column(
+                            children: [
+                              const CustomIcon(
+                                AppIcons.bookIcon,
+                                height: 22,
+                                width: 22,
+                              ),
+                              Text(pdf, style: theme.textTheme.bodyText1)
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              const CustomIcon(
+                                AppIcons.pageIcon,
+                                height: 22,
+                                width: 22,
+                              ),
+                              Text(pages, style: theme.textTheme.bodyText1)
+                            ],
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      Center(
+                        child: CustomButton(
+                          text: download,
+                          onPressed: () => cubit.download(link),
+                          width: 120,
+                        ),
+                      ),
+                      if (cubit.isDownloaded != null)
+                        Text(
+                          cubit.isDownloaded!
+                              ? 'File is Downloaded'
+                              : 'File is not Downloaded',
+                        )
+                    ],
+                  ),
+                )
+              ],
+            );
+          },
+        ),
       ),
     );
   }

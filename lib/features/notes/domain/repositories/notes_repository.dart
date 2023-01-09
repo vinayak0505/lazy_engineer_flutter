@@ -4,7 +4,7 @@ import 'package:lazy_engineer/features/notes/data/models/notes_response/note_res
 
 abstract class NotesRepository {
   Future<List<NoteDetail>?> getNotesData();
-  Future<void> download(String fileLink);
+  Future<bool> download(String fileLink);
   Future<List<NoteDetail>?> searchNotes(String query);
   Future<List<NoteDetail>?> applyFilter(FilterRequest filterRequest);
   Future<NotesDetailResponse?> getNotesDetailData(String id);

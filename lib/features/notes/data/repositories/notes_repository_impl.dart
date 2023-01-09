@@ -80,14 +80,16 @@ class NotesRepositoryImpl extends NotesRepository {
   }
 
   @override
-  Future<void> download(String fileLink) async {
+  Future<bool> download(String fileLink) async {
     try {
       final int start = fileLink.indexOf('/o/') + 3;
       final int end = fileLink.indexOf('?generation');
       final String name = fileLink.substring(start, end);
       await _localDataSource.downloadNotes(name, fileLink);
+      return true;
     } catch (e) {
       debugPrint(e.toString());
+      return false;
     }
   }
 }

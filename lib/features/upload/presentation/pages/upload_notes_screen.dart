@@ -31,10 +31,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         CustomTextField.secondary(
           controller: titleController,
           hintText: title,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            title,
-          ),
+          validator: (value) => nullCheckTextValidation(value, title),
         ),
         const SizedBox(height: 16),
         //* About
@@ -43,10 +40,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         CustomTextField.multiLine(
           controller: aboutController,
           hintText: aboutNotes,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            about,
-          ),
+          validator: (value) => nullCheckTextValidation(value, about),
         ),
         const SizedBox(height: 16),
         //* Semester
@@ -58,10 +52,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
           width: 130,
           hintText: semester,
           controller: semesterController,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            semester,
-          ),
+          validator: (value) => nullCheckTextValidation(value, semester),
         ),
         const SizedBox(height: 16),
         //* Subject
@@ -69,10 +60,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         CustomTextField.secondary(
           controller: subjectController,
           hintText: subject,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            subject,
-          ),
+          validator: (value) => nullCheckTextValidation(value, subject),
         ),
         const SizedBox(height: 16),
         //* College
@@ -80,10 +68,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         CustomTextField.secondary(
           controller: collegeController,
           hintText: college,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            college,
-          ),
+          validator: (value) => nullCheckTextValidation(value, college),
         ),
         const SizedBox(height: 16),
         //* Unit
@@ -95,10 +80,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
           width: 130,
           hintText: unit,
           controller: unitController,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            unit,
-          ),
+          validator: (value) => nullCheckTextValidation(value, unit),
         ),
         const SizedBox(height: 16),
         //* Chapter
@@ -106,10 +88,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         CustomTextField.secondary(
           controller: chapterController,
           hintText: chapter,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            chapter,
-          ),
+          validator: (value) => nullCheckTextValidation(value, chapter),
         ),
         const SizedBox(height: 16),
         //* Topic
@@ -117,10 +96,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         CustomTextField.secondary(
           controller: topicController,
           hintText: topic,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            topic,
-          ),
+          validator: (value) => nullCheckTextValidation(value, topic),
         ),
         const SizedBox(height: 16),
         //* Tags
