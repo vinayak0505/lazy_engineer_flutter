@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
@@ -8,6 +9,8 @@ import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
+
+import '../../../../assets/constants/strings.dart';
 
 class FileDetailScreen extends StatelessWidget {
   const FileDetailScreen(this.data, {super.key});
@@ -92,16 +95,16 @@ class FileDetailScreen extends StatelessWidget {
                     const SizedBox(width: 100),
                     Text(
                       data.college ?? '',
-                      style: theme.textTheme.bodyText2,
+                      style: theme.textTheme.bodyText1,
                     ),
                   ],
                 ),
                 const SizedBox(height: 16),
                 Row(
                   children: [
-                    Text('Semester', style: theme.textTheme.headlineSmall),
+                    Text(semester, style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 80),
-                    Text('3rd Semester', style: theme.textTheme.bodyText2),
+                    //Text(data.semester ?? '', style: theme.textTheme.bodyText2),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -122,20 +125,15 @@ class FileDetailScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Column(
-          children: [
-            const CustomIcon(AppIcons.likeIcon, width: 18),
-            Text('Like', style: textStyle)
-          ],
+        const CustomIcon(
+          AppIcons.likeIcon,
+          height: 28,
+          width: 28,
         ),
-        Column(
-          children: [
-            const CustomIcon(
-              AppIcons.dislikeIcon,
-              width: 18,
-            ),
-            Text('Dislike', style: textStyle)
-          ],
+        const CustomIcon(
+          AppIcons.dislikeIcon,
+          height: 28,
+          width: 28,
         ),
         Column(
           children: [

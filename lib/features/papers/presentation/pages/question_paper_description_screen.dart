@@ -35,49 +35,53 @@ class PaperDescriptionScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8),
                   child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const CustomImage(
-                          image: AppImages.questionPaper,
-                          radius: kRoundedRectangleRadius,
-                          height: 180,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const CustomImage(
+                        image: AppImages.questionPaper,
+                        radius: kRoundedRectangleRadius,
+                        height: 180,
+                      ),
+                      const SizedBox(width: 16),
+                      Flexible(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(height: 12),
+                            Text(
+                              data.title ?? '',
+                              style: theme.textTheme.headline5,
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              data.subject ?? '',
+                              style: theme.textTheme.titleLarge,
+                            ),
+                            const SizedBox(height: 16),
+                            const BottomPage(),
+                            const SizedBox(height: 16),
+                            Align(
+                              alignment: Alignment.center,
+                              child: CustomButton(
+                                text: download,
+                                onPressed: () {},
+                                width: 120,
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 16),
-                        Flexible(
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const SizedBox(height: 12),
-                                Text(
-                                  data.title ?? '',
-                                  style: theme.textTheme.headline5,
-                                ),
-                                const SizedBox(height: 12),
-                                Text(data.subject ?? '',
-                                    style: theme.textTheme.titleLarge,),
-                                const SizedBox(height: 16),
-                                const SizedBox(height: 16),
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: CustomButton(
-                                    text: download,
-                                    onPressed: () {},
-                                    width: 120,
-                                  ),
-                                ),
-                                const BottomPage()
-                              ],),
-                        )
-                      ],),
+                      )
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   description,
                   style: theme.textTheme.headline5,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 12),
                 Text(
-                 data.about ?? '',
+                  data.about ?? '',
                   style: theme.textTheme.bodyMedium,
                   textAlign: TextAlign.justify,
                 ),
@@ -87,17 +91,89 @@ class PaperDescriptionScreen extends StatelessWidget {
                 //   const SizedBox(width: 100),
                 //   Text(data., style: theme.textTheme.bodyText2),
                 // ],),
+                Row(
+                  children: [
+                    Text(semester, style: theme.textTheme.headlineSmall),
+                    const SizedBox(width: 80),
+                    Text(data.semester ?? '', style: theme.textTheme.bodyText2),
+                  ],
+                ),
                 const SizedBox(height: 16),
-                Row(children: [
-                  Text(semester, style: theme.textTheme.headlineSmall),
-                  const SizedBox(width: 80),
-                  Text(data.semester ?? '', style: theme.textTheme.bodyText2),
-                ],),
+                Table(
+                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                  defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
+                  children: [
+                    if (data.unit != null)
+                      TableRow(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              unit,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              'Unit - ${data.unit}',
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                        ],
+                      ),
+                    if (data.chapter != null)
+                      TableRow(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              chapter,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              data.chapter!,
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
+                          )
+                        ],
+                      ),
+                    if (data.topic != null)
+                      TableRow(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              topic,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              data.topic!,
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
+                          )
+                        ],
+                      ),
+                  ],
+                ),
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.headlineSmall),
                 const SizedBox(height: 16),
-                EditTagsWidget(listTags: (value) {
-                },),
+                EditTagsWidget(
+                  listTags: (value) {},
+                ),
               ],
             ),
           ),
@@ -113,43 +189,39 @@ class BottomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-      Column(children: [
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      textBaseline: TextBaseline.alphabetic,
+      children: [
         const CustomIcon(
           AppIcons.likeIcon,
-          height: 16,
-          width: 16,
+          height: 28,
+          width: 28,
         ),
-        Text(
-          'Like',
-          style: theme.textTheme.bodyText1,
-        )
-      ],),
-      Column(children: [
         const CustomIcon(
           AppIcons.dislikeIcon,
-          height: 16,
-          width: 16,
+          height: 28,
+          width: 28,
         ),
-        Text(
-          'Dislike',
-          style: theme.textTheme.bodyText1,
+        Column(
+          children: [
+            const CustomIcon(AppIcons.bookIcon),
+            Text(
+              pdf,
+              style: theme.textTheme.bodyText1,
+            )
+          ],
+        ),
+        Column(
+          children: [
+            const CustomIcon(AppIcons.pageIcon),
+            Text(
+              pages,
+              style: theme.textTheme.bodyText1,
+            )
+          ],
         )
-      ],),
-      Column(children: [
-        const CustomIcon(AppIcons.bookIcon),
-        Text(
-          pdf,
-          style: theme.textTheme.bodyText1,
-        )
-      ],),
-      Column(children: [
-        const CustomIcon(AppIcons.pageIcon),
-        Text(
-          pages,
-          style: theme.textTheme.bodyText1,
-        )
-      ],)
-    ],);
+      ],
+    );
   }
 }
