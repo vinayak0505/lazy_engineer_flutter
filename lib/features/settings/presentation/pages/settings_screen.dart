@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/account/presentation/cubit/settings/settings_cubit.dart';
+import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
-
-import '../../../../assets/icons.dart';
-import '../../../../navigation/routes.dart';
-import '../../../auth/presentation/auth_cubit/auth_cubit.dart';
-import '../../../components/custom_icon.dart';
-import '../../../account/presentation/cubit/settings/settings_cubit.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -98,9 +97,9 @@ class SettingsScreen extends StatelessWidget {
             Center(
               child: CustomButton(
                 text: logOut,
-                onPressed: () {
+                onPressed: () async {
                   context.read<AuthCubit>().signOut();
-                  context.go(RouteGenerator.initialRoute);
+                  context.go(RouteGenerator.authRoute);
                 },
                 width: 130,
               ),

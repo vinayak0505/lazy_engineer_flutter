@@ -23,7 +23,7 @@ class TokenInterceptor extends Interceptor {
     if (hasTokenHeader &&
         options.headers[HeaderKeys.tokenHeaderKey] ==
             HeaderValues.autoAuthHeaderValue) {
-      String? token = AuthLocalDataSource().getToken();
+      String? token = await AuthLocalDataSource().getToken();
 
       options.headers[HeaderKeys.tokenHeaderKey] = token;
       print('===========token= $token');
