@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart' as string;
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/config/theme/app_theme.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
-import '../../../assets/constants/strings.dart' as string;
-import '../../../assets/icons.dart';
-import '../../../config/theme/app_theme.dart';
-import '../../components/custom_icon.dart';
 
 class BottomNavScreen extends StatefulWidget {
   const BottomNavScreen(this.child, {super.key});
@@ -15,7 +15,6 @@ class BottomNavScreen extends StatefulWidget {
 }
 
 class _BottomNavScreenState extends State<BottomNavScreen> {
-  int _selectedIndex = 0;
   late PageController _pageController;
 
   @override
@@ -54,7 +53,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         label: string.account,
       ),
     ];
-    
+
     int locationToTabIndex(String location) {
       final index =
           tabs.indexWhere((t) => location.startsWith(t.initialLocation));
@@ -68,13 +67,6 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       if (tabIndex != currentIndex) {
         // go to the initial location of the selected tab (by index)
         context.go(tabs[tabIndex].initialLocation);
-        if (mounted) {
-          _pageController.animateToPage(
-            tabIndex,
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.easeOut,
-          );
-        }
       }
     }
 
@@ -107,8 +99,11 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 }
 
 class ScaffoldWithNavBarTabItem extends BottomNavigationBarItem {
-  const ScaffoldWithNavBarTabItem(
-      {required this.initialLocation, required super.icon, super.label});
+  const ScaffoldWithNavBarTabItem({
+    required this.initialLocation,
+    required super.icon,
+    super.label,
+  });
 
   /// The initial location/path
   final String initialLocation;
