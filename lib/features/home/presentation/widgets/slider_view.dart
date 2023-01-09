@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/full_screen_photo.dart';
-import '../../../../assets/constants/decoration.dart';
 
 class SliderView extends StatelessWidget {
-  const SliderView(this.imageList, {Key? key}) : super(key: key);
+  const SliderView(this.imageList, {super.key});
   final List<String> imageList;
   @override
   Widget build(BuildContext context) {
-    print('==========$imageList');
     return SizedBox(
       height: 200,
       child: PageView.builder(
-        onPageChanged: (index) {},
-        padEnds: true,
         controller: PageController(viewportFraction: 0.8),
         itemCount: imageList.length,
         itemBuilder: (context, index) {
@@ -30,8 +27,9 @@ class SliderView extends StatelessWidget {
               );
             },
             child: CustomImage(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 8),
               networkImage: imageList[index],
+              isBorder: true,
               radius: kRoundedRectangleRadius,
               boxFit: BoxFit.fitHeight,
             ),

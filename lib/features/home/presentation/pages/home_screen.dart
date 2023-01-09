@@ -19,9 +19,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final User user = User.dummy();
     final ThemeData theme = Theme.of(context);
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 28),
             child: Column(

@@ -18,7 +18,6 @@ import 'package:lazy_engineer/features/upload/presentation/cubit/pdf_to_img/pdf_
 import 'package:lazy_engineer/features/upload/presentation/cubit/upload/upload_cubit.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/success_page.dart';
 import 'package:lazy_engineer/helper/input_validation.dart';
-import 'package:pdf_render/pdf_render.dart';
 
 class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
   const UploadScreenWidget({
@@ -27,7 +26,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
     required this.title,
     required this.body,
   });
-  final void Function(UploadCubit) onPressed;
+  final void Function(UploadCubit cubit) onPressed;
   final String title;
   final List<Widget> body;
 
@@ -206,17 +205,11 @@ class PdfImage extends StatelessWidget {
           return state.when(
             loading: () => const LoadingScreen(),
             failure: (e) => FailureScreen(e),
-            success: (ByteData data) {
-              final Uint8List imageData = data.buffer.asUint8List();
+            success: (Uint8List data) {
               return SizedBox(
                 width: 200,
                 height: 200,
-                child: Image.memory(imageData),
-                // child: PdfThumbnail.fromFile(
-                //   data.path!,
-                //   currentPage: 1,
-                //   backgroundColor: Colors.black26,
-                // ),
+                child: Image.memory(data),
               );
             },
           );
