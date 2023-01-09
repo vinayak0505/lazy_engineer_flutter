@@ -38,7 +38,7 @@ class NotesScreen extends StatelessWidget {
                     data.map((element) {
                       return GridCard(
                         body: element.about ?? '',
-                        image: '',
+                        image: null,
                         title: element.title ?? '',
                       );
                     }).toList(),

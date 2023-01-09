@@ -8,12 +8,11 @@ part of 'download_model.dart';
 
 _$_DownloadModel _$$_DownloadModelFromJson(Map<String, dynamic> json) =>
     _$_DownloadModel(
-      notes: (json['notes'] as List<dynamic>).map((e) => e as String).toList(),
-      files: (json['files'] as List<dynamic>).map((e) => e as String).toList(),
-      books: (json['books'] as List<dynamic>).map((e) => e as String).toList(),
-      jobs: (json['jobs'] as List<dynamic>).map((e) => e as String).toList(),
-      papers:
-          (json['papers'] as List<dynamic>).map((e) => e as String).toList(),
+      notes: FileModel.fromJson(json['notes'] as Map<String, dynamic>),
+      files: FileModel.fromJson(json['files'] as Map<String, dynamic>),
+      books: FileModel.fromJson(json['books'] as Map<String, dynamic>),
+      jobs: FileModel.fromJson(json['jobs'] as Map<String, dynamic>),
+      papers: FileModel.fromJson(json['papers'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_DownloadModelToJson(_$_DownloadModel instance) =>
