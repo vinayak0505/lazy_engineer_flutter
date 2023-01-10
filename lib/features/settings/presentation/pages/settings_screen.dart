@@ -10,9 +10,14 @@ import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
@@ -98,8 +103,10 @@ class SettingsScreen extends StatelessWidget {
               child: CustomButton(
                 text: logOut,
                 onPressed: () async {
-                  context.read<AuthCubit>().signOut();
-                  context.go(RouteGenerator.authRoute);
+                  await context.read<AuthCubit>().signOut();
+                  if(mounted) {
+                    context.go(RouteGenerator.authRoute);
+                  }
                 },
                 width: 130,
               ),
