@@ -41,32 +41,61 @@ class FileDetailScreen extends StatelessWidget {
                   'Description',
                   style: theme.textTheme.headline5,
                 ),
-                const SizedBox(height: 16),
-                Text(
-                  data.about ?? '',
-                  style: theme.textTheme.bodyMedium,
-                  textAlign: TextAlign.justify,
-                ),
-                const SizedBox(height: 16),
-                Row(
+                const SizedBox(height: 12),
+                if (data.about != null) ...[
+                  Text(
+                    data.about!,
+                    style: theme.textTheme.bodyMedium,
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                ],
+                Table(
+                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                  defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
                   children: [
-                    Text(
-                      college,
-                      style: theme.textTheme.headlineSmall,
-                    ),
-                    const SizedBox(width: 100),
-                    Text(
-                      data.college ?? '',
-                      style: theme.textTheme.bodyText1,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Text(semester, style: theme.textTheme.headlineSmall),
-                    const SizedBox(width: 80),
-                    //Text(data.semester ?? '', style: theme.textTheme.bodyText2),
+                    if (data.college != null)
+                      TableRow(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              college,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              data.college!,
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
+                          )
+                        ],
+                      ),
+                    if (data.semester != null)
+                      TableRow(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              semester,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              data.semester!,
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
+                          )
+                        ],
+                      ),
                   ],
                 ),
                 const SizedBox(height: 16),
