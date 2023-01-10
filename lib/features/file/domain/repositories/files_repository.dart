@@ -4,6 +4,7 @@ import 'package:lazy_engineer/features/file/data/models/filter_request/filter_re
 
 abstract class FilesRepository {
   Future<List<FileDetail>?> getFilesData();
+  Future<bool> download(String fileLink);
   Future<List<FileDetail>?> searchFiles(String query);
   Future<List<FileDetail>?> applyFilter(FilterRequest filterRequest);
   Future<FilesDetailResponse?> getFilesDetailData(String id);

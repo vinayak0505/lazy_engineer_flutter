@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/assets/constants/decoration.dart';
-import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
-import 'package:lazy_engineer/assets/images.dart';
-import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
-import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
-
-import '../../../../assets/constants/strings.dart';
+import 'package:lazy_engineer/features/file/presentation/widgets/files_detail_header.dart';
 
 class FileDetailScreen extends StatelessWidget {
   const FileDetailScreen(this.data, {super.key});
@@ -18,6 +12,7 @@ class FileDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -35,44 +30,11 @@ class FileDetailScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const CustomImage(
-                        image: AppImages.addImage,
-                        radius: kRoundedRectangleRadius,
-                        height: 180,
-                      ),
-                      const SizedBox(width: 8),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 12),
-                            Text(
-                              data.title ?? '',
-                              style: theme.textTheme.headline5,
-                            ),
-                            const SizedBox(height: 12),
-                            Text(
-                              data.subject ?? '',
-                              style: theme.textTheme.titleLarge,
-                            ),
-                            const SizedBox(height: 16),
-                            fileBottom(theme.textTheme.bodyText1),
-                            const SizedBox(height: 16),
-                            CustomButton(
-                              text: download,
-                              onPressed: () {},
-                              width: 120,
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                FilesDetailHeader(
+                  title: data.title ?? '',
+                  userId: data.userId ?? '',
+                  subject: data.subject,
+                  link: data.mediaLink ?? '',
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -89,7 +51,7 @@ class FileDetailScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'College',
+                      college,
                       style: theme.textTheme.headlineSmall,
                     ),
                     const SizedBox(width: 100),
@@ -118,36 +80,6 @@ class FileDetailScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  Widget fileBottom(TextStyle? textStyle) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        const CustomIcon(
-          AppIcons.likeIcon,
-          height: 28,
-          width: 28,
-        ),
-        const CustomIcon(
-          AppIcons.dislikeIcon,
-          height: 28,
-          width: 28,
-        ),
-        Column(
-          children: [
-            const CustomIcon(AppIcons.bookIcon),
-            Text('pdf', style: textStyle)
-          ],
-        ),
-        Column(
-          children: [
-            const CustomIcon(AppIcons.pageIcon),
-            Text('pages', style: textStyle)
-          ],
-        )
-      ],
     );
   }
 }

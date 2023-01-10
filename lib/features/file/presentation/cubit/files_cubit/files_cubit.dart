@@ -15,9 +15,11 @@ class FilesCubit extends Cubit<FilesState> {
   Future<void> getFiles() async {
     try {
       final List<FileDetail>? data = await _repository.getFilesData();
-      data != null
-          ? emit(FilesState.success(data))
-          : emit(const FilesState.loading());
+      if (data != null) {
+        emit(FilesState.success(data));
+      } else {
+        emit(const FilesState.loading());
+      }
     } catch (e) {
       emit(FilesState.failure(e));
     }

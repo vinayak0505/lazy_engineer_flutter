@@ -1,7 +1,6 @@
-// ignore: unused_import
-import 'package:flutter/cupertino.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:flutter/material.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/features/file/data/datasources/local/files_local_database.dart';
 import 'package:lazy_engineer/features/file/data/datasources/remote/files_remote_datasource.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
@@ -10,7 +9,7 @@ import 'package:lazy_engineer/features/file/domain/repositories/files_repository
 
 class FilesRepositoryImpl extends FilesRepository {
   final FilesRemoteDatasource _remoteDataSource = FilesRemoteDatasource();
-  // final FilesLocalDatasource _localDataSource = FilesLocalDatasource();
+  final FilesLocalDatasource _localDataSource = FilesLocalDatasource();
 
   @override
   Future<List<FileDetail>?> getFilesData() async {
@@ -78,6 +77,20 @@ class FilesRepositoryImpl extends FilesRepository {
     } catch (e) {
       debugPrint(e.toString());
       return null;
+    }
+  }
+
+  @override
+  Future<bool> download(String fileLink) async {
+    try {
+      final int start = fileLink.indexOf('/o/') + 3;
+      final int end = fileLink.indexOf('?generation');
+      final String name = fileLink.substring(start, end);
+      await _localDataSource.downloadFiles(name, fileLink);
+      return true;
+    } catch (e) {
+      debugPrint(e.toString());
+      return false;
     }
   }
 }
