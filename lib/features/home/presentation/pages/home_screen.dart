@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/grid_card.dart';
+import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/components/search_bar.dart';
 import 'package:lazy_engineer/features/components/staggered_view.dart';
+import 'package:lazy_engineer/features/home/data/repositories/home_repository_impl.dart';
+import 'package:lazy_engineer/features/home/presentation/cubit/user/user_cubit.dart';
 import 'package:lazy_engineer/features/home/presentation/widgets/last_opened.dart';
 import 'package:lazy_engineer/features/home/presentation/widgets/slider_view.dart';
 import 'package:lazy_engineer/model/user.dart';
@@ -17,37 +22,50 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final User user = User.dummy();
     final ThemeData theme = Theme.of(context);
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 28),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _nametag(theme, user.userName),
-                const SizedBox(height: 12),
-                SearchBar(classList),
-                const SizedBox(height: 28),
-                SliderView(sliderImageList),
-                const SizedBox(height: 24),
-                _titleLabel(lastOpened, theme),
-                const SizedBox(height: 24),
-                const LastOpened(),
-                const SizedBox(height: 24),
-                _titleLabel(categories, theme),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: StaggeredView(
-                    categoriesList
-                        .map((element) => GridCard.category(element))
-                        .toList(),
-                    onTap: (context, index) => _navigation(context, index),
-                  ),
-                ),
-              ],
+            child: BlocProvider(
+              create: (context) => UserCubit(HomeRepositoryImpl()),
+              child: BlocBuilder<UserCubit, UserState>(
+                builder: (context, state) {
+                  return state.when(
+                    loading: () => const LoadingScreen(),
+                    failure: (e) => FailureScreen(e),
+                    success: (user) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _nametag(theme, user.userName),
+                          const SizedBox(height: 12),
+                          SearchBar(classList),
+                          const SizedBox(height: 28),
+                          SliderView(sliderImageList),
+                          const SizedBox(height: 24),
+                          _titleLabel(lastOpened, theme),
+                          const SizedBox(height: 24),
+                          const LastOpened(),
+                          const SizedBox(height: 24),
+                          _titleLabel(categories, theme),
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: StaggeredView(
+                              categoriesList
+                                  .map((element) => GridCard.category(element))
+                                  .toList(),
+                              onTap: (context, index) =>
+                                  _navigation(context, index),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ),
         ),

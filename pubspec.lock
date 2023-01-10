@@ -574,13 +574,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.3"
-  pdf_render:
+  pdf_image_renderer:
     dependency: "direct main"
     description:
-      name: pdf_render
+      name: pdf_image_renderer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.6"
+    version: "0.7.0"
   petitparser:
     dependency: transitive
     description:

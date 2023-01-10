@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/auth/data/models/sign_in_model/sign_in_model.dart';
+import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
+import 'package:lazy_engineer/features/auth/presentation/widgets/widgets.dart';
+import 'package:lazy_engineer/features/components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../assets/icons.dart';
-import '../../../components/custom_button.dart';
-import '../../../components/custom_text_field.dart';
-import '../../data/models/sign_in_model/sign_in_model.dart';
-import '../auth_cubit/auth_cubit.dart';
-import '../widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget with InputValidationMixin {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final formGlobalKey = GlobalKey<FormState>();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    ThemeData theme = Theme.of(context);
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final ThemeData theme = Theme.of(context);
 
     return Align(
       alignment: Alignment.bottomCenter,
@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
                   isBig: true,
                   onPressed: () {
                     if (formGlobalKey.currentState!.validate()) {
-                      SignInModel user = SignInModel(
+                      final SignInModel user = SignInModel(
                         email: emailController.text,
                         password: passwordController.text,
                       );

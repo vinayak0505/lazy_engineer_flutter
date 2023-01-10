@@ -19,21 +19,21 @@ mixin _$UserState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(dynamic data) success,
+    required TResult Function(User data) success,
     required TResult Function(dynamic e) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(dynamic data)? success,
+    TResult Function(User data)? success,
     TResult Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(dynamic data)? success,
+    TResult Function(User data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) =>
@@ -118,7 +118,7 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(dynamic data) success,
+    required TResult Function(User data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return loading();
@@ -128,7 +128,7 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(dynamic data)? success,
+    TResult Function(User data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return loading?.call();
@@ -138,7 +138,7 @@ class _$UserLoading implements UserLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(dynamic data)? success,
+    TResult Function(User data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -192,7 +192,9 @@ abstract class _$$UserSuccessCopyWith<$Res> {
   factory _$$UserSuccessCopyWith(
           _$UserSuccess value, $Res Function(_$UserSuccess) then) =
       __$$UserSuccessCopyWithImpl<$Res>;
-  $Res call({dynamic data});
+  $Res call({User data});
+
+  $UserCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -213,8 +215,15 @@ class __$$UserSuccessCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get data {
+    return $UserCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 
@@ -224,7 +233,7 @@ class _$UserSuccess implements UserSuccess {
   const _$UserSuccess(this.data);
 
   @override
-  final dynamic data;
+  final User data;
 
   @override
   String toString() {
@@ -252,7 +261,7 @@ class _$UserSuccess implements UserSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(dynamic data) success,
+    required TResult Function(User data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return success(data);
@@ -262,7 +271,7 @@ class _$UserSuccess implements UserSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(dynamic data)? success,
+    TResult Function(User data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return success?.call(data);
@@ -272,7 +281,7 @@ class _$UserSuccess implements UserSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(dynamic data)? success,
+    TResult Function(User data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {
@@ -318,9 +327,9 @@ class _$UserSuccess implements UserSuccess {
 }
 
 abstract class UserSuccess implements UserState {
-  const factory UserSuccess(final dynamic data) = _$UserSuccess;
+  const factory UserSuccess(final User data) = _$UserSuccess;
 
-  dynamic get data;
+  User get data;
   @JsonKey(ignore: true)
   _$$UserSuccessCopyWith<_$UserSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -391,7 +400,7 @@ class _$UserFailure implements UserFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(dynamic data) success,
+    required TResult Function(User data) success,
     required TResult Function(dynamic e) failure,
   }) {
     return failure(e);
@@ -401,7 +410,7 @@ class _$UserFailure implements UserFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(dynamic data)? success,
+    TResult Function(User data)? success,
     TResult Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
@@ -411,7 +420,7 @@ class _$UserFailure implements UserFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(dynamic data)? success,
+    TResult Function(User data)? success,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
   }) {

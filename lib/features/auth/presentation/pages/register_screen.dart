@@ -2,34 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart' as string;
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/auth/data/models/sign_up_model/sign_up_model.dart';
+import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
+import 'package:lazy_engineer/features/auth/presentation/widgets/widgets.dart';
+import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
-import '../../../../assets/icons.dart';
-import '../../../../navigation/routes.dart';
-import '../../../components/custom_button.dart';
-import '../../data/models/sign_up_model/sign_up_model.dart';
-import '../auth_cubit/auth_cubit.dart';
-import '../widgets/widgets.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 
 class RegisterScreen extends StatelessWidget with InputValidationMixin {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final formGlobalKey = GlobalKey<FormState>();
-    TextEditingController fullNameController = TextEditingController();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    TextEditingController confirmPasswordController = TextEditingController();
-    ThemeData theme = Theme.of(context);
+    final TextEditingController fullNameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final TextEditingController confirmPasswordController =
+        TextEditingController();
+    final ThemeData theme = Theme.of(context);
     return SingleChildScrollView(
       child: Container(
         decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 188, 186, 186),
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(36),
-              topRight: Radius.circular(36),
-            ),
-            boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)],),
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(36),
+            topRight: Radius.circular(36),
+          ),
+          boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)],
+        ),
         padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
         child: Form(
           key: formGlobalKey,
@@ -39,10 +41,15 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
             children: [
               const SizedBox(height: 18),
               Align(
-                  alignment: Alignment.topCenter,
-                  child: Text(string.registerAccount,
-                      style: theme.textTheme.headline5)),
-              const SizedBox(height: 28,),
+                alignment: Alignment.topCenter,
+                child: Text(
+                  string.registerAccount,
+                  style: theme.textTheme.headline5,
+                ),
+              ),
+              const SizedBox(
+                height: 28,
+              ),
               CustomTextField(
                 controller: fullNameController,
                 hintText: string.fullName,
@@ -84,11 +91,11 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                 text: string.register,
                 onPressed: () {
                   if (formGlobalKey.currentState!.validate()) {
-                    SignUpModel user = SignUpModel(
-                        fullName: fullNameController.text,
-                        email: emailController.text,
-                        university: null,
-                        password: passwordController.text,);
+                    final SignUpModel user = SignUpModel(
+                      fullName: fullNameController.text,
+                      email: emailController.text,
+                      password: passwordController.text,
+                    );
                     context.read<AuthCubit>().signUp(user);
                     context.go(RouteGenerator.initialRoute);
                   }

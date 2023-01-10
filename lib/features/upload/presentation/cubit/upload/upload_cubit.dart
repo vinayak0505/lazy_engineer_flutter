@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,7 +5,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:lazy_engineer/features/upload/data/models/upload_models.dart';
 import 'package:lazy_engineer/features/upload/data/repositories/upload_repository_impl.dart';
 import 'package:open_app_file/open_app_file.dart';
-import 'package:pdf_render/pdf_render.dart';
 
 part 'upload_cubit.freezed.dart';
 part 'upload_state.dart';
@@ -49,14 +46,6 @@ class UploadCubit extends Cubit<UploadState> {
       return null;
     }
   }
-
-  // pdfImage() async {
-  //   final document = await PdfDocument.openFile(pickedFile?.path ?? '');
-  //   final page = PdfPage(document: document, pageNumber: 1, height: 100, width: 100);
-  //   final pageImage = await page.render();
-  //   final image = await pageImage.createImageDetached();
-  //   final pngData = await image.toByteData(ImageByteFormat.png);
-  // }
 
   /// -------------------NOTES-----------------------
   void uploadNotes(UploadNotesRequest notesData) {
