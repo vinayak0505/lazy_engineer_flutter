@@ -15,9 +15,11 @@ class BooksCubit extends Cubit<BooksState> {
   Future<void> getBooks() async {
     try {
       final List<BookDetail>? data = await _repository.getBooksData();
-      data != null
-          ? emit(BooksState.success(data))
-          : emit(const BooksState.loading());
+      if (data != null) {
+        emit(BooksState.success(data));
+      } else {
+        emit(const BooksState.loading());
+      }
     } catch (e) {
       emit(BooksState.failure(e));
     }

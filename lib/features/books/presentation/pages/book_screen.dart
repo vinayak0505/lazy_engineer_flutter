@@ -12,8 +12,8 @@ import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/components/tile_view.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
 
-class BookScreen extends StatelessWidget {
-  const BookScreen({super.key});
+class BooksScreen extends StatelessWidget {
+  const BooksScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

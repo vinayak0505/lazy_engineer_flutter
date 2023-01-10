@@ -4,6 +4,7 @@ import 'package:lazy_engineer/features/books/data/models/filter_request.dart/fil
 
 abstract class BooksRepository {
   Future<List<BookDetail>?> getBooksData();
+  Future<bool> download(String fileLink);
   Future<List<BookDetail>?> searchBooks(String query);
   Future<List<BookDetail>?> applyFilter(FilterRequest filterRequest);
   Future<BooksDetailResponse?> getBooksDetailData(String id);
