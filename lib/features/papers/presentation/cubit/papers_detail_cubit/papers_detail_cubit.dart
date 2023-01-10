@@ -1,7 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
-import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
 import 'package:lazy_engineer/features/papers/domain/repositories/papers_repository.dart';
 
 part 'papers_detail_cubit.freezed.dart';
@@ -10,10 +8,21 @@ part 'papers_detail_state.dart';
 class PapersDetailCubit extends Cubit<PapersDetailState> {
   final PapersRepository _repository;
   final String id;
-  PapersDetailCubit(this._repository, this.id)
-      : super(const PapersDetailState.loading()) {
-    getPapersDetail();
+  final String fileLink;
+  PapersDetailCubit(this._repository, this.id, this.fileLink)
+      : super(const PapersDetailState(null, null));
+
+  bool? isDownloaded;
+  bool? rating;
+  Future<void> download(String fileLink) async {
+    try {
+      isDownloaded = await _repository.download(fileLink);
+      emit(const PapersDetailState(null, true));
+    } catch (e) {
+      emit(const PapersDetailState(null, false));
+    }
   }
+
   void getPapersDetail() async {
     // emit(PapersDetailState.success([], null));
     //   try {
@@ -28,15 +37,23 @@ class PapersDetailCubit extends Cubit<PapersDetailState> {
     //   }
   }
 
-  // void like() {
-  //   emit(PapersDetailState.success(papersDetail, true));
-  // }
+  void like() {
+    if (rating == true) {
+      rating = null;
+      emit(const PapersDetailState(null, null));
+    } else {
+      rating = true;
+      emit(const PapersDetailState(true, null));
+    }
+  }
 
-  // void dislike() {
-  //   emit(PapersDetailState.success(papersDetail, false));
-  // }
-
-  // void ratingNull() {
-  //   emit(PapersDetailState.success(papersDetail, null));
-  // }
+  void dislike() {
+    if (rating == false) {
+      rating = null;
+      emit(const PapersDetailState(null, null));
+    } else {
+      rating = false;
+      emit(const PapersDetailState(false, null));
+    }
+  }
 }

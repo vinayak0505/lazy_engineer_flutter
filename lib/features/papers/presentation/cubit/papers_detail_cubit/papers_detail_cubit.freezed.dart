@@ -16,49 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PapersDetailState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function(PaperDetailResponse data, bool? rating) success,
-    required TResult Function(dynamic e) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(PaperDetailResponse data, bool? rating)? success,
-    TResult Function(dynamic e)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(PaperDetailResponse data, bool? rating)? success,
-    TResult Function(dynamic e)? failure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PapersDetailLoading value) loading,
-    required TResult Function(_PapersDetailSuccess value) success,
-    required TResult Function(_PapersDetailFailure value) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PapersDetailLoading value)? loading,
-    TResult Function(_PapersDetailSuccess value)? success,
-    TResult Function(_PapersDetailFailure value)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PapersDetailLoading value)? loading,
-    TResult Function(_PapersDetailSuccess value)? success,
-    TResult Function(_PapersDetailFailure value)? failure,
-    required TResult orElse(),
-  }) =>
+  bool? get rating => throw _privateConstructorUsedError;
+  bool? get isDownloaded => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $PapersDetailStateCopyWith<PapersDetailState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -67,6 +29,7 @@ abstract class $PapersDetailStateCopyWith<$Res> {
   factory $PapersDetailStateCopyWith(
           PapersDetailState value, $Res Function(PapersDetailState) then) =
       _$PapersDetailStateCopyWithImpl<$Res>;
+  $Res call({bool? rating, bool? isDownloaded});
 }
 
 /// @nodoc
@@ -77,419 +40,111 @@ class _$PapersDetailStateCopyWithImpl<$Res>
   final PapersDetailState _value;
   // ignore: unused_field
   final $Res Function(PapersDetailState) _then;
-}
-
-/// @nodoc
-abstract class _$$_PapersDetailLoadingCopyWith<$Res> {
-  factory _$$_PapersDetailLoadingCopyWith(_$_PapersDetailLoading value,
-          $Res Function(_$_PapersDetailLoading) then) =
-      __$$_PapersDetailLoadingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_PapersDetailLoadingCopyWithImpl<$Res>
-    extends _$PapersDetailStateCopyWithImpl<$Res>
-    implements _$$_PapersDetailLoadingCopyWith<$Res> {
-  __$$_PapersDetailLoadingCopyWithImpl(_$_PapersDetailLoading _value,
-      $Res Function(_$_PapersDetailLoading) _then)
-      : super(_value, (v) => _then(v as _$_PapersDetailLoading));
-
-  @override
-  _$_PapersDetailLoading get _value => super._value as _$_PapersDetailLoading;
-}
-
-/// @nodoc
-
-class _$_PapersDetailLoading implements _PapersDetailLoading {
-  const _$_PapersDetailLoading();
-
-  @override
-  String toString() {
-    return 'PapersDetailState.loading()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_PapersDetailLoading);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function(PaperDetailResponse data, bool? rating) success,
-    required TResult Function(dynamic e) failure,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(PaperDetailResponse data, bool? rating)? success,
-    TResult Function(dynamic e)? failure,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(PaperDetailResponse data, bool? rating)? success,
-    TResult Function(dynamic e)? failure,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PapersDetailLoading value) loading,
-    required TResult Function(_PapersDetailSuccess value) success,
-    required TResult Function(_PapersDetailFailure value) failure,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PapersDetailLoading value)? loading,
-    TResult Function(_PapersDetailSuccess value)? success,
-    TResult Function(_PapersDetailFailure value)? failure,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PapersDetailLoading value)? loading,
-    TResult Function(_PapersDetailSuccess value)? success,
-    TResult Function(_PapersDetailFailure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PapersDetailLoading implements PapersDetailState {
-  const factory _PapersDetailLoading() = _$_PapersDetailLoading;
-}
-
-/// @nodoc
-abstract class _$$_PapersDetailSuccessCopyWith<$Res> {
-  factory _$$_PapersDetailSuccessCopyWith(_$_PapersDetailSuccess value,
-          $Res Function(_$_PapersDetailSuccess) then) =
-      __$$_PapersDetailSuccessCopyWithImpl<$Res>;
-  $Res call({PaperDetailResponse data, bool? rating});
-
-  $PaperDetailResponseCopyWith<$Res> get data;
-}
-
-/// @nodoc
-class __$$_PapersDetailSuccessCopyWithImpl<$Res>
-    extends _$PapersDetailStateCopyWithImpl<$Res>
-    implements _$$_PapersDetailSuccessCopyWith<$Res> {
-  __$$_PapersDetailSuccessCopyWithImpl(_$_PapersDetailSuccess _value,
-      $Res Function(_$_PapersDetailSuccess) _then)
-      : super(_value, (v) => _then(v as _$_PapersDetailSuccess));
-
-  @override
-  _$_PapersDetailSuccess get _value => super._value as _$_PapersDetailSuccess;
 
   @override
   $Res call({
-    Object? data = freezed,
     Object? rating = freezed,
+    Object? isDownloaded = freezed,
   }) {
-    return _then(_$_PapersDetailSuccess(
-      data == freezed
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as PaperDetailResponse,
+    return _then(_value.copyWith(
+      rating: rating == freezed
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isDownloaded: isDownloaded == freezed
+          ? _value.isDownloaded
+          : isDownloaded // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$PapersDetailCopyWith<$Res>
+    implements $PapersDetailStateCopyWith<$Res> {
+  factory _$$PapersDetailCopyWith(
+          _$PapersDetail value, $Res Function(_$PapersDetail) then) =
+      __$$PapersDetailCopyWithImpl<$Res>;
+  @override
+  $Res call({bool? rating, bool? isDownloaded});
+}
+
+/// @nodoc
+class __$$PapersDetailCopyWithImpl<$Res>
+    extends _$PapersDetailStateCopyWithImpl<$Res>
+    implements _$$PapersDetailCopyWith<$Res> {
+  __$$PapersDetailCopyWithImpl(
+      _$PapersDetail _value, $Res Function(_$PapersDetail) _then)
+      : super(_value, (v) => _then(v as _$PapersDetail));
+
+  @override
+  _$PapersDetail get _value => super._value as _$PapersDetail;
+
+  @override
+  $Res call({
+    Object? rating = freezed,
+    Object? isDownloaded = freezed,
+  }) {
+    return _then(_$PapersDetail(
       rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isDownloaded == freezed
+          ? _value.isDownloaded
+          : isDownloaded // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
-  }
-
-  @override
-  $PaperDetailResponseCopyWith<$Res> get data {
-    return $PaperDetailResponseCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
-    });
   }
 }
 
 /// @nodoc
 
-class _$_PapersDetailSuccess implements _PapersDetailSuccess {
-  const _$_PapersDetailSuccess(this.data, this.rating);
+class _$PapersDetail implements PapersDetail {
+  const _$PapersDetail(this.rating, this.isDownloaded);
 
   @override
-  final PaperDetailResponse data;
-  @override
   final bool? rating;
+  @override
+  final bool? isDownloaded;
 
   @override
   String toString() {
-    return 'PapersDetailState.success(data: $data, rating: $rating)';
+    return 'PapersDetailState(rating: $rating, isDownloaded: $isDownloaded)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PapersDetailSuccess &&
-            const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            other is _$PapersDetail &&
+            const DeepCollectionEquality().equals(other.rating, rating) &&
+            const DeepCollectionEquality()
+                .equals(other.isDownloaded, isDownloaded));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(rating));
+      const DeepCollectionEquality().hash(rating),
+      const DeepCollectionEquality().hash(isDownloaded));
 
   @JsonKey(ignore: true)
   @override
-  _$$_PapersDetailSuccessCopyWith<_$_PapersDetailSuccess> get copyWith =>
-      __$$_PapersDetailSuccessCopyWithImpl<_$_PapersDetailSuccess>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function(PaperDetailResponse data, bool? rating) success,
-    required TResult Function(dynamic e) failure,
-  }) {
-    return success(data, rating);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(PaperDetailResponse data, bool? rating)? success,
-    TResult Function(dynamic e)? failure,
-  }) {
-    return success?.call(data, rating);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(PaperDetailResponse data, bool? rating)? success,
-    TResult Function(dynamic e)? failure,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(data, rating);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PapersDetailLoading value) loading,
-    required TResult Function(_PapersDetailSuccess value) success,
-    required TResult Function(_PapersDetailFailure value) failure,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PapersDetailLoading value)? loading,
-    TResult Function(_PapersDetailSuccess value)? success,
-    TResult Function(_PapersDetailFailure value)? failure,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PapersDetailLoading value)? loading,
-    TResult Function(_PapersDetailSuccess value)? success,
-    TResult Function(_PapersDetailFailure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+  _$$PapersDetailCopyWith<_$PapersDetail> get copyWith =>
+      __$$PapersDetailCopyWithImpl<_$PapersDetail>(this, _$identity);
 }
 
-abstract class _PapersDetailSuccess implements PapersDetailState {
-  const factory _PapersDetailSuccess(
-          final PaperDetailResponse data, final bool? rating) =
-      _$_PapersDetailSuccess;
+abstract class PapersDetail implements PapersDetailState {
+  const factory PapersDetail(final bool? rating, final bool? isDownloaded) =
+      _$PapersDetail;
 
-  PaperDetailResponse get data;
+  @override
   bool? get rating;
+  @override
+  bool? get isDownloaded;
+  @override
   @JsonKey(ignore: true)
-  _$$_PapersDetailSuccessCopyWith<_$_PapersDetailSuccess> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_PapersDetailFailureCopyWith<$Res> {
-  factory _$$_PapersDetailFailureCopyWith(_$_PapersDetailFailure value,
-          $Res Function(_$_PapersDetailFailure) then) =
-      __$$_PapersDetailFailureCopyWithImpl<$Res>;
-  $Res call({dynamic e});
-}
-
-/// @nodoc
-class __$$_PapersDetailFailureCopyWithImpl<$Res>
-    extends _$PapersDetailStateCopyWithImpl<$Res>
-    implements _$$_PapersDetailFailureCopyWith<$Res> {
-  __$$_PapersDetailFailureCopyWithImpl(_$_PapersDetailFailure _value,
-      $Res Function(_$_PapersDetailFailure) _then)
-      : super(_value, (v) => _then(v as _$_PapersDetailFailure));
-
-  @override
-  _$_PapersDetailFailure get _value => super._value as _$_PapersDetailFailure;
-
-  @override
-  $Res call({
-    Object? e = freezed,
-  }) {
-    return _then(_$_PapersDetailFailure(
-      e == freezed
-          ? _value.e
-          : e // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_PapersDetailFailure implements _PapersDetailFailure {
-  const _$_PapersDetailFailure(this.e);
-
-  @override
-  final dynamic e;
-
-  @override
-  String toString() {
-    return 'PapersDetailState.failure(e: $e)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_PapersDetailFailure &&
-            const DeepCollectionEquality().equals(other.e, e));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(e));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_PapersDetailFailureCopyWith<_$_PapersDetailFailure> get copyWith =>
-      __$$_PapersDetailFailureCopyWithImpl<_$_PapersDetailFailure>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function(PaperDetailResponse data, bool? rating) success,
-    required TResult Function(dynamic e) failure,
-  }) {
-    return failure(e);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(PaperDetailResponse data, bool? rating)? success,
-    TResult Function(dynamic e)? failure,
-  }) {
-    return failure?.call(e);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(PaperDetailResponse data, bool? rating)? success,
-    TResult Function(dynamic e)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(e);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PapersDetailLoading value) loading,
-    required TResult Function(_PapersDetailSuccess value) success,
-    required TResult Function(_PapersDetailFailure value) failure,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_PapersDetailLoading value)? loading,
-    TResult Function(_PapersDetailSuccess value)? success,
-    TResult Function(_PapersDetailFailure value)? failure,
-  }) {
-    return failure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PapersDetailLoading value)? loading,
-    TResult Function(_PapersDetailSuccess value)? success,
-    TResult Function(_PapersDetailFailure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PapersDetailFailure implements PapersDetailState {
-  const factory _PapersDetailFailure(final dynamic e) = _$_PapersDetailFailure;
-
-  dynamic get e;
-  @JsonKey(ignore: true)
-  _$$_PapersDetailFailureCopyWith<_$_PapersDetailFailure> get copyWith =>
+  _$$PapersDetailCopyWith<_$PapersDetail> get copyWith =>
       throw _privateConstructorUsedError;
 }

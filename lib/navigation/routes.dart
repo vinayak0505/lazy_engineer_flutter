@@ -165,7 +165,7 @@ class RouteGenerator {
                       // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: PaperDescriptionScreen(state.extra as PaperDetail),
+                        child: PaperDetailScreen(state.extra as PaperDetail),
                       );
                     },
                   )

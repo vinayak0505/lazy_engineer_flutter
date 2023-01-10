@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/features/papers/data/datasources/local/papers_local_datasource.dart';
 import 'package:lazy_engineer/features/papers/data/datasources/remote/papers_remote_datasource.dart';
 import 'package:lazy_engineer/features/papers/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
@@ -8,7 +9,7 @@ import 'package:lazy_engineer/features/papers/domain/repositories/papers_reposit
 
 class PapersRepositoryImpl extends PapersRepository {
   final PapersRemoteDatasource _remoteDataSource = PapersRemoteDatasource();
-  // final PapersLocalDatasource _localDataSource = PapersLocalDatasource();
+  final PapersLocalDatasource _localDataSource = PapersLocalDatasource();
 
   @override
   Future<List<PaperDetail>?> getPapersData() async {
@@ -76,6 +77,19 @@ class PapersRepositoryImpl extends PapersRepository {
     } catch (e) {
       debugPrint(e.toString());
       return null;
+    }
+  }
+
+  Future<bool> download(String fileLink) async {
+    try {
+      final int start = fileLink.indexOf('/o/') + 3;
+      final int end = fileLink.indexOf('?generation');
+      final String name = fileLink.substring(start, end);
+      await _localDataSource.downloadPapers(name, fileLink);
+      return true;
+    } catch (e) {
+      debugPrint(e.toString());
+      return false;
     }
   }
 }

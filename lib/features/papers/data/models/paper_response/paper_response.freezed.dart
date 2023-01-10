@@ -222,6 +222,7 @@ PaperDetail _$PaperDetailFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PaperDetail {
+  String? get userId => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
   String? get semester => throw _privateConstructorUsedError;
@@ -244,7 +245,8 @@ abstract class $PaperDetailCopyWith<$Res> {
           PaperDetail value, $Res Function(PaperDetail) then) =
       _$PaperDetailCopyWithImpl<$Res>;
   $Res call(
-      {String? title,
+      {String? userId,
+      String? title,
       String? about,
       String? semester,
       String? subject,
@@ -265,6 +267,7 @@ class _$PaperDetailCopyWithImpl<$Res> implements $PaperDetailCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? userId = freezed,
     Object? title = freezed,
     Object? about = freezed,
     Object? semester = freezed,
@@ -276,6 +279,10 @@ class _$PaperDetailCopyWithImpl<$Res> implements $PaperDetailCopyWith<$Res> {
     Object? mediaLink = freezed,
   }) {
     return _then(_value.copyWith(
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -324,7 +331,8 @@ abstract class _$$_PaperDetailCopyWith<$Res>
       __$$_PaperDetailCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? title,
+      {String? userId,
+      String? title,
       String? about,
       String? semester,
       String? subject,
@@ -347,6 +355,7 @@ class __$$_PaperDetailCopyWithImpl<$Res> extends _$PaperDetailCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? userId = freezed,
     Object? title = freezed,
     Object? about = freezed,
     Object? semester = freezed,
@@ -358,6 +367,10 @@ class __$$_PaperDetailCopyWithImpl<$Res> extends _$PaperDetailCopyWithImpl<$Res>
     Object? mediaLink = freezed,
   }) {
     return _then(_$_PaperDetail(
+      userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
       title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -402,6 +415,7 @@ class __$$_PaperDetailCopyWithImpl<$Res> extends _$PaperDetailCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PaperDetail implements _PaperDetail {
   const _$_PaperDetail(
+      this.userId,
       this.title,
       this.about,
       this.semester,
@@ -416,6 +430,8 @@ class _$_PaperDetail implements _PaperDetail {
   factory _$_PaperDetail.fromJson(Map<String, dynamic> json) =>
       _$$_PaperDetailFromJson(json);
 
+  @override
+  final String? userId;
   @override
   final String? title;
   @override
@@ -444,7 +460,7 @@ class _$_PaperDetail implements _PaperDetail {
 
   @override
   String toString() {
-    return 'PaperDetail(title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, tags: $tags, mediaLink: $mediaLink)';
+    return 'PaperDetail(userId: $userId, title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, tags: $tags, mediaLink: $mediaLink)';
   }
 
   @override
@@ -452,6 +468,7 @@ class _$_PaperDetail implements _PaperDetail {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PaperDetail &&
+            const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
@@ -467,6 +484,7 @@ class _$_PaperDetail implements _PaperDetail {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(userId),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(semester),
@@ -492,6 +510,7 @@ class _$_PaperDetail implements _PaperDetail {
 
 abstract class _PaperDetail implements PaperDetail {
   const factory _PaperDetail(
+      final String? userId,
       final String? title,
       final String? about,
       final String? semester,
@@ -505,6 +524,8 @@ abstract class _PaperDetail implements PaperDetail {
   factory _PaperDetail.fromJson(Map<String, dynamic> json) =
       _$_PaperDetail.fromJson;
 
+  @override
+  String? get userId;
   @override
   String? get title;
   @override

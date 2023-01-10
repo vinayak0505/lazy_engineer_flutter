@@ -4,6 +4,7 @@ import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_r
 
 abstract class PapersRepository {
   Future<List<PaperDetail>?> getPapersData();
+  Future<bool> download(String fileLink);
   Future<List<PaperDetail>?> searchPapers(String query);
   Future<List<PaperDetail>?> applyFilter(FilterRequest filterRequest);
   Future<PaperDetailResponse?> getPapersDetailData(String id);

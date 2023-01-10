@@ -26,6 +26,7 @@ Map<String, dynamic> _$$_PaperResponseToJson(_$_PaperResponse instance) =>
 
 _$_PaperDetail _$$_PaperDetailFromJson(Map<String, dynamic> json) =>
     _$_PaperDetail(
+      json['userId'] as String?,
       json['title'] as String?,
       json['about'] as String?,
       json['semester'] as String?,
@@ -39,6 +40,7 @@ _$_PaperDetail _$$_PaperDetailFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_PaperDetailToJson(_$_PaperDetail instance) =>
     <String, dynamic>{
+      'userId': instance.userId,
       'title': instance.title,
       'about': instance.about,
       'semester': instance.semester,

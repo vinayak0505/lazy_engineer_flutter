@@ -19,6 +19,7 @@ class PaperResponse with _$PaperResponse {
 @freezed
 class PaperDetail with _$PaperDetail {
   const factory PaperDetail(
+    String? userId,
     String? title,
     String? about,
     String? semester,
