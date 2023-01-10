@@ -205,22 +205,13 @@ class PdfImage extends StatelessWidget {
           return state.when(
             loading: () => const LoadingScreen(),
             failure: (e) => FailureScreen(e),
-            success: (Uint8List data) {
-              return Container(
-                width: 200,
+            success: (data) {
+              return CustomImage(
+                file: data,
                 height: 200,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(8),
-                  ),
-                ),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(8),
-                  ),
-                  child: Image.memory(data),
-                ),
+                width: 142,
+                radius: 8,
+                isBorder: true,
               );
             },
           );

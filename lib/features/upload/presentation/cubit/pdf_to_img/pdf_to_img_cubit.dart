@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:pdf_image_renderer/pdf_image_renderer.dart';
 
 part 'pdf_to_img_state.dart';
@@ -37,8 +40,12 @@ class PdfToImgCubit extends Cubit<PdfToImgState> {
       // close the page again
       await pdf.closePage(pageIndex: 0);
       pdf.close();
+      // Unit8List ->  File 
+      final tempDir = await getTemporaryDirectory();
+      final File fileImage = await File('${tempDir.path}/image.png').create();
+      fileImage.writeAsBytesSync(img!);
 
-      emit(PdfToImgState.success(img!));
+      emit(PdfToImgState.success(fileImage));
     } catch (e) {
       emit(PdfToImgState.failure(e));
     }

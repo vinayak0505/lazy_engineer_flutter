@@ -20,21 +20,21 @@ mixin _$PdfToImgState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(Uint8List data) success,
+    required TResult Function(File data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(Uint8List data)? success,
+    TResult Function(File data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(Uint8List data)? success,
+    TResult Function(File data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -122,7 +122,7 @@ class _$PdfToImgLoading implements PdfToImgLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(Uint8List data) success,
+    required TResult Function(File data) success,
   }) {
     return loading();
   }
@@ -132,7 +132,7 @@ class _$PdfToImgLoading implements PdfToImgLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(Uint8List data)? success,
+    TResult Function(File data)? success,
   }) {
     return loading?.call();
   }
@@ -142,7 +142,7 @@ class _$PdfToImgLoading implements PdfToImgLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(Uint8List data)? success,
+    TResult Function(File data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -257,7 +257,7 @@ class _$PdfToImgFailure implements PdfToImgFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(Uint8List data) success,
+    required TResult Function(File data) success,
   }) {
     return failure(e);
   }
@@ -267,7 +267,7 @@ class _$PdfToImgFailure implements PdfToImgFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(Uint8List data)? success,
+    TResult Function(File data)? success,
   }) {
     return failure?.call(e);
   }
@@ -277,7 +277,7 @@ class _$PdfToImgFailure implements PdfToImgFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(Uint8List data)? success,
+    TResult Function(File data)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -335,7 +335,7 @@ abstract class _$$PdfToImgSuccessCopyWith<$Res> {
   factory _$$PdfToImgSuccessCopyWith(
           _$PdfToImgSuccess value, $Res Function(_$PdfToImgSuccess) then) =
       __$$PdfToImgSuccessCopyWithImpl<$Res>;
-  $Res call({Uint8List data});
+  $Res call({File data});
 }
 
 /// @nodoc
@@ -357,7 +357,7 @@ class __$$PdfToImgSuccessCopyWithImpl<$Res>
       data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Uint8List,
+              as File,
     ));
   }
 }
@@ -368,7 +368,7 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
   const _$PdfToImgSuccess(this.data);
 
   @override
-  final Uint8List data;
+  final File data;
 
   @override
   String toString() {
@@ -397,7 +397,7 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
-    required TResult Function(Uint8List data) success,
+    required TResult Function(File data) success,
   }) {
     return success(data);
   }
@@ -407,7 +407,7 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(Uint8List data)? success,
+    TResult Function(File data)? success,
   }) {
     return success?.call(data);
   }
@@ -417,7 +417,7 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
-    TResult Function(Uint8List data)? success,
+    TResult Function(File data)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -462,9 +462,9 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
 }
 
 abstract class PdfToImgSuccess implements PdfToImgState {
-  const factory PdfToImgSuccess(final Uint8List data) = _$PdfToImgSuccess;
+  const factory PdfToImgSuccess(final File data) = _$PdfToImgSuccess;
 
-  Uint8List get data;
+  File get data;
   @JsonKey(ignore: true)
   _$$PdfToImgSuccessCopyWith<_$PdfToImgSuccess> get copyWith =>
       throw _privateConstructorUsedError;

@@ -15,41 +15,43 @@ class BottomNavScreen extends StatefulWidget {
 }
 
 class _BottomNavScreenState extends State<BottomNavScreen> {
-  late PageController _pageController;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController();
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     const tabs = [
       ScaffoldWithNavBarTabItem(
         initialLocation: RouteGenerator.homeRoute,
         icon: CustomIcon(AppIcons.home, color: Colors.grey),
+        activeIcon: CustomIcon(
+          AppIcons.home,
+          color: AppThemes.primaryColor2,
+        ),
         label: string.home,
       ),
       ScaffoldWithNavBarTabItem(
         initialLocation: RouteGenerator.downloadRoute,
         icon: CustomIcon(AppIcons.downloadIcon, color: Colors.grey),
+        activeIcon: CustomIcon(
+          AppIcons.downloadIcon,
+          color: AppThemes.primaryColor2,
+        ),
         label: string.download,
       ),
       ScaffoldWithNavBarTabItem(
         initialLocation: RouteGenerator.uploadRoute,
         icon: CustomIcon(AppIcons.uploadIcon, color: Colors.grey),
+        activeIcon: CustomIcon(
+          AppIcons.uploadIcon,
+          color: AppThemes.primaryColor2,
+        ),
         label: string.upload,
       ),
       ScaffoldWithNavBarTabItem(
         initialLocation: RouteGenerator.accountRoute,
         icon: CustomIcon(AppIcons.accounts, color: Colors.grey),
+        activeIcon: CustomIcon(
+          AppIcons.accounts,
+          color: AppThemes.primaryColor2,
+        ),
         label: string.account,
       ),
     ];
@@ -102,6 +104,7 @@ class ScaffoldWithNavBarTabItem extends BottomNavigationBarItem {
   const ScaffoldWithNavBarTabItem({
     required this.initialLocation,
     required super.icon,
+    required super.activeIcon,
     super.label,
   });
 
