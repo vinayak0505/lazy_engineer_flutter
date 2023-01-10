@@ -109,7 +109,7 @@ class RouteGenerator {
             routes: [
               GoRoute(
                 path: 'books',
-                builder: (_, __) => const BookScreen(),
+                builder: (_, __) => const BooksScreen(),
                 routes: [
                   GoRoute(
                     path: 'book_description/:id',
