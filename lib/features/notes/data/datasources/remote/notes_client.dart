@@ -13,9 +13,7 @@ part 'notes_client.g.dart';
 abstract class NotesClient {
   factory NotesClient(Dio dio, {String baseUrl}) = _NotesClient;
   @GET(AppConfig.notes)
-  Future<BaseResponse<NoteResponse>> getNotes([
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+  Future<BaseResponse<NoteResponse>> getNotes();
 
   @GET(AppConfig.notesSearch)
   Future<BaseResponse<NoteResponse>> searchNotes(
@@ -29,7 +27,6 @@ abstract class NotesClient {
 
   @GET(AppConfig.notesDetail)
   Future<BaseResponse<NotesDetailResponse>> getNotesDetail(
-    @Body() String id, [
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+    @Body() String id,
+  );
 }

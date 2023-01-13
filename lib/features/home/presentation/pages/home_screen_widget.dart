@@ -3,23 +3,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/animated_icon_button.dart';
+import 'package:lazy_engineer/features/components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
+import 'package:lazy_engineer/features/components/single_option_filter.dart';
+import 'package:lazy_engineer/features/components/slide_transition_animation.dart';
+import 'package:lazy_engineer/features/components/text_Field_filter.dart';
+import 'package:lazy_engineer/features/home/presentation/cubit/filter/filter_cubit.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
-import '../../../components/custom_button.dart';
-import '../../../components/custom_icon.dart';
-import '../../../components/single_option_filter.dart';
-import '../../../components/slide_transition_animation.dart';
-import '../../../components/text_Field_filter.dart';
-import '../cubit/filter/filter_cubit.dart';
 
 class HomeScreenWidget extends StatelessWidget {
   const HomeScreenWidget(
     this.body, {
-    Key? key,
+    super.key,
     this.textFieldFilter,
     this.multiOptionFilter,
     this.singleOptionFilter,
     this.applyFilter,
-  }) : super(key: key);
+  });
   final List<Widget> body;
   final List<String>? textFieldFilter;
   final List<String>? multiOptionFilter;
@@ -27,8 +27,8 @@ class HomeScreenWidget extends StatelessWidget {
   final Function(FilterRequest filterRequest)? applyFilter;
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    TextEditingController singleOption = TextEditingController();
+    final ThemeData theme = Theme.of(context);
+    final singleOption = TextEditingController();
     return SafeArea(
       child: BlocProvider(
         create: (context) => FilterCubit(),

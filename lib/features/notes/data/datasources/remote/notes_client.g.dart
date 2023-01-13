@@ -16,12 +16,10 @@ class _NotesClient implements NotesClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<NoteResponse>> getNotes(
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<NoteResponse>> getNotes() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<NoteResponse>>(
