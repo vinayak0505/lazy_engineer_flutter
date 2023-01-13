@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
-import '../../../../assets/constants/decoration.dart';
 
 class LastSeenCard extends StatelessWidget {
   const LastSeenCard({
-    Key? key,
+    super.key,
     this.image,
     required this.title,
     required this.category,
     required this.description,
     required this.date,
-  }) : super(key: key);
+  });
   final String? image, description;
   final String title, category, date;
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return Container(
       decoration: kRoundedContainer,
       width: 200,
@@ -26,7 +26,6 @@ class LastSeenCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Align(
-              alignment: Alignment.center,
               child: CustomImage(
                 image: image,
                 height: 120,

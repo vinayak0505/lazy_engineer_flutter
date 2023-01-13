@@ -9,7 +9,6 @@ import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/jobs/presentation/widgets/company_tag.dart';
-import 'package:lazy_engineer/features/jobs/presentation/widgets/job_list.dart';
 
 class JobsDescriptionScreen extends StatelessWidget {
   const JobsDescriptionScreen(this.data, {super.key});

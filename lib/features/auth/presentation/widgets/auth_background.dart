@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../assets/constants/strings.dart' as string;
-import '../../../../assets/icons.dart';
-import '../../../../assets/images.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart' as string;
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/assets/images.dart';
 
 class AuthBackground extends StatelessWidget {
   const AuthBackground({super.key, this.image});
   final String? image;
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.all(30.0),
       child: Column(

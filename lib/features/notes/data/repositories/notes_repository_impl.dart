@@ -65,6 +65,7 @@ class NotesRepositoryImpl extends NotesRepository {
       debugPrint(e.toString());
       return null;
     }
+    return null;
   }
 
   @override

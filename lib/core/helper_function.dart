@@ -1,5 +1,5 @@
 String addOrdinals(int num) {
-      String ans = num.toString();
+      final String ans = num.toString();
       switch (num) {
         case 1:
           return '${ans}st';

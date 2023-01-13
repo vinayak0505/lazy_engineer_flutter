@@ -8,13 +8,11 @@ import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/grid_card.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
-import 'package:lazy_engineer/features/components/search_bar.dart';
 import 'package:lazy_engineer/features/components/staggered_view.dart';
 import 'package:lazy_engineer/features/home/data/repositories/home_repository_impl.dart';
 import 'package:lazy_engineer/features/home/presentation/cubit/user/user_cubit.dart';
 import 'package:lazy_engineer/features/home/presentation/widgets/last_opened.dart';
 import 'package:lazy_engineer/features/home/presentation/widgets/slider_view.dart';
-import 'package:lazy_engineer/model/user.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           _nametag(theme, user.userName),
                           const SizedBox(height: 12),
-                          SearchBar(classList),
+                          // SearchBar(classList),
                           const SizedBox(height: 28),
                           SliderView(sliderImageList),
                           const SizedBox(height: 24),

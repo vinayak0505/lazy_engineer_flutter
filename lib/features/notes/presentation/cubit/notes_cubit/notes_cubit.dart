@@ -39,7 +39,6 @@ class NotesCubit extends Cubit<NotesState> {
       final filter = filterRequest.textField!;
       final List<NoteDetail> newData = [];
       for (final note in data!) {
-        print('${filter[0]} :: ${filter[1]} :: ${filter[2]} :: ${filter[3]}');
         final bool checkSubject = filter[0] == '' || note.subject == filter[0];
         final bool checkUnit = filter[1] == '' || note.unit == filter[1];
         final bool checkChapter = filter[2] == '' || note.chapter == filter[2];

@@ -2,10 +2,10 @@ mixin InputValidationMixin {
   bool isPasswordValid(String password) => password.length == 6;
 
   String? emailValidation(String? value) {
-    RegExp emailRegExp = RegExp(
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+    final RegExp emailRegExp = RegExp(
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",);
     if (value?.isEmpty ?? true) return 'Enter Email';
-    return (emailRegExp.hasMatch(value!) ? null : 'Enter Valid Email');
+    return emailRegExp.hasMatch(value!) ? null : 'Enter Valid Email';
   }
 
   String? passwordValidation(String? value) {
@@ -27,9 +27,9 @@ mixin InputValidationMixin {
   }
 
   String? usernameValidation(String? value) {
-    RegExp nameRegExp = RegExp('[a-zA-Z]');
+    final RegExp nameRegExp = RegExp('[a-zA-Z]');
     if (value?.isEmpty ?? true) return 'Enter Username';
-    return (nameRegExp.hasMatch(value!) ? null : 'Enter Valid Username');
+    return nameRegExp.hasMatch(value!) ? null : 'Enter Valid Username';
   }
 
   String? nullCheckTextValidation(String? value, String message) {
@@ -38,13 +38,12 @@ mixin InputValidationMixin {
   }
 
   String? nullCheckNumValidation(String? value, String message) {
-    RegExp numRegExp = RegExp('[0-9]');
+    final RegExp numRegExp = RegExp('[0-9]');
     if (value?.isEmpty ?? true) return 'Enter $message';
-    return (numRegExp.hasMatch(value!) ? null : 'Enter Valid $message');
+    return numRegExp.hasMatch(value!) ? null : 'Enter Valid $message';
   }
 
   String? emptyListCheckValidation(List<String>? list, String message) {
-    print('validation $list');
     if (list?.isEmpty ?? true) return 'Enter $message';
     return null;
   }

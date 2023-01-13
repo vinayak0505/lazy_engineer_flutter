@@ -1,4 +1,4 @@
-import '../../data/models/upload_models.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_models.dart';
 
 abstract class UploadRepository {
   Future<bool?> uplaodBook(UploadBookRequest data);

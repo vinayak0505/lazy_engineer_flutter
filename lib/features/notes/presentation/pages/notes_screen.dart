@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lazy_engineer/assets/icons.dart';
-import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/grid_card.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
+import 'package:lazy_engineer/features/components/search_bar.dart';
 import 'package:lazy_engineer/features/components/staggered_view.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/home_screen_widget.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
@@ -29,16 +28,12 @@ class NotesScreen extends StatelessWidget {
             success: (data) {
               return HomeScreenWidget(
                 [
-                  CustomTextField(
-                    controller: searchController,
-                    suffixIcon: AppIcons.searchIcon,
-                  ),
+                  SearchBar(list: Container(), onSearch: (_){}),
                   const SizedBox(height: 16),
                   StaggeredView(
                     data.map((element) {
                       return GridCard(
                         body: element.about ?? '',
-                        image: null,
                         title: element.title ?? '',
                       );
                     }).toList(),

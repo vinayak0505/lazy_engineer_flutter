@@ -72,7 +72,7 @@ class AppThemes {
                 fontWeight: FontWeight.bold,
               ),
               subtitle2: const TextStyle(
-                  color: subTitleColor, fontWeight: FontWeight.bold),
+                  color: subTitleColor, fontWeight: FontWeight.bold,),
               overline: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: subTitleColor,

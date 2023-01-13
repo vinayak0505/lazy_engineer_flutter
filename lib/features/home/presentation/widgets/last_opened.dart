@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_engineer/features/components/failiure_screen.dart';
+import 'package:lazy_engineer/features/components/loading_screen.dart';
+import 'package:lazy_engineer/features/home/data/repositories/home_repository_impl.dart';
+import 'package:lazy_engineer/features/home/presentation/cubit/last_seen/last_seen_cubit.dart';
 import 'package:lazy_engineer/features/home/presentation/widgets/last_seen_card.dart';
-
-import '../../../components/failiure_screen.dart';
-import '../../../components/loading_screen.dart';
-import '../../data/repositories/home_repository_impl.dart';
-import '../cubit/last_seen/last_seen_cubit.dart';
 
 class LastOpened extends StatelessWidget {
   const LastOpened({super.key});

@@ -12,7 +12,7 @@ class NoticeCubit extends Cubit<NoticeState> {
   }
   void getNotice() {
     try {
-      dynamic data = _repository.getNotice;
+      final dynamic data = _repository.getNotice;
       emit(NoticeState.success(data));
     } catch (e) {
       emit(NoticeState.failure(e));

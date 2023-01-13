@@ -65,6 +65,7 @@ class JobsRepositoryImpl extends JobsRepository {
       debugPrint(e.toString());
       return null;
     }
+    return null;
   }
 
   @override

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../../../../assets/images.dart';
+import 'package:lazy_engineer/assets/images.dart';
 
 part 'profile_modal.freezed.dart';
 part 'profile_modal.g.dart';

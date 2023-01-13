@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../assets/constants/decoration.dart';
-import '../../config/theme/app_theme.dart';
-import 'custom_icon.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
+import 'package:lazy_engineer/config/theme/app_theme.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     this.autofocus = false,
     this.readOnly = false,
@@ -24,7 +24,7 @@ class CustomTextField extends StatelessWidget {
     this.maxLines = 1,
     this.width,
     this.focusNode,
-  }) : super(key: key);
+  });
 
   final TextEditingController controller;
   final bool autofocus, readOnly, obscureText, showBorder, filled, underline;

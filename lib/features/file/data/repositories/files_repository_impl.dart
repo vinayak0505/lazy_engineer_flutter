@@ -52,6 +52,8 @@ class FilesRepositoryImpl extends FilesRepository {
 
   @override
   Future<List<FileDetail>?> applyFilter(FilterRequest filterRequest) async {
+    return null;
+  
     // return practicalFileList;
     // try {
     //   filterRequest = FilterRequest(

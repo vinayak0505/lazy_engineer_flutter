@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import '../../model/user.dart';
-import 'authorization_inceptors.dart';
-import 'dio_exception.dart';
+import 'package:lazy_engineer/model/user.dart';
+import 'package:lazy_engineer/navigation/dio/authorization_inceptors.dart';
+import 'package:lazy_engineer/navigation/dio/dio_exception.dart';
 
 const apiBaseUrl = 'https://';
 
@@ -14,7 +14,6 @@ class DioClient {
             baseUrl: apiBaseUrl,
             connectTimeout: 5000,
             receiveTimeout: 3000,
-            responseType: ResponseType.json,
           ),
         )..interceptors.add(AuthorizationInterceptor());
 

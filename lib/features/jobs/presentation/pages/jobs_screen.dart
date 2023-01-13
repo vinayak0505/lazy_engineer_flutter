@@ -7,7 +7,6 @@ import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/jobs/data/repositories/jobs_repository_impl.dart';
-import 'package:lazy_engineer/features/jobs/domain/jobs_repository.dart';
 import 'package:lazy_engineer/features/jobs/presentation/cubit/jobs_cubit/jobs_cubit.dart';
 import 'package:lazy_engineer/features/jobs/presentation/widgets/job_list.dart';
 

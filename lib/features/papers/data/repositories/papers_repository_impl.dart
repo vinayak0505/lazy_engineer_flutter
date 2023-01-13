@@ -66,6 +66,7 @@ class PapersRepositoryImpl extends PapersRepository {
       debugPrint(e.toString());
       return null;
     }
+    return null;
   }
 
   @override
@@ -80,6 +81,7 @@ class PapersRepositoryImpl extends PapersRepository {
     }
   }
 
+  @override
   Future<bool> download(String fileLink) async {
     try {
       final int start = fileLink.indexOf('/o/') + 3;

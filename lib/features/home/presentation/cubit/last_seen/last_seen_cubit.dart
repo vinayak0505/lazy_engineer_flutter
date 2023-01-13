@@ -11,9 +11,9 @@ class LastSeenCubit extends Cubit<LastSeenState> {
   LastSeenCubit(this._repository) : super(const LastSeenState.loading()) {
     getLastSeen();
   }
-  void getLastSeen() async {
+  Future<void> getLastSeen() async {
     try {
-      List<LastSeenResponse>? data = await _repository.getLastSeen();
+      final List<LastSeenResponse>? data = await _repository.getLastSeen();
       if (data != null) {
         emit(LastSeenState.success(data));
       } else {

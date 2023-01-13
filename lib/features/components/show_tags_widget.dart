@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'custom_chip.dart';
+import 'package:lazy_engineer/features/components/custom_chip.dart';
 
 class ShowTagsWidget extends StatelessWidget {
   const ShowTagsWidget(this.tags, {super.key});
@@ -7,7 +7,6 @@ class ShowTagsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      direction: Axis.horizontal,
       children: [
         ...List.generate(
           tags.length,

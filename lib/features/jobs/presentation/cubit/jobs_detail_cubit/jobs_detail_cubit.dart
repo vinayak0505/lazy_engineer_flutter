@@ -14,9 +14,9 @@ class JobsDetailCubit extends Cubit<JobsDetailState> {
       : super(const JobsDetailState.loading()) {
     getJobsDetail();
   }
-  void getJobsDetail() async {
+  Future<void> getJobsDetail() async {
     try {
-      JobsDetailResponse? data = jobsDetail;
+      final JobsDetailResponse data = jobsDetail;
       // data = await _repository.getJobsDetailData(id);
       if (data != null) {
         emit(JobsDetailState.success(jobsDetail, null));

@@ -23,7 +23,7 @@ class PapersDetailCubit extends Cubit<PapersDetailState> {
     }
   }
 
-  void getPapersDetail() async {
+  Future<void> getPapersDetail() async {
     // emit(PapersDetailState.success([], null));
     //   try {
     //     PaperDetailResponse? data = await _repository.getPapersDetailData(id);

@@ -18,6 +18,6 @@ class UploadLocalDataSource {
     //     rating: 5,
     //   ),
     // );
-    BookDatabaseModel uploadData = await uploadDatabase.read(1);
+    final BookDatabaseModel uploadData = await uploadDatabase.read(1);
   }
 }

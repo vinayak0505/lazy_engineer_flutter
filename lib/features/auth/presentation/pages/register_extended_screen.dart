@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/assets/images.dart';
+import 'package:lazy_engineer/features/auth/presentation/widgets/auth_background.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_dropdown.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
-
-import '../../../../assets/constants/strings.dart';
-import '../widgets/auth_background.dart';
 
 class RegisterExtendedScreen extends StatelessWidget {
   const RegisterExtendedScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController universityController = TextEditingController();
-    TextEditingController classController = TextEditingController();
-    TextEditingController yearController = TextEditingController();
+    final TextEditingController universityController = TextEditingController();
+    final TextEditingController classController = TextEditingController();
+    final TextEditingController yearController = TextEditingController();
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xffEEFAFE),

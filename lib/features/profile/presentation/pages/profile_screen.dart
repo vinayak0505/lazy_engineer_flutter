@@ -7,12 +7,12 @@ import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/profile/data/repositories/profile_repository_impl.dart';
+import 'package:lazy_engineer/features/profile/presentation/cubit/profile/profile_cubit.dart';
+import 'package:lazy_engineer/features/profile/presentation/pages/edit_profile_screen.dart';
 import 'package:lazy_engineer/features/profile/presentation/pages/profile_screen_view.dart';
-import '../cubit/profile/profile_cubit.dart';
-import 'edit_profile_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 16),
-                    isNotEdit ? ProfileScreenView(data) : EditProfileView(data),
+                    if (isNotEdit) ProfileScreenView(data) else EditProfileView(data),
                   ],
                 );
               },

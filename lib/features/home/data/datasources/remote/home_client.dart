@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:lazy_engineer/config/app_config.dart';
+import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/model/user.dart';
 import 'package:retrofit/http.dart';
-import '../../../../../config/app_config.dart';
-import '../../../../../core/models/base_response/base_response.dart';
-import '../../../../../model/user.dart';
 
 part 'home_client.g.dart';
 

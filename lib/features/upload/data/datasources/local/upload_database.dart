@@ -1,7 +1,6 @@
-import 'package:sqflite/sqflite.dart';
+import 'package:lazy_engineer/core/models/book_database_model/book_database_model.dart';
 import 'package:path/path.dart';
-
-import '../../../../../core/models/book_database_model/book_database_model.dart';
+import 'package:sqflite/sqflite.dart';
 
 const String tableBook = 'book';
 const String tableBookWriter = 'book_writer';
@@ -62,7 +61,7 @@ class MyDatabase {
   Future<Database> _initDB(String filePath) async {
     final dbPath = await getDatabasesPath();
     final path = join(dbPath, filePath);
-    return await openDatabase(path, version: 1, onCreate: _createDB);
+    return openDatabase(path, version: 1, onCreate: _createDB);
   }
 
   BookDatabaseModel declareId(BookDatabaseModel data, int id) {
@@ -86,11 +85,11 @@ class MyDatabase {
     const textType = 'TEXT NOT NULL';
     const nullableTextType = 'TEXT';
     await db.execute(
-        'CREATE TABLE $tableBook(${BookFields.id} $idType, ${BookFields.title} $textType, ${BookFields.subject} $textType, ${BookFields.about} $nullableTextType, ${BookFields.pages} $nullableIntType, ${BookFields.semester} $intType, ${BookFields.bookEdition} $nullableIntType, ${BookFields.price} $nullableIntType, ${BookFields.rating} $intType)');
+        'CREATE TABLE $tableBook(${BookFields.id} $idType, ${BookFields.title} $textType, ${BookFields.subject} $textType, ${BookFields.about} $nullableTextType, ${BookFields.pages} $nullableIntType, ${BookFields.semester} $intType, ${BookFields.bookEdition} $nullableIntType, ${BookFields.price} $nullableIntType, ${BookFields.rating} $intType)',);
     await db.execute(
-        'CREATE TABLE $tableBookWriter(${BookWriterFields.writerId} $idType, ${BookWriterFields.id} $idType, ${BookWriterFields.writer} $textType)');
+        'CREATE TABLE $tableBookWriter(${BookWriterFields.writerId} $idType, ${BookWriterFields.id} $idType, ${BookWriterFields.writer} $textType)',);
     await db.execute(
-        'CREATE TABLE $tableBookTag(${BookTagFields.tagId} $idType, ${BookTagFields.id} $idType, ${BookTagFields.tag} $textType)');
+        'CREATE TABLE $tableBookTag(${BookTagFields.tagId} $idType, ${BookTagFields.id} $idType, ${BookTagFields.tag} $textType)',);
   }
 
   Future<BookDatabaseModel> create(BookDatabaseModel data) async {
@@ -136,7 +135,7 @@ class MyDatabase {
 
   Future<int> delete(int id) async {
     final db = await instance.database;
-    return await db.delete(
+    return db.delete(
       tableBook,
       where: '${BookFields.id} = ?',
       whereArgs: [id],

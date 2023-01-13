@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/features/components/custom_text_field.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/core/logic/list/list_cubit.dart';
-import '../../assets/constants/decoration.dart';
-import '../../assets/constants/lists.dart';
-import '../../assets/constants/strings.dart';
-import 'custom_chip.dart';
+import 'package:lazy_engineer/features/components/custom_chip.dart';
+import 'package:lazy_engineer/features/components/custom_text_field.dart';
 
 class EditTagsWidget extends FormField<List<String>> {
   EditTagsWidget({
-    Key? key,
+    super.key,
     required Function(List<String>) listTags,
-    FormFieldValidator<List<String>>? validator,
+    super.validator,
   }) : super(
-          key: key,
-          validator: validator,
           builder: (FormFieldState<List<String>> formState) {
-            TextEditingController tagsController = TextEditingController();
+            final TextEditingController tagsController = TextEditingController();
             return BlocProvider(
               create: (context) => ListCubit(),
               child: BlocConsumer<ListCubit, List<String>>(
@@ -25,14 +23,13 @@ class EditTagsWidget extends FormField<List<String>> {
                   if (validator != null) validator.call(list);
                 },
                 builder: (context, list) {
-                  List<String> tags = tagsList;
+                  final List<String> tags = tagsList;
                   final cubit = context.read<ListCubit>();
 
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Wrap(
-                        direction: Axis.horizontal,
                         children: [
                           ...List.generate(
                             list.length,
@@ -55,7 +52,7 @@ class EditTagsWidget extends FormField<List<String>> {
                                 backgroundColor: Colors.transparent,
                                 context: context,
                                 builder: (_) {
-                                  var theme = Theme.of(context);
+                                  final theme = Theme.of(context);
                                   List<Widget> tagWidget() {
                                     void onTapTag(String tag) {
                                       cubit.addElement(tag);

@@ -87,7 +87,7 @@ class CustomImage extends StatelessWidget {
               } else {
                 return _assetImage();
               }
-            }()),
+            }(),),
       ),
     );
   }

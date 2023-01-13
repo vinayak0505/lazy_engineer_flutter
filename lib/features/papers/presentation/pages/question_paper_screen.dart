@@ -67,8 +67,6 @@ class QuestionPaperScreen extends StatelessWidget {
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: data.length,
                             itemBuilder: (context, index) => TileView(
-                              // image: data[index].mediaLink,
-                              image: null,
                               child: QuestionPaperDataBox(data[index]),
                               onPressed: () => context.push(
                                 '${RouteGenerator.questionPaperDescriptionRoute}/${index + 1}', extra: data[index],

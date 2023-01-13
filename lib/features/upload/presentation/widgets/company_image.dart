@@ -2,10 +2,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../../../assets/images.dart';
-import '../../../../config/app_config.dart';
-import '../../../components/custom_image.dart';
-import 'full_screen_photo.dart';
+import 'package:lazy_engineer/assets/images.dart';
+import 'package:lazy_engineer/config/app_config.dart';
+import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/upload/presentation/widgets/full_screen_photo.dart';
 
 class CompanyImage extends StatefulWidget {
   const CompanyImage({
@@ -26,7 +26,7 @@ class _CompanyImageState extends State<CompanyImage> {
     try {
       final image = await ImagePicker().pickImage(source: ImageSource.gallery);
       if (image == null) return;
-      File imagsTemporary = File(image.path);
+      final File imagsTemporary = File(image.path);
       setState(() {
         newList.add(imagsTemporary);
         widget.onSubmit.call(newList);

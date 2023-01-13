@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
@@ -89,7 +88,6 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                                     CustomImage(
                                       width: 200,
                                       height: 200,
-                                      image: null,
                                       disableImage: true,
                                     ),
                                     CircularProgressIndicator()

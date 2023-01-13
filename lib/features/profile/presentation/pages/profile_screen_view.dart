@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/config/theme/app_theme.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/profile/data/models/profile_modal/profile_modal.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../assets/icons.dart';
-import '../../../../config/theme/app_theme.dart';
-import '../../../components/custom_icon.dart';
-import '../widgets/upload_view.dart';
+import 'package:lazy_engineer/features/profile/presentation/widgets/upload_view.dart';
 
 class ProfileScreenView extends StatelessWidget {
-  const ProfileScreenView(this.data, {Key? key}) : super(key: key);
+  const ProfileScreenView(this.data, {super.key});
   final ProfileModal data;
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    int finalYear = (data.yearOfAdmission ?? 0) + 4;
+    final ThemeData theme = Theme.of(context);
+    final int finalYear = (data.yearOfAdmission ?? 0) + 4;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(

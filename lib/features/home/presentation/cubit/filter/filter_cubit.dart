@@ -8,8 +8,6 @@ class FilterCubit extends Cubit<FilterState> {
   FilterCubit()
       : super(const FilterState(
           false,
-          textField: null,
-          multiOption: null,
         ),);
 
   void toggle() {

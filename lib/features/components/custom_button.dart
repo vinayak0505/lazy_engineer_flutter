@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/config/theme/app_theme.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
-
-import '../../config/theme/app_theme.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.widget,
     this.overflow,
@@ -16,7 +15,7 @@ class CustomButton extends StatelessWidget {
     this.borderColor,
     this.constraints,
     this.width,
-  }) : super(key: key);
+  });
 
   final void Function() onPressed;
   final TextOverflow? overflow;
@@ -66,7 +65,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(

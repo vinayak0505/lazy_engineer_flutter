@@ -74,8 +74,6 @@ class FileScreen extends StatelessWidget {
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: data.length,
                             itemBuilder: (context, index) => TileView(
-                              // image: practicalFileList[index].link,
-                              image: null,
                               child: FileDataBox(
                                 title: data[index].title ?? '',
                                 college: data[index].college ?? '',

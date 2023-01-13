@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:lazy_engineer/assets/constants/token.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
-import 'package:lazy_engineer/features/auth/data/data_source/local/auth_local_data_source.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/remote/notes_client.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';

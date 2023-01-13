@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../assets/constants/lists.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../navigation/routes.dart';
-import '../../../components/grid_card.dart';
-import '../../../components/staggered_view.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/features/components/grid_card.dart';
+import 'package:lazy_engineer/features/components/staggered_view.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 
 class UploadScreen extends StatelessWidget {
-  const UploadScreen({Key? key}) : super(key: key);
+  const UploadScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(

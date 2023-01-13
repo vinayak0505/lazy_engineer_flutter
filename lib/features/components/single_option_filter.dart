@@ -1,26 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../assets/constants/decoration.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 
 class SingleOptionFilter extends FormField<String> {
   SingleOptionFilter({
-    Key? key,
-    FormFieldSetter<String>? onSaved,
-    FormFieldValidator<String>? validator,
+    super.key,
+    super.onSaved,
+    super.validator,
     required List<String> data,
     TextEditingController? controller,
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
-    TextStyle? style,
-    TextStyle? errorStyle,
+    AutovalidateMode super.autovalidateMode = AutovalidateMode.disabled,
     FocusNode? focusNode,
-    String? title,
   }) : super(
-          key: key,
-          onSaved: onSaved,
-          validator: validator,
           initialValue: controller!.text,
-          autovalidateMode: autovalidateMode,
           builder: (FormFieldState<String> state) {
-            ThemeData theme = Theme.of(state.context);
+            final ThemeData theme = Theme.of(state.context);
             return Container(
               padding: const EdgeInsets.all(8),
               decoration: kRoundedContainer,

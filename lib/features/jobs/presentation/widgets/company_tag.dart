@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../../components/custom_icon.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
 
 class CompanyTag extends StatelessWidget {
   const CompanyTag({
-    Key? key,
+    super.key,
     required this.icon,
     required this.companyName,
     required this.description,
     this.follow = false,
-  }) : super(key: key);
+  });
   final String icon, companyName, description;
   final bool follow;
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return Row(
       children: [
         const SizedBox(width: 8),
@@ -32,9 +32,7 @@ class CompanyTag extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        follow
-            ? Text('+ Follow', style: theme.textTheme.titleMedium)
-            : const SizedBox(),
+        if (follow) Text('+ Follow', style: theme.textTheme.titleMedium) else const SizedBox(),
         const SizedBox(width: 16),
       ],
     );
