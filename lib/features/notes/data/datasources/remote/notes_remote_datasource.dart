@@ -25,11 +25,13 @@ class NotesRemoteDatasource {
         },
       ),
     );
+    //* change
     dio.options.headers.addAll(
       {HeaderKeys.tokenHeaderKey: GetToken.userToken},
     );
     dio.options.connectTimeout = 10000;
     dio.options.receiveTimeout = 10000;
+    //*=======================
     final NotesClient client = NotesClient(
       dio,
       baseUrl: AppConfig.apiBaseUrl,

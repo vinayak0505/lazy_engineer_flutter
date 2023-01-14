@@ -63,12 +63,12 @@ class NotesScreen extends StatelessWidget {
                   'Chapter',
                   'Topic',
                 ],
-                singleOptionFilter: const [
-                  'Smart Sort',
-                  'Popular',
-                  'Top Rated',
-                  'Newest',
-                ],
+                // singleOptionFilter: const [
+                //   'Smart Sort',
+                //   'Popular',
+                //   'Top Rated',
+                //   'Newest',
+                // ],
                 applyFilter: (FilterRequest filterRequest) {
                   context.read<NotesCubit>().applyFilter(filterRequest);
                 },
