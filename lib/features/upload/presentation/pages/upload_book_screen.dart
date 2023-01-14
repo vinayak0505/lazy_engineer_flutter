@@ -146,7 +146,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
       ],
-      onPressed: (cubit) {
+      onPressed: (cubit, image) {
         cubit.uploadBook(
           UploadBookRequest(
             title: titleController.text,
@@ -158,6 +158,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
             bookEdition: int.parse(bookEditionController.text),
             price: int.parse(priceController.text),
           ),
+          image,
         );
       },
     );

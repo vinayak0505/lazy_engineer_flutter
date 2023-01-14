@@ -104,7 +104,7 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
       ],
-      onPressed: (cubit) {
+      onPressed: (cubit, image) {
         cubit.uploadPaper(
           UploadPaperRequest(
             title: titleController.text,
@@ -116,6 +116,7 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
             topic: topicController.text,
             tags: tagsController,
           ),
+          image,
         );
       },
     );

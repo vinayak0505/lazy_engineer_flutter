@@ -19,6 +19,7 @@ _$_UploadBookRequest _$$_UploadBookRequestFromJson(Map<String, dynamic> json) =>
       bookEdition: json['bookEdition'] as int?,
       price: json['price'] as int?,
       file: json['file'],
+      image: json['image'],
     );
 
 Map<String, dynamic> _$$_UploadBookRequestToJson(
@@ -34,4 +35,5 @@ Map<String, dynamic> _$$_UploadBookRequestToJson(
       'bookEdition': instance.bookEdition,
       'price': instance.price,
       'file': instance.file,
+      'image': instance.image,
     };

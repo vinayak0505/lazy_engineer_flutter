@@ -193,7 +193,7 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
       ],
-      onPressed: (cubit) {
+      onPressed: (cubit, image) {
         cubit.uploadJobs(
           UploadJobsRequest(
             title: titleController.text,
@@ -207,6 +207,7 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
             skillsNeeded: skillsController,
             expectedSalary: int.parse(expectedSalaryController.text),
           ),
+          image,
         );
       },
     );

@@ -25,7 +25,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
     required this.title,
     required this.body,
   });
-  final void Function(UploadCubit cubit) onPressed;
+  final void Function(UploadCubit cubit, File image) onPressed;
   final String title;
   final List<Widget> body;
 
@@ -33,7 +33,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
   Widget build(BuildContext context) {
     final formGlobalKey = GlobalKey<FormState>();
     final ThemeData theme = Theme.of(context);
-
+    File? documentImage;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -95,7 +95,12 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                                 ),
                                 documentSuccess: (data) {
                                   if (data.extension == 'pdf') {
-                                    return PdfImage(data);
+                                    return PdfImage(
+                                      data,
+                                      getImage: (image) {
+                                        documentImage = image;
+                                      },
+                                    );
                                   } else {
                                     return CustomImage(
                                       file: openFile(data),
@@ -168,7 +173,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                                 width: 130,
                                 onPressed: () {
                                   if (formGlobalKey.currentState!.validate()) {
-                                    onPressed(cubit);
+                                    onPressed(cubit, documentImage!);
                                   }
                                 },
                               ),
@@ -192,8 +197,9 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
 }
 
 class PdfImage extends StatelessWidget {
-  const PdfImage(this.data, {super.key});
+  const PdfImage(this.data, {super.key, required this.getImage});
   final PlatformFile data;
+  final Function(File image) getImage;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -204,6 +210,7 @@ class PdfImage extends StatelessWidget {
             loading: () => const LoadingScreen(),
             failure: (e) => FailureScreen(e),
             success: (data) {
+              getImage.call(data);
               return CustomImage(
                 file: data,
                 height: 200,

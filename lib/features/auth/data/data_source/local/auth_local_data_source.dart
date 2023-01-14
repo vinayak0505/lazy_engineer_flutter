@@ -28,7 +28,6 @@ class AuthLocalDataSource {
     if (university != null) {
       await prefs?.setString(_universityKey, university);
     }
-    print('=====================$user');
   }
 
   Future<UserModel> getUser() async {

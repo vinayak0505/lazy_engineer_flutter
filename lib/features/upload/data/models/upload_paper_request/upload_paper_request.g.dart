@@ -19,6 +19,7 @@ _$_UploadPaperRequest _$$_UploadPaperRequestFromJson(
       fileLink: json['fileLink'] as String?,
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       file: json['file'],
+      image: json['image'],
     );
 
 Map<String, dynamic> _$$_UploadPaperRequestToJson(
@@ -34,4 +35,5 @@ Map<String, dynamic> _$$_UploadPaperRequestToJson(
       'fileLink': instance.fileLink,
       'tags': instance.tags,
       'file': instance.file,
+      'image': instance.image,
     };

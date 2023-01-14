@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,32 +50,32 @@ class UploadCubit extends Cubit<UploadState> {
   }
 
   /// -------------------NOTES-----------------------
-  void uploadNotes(UploadNotesRequest notesData) {
-    repository.uplaodNotes(notesData.copyWith(file: file));
+  void uploadNotes(UploadNotesRequest notesData, File image) {
+    repository.uplaodNotes(notesData.copyWith(file: file, image: image));
     emit(const UploadState.success());
   }
 
   /// -------------------PAPERS-----------------------
-  void uploadPaper(UploadPaperRequest paperData) {
-    repository.uplaodPaper(paperData.copyWith(file: file));
+  void uploadPaper(UploadPaperRequest paperData, File image) {
+    repository.uplaodPaper(paperData.copyWith(file: file, image: image));
     emit(const UploadState.success());
   }
 
   /// -------------------BOOKS-----------------------
-  void uploadBook(UploadBookRequest bookData) {
-    repository.uplaodBook(bookData.copyWith(file: file));
+  void uploadBook(UploadBookRequest bookData, File image) {
+    repository.uplaodBook(bookData.copyWith(file: file, image: image));
     emit(const UploadState.success());
   }
 
   /// -------------------FILES-----------------------
-  void uploadFile(UploadFilesRequest fileData) {
-    repository.uplaodFiles(fileData.copyWith(file: file));
+  void uploadFile(UploadFilesRequest fileData, File image) {
+    repository.uplaodFiles(fileData.copyWith(file: file, image: image));
     emit(const UploadState.success());
   }
 
   /// -------------------JOBS-----------------------
-  void uploadJobs(UploadJobsRequest jobsData) {
-    repository.uplaodJobs(jobsData.copyWith(file: file));
+  void uploadJobs(UploadJobsRequest jobsData, File image) {
+    repository.uplaodJobs(jobsData.copyWith(file: file, image: image));
     emit(const UploadState.success());
   }
 }

@@ -23,18 +23,27 @@ class CustomTextField extends StatelessWidget {
     this.filled = true,
     this.maxLines = 1,
     this.width,
-    this.focusNode,
+    this.focusNode, this.suffixOnPress,
   });
 
   final TextEditingController controller;
-  final bool autofocus, readOnly, obscureText, showBorder, filled, underline;
-  final TextInputType? keyboardType;
-  final void Function(String value)? onSubitted;
-  final String? hintText, labelText, prefixIcon, suffixIcon;
-  final String? Function(String? value)? validator;
-  final void Function(String? value)? onChange;
+  final bool autofocus;
+  final bool readOnly;
+  final bool obscureText;
+  final bool showBorder;
+  final bool filled;
+  final bool underline;
   final int maxLines;
   final double? width;
+  final String? hintText;
+  final String? labelText;
+  final String? prefixIcon;
+  final String? suffixIcon;
+  final String? Function(String? value)? validator;
+  final TextInputType? keyboardType;
+  final void Function(String value)? onSubitted;
+  final void Function(String? value)? onChange;
+  final void Function()? suffixOnPress;
   final FocusNode? focusNode;
 
   factory CustomTextField.secondary({
@@ -77,63 +86,68 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(builder: (context) {
-      return SizedBox(
-        width: width,
-        child: TextFormField(
-          controller: controller,
-          focusNode: focusNode,
-          obscureText: obscureText,
-          autofocus: autofocus,
-          readOnly: readOnly,
-          keyboardType: TextInputType.text,
-          onFieldSubmitted: onSubitted,
-          validator: validator,
-          maxLines: maxLines,
-          decoration: InputDecoration(
-            hintText: hintText,
-            labelText: labelText,
-            fillColor: Theme.of(context).canvasColor,
-            prefixIcon: prefixIcon != null
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 8,
-                      horizontal: 12,
-                    ),
-                    child: CustomIcon(prefixIcon!),
-                  )
-                : null,
-            suffixIcon: suffixIcon != null
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 8,
-                      horizontal: 12,
-                    ),
-                    child: CustomIcon(suffixIcon!),
-                  )
-                : null,
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            filled: filled,
-            border: underline
-                ? circularBorder(AppThemes.lightDarkColor)
-                : underlineBorder(AppThemes.lightDarkColor),
-            enabledBorder: !underline
-                ? circularBorder(AppThemes.lightDarkColor)
-                : underlineBorder(AppThemes.lightDarkColor),
-            disabledBorder: !underline
-                ? circularBorder(AppThemes.lightDarkColor)
-                : underlineBorder(AppThemes.lightDarkColor),
-            focusedBorder: !underline
-                ? circularBorder(AppThemes.primaryColor1)
-                : underlineBorder(AppThemes.primaryColor1),
-            errorBorder: !underline
-                ? circularBorder(AppThemes.errorColor)
-                : underlineBorder(AppThemes.errorColor),
+    return Builder(
+      builder: (context) {
+        return SizedBox(
+          width: width,
+          child: TextFormField(
+            controller: controller,
+            focusNode: focusNode,
+            obscureText: obscureText,
+            autofocus: autofocus,
+            readOnly: readOnly,
+            keyboardType: TextInputType.text,
+            onFieldSubmitted: onSubitted,
+            validator: validator,
+            maxLines: maxLines,
+            decoration: InputDecoration(
+              hintText: hintText,
+              labelText: labelText,
+              fillColor: Theme.of(context).canvasColor,
+              prefixIcon: prefixIcon != null
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 8,
+                        horizontal: 12,
+                      ),
+                      child: CustomIcon(prefixIcon!),
+                    )
+                  : null,
+              suffixIcon: suffixIcon != null
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 8,
+                        horizontal: 12,
+                      ),
+                      child: InkWell(
+                        onTap: suffixOnPress,
+                        child: CustomIcon(suffixIcon!),
+                      ),
+                    )
+                  : null,
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              filled: filled,
+              border: underline
+                  ? circularBorder(AppThemes.lightDarkColor)
+                  : underlineBorder(AppThemes.lightDarkColor),
+              enabledBorder: !underline
+                  ? circularBorder(AppThemes.lightDarkColor)
+                  : underlineBorder(AppThemes.lightDarkColor),
+              disabledBorder: !underline
+                  ? circularBorder(AppThemes.lightDarkColor)
+                  : underlineBorder(AppThemes.lightDarkColor),
+              focusedBorder: !underline
+                  ? circularBorder(AppThemes.primaryColor1)
+                  : underlineBorder(AppThemes.primaryColor1),
+              errorBorder: !underline
+                  ? circularBorder(AppThemes.errorColor)
+                  : underlineBorder(AppThemes.errorColor),
+            ),
           ),
-        ),
-      );
-    },);
+        );
+      },
+    );
   }
 
   InputBorder circularBorder(Color color) {

@@ -18,6 +18,7 @@ class UploadPaperRequest with _$UploadPaperRequest {
         String? fileLink,
         required List<String> tags,
         dynamic file,
+        dynamic image,
     }) = _UploadPaperRequest;
 
   factory UploadPaperRequest.fromJson(Map<String, dynamic> json) =>
@@ -37,6 +38,7 @@ extension UploadPaperRequestFormData on UploadPaperRequest {
       'fileLink': fileLink,
       'tags': tags,
       'file': file,
+      'image': image,
     });
   }
 }

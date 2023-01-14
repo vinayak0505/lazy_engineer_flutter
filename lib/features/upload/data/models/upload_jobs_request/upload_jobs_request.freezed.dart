@@ -31,6 +31,7 @@ mixin _$UploadJobsRequest {
   List<String> get skillsNeeded => throw _privateConstructorUsedError;
   int? get expectedSalary => throw _privateConstructorUsedError;
   dynamic get file => throw _privateConstructorUsedError;
+  dynamic get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +55,8 @@ abstract class $UploadJobsRequestCopyWith<$Res> {
       String? datePosted,
       List<String> skillsNeeded,
       int? expectedSalary,
-      dynamic file});
+      dynamic file,
+      dynamic image});
 }
 
 /// @nodoc
@@ -79,6 +81,7 @@ class _$UploadJobsRequestCopyWithImpl<$Res>
     Object? skillsNeeded = freezed,
     Object? expectedSalary = freezed,
     Object? file = freezed,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -125,6 +128,10 @@ class _$UploadJobsRequestCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -147,7 +154,8 @@ abstract class _$$_UploadJobsRequestCopyWith<$Res>
       String? datePosted,
       List<String> skillsNeeded,
       int? expectedSalary,
-      dynamic file});
+      dynamic file,
+      dynamic image});
 }
 
 /// @nodoc
@@ -174,6 +182,7 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
     Object? skillsNeeded = freezed,
     Object? expectedSalary = freezed,
     Object? file = freezed,
+    Object? image = freezed,
   }) {
     return _then(_$_UploadJobsRequest(
       title: title == freezed
@@ -220,6 +229,10 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -238,7 +251,8 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
       this.datePosted,
       required final List<String> skillsNeeded,
       this.expectedSalary,
-      this.file})
+      this.file,
+      this.image})
       : _skillsNeeded = skillsNeeded;
 
   factory _$_UploadJobsRequest.fromJson(Map<String, dynamic> json) =>
@@ -271,10 +285,12 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
   final int? expectedSalary;
   @override
   final dynamic file;
+  @override
+  final dynamic image;
 
   @override
   String toString() {
-    return 'UploadJobsRequest(title: $title, profile: $profile, company: $company, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, expectedSalary: $expectedSalary, file: $file)';
+    return 'UploadJobsRequest(title: $title, profile: $profile, company: $company, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, expectedSalary: $expectedSalary, file: $file, image: $image)';
   }
 
   @override
@@ -297,7 +313,8 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
                 .equals(other._skillsNeeded, _skillsNeeded) &&
             const DeepCollectionEquality()
                 .equals(other.expectedSalary, expectedSalary) &&
-            const DeepCollectionEquality().equals(other.file, file));
+            const DeepCollectionEquality().equals(other.file, file) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @JsonKey(ignore: true)
@@ -314,7 +331,8 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
       const DeepCollectionEquality().hash(datePosted),
       const DeepCollectionEquality().hash(_skillsNeeded),
       const DeepCollectionEquality().hash(expectedSalary),
-      const DeepCollectionEquality().hash(file));
+      const DeepCollectionEquality().hash(file),
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -342,7 +360,8 @@ abstract class _UploadJobsRequest implements UploadJobsRequest {
       final String? datePosted,
       required final List<String> skillsNeeded,
       final int? expectedSalary,
-      final dynamic file}) = _$_UploadJobsRequest;
+      final dynamic file,
+      final dynamic image}) = _$_UploadJobsRequest;
 
   factory _UploadJobsRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadJobsRequest.fromJson;
@@ -369,6 +388,8 @@ abstract class _UploadJobsRequest implements UploadJobsRequest {
   int? get expectedSalary;
   @override
   dynamic get file;
+  @override
+  dynamic get image;
   @override
   @JsonKey(ignore: true)
   _$$_UploadJobsRequestCopyWith<_$_UploadJobsRequest> get copyWith =>

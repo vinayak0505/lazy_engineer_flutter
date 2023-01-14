@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
 
@@ -7,9 +8,15 @@ class SearchBar extends StatefulWidget {
     required this.list,
     required this.onSearch,
     super.key,
+    this.isLoading = false,
+    required this.searchController,
+    required this.focusNode,
   });
-  final Widget list;
+  final List<String> list;
+  final bool isLoading;
   final void Function(String data) onSearch;
+  final TextEditingController searchController;
+  final FocusNode focusNode;
   @override
   State<SearchBar> createState() => _SearchBarState();
 }
@@ -19,16 +26,13 @@ class _SearchBarState extends State<SearchBar> with TickerProviderStateMixin {
   late Animation<double> _animation;
 
   static OverlayEntry? entry;
-  late FocusNode focusNode;
-  TextEditingController searchController = TextEditingController();
 
   LayerLink layerLink = LayerLink();
   @override
   void initState() {
-    focusNode = FocusNode();
-    searchController.addListener(() {
-      widget.onSearch(searchController.text);
-    });
+    // searchController.addListener(() {
+    //   widget.onSearch(searchController.text);
+    // });
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
@@ -47,7 +51,6 @@ class _SearchBarState extends State<SearchBar> with TickerProviderStateMixin {
   void dispose() {
     _animationController.dispose();
     removeOverlay();
-    focusNode.dispose();
     super.dispose();
   }
 
@@ -58,10 +61,32 @@ class _SearchBarState extends State<SearchBar> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    Widget list() {
+      print('===============${widget.list}');
+      return ListView.builder(
+        shrinkWrap: true,
+        padding: EdgeInsets.zero,
+        itemCount: widget.list.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            dense: true,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            onTap: () {
+              widget.searchController.text = widget.list[index];
+              widget.focusNode.unfocus();
+            },
+            title: Text(widget.list[index]),
+          );
+        },
+      );
+    }
+
     void showOverlay() {
       if (entry != null) removeOverlay();
       final overlay = Overlay.of(context)!;
-      final renderBox = context.findRenderObject() as RenderBox;
+      final renderBox = context.findRenderObject()! as RenderBox;
       final size = renderBox.size;
       entry ??= OverlayEntry(
         builder: (newContext) => CompositedTransformFollower(
@@ -71,20 +96,33 @@ class _SearchBarState extends State<SearchBar> with TickerProviderStateMixin {
           child: Container(
             margin: const EdgeInsets.only(right: 32),
             alignment: Alignment.topCenter,
-            child: SizeTransition(
-              sizeFactor: _animation,
-              axisAlignment: 1,
-              child: widget.list,
+            // child: SizeTransition(
+            //   sizeFactor: _animation,
+            //   axisAlignment: 1,
+            child: Material(
+              color: Colors.transparent,
+              child: widget.list.isEmpty
+                  ? Container()
+                  : Container(
+                      constraints: const BoxConstraints(maxHeight: 150),
+                      decoration: kRoundedBottomContainer,
+                      child: ClipRRect(
+                        child: widget.isLoading
+                            ? const CircularProgressIndicator()
+                            : list(),
+                      ),
+                    ),
             ),
           ),
         ),
+        // ),
       );
       overlay.insert(entry!);
     }
 
-    focusNode.addListener(() {
-      if (!focusNode.hasPrimaryFocus) focusNode.unfocus();
-      if (focusNode.hasFocus) {
+    widget.focusNode.addListener(() {
+      if (!widget.focusNode.hasPrimaryFocus) widget.focusNode.unfocus();
+      if (widget.focusNode.hasFocus) {
         showOverlay();
         _animationController.forward();
       } else {
@@ -96,10 +134,11 @@ class _SearchBarState extends State<SearchBar> with TickerProviderStateMixin {
     return CompositedTransformTarget(
       link: layerLink,
       child: CustomTextField(
-        controller: searchController,
+        controller: widget.searchController,
         hintText: 'Search groups....',
         suffixIcon: AppIcons.searchIcon,
-        focusNode: focusNode,
+        suffixOnPress: () => widget.onSearch(widget.searchController.text),
+        focusNode: widget.focusNode,
       ),
     );
   }

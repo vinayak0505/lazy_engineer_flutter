@@ -81,7 +81,7 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
       ],
-      onPressed: (cubit) {
+      onPressed: (cubit, image) {
         cubit.uploadFile(
           UploadFilesRequest(
             title: titleController.text,
@@ -91,6 +91,7 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
             semester: semesterController.text,
             tags: tagsController,
           ),
+          image,
         );
       },
     );

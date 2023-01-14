@@ -17,6 +17,7 @@ class UploadBookRequest with _$UploadBookRequest {
     int? bookEdition,
     int? price,
     dynamic file,
+    dynamic image,
   }) = _UploadBookRequest;
 
   factory UploadBookRequest.fromJson(Map<String, dynamic> json) =>
@@ -36,6 +37,7 @@ extension UploadBookRequestFormData on UploadBookRequest {
       'bookEdition': bookEdition,
       'price': price,
       'file': file,
+      'image': image,
     });
   }
 }

@@ -30,6 +30,7 @@ mixin _$UploadPaperRequest {
   String? get fileLink => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
   dynamic get file => throw _privateConstructorUsedError;
+  dynamic get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +53,8 @@ abstract class $UploadPaperRequestCopyWith<$Res> {
       String? topic,
       String? fileLink,
       List<String> tags,
-      dynamic file});
+      dynamic file,
+      dynamic image});
 }
 
 /// @nodoc
@@ -76,6 +78,7 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
     Object? fileLink = freezed,
     Object? tags = freezed,
     Object? file = freezed,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -118,6 +121,10 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -139,7 +146,8 @@ abstract class _$$_UploadPaperRequestCopyWith<$Res>
       String? topic,
       String? fileLink,
       List<String> tags,
-      dynamic file});
+      dynamic file,
+      dynamic image});
 }
 
 /// @nodoc
@@ -165,6 +173,7 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
     Object? fileLink = freezed,
     Object? tags = freezed,
     Object? file = freezed,
+    Object? image = freezed,
   }) {
     return _then(_$_UploadPaperRequest(
       title: title == freezed
@@ -207,6 +216,10 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -224,7 +237,8 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
       this.topic,
       this.fileLink,
       required final List<String> tags,
-      this.file})
+      this.file,
+      this.image})
       : _tags = tags;
 
   factory _$_UploadPaperRequest.fromJson(Map<String, dynamic> json) =>
@@ -255,10 +269,12 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
 
   @override
   final dynamic file;
+  @override
+  final dynamic image;
 
   @override
   String toString() {
-    return 'UploadPaperRequest(title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, fileLink: $fileLink, tags: $tags, file: $file)';
+    return 'UploadPaperRequest(title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, fileLink: $fileLink, tags: $tags, file: $file, image: $image)';
   }
 
   @override
@@ -275,7 +291,8 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
             const DeepCollectionEquality().equals(other.topic, topic) &&
             const DeepCollectionEquality().equals(other.fileLink, fileLink) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.file, file));
+            const DeepCollectionEquality().equals(other.file, file) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @JsonKey(ignore: true)
@@ -291,7 +308,8 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
       const DeepCollectionEquality().hash(topic),
       const DeepCollectionEquality().hash(fileLink),
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(file));
+      const DeepCollectionEquality().hash(file),
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -318,7 +336,8 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
       final String? topic,
       final String? fileLink,
       required final List<String> tags,
-      final dynamic file}) = _$_UploadPaperRequest;
+      final dynamic file,
+      final dynamic image}) = _$_UploadPaperRequest;
 
   factory _UploadPaperRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadPaperRequest.fromJson;
@@ -343,6 +362,8 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
   List<String> get tags;
   @override
   dynamic get file;
+  @override
+  dynamic get image;
   @override
   @JsonKey(ignore: true)
   _$$_UploadPaperRequestCopyWith<_$_UploadPaperRequest> get copyWith =>

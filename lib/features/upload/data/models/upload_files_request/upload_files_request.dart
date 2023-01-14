@@ -13,6 +13,7 @@ class UploadFilesRequest with _$UploadFilesRequest {
     String? college,
     String? semester,
     dynamic file,
+    dynamic image,
     required List<String> tags,
   }) = _UploadFilesRequest;
 
@@ -29,6 +30,7 @@ extension UploadFilesRequestFormData on UploadFilesRequest {
       'college': college,
       'semester': semester,
       'file': file,
+      'image': image,
       'tags': tags,
     });
   }

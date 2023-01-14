@@ -8,8 +8,10 @@ import 'package:lazy_engineer/features/components/search_bar.dart';
 import 'package:lazy_engineer/features/components/staggered_view.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/home_screen_widget.dart';
 import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
 import 'package:lazy_engineer/features/notes/data/repositories/notes_repository_impl.dart';
 import 'package:lazy_engineer/features/notes/presentation/cubit/notes_cubit/notes_cubit.dart';
+import 'package:lazy_engineer/features/notes/presentation/cubit/search_notes/search_notes_bloc.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
 
 class NotesScreen extends StatelessWidget {
@@ -18,6 +20,7 @@ class NotesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final searchController = TextEditingController();
+    final FocusNode focusNode = FocusNode();
     return BlocProvider(
       create: (context) => NotesCubit(NotesRepositoryImpl()),
       child: BlocBuilder<NotesCubit, NotesState>(
@@ -28,7 +31,23 @@ class NotesScreen extends StatelessWidget {
             success: (data) {
               return HomeScreenWidget(
                 [
-                  SearchBar(list: Container(), onSearch: (_){}),
+                  BlocProvider(
+                    create: (context) => SearchNotesBloc(data),
+                    child: BlocBuilder<SearchNotesBloc, List<NoteDetail>>(
+                      builder: (context, searchState) {
+                        final cubit = context.read<SearchNotesBloc>();
+                        return SearchBar(
+                          key: ValueKey(searchController.text),
+                          focusNode: focusNode,
+                          searchController: searchController,
+                          list: searchState.map((e) => e.title!).toList(),
+                          onSearch: (search) => cubit.add(
+                            SearchNotesEvent(search),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
                   const SizedBox(height: 16),
                   StaggeredView(
                     data.map((element) {

@@ -21,6 +21,7 @@ _$_UploadJobsRequest _$$_UploadJobsRequestFromJson(Map<String, dynamic> json) =>
           .toList(),
       expectedSalary: json['expectedSalary'] as int?,
       file: json['file'],
+      image: json['image'],
     );
 
 Map<String, dynamic> _$$_UploadJobsRequestToJson(
@@ -37,4 +38,5 @@ Map<String, dynamic> _$$_UploadJobsRequestToJson(
       'skillsNeeded': instance.skillsNeeded,
       'expectedSalary': instance.expectedSalary,
       'file': instance.file,
+      'image': instance.image,
     };

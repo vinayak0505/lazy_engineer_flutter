@@ -24,6 +24,7 @@ mixin _$UploadNotesRequest {
   String? get about => throw _privateConstructorUsedError;
   String get semester => throw _privateConstructorUsedError;
   dynamic get file => throw _privateConstructorUsedError;
+  dynamic get image => throw _privateConstructorUsedError;
   List<String>? get tags => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   String? get unit => throw _privateConstructorUsedError;
@@ -46,6 +47,7 @@ abstract class $UploadNotesRequestCopyWith<$Res> {
       String? about,
       String semester,
       dynamic file,
+      dynamic image,
       List<String>? tags,
       String? subject,
       String? unit,
@@ -68,6 +70,7 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
     Object? about = freezed,
     Object? semester = freezed,
     Object? file = freezed,
+    Object? image = freezed,
     Object? tags = freezed,
     Object? subject = freezed,
     Object? unit = freezed,
@@ -90,6 +93,10 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
       file: file == freezed
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
       tags: tags == freezed
           ? _value.tags
@@ -127,6 +134,7 @@ abstract class _$$_UploadNotesRequestCopyWith<$Res>
       String? about,
       String semester,
       dynamic file,
+      dynamic image,
       List<String>? tags,
       String? subject,
       String? unit,
@@ -151,6 +159,7 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
     Object? about = freezed,
     Object? semester = freezed,
     Object? file = freezed,
+    Object? image = freezed,
     Object? tags = freezed,
     Object? subject = freezed,
     Object? unit = freezed,
@@ -173,6 +182,10 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
       file: file == freezed
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
       tags: tags == freezed
           ? _value._tags
@@ -206,6 +219,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
       required this.about,
       required this.semester,
       this.file,
+      this.image,
       final List<String>? tags,
       this.subject,
       this.unit,
@@ -224,6 +238,8 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
   final String semester;
   @override
   final dynamic file;
+  @override
+  final dynamic image;
   final List<String>? _tags;
   @override
   List<String>? get tags {
@@ -244,7 +260,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
 
   @override
   String toString() {
-    return 'UploadNotesRequest(title: $title, about: $about, semester: $semester, file: $file, tags: $tags, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic)';
+    return 'UploadNotesRequest(title: $title, about: $about, semester: $semester, file: $file, image: $image, tags: $tags, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic)';
   }
 
   @override
@@ -256,6 +272,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
             const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.file, file) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.unit, unit) &&
@@ -271,6 +288,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
       const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(file),
+      const DeepCollectionEquality().hash(image),
       const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(unit),
@@ -297,6 +315,7 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
       required final String? about,
       required final String semester,
       final dynamic file,
+      final dynamic image,
       final List<String>? tags,
       final String? subject,
       final String? unit,
@@ -314,6 +333,8 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
   String get semester;
   @override
   dynamic get file;
+  @override
+  dynamic get image;
   @override
   List<String>? get tags;
   @override

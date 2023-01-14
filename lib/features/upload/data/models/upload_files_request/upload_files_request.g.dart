@@ -15,6 +15,7 @@ _$_UploadFilesRequest _$$_UploadFilesRequestFromJson(
       college: json['college'] as String?,
       semester: json['semester'] as String?,
       file: json['file'],
+      image: json['image'],
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
@@ -27,5 +28,6 @@ Map<String, dynamic> _$$_UploadFilesRequestToJson(
       'college': instance.college,
       'semester': instance.semester,
       'file': instance.file,
+      'image': instance.image,
       'tags': instance.tags,
     };

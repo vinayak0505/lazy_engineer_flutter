@@ -110,7 +110,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
       ],
-      onPressed: (cubit) {
+      onPressed: (cubit, image) {
         cubit.uploadNotes(
           UploadNotesRequest(
             title: titleController.text,
@@ -122,6 +122,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
             topic: topicController.text,
             tags: tagsController,
           ),
+          image,
         );
       },
     );

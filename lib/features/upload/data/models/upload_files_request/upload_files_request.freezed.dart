@@ -26,6 +26,7 @@ mixin _$UploadFilesRequest {
   String? get college => throw _privateConstructorUsedError;
   String? get semester => throw _privateConstructorUsedError;
   dynamic get file => throw _privateConstructorUsedError;
+  dynamic get image => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,6 +47,7 @@ abstract class $UploadFilesRequestCopyWith<$Res> {
       String? college,
       String? semester,
       dynamic file,
+      dynamic image,
       List<String> tags});
 }
 
@@ -66,6 +68,7 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
     Object? college = freezed,
     Object? semester = freezed,
     Object? file = freezed,
+    Object? image = freezed,
     Object? tags = freezed,
   }) {
     return _then(_value.copyWith(
@@ -93,6 +96,10 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       tags: tags == freezed
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -115,6 +122,7 @@ abstract class _$$_UploadFilesRequestCopyWith<$Res>
       String? college,
       String? semester,
       dynamic file,
+      dynamic image,
       List<String> tags});
 }
 
@@ -137,6 +145,7 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
     Object? college = freezed,
     Object? semester = freezed,
     Object? file = freezed,
+    Object? image = freezed,
     Object? tags = freezed,
   }) {
     return _then(_$_UploadFilesRequest(
@@ -164,6 +173,10 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       tags: tags == freezed
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -182,6 +195,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
       this.college,
       this.semester,
       this.file,
+      this.image,
       required final List<String> tags})
       : _tags = tags;
 
@@ -200,6 +214,8 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
   final String? semester;
   @override
   final dynamic file;
+  @override
+  final dynamic image;
   final List<String> _tags;
   @override
   List<String> get tags {
@@ -209,7 +225,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
 
   @override
   String toString() {
-    return 'UploadFilesRequest(title: $title, about: $about, subject: $subject, college: $college, semester: $semester, file: $file, tags: $tags)';
+    return 'UploadFilesRequest(title: $title, about: $about, subject: $subject, college: $college, semester: $semester, file: $file, image: $image, tags: $tags)';
   }
 
   @override
@@ -223,6 +239,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
             const DeepCollectionEquality().equals(other.college, college) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.file, file) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
@@ -236,6 +253,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
       const DeepCollectionEquality().hash(college),
       const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(file),
+      const DeepCollectionEquality().hash(image),
       const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
@@ -260,6 +278,7 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
       final String? college,
       final String? semester,
       final dynamic file,
+      final dynamic image,
       required final List<String> tags}) = _$_UploadFilesRequest;
 
   factory _UploadFilesRequest.fromJson(Map<String, dynamic> json) =
@@ -277,6 +296,8 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
   String? get semester;
   @override
   dynamic get file;
+  @override
+  dynamic get image;
   @override
   List<String> get tags;
   @override

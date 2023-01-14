@@ -30,6 +30,7 @@ mixin _$UploadBookRequest {
   int? get bookEdition => throw _privateConstructorUsedError;
   int? get price => throw _privateConstructorUsedError;
   dynamic get file => throw _privateConstructorUsedError;
+  dynamic get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +53,8 @@ abstract class $UploadBookRequestCopyWith<$Res> {
       int? pages,
       int? bookEdition,
       int? price,
-      dynamic file});
+      dynamic file,
+      dynamic image});
 }
 
 /// @nodoc
@@ -76,6 +78,7 @@ class _$UploadBookRequestCopyWithImpl<$Res>
     Object? bookEdition = freezed,
     Object? price = freezed,
     Object? file = freezed,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -118,6 +121,10 @@ class _$UploadBookRequestCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -139,7 +146,8 @@ abstract class _$$_UploadBookRequestCopyWith<$Res>
       int? pages,
       int? bookEdition,
       int? price,
-      dynamic file});
+      dynamic file,
+      dynamic image});
 }
 
 /// @nodoc
@@ -165,6 +173,7 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
     Object? bookEdition = freezed,
     Object? price = freezed,
     Object? file = freezed,
+    Object? image = freezed,
   }) {
     return _then(_$_UploadBookRequest(
       title: title == freezed
@@ -207,6 +216,10 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -224,7 +237,8 @@ class _$_UploadBookRequest implements _UploadBookRequest {
       this.pages,
       this.bookEdition,
       this.price,
-      this.file})
+      this.file,
+      this.image})
       : _tags = tags,
         _writer = writer;
 
@@ -261,10 +275,12 @@ class _$_UploadBookRequest implements _UploadBookRequest {
   final int? price;
   @override
   final dynamic file;
+  @override
+  final dynamic image;
 
   @override
   String toString() {
-    return 'UploadBookRequest(title: $title, about: $about, semester: $semester, fileLink: $fileLink, tags: $tags, writer: $writer, pages: $pages, bookEdition: $bookEdition, price: $price, file: $file)';
+    return 'UploadBookRequest(title: $title, about: $about, semester: $semester, fileLink: $fileLink, tags: $tags, writer: $writer, pages: $pages, bookEdition: $bookEdition, price: $price, file: $file, image: $image)';
   }
 
   @override
@@ -282,7 +298,8 @@ class _$_UploadBookRequest implements _UploadBookRequest {
             const DeepCollectionEquality()
                 .equals(other.bookEdition, bookEdition) &&
             const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality().equals(other.file, file));
+            const DeepCollectionEquality().equals(other.file, file) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @JsonKey(ignore: true)
@@ -298,7 +315,8 @@ class _$_UploadBookRequest implements _UploadBookRequest {
       const DeepCollectionEquality().hash(pages),
       const DeepCollectionEquality().hash(bookEdition),
       const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(file));
+      const DeepCollectionEquality().hash(file),
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -325,7 +343,8 @@ abstract class _UploadBookRequest implements UploadBookRequest {
       final int? pages,
       final int? bookEdition,
       final int? price,
-      final dynamic file}) = _$_UploadBookRequest;
+      final dynamic file,
+      final dynamic image}) = _$_UploadBookRequest;
 
   factory _UploadBookRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadBookRequest.fromJson;
@@ -350,6 +369,8 @@ abstract class _UploadBookRequest implements UploadBookRequest {
   int? get price;
   @override
   dynamic get file;
+  @override
+  dynamic get image;
   @override
   @JsonKey(ignore: true)
   _$$_UploadBookRequestCopyWith<_$_UploadBookRequest> get copyWith =>

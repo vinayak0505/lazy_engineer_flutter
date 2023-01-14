@@ -18,6 +18,7 @@ class UploadJobsRequest with _$UploadJobsRequest {
         required List<String> skillsNeeded,
         int? expectedSalary,
         dynamic file,
+        dynamic image,
     }) = _UploadJobsRequest;
 
     factory UploadJobsRequest.fromJson(Map<String, dynamic> json) => _$UploadJobsRequestFromJson(json);
@@ -37,6 +38,7 @@ extension UploadJobsRequestFormData on UploadJobsRequest {
       'skillsNeeded': skillsNeeded,
       'expectedSalary': expectedSalary,
       'file': file,
+      'image': image,
     });
   }
 }
