@@ -226,6 +226,9 @@ mixin _$FileDetail {
   String? get college => throw _privateConstructorUsedError;
   String? get semester => throw _privateConstructorUsedError;
   String? get mediaLink => throw _privateConstructorUsedError;
+  String? get imageLink => throw _privateConstructorUsedError;
+  int? get like => throw _privateConstructorUsedError;
+  int? get dislike => throw _privateConstructorUsedError;
   List<String>? get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -247,6 +250,9 @@ abstract class $FileDetailCopyWith<$Res> {
       String? college,
       String? semester,
       String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike,
       List<String>? tags});
 }
 
@@ -267,6 +273,9 @@ class _$FileDetailCopyWithImpl<$Res> implements $FileDetailCopyWith<$Res> {
     Object? college = freezed,
     Object? semester = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
     Object? tags = freezed,
   }) {
     return _then(_value.copyWith(
@@ -298,6 +307,18 @@ class _$FileDetailCopyWithImpl<$Res> implements $FileDetailCopyWith<$Res> {
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink: imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like: like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike: dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
       tags: tags == freezed
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -321,6 +342,9 @@ abstract class _$$_FileDetailCopyWith<$Res>
       String? college,
       String? semester,
       String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike,
       List<String>? tags});
 }
 
@@ -343,6 +367,9 @@ class __$$_FileDetailCopyWithImpl<$Res> extends _$FileDetailCopyWithImpl<$Res>
     Object? college = freezed,
     Object? semester = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
     Object? tags = freezed,
   }) {
     return _then(_$_FileDetail(
@@ -374,6 +401,18 @@ class __$$_FileDetailCopyWithImpl<$Res> extends _$FileDetailCopyWithImpl<$Res>
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
       tags == freezed
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -385,8 +424,18 @@ class __$$_FileDetailCopyWithImpl<$Res> extends _$FileDetailCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_FileDetail implements _FileDetail {
-  const _$_FileDetail(this.userId, this.title, this.about, this.subject,
-      this.college, this.semester, this.mediaLink, final List<String>? tags)
+  const _$_FileDetail(
+      this.userId,
+      this.title,
+      this.about,
+      this.subject,
+      this.college,
+      this.semester,
+      this.mediaLink,
+      this.imageLink,
+      this.like,
+      this.dislike,
+      final List<String>? tags)
       : _tags = tags;
 
   factory _$_FileDetail.fromJson(Map<String, dynamic> json) =>
@@ -406,6 +455,12 @@ class _$_FileDetail implements _FileDetail {
   final String? semester;
   @override
   final String? mediaLink;
+  @override
+  final String? imageLink;
+  @override
+  final int? like;
+  @override
+  final int? dislike;
   final List<String>? _tags;
   @override
   List<String>? get tags {
@@ -417,7 +472,7 @@ class _$_FileDetail implements _FileDetail {
 
   @override
   String toString() {
-    return 'FileDetail(userId: $userId, title: $title, about: $about, subject: $subject, college: $college, semester: $semester, mediaLink: $mediaLink, tags: $tags)';
+    return 'FileDetail(userId: $userId, title: $title, about: $about, subject: $subject, college: $college, semester: $semester, mediaLink: $mediaLink, imageLink: $imageLink, like: $like, dislike: $dislike, tags: $tags)';
   }
 
   @override
@@ -432,6 +487,9 @@ class _$_FileDetail implements _FileDetail {
             const DeepCollectionEquality().equals(other.college, college) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
             const DeepCollectionEquality().equals(other.mediaLink, mediaLink) &&
+            const DeepCollectionEquality().equals(other.imageLink, imageLink) &&
+            const DeepCollectionEquality().equals(other.like, like) &&
+            const DeepCollectionEquality().equals(other.dislike, dislike) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
@@ -446,6 +504,9 @@ class _$_FileDetail implements _FileDetail {
       const DeepCollectionEquality().hash(college),
       const DeepCollectionEquality().hash(semester),
       const DeepCollectionEquality().hash(mediaLink),
+      const DeepCollectionEquality().hash(imageLink),
+      const DeepCollectionEquality().hash(like),
+      const DeepCollectionEquality().hash(dislike),
       const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
@@ -470,6 +531,9 @@ abstract class _FileDetail implements FileDetail {
       final String? college,
       final String? semester,
       final String? mediaLink,
+      final String? imageLink,
+      final int? like,
+      final int? dislike,
       final List<String>? tags) = _$_FileDetail;
 
   factory _FileDetail.fromJson(Map<String, dynamic> json) =
@@ -489,6 +553,12 @@ abstract class _FileDetail implements FileDetail {
   String? get semester;
   @override
   String? get mediaLink;
+  @override
+  String? get imageLink;
+  @override
+  int? get like;
+  @override
+  int? get dislike;
   @override
   List<String>? get tags;
   @override

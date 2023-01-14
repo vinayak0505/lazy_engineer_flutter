@@ -29,6 +29,9 @@ class NoteDetail with _$NoteDetail {
     String? topic,
     List<String>? tags,
     String? mediaLink,
+    String? imageLink,
+    int? like,
+    int? dislike,
   ) = _NoteDetail;
 
   factory NoteDetail.fromJson(Map<String, dynamic> json) =>

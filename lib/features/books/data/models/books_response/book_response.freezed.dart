@@ -226,7 +226,13 @@ mixin _$BookDetail {
   String? get fileLink => throw _privateConstructorUsedError;
   List<String>? get tags => throw _privateConstructorUsedError;
   List<String>? get writer => throw _privateConstructorUsedError;
+  int? get pages => throw _privateConstructorUsedError;
+  int? get bookEdition => throw _privateConstructorUsedError;
+  int? get price => throw _privateConstructorUsedError;
   String? get mediaLink => throw _privateConstructorUsedError;
+  String? get imageLink => throw _privateConstructorUsedError;
+  int? get like => throw _privateConstructorUsedError;
+  int? get dislike => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -247,7 +253,13 @@ abstract class $BookDetailCopyWith<$Res> {
       String? fileLink,
       List<String>? tags,
       List<String>? writer,
-      String? mediaLink});
+      int? pages,
+      int? bookEdition,
+      int? price,
+      String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike});
 }
 
 /// @nodoc
@@ -267,7 +279,13 @@ class _$BookDetailCopyWithImpl<$Res> implements $BookDetailCopyWith<$Res> {
     Object? fileLink = freezed,
     Object? tags = freezed,
     Object? writer = freezed,
+    Object? pages = freezed,
+    Object? bookEdition = freezed,
+    Object? price = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed
@@ -298,10 +316,34 @@ class _$BookDetailCopyWithImpl<$Res> implements $BookDetailCopyWith<$Res> {
           ? _value.writer
           : writer // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      pages: pages == freezed
+          ? _value.pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as int?,
+      bookEdition: bookEdition == freezed
+          ? _value.bookEdition
+          : bookEdition // ignore: cast_nullable_to_non_nullable
+              as int?,
+      price: price == freezed
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int?,
       mediaLink: mediaLink == freezed
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink: imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like: like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike: dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -321,7 +363,13 @@ abstract class _$$_BookDetailCopyWith<$Res>
       String? fileLink,
       List<String>? tags,
       List<String>? writer,
-      String? mediaLink});
+      int? pages,
+      int? bookEdition,
+      int? price,
+      String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike});
 }
 
 /// @nodoc
@@ -343,7 +391,13 @@ class __$$_BookDetailCopyWithImpl<$Res> extends _$BookDetailCopyWithImpl<$Res>
     Object? fileLink = freezed,
     Object? tags = freezed,
     Object? writer = freezed,
+    Object? pages = freezed,
+    Object? bookEdition = freezed,
+    Object? price = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
   }) {
     return _then(_$_BookDetail(
       userId == freezed
@@ -374,10 +428,34 @@ class __$$_BookDetailCopyWithImpl<$Res> extends _$BookDetailCopyWithImpl<$Res>
           ? _value._writer
           : writer // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      pages == freezed
+          ? _value.pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as int?,
+      bookEdition == freezed
+          ? _value.bookEdition
+          : bookEdition // ignore: cast_nullable_to_non_nullable
+              as int?,
+      price == freezed
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as int?,
       mediaLink == freezed
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -393,7 +471,13 @@ class _$_BookDetail implements _BookDetail {
       this.fileLink,
       final List<String>? tags,
       final List<String>? writer,
-      this.mediaLink)
+      this.pages,
+      this.bookEdition,
+      this.price,
+      this.mediaLink,
+      this.imageLink,
+      this.like,
+      this.dislike)
       : _tags = tags,
         _writer = writer;
 
@@ -429,11 +513,23 @@ class _$_BookDetail implements _BookDetail {
   }
 
   @override
+  final int? pages;
+  @override
+  final int? bookEdition;
+  @override
+  final int? price;
+  @override
   final String? mediaLink;
+  @override
+  final String? imageLink;
+  @override
+  final int? like;
+  @override
+  final int? dislike;
 
   @override
   String toString() {
-    return 'BookDetail(userId: $userId, title: $title, about: $about, semester: $semester, fileLink: $fileLink, tags: $tags, writer: $writer, mediaLink: $mediaLink)';
+    return 'BookDetail(userId: $userId, title: $title, about: $about, semester: $semester, fileLink: $fileLink, tags: $tags, writer: $writer, pages: $pages, bookEdition: $bookEdition, price: $price, mediaLink: $mediaLink, imageLink: $imageLink, like: $like, dislike: $dislike)';
   }
 
   @override
@@ -448,7 +544,14 @@ class _$_BookDetail implements _BookDetail {
             const DeepCollectionEquality().equals(other.fileLink, fileLink) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other._writer, _writer) &&
-            const DeepCollectionEquality().equals(other.mediaLink, mediaLink));
+            const DeepCollectionEquality().equals(other.pages, pages) &&
+            const DeepCollectionEquality()
+                .equals(other.bookEdition, bookEdition) &&
+            const DeepCollectionEquality().equals(other.price, price) &&
+            const DeepCollectionEquality().equals(other.mediaLink, mediaLink) &&
+            const DeepCollectionEquality().equals(other.imageLink, imageLink) &&
+            const DeepCollectionEquality().equals(other.like, like) &&
+            const DeepCollectionEquality().equals(other.dislike, dislike));
   }
 
   @JsonKey(ignore: true)
@@ -462,7 +565,13 @@ class _$_BookDetail implements _BookDetail {
       const DeepCollectionEquality().hash(fileLink),
       const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(_writer),
-      const DeepCollectionEquality().hash(mediaLink));
+      const DeepCollectionEquality().hash(pages),
+      const DeepCollectionEquality().hash(bookEdition),
+      const DeepCollectionEquality().hash(price),
+      const DeepCollectionEquality().hash(mediaLink),
+      const DeepCollectionEquality().hash(imageLink),
+      const DeepCollectionEquality().hash(like),
+      const DeepCollectionEquality().hash(dislike));
 
   @JsonKey(ignore: true)
   @override
@@ -486,7 +595,13 @@ abstract class _BookDetail implements BookDetail {
       final String? fileLink,
       final List<String>? tags,
       final List<String>? writer,
-      final String? mediaLink) = _$_BookDetail;
+      final int? pages,
+      final int? bookEdition,
+      final int? price,
+      final String? mediaLink,
+      final String? imageLink,
+      final int? like,
+      final int? dislike) = _$_BookDetail;
 
   factory _BookDetail.fromJson(Map<String, dynamic> json) =
       _$_BookDetail.fromJson;
@@ -506,7 +621,19 @@ abstract class _BookDetail implements BookDetail {
   @override
   List<String>? get writer;
   @override
+  int? get pages;
+  @override
+  int? get bookEdition;
+  @override
+  int? get price;
+  @override
   String? get mediaLink;
+  @override
+  String? get imageLink;
+  @override
+  int? get like;
+  @override
+  int? get dislike;
   @override
   @JsonKey(ignore: true)
   _$$_BookDetailCopyWith<_$_BookDetail> get copyWith =>

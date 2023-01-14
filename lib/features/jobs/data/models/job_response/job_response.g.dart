@@ -39,6 +39,9 @@ _$_JobDetail _$$_JobDetailFromJson(Map<String, dynamic> json) => _$_JobDetail(
           .toList(),
       json['expectedSalary'] as int?,
       json['mediaLink'] as String?,
+      json['imageLink'] as String?,
+      json['like'] as int?,
+      json['dislike'] as int?,
     );
 
 Map<String, dynamic> _$$_JobDetailToJson(_$_JobDetail instance) =>
@@ -55,4 +58,7 @@ Map<String, dynamic> _$$_JobDetailToJson(_$_JobDetail instance) =>
       'skillsNeeded': instance.skillsNeeded,
       'expectedSalary': instance.expectedSalary,
       'mediaLink': instance.mediaLink,
+      'imageLink': instance.imageLink,
+      'like': instance.like,
+      'dislike': instance.dislike,
     };

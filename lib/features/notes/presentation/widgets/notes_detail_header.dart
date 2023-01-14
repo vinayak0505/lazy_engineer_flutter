@@ -15,21 +15,21 @@ class NotesDetailHeader extends StatelessWidget {
     required this.title,
     required this.userId,
     this.subject,
-    required this.link,
+    required this.fileLink, this.imageLink,
   });
   final String title;
   final String userId;
   final String? subject;
-  final String link;
+  final String fileLink;
+  final String? imageLink;
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    final String? linkString = link != '' ? link : null;
     return Padding(
       padding: const EdgeInsets.all(8),
       child: BlocProvider(
         create: (context) =>
-            NotesDetailCubit(NotesRepositoryImpl(), userId, link),
+            NotesDetailCubit(NotesRepositoryImpl(), userId, fileLink),
         child: BlocBuilder<NotesDetailCubit, NotesDetailState>(
           builder: (context, state) {
             final read = context.read<NotesDetailCubit>();
@@ -38,7 +38,7 @@ class NotesDetailHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomImage(
-                  networkImage: linkString,
+                  networkImage: imageLink != '' ? fileLink : null,
                   radius: kRoundedRectangleRadius,
                   width: 130,
                   height: 180,
@@ -118,7 +118,7 @@ class NotesDetailHeader extends StatelessWidget {
                       Center(
                         child: CustomButton(
                           text: download,
-                          onPressed: () => read.download(link),
+                          onPressed: () => read.download(fileLink),
                           width: 120,
                         ),
                       ),

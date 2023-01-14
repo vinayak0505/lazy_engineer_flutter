@@ -33,6 +33,9 @@ _$_FileDetail _$$_FileDetailFromJson(Map<String, dynamic> json) =>
       json['college'] as String?,
       json['semester'] as String?,
       json['mediaLink'] as String?,
+      json['imageLink'] as String?,
+      json['like'] as int?,
+      json['dislike'] as int?,
       (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
@@ -45,5 +48,8 @@ Map<String, dynamic> _$$_FileDetailToJson(_$_FileDetail instance) =>
       'college': instance.college,
       'semester': instance.semester,
       'mediaLink': instance.mediaLink,
+      'imageLink': instance.imageLink,
+      'like': instance.like,
+      'dislike': instance.dislike,
       'tags': instance.tags,
     };

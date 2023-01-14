@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
 import 'package:lazy_engineer/features/components/custom_icon.dart';
+import 'package:lazy_engineer/features/components/custom_image.dart';
 
 class CompanyTag extends StatelessWidget {
   const CompanyTag({
     super.key,
-    required this.icon,
+    this.icon,
     required this.companyName,
     required this.description,
     this.follow = false,
   });
-  final String icon, companyName, description;
+  final String? icon;
+  final String companyName;
+  final String description;
   final bool follow;
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class CompanyTag extends StatelessWidget {
     return Row(
       children: [
         const SizedBox(width: 8),
-        CustomIcon(icon, height: 54, width: 54),
+        CustomImage(networkImage: icon, height: 54, width: 54),
         const SizedBox(width: 12),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -36,6 +36,9 @@ _$_NoteDetail _$$_NoteDetailFromJson(Map<String, dynamic> json) =>
       json['topic'] as String?,
       (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
       json['mediaLink'] as String?,
+      json['imageLink'] as String?,
+      json['like'] as int?,
+      json['dislike'] as int?,
     );
 
 Map<String, dynamic> _$$_NoteDetailToJson(_$_NoteDetail instance) =>
@@ -50,4 +53,7 @@ Map<String, dynamic> _$$_NoteDetailToJson(_$_NoteDetail instance) =>
       'topic': instance.topic,
       'tags': instance.tags,
       'mediaLink': instance.mediaLink,
+      'imageLink': instance.imageLink,
+      'like': instance.like,
+      'dislike': instance.dislike,
     };

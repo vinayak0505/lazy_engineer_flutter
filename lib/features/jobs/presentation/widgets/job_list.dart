@@ -16,7 +16,7 @@ class JobList extends StatelessWidget {
       itemBuilder: (context, index) {
         final jobData = data[index];
         return TileView(
-          // image: jobList[index].image,
+          image: data[index].imageLink,
           fit: BoxFit.contain,
           height: 100,
           width: 70,

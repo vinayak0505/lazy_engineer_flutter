@@ -36,7 +36,8 @@ class NotesDetailScreen extends StatelessWidget {
                   title: data.title ?? '',
                   userId: data.userId ?? '',
                   subject: data.subject,
-                  link: data.mediaLink ?? '',
+                  fileLink: data.mediaLink ?? '',
+                  imageLink: data.imageLink ?? '',
                 ),
                 const SizedBox(height: 16),
                 Text(

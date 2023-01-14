@@ -229,6 +229,9 @@ mixin _$NoteDetail {
   String? get topic => throw _privateConstructorUsedError;
   List<String>? get tags => throw _privateConstructorUsedError;
   String? get mediaLink => throw _privateConstructorUsedError;
+  String? get imageLink => throw _privateConstructorUsedError;
+  int? get like => throw _privateConstructorUsedError;
+  int? get dislike => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -251,7 +254,10 @@ abstract class $NoteDetailCopyWith<$Res> {
       String? chapter,
       String? topic,
       List<String>? tags,
-      String? mediaLink});
+      String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike});
 }
 
 /// @nodoc
@@ -274,6 +280,9 @@ class _$NoteDetailCopyWithImpl<$Res> implements $NoteDetailCopyWith<$Res> {
     Object? topic = freezed,
     Object? tags = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed
@@ -316,6 +325,18 @@ class _$NoteDetailCopyWithImpl<$Res> implements $NoteDetailCopyWith<$Res> {
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink: imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like: like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike: dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -337,7 +358,10 @@ abstract class _$$_NoteDetailCopyWith<$Res>
       String? chapter,
       String? topic,
       List<String>? tags,
-      String? mediaLink});
+      String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike});
 }
 
 /// @nodoc
@@ -362,6 +386,9 @@ class __$$_NoteDetailCopyWithImpl<$Res> extends _$NoteDetailCopyWithImpl<$Res>
     Object? topic = freezed,
     Object? tags = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
   }) {
     return _then(_$_NoteDetail(
       userId == freezed
@@ -404,6 +431,18 @@ class __$$_NoteDetailCopyWithImpl<$Res> extends _$NoteDetailCopyWithImpl<$Res>
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -421,7 +460,10 @@ class _$_NoteDetail implements _NoteDetail {
       this.chapter,
       this.topic,
       final List<String>? tags,
-      this.mediaLink)
+      this.mediaLink,
+      this.imageLink,
+      this.like,
+      this.dislike)
       : _tags = tags;
 
   factory _$_NoteDetail.fromJson(Map<String, dynamic> json) =>
@@ -454,10 +496,16 @@ class _$_NoteDetail implements _NoteDetail {
 
   @override
   final String? mediaLink;
+  @override
+  final String? imageLink;
+  @override
+  final int? like;
+  @override
+  final int? dislike;
 
   @override
   String toString() {
-    return 'NoteDetail(userId: $userId, title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, tags: $tags, mediaLink: $mediaLink)';
+    return 'NoteDetail(userId: $userId, title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, tags: $tags, mediaLink: $mediaLink, imageLink: $imageLink, like: $like, dislike: $dislike)';
   }
 
   @override
@@ -474,7 +522,10 @@ class _$_NoteDetail implements _NoteDetail {
             const DeepCollectionEquality().equals(other.chapter, chapter) &&
             const DeepCollectionEquality().equals(other.topic, topic) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.mediaLink, mediaLink));
+            const DeepCollectionEquality().equals(other.mediaLink, mediaLink) &&
+            const DeepCollectionEquality().equals(other.imageLink, imageLink) &&
+            const DeepCollectionEquality().equals(other.like, like) &&
+            const DeepCollectionEquality().equals(other.dislike, dislike));
   }
 
   @JsonKey(ignore: true)
@@ -490,7 +541,10 @@ class _$_NoteDetail implements _NoteDetail {
       const DeepCollectionEquality().hash(chapter),
       const DeepCollectionEquality().hash(topic),
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(mediaLink));
+      const DeepCollectionEquality().hash(mediaLink),
+      const DeepCollectionEquality().hash(imageLink),
+      const DeepCollectionEquality().hash(like),
+      const DeepCollectionEquality().hash(dislike));
 
   @JsonKey(ignore: true)
   @override
@@ -516,7 +570,10 @@ abstract class _NoteDetail implements NoteDetail {
       final String? chapter,
       final String? topic,
       final List<String>? tags,
-      final String? mediaLink) = _$_NoteDetail;
+      final String? mediaLink,
+      final String? imageLink,
+      final int? like,
+      final int? dislike) = _$_NoteDetail;
 
   factory _NoteDetail.fromJson(Map<String, dynamic> json) =
       _$_NoteDetail.fromJson;
@@ -541,6 +598,12 @@ abstract class _NoteDetail implements NoteDetail {
   List<String>? get tags;
   @override
   String? get mediaLink;
+  @override
+  String? get imageLink;
+  @override
+  int? get like;
+  @override
+  int? get dislike;
   @override
   @JsonKey(ignore: true)
   _$$_NoteDetailCopyWith<_$_NoteDetail> get copyWith =>

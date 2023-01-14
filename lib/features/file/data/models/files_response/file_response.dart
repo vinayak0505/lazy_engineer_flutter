@@ -25,6 +25,9 @@ class FileDetail with _$FileDetail {
         String? college,
         String? semester,
         String? mediaLink,
+        String? imageLink,
+        int? like,
+        int? dislike,
         List<String>? tags,
     ) = _FileDetail;
 
