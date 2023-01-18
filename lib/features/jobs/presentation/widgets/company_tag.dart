@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 
 class CompanyTag extends StatelessWidget {

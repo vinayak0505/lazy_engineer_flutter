@@ -12,7 +12,7 @@ import 'package:lazy_engineer/features/jobs/presentation/widgets/company_tag.dar
 
 class JobsDescriptionScreen extends StatelessWidget {
   const JobsDescriptionScreen(this.data, {super.key});
-  final JobDetail data;
+  final JobDetail? data;
 
   @override
   Widget build(BuildContext context) {
@@ -31,27 +31,27 @@ class JobsDescriptionScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            data.title ?? '',
+            data?.title ?? '',
             style: theme.textTheme.headline5,
           ),
           const SizedBox(height: 18),
           CompanyTag(
-            companyName: data.company ?? '',
-            icon: data.imageLink,
-            description: data.location ?? '',
+            companyName: data?.company ?? '',
+            icon: data?.imageLink,
+            description: data?.location ?? '',
           ),
           const SizedBox(height: 8),
           Row(
             children: [
               const SizedBox(width: 16),
               Text(
-                '${data.datePosted}',
+                '${data?.datePosted}',
                 style: theme.textTheme.bodyMedium
                     ?.copyWith(color: AppThemes.subTitleColor),
               ),
               const SizedBox(width: 8),
               Text(
-                '${data.profile} applicants',
+                '${data?.profile} applicants',
                 style: theme.textTheme.bodyMedium
                     ?.copyWith(color: AppThemes.subTitleColor),
               )
@@ -64,7 +64,7 @@ class JobsDescriptionScreen extends StatelessWidget {
               const CustomIcon(AppIcons.fullTimeIcon),
               const SizedBox(width: 12),
               Text(
-                data.experienceLevel ?? '',
+                data?.experienceLevel ?? '',
                 style: theme.textTheme.titleMedium,
               )
             ],
@@ -121,7 +121,7 @@ class JobsDescriptionScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            data.jobType ?? '',
+            data?.jobType ?? '',
             style: theme.textTheme.bodyMedium,
           ),
           const SizedBox(height: 16),
@@ -143,13 +143,13 @@ class JobsDescriptionScreen extends StatelessWidget {
           const SizedBox(height: 16),
           CompanyTag(
             icon: AppImages.google,
-            companyName: data.company ?? '',
-            description: '${data.location}',
+            companyName: data?.company ?? '',
+            description: '${data?.location}',
             follow: true,
           ),
           const SizedBox(height: 16),
           Text(
-            data.aboutCompany ?? '',
+            data?.aboutCompany ?? '',
             style: theme.textTheme.bodyMedium,
           ),
           const SizedBox(height: 16),

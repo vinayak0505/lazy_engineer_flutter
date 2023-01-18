@@ -85,11 +85,11 @@ class __$$_SettingsCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
     Object? darkMode = freezed,
   }) {
     return _then(_$_Settings(
-      pushNotification == freezed
+      pushNotification: pushNotification == freezed
           ? _value.pushNotification
           : pushNotification // ignore: cast_nullable_to_non_nullable
               as bool,
-      darkMode == freezed
+      darkMode: darkMode == freezed
           ? _value.darkMode
           : darkMode // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -100,7 +100,7 @@ class __$$_SettingsCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Settings implements _Settings {
-  const _$_Settings(this.pushNotification, this.darkMode);
+  const _$_Settings({required this.pushNotification, required this.darkMode});
 
   @override
   final bool pushNotification;
@@ -135,8 +135,9 @@ class _$_Settings implements _Settings {
 }
 
 abstract class _Settings implements SettingsState {
-  const factory _Settings(final bool pushNotification, final bool darkMode) =
-      _$_Settings;
+  const factory _Settings(
+      {required final bool pushNotification,
+      required final bool darkMode}) = _$_Settings;
 
   @override
   bool get pushNotification;

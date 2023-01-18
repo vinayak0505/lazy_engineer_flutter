@@ -10,36 +10,36 @@ class FilesDetailCubit extends Cubit<FilesDetailState> {
   final String id;
   final String fileLink;
   FilesDetailCubit(this._repository, this.id, this.fileLink)
-      : super(const FilesDetailState(null, null));
+      : super(const FilesDetailState());
 
   bool? isDownloaded;
   bool? rating;
   Future<void> download(String fileLink) async {
     try {
       isDownloaded = await _repository.download(fileLink);
-      emit(const FilesDetailState(null, true));
+      emit(const FilesDetailState(isDownloaded: true));
     } catch (e) {
-      emit(const FilesDetailState(null, false));
+      emit(const FilesDetailState(isDownloaded: false));
     }
   }
 
   void like() {
     if (rating == true) {
       rating = null;
-      emit(const FilesDetailState(null, null));
+      emit(const FilesDetailState());
     } else {
       rating = true;
-      emit(const FilesDetailState(true, null));
+      emit(const FilesDetailState(rating: true));
     }
   }
 
   void dislike() {
     if (rating == false) {
       rating = null;
-      emit(const FilesDetailState(null, null));
+      emit(const FilesDetailState());
     } else {
       rating = false;
-      emit(const FilesDetailState(false, null));
+      emit(const FilesDetailState(rating: false));
     }
   }
 }

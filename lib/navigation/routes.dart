@@ -117,7 +117,7 @@ class RouteGenerator {
                       // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: BookDescriptionScreen(state.extra as BookDetail),
+                        child: BookDescriptionScreen(state.extra as BookDetail?),
                       );
                     },
                   )
@@ -133,7 +133,7 @@ class RouteGenerator {
                       // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: JobsDescriptionScreen(state.extra as JobDetail),
+                        child: JobsDescriptionScreen(state.extra as JobDetail?),
                       );
                     },
                   )
@@ -149,7 +149,7 @@ class RouteGenerator {
                       // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: NotesDetailScreen(state.extra as NoteDetail),
+                        child: NotesDetailScreen(state.extra as NoteDetail?),
                       );
                     },
                   )
@@ -165,7 +165,7 @@ class RouteGenerator {
                       // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: PaperDetailScreen(state.extra as PaperDetail),
+                        child: PaperDetailScreen(state.extra as PaperDetail?),
                       );
                     },
                   )
@@ -181,7 +181,7 @@ class RouteGenerator {
                       // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: FileDetailScreen(state.extra as FileDetail),
+                        child: FileDetailScreen(state.extra as FileDetail?),
                       );
                     },
                   )

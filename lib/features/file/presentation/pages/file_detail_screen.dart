@@ -8,7 +8,7 @@ import 'package:lazy_engineer/features/file/presentation/widgets/files_detail_he
 
 class FileDetailScreen extends StatelessWidget {
   const FileDetailScreen(this.data, {super.key});
-  final FileDetail data;
+  final FileDetail? data;
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
@@ -31,10 +31,10 @@ class FileDetailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 FilesDetailHeader(
-                  title: data.title ?? '',
-                  userId: data.userId ?? '',
-                  subject: data.subject,
-                  link: data.mediaLink ?? '',
+                  title: data?.title ?? '',
+                  userId: data?.userId ?? '',
+                  subject: data?.subject,
+                  link: data?.mediaLink ?? '',
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -42,9 +42,9 @@ class FileDetailScreen extends StatelessWidget {
                   style: theme.textTheme.headline5,
                 ),
                 const SizedBox(height: 12),
-                if (data.about != null) ...[
+                if (data?.about != null) ...[
                   Text(
-                    data.about!,
+                    data?.about ?? '',
                     style: theme.textTheme.bodyMedium,
                     textAlign: TextAlign.justify,
                   ),
@@ -54,7 +54,7 @@ class FileDetailScreen extends StatelessWidget {
                   defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                   defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
                   children: [
-                    if (data.college != null)
+                    if (data?.college != null)
                       TableRow(
                         children: [
                           Padding(
@@ -68,14 +68,14 @@ class FileDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              data.college!,
+                              data?.college ?? '',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),
                           )
                         ],
                       ),
-                    if (data.semester != null)
+                    if (data?.semester != null)
                       TableRow(
                         children: [
                           Padding(
@@ -89,7 +89,7 @@ class FileDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              data.semester!,
+                              data?.semester ?? '',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),

@@ -11,8 +11,11 @@ class LastSeenCard extends StatelessWidget {
     required this.description,
     required this.date,
   });
-  final String? image, description;
-  final String title, category, date;
+  final String? image;
+  final String? description;
+  final String title;
+  final String category;
+  final String date;
 
   @override
   Widget build(BuildContext context) {
@@ -22,54 +25,55 @@ class LastSeenCard extends StatelessWidget {
       width: 200,
       height: 300,
       child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Align(
-              child: CustomImage(
-                image: image,
-                height: 120,
-                radius: kRoundedRectangleRadius,
-                onlyTop: true,
-                boxFit: BoxFit.fill,
-              ),
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Align(
+            child: CustomImage(
+              image: image,
+              height: 120,
+              radius: kRoundedRectangleRadius,
+              onlyTop: true,
+              boxFit: BoxFit.fill,
             ),
-            const SizedBox(height: 16),
+          ),
+          const SizedBox(height: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              title,
+              style: theme.textTheme.titleLarge,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              category,
+              style: theme.textTheme.subtitle1,
+            ),
+          ),
+          if (description != null)
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.fromLTRB(16, 6, 16, 16),
               child: Text(
-                title,
-                style: theme.textTheme.titleLarge,
+                description!,
+                style: theme.textTheme.bodyMedium,
                 overflow: TextOverflow.ellipsis,
-                maxLines: 1,
+                maxLines: 2,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                category,
-                style: theme.textTheme.subtitle1,
-              ),
+          Container(
+            alignment: Alignment.bottomRight,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              date,
+              style: theme.textTheme.overline,
             ),
-            if (description != null)
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 6, 16, 16),
-                child: Text(
-                  description!,
-                  style: theme.textTheme.bodyMedium,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                ),
-              ),
-            Container(
-              alignment: Alignment.bottomRight,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                date,
-                style: theme.textTheme.overline,
-              ),
-            )
-          ],),
+          )
+        ],
+      ),
     );
   }
 }

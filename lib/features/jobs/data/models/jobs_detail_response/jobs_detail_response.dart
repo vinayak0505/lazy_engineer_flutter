@@ -16,6 +16,7 @@ class JobsDetailResponse with _$JobsDetailResponse {
     String experienceLevel,
     String? datePosted,
     int? applicants,
+    // ignore: avoid_positional_boolean_parameters
     bool? isActivelyRecruiting,
     PayRange? payRange,
     String skillsNeeded,

@@ -10,7 +10,7 @@ import 'package:lazy_engineer/features/components/custom_image.dart';
 
 class BookDescriptionScreen extends StatelessWidget {
   const BookDescriptionScreen(this.data, {super.key});
-  final BookDetail data;
+  final BookDetail? data;
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +49,12 @@ class BookDescriptionScreen extends StatelessWidget {
                           children: [
                             const SizedBox(height: 12),
                             Text(
-                              data.title ?? '',
+                              data?.title ?? '',
                               style: theme.textTheme.headline5,
                             ),
                             const SizedBox(height: 12),
                             Text(
-                              data.title ?? '',
+                              data?.title ?? '',
                               style: theme.textTheme.titleLarge,
                             ),
                             const SizedBox(height: 16),
@@ -80,7 +80,7 @@ class BookDescriptionScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  data.about ?? '',
+                  data?.about ?? '',
                   style: theme.textTheme.bodyMedium,
                   textAlign: TextAlign.justify,
                 ),
@@ -90,7 +90,7 @@ class BookDescriptionScreen extends StatelessWidget {
                     Text('Writers', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 80),
                     Wrap(
-                      children: data.writer?.map((p) => Text(p)).toList() ?? [],
+                      children: data?.writer?.map((p) => Text(p)).toList() ?? [],
                     ),
                   ],
                 ),
@@ -99,7 +99,7 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text(semester, style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 60),
-                    Text(data.semester ?? '', style: theme.textTheme.bodyText2),
+                    Text(data?.semester ?? '', style: theme.textTheme.bodyText2),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -107,7 +107,7 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text('Book Edition', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 30),
-                    Text(data.title ?? '', style: theme.textTheme.bodyText2),
+                    Text(data?.title ?? '', style: theme.textTheme.bodyText2),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -115,7 +115,7 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text('Price', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 110),
-                    Text(data.title ?? '', style: theme.textTheme.bodyText2),
+                    Text(data?.title ?? '', style: theme.textTheme.bodyText2),
                   ],
                 ),
               ],

@@ -9,7 +9,7 @@ import 'package:lazy_engineer/features/notes/presentation/widgets/notes_detail_h
 
 class NotesDetailScreen extends StatelessWidget {
   const NotesDetailScreen(this.data, {super.key});
-  final NoteDetail data;
+  final NoteDetail? data;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +33,11 @@ class NotesDetailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 NotesDetailHeader(
-                  title: data.title ?? '',
-                  userId: data.userId ?? '',
-                  subject: data.subject,
-                  fileLink: data.mediaLink ?? '',
-                  imageLink: data.imageLink ?? '',
+                  title: data?.title ?? '',
+                  userId: data?.userId ?? '',
+                  subject: data?.subject,
+                  fileLink: data?.mediaLink ?? '',
+                  imageLink: data?.imageLink ?? '',
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -45,9 +45,9 @@ class NotesDetailScreen extends StatelessWidget {
                   style: theme.textTheme.headline5,
                 ),
                 const SizedBox(height: 12),
-                if (data.about != null) ...[
+                if (data?.about != null) ...[
                   Text(
-                    data.about!,
+                    data?.about ?? '',
                     style: theme.textTheme.bodyMedium,
                     textAlign: TextAlign.justify,
                   ),
@@ -57,7 +57,7 @@ class NotesDetailScreen extends StatelessWidget {
                   defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                   defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
                   children: [
-                    if (data.semester != null)
+                    if (data?.semester != null)
                       TableRow(
                         children: [
                           Padding(
@@ -71,14 +71,14 @@ class NotesDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              '${addOrdinals(int.parse(data.semester ?? ''))} Semester',
+                              '${addOrdinals(int.parse(data?.semester ?? ''))} Semester',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),
                           )
                         ],
                       ),
-                    if (data.unit != null)
+                    if (data?.unit != null)
                       TableRow(
                         children: [
                           Padding(
@@ -92,14 +92,14 @@ class NotesDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              'Unit - ${data.unit}',
+                              'Unit - ${data?.unit}',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),
                           ),
                         ],
                       ),
-                    if (data.chapter != null)
+                    if (data?.chapter != null)
                       TableRow(
                         children: [
                           Padding(
@@ -113,14 +113,14 @@ class NotesDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              data.chapter!,
+                              data?.chapter ?? '',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),
                           )
                         ],
                       ),
-                    if (data.topic != null)
+                    if (data?.topic != null)
                       TableRow(
                         children: [
                           Padding(
@@ -136,7 +136,7 @@ class NotesDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              data.topic!,
+                              data?.topic ?? '',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),
@@ -148,7 +148,7 @@ class NotesDetailScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.headline5),
                 const SizedBox(height: 12),
-                ShowTagsWidget(data.tags ?? [])
+                ShowTagsWidget(data?.tags ?? [])
               ],
             ),
           ),

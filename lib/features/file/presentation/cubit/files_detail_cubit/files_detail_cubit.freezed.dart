@@ -86,11 +86,11 @@ class __$$FilesDetailCopyWithImpl<$Res>
     Object? isDownloaded = freezed,
   }) {
     return _then(_$FilesDetail(
-      rating == freezed
+      rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isDownloaded == freezed
+      isDownloaded: isDownloaded == freezed
           ? _value.isDownloaded
           : isDownloaded // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -101,7 +101,7 @@ class __$$FilesDetailCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FilesDetail implements FilesDetail {
-  const _$FilesDetail(this.rating, this.isDownloaded);
+  const _$FilesDetail({this.rating, this.isDownloaded});
 
   @override
   final bool? rating;
@@ -136,7 +136,7 @@ class _$FilesDetail implements FilesDetail {
 }
 
 abstract class FilesDetail implements FilesDetailState {
-  const factory FilesDetail(final bool? rating, final bool? isDownloaded) =
+  const factory FilesDetail({final bool? rating, final bool? isDownloaded}) =
       _$FilesDetail;
 
   @override

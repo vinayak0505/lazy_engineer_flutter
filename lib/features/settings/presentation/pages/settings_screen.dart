@@ -66,7 +66,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 return CupertinoSwitch(
                   value: state.pushNotification,
                   onChanged: (value) {
-                    context.read<SettingsCubit>().togglePushNotification(value);
+                    context.read<SettingsCubit>().togglePushNotification(newValue: value);
                   },
                   activeColor: theme.primaryColor,
                 );
@@ -79,7 +79,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 return CupertinoSwitch(
                   value: state.darkMode,
                   onChanged: (value) {
-                    context.read<SettingsCubit>().toggleDarkMode(value);
+                    context.read<SettingsCubit>().toggleDarkMode(newValue: value);
                   },
                   activeColor: theme.primaryColor,
                 );

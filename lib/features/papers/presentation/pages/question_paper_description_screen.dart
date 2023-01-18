@@ -8,7 +8,7 @@ import 'package:lazy_engineer/features/papers/presentation/widgets/question_pape
 
 class PaperDetailScreen extends StatelessWidget {
   const PaperDetailScreen(this.data, {super.key});
-  final PaperDetail data;
+  final PaperDetail? data;
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
@@ -30,10 +30,10 @@ class PaperDetailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 PapersDetailHeader(
-                  title: data.title ?? '',
-                  userId: data.userId ?? '',
-                  subject: data.subject,
-                  link: data.mediaLink ?? '',
+                  title: data?.title ?? '',
+                  userId: data?.userId ?? '',
+                  subject: data?.subject,
+                  link: data?.mediaLink ?? '',
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -41,9 +41,9 @@ class PaperDetailScreen extends StatelessWidget {
                   style: theme.textTheme.headline5,
                 ),
                 const SizedBox(height: 12),
-                if (data.about != null) ...[
+                if (data?.about != null) ...[
                   Text(
-                    data.about!,
+                    data?.about ?? '',
                     style: theme.textTheme.bodyMedium,
                     textAlign: TextAlign.justify,
                   ),
@@ -52,13 +52,13 @@ class PaperDetailScreen extends StatelessWidget {
                 // Row(children: [
                 //   Text(college, style: theme.textTheme.headlineSmall),
                 //   const SizedBox(width: 100),
-                //   Text(data., style: theme.textTheme.bodyText2),
+                //   Text(data?., style: theme.textTheme.bodyText2),
                 // ],),
                 Row(
                   children: [
                     Text(semester, style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 80),
-                    Text(data.semester ?? '', style: theme.textTheme.bodyText2),
+                    Text(data?.semester ?? '', style: theme.textTheme.bodyText2),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -66,7 +66,7 @@ class PaperDetailScreen extends StatelessWidget {
                   defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                   defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
                   children: [
-                    if (data.unit != null)
+                    if (data?.unit != null)
                       TableRow(
                         children: [
                           Padding(
@@ -80,14 +80,14 @@ class PaperDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              'Unit - ${data.unit}',
+                              'Unit - ${data?.unit}',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),
                           ),
                         ],
                       ),
-                    if (data.chapter != null)
+                    if (data?.chapter != null)
                       TableRow(
                         children: [
                           Padding(
@@ -101,14 +101,14 @@ class PaperDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              data.chapter!,
+                              data?.chapter ?? '',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),
                           )
                         ],
                       ),
-                    if (data.topic != null)
+                    if (data?.topic != null)
                       TableRow(
                         children: [
                           Padding(
@@ -122,7 +122,7 @@ class PaperDetailScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
-                              data.topic!,
+                              data?.topic ?? '',
                               style: theme.textTheme.bodyMedium,
                               textAlign: TextAlign.justify,
                             ),

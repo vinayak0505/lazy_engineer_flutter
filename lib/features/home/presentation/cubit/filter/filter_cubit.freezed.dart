@@ -91,7 +91,7 @@ class __$$_FilterStateCopyWithImpl<$Res> extends _$FilterStateCopyWithImpl<$Res>
     Object? multiOption = freezed,
   }) {
     return _then(_$_FilterState(
-      isOpen == freezed
+      isOpen: isOpen == freezed
           ? _value.isOpen
           : isOpen // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -110,8 +110,10 @@ class __$$_FilterStateCopyWithImpl<$Res> extends _$FilterStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_FilterState implements _FilterState {
-  const _$_FilterState(this.isOpen,
-      {final List<String>? textField, final List<String>? multiOption})
+  const _$_FilterState(
+      {required this.isOpen,
+      final List<String>? textField,
+      final List<String>? multiOption})
       : _textField = textField,
         _multiOption = multiOption;
 
@@ -166,8 +168,9 @@ class _$_FilterState implements _FilterState {
 }
 
 abstract class _FilterState implements FilterState {
-  const factory _FilterState(final bool isOpen,
-      {final List<String>? textField,
+  const factory _FilterState(
+      {required final bool isOpen,
+      final List<String>? textField,
       final List<String>? multiOption}) = _$_FilterState;
 
   @override

@@ -15,7 +15,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     try {
       final ProfileModal? userProfile = await _repository.getProfile();
       if (userProfile != null) {
-        emit(ProfileState.success(true, userProfile));
+        emit(ProfileState.success(isNotEdit: true, data: userProfile));
       } else {
         emit(const ProfileState.loading());
       }
@@ -28,7 +28,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   void togleIsEditProfile() {
     state.whenOrNull(
       success: (isNotEdit, data) => emit(
-        ProfileState.success(!isNotEdit, data),
+        ProfileState.success(isNotEdit: !isNotEdit, data: data),
       ),
     );
   }

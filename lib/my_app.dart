@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
             routerDelegate: route.routerDelegate,
             routeInformationParser: route.routeInformationParser,
             routeInformationProvider: route.routeInformationProvider,
-            // scrollBehavior: MyScrollBehavior(),
-            theme: AppThemes.appThemeData[AppTheme.lightTheme],
+            scrollBehavior: MyScrollBehavior(),
+            theme: AppThemes().appThemeData[AppTheme.lightTheme],
             builder: (context, child) => GestureDetector(
               onTap: () {
                 final currentFocus = FocusScope.of(context);

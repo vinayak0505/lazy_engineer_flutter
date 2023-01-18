@@ -105,11 +105,11 @@ class __$$ProfileSuccessCopyWithImpl<$Res>
     Object? data = freezed,
   }) {
     return _then(_$ProfileSuccess(
-      isNotEdit == freezed
+      isNotEdit: isNotEdit == freezed
           ? _value.isNotEdit
           : isNotEdit // ignore: cast_nullable_to_non_nullable
               as bool,
-      data == freezed
+      data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as ProfileModal,
@@ -127,7 +127,7 @@ class __$$ProfileSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProfileSuccess implements ProfileSuccess {
-  const _$ProfileSuccess(this.isNotEdit, this.data);
+  const _$ProfileSuccess({required this.isNotEdit, required this.data});
 
   @override
   final bool isNotEdit;
@@ -229,8 +229,9 @@ class _$ProfileSuccess implements ProfileSuccess {
 }
 
 abstract class ProfileSuccess implements ProfileState {
-  const factory ProfileSuccess(final bool isNotEdit, final ProfileModal data) =
-      _$ProfileSuccess;
+  const factory ProfileSuccess(
+      {required final bool isNotEdit,
+      required final ProfileModal data}) = _$ProfileSuccess;
 
   bool get isNotEdit;
   ProfileModal get data;
