@@ -127,8 +127,8 @@ class PapersDetailHeader extends StatelessWidget {
                         Center(
                           child: Text(
                             watch.isDownloaded!
-                                ? 'File is Downloaded'
-                                : 'File is not Downloaded',
+                                ? 'Paper is Downloaded'
+                                : 'Paper is not Downloaded',
                           ),
                         )
                     ],

@@ -16,7 +16,7 @@ class QuestionPaperDataBox extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title,
+              paperDetail.title ?? '',
               style: theme.textTheme.headline5,
               overflow: TextOverflow.ellipsis,
             ),

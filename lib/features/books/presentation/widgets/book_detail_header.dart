@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/books/data/repositories/books_repository_impl.dart';
+import 'package:lazy_engineer/features/books/presentation/cubit/books_detail_cubit/books_detail_cubit.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
-import 'package:lazy_engineer/features/notes/data/repositories/notes_repository_impl.dart';
-import 'package:lazy_engineer/features/notes/presentation/cubit/notes_detail_cubit/notes_detail_cubit.dart';
 
-class NotesDetailHeader extends StatelessWidget {
-  const NotesDetailHeader({
+class BooksDetailHeader extends StatelessWidget {
+  const BooksDetailHeader({
     super.key,
     required this.title,
     required this.userId,
@@ -29,11 +29,11 @@ class NotesDetailHeader extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: BlocProvider(
         create: (context) =>
-            NotesDetailCubit(NotesRepositoryImpl(), userId, link),
-        child: BlocBuilder<NotesDetailCubit, NotesDetailState>(
+            BooksDetailCubit(BooksRepositoryImpl(), userId, link),
+        child: BlocBuilder<BooksDetailCubit, BooksDetailState>(
           builder: (context, state) {
-            final read = context.read<NotesDetailCubit>();
-            final watch = context.watch<NotesDetailCubit>();
+            final read = context.read<BooksDetailCubit>();
+            final watch = context.watch<BooksDetailCubit>();
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -122,13 +122,13 @@ class NotesDetailHeader extends StatelessWidget {
                           width: 120,
                         ),
                       ),
-                      if (context.watch<NotesDetailCubit>().isDownloaded !=
+                      if (context.watch<BooksDetailCubit>().isDownloaded !=
                           null)
                         Center(
                           child: Text(
                             watch.isDownloaded!
-                                ? 'Note File is Downloaded'
-                                : 'Notes File is not Downloaded',
+                                ? 'Book is Downloaded'
+                                : 'Book is not Downloaded',
                           ),
                         )
                     ],
