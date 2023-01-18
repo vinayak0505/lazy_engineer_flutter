@@ -4,7 +4,6 @@ import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
 import 'package:lazy_engineer/features/file/data/models/filter_request/filter_request.dart';
-import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
 import 'package:retrofit/http.dart';
 
 part 'files_client.g.dart';

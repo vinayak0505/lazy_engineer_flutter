@@ -29,7 +29,8 @@ mixin _$JobsDetailResponse {
   String? get jobType => throw _privateConstructorUsedError;
   String get experienceLevel => throw _privateConstructorUsedError;
   String? get datePosted => throw _privateConstructorUsedError;
-  int? get applicants => throw _privateConstructorUsedError;
+  int? get applicants =>
+      throw _privateConstructorUsedError; // ignore: avoid_positional_boolean_parameters
   bool? get isActivelyRecruiting => throw _privateConstructorUsedError;
   PayRange? get payRange => throw _privateConstructorUsedError;
   String get skillsNeeded => throw _privateConstructorUsedError;
@@ -378,6 +379,7 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
   final String? datePosted;
   @override
   final int? applicants;
+// ignore: avoid_positional_boolean_parameters
   @override
   final bool? isActivelyRecruiting;
   @override
@@ -522,7 +524,7 @@ abstract class _JobsDetailResponse implements JobsDetailResponse {
   String? get datePosted;
   @override
   int? get applicants;
-  @override
+  @override // ignore: avoid_positional_boolean_parameters
   bool? get isActivelyRecruiting;
   @override
   PayRange? get payRange;

@@ -8,18 +8,12 @@ part 'jobs_detail_cubit.freezed.dart';
 
 class JobsDetailCubit extends Cubit<JobsDetailState> {
   final String id;
-  JobsDetailCubit(this.id)
-      : super(const JobsDetailState.loading()) {
+  JobsDetailCubit(this.id) : super(const JobsDetailState.loading()) {
     getJobsDetail();
   }
   Future<void> getJobsDetail() async {
     try {
-      final JobsDetailResponse data = jobsDetail;
-      if (data != null) {
-        emit(JobsDetailState.success(jobsDetail, null));
-      } else {
-        emit(const JobsDetailState.loading());
-      }
+      emit(JobsDetailState.success(jobsDetail, null));
     } catch (e) {
       emit(JobsDetailState.failure(e));
     }
