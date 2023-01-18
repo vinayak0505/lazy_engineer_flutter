@@ -16,12 +16,10 @@ class _JobsClient implements JobsClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<JobResponse>> getJobs(
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<JobResponse>> getJobs() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<JobResponse>>(
@@ -75,12 +73,10 @@ class _JobsClient implements JobsClient {
   }
 
   @override
-  Future<BaseResponse<JobsDetailResponse>> getJobsDetail(id,
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<JobsDetailResponse>> getJobsDetail(id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = id;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<JobsDetailResponse>>(

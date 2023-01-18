@@ -16,12 +16,10 @@ class _PapersClient implements PapersClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<PaperResponse>> getPapers(
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<PaperResponse>> getPapers() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<PaperResponse>>(
@@ -75,12 +73,10 @@ class _PapersClient implements PapersClient {
   }
 
   @override
-  Future<BaseResponse<PaperDetailResponse>> getPapersDetail(id,
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<PaperDetailResponse>> getPapersDetail(id) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = id;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<PaperDetailResponse>>(

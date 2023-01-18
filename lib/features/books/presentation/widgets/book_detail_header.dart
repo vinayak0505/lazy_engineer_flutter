@@ -3,42 +3,42 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/books/data/repositories/books_repository_impl.dart';
+import 'package:lazy_engineer/features/books/presentation/cubit/books_detail_cubit/books_detail_cubit.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
-import 'package:lazy_engineer/features/notes/data/repositories/notes_repository_impl.dart';
-import 'package:lazy_engineer/features/notes/presentation/cubit/notes_detail_cubit/notes_detail_cubit.dart';
 
-class NotesDetailHeader extends StatelessWidget {
-  const NotesDetailHeader({
+class BooksDetailHeader extends StatelessWidget {
+  const BooksDetailHeader({
     super.key,
     required this.title,
     required this.userId,
     this.subject,
-    required this.fileLink, this.imageLink,
+    required this.link,
   });
   final String title;
   final String userId;
   final String? subject;
-  final String fileLink;
-  final String? imageLink;
+  final String link;
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
+    final String? linkString = link != '' ? link : null;
     return Padding(
       padding: const EdgeInsets.all(8),
       child: BlocProvider(
         create: (context) =>
-            NotesDetailCubit(NotesRepositoryImpl(), userId, fileLink),
-        child: BlocBuilder<NotesDetailCubit, NotesDetailState>(
+            BooksDetailCubit(BooksRepositoryImpl(), userId, link),
+        child: BlocBuilder<BooksDetailCubit, BooksDetailState>(
           builder: (context, state) {
-            final read = context.read<NotesDetailCubit>();
-            final watch = context.watch<NotesDetailCubit>();
+            final read = context.read<BooksDetailCubit>();
+            final watch = context.watch<BooksDetailCubit>();
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomImage(
-                  networkImage: imageLink != '' ? fileLink : null,
+                  networkImage: linkString,
                   radius: kRoundedRectangleRadius,
                   width: 130,
                   height: 180,
@@ -118,17 +118,17 @@ class NotesDetailHeader extends StatelessWidget {
                       Center(
                         child: CustomButton(
                           text: download,
-                          onPressed: () => read.download(fileLink),
+                          onPressed: () => read.download(link),
                           width: 120,
                         ),
                       ),
-                      if (context.watch<NotesDetailCubit>().isDownloaded !=
+                      if (context.watch<BooksDetailCubit>().isDownloaded !=
                           null)
                         Center(
                           child: Text(
                             watch.isDownloaded!
-                                ? 'Note File is Downloaded'
-                                : 'Notes File is not Downloaded',
+                                ? 'Book is Downloaded'
+                                : 'Book is not Downloaded',
                           ),
                         )
                     ],

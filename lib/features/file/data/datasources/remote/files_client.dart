@@ -14,9 +14,7 @@ abstract class FilesClient {
   factory FilesClient(Dio dio, {String baseUrl}) = _FilesClient;
 
   @GET(AppConfig.files)
-  Future<BaseResponse<FileResponse>> getFiles([
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+  Future<BaseResponse<FileResponse>> getFiles();
 
   @GET(AppConfig.filesSearch)
   Future<BaseResponse<FileResponse>> searchFiles(
@@ -30,7 +28,6 @@ abstract class FilesClient {
 
   @GET(AppConfig.filesDetail)
   Future<BaseResponse<FilesDetailResponse>> getFilesDetail(
-    @Body() String id, [
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+    @Body() String id,
+  );
 }

@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
-import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
-import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
-import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/papers/presentation/widgets/question_paper_detail_header.dart';
 
 class BookDescriptionScreen extends StatelessWidget {
   const BookDescriptionScreen(this.data, {super.key});
@@ -32,46 +29,12 @@ class BookDescriptionScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const CustomImage(
-                        image: AppImages.bookCoverImage,
-                        radius: kRoundedRectangleRadius,
-                        height: 180,
-                      ),
-                      const SizedBox(width: 16),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 12),
-                            Text(
-                              data?.title ?? '',
-                              style: theme.textTheme.headline5,
-                            ),
-                            const SizedBox(height: 12),
-                            Text(
-                              data?.title ?? '',
-                              style: theme.textTheme.titleLarge,
-                            ),
-                            const SizedBox(height: 16),
-                            bookBottom(theme.textTheme.bodyText1),
-                            const SizedBox(height: 16),
-                            Align(
-                              child: CustomButton(
-                                text: download,
-                                onPressed: () {},
-                                width: 120,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                PapersDetailHeader(
+                  title: data?.title ?? '',
+                  userId: data?.userId ?? '',
+                  //TODO: Add subject in books_response file through postman also. Vinayak forget to add it.
+                  //subject: data.subject ?? '',
+                  link: data?.mediaLink ?? '',
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -123,38 +86,6 @@ class BookDescriptionScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  Widget bookBottom(TextStyle? textStyle) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Column(
-          children: [
-            const CustomIcon(AppIcons.likeIcon, width: 18),
-            Text('Like', style: textStyle)
-          ],
-        ),
-        Column(
-          children: [
-            const CustomIcon(AppIcons.dislikeIcon, width: 18),
-            Text('Dislike', style: textStyle)
-          ],
-        ),
-        Column(
-          children: [
-            const CustomIcon(AppIcons.bookIcon),
-            Text('E-Book', style: textStyle)
-          ],
-        ),
-        Column(
-          children: [
-            const CustomIcon(AppIcons.pageIcon),
-            Text('pages', style: textStyle)
-          ],
-        )
-      ],
     );
   }
 }

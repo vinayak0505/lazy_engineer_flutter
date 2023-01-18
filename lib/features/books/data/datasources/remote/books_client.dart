@@ -4,7 +4,6 @@ import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/books/data/models/books_detail_response/books_detail_response.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/books/data/models/filter_request.dart/filter_request.dart';
-import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
 import 'package:retrofit/http.dart';
 
 part 'books_client.g.dart';
@@ -12,11 +11,8 @@ part 'books_client.g.dart';
 @RestApi()
 abstract class BooksClient {
   factory BooksClient(Dio dio, {String baseUrl}) = _BooksClient;
-
   @GET(AppConfig.books)
-  Future<BaseResponse<BookResponse>> getBooks([
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+  Future<BaseResponse<BookResponse>> getBooks();
 
   @GET(AppConfig.booksSearch)
   Future<BaseResponse<BookResponse>> searchBooks(
@@ -30,7 +26,6 @@ abstract class BooksClient {
 
   @GET(AppConfig.booksDetail)
   Future<BaseResponse<BooksDetailResponse>> getBooksDetail(
-    @Body() String id, [
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+    @Body() String id,
+  );
 }

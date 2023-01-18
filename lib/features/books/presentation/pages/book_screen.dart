@@ -5,6 +5,7 @@ import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/books/data/repositories/books_repository_impl.dart';
 import 'package:lazy_engineer/features/books/presentation/cubit/books_cubit/books_cubit.dart';
+import 'package:lazy_engineer/features/books/presentation/widgets/book_data_box.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
@@ -66,8 +67,6 @@ class BooksScreen extends StatelessWidget {
                             physics: const NeverScrollableScrollPhysics(),
                             itemCount: data.length,
                             itemBuilder: (context, index) => TileView(
-                              image: data[index].fileLink,
-                              // pages: data[index].pages,
                               child: BookDataBox(
                                 writers: data[index].writer ?? [],
                                 bookName: data[index].title ?? '',
@@ -91,42 +90,6 @@ class BooksScreen extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class BookDataBox extends StatelessWidget {
-  const BookDataBox({
-    super.key,
-    required this.writers,
-    required this.bookName,
-    required this.description,
-  });
-  final List<String> writers;
-  final String bookName;
-  final String description;
-
-  @override
-  Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
-    String allWriters = writers.toString();
-    allWriters =
-        'By- ${writers.toString().substring(1, writers.toString().length - 1)}';
-    return Flexible(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(allWriters.toUpperCase(), style: theme.textTheme.overline),
-            const SizedBox(height: 8),
-            Text(bookName, style: theme.textTheme.headline5),
-            const SizedBox(height: 8),
-            Text(description, style: theme.textTheme.bodyMedium),
-          ],
         ),
       ),
     );
