@@ -230,6 +230,9 @@ mixin _$JobDetail {
   List<String>? get skillsNeeded => throw _privateConstructorUsedError;
   int? get expectedSalary => throw _privateConstructorUsedError;
   String? get mediaLink => throw _privateConstructorUsedError;
+  String? get imageLink => throw _privateConstructorUsedError;
+  int? get like => throw _privateConstructorUsedError;
+  int? get dislike => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -253,7 +256,10 @@ abstract class $JobDetailCopyWith<$Res> {
       String? datePosted,
       List<String>? skillsNeeded,
       int? expectedSalary,
-      String? mediaLink});
+      String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike});
 }
 
 /// @nodoc
@@ -278,6 +284,9 @@ class _$JobDetailCopyWithImpl<$Res> implements $JobDetailCopyWith<$Res> {
     Object? skillsNeeded = freezed,
     Object? expectedSalary = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed
@@ -328,6 +337,18 @@ class _$JobDetailCopyWithImpl<$Res> implements $JobDetailCopyWith<$Res> {
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink: imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like: like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike: dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -350,7 +371,10 @@ abstract class _$$_JobDetailCopyWith<$Res> implements $JobDetailCopyWith<$Res> {
       String? datePosted,
       List<String>? skillsNeeded,
       int? expectedSalary,
-      String? mediaLink});
+      String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike});
 }
 
 /// @nodoc
@@ -377,6 +401,9 @@ class __$$_JobDetailCopyWithImpl<$Res> extends _$JobDetailCopyWithImpl<$Res>
     Object? skillsNeeded = freezed,
     Object? expectedSalary = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
   }) {
     return _then(_$_JobDetail(
       userId == freezed
@@ -427,6 +454,18 @@ class __$$_JobDetailCopyWithImpl<$Res> extends _$JobDetailCopyWithImpl<$Res>
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -446,7 +485,10 @@ class _$_JobDetail implements _JobDetail {
       this.datePosted,
       final List<String>? skillsNeeded,
       this.expectedSalary,
-      this.mediaLink)
+      this.mediaLink,
+      this.imageLink,
+      this.like,
+      this.dislike)
       : _skillsNeeded = skillsNeeded;
 
   factory _$_JobDetail.fromJson(Map<String, dynamic> json) =>
@@ -483,10 +525,16 @@ class _$_JobDetail implements _JobDetail {
   final int? expectedSalary;
   @override
   final String? mediaLink;
+  @override
+  final String? imageLink;
+  @override
+  final int? like;
+  @override
+  final int? dislike;
 
   @override
   String toString() {
-    return 'JobDetail(userId: $userId, title: $title, profile: $profile, company: $company, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, expectedSalary: $expectedSalary, mediaLink: $mediaLink)';
+    return 'JobDetail(userId: $userId, title: $title, profile: $profile, company: $company, aboutCompany: $aboutCompany, location: $location, jobType: $jobType, experienceLevel: $experienceLevel, datePosted: $datePosted, skillsNeeded: $skillsNeeded, expectedSalary: $expectedSalary, mediaLink: $mediaLink, imageLink: $imageLink, like: $like, dislike: $dislike)';
   }
 
   @override
@@ -510,7 +558,10 @@ class _$_JobDetail implements _JobDetail {
                 .equals(other._skillsNeeded, _skillsNeeded) &&
             const DeepCollectionEquality()
                 .equals(other.expectedSalary, expectedSalary) &&
-            const DeepCollectionEquality().equals(other.mediaLink, mediaLink));
+            const DeepCollectionEquality().equals(other.mediaLink, mediaLink) &&
+            const DeepCollectionEquality().equals(other.imageLink, imageLink) &&
+            const DeepCollectionEquality().equals(other.like, like) &&
+            const DeepCollectionEquality().equals(other.dislike, dislike));
   }
 
   @JsonKey(ignore: true)
@@ -528,7 +579,10 @@ class _$_JobDetail implements _JobDetail {
       const DeepCollectionEquality().hash(datePosted),
       const DeepCollectionEquality().hash(_skillsNeeded),
       const DeepCollectionEquality().hash(expectedSalary),
-      const DeepCollectionEquality().hash(mediaLink));
+      const DeepCollectionEquality().hash(mediaLink),
+      const DeepCollectionEquality().hash(imageLink),
+      const DeepCollectionEquality().hash(like),
+      const DeepCollectionEquality().hash(dislike));
 
   @JsonKey(ignore: true)
   @override
@@ -556,7 +610,10 @@ abstract class _JobDetail implements JobDetail {
       final String? datePosted,
       final List<String>? skillsNeeded,
       final int? expectedSalary,
-      final String? mediaLink) = _$_JobDetail;
+      final String? mediaLink,
+      final String? imageLink,
+      final int? like,
+      final int? dislike) = _$_JobDetail;
 
   factory _JobDetail.fromJson(Map<String, dynamic> json) =
       _$_JobDetail.fromJson;
@@ -585,6 +642,12 @@ abstract class _JobDetail implements JobDetail {
   int? get expectedSalary;
   @override
   String? get mediaLink;
+  @override
+  String? get imageLink;
+  @override
+  int? get like;
+  @override
+  int? get dislike;
   @override
   @JsonKey(ignore: true)
   _$$_JobDetailCopyWith<_$_JobDetail> get copyWith =>

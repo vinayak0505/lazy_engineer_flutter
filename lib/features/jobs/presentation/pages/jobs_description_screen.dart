@@ -37,7 +37,7 @@ class JobsDescriptionScreen extends StatelessWidget {
           const SizedBox(height: 18),
           CompanyTag(
             companyName: data.company ?? '',
-            icon: AppImages.google,
+            icon: data.imageLink,
             description: data.location ?? '',
           ),
           const SizedBox(height: 8),

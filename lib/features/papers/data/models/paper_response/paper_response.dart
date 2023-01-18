@@ -27,8 +27,12 @@ class PaperDetail with _$PaperDetail {
     String? unit,
     String? chapter,
     String? topic,
+    String? fileLink,
     List<String>? tags,
     String? mediaLink,
+    String? imageLink,
+    int? like,
+    int? dislike,
   ) = _PaperDetail;
 
   factory PaperDetail.fromJson(Map<String, dynamic> json) => _$PaperDetailFromJson(json);

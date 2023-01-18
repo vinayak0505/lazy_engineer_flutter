@@ -33,7 +33,13 @@ _$_BookDetail _$$_BookDetailFromJson(Map<String, dynamic> json) =>
       json['fileLink'] as String?,
       (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
       (json['writer'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      json['pages'] as int?,
+      json['bookEdition'] as int?,
+      json['price'] as int?,
       json['mediaLink'] as String?,
+      json['imageLink'] as String?,
+      json['like'] as int?,
+      json['dislike'] as int?,
     );
 
 Map<String, dynamic> _$$_BookDetailToJson(_$_BookDetail instance) =>
@@ -45,5 +51,11 @@ Map<String, dynamic> _$$_BookDetailToJson(_$_BookDetail instance) =>
       'fileLink': instance.fileLink,
       'tags': instance.tags,
       'writer': instance.writer,
+      'pages': instance.pages,
+      'bookEdition': instance.bookEdition,
+      'price': instance.price,
       'mediaLink': instance.mediaLink,
+      'imageLink': instance.imageLink,
+      'like': instance.like,
+      'dislike': instance.dislike,
     };

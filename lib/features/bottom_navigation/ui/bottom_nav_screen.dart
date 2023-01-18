@@ -75,24 +75,27 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     return Scaffold(
       extendBody: true,
       body: widget.child,
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: AppThemes.lightDarkColor),
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(16),
-            topRight: Radius.circular(16),
+      bottomNavigationBar: ColoredBox(
+        color: Colors.transparent,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: AppThemes.lightDarkColor),
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(16),
+              topRight: Radius.circular(16),
+            ),
           ),
-        ),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(16.0),
-            topRight: Radius.circular(16.0),
-          ),
-          child: BottomNavigationBar(
-            currentIndex: currentIndex,
-            onTap: (index) => onItemTapped(context, index),
-            items: tabs,
+          child: ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(16.0),
+              topRight: Radius.circular(16.0),
+            ),
+            child: BottomNavigationBar(
+              currentIndex: currentIndex,
+              onTap: (index) => onItemTapped(context, index),
+              items: tabs,
+            ),
           ),
         ),
       ),

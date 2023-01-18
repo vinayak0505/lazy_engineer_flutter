@@ -34,8 +34,12 @@ _$_PaperDetail _$$_PaperDetailFromJson(Map<String, dynamic> json) =>
       json['unit'] as String?,
       json['chapter'] as String?,
       json['topic'] as String?,
+      json['fileLink'] as String?,
       (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
       json['mediaLink'] as String?,
+      json['imageLink'] as String?,
+      json['like'] as int?,
+      json['dislike'] as int?,
     );
 
 Map<String, dynamic> _$$_PaperDetailToJson(_$_PaperDetail instance) =>
@@ -48,6 +52,10 @@ Map<String, dynamic> _$$_PaperDetailToJson(_$_PaperDetail instance) =>
       'unit': instance.unit,
       'chapter': instance.chapter,
       'topic': instance.topic,
+      'fileLink': instance.fileLink,
       'tags': instance.tags,
       'mediaLink': instance.mediaLink,
+      'imageLink': instance.imageLink,
+      'like': instance.like,
+      'dislike': instance.dislike,
     };

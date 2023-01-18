@@ -26,7 +26,13 @@ class BookDetail with _$BookDetail {
     String? fileLink,
     List<String>? tags,
     List<String>? writer,
+    int? pages,
+    int? bookEdition,
+    int? price,
     String? mediaLink,
+    String? imageLink,
+    int? like,
+    int? dislike,
   ) = _BookDetail;
 
   factory BookDetail.fromJson(Map<String, dynamic> json) => _$BookDetailFromJson(json);

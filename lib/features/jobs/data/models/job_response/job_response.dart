@@ -31,6 +31,9 @@ class JobDetail with _$JobDetail {
     List<String>? skillsNeeded,
     int? expectedSalary,
     String? mediaLink,
+    String? imageLink,
+    int? like,
+    int? dislike,
   ) = _JobDetail;
 
   factory JobDetail.fromJson(Map<String, dynamic> json) =>

@@ -230,8 +230,12 @@ mixin _$PaperDetail {
   String? get unit => throw _privateConstructorUsedError;
   String? get chapter => throw _privateConstructorUsedError;
   String? get topic => throw _privateConstructorUsedError;
+  String? get fileLink => throw _privateConstructorUsedError;
   List<String>? get tags => throw _privateConstructorUsedError;
   String? get mediaLink => throw _privateConstructorUsedError;
+  String? get imageLink => throw _privateConstructorUsedError;
+  int? get like => throw _privateConstructorUsedError;
+  int? get dislike => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -253,8 +257,12 @@ abstract class $PaperDetailCopyWith<$Res> {
       String? unit,
       String? chapter,
       String? topic,
+      String? fileLink,
       List<String>? tags,
-      String? mediaLink});
+      String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike});
 }
 
 /// @nodoc
@@ -275,8 +283,12 @@ class _$PaperDetailCopyWithImpl<$Res> implements $PaperDetailCopyWith<$Res> {
     Object? unit = freezed,
     Object? chapter = freezed,
     Object? topic = freezed,
+    Object? fileLink = freezed,
     Object? tags = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed
@@ -311,6 +323,10 @@ class _$PaperDetailCopyWithImpl<$Res> implements $PaperDetailCopyWith<$Res> {
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
+      fileLink: fileLink == freezed
+          ? _value.fileLink
+          : fileLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: tags == freezed
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -319,6 +335,18 @@ class _$PaperDetailCopyWithImpl<$Res> implements $PaperDetailCopyWith<$Res> {
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink: imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like: like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike: dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -339,8 +367,12 @@ abstract class _$$_PaperDetailCopyWith<$Res>
       String? unit,
       String? chapter,
       String? topic,
+      String? fileLink,
       List<String>? tags,
-      String? mediaLink});
+      String? mediaLink,
+      String? imageLink,
+      int? like,
+      int? dislike});
 }
 
 /// @nodoc
@@ -363,8 +395,12 @@ class __$$_PaperDetailCopyWithImpl<$Res> extends _$PaperDetailCopyWithImpl<$Res>
     Object? unit = freezed,
     Object? chapter = freezed,
     Object? topic = freezed,
+    Object? fileLink = freezed,
     Object? tags = freezed,
     Object? mediaLink = freezed,
+    Object? imageLink = freezed,
+    Object? like = freezed,
+    Object? dislike = freezed,
   }) {
     return _then(_$_PaperDetail(
       userId == freezed
@@ -399,6 +435,10 @@ class __$$_PaperDetailCopyWithImpl<$Res> extends _$PaperDetailCopyWithImpl<$Res>
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
+      fileLink == freezed
+          ? _value.fileLink
+          : fileLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags == freezed
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
@@ -407,6 +447,18 @@ class __$$_PaperDetailCopyWithImpl<$Res> extends _$PaperDetailCopyWithImpl<$Res>
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
+      imageLink == freezed
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
+              as String?,
+      like == freezed
+          ? _value.like
+          : like // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dislike == freezed
+          ? _value.dislike
+          : dislike // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -423,8 +475,12 @@ class _$_PaperDetail implements _PaperDetail {
       this.unit,
       this.chapter,
       this.topic,
+      this.fileLink,
       final List<String>? tags,
-      this.mediaLink)
+      this.mediaLink,
+      this.imageLink,
+      this.like,
+      this.dislike)
       : _tags = tags;
 
   factory _$_PaperDetail.fromJson(Map<String, dynamic> json) =>
@@ -446,6 +502,8 @@ class _$_PaperDetail implements _PaperDetail {
   final String? chapter;
   @override
   final String? topic;
+  @override
+  final String? fileLink;
   final List<String>? _tags;
   @override
   List<String>? get tags {
@@ -457,10 +515,16 @@ class _$_PaperDetail implements _PaperDetail {
 
   @override
   final String? mediaLink;
+  @override
+  final String? imageLink;
+  @override
+  final int? like;
+  @override
+  final int? dislike;
 
   @override
   String toString() {
-    return 'PaperDetail(userId: $userId, title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, tags: $tags, mediaLink: $mediaLink)';
+    return 'PaperDetail(userId: $userId, title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, fileLink: $fileLink, tags: $tags, mediaLink: $mediaLink, imageLink: $imageLink, like: $like, dislike: $dislike)';
   }
 
   @override
@@ -476,8 +540,12 @@ class _$_PaperDetail implements _PaperDetail {
             const DeepCollectionEquality().equals(other.unit, unit) &&
             const DeepCollectionEquality().equals(other.chapter, chapter) &&
             const DeepCollectionEquality().equals(other.topic, topic) &&
+            const DeepCollectionEquality().equals(other.fileLink, fileLink) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.mediaLink, mediaLink));
+            const DeepCollectionEquality().equals(other.mediaLink, mediaLink) &&
+            const DeepCollectionEquality().equals(other.imageLink, imageLink) &&
+            const DeepCollectionEquality().equals(other.like, like) &&
+            const DeepCollectionEquality().equals(other.dislike, dislike));
   }
 
   @JsonKey(ignore: true)
@@ -492,8 +560,12 @@ class _$_PaperDetail implements _PaperDetail {
       const DeepCollectionEquality().hash(unit),
       const DeepCollectionEquality().hash(chapter),
       const DeepCollectionEquality().hash(topic),
+      const DeepCollectionEquality().hash(fileLink),
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(mediaLink));
+      const DeepCollectionEquality().hash(mediaLink),
+      const DeepCollectionEquality().hash(imageLink),
+      const DeepCollectionEquality().hash(like),
+      const DeepCollectionEquality().hash(dislike));
 
   @JsonKey(ignore: true)
   @override
@@ -518,8 +590,12 @@ abstract class _PaperDetail implements PaperDetail {
       final String? unit,
       final String? chapter,
       final String? topic,
+      final String? fileLink,
       final List<String>? tags,
-      final String? mediaLink) = _$_PaperDetail;
+      final String? mediaLink,
+      final String? imageLink,
+      final int? like,
+      final int? dislike) = _$_PaperDetail;
 
   factory _PaperDetail.fromJson(Map<String, dynamic> json) =
       _$_PaperDetail.fromJson;
@@ -541,9 +617,17 @@ abstract class _PaperDetail implements PaperDetail {
   @override
   String? get topic;
   @override
+  String? get fileLink;
+  @override
   List<String>? get tags;
   @override
   String? get mediaLink;
+  @override
+  String? get imageLink;
+  @override
+  int? get like;
+  @override
+  int? get dislike;
   @override
   @JsonKey(ignore: true)
   _$$_PaperDetailCopyWith<_$_PaperDetail> get copyWith =>

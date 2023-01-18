@@ -33,7 +33,7 @@ class TileView extends StatelessWidget {
               alignment: Alignment.bottomRight,
               children: [
                 CustomImage(
-                  image: image,
+                  networkImage: image,
                   height: height,
                   width: width,
                   boxFit: fit,
