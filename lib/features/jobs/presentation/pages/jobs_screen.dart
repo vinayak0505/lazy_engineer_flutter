@@ -32,7 +32,7 @@ class JobsScreen extends StatelessWidget {
             ),
             success: (data) {
               return HomeScreenWidget(
-                title: notes,
+                title: jobs,
                 textFieldFilter: const [
                   'Company',
                   'Experience Level',

@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
-import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
 import 'package:retrofit/http.dart';
 
 part 'upload_client.g.dart';
@@ -12,36 +11,21 @@ abstract class UploadClient {
 
   @POST(AppConfig.uploadBooks)
   @MultiPart()
-  Future<BaseResponse> uploadBook(
-    @Body() FormData body, [
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+  Future<BaseResponse> uploadBook(@Body() FormData body);
 
   @POST(AppConfig.uploadFiles)
   @MultiPart()
-  Future<BaseResponse> uploadFiles(
-    @Body() FormData body, [
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+  Future<BaseResponse> uploadFiles(@Body() FormData body);
 
   @POST(AppConfig.uploadJobs)
   @MultiPart()
-  Future<BaseResponse> uploadJobs(
-    @Body() FormData body, [
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+  Future<BaseResponse> uploadJobs(@Body() FormData body);
 
   @POST(AppConfig.uploadNotes)
   @MultiPart()
-  Future<BaseResponse> uploadNotes(
-    @Body() FormData body, [
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+  Future<BaseResponse> uploadNotes(@Body() FormData body);
 
   @POST(AppConfig.uploadQuestionPaper)
   @MultiPart()
-  Future<BaseResponse> uploadQuestionPaper(
-    @Body() FormData body, [
-    @Header(HeaderKeys.tokenHeaderKey) String token = HeaderValues.tempToken,
-  ]);
+  Future<BaseResponse> uploadQuestionPaper(@Body() FormData body);
 }

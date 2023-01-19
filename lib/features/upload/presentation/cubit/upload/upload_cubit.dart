@@ -51,7 +51,7 @@ class UploadCubit extends Cubit<UploadState> {
 
   /// -------------------NOTES-----------------------
   void uploadNotes(UploadNotesRequest notesData, File image) {
-    repository.uplaodNotes(notesData.copyWith(file: file, image: image));
+    repository.uplaodNotes(notesData.copyWith(file: file, image: file));
     emit(const UploadState.success());
   }
 

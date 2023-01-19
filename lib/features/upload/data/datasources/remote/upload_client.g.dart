@@ -16,12 +16,10 @@ class _UploadClient implements UploadClient {
   String? baseUrl;
 
   @override
-  Future<BaseResponse<dynamic>> uploadBook(body,
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<dynamic>> uploadBook(body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = body;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<dynamic>>(Options(
@@ -40,12 +38,10 @@ class _UploadClient implements UploadClient {
   }
 
   @override
-  Future<BaseResponse<dynamic>> uploadFiles(body,
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<dynamic>> uploadFiles(body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = body;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<dynamic>>(Options(
@@ -64,12 +60,10 @@ class _UploadClient implements UploadClient {
   }
 
   @override
-  Future<BaseResponse<dynamic>> uploadJobs(body,
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<dynamic>> uploadJobs(body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = body;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<dynamic>>(Options(
@@ -88,12 +82,10 @@ class _UploadClient implements UploadClient {
   }
 
   @override
-  Future<BaseResponse<dynamic>> uploadNotes(body,
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<dynamic>> uploadNotes(body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = body;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<dynamic>>(Options(
@@ -112,12 +104,10 @@ class _UploadClient implements UploadClient {
   }
 
   @override
-  Future<BaseResponse<dynamic>> uploadQuestionPaper(body,
-      [token = HeaderValues.tempToken]) async {
+  Future<BaseResponse<dynamic>> uploadQuestionPaper(body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'token': token};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = body;
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BaseResponse<dynamic>>(Options(

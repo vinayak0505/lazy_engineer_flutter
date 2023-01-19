@@ -45,75 +45,91 @@ class HomeScreenWidget extends StatelessWidget {
                 );
 
             return Scaffold(
-              appBar: AppBar(
-                centerTitle: true,
-                title: Text(
-                  title,
-                  style: theme.textTheme.headline4,
-                ),
-                leading: Padding(
-                  padding: const EdgeInsets.only(left: 16),
-                  child: IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () => Navigator.pop(context),
-                    icon: const CustomIcon(AppIcons.backArrow),
-                  ),
-                ),
-                actions: [
-                  AnimatedIconButton.menuCross(
-                    () => context.read<FilterCubit>().toggle(),
-                  ),
-                  const SizedBox(width: 16),
-                ],
-              ),
-              body: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      //* Filter Menu
-                      SlideTransitionAnimation(
-                        open: state.isOpen,
-                        verticalAnimation: true,
-                        child: Column(
-                          children: [
-                            if (textFieldFilter != null) ...[
-                              TextFieldFilter(textFieldFilter!),
-                              const SizedBox(height: 16),
-                            ],
-                            if (multiOptionFilter != null) ...[
-                              // MultiOptionFilter(multiOptionFilter!),
-                              const SizedBox(height: 16),
-                            ],
-                            if (singleOptionFilter != null) ...[
-                              SingleOptionFilter(
-                                controller: singleOption,
-                                data: singleOptionFilter!,
-                              ),
-                              const SizedBox(height: 16),
-                            ],
-                            const SizedBox(height: 16),
-                            if (applyFilter != null)
-                              CustomButton(
-                                width: 100,
-                                text: apply,
-                                onPressed: () => onPressed(),
-                              ),
-                            const SizedBox(height: 16),
-                            const Divider(thickness: 1),
-                            const SizedBox(height: 24),
-                          ],
-                        ),
+              body: CustomScrollView(
+                slivers: [
+                  SliverAppBar(
+                    centerTitle: true,
+                    title: Text(
+                      title,
+                      style: theme.textTheme.headline4,
+                    ),
+                    leading: Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () => Navigator.pop(context),
+                        icon: const CustomIcon(AppIcons.backArrow),
                       ),
-                      ...body,
+                    ),
+                    actions: [
+                      AnimatedIconButton.menuCross(
+                        () => context.read<FilterCubit>().toggle(),
+                      ),
+                      const SizedBox(width: 16),
                     ],
                   ),
-                ),
+                  //* Filter Menu
+                  SliverToBoxAdapter(
+                    child: SlideTransitionAnimation(
+                      open: state.isOpen,
+                      verticalAnimation: true,
+                      child: Column(
+                        children: [
+                          if (textFieldFilter != null) ...[
+                            TextFieldFilter(textFieldFilter!),
+                            const SizedBox(height: 16),
+                          ],
+                          if (multiOptionFilter != null) ...[
+                            // MultiOptionFilter(multiOptionFilter!),
+                            const SizedBox(height: 16),
+                          ],
+                          if (singleOptionFilter != null) ...[
+                            SingleOptionFilter(
+                              controller: singleOption,
+                              data: singleOptionFilter!,
+                            ),
+                            const SizedBox(height: 16),
+                          ],
+                          const SizedBox(height: 16),
+                          if (applyFilter != null)
+                            CustomButton(
+                              width: 100,
+                              text: apply,
+                              onPressed: () => onPressed(),
+                            ),
+                          const SizedBox(height: 16),
+                          const Divider(thickness: 1),
+                          const SizedBox(height: 24),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 16,
+                      ),
+                      child: Column(
+                        children: body,
+                      ),
+                    ),
+                  )
+                ],
               ),
             );
           },
         ),
       ),
     );
+  }
+}
+
+class FilterMenu extends StatelessWidget {
+  const FilterMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

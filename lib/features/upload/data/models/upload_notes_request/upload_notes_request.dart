@@ -31,11 +31,11 @@ extension UploadNotesRequestFormData on UploadNotesRequest {
       'semester': semester,
       'file': file,
       'image': image,
+      'tags': tags,
       'subject': subject,
       'unit': unit,
       'chapter': chapter,
       'topic': topic,
-      'tags': tags,
     });
   }
 }

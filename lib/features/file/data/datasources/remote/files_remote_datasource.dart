@@ -1,12 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:lazy_engineer/assets/constants/token.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/file/data/datasources/remote/files_client.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
-import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
+import 'package:lazy_engineer/navigation/dio/header.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class FilesRemoteDatasource {
@@ -26,7 +25,7 @@ class FilesRemoteDatasource {
       ),
     );
     dio.options.headers.addAll(
-      {HeaderKeys.tokenHeaderKey: GetToken.userToken},
+      {HeaderKeys.tokenHeaderKey: HeaderValues.userToken},
     );
     dio.options.connectTimeout = AppConfig.connectTimeout;
     dio.options.receiveTimeout = AppConfig.receiveTimeout;

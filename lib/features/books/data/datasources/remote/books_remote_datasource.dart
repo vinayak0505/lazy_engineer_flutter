@@ -1,12 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:lazy_engineer/assets/constants/token.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/books/data/datasources/remote/books_client.dart';
 import 'package:lazy_engineer/features/books/data/models/books_detail_response/books_detail_response.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
-import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
+import 'package:lazy_engineer/navigation/dio/header.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class BooksRemoteDatasource {
@@ -26,7 +25,7 @@ class BooksRemoteDatasource {
       ),
     );
     dio.options.headers.addAll(
-      {HeaderKeys.tokenHeaderKey: GetToken.userToken},
+      {HeaderKeys.tokenHeaderKey: HeaderValues.userToken},
     );
     dio.options.connectTimeout = AppConfig.connectTimeout;
     dio.options.receiveTimeout = AppConfig.receiveTimeout;

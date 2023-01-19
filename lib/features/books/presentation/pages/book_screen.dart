@@ -36,7 +36,7 @@ class BooksScreen extends StatelessWidget {
             ),
             success: (data) {
               return HomeScreenWidget(
-                title: notes,
+                title: books,
                 textFieldFilter: const [
                   'Semester',
                 ],

@@ -7,6 +7,7 @@ import 'package:lazy_engineer/features/upload/data/models/upload_files_request/u
 import 'package:lazy_engineer/features/upload/data/models/upload_jobs_request/upload_jobs_request.dart';
 import 'package:lazy_engineer/features/upload/data/models/upload_notes_request/upload_notes_request.dart';
 import 'package:lazy_engineer/features/upload/data/models/upload_paper_request/upload_paper_request.dart';
+import 'package:lazy_engineer/navigation/dio/header.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class UploadRemoteDataSource {
@@ -15,7 +16,9 @@ class UploadRemoteDataSource {
   factory UploadRemoteDataSource() {
     final Dio dio = Dio();
     dio.interceptors.add(PrettyDioLogger(requestBody: true));
-    dio.options.headers = {};
+    dio.options.headers.addAll(
+      {HeaderKeys.tokenHeaderKey: HeaderValues.userToken},
+    );
     final UploadClient client = UploadClient(
       dio,
       baseUrl: AppConfig.apiBaseUrl,
@@ -26,7 +29,9 @@ class UploadRemoteDataSource {
   UploadRemoteDataSource._(this._client);
 
   Future<String> uploadBook(UploadBookRequest data) async {
-    final BaseResponse response = await _client.uploadBook(data.toFormData());
+    final BaseResponse response = await _client.uploadBook(
+      data.toFormData(),
+    );
     return response.status;
   }
 
@@ -46,7 +51,8 @@ class UploadRemoteDataSource {
   }
 
   Future<String> uploadPaper(UploadPaperRequest data) async {
-    final BaseResponse response = await _client.uploadQuestionPaper(data.toFormData());
+    final BaseResponse response =
+        await _client.uploadQuestionPaper(data.toFormData());
     return response.status;
   }
 }
