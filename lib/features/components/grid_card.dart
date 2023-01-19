@@ -6,10 +6,12 @@ import 'package:lazy_engineer/features/home/data/models/categories_model/categor
 class GridCard extends StatelessWidget {
   const GridCard({
     super.key,
+    this.networkImage,
     this.image,
     required this.title,
     required this.body,
   });
+  final String? networkImage;
   final String? image;
   final String title;
   final String body;
@@ -30,12 +32,15 @@ class GridCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          CustomImage(
-            networkImage: image,
-            height: 120,
-            radius: kRoundedRectangleRadius,
-            onlyTop: true,
-            boxFit: BoxFit.fill,
+          Center(
+            child: CustomImage(
+              networkImage: networkImage,
+              image: image,
+              height: 120,
+              radius: kRoundedRectangleRadius,
+              onlyTop: true,
+              boxFit: BoxFit.fill,
+            ),
           ),
           const SizedBox(height: 16),
           Padding(

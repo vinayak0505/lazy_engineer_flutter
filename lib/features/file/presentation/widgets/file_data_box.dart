@@ -18,7 +18,7 @@ class FileDataBox extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     return Flexible(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,

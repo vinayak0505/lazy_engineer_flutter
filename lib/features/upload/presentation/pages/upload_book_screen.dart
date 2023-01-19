@@ -38,8 +38,8 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        //* Writer
-        Text(writer, style: theme.textTheme.titleLarge),
+        //* Writers
+        Text(writers, style: theme.textTheme.titleLarge),
         WriterListWidget(
           writerList: (value) {
             writerController = value;
@@ -139,6 +139,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
         EditTagsWidget(
+          customTags: bookTags,
           listTags: (value) => tagsController = value,
           validator: (_) => emptyListCheckValidation(
             tagsController,
@@ -158,7 +159,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
             bookEdition: int.parse(bookEditionController.text),
             price: int.parse(priceController.text),
           ),
-          image,
+          image!,
         );
       },
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
@@ -34,15 +35,16 @@ class FileDetailScreen extends StatelessWidget {
                   title: data?.title ?? '',
                   userId: data?.userId ?? '',
                   subject: data?.subject,
-                  link: data?.mediaLink ?? '',
+                  file: data?.mediaLink ?? '',
+                  image: data?.imageLink ?? '',
                 ),
                 const SizedBox(height: 16),
-                Text(
-                  'Description',
-                  style: theme.textTheme.headline5,
-                ),
-                const SizedBox(height: 12),
                 if (data?.about != null) ...[
+                  Text(
+                    'Description',
+                    style: theme.textTheme.headline5,
+                  ),
+                  const SizedBox(height: 12),
                   Text(
                     data?.about ?? '',
                     style: theme.textTheme.bodyMedium,
@@ -98,10 +100,10 @@ class FileDetailScreen extends StatelessWidget {
                       ),
                   ],
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 8),
                 Text(tags, style: theme.textTheme.headlineSmall),
-                const SizedBox(height: 16),
                 EditTagsWidget(
+                  customTags: fileTags,
                   listTags: (value) {},
                 ),
               ],

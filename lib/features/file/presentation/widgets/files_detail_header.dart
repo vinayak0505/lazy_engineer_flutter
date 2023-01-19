@@ -15,21 +15,22 @@ class FilesDetailHeader extends StatelessWidget {
     required this.title,
     required this.userId,
     this.subject,
-    required this.link,
+    required this.file,
+    required this.image,
   });
   final String title;
   final String userId;
   final String? subject;
-  final String link;
+  final String file;
+  final String image;
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    final String? linkString = link != '' ? link : null;
     return Padding(
       padding: const EdgeInsets.all(8),
       child: BlocProvider(
         create: (context) =>
-            FilesDetailCubit(FilesRepositoryImpl(), userId, link),
+            FilesDetailCubit(FilesRepositoryImpl(), userId, file),
         child: BlocBuilder<FilesDetailCubit, FilesDetailState>(
           builder: (context, state) {
             final read = context.read<FilesDetailCubit>();
@@ -38,7 +39,7 @@ class FilesDetailHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomImage(
-                  networkImage: linkString,
+                  networkImage: image,
                   radius: kRoundedRectangleRadius,
                   width: 130,
                   height: 180,
@@ -64,34 +65,34 @@ class FilesDetailHeader extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          IconButton(
-                            onPressed: () => read.like(),
-                            icon: watch.rating ?? false
-                                ? const CustomIcon(
-                                    AppIcons.likeIcon,
-                                    height: 26,
-                                    width: 26,
-                                  )
-                                : const CustomIcon(
-                                    AppIcons.closeIcon,
-                                    height: 26,
-                                    width: 26,
-                                  ),
-                          ),
-                          IconButton(
-                            onPressed: () => read.dislike(),
-                            icon: watch.rating ?? true
-                                ? const CustomIcon(
-                                    AppIcons.closeIcon,
-                                    height: 26,
-                                    width: 26,
-                                  )
-                                : const CustomIcon(
-                                    AppIcons.dislikeIcon,
-                                    height: 26,
-                                    width: 26,
-                                  ),
-                          ),
+                          // IconButton(
+                          //   onPressed: () => read.like(),
+                          //   icon: watch.rating ?? false
+                          //       ? const CustomIcon(
+                          //           AppIcons.likeIcon,
+                          //           height: 26,
+                          //           width: 26,
+                          //         )
+                          //       : const CustomIcon(
+                          //           AppIcons.closeIcon,
+                          //           height: 26,
+                          //           width: 26,
+                          //         ),
+                          // ),
+                          // IconButton(
+                          //   onPressed: () => read.dislike(),
+                          //   icon: watch.rating ?? true
+                          //       ? const CustomIcon(
+                          //           AppIcons.closeIcon,
+                          //           height: 26,
+                          //           width: 26,
+                          //         )
+                          //       : const CustomIcon(
+                          //           AppIcons.dislikeIcon,
+                          //           height: 26,
+                          //           width: 26,
+                          //         ),
+                          // ),
                           Column(
                             children: [
                               const CustomIcon(
@@ -118,7 +119,7 @@ class FilesDetailHeader extends StatelessWidget {
                       Center(
                         child: CustomButton(
                           text: download,
-                          onPressed: () => read.download(link),
+                          onPressed: () => read.download(file),
                           width: 120,
                         ),
                       ),

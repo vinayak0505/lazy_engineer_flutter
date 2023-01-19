@@ -9,13 +9,11 @@ class TileView extends StatelessWidget {
     required this.child,
     this.pages,
     this.fit = BoxFit.fill,
-    this.height = 120,
     this.width = 90,
     this.onPressed,
   });
   final String? image;
   final BoxFit fit;
-  final double height;
   final double width;
   final int? pages;
   final Widget child;
@@ -33,10 +31,11 @@ class TileView extends StatelessWidget {
               alignment: Alignment.bottomRight,
               children: [
                 CustomImage(
+                  margin: const EdgeInsets.all(8),
                   networkImage: image,
-                  height: height,
                   width: width,
                   boxFit: fit,
+                  isBorder: true,
                   radius: kRoundedRectangleRadius,
                   onlyLeft: true,
                 ),

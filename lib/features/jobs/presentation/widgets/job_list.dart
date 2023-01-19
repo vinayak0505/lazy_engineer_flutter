@@ -16,16 +16,14 @@ class JobList extends StatelessWidget {
       itemBuilder: (context, index) {
         final jobData = data[index];
         return TileView(
-          image: data[index].imageLink,
+          image: data[index].mediaLink,
           fit: BoxFit.contain,
-          height: 100,
           width: 70,
           child: JobDataBox(
             jobTitle: jobData.title ?? '',
             location: jobData.location ?? '',
             companyName: jobData.company ?? '',
-            date: DateTime.now(),
-            // date: data[index].datePosted,
+            date: jobData.datePosted ?? '',
           ),
           onPressed: () => context.push(
             '${RouteGenerator.jobsDescriptionRoute}/${index + 1}',
@@ -51,24 +49,24 @@ class JobDataBox extends StatelessWidget {
   final String jobTitle;
   final String companyName;
   final String location;
-  final DateTime date;
+  final String date;
 
-  String time() {
-    final int years = DateTime.now().year - date.year;
-    if (years != 0) return '$years years ago';
-    final int months = DateTime.now().month - date.month;
-    if (months != 0) return '$months months ago';
-    final int days = DateTime.now().day - date.day;
-    if (days != 0) return '$days days ago';
-    return 'Today';
-  }
+  // String time() {
+  //   final int years = DateTime.now().year - date.year;
+  //   if (years != 0) return '$years years ago';
+  //   final int months = DateTime.now().month - date.month;
+  //   if (months != 0) return '$months months ago';
+  //   final int days = DateTime.now().day - date.day;
+  //   if (days != 0) return '$days days ago';
+  //   return 'Today';
+  // }
 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    return Flexible(
+    return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +78,7 @@ class JobDataBox extends StatelessWidget {
             ),
             const SizedBox(height: 2),
             Text(companyName, style: theme.textTheme.bodyLarge),
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             Text(
               location,
               style: theme.textTheme.bodyText2,
@@ -90,7 +88,10 @@ class JobDataBox extends StatelessWidget {
             const SizedBox(height: 8),
             Align(
               alignment: Alignment.bottomRight,
-              child: Text(time(), style: theme.textTheme.bodySmall),
+              child: Text(
+                date,
+                style: theme.textTheme.overline,
+              ),
             )
           ],
         ),

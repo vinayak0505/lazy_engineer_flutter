@@ -24,9 +24,13 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
     required this.onPressed,
     required this.title,
     required this.body,
+    this.buttonText = upload,
+    this.buttonWidth = 100,
   });
-  final void Function(UploadCubit cubit, File image) onPressed;
+  final void Function(UploadCubit cubit, File? image) onPressed;
   final String title;
+  final String buttonText;
+  final double buttonWidth;
   final List<Widget> body;
 
   @override
@@ -118,8 +122,8 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                                 onPressed: () => context
                                     .read<UploadCubit>()
                                     .uploadDocument(),
-                                text: upload,
-                                width: 100,
+                                text: buttonText,
+                                width: buttonWidth,
                               ),
                             ),
                             //* File
@@ -173,7 +177,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                                 width: 130,
                                 onPressed: () {
                                   if (formGlobalKey.currentState!.validate()) {
-                                    onPressed(cubit, documentImage!);
+                                    onPressed(cubit, documentImage);
                                   }
                                 },
                               ),

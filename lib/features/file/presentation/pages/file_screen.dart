@@ -85,6 +85,7 @@ class FileListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data.length,
       itemBuilder: (context, index) => TileView(
+        image: data[index].imageLink,
         child: FileDataBox(
           title: data[index].title ?? '',
           college: data[index].college ?? '',

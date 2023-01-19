@@ -51,36 +51,66 @@ class UploadCubit extends Cubit<UploadState> {
 
   /// -------------------NOTES-----------------------
   Future<void> uploadNotes(UploadNotesRequest notesData, File image) async {
+    emit(const UploadState.loading());
     final imageFile = await MultipartFile.fromFile(image.path);
-    repository.uplaodNotes(notesData.copyWith(file: file, image: imageFile));
-    emit(const UploadState.success());
+    final request = await repository.uplaodNotes(
+      notesData.copyWith(file: file, image: imageFile),
+    );
+    if (request) {
+      emit(const UploadState.success());
+    } else {
+      emit(const UploadState.failure(''));
+    }
   }
 
   /// -------------------PAPERS-----------------------
   Future<void> uploadPaper(UploadPaperRequest paperData, File image) async {
-     final imageFile = await MultipartFile.fromFile(image.path);
-    repository.uplaodPaper(paperData.copyWith(file: file, image: imageFile));
-    emit(const UploadState.success());
+    final imageFile = await MultipartFile.fromFile(image.path);
+    final request = await repository.uplaodPaper(
+      paperData.copyWith(file: file, image: imageFile),
+    );
+    if (request) {
+      emit(const UploadState.success());
+    } else {
+      emit(const UploadState.failure(''));
+    }
   }
 
   /// -------------------BOOKS-----------------------
   Future<void> uploadBook(UploadBookRequest bookData, File image) async {
     final imageFile = await MultipartFile.fromFile(image.path);
-    repository.uplaodBook(bookData.copyWith(file: file, image: imageFile));
-    emit(const UploadState.success());
+    final request = await repository.uplaodBook(
+      bookData.copyWith(file: file, image: imageFile),
+    );
+    if (request) {
+      emit(const UploadState.success());
+    } else {
+      emit(const UploadState.failure(''));
+    }
   }
 
   /// -------------------FILES-----------------------
-  Future<void> uploadFile(UploadFilesRequest fileData, File image) async{
+  Future<void> uploadFile(UploadFilesRequest fileData, File image) async {
     final imageFile = await MultipartFile.fromFile(image.path);
-    repository.uplaodFiles(fileData.copyWith(file: file, image: imageFile));
-    emit(const UploadState.success());
+    final request = await repository.uplaodFiles(
+      fileData.copyWith(file: file, image: imageFile),
+    );
+    if (request) {
+      emit(const UploadState.success());
+    } else {
+      emit(const UploadState.failure(''));
+    }
   }
 
   /// -------------------JOBS-----------------------
   Future<void> uploadJobs(UploadJobsRequest jobsData, File image) async {
     final imageFile = await MultipartFile.fromFile(image.path);
-    repository.uplaodJobs(jobsData.copyWith(file: file, image: imageFile));
-    emit(const UploadState.success());
+    final request = await repository
+        .uplaodJobs(jobsData.copyWith(file: file, image: imageFile));
+    if (request) {
+      emit(const UploadState.success());
+    } else {
+      emit(const UploadState.failure(''));
+    }
   }
 }

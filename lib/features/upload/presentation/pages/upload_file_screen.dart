@@ -34,6 +34,15 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
+        //* About
+        Text(about, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        CustomTextField.multiLine(
+          controller: aboutController,
+          hintText: aboutNotes,
+          validator: (value) => nullCheckTextValidation(value, about),
+        ),
+        const SizedBox(height: 16),
         //* Subject
         Text(subject, style: theme.textTheme.titleLarge),
         CustomTextField.secondary(
@@ -75,6 +84,7 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
         const SizedBox(height: 8),
         EditTagsWidget(
           listTags: (value) => tagsController = value,
+          customTags: fileTags,
           validator: (_) => emptyListCheckValidation(
             tagsController,
             tags,
@@ -91,7 +101,7 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
             semester: semesterController.text,
             tags: tagsController,
           ),
-          image,
+          image!,
         );
       },
     );

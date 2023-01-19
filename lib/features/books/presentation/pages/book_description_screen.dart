@@ -32,9 +32,8 @@ class BookDescriptionScreen extends StatelessWidget {
                 PapersDetailHeader(
                   title: data?.title ?? '',
                   userId: data?.userId ?? '',
-                  //TODO: Add subject in books_response file through postman also. Vinayak forget to add it.
-                  // subject: data.subject ?? '',
-                  link: data?.mediaLink ?? '',
+                  file: data?.mediaLink ?? '',
+                  image: data?.imageLink ?? '',
                 ),
                 const SizedBox(height: 16),
                 Text(
@@ -53,7 +52,8 @@ class BookDescriptionScreen extends StatelessWidget {
                     Text('Writers', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 80),
                     Wrap(
-                      children: data?.writer?.map((p) => Text(p)).toList() ?? [],
+                      children:
+                          data?.writer?.map((p) => Text(p)).toList() ?? [],
                     ),
                   ],
                 ),
@@ -62,7 +62,10 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text(semester, style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 60),
-                    Text(data?.semester ?? '', style: theme.textTheme.bodyText2),
+                    Text(
+                      data?.semester ?? '',
+                      style: theme.textTheme.bodyText2,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -70,7 +73,10 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text('Book Edition', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 30),
-                    Text(data?.title ?? '', style: theme.textTheme.bodyText2),
+                    Text(
+                      data?.bookEdition.toString() ?? '',
+                      style: theme.textTheme.bodyText2,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -78,7 +84,10 @@ class BookDescriptionScreen extends StatelessWidget {
                   children: [
                     Text('Price', style: theme.textTheme.headlineSmall),
                     const SizedBox(width: 110),
-                    Text(data?.title ?? '', style: theme.textTheme.bodyText2),
+                    Text(
+                      data?.price.toString() ?? '',
+                      style: theme.textTheme.bodyText2,
+                    ),
                   ],
                 ),
               ],

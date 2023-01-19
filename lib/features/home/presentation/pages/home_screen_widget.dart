@@ -20,8 +20,10 @@ class HomeScreenWidget extends StatelessWidget {
     this.multiOptionFilter,
     this.singleOptionFilter,
     this.applyFilter,
+    this.extraAppBarSize = 0,
   });
   final String title;
+  final double extraAppBarSize;
   final List<Widget> body;
   final List<String>? textFieldFilter;
   final List<String>? multiOptionFilter;
@@ -49,8 +51,11 @@ class HomeScreenWidget extends StatelessWidget {
                 slivers: [
                   SliverAppBar(
                     centerTitle: true,
+                    toolbarHeight: kToolbarHeight + extraAppBarSize,
                     title: Text(
                       title,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
                       style: theme.textTheme.headline4,
                     ),
                     leading: Padding(

@@ -19,7 +19,7 @@ class WriterListWidget extends StatelessWidget {
             children: [
               CustomTextField.secondary(
                 controller: controller,
-                hintText: writer,
+                hintText: writers,
                 onSubitted: (value) {
                   context.read<ListCubit>().addElement(value);
                   controller.clear();

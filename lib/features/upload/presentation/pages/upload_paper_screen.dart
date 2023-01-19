@@ -36,6 +36,15 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
+        //* About
+        Text(about, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        CustomTextField.multiLine(
+          controller: aboutController,
+          hintText: aboutNotes,
+          validator: (value) => nullCheckTextValidation(value, about),
+        ),
+        const SizedBox(height: 16),
         //* Subject
         Text(subject, style: theme.textTheme.titleLarge),
         CustomTextField.secondary(
@@ -47,33 +56,38 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        //* Semester
-        CustomDropdown(
-          width: 120,
-          list: semesterList,
-          keyList: semesterKeyList,
-          hintText: semester,
-          controller: semesterController,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            semester,
-          ),
-        ),
-        const SizedBox(height: 16),
-        //* Unit
-        CustomDropdown(
-          width: 120,
-          list: unitList,
-          keyList: unitKeyList,
-          hintText: unit,
-          controller: unitController,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            unit,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            //* Semester
+            CustomDropdown(
+              width: 120,
+              list: semesterList,
+              keyList: semesterKeyList,
+              hintText: semester,
+              controller: semesterController,
+              validator: (value) => nullCheckTextValidation(
+                value,
+                semester,
+              ),
+            ),
+            //* Unit
+            CustomDropdown(
+              width: 120,
+              list: unitList,
+              keyList: unitKeyList,
+              hintText: unit,
+              controller: unitController,
+              validator: (value) => nullCheckTextValidation(
+                value,
+                unit,
+              ),
+            ),
+          ],
         ),
         const SizedBox(height: 16),
         //* Chapter
+        Text(chapter, style: theme.textTheme.titleLarge),
         CustomTextField.secondary(
           controller: chapterController,
           hintText: chapter,
@@ -84,6 +98,7 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
         ),
         const SizedBox(height: 16),
         //* Topic
+        Text(topic, style: theme.textTheme.titleLarge),
         CustomTextField.secondary(
           controller: topicController,
           hintText: topic,
@@ -97,6 +112,7 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
         EditTagsWidget(
+          customTags: questionPaperTags,
           listTags: (value) => tagsController = value,
           validator: (_) => emptyListCheckValidation(
             tagsController,
@@ -116,7 +132,7 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
             topic: topicController.text,
             tags: tagsController,
           ),
-          image,
+          image!,
         );
       },
     );

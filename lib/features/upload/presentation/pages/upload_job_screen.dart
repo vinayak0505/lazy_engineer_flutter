@@ -20,19 +20,20 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final titleController = TextEditingController();
-    final profileController = TextEditingController();
     final companyController = TextEditingController();
     final aboutCompanyController = TextEditingController();
     final jobTypeController = TextEditingController();
     final experienceController = TextEditingController();
     List<String> skillsController = [];
     final expectedSalaryController = TextEditingController();
-    final aboutTheCompanyController = TextEditingController();
+    final aboutJobController = TextEditingController();
     final locationController = TextEditingController();
     final numOfEmployeesController = TextEditingController();
-    final List<File> companyPhotoController = [];
+    List<File> companyPhotoController = [];
     return UploadScreenWidget(
       title: uploadJob,
+      buttonWidth: 200,
+      buttonText: uploadCompanyIcon,
       body: [
         //* Title
         Text(title, style: theme.textTheme.titleLarge),
@@ -110,13 +111,13 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
         const SizedBox(height: 16),
         //* About Description
         Text(
-          aboutTheCompany,
+          aboutJob,
           style: theme.textTheme.titleLarge,
         ),
         const SizedBox(height: 12),
         CustomTextField.multiLine(
-          controller: aboutTheCompanyController,
-          hintText: minimumQualification,
+          controller: aboutJobController,
+          hintText: aboutJob,
           validator: (value) => nullCheckTextValidation(
             value,
             aboutTheCompany,
@@ -172,6 +173,7 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
         ),
         const SizedBox(height: 12),
         EditTagsWidget(
+          customTags: skillTags,
           listTags: (value) => skillsController = value,
           validator: (_) => emptyListCheckValidation(
             skillsController,
@@ -189,7 +191,7 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
           child: CompanyImage(
             list: companyPhotoController,
             onSubmit: (list) {
-              // companyPhotoController = list;
+              companyPhotoController = list;
             },
           ),
         ),
@@ -199,7 +201,7 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
         cubit.uploadJobs(
           UploadJobsRequest(
             title: titleController.text,
-            profile: profileController.text,
+            profile: aboutJobController.text,
             company: companyController.text,
             aboutCompany: aboutCompanyController.text,
             location: locationController.text,
@@ -209,7 +211,7 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
             skillsNeeded: skillsController,
             expectedSalary: int.parse(expectedSalaryController.text),
           ),
-          image,
+          companyPhotoController.first,
         );
       },
     );

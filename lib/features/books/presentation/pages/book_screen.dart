@@ -83,6 +83,7 @@ class BookListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data.length,
       itemBuilder: (context, index) => TileView(
+        image: data[index].imageLink,
         child: BookDataBox(
           writers: data[index].writer ?? [],
           bookName: data[index].title ?? '',

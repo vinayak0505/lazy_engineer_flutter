@@ -24,11 +24,19 @@ class BookDataBox extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(allWriters.toUpperCase(), style: theme.textTheme.overline),
+            Text(
+              allWriters.toUpperCase(),
+              style: theme.textTheme.overline,
+            ),
             const SizedBox(height: 8),
             Text(bookName, style: theme.textTheme.headline5),
             const SizedBox(height: 8),
-            Text(description, style: theme.textTheme.bodyMedium),
+            Text(
+              description,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.bodyMedium,
+            ),
           ],
         ),
       ),

@@ -8,22 +8,27 @@ import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/n
 List<CategoriesModel> categoriesList = [
   const CategoriesModel(
     title: 'Notes',
+    image: AppImages.notesImage,
     description: 'You can find handwriten notes from all students',
   ),
   const CategoriesModel(
     title: 'Question Paper',
+    image: AppImages.questionPaperImage,
     description: 'Last years Queation paper from all univercities',
   ),
   const CategoriesModel(
     title: 'Practicle File',
+    image: AppImages.practicleFileImage,
     description: 'See other sutudents practical file',
   ),
   const CategoriesModel(
     title: 'Books',
+    image: AppImages.booksImage,
     description: 'Downlod books for free',
   ),
   const CategoriesModel(
     title: 'Jobs',
+    image: AppImages.jobsImage,
     description: 'Get all latest jobs post here',
   ),
 ];
@@ -48,85 +53,6 @@ NotesDetailResponse notesDetail = const NotesDetailResponse(
   ['handwritten', 'maths', 'fun'],
   4.5,
 );
-
-// List<PaperResponse> papersList = [
-//   const PaperResponse(
-//     'Computer Graphics',
-//     'Computer Graphics',
-//     'Class Test',
-//     'description',
-//     'GTBIT',
-//     3,
-//     2,
-//     AppImages.book,
-//   ),
-//   const PaperResponse(
-//     'Computer Graphics',
-//     'Computer Graphics',
-//     'Class Test',
-//     'description',
-//     'GTBIT',
-//     3,
-//     2,
-//     AppImages.book,
-//   ),
-//   const PaperResponse(
-//     'Computer Graphics',
-//     'Computer Graphics',
-//     'Class Test',
-//     'description',
-//     'GTBIT',
-//     3,
-//     2,
-//     AppImages.book,
-//   ),
-//   const PaperResponse(
-//     'Computer Graphics',
-//     'Computer Graphics',
-//     'Class Test',
-//     'description',
-//     'GTBIT',
-//     3,
-//     2,
-//     AppImages.book,
-//   ),
-// ];
-
-// List<FilesResponse> practicalFileList = [
-//   const FilesResponse(
-//     'Computer Graphics Practicle File',
-//     'Computer Graphics',
-//     'GTBIT',
-//     'Computer Graphics',
-//     AppImages.bookCoverImage,
-//   ),
-//   const FilesResponse(
-//     'Computer Graphics Practicle File',
-//     'Computer Graphics',
-//     'GTBIT',
-//     'Computer Graphics',
-//     AppImages.bookCoverImage,
-//   ),
-//   const FilesResponse(
-//     'Computer Graphics Practical File',
-//     'Computer Graphics',
-//     'GTBIT',
-//     'Computer Graphics',
-//     AppImages.bookCoverImage,
-//   ),
-// ];
-
-// PaperDetailResponse papersDetail = const PaperDetailResponse(
-//   'Computer Graphics Question Paper',
-//   AppImages.book,
-//   3,
-//   2,
-//   'Computer Graphics',
-//   'Class Test',
-//   'No',
-//   ['Ms. Jasleen Kaur', 'Unit - 1 & 2', '2019'],
-//   4.5,
-// );
 
 FilesDetailResponse filesDetail = const FilesDetailResponse(
   'Computer Graphics Practical File',
@@ -162,20 +88,6 @@ List<String> bookImageList = const [
   AppImages.bookCoverImage,
 ];
 
-List<String> companyImageList = const [
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-  AppImages.companyImage,
-];
-
 // file
 List<String> multiOptionFileList = ['Only IP University'];
 
@@ -185,61 +97,6 @@ List<String> singleOptionFileList = [
   'Top Rated',
   'Newest'
 ];
-
-// List<BooksResponse> bookList = [
-//   const BooksResponse(
-//     'Computer Graphics',
-//     ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-//     'You can find handwriten notes from all students.',
-//     200,
-//     AppImages.bookCoverImage,
-//   ),
-//   const BooksResponse(
-//     'Computer Graphics',
-//     ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-//     'You can find handwriten notes from all students.',
-//     200,
-//     AppImages.bookCoverImage,
-//   ),
-//   const BooksResponse(
-//     'Computer Graphics',
-//     ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-//     'You can find handwriten notes from all students.',
-//     200,
-//     AppImages.bookCoverImage,
-//   ),
-//   const BooksResponse(
-//     'Computer Graphics',
-//     ['Mr. Vinayak agarwal', 'Mr. Harshit Arora'],
-//     'You can find handwriten notes from all students.',
-//     200,
-//     AppImages.bookCoverImage,
-//   ),
-// ];
-
-// List<JobsResponse> jobList = [
-//   JobsResponse(
-//     'Android Developer',
-//     'Google',
-//     'Gurugram, Haryana, India',
-//     [],
-//     DateTime.now().toIso8601String(),
-//   ),
-//   JobsResponse(
-//     'Android Developer',
-//     'Google',
-//     'Gurugram, Haryana, India',
-//     [],
-//     DateTime.now().toIso8601String(),
-//   ),
-//   JobsResponse(
-//     'Android Developer',
-//     'Google',
-//     'Gurugram, Haryana, India',
-//     [],
-//     DateTime.now().toIso8601String(),
-//   ),
-// ];
 
 JobsDetailResponse jobsDetail = const JobsDetailResponse(
   'Android Developer',
@@ -375,4 +232,35 @@ List<String> universityList = ['GTBIT'];
 List<String> yearOfAdmissionList = [
   '2020',
   '2021',
+];
+
+// tags
+List<String> questionPaperTags = [
+  'Solved',
+  'Unsolved',
+  'Mid-Term',
+  'End-Term',
+];
+
+List<String> notesTags = [
+  'Handwritten',
+  'Printed',
+];
+
+List<String> fileTags = [
+  'Handwritten',
+  'Printed',
+];
+
+List<String> bookTags = [
+  'Recommended by Teachers',
+  'Easy to understand',
+];
+
+List<String> skillTags = [
+  'C/C++',
+  'HTML',
+  'Java',
+  'JS',
+  'Flutter',
 ];

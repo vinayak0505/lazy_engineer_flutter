@@ -10,7 +10,7 @@ class QuestionPaperDataBox extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     return Flexible(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,14 +20,14 @@ class QuestionPaperDataBox extends StatelessWidget {
               style: theme.textTheme.headline5,
               overflow: TextOverflow.ellipsis,
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
             Text(
               paperDetail.about ?? '',
               style: theme.textTheme.caption,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 4),
             RichText(
               text: TextSpan(
                 style: theme.textTheme.bodyMedium,

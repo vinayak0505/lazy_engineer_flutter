@@ -69,7 +69,7 @@ class NotesScreen extends StatelessWidget {
                       return GridCard(
                         body: element.about ?? '',
                         title: element.title ?? '',
-                        image: element.imageLink,
+                        networkImage: element.imageLink,
                       );
                     }).toList(),
                     onTap: (context, index) {

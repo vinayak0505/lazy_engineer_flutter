@@ -7,7 +7,7 @@ class UploadRepositoryImpl implements UploadRepository {
   // final UploadLocalDataSource _localDataSource = UploadLocalDataSource();
 
   @override
-  Future<bool?> uplaodBook(UploadBookRequest data) async {
+  Future<bool> uplaodBook(UploadBookRequest data) async {
     try {
       final String status = await _remoteDataSource.uploadBook(data);
       if (status == 'failier') {
@@ -16,12 +16,12 @@ class UploadRepositoryImpl implements UploadRepository {
         return true;
       }
     } catch (e) {
-      return null;
+      return false;
     }
   }
 
   @override
-  Future<bool?> uplaodFiles(UploadFilesRequest data) async {
+  Future<bool> uplaodFiles(UploadFilesRequest data) async {
     try {
       final String status = await _remoteDataSource.uploadFiles(data);
       if (status == 'failier') {
@@ -30,12 +30,12 @@ class UploadRepositoryImpl implements UploadRepository {
         return true;
       }
     } catch (e) {
-      return null;
+      return false;
     }
   }
 
   @override
-  Future<bool?> uplaodJobs(UploadJobsRequest data) async {
+  Future<bool> uplaodJobs(UploadJobsRequest data) async {
     try {
       final String status = await _remoteDataSource.uploadJobs(data);
       if (status == 'failier') {
@@ -44,12 +44,12 @@ class UploadRepositoryImpl implements UploadRepository {
         return true;
       }
     } catch (e) {
-      return null;
+      return false;
     }
   }
 
   @override
-  Future<bool?> uplaodNotes(UploadNotesRequest data) async {
+  Future<bool> uplaodNotes(UploadNotesRequest data) async {
     try {
       final String status = await _remoteDataSource.uploadNotes(data);
       if (status == 'failier') {
@@ -58,12 +58,12 @@ class UploadRepositoryImpl implements UploadRepository {
         return true;
       }
     } catch (e) {
-      return null;
+      return false;
     }
   }
 
   @override
-  Future<bool?> uplaodPaper(UploadPaperRequest data) async {
+  Future<bool> uplaodPaper(UploadPaperRequest data) async {
     try {
       final String status = await _remoteDataSource.uploadPaper(data);
       if (status == 'failier') {
@@ -72,7 +72,7 @@ class UploadRepositoryImpl implements UploadRepository {
         return true;
       }
     } catch (e) {
-      return null;
+      return false;
     }
   }
 }

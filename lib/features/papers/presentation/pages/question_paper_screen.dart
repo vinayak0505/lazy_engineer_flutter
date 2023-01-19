@@ -28,15 +28,18 @@ class QuestionPaperScreen extends StatelessWidget {
           return state.when(
             loading: () => const HomeScreenWidget(
               title: questionPaper,
+              extraAppBarSize: 30,
               body: [LoadingScreen()],
             ),
             failure: (error) => HomeScreenWidget(
               title: questionPaper,
+              extraAppBarSize: 30,
               body: [FailureScreen(error)],
             ),
             success: (data) {
               return HomeScreenWidget(
                 title: questionPaper,
+                extraAppBarSize: 30,
                 textFieldFilter: const [
                   'Subject',
                   'Unit',
@@ -86,11 +89,12 @@ class QuestionPaperListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data.length,
       itemBuilder: (context, index) => TileView(
-        child: QuestionPaperDataBox(data[index]),
+        image: data[index].imageLink,
         onPressed: () => context.push(
           '${RouteGenerator.questionPaperDescriptionRoute}/${index + 1}',
           extra: data[index],
         ),
+        child: QuestionPaperDataBox(data[index]),
       ),
       separatorBuilder: (context, index) => const SizedBox(height: 8),
     );

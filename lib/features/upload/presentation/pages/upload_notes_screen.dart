@@ -103,6 +103,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
         EditTagsWidget(
+          customTags: notesTags,
           listTags: (value) => tagsController = value,
           validator: (_) => emptyListCheckValidation(
             tagsController,
@@ -122,7 +123,7 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
             topic: topicController.text,
             tags: tagsController,
           ),
-          image,
+          image!,
         );
       },
     );

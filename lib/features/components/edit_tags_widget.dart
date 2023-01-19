@@ -11,6 +11,7 @@ class EditTagsWidget extends FormField<List<String>> {
   EditTagsWidget({
     super.key,
     required Function(List<String>) listTags,
+    List<String>? customTags,
     super.validator,
   }) : super(
           builder: (FormFieldState<List<String>> formState) {
@@ -23,7 +24,7 @@ class EditTagsWidget extends FormField<List<String>> {
                   if (validator != null) validator.call(list);
                 },
                 builder: (context, list) {
-                  final List<String> tags = tagsList;
+                  final List<String> tags = customTags ?? tagsList;
                   final cubit = context.read<ListCubit>();
 
                   return Column(
@@ -77,7 +78,7 @@ class EditTagsWidget extends FormField<List<String>> {
                                   }
 
                                   return Container(
-                                    height: 200,
+                                    height: 300,
                                     padding: const EdgeInsets.symmetric(
                                       horizontal: 18,
                                     ),
