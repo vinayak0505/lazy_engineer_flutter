@@ -38,7 +38,7 @@ class NotesDetailHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomImage(
-                  networkImage: imageLink != '' ? fileLink : null,
+                  networkImage: imageLink != '' ? imageLink : null,
                   radius: kRoundedRectangleRadius,
                   width: 130,
                   height: 180,

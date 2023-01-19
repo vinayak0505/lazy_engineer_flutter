@@ -15,6 +15,7 @@ class NotesDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
 
+    print('===============================$data');
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(

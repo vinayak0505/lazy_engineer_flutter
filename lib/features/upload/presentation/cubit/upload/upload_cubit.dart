@@ -50,32 +50,37 @@ class UploadCubit extends Cubit<UploadState> {
   }
 
   /// -------------------NOTES-----------------------
-  void uploadNotes(UploadNotesRequest notesData, File image) {
-    repository.uplaodNotes(notesData.copyWith(file: file, image: file));
+  Future<void> uploadNotes(UploadNotesRequest notesData, File image) async {
+    final imageFile = await MultipartFile.fromFile(image.path);
+    repository.uplaodNotes(notesData.copyWith(file: file, image: imageFile));
     emit(const UploadState.success());
   }
 
   /// -------------------PAPERS-----------------------
-  void uploadPaper(UploadPaperRequest paperData, File image) {
-    repository.uplaodPaper(paperData.copyWith(file: file, image: image));
+  Future<void> uploadPaper(UploadPaperRequest paperData, File image) async {
+     final imageFile = await MultipartFile.fromFile(image.path);
+    repository.uplaodPaper(paperData.copyWith(file: file, image: imageFile));
     emit(const UploadState.success());
   }
 
   /// -------------------BOOKS-----------------------
-  void uploadBook(UploadBookRequest bookData, File image) {
-    repository.uplaodBook(bookData.copyWith(file: file, image: image));
+  Future<void> uploadBook(UploadBookRequest bookData, File image) async {
+    final imageFile = await MultipartFile.fromFile(image.path);
+    repository.uplaodBook(bookData.copyWith(file: file, image: imageFile));
     emit(const UploadState.success());
   }
 
   /// -------------------FILES-----------------------
-  void uploadFile(UploadFilesRequest fileData, File image) {
-    repository.uplaodFiles(fileData.copyWith(file: file, image: image));
+  Future<void> uploadFile(UploadFilesRequest fileData, File image) async{
+    final imageFile = await MultipartFile.fromFile(image.path);
+    repository.uplaodFiles(fileData.copyWith(file: file, image: imageFile));
     emit(const UploadState.success());
   }
 
   /// -------------------JOBS-----------------------
-  void uploadJobs(UploadJobsRequest jobsData, File image) {
-    repository.uplaodJobs(jobsData.copyWith(file: file, image: image));
+  Future<void> uploadJobs(UploadJobsRequest jobsData, File image) async {
+    final imageFile = await MultipartFile.fromFile(image.path);
+    repository.uplaodJobs(jobsData.copyWith(file: file, image: imageFile));
     emit(const UploadState.success());
   }
 }
