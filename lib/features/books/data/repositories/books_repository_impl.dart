@@ -4,7 +4,6 @@ import 'package:lazy_engineer/features/books/data/datasources/local/books_local_
 import 'package:lazy_engineer/features/books/data/datasources/remote/books_remote_datasource.dart';
 import 'package:lazy_engineer/features/books/data/models/books_detail_response/books_detail_response.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
-import 'package:lazy_engineer/features/books/data/models/filter_request.dart/filter_request.dart';
 import 'package:lazy_engineer/features/books/domain/repositories/books_repository.dart';
 
 class BooksRepositoryImpl extends BooksRepository {
@@ -51,21 +50,23 @@ class BooksRepositoryImpl extends BooksRepository {
   }
 
   @override
-  Future<List<BookDetail>?> applyFilter(FilterRequest filterRequest) async {
+  Future<List<BookDetail>?> applyTextFeildFilter(
+    List<String> filter,
+    List<BookDetail> data,
+  ) async {
     try {
-      // filterRequest = FilterRequest(
-      //   multiOption: removeNullList(filterRequest.multiOption),
-      //   textField: removeNullList(filterRequest.multiOption),
-      //   singleOption: removeNull(filterRequest.singleOption),
-      // );
-      // BaseResponse<BookResponse> listBooks =
-      //     await _remoteDataSource.applyFilter(filterRequest);
-      // return listBooks.data;
+      final List<BookDetail> newData = [];
+      for (final note in data) {
+        final bool checkSemester = filter[0] == '' || note.semester == filter[0];
+        final bool check =
+            checkSemester;
+        if (check) newData.add(note);
+      }
+      return newData;
     } catch (e) {
       debugPrint(e.toString());
       return null;
     }
-    return null;
   }
 
   @override

@@ -1,22 +1,23 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
-import 'package:lazy_engineer/features/books/data/models/filter_request.dart/filter_request.dart';
-import 'package:lazy_engineer/features/books/domain/repositories/books_repository.dart';
+import 'package:lazy_engineer/features/books/data/repositories/books_repository_impl.dart';
 
 part 'books_state.dart';
 part 'books_cubit.freezed.dart';
 
 class BooksCubit extends Cubit<BooksState> {
-  final BooksRepository _repository;
+  final BooksRepositoryImpl _repository;
   BooksCubit(this._repository) : super(const BooksState.loading()) {
     getBooks();
   }
+  List<BookDetail>? data;
   Future<void> getBooks() async {
     try {
-      final List<BookDetail>? data = await _repository.getBooksData();
+      data = await _repository.getBooksData();
       if (data != null) {
-        emit(BooksState.success(data));
+        emit(BooksState.success(data!));
       } else {
         emit(const BooksState.loading());
       }
@@ -27,12 +28,17 @@ class BooksCubit extends Cubit<BooksState> {
 
   Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
+      //* textfeild
       emit(const BooksState.loading());
-      final List<BookDetail>? data =
-          await _repository.applyFilter(filterRequest);
-      data != null
-          ? emit(BooksState.success(data))
-          : emit(const BooksState.loading());
+      if (filterRequest.textField == null) {
+        emit(BooksState.success(data!));
+        return;
+      }
+      final newData = await _repository.applyTextFeildFilter(
+        filterRequest.textField!,
+        data!,
+      );
+      emit(BooksState.success(newData ?? data!));
     } catch (e) {
       emit(BooksState.failure(e));
     }

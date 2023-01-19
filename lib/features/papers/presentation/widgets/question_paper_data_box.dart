@@ -28,7 +28,6 @@ class QuestionPaperDataBox extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 8),
-            //TODO: Text Span '/n' not working to start type, college, from next line (UiProblem)
             RichText(
               text: TextSpan(
                 style: theme.textTheme.bodyMedium,
@@ -37,22 +36,22 @@ class QuestionPaperDataBox extends StatelessWidget {
                     text: subjectIntended,
                     style: theme.textTheme.subtitle2,
                   ),
-                  TextSpan(text: paperDetail.subject ?? '' + '\n'),
+                  TextSpan(text: '${paperDetail.subject}\n'),
                   TextSpan(
                     text: typeIntended,
                     style: theme.textTheme.subtitle2,
                   ),
-                  TextSpan(text: paperDetail.topic ?? '' + '\n'),
+                  TextSpan(text: '${paperDetail.topic}\n'),
                   TextSpan(
                     text: collegeIntended,
                     style: theme.textTheme.subtitle2,
                   ),
-                  TextSpan(text: paperDetail.unit ?? '' + '\n'),
+                  TextSpan(text: '${paperDetail.unit}\n'),
                   TextSpan(
                     text: yearIntended,
                     style: theme.textTheme.subtitle2,
                   ),
-                  TextSpan(text: paperDetail.semester ?? '' + '\n'),
+                  TextSpan(text: '${paperDetail.semester}\n'),
                 ],
               ),
             )

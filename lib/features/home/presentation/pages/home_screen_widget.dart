@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/components/animated_icon_button.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
@@ -9,17 +10,18 @@ import 'package:lazy_engineer/features/components/single_option_filter.dart';
 import 'package:lazy_engineer/features/components/slide_transition_animation.dart';
 import 'package:lazy_engineer/features/components/text_Field_filter.dart';
 import 'package:lazy_engineer/features/home/presentation/cubit/filter/filter_cubit.dart';
-import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
 
 class HomeScreenWidget extends StatelessWidget {
-  const HomeScreenWidget(
-    this.body, {
+  const HomeScreenWidget({
     super.key,
+    required this.title,
+    required this.body,
     this.textFieldFilter,
     this.multiOptionFilter,
     this.singleOptionFilter,
     this.applyFilter,
   });
+  final String title;
   final List<Widget> body;
   final List<String>? textFieldFilter;
   final List<String>? multiOptionFilter;
@@ -46,7 +48,7 @@ class HomeScreenWidget extends StatelessWidget {
               appBar: AppBar(
                 centerTitle: true,
                 title: Text(
-                  notes,
+                  title,
                   style: theme.textTheme.headline4,
                 ),
                 leading: Padding(

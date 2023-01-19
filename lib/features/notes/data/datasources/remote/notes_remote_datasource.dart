@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:lazy_engineer/assets/constants/token.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/remote/notes_client.dart';
-import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
 import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
@@ -25,13 +25,11 @@ class NotesRemoteDatasource {
         },
       ),
     );
-    //* change
     dio.options.headers.addAll(
       {HeaderKeys.tokenHeaderKey: GetToken.userToken},
     );
-    dio.options.connectTimeout = 10000;
-    dio.options.receiveTimeout = 10000;
-    //*=======================
+    dio.options.connectTimeout = AppConfig.connectTimeout;
+    dio.options.receiveTimeout = AppConfig.receiveTimeout;
     final NotesClient client = NotesClient(
       dio,
       baseUrl: AppConfig.apiBaseUrl,

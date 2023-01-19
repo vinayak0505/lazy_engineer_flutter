@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/features/jobs/data/datasources/local/jobs_local_datasource.dart';
 import 'package:lazy_engineer/features/jobs/data/datasources/remote/jobs_remote_datasource.dart';
-import 'package:lazy_engineer/features/jobs/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/jobs/data/models/jobs_detail_response/jobs_detail_response.dart';
 import 'package:lazy_engineer/features/jobs/domain/jobs_repository.dart';
 
 class JobsRepositoryImpl extends JobsRepository {
   final JobsRemoteDatasource _remoteDataSource = JobsRemoteDatasource();
-  // final JobsLocalDatasource _localDataSource = JobsLocalDatasource();
+  final JobsLocalDatasource _localDataSource = JobsLocalDatasource();
 
   @override
   Future<List<JobDetail>?> getJobsData() async {
@@ -50,22 +50,27 @@ class JobsRepositoryImpl extends JobsRepository {
   }
 
   @override
-  Future<List<JobDetail>?> applyFilter(FilterRequest filterRequest) async {
+  Future<List<JobDetail>?> applyTextFeildFilter(
+    List<String> filter,
+    List<JobDetail> data,
+  ) async {
     try {
-      // return jobList;
-      // filterRequest = FilterRequest(
-      //   multiOption: removeNullList(filterRequest.multiOption),
-      //   textField: removeNullList(filterRequest.multiOption),
-      //   singleOption: removeNull(filterRequest.singleOption),
-      // );
-      // BaseResponse<List<JobDetail>> listJobs =
-      //     await _remoteDataSource.applyFilter(filterRequest);
-      // return listJobs.data;
+      final List<JobDetail> newData = [];
+      for (final job in data) {
+        final bool checkCompany = filter[0] == '' || job.company == filter[0];
+        final bool checkExperienceLevel = filter[1] == '' || job.experienceLevel == filter[1];
+        final bool checkExpectedSalary = filter[2] == '' || job.expectedSalary.toString() == filter[2];
+        final bool checkJobType = filter[3] == '' || job.jobType == filter[3];
+        final bool checkLocation = filter[3] == '' || job.location == filter[3];
+        final bool check =
+            checkCompany && checkExperienceLevel && checkExpectedSalary && checkJobType && checkLocation;
+        if (check) newData.add(job);
+      }
+      return newData;
     } catch (e) {
       debugPrint(e.toString());
       return null;
     }
-    return null;
   }
 
   @override
@@ -77,6 +82,20 @@ class JobsRepositoryImpl extends JobsRepository {
     } catch (e) {
       debugPrint(e.toString());
       return null;
+    }
+  }
+
+  @override
+  Future<bool> download(String fileLink) async {
+    try {
+      final int start = fileLink.indexOf('/o/') + 3;
+      final int end = fileLink.indexOf('?generation');
+      final String name = fileLink.substring(start, end);
+      await _localDataSource.downloadJobs(name, fileLink);
+      return true;
+    } catch (e) {
+      debugPrint(e.toString());
+      return false;
     }
   }
 }

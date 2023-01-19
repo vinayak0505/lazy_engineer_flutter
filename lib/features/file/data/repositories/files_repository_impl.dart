@@ -4,7 +4,6 @@ import 'package:lazy_engineer/features/file/data/datasources/local/files_local_d
 import 'package:lazy_engineer/features/file/data/datasources/remote/files_remote_datasource.dart';
 import 'package:lazy_engineer/features/file/data/models/files_detail_response/files_detail_response.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
-import 'package:lazy_engineer/features/file/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/file/domain/repositories/files_repository.dart';
 
 class FilesRepositoryImpl extends FilesRepository {
@@ -51,23 +50,25 @@ class FilesRepositoryImpl extends FilesRepository {
   }
 
   @override
-  Future<List<FileDetail>?> applyFilter(FilterRequest filterRequest) async {
-    return null;
-  
-    // return practicalFileList;
-    // try {
-    //   filterRequest = FilterRequest(
-    //     multiOption: removeNullList(filterRequest.multiOption),
-    //     textField: removeNullList(filterRequest.multiOption),
-    //     singleOption: removeNull(filterRequest.singleOption),
-    //   );
-    //   final BaseResponse<FileResponse> listNotes =
-    //       await _remoteDataSource.applyFilter(filterRequest);
-    //   return listNotes.data;
-    // } catch (e) {
-    //   debugPrint(e.toString());
-    //   return null;
-    // }
+  Future<List<FileDetail>?> applyTextFeildFilter(
+    List<String> filter,
+    List<FileDetail> data,
+  ) async {
+    try {
+      final List<FileDetail> newData = [];
+      for (final note in data) {
+        final bool checkSubject = filter[0] == '' || note.subject == filter[0];
+        final bool checkCollege = filter[1] == '' || note.college == filter[1];
+        final bool checkSemester = filter[2] == '' || note.semester == filter[2];
+        final bool check =
+            checkSubject && checkCollege && checkSemester;
+        if (check) newData.add(note);
+      }
+      return newData;
+    } catch (e) {
+      debugPrint(e.toString());
+      return null;
+    }
   }
 
   @override

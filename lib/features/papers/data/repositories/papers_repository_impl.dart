@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/papers/data/datasources/local/papers_local_datasource.dart';
 import 'package:lazy_engineer/features/papers/data/datasources/remote/papers_remote_datasource.dart';
-import 'package:lazy_engineer/features/papers/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/papers/domain/repositories/papers_repository.dart';
@@ -51,22 +50,26 @@ class PapersRepositoryImpl extends PapersRepository {
   }
 
   @override
-  Future<List<PaperDetail>?> applyFilter(FilterRequest filterRequest) async {
+  Future<List<PaperDetail>?> applyTextFeildFilter(
+    List<String> filter,
+    List<PaperDetail> data,
+  ) async {
     try {
-      // return papersList;
-      // filterRequest = FilterRequest(
-      //   multiOption: removeNullList(filterRequest.multiOption),
-      //   textField: removeNullList(filterRequest.multiOption),
-      //   singleOption: removeNull(filterRequest.singleOption),
-      // );
-      // BaseResponse<List<PaperDetail>> listPapers =
-      //     await _remoteDataSource.applyFilter(filterRequest);
-      // return listPapers.data;
+      final List<PaperDetail> newData = [];
+      for (final note in data) {
+        final bool checkSubject = filter[0] == '' || note.subject == filter[0];
+        final bool checkUnit = filter[1] == '' || note.unit == filter[1];
+        final bool checkChapter = filter[2] == '' || note.chapter == filter[2];
+        final bool checkTopic = filter[3] == '' || note.topic == filter[3];
+        final bool check =
+            checkSubject && checkUnit && checkChapter && checkTopic;
+        if (check) newData.add(note);
+      }
+      return newData;
     } catch (e) {
       debugPrint(e.toString());
       return null;
     }
-    return null;
   }
 
   @override

@@ -33,7 +33,7 @@ class BookDescriptionScreen extends StatelessWidget {
                   title: data?.title ?? '',
                   userId: data?.userId ?? '',
                   //TODO: Add subject in books_response file through postman also. Vinayak forget to add it.
-                  //subject: data.subject ?? '',
+                  // subject: data.subject ?? '',
                   link: data?.mediaLink ?? '',
                 ),
                 const SizedBox(height: 16),

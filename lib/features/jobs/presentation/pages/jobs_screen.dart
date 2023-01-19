@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
-import 'package:lazy_engineer/assets/icons.dart';
-import 'package:lazy_engineer/features/components/custom_icon.dart';
-import 'package:lazy_engineer/features/components/custom_text_field.dart';
+import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
+import 'package:lazy_engineer/features/components/search_bar/modals/search_enum.dart';
+import 'package:lazy_engineer/features/components/search_bar/search_bar.dart';
+import 'package:lazy_engineer/features/components/search_bar/search_notes/search_bloc.dart';
+import 'package:lazy_engineer/features/home/presentation/pages/home_screen_widget.dart';
 import 'package:lazy_engineer/features/jobs/data/repositories/jobs_repository_impl.dart';
 import 'package:lazy_engineer/features/jobs/presentation/cubit/jobs_cubit/jobs_cubit.dart';
 import 'package:lazy_engineer/features/jobs/presentation/widgets/job_list.dart';
@@ -15,59 +17,57 @@ class JobsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController searchBookController = TextEditingController();
-    final ThemeData theme = Theme.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            jobs,
-            style: theme.textTheme.headline4,
-            textAlign: TextAlign.center,
-          ),
-        ),
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const CustomIcon(
-            AppIcons.backArrow,
-            margin: EdgeInsets.only(left: 16),
-          ),
-        ),
-        actions: const [
-          CustomIcon(
-            AppIcons.filterIcon,
-            margin: EdgeInsets.only(right: 16),
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CustomTextField(
-                  controller: searchBookController,
-                  suffixIcon: AppIcons.searchIcon,
-                ),
-                const SizedBox(height: 16),
-                BlocProvider(
-                  create: (context) => JobsCubit(JobsRepositoryImpl()),
-                  child: BlocBuilder<JobsCubit, JobsState>(
-                    builder: (context, state) {
-                      return state.when(
-                        loading: () => const LoadingScreen(),
-                        failure: (e) => FailureScreen(e),
-                        success: (data) => JobList(data),
-                      );
-                    },
-                  ),
-                ),
-              ],
+    return BlocProvider(
+      create: (context) => JobsCubit(JobsRepositoryImpl()),
+      child: BlocBuilder<JobsCubit, JobsState>(
+        builder: (context, state) {
+          return state.when(
+            loading: () => const HomeScreenWidget(
+              title: jobs,
+              body: [LoadingScreen()],
             ),
-          ),
-        ),
+            failure: (error) => HomeScreenWidget(
+              title: notes,
+              body: [FailureScreen(error)],
+            ),
+            success: (data) {
+              return HomeScreenWidget(
+                title: notes,
+                textFieldFilter: const [
+                  'Company',
+                  'Experience Level',
+                  'Expected Salary',
+                  'Job Type',
+                  'Location',
+                ],
+                // singleOptionFilter: const [
+                //   'Smart Sort',
+                //   'Popular',
+                //   'Top Rated',
+                //   'Newest',
+                // ],
+                applyFilter: (FilterRequest filterRequest) {
+                  context.read<JobsCubit>().applyFilter(filterRequest);
+                },
+                body: [
+                  BlocProvider(
+                    create: (_) => SearchBloc(data),
+                    child: BlocBuilder<SearchBloc, List<dynamic>>(
+                      builder: (searchContext, state) {
+                        return SearchBar(
+                          BlocProvider.of<SearchBloc>(searchContext),
+                          SearchEnum.jobs,
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  JobList(data)
+                ],
+              );
+            },
+          );
+        },
       ),
     );
   }

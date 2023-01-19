@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/books/data/models/books_detail_response/books_detail_response.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
-import 'package:lazy_engineer/features/books/data/models/filter_request.dart/filter_request.dart';
 import 'package:retrofit/http.dart';
 
 part 'books_client.g.dart';

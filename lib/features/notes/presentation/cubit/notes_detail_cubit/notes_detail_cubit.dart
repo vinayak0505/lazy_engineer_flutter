@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/features/notes/domain/repositories/notes_repository.dart';
+import 'package:lazy_engineer/features/notes/data/repositories/notes_repository_impl.dart';
 
 part 'notes_detail_state.dart';
 part 'notes_detail_cubit.freezed.dart';
 
 class NotesDetailCubit extends Cubit<NotesDetailState> {
-  final NotesRepository _repository;
+  final NotesRepositoryImpl _repository;
   final String id;
   final String fileLink;
   NotesDetailCubit(

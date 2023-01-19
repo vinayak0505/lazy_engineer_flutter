@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/local/notes_local_datasource.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/remote/notes_remote_datasource.dart';
-import 'package:lazy_engineer/features/notes/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_detail_response/notes_detail_response.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
 import 'package:lazy_engineer/features/notes/domain/repositories/notes_repository.dart';
@@ -51,21 +50,26 @@ class NotesRepositoryImpl extends NotesRepository {
   }
 
   @override
-  Future<List<NoteDetail>?> applyFilter(FilterRequest filterRequest) async {
+  Future<List<NoteDetail>?> applyTextFeildFilter(
+    List<String> filter,
+    List<NoteDetail> data,
+  ) async {
     try {
-      // filterRequest = FilterRequest(
-      //   multiOption: removeNullList(filterRequest.multiOption),
-      //   // textField: removeNullList(filterRequest.multiOption),
-      //   singleOption: removeNull(filterRequest.singleOption),
-      // );
-      // final BaseResponse<NoteResponse> listNotes =
-      //     await _remoteDataSource.applyFilter(filterRequest);
-      // return listNotes.data;
+      final List<NoteDetail> newData = [];
+      for (final note in data) {
+        final bool checkSubject = filter[0] == '' || note.subject == filter[0];
+        final bool checkUnit = filter[1] == '' || note.unit == filter[1];
+        final bool checkChapter = filter[2] == '' || note.chapter == filter[2];
+        final bool checkTopic = filter[3] == '' || note.topic == filter[3];
+        final bool check =
+            checkSubject && checkUnit && checkChapter && checkTopic;
+        if (check) newData.add(note);
+      }
+      return newData;
     } catch (e) {
       debugPrint(e.toString());
       return null;
     }
-    return null;
   }
 
   @override

@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:lazy_engineer/assets/constants/token.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/papers/data/datasources/remote/papers_client.dart';
-import 'package:lazy_engineer/features/papers/data/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_detail_response/paper_detail_response.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/navigation/dio/token_interceptor.dart';
@@ -28,8 +28,8 @@ class PapersRemoteDatasource {
     dio.options.headers.addAll(
       {HeaderKeys.tokenHeaderKey: GetToken.userToken},
     );
-    dio.options.connectTimeout = 10000;
-    dio.options.receiveTimeout = 10000;
+    dio.options.connectTimeout = AppConfig.connectTimeout;
+    dio.options.receiveTimeout = AppConfig.receiveTimeout;
     final PapersClient client = PapersClient(
       dio,
       baseUrl: AppConfig.apiBaseUrl,
