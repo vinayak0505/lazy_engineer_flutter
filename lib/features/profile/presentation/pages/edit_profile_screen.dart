@@ -37,25 +37,30 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
     ValueNotifier<List<String>> experienceLevelValueList =
         ValueNotifier(List.empty(growable: true));
 
-    void onPress() {
+    Future<void> onPress() async {
       if (formGlobalKey.currentState!.validate()) {
+        //TODO: semesterController is empty
+        //TODO: yearOfAdmissionController is empty
+        final data = ProfileModal(
+          userName: fullNameController.text,
+          branch: classController.text,
+          // semester: int.parse(semesterController.text),
+          universityName: universityController.text,
+          userDescription: descriptionController.text,
+          contact: Contact(
+            email: emailController.text,
+            mobileNumber: mobileController.text,
+          ),
+          // yearOfAdmission: int.parse(yearOfAdmissionController.text),
+          experienceLevel: experienceLevelValueList.value,
+          jobType: jobTypeValueList.value,
+          userAddress: locationController.text,
+        );
         BlocProvider(
           create: (context) => EditProfileCubit(),
           child: BlocListener<EditProfileCubit, EditProfileState>(
             listener: (context, state) {
-              context.read<EditProfileCubit>().editData(
-                    userName: fullNameController.text,
-                    branch: classController.text,
-                    semester: int.parse(semesterController.text),
-                    universityName: universityController.text,
-                    userDescription: descriptionController.text,
-                    email: emailController.text,
-                    mobileNumber: mobileController.text,
-                    yearOfAdmission: int.parse(yearOfAdmissionController.text),
-                    experienceLevel: experienceLevelValueList.value,
-                    jobType: jobTypeValueList.value,
-                    userAddress: locationController.text,
-                  );
+              context.read<EditProfileCubit>().editData(data);
             },
           ),
         );
@@ -210,7 +215,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             const SizedBox(height: 32),
             Center(
               child: CustomButton(
-                onPressed: () => onPress(),
+                onPressed: onPress,
                 width: 150,
                 text: submit,
               ),

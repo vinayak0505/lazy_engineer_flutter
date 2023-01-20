@@ -10,36 +10,9 @@ class EditProfileCubit extends Cubit<EditProfileState> {
 
   late ProfileModal data;
 
-  void editData({
-    required String userName,
-    required String branch,
-    required int semester,
-    required String universityName,
-    required String userDescription,
-    required String email,
-    required String mobileNumber,
-    required int yearOfAdmission,
-    required List<String> experienceLevel,
-    required List<String> jobType,
-    required String userAddress,
-  }) {
+  void editData(ProfileModal data) {
     const EditProfileState.loading();
     try {
-      data = ProfileModal(
-        userName: userName,
-        branch: branch,
-        semester: semester,
-        universityName: universityName,
-        userDescription: userDescription,
-        contact: Contact(
-          email: email,
-          mobileNumber: mobileNumber,
-        ),
-        yearOfAdmission: yearOfAdmission,
-        experienceLevel: experienceLevel,
-        jobType: jobType,
-        userAddress: userAddress,
-      );
       emit(EditProfileState.success(data));
     } catch (e) {
       emit(EditProfileState.failure(e));
