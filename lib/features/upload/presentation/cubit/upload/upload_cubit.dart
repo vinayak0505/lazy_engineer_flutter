@@ -105,8 +105,9 @@ class UploadCubit extends Cubit<UploadState> {
   /// -------------------JOBS-----------------------
   Future<void> uploadJobs(UploadJobsRequest jobsData, File image) async {
     final imageFile = await MultipartFile.fromFile(image.path);
-    final request = await repository
-        .uplaodJobs(jobsData.copyWith(file: file, image: imageFile));
+    final request = await repository.uplaodJobs(
+      jobsData.copyWith(file: file, image: imageFile),
+    );
     if (request) {
       emit(const UploadState.success());
     } else {

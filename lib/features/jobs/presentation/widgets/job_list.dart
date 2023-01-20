@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/features/components/tile_view.dart';
 import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
@@ -16,6 +17,7 @@ class JobList extends StatelessWidget {
       itemBuilder: (context, index) {
         final jobData = data[index];
         return TileView(
+          placeholder: AppImages.jobsImage,
           image: data[index].mediaLink,
           fit: BoxFit.contain,
           width: 70,

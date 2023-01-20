@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
-import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
+import 'package:lazy_engineer/features/components/show_tags_widget.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
 import 'package:lazy_engineer/features/papers/presentation/widgets/question_paper_detail_header.dart';
 
@@ -135,11 +134,8 @@ class PaperDetailScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.headlineSmall),
-                const SizedBox(height: 16),
-                EditTagsWidget(
-                  customTags: questionPaperTags,
-                  listTags: (value) {},
-                ),
+                const SizedBox(height: 12),
+                ShowTagsWidget(data?.tags ?? []),
               ],
             ),
           ),

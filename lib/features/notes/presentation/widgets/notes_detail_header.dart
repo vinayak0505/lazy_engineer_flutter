@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
@@ -15,7 +16,8 @@ class NotesDetailHeader extends StatelessWidget {
     required this.title,
     required this.userId,
     this.subject,
-    required this.fileLink, this.imageLink,
+    required this.fileLink,
+    this.imageLink,
   });
   final String title;
   final String userId;
@@ -39,6 +41,7 @@ class NotesDetailHeader extends StatelessWidget {
               children: [
                 CustomImage(
                   networkImage: imageLink != '' ? imageLink : null,
+                  placeHolder: AppImages.notesImage,
                   radius: kRoundedRectangleRadius,
                   width: 130,
                   height: 180,
@@ -64,34 +67,34 @@ class NotesDetailHeader extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          IconButton(
-                            onPressed: () => read.like(),
-                            icon: watch.rating ?? false
-                                ? const CustomIcon(
-                                    AppIcons.likeIcon,
-                                    height: 26,
-                                    width: 26,
-                                  )
-                                : const CustomIcon(
-                                    AppIcons.closeIcon,
-                                    height: 26,
-                                    width: 26,
-                                  ),
-                          ),
-                          IconButton(
-                            onPressed: () => read.dislike(),
-                            icon: watch.rating ?? true
-                                ? const CustomIcon(
-                                    AppIcons.closeIcon,
-                                    height: 26,
-                                    width: 26,
-                                  )
-                                : const CustomIcon(
-                                    AppIcons.dislikeIcon,
-                                    height: 26,
-                                    width: 26,
-                                  ),
-                          ),
+                          // IconButton(
+                          //   onPressed: () => read.like(),
+                          //   icon: watch.rating ?? false
+                          //       ? const CustomIcon(
+                          //           AppIcons.likeIcon,
+                          //           height: 26,
+                          //           width: 26,
+                          //         )
+                          //       : const CustomIcon(
+                          //           AppIcons.closeIcon,
+                          //           height: 26,
+                          //           width: 26,
+                          //         ),
+                          // ),
+                          // IconButton(
+                          //   onPressed: () => read.dislike(),
+                          //   icon: watch.rating ?? true
+                          //       ? const CustomIcon(
+                          //           AppIcons.closeIcon,
+                          //           height: 26,
+                          //           width: 26,
+                          //         )
+                          //       : const CustomIcon(
+                          //           AppIcons.dislikeIcon,
+                          //           height: 26,
+                          //           width: 26,
+                          //         ),
+                          // ),
                           Column(
                             children: [
                               const CustomIcon(

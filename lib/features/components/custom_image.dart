@@ -14,7 +14,7 @@ class CustomImage extends StatelessWidget {
   final bool isBorder;
   final String? image;
   final String? networkImage;
-  final String placeHolder;
+  final String? placeHolder;
   final File? file;
   final Color? color;
   final Color borderColor;
@@ -39,7 +39,8 @@ class CustomImage extends StatelessWidget {
     this.color,
     this.borderColor = Colors.grey,
     this.margin = EdgeInsets.zero,
-    this.padding = EdgeInsets.zero, this.placeHolder = AppImages.placeholder,
+    this.padding = EdgeInsets.zero, 
+    this.placeHolder,
   });
 
   @override
@@ -122,7 +123,7 @@ class CustomImage extends StatelessWidget {
         width: width,
         alignment: Alignment.center,
         child: Image.asset(
-          placeHolder,
+          placeHolder ?? AppImages.placeholder,
           height: height,
           width: width,
           fit: boxFit,

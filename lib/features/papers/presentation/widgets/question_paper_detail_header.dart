@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
@@ -40,6 +41,7 @@ class PapersDetailHeader extends StatelessWidget {
               children: [
                 CustomImage(
                   networkImage: image,
+                  placeHolder: AppImages.questionPaperImage,
                   radius: kRoundedRectangleRadius,
                   width: 130,
                   height: 180,

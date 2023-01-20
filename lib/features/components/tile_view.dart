@@ -5,14 +5,16 @@ import 'package:lazy_engineer/features/components/custom_image.dart';
 class TileView extends StatelessWidget {
   const TileView({
     super.key,
-    this.image,
+    required this.placeholder,
     required this.child,
-    this.pages,
     this.fit = BoxFit.fill,
     this.width = 90,
+    this.image,
+    this.pages,
     this.onPressed,
   });
   final String? image;
+  final String placeholder;
   final BoxFit fit;
   final double width;
   final int? pages;
@@ -33,6 +35,7 @@ class TileView extends StatelessWidget {
                 CustomImage(
                   margin: const EdgeInsets.all(8),
                   networkImage: image,
+                  placeHolder: placeholder,
                   width: width,
                   boxFit: fit,
                   isBorder: true,

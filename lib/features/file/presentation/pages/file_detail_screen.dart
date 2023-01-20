@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
-import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
+import 'package:lazy_engineer/features/components/show_tags_widget.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
 import 'package:lazy_engineer/features/file/presentation/widgets/files_detail_header.dart';
 
@@ -102,10 +101,7 @@ class FileDetailScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(tags, style: theme.textTheme.headlineSmall),
-                EditTagsWidget(
-                  customTags: fileTags,
-                  listTags: (value) {},
-                ),
+                ShowTagsWidget(data?.tags ?? []),
               ],
             ),
           ),

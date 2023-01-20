@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/books/data/repositories/books_repository_impl.dart';
@@ -83,6 +84,7 @@ class BookListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data.length,
       itemBuilder: (context, index) => TileView(
+        placeholder: AppImages.booksImage,
         image: data[index].imageLink,
         child: BookDataBox(
           writers: data[index].writer ?? [],

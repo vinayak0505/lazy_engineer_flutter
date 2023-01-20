@@ -10,8 +10,10 @@ class GridCard extends StatelessWidget {
     this.image,
     required this.title,
     required this.body,
+    this.placeHolder,
   });
   final String? networkImage;
+  final String? placeHolder;
   final String? image;
   final String title;
   final String body;
@@ -35,6 +37,7 @@ class GridCard extends StatelessWidget {
           Center(
             child: CustomImage(
               networkImage: networkImage,
+              placeHolder: placeHolder,
               image: image,
               height: 120,
               radius: kRoundedRectangleRadius,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
+import 'package:lazy_engineer/features/books/presentation/widgets/book_detail_header.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/papers/presentation/widgets/question_paper_detail_header.dart';
 
@@ -29,7 +30,7 @@ class BookDescriptionScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                PapersDetailHeader(
+                BooksDetailHeader(
                   title: data?.title ?? '',
                   userId: data?.userId ?? '',
                   file: data?.mediaLink ?? '',

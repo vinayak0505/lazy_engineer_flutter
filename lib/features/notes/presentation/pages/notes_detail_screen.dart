@@ -148,7 +148,7 @@ class NotesDetailScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.headline5),
                 const SizedBox(height: 12),
-                ShowTagsWidget(data?.tags ?? [])
+                ShowTagsWidget(data?.tags ?? []),
               ],
             ),
           ),

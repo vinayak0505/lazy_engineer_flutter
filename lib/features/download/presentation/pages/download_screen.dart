@@ -53,11 +53,11 @@ class DownloadScreen extends StatelessWidget {
                       heading: books,
                       child: ListOfFile(data.books.value, data.books.key),
                     ),
-                    const SizedBox(height: 24),
-                    ExpandableContainer(
-                      heading: jobs,
-                      child: ListOfFile(data.jobs.value, data.jobs.key),
-                    ),
+                    // const SizedBox(height: 24),
+                    // ExpandableContainer(
+                    //   heading: jobs,
+                    //   child: ListOfFile(data.jobs.value, data.jobs.key),
+                    // ),
                     const SizedBox(height: 24),
                     ExpandableContainer(
                       heading: paper,
@@ -91,7 +91,8 @@ class ListOfFile extends StatelessWidget {
       itemCount: listValue.length,
       itemBuilder: (context, index) {
         return InkWell(
-          onTap: () => context.read<DownloadCubit>().downloadFile(listValue[index]),
+          onTap: () =>
+              context.read<DownloadCubit>().downloadFile(listValue[index]),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(

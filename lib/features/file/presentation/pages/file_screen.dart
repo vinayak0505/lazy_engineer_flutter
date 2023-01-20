@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
@@ -85,6 +86,7 @@ class FileListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: data.length,
       itemBuilder: (context, index) => TileView(
+        placeholder: AppImages.practicleFileImage,
         image: data[index].imageLink,
         child: FileDataBox(
           title: data[index].title ?? '',
