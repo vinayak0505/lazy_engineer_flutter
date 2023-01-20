@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/local/notes_local_datasource.dart';
 import 'package:lazy_engineer/features/notes/data/datasources/remote/notes_remote_datasource.dart';
@@ -57,12 +58,15 @@ class NotesRepositoryImpl extends NotesRepository {
     try {
       final List<NoteDetail> newData = [];
       for (final note in data) {
-        final bool checkSubject = filter[0] == '' || note.subject == filter[0];
-        final bool checkUnit = filter[1] == '' || note.unit == filter[1];
-        final bool checkChapter = filter[2] == '' || note.chapter == filter[2];
-        final bool checkTopic = filter[3] == '' || note.topic == filter[3];
-        final bool check =
-            checkSubject && checkUnit && checkChapter && checkTopic;
+        final check = filterCheck(
+          elementList: [
+            note.subject,
+            note.unit,
+            note.chapter,
+            note.topic,
+          ],
+          filterList: filter,
+        );
         if (check) newData.add(note);
       }
       return newData;

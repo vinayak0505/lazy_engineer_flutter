@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/papers/data/datasources/local/papers_local_datasource.dart';
 import 'package:lazy_engineer/features/papers/data/datasources/remote/papers_remote_datasource.dart';
@@ -56,14 +57,17 @@ class PapersRepositoryImpl extends PapersRepository {
   ) async {
     try {
       final List<PaperDetail> newData = [];
-      for (final note in data) {
-        final bool checkSubject = filter[0] == '' || note.subject == filter[0];
-        final bool checkUnit = filter[1] == '' || note.unit == filter[1];
-        final bool checkChapter = filter[2] == '' || note.chapter == filter[2];
-        final bool checkTopic = filter[3] == '' || note.topic == filter[3];
-        final bool check =
-            checkSubject && checkUnit && checkChapter && checkTopic;
-        if (check) newData.add(note);
+      for (final paper in data) {
+        final check = filterCheck(
+          elementList: [
+            paper.subject,
+            paper.unit,
+            paper.chapter,
+            paper.topic,
+          ],
+          filterList: filter,
+        );
+        if (check) newData.add(paper);
       }
       return newData;
     } catch (e) {

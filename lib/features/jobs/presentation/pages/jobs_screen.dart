@@ -36,7 +36,6 @@ class JobsScreen extends StatelessWidget {
                 textFieldFilter: const [
                   'Company',
                   'Experience Level',
-                  'Expected Salary',
                   'Job Type',
                   'Location',
                 ],

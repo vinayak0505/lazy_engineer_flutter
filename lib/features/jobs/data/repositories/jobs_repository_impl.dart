@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/jobs/data/datasources/local/jobs_local_datasource.dart';
 import 'package:lazy_engineer/features/jobs/data/datasources/remote/jobs_remote_datasource.dart';
@@ -57,13 +58,15 @@ class JobsRepositoryImpl extends JobsRepository {
     try {
       final List<JobDetail> newData = [];
       for (final job in data) {
-        final bool checkCompany = filter[0] == '' || job.company == filter[0];
-        final bool checkExperienceLevel = filter[1] == '' || job.experienceLevel == filter[1];
-        final bool checkExpectedSalary = filter[2] == '' || job.expectedSalary.toString() == filter[2];
-        final bool checkJobType = filter[3] == '' || job.jobType == filter[3];
-        final bool checkLocation = filter[3] == '' || job.location == filter[3];
-        final bool check =
-            checkCompany && checkExperienceLevel && checkExpectedSalary && checkJobType && checkLocation;
+        final check = filterCheck(
+          elementList: [
+            job.company,
+            job.experienceLevel,
+            job.jobType,
+            job.location,
+          ],
+          filterList: filter,
+        );
         if (check) newData.add(job);
       }
       return newData;

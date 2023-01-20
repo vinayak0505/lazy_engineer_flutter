@@ -78,34 +78,36 @@ class HomeScreenWidget extends StatelessWidget {
                     child: SlideTransitionAnimation(
                       open: state.isOpen,
                       verticalAnimation: true,
-                      child: Column(
-                        children: [
-                          if (textFieldFilter != null) ...[
-                            TextFieldFilter(textFieldFilter!),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          children: [
+                            if (textFieldFilter != null) ...[
+                              TextFieldFilter(textFieldFilter!),
+                              const SizedBox(height: 16),
+                            ],
+                            if (multiOptionFilter != null) ...[
+                              // MultiOptionFilter(multiOptionFilter!),
+                              const SizedBox(height: 16),
+                            ],
+                            if (singleOptionFilter != null) ...[
+                              SingleOptionFilter(
+                                controller: singleOption,
+                                data: singleOptionFilter!,
+                              ),
+                              const SizedBox(height: 16),
+                            ],
+                            if (applyFilter != null)
+                              CustomButton(
+                                width: 100,
+                                text: apply,
+                                onPressed: () => onPressed(),
+                              ),
                             const SizedBox(height: 16),
+                            const Divider(thickness: 1),
+                            const SizedBox(height: 24),
                           ],
-                          if (multiOptionFilter != null) ...[
-                            // MultiOptionFilter(multiOptionFilter!),
-                            const SizedBox(height: 16),
-                          ],
-                          if (singleOptionFilter != null) ...[
-                            SingleOptionFilter(
-                              controller: singleOption,
-                              data: singleOptionFilter!,
-                            ),
-                            const SizedBox(height: 16),
-                          ],
-                          const SizedBox(height: 16),
-                          if (applyFilter != null)
-                            CustomButton(
-                              width: 100,
-                              text: apply,
-                              onPressed: () => onPressed(),
-                            ),
-                          const SizedBox(height: 16),
-                          const Divider(thickness: 1),
-                          const SizedBox(height: 24),
-                        ],
+                        ),
                       ),
                     ),
                   ),

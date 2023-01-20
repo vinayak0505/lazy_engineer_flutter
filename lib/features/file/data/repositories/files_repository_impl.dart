@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/file/data/datasources/local/files_local_database.dart';
 import 'package:lazy_engineer/features/file/data/datasources/remote/files_remote_datasource.dart';
@@ -56,13 +57,16 @@ class FilesRepositoryImpl extends FilesRepository {
   ) async {
     try {
       final List<FileDetail> newData = [];
-      for (final note in data) {
-        final bool checkSubject = filter[0] == '' || note.subject == filter[0];
-        final bool checkCollege = filter[1] == '' || note.college == filter[1];
-        final bool checkSemester = filter[2] == '' || note.semester == filter[2];
-        final bool check =
-            checkSubject && checkCollege && checkSemester;
-        if (check) newData.add(note);
+      for (final file in data) {
+        final check = filterCheck(
+          elementList: [
+            file.subject,
+            file.college,
+            file.semester,
+          ],
+          filterList: filter,
+        );
+        if (check) newData.add(file);
       }
       return newData;
     } catch (e) {

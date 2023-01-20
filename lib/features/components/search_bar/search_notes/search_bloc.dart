@@ -22,7 +22,9 @@ class SearchBloc extends Bloc<SearchEvent, List<dynamic>> {
     try {
       final List<dynamic> newData = [];
       for (final ele in list) {
-        if (ele.title == query.trim()) newData.add(ele);
+        final element = (ele.title as String).trim().toLowerCase();
+        final searchQuery = query.trim().toLowerCase();
+        if (element.contains(searchQuery)) newData.add(ele);
       }
       emit(newData);
     } catch (e) {

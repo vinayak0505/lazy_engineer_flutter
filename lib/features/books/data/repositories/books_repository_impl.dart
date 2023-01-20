@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
 import 'package:lazy_engineer/features/books/data/datasources/local/books_local_datasource.dart';
 import 'package:lazy_engineer/features/books/data/datasources/remote/books_remote_datasource.dart';
@@ -56,11 +57,12 @@ class BooksRepositoryImpl extends BooksRepository {
   ) async {
     try {
       final List<BookDetail> newData = [];
-      for (final note in data) {
-        final bool checkSemester = filter[0] == '' || note.semester == filter[0];
-        final bool check =
-            checkSemester;
-        if (check) newData.add(note);
+      for (final book in data) {
+        final check = filterCheck(
+          elementList: [book.semester],
+          filterList: filter,
+        );
+        if (check) newData.add(book);
       }
       return newData;
     } catch (e) {
