@@ -34,11 +34,12 @@ class JobsScreen extends StatelessWidget {
               return HomeScreenWidget(
                 title: jobs,
                 textFieldFilter: const [
-                  'Company',
-                  'Experience Level',
-                  'Job Type',
-                  'Location',
+                  company,
+                  location,
                 ],
+                //Multioption
+                // jobtype, experienceLevel
+
                 // singleOptionFilter: const [
                 //   'Smart Sort',
                 //   'Popular',

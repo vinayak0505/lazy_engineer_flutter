@@ -38,10 +38,9 @@ class NotesScreen extends StatelessWidget {
               return HomeScreenWidget(
                 title: notes,
                 textFieldFilter: const [
-                  'Subject',
-                  'Unit',
-                  'Chapter',
-                  'Topic',
+                  subject,
+                  chapter,
+                  topic,
                 ],
                 // singleOptionFilter: const [
                 //   'Smart Sort',

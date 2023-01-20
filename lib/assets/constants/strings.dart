@@ -64,6 +64,7 @@ const String uploadCompanyIcon = 'Upload Company Icon';
 const String title = 'Title';
 const String subject = 'Subject';
 const String writers = 'Writers';
+const String writer = 'Writer';
 const String company = 'Company';
 const String noOfEmployees = 'No. of Employees';
 const String payRange = 'Pay Range';

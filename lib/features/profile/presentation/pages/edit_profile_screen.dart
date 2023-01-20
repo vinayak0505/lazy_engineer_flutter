@@ -25,8 +25,8 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
     final mobileController =
         TextEditingController(text: data.contact?.mobileNumber);
     final emailController = TextEditingController(text: data.contact?.email);
-    final semesterController = TextEditingController();
-    final yearOfAdmissionController = TextEditingController();
+    TextEditingController semesterController = TextEditingController();
+    TextEditingController yearOfAdmissionController = TextEditingController();
     final classController = TextEditingController();
     final locationController = TextEditingController(text: data.userAddress);
     final universityController =
@@ -39,19 +39,17 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
 
     Future<void> onPress() async {
       if (formGlobalKey.currentState!.validate()) {
-        //TODO: semesterController is empty
-        //TODO: yearOfAdmissionController is empty
         final data = ProfileModal(
           userName: fullNameController.text,
           branch: classController.text,
-          // semester: int.parse(semesterController.text),
+          semester: int.parse(semesterController.text),
           universityName: universityController.text,
           userDescription: descriptionController.text,
           contact: Contact(
             email: emailController.text,
             mobileNumber: mobileController.text,
           ),
-          // yearOfAdmission: int.parse(yearOfAdmissionController.text),
+          yearOfAdmission: int.parse(yearOfAdmissionController.text),
           experienceLevel: experienceLevelValueList.value,
           jobType: jobTypeValueList.value,
           userAddress: locationController.text,
@@ -68,6 +66,12 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
     }
 
     final semesterIndex = semesterKeyList.indexOf(data.semester.toString());
+    semesterController = TextEditingController(
+      text: semesterKeyList[semesterIndex],
+    );
+    yearOfAdmissionController = TextEditingController(
+      text: data.yearOfAdmission.toString(),
+    );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Form(
@@ -162,6 +166,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             const SizedBox(height: 12.0),
             MultiOptionFilter(
               list: experienceLevelList,
+              initialValue: ['Internship', 'Associate'],
               selected: experienceLevelValueList,
             ),
             const SizedBox(height: 16.0),

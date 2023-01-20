@@ -134,7 +134,6 @@ class PaperDetailScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(tags, style: theme.textTheme.headlineSmall),
-                const SizedBox(height: 12),
                 ShowTagsWidget(data?.tags ?? []),
               ],
             ),

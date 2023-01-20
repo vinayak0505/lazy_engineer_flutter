@@ -43,7 +43,9 @@ class TileView extends StatelessWidget {
                   onlyLeft: true,
                 ),
                 if (pages != null)
-                  Padding(
+                  Container(
+                    decoration:
+                        kRoundedContainer.copyWith(color: Colors.blueGrey),
                     padding: const EdgeInsets.all(4.0),
                     child: Text(
                       '$pages pages',

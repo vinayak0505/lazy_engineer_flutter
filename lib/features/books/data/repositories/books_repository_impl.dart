@@ -50,6 +50,19 @@ class BooksRepositoryImpl extends BooksRepository {
     return element;
   }
 
+  bool writerCheck(String filter, List<String>? list) {
+    if (list != null) {
+      for (int i = 0; i < list.length; i++) {
+        final filterString = filter.trim().toLowerCase();
+        final writer = list[i].trim().toLowerCase();
+        if (filterString == '' || writer.contains(filterString)) return true;
+      }
+      return false;
+    } else {
+      return filter.trim() == '';
+    }
+  }
+
   @override
   Future<List<BookDetail>?> applyTextFeildFilter(
     List<String> filter,
@@ -58,10 +71,7 @@ class BooksRepositoryImpl extends BooksRepository {
     try {
       final List<BookDetail> newData = [];
       for (final book in data) {
-        final check = filterCheck(
-          elementList: [book.semester],
-          filterList: filter,
-        );
+        final bool check = writerCheck(filter[0], book.writer);
         if (check) newData.add(book);
       }
       return newData;

@@ -5,12 +5,14 @@ import 'package:lazy_engineer/core/logic/list/list_cubit.dart';
 
 class MultiOptionFilter extends StatelessWidget {
   final List<String> list;
+  final List<String>? initialValue;
   final ValueNotifier<List<String>> selected;
 
   const MultiOptionFilter({
+    super.key,
     required this.list,
     required this.selected,
-    super.key,
+    this.initialValue,
   }) : super();
   @override
   Widget build(BuildContext context) {
@@ -19,10 +21,10 @@ class MultiOptionFilter extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         decoration: kRoundedContainer,
         child: BlocProvider(
-          create: (context) => ListCubit(),
+          create: (context) => ListCubit(initialList: initialValue),
           child: BlocBuilder<ListCubit, List<String>>(
             builder: (context, state) {
-            final cubit = context.read<ListCubit>();
+              final cubit = context.read<ListCubit>();
               return ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -30,7 +32,6 @@ class MultiOptionFilter extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return CheckboxListTile(
                     dense: true,
-                    // value: selected.value.contains(list[index]),
                     value: state.contains(list[index]),
                     contentPadding: EdgeInsets.zero,
                     controlAffinity: ListTileControlAffinity.leading,

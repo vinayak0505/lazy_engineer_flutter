@@ -62,7 +62,6 @@ class FilesRepositoryImpl extends FilesRepository {
           elementList: [
             file.subject,
             file.college,
-            file.semester,
           ],
           filterList: filter,
         );

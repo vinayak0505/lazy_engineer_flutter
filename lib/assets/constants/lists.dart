@@ -211,7 +211,7 @@ List<String> jobTypeList = [
 
 List<String> experienceLevelList = [
   'Internship',
-  'Entery Level',
+  'Entry Level',
   'Associate',
   'Mid-Senior Level',
   'Director',

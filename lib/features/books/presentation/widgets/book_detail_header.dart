@@ -39,14 +39,31 @@ class BooksDetailHeader extends StatelessWidget {
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomImage(
-                  networkImage: image,
-                  placeHolder: AppImages.booksImage,
-                  radius: kRoundedRectangleRadius,
-                  width: 130,
-                  height: 180,
-                  isBorder: true,
-                  color: Colors.grey.shade100,
+                Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    CustomImage(
+                      margin: const EdgeInsets.all(8),
+                      networkImage: image,
+                      placeHolder: AppImages.booksImage,
+                      height: 180,
+                      width: 130,
+                      isBorder: true,
+                      radius: kRoundedRectangleRadius,
+                      color: Colors.grey.shade100,
+                    ),
+                    Container(
+                      decoration:
+                          kRoundedContainer.copyWith(color: Colors.blueGrey),
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(
+                        '$pages pages',
+                        style: theme.textTheme.caption?.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 const SizedBox(width: 16),
                 Flexible(

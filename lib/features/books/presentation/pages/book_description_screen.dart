@@ -4,6 +4,7 @@ import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/books/presentation/widgets/book_detail_header.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
+import 'package:lazy_engineer/features/components/show_tags_widget.dart';
 
 class BookDescriptionScreen extends StatelessWidget {
   const BookDescriptionScreen(this.data, {super.key});
@@ -90,6 +91,9 @@ class BookDescriptionScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(height: 16),
+                Text(tags, style: theme.textTheme.headlineSmall),
+                ShowTagsWidget(data?.tags ?? []),
               ],
             ),
           ),

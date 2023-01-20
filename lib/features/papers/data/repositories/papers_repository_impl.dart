@@ -61,7 +61,6 @@ class PapersRepositoryImpl extends PapersRepository {
         final check = filterCheck(
           elementList: [
             paper.subject,
-            paper.unit,
             paper.chapter,
             paper.topic,
           ],

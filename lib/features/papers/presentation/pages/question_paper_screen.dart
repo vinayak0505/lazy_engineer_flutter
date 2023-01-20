@@ -42,10 +42,9 @@ class QuestionPaperScreen extends StatelessWidget {
                 title: questionPaper,
                 extraAppBarSize: 30,
                 textFieldFilter: const [
-                  'Subject',
-                  'Unit',
-                  'Chapter',
-                  'Topic',
+                  subject,
+                  chapter,
+                  topic,
                 ],
                 // singleOptionFilter: const [
                 //   'Smart Sort',

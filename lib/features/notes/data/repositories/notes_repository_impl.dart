@@ -61,7 +61,6 @@ class NotesRepositoryImpl extends NotesRepository {
         final check = filterCheck(
           elementList: [
             note.subject,
-            note.unit,
             note.chapter,
             note.topic,
           ],

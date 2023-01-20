@@ -39,7 +39,7 @@ class BooksScreen extends StatelessWidget {
               return HomeScreenWidget(
                 title: books,
                 textFieldFilter: const [
-                  'Semester',
+                  writer,
                 ],
                 // singleOptionFilter: const [
                 //   'Smart Sort',
@@ -86,6 +86,7 @@ class BookListView extends StatelessWidget {
       itemBuilder: (context, index) => TileView(
         placeholder: AppImages.booksImage,
         image: data[index].imageLink,
+        pages: data[index].pages,
         child: BookDataBox(
           writers: data[index].writer ?? [],
           bookName: data[index].title ?? '',

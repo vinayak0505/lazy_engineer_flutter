@@ -39,9 +39,8 @@ class FileScreen extends StatelessWidget {
               return HomeScreenWidget(
                 title: files,
                 textFieldFilter: const [
-                  'Subject',
-                  'College',
-                  'Semister',
+                  subject,
+                  college,
                 ],
                 // singleOptionFilter: const [
                 //   'Smart Sort',

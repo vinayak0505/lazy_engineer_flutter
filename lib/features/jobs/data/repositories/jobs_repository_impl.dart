@@ -61,8 +61,6 @@ class JobsRepositoryImpl extends JobsRepository {
         final check = filterCheck(
           elementList: [
             job.company,
-            job.experienceLevel,
-            job.jobType,
             job.location,
           ],
           filterList: filter,
