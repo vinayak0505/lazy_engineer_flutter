@@ -123,13 +123,13 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
       onPressed: (cubit, image) {
         cubit.uploadPaper(
           UploadPaperRequest(
-            title: titleController.text,
-            about: aboutController.text,
-            semester: semesterController.text,
-            subject: subjectController.text,
-            unit: unitController.text,
-            chapter: chapterController.text,
-            topic: topicController.text,
+            title: titleController.text.trim(),
+            about: aboutController.text.trim(),
+            semester: semesterController.text.trim(),
+            subject: subjectController.text.trim(),
+            unit: unitController.text.trim(),
+            chapter: chapterController.text.trim(),
+            topic: topicController.text.trim(),
             tags: tagsController,
           ),
           image!,

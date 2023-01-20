@@ -94,11 +94,11 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
       onPressed: (cubit, image) {
         cubit.uploadFile(
           UploadFilesRequest(
-            title: titleController.text,
-            about: aboutController.text,
-            subject: subjectController.text,
-            college: collegeController.text,
-            semester: semesterController.text,
+            title: titleController.text.trim(),
+            about: aboutController.text.trim(),
+            subject: subjectController.text.trim(),
+            college: collegeController.text.trim(),
+            semester: semesterController.text.trim(),
             tags: tagsController,
           ),
           image!,

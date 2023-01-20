@@ -200,14 +200,14 @@ class UploadJobScreen extends StatelessWidget with InputValidationMixin {
         final formattedDate = DateFormat.yMd().format(DateTime.now());
         cubit.uploadJobs(
           UploadJobsRequest(
-            title: titleController.text,
-            profile: aboutJobController.text,
-            company: companyController.text,
-            aboutCompany: aboutCompanyController.text,
-            location: locationController.text,
-            jobType: jobTypeController.text,
-            experienceLevel: experienceController.text,
-            datePosted: formattedDate,
+            title: titleController.text.trim(),
+            profile: aboutJobController.text.trim(),
+            company: companyController.text.trim(),
+            aboutCompany: aboutCompanyController.text.trim(),
+            location: locationController.text.trim(),
+            jobType: jobTypeController.text.trim(),
+            experienceLevel: experienceController.text.trim(),
+            datePosted: formattedDate.trim(),
             skillsNeeded: skillsController,
             expectedSalary: int.parse(expectedSalaryController.text),
           ),

@@ -150,9 +150,9 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
       onPressed: (cubit, image) {
         cubit.uploadBook(
           UploadBookRequest(
-            title: titleController.text,
-            about: aboutController.text,
-            semester: semesterController.text,
+            title: titleController.text.trim(),
+            about: aboutController.text.trim(),
+            semester: semesterController.text.trim(),
             tags: tagsController,
             writer: writerController,
             pages: int.parse(pagesController.text),
