@@ -4,7 +4,6 @@ import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/books/presentation/widgets/book_detail_header.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
-import 'package:lazy_engineer/features/papers/presentation/widgets/question_paper_detail_header.dart';
 
 class BookDescriptionScreen extends StatelessWidget {
   const BookDescriptionScreen(this.data, {super.key});

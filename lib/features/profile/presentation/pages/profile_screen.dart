@@ -6,6 +6,7 @@ import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
+import 'package:lazy_engineer/features/profile/data/models/profile_modal/profile_modal.dart';
 import 'package:lazy_engineer/features/profile/data/repositories/profile_repository_impl.dart';
 import 'package:lazy_engineer/features/profile/presentation/cubit/profile/profile_cubit.dart';
 import 'package:lazy_engineer/features/profile/presentation/pages/edit_profile_screen.dart';
@@ -25,6 +26,8 @@ class ProfileScreen extends StatelessWidget {
               failure: (e) => FailureScreen(e),
               loading: () => const LoadingScreen(),
               success: (isNotEdit, data) {
+                ProfileModal customData =
+                    context.read<ProfileCubit>().userProfile!;
                 return ListView(
                   shrinkWrap: true,
                   children: [
@@ -32,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         const CustomImage(image: AppImages.header),
                         CustomImage(
-                          image: data.userPic ?? AppImages.profileImage,
+                          image: customData.userPic ?? AppImages.profileImage,
                           height: 110,
                           width: 110,
                           radius: 55,
@@ -58,7 +61,10 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 16),
-                    if (isNotEdit) ProfileScreenView(data) else EditProfileView(data),
+                    if (isNotEdit)
+                      ProfileScreenView(customData)
+                    else
+                      EditProfileView(customData),
                   ],
                 );
               },

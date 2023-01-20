@@ -4,7 +4,7 @@ part of 'profile_cubit.dart';
 class ProfileState with _$ProfileState {
   const factory ProfileState.success({
     required bool isNotEdit,
-    required ProfileModal data,
+    ProfileModal? data,
   }) = ProfileSuccess;
   const factory ProfileState.loading() = ProfileLoading;
   const factory ProfileState.failure(dynamic e) = ProfileFailure;

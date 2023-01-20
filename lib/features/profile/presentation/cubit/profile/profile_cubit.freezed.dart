@@ -18,21 +18,21 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isNotEdit, ProfileModal data) success,
+    required TResult Function(bool isNotEdit, ProfileModal? data) success,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal data)? success,
+    TResult Function(bool isNotEdit, ProfileModal? data)? success,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal data)? success,
+    TResult Function(bool isNotEdit, ProfileModal? data)? success,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
@@ -83,9 +83,9 @@ abstract class _$$ProfileSuccessCopyWith<$Res> {
   factory _$$ProfileSuccessCopyWith(
           _$ProfileSuccess value, $Res Function(_$ProfileSuccess) then) =
       __$$ProfileSuccessCopyWithImpl<$Res>;
-  $Res call({bool isNotEdit, ProfileModal data});
+  $Res call({bool isNotEdit, ProfileModal? data});
 
-  $ProfileModalCopyWith<$Res> get data;
+  $ProfileModalCopyWith<$Res>? get data;
 }
 
 /// @nodoc
@@ -112,13 +112,17 @@ class __$$ProfileSuccessCopyWithImpl<$Res>
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as ProfileModal,
+              as ProfileModal?,
     ));
   }
 
   @override
-  $ProfileModalCopyWith<$Res> get data {
-    return $ProfileModalCopyWith<$Res>(_value.data, (value) {
+  $ProfileModalCopyWith<$Res>? get data {
+    if (_value.data == null) {
+      return null;
+    }
+
+    return $ProfileModalCopyWith<$Res>(_value.data!, (value) {
       return _then(_value.copyWith(data: value));
     });
   }
@@ -127,12 +131,12 @@ class __$$ProfileSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ProfileSuccess implements ProfileSuccess {
-  const _$ProfileSuccess({required this.isNotEdit, required this.data});
+  const _$ProfileSuccess({required this.isNotEdit, this.data});
 
   @override
   final bool isNotEdit;
   @override
-  final ProfileModal data;
+  final ProfileModal? data;
 
   @override
   String toString() {
@@ -162,7 +166,7 @@ class _$ProfileSuccess implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isNotEdit, ProfileModal data) success,
+    required TResult Function(bool isNotEdit, ProfileModal? data) success,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
   }) {
@@ -172,7 +176,7 @@ class _$ProfileSuccess implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal data)? success,
+    TResult Function(bool isNotEdit, ProfileModal? data)? success,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
   }) {
@@ -182,7 +186,7 @@ class _$ProfileSuccess implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal data)? success,
+    TResult Function(bool isNotEdit, ProfileModal? data)? success,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
@@ -231,10 +235,10 @@ class _$ProfileSuccess implements ProfileSuccess {
 abstract class ProfileSuccess implements ProfileState {
   const factory ProfileSuccess(
       {required final bool isNotEdit,
-      required final ProfileModal data}) = _$ProfileSuccess;
+      final ProfileModal? data}) = _$ProfileSuccess;
 
   bool get isNotEdit;
-  ProfileModal get data;
+  ProfileModal? get data;
   @JsonKey(ignore: true)
   _$$ProfileSuccessCopyWith<_$ProfileSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -281,7 +285,7 @@ class _$ProfileLoading implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isNotEdit, ProfileModal data) success,
+    required TResult Function(bool isNotEdit, ProfileModal? data) success,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
   }) {
@@ -291,7 +295,7 @@ class _$ProfileLoading implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal data)? success,
+    TResult Function(bool isNotEdit, ProfileModal? data)? success,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
   }) {
@@ -301,7 +305,7 @@ class _$ProfileLoading implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal data)? success,
+    TResult Function(bool isNotEdit, ProfileModal? data)? success,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
@@ -416,7 +420,7 @@ class _$ProfileFailure implements ProfileFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isNotEdit, ProfileModal data) success,
+    required TResult Function(bool isNotEdit, ProfileModal? data) success,
     required TResult Function() loading,
     required TResult Function(dynamic e) failure,
   }) {
@@ -426,7 +430,7 @@ class _$ProfileFailure implements ProfileFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal data)? success,
+    TResult Function(bool isNotEdit, ProfileModal? data)? success,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
   }) {
@@ -436,7 +440,7 @@ class _$ProfileFailure implements ProfileFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal data)? success,
+    TResult Function(bool isNotEdit, ProfileModal? data)? success,
     TResult Function()? loading,
     TResult Function(dynamic e)? failure,
     required TResult orElse(),
