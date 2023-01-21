@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
 import 'package:lazy_engineer/features/books/presentation/widgets/book_detail_header.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
@@ -37,8 +38,8 @@ class BookDescriptionScreen extends StatelessWidget {
                 BooksDetailHeader(
                   title: data?.title ?? '',
                   userId: data?.userId ?? '',
-                  file: data?.mediaLink ?? '',
-                  image: data?.imageLink ?? '',
+                  file: workingLink(data?.mediaLink) ?? '',
+                  image: workingLink(data?.imageLink) ?? '',
                   pagesValue: data?.pages,
                   bookEditionValue: data?.bookEdition,
                   semesterValue: data?.semester ?? '',

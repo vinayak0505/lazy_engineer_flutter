@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/config/theme/app_theme.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 import 'package:lazy_engineer/features/components/show_tags_widget.dart';
@@ -158,7 +159,7 @@ class JobsDescriptionScreen extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           CompanyTag(
-            icon: data?.mediaLink,
+            icon: workingLink(data?.mediaLink),
             companyName: data?.company ?? '',
             description: '${data?.location}',
             follow: true,
@@ -175,7 +176,7 @@ class JobsDescriptionScreen extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           CustomImage(
-            networkImage: data?.imageLink ?? '',
+            networkImage: workingLink(data?.imageLink) ?? '',
             radius: 12,
             color: Colors.grey.shade400,
             height: 200,

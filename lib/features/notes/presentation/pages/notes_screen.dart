@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/images.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/grid_card.dart';
@@ -70,7 +71,7 @@ class NotesScreen extends StatelessWidget {
                         body: element.about ?? '',
                         title: element.title ?? '',
                         placeHolder: AppImages.notesImage,
-                        networkImage: element.imageLink,
+                        networkImage: workingLink(element.imageLink),
                       );
                     }).toList(),
                     onTap: (context, index) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/show_tags_widget.dart';
 import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
@@ -34,8 +35,8 @@ class FileDetailScreen extends StatelessWidget {
                   title: data?.title ?? '',
                   userId: data?.userId ?? '',
                   semesterValue: data?.semester ?? '',
-                  file: data?.mediaLink ?? '',
-                  image: data?.imageLink ?? '',
+                  file: workingLink(data?.mediaLink) ?? '',
+                  image: workingLink(data?.imageLink) ?? '',
                 ),
                 const SizedBox(height: 12),
                 ShowTagsWidget(data?.tags ?? []),

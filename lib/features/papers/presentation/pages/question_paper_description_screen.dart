@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/show_tags_widget.dart';
 import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
@@ -12,6 +13,9 @@ class PaperDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
+    print('=====================================');
+    print(data?.fileLink);
+    print(data?.imageLink);
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -34,8 +38,8 @@ class PaperDetailScreen extends StatelessWidget {
                   userId: data?.userId ?? '',
                   semesterValue: data?.semester ?? '',
                   unitValue: data?.unit ?? '',
-                  file: data?.mediaLink ?? '',
-                  image: data?.imageLink ?? '',
+                  file: workingLink(data?.mediaLink) ?? '',
+                  image: workingLink(data?.imageLink) ?? '',
                 ),
                 const SizedBox(height: 12),
                 ShowTagsWidget(data?.tags ?? []),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/show_tags_widget.dart';
 import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
@@ -36,8 +37,8 @@ class NotesDetailScreen extends StatelessWidget {
                   userId: data?.userId ?? '',
                   semesterValue: data?.semester ?? '',
                   unitValue: data?.unit ?? '',
-                  fileLink: data?.mediaLink ?? '',
-                  imageLink: data?.imageLink ?? '',
+                  fileLink: workingLink(data?.mediaLink) ?? '',
+                  imageLink: workingLink(data?.imageLink) ?? '',
                 ),
                 const SizedBox(height: 12),
                 ShowTagsWidget(data?.tags ?? []),

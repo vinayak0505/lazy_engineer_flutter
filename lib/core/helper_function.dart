@@ -47,3 +47,16 @@ bool filterMultiOptionCheck({
   }
   return check;
 }
+
+String? workingLink(String? str) {
+  if (str == null) return null;
+  final int end1 = str.indexOf('generation');
+  final String str1 = str.substring(0, end1);
+  String str2 = str.substring(end1);
+  final int end2 = str2.indexOf('&');
+  str2 = str2.substring(end2 + 1);
+  const String str3 = '&token=3198f78f-e10b-4296-bd40-bd5cee4001fe';
+  print('~~@@@@@@@@@@@@@@@@@@@@@@@');
+  print(str1 + str2 + str3);
+  return str1 + str2 + str3;
+}
