@@ -91,7 +91,7 @@ class NotesRepositoryImpl extends NotesRepository {
   Future<bool> download(String fileLink) async {
     try {
       final int start = fileLink.indexOf('/o/') + 3;
-      final int end = fileLink.indexOf('?generation');
+      final int end = fileLink.indexOf('?alt');
       final String name = fileLink.substring(start, end);
       await _localDataSource.downloadNotes(name, fileLink);
       return true;

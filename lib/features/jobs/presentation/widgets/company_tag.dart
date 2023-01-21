@@ -30,8 +30,10 @@ class CompanyTag extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(companyName,
-                style: theme.textTheme.bodyText1?.copyWith(fontSize: 16)),
+            Text(
+              companyName,
+              style: theme.textTheme.bodyText1?.copyWith(fontSize: 16),
+            ),
             const SizedBox(height: 6),
             Text(
               description,

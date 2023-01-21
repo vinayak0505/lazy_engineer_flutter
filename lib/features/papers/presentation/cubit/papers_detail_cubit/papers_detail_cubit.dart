@@ -16,7 +16,6 @@ class PapersDetailCubit extends Cubit<PapersDetailState> {
   bool? rating;
   Future<void> download(String fileLink) async {
     try {
-      print('-------------------$fileLink');
       isDownloaded = await _repository.download(fileLink);
       emit(const PapersDetailState(isDownloaded: true));
     } catch (e) {
