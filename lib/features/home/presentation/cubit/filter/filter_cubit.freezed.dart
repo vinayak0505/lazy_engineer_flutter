@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$FilterState {
   bool get isOpen => throw _privateConstructorUsedError;
   List<String>? get textField => throw _privateConstructorUsedError;
-  List<String>? get multiOption => throw _privateConstructorUsedError;
+  List<MultioptionModel>? get multiOption => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FilterStateCopyWith<FilterState> get copyWith =>
@@ -30,7 +30,10 @@ abstract class $FilterStateCopyWith<$Res> {
   factory $FilterStateCopyWith(
           FilterState value, $Res Function(FilterState) then) =
       _$FilterStateCopyWithImpl<$Res>;
-  $Res call({bool isOpen, List<String>? textField, List<String>? multiOption});
+  $Res call(
+      {bool isOpen,
+      List<String>? textField,
+      List<MultioptionModel>? multiOption});
 }
 
 /// @nodoc
@@ -59,7 +62,7 @@ class _$FilterStateCopyWithImpl<$Res> implements $FilterStateCopyWith<$Res> {
       multiOption: multiOption == freezed
           ? _value.multiOption
           : multiOption // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<MultioptionModel>?,
     ));
   }
 }
@@ -71,7 +74,10 @@ abstract class _$$_FilterStateCopyWith<$Res>
           _$_FilterState value, $Res Function(_$_FilterState) then) =
       __$$_FilterStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isOpen, List<String>? textField, List<String>? multiOption});
+  $Res call(
+      {bool isOpen,
+      List<String>? textField,
+      List<MultioptionModel>? multiOption});
 }
 
 /// @nodoc
@@ -102,7 +108,7 @@ class __$$_FilterStateCopyWithImpl<$Res> extends _$FilterStateCopyWithImpl<$Res>
       multiOption: multiOption == freezed
           ? _value._multiOption
           : multiOption // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<MultioptionModel>?,
     ));
   }
 }
@@ -113,7 +119,7 @@ class _$_FilterState implements _FilterState {
   const _$_FilterState(
       {required this.isOpen,
       final List<String>? textField,
-      final List<String>? multiOption})
+      final List<MultioptionModel>? multiOption})
       : _textField = textField,
         _multiOption = multiOption;
 
@@ -128,9 +134,9 @@ class _$_FilterState implements _FilterState {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String>? _multiOption;
+  final List<MultioptionModel>? _multiOption;
   @override
-  List<String>? get multiOption {
+  List<MultioptionModel>? get multiOption {
     final value = _multiOption;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -171,14 +177,14 @@ abstract class _FilterState implements FilterState {
   const factory _FilterState(
       {required final bool isOpen,
       final List<String>? textField,
-      final List<String>? multiOption}) = _$_FilterState;
+      final List<MultioptionModel>? multiOption}) = _$_FilterState;
 
   @override
   bool get isOpen;
   @override
   List<String>? get textField;
   @override
-  List<String>? get multiOption;
+  List<MultioptionModel>? get multiOption;
   @override
   @JsonKey(ignore: true)
   _$$_FilterStateCopyWith<_$_FilterState> get copyWith =>

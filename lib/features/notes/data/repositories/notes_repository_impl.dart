@@ -58,7 +58,7 @@ class NotesRepositoryImpl extends NotesRepository {
     try {
       final List<NoteDetail> newData = [];
       for (final note in data) {
-        final check = filterCheck(
+        final check = filterTextfeildCheck(
           elementList: [
             note.subject,
             note.chapter,

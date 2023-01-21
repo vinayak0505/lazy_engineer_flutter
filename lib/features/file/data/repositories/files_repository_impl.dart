@@ -58,7 +58,7 @@ class FilesRepositoryImpl extends FilesRepository {
     try {
       final List<FileDetail> newData = [];
       for (final file in data) {
-        final check = filterCheck(
+        final check = filterTextfeildCheck(
           elementList: [
             file.subject,
             file.college,

@@ -12,7 +12,7 @@ _$_FilterRequest _$$_FilterRequestFromJson(Map<String, dynamic> json) =>
           ?.map((e) => e as String)
           .toList(),
       multiOption: (json['multiOption'] as List<dynamic>?)
-          ?.map((e) => e as String)
+          ?.map((e) => MultioptionModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       singleOption: json['singleOption'] as String?,
     );

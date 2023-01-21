@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:lazy_engineer/features/home/data/models/multioption_model/multioption_model.dart';
 
 part 'filter_request.freezed.dart';
 part 'filter_request.g.dart';
@@ -7,7 +8,7 @@ part 'filter_request.g.dart';
 class FilterRequest with _$FilterRequest {
     const factory FilterRequest({
         List<String>? textField,
-        List<String>? multiOption,
+        List<MultioptionModel>? multiOption,
         String? singleOption,
     }) = _FilterRequest;
 

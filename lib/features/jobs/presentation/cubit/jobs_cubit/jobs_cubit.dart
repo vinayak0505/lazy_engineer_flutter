@@ -28,16 +28,22 @@ class JobsCubit extends Cubit<JobsState> {
 
   Future<void> applyFilter(FilterRequest filterRequest) async {
     try {
-      //* textfeild
       emit(const JobsState.loading());
-      if (filterRequest.textField == null) {
-        emit(JobsState.success(data!));
-        return;
+      List<JobDetail>? newData;
+      //* textfeild
+      if (filterRequest.textField != null) {
+        newData = await _repository.applyTextFeildFilter(
+          filterRequest.textField!,
+          data!,
+        );
       }
-      final newData = await _repository.applyTextFeildFilter(
-        filterRequest.textField!,
-        data!,
-      );
+      //* multiOption
+      if (filterRequest.multiOption != null) {
+        newData = await _repository.applyMultiOptionFilter(
+          filterRequest.multiOption!,
+          newData ?? data!,
+        );
+      }
       emit(JobsState.success(newData ?? data!));
     } catch (e) {
       emit(JobsState.failure(e));

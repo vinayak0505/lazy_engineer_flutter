@@ -200,7 +200,7 @@ List<String> locationList = [
   'Hyderabad',
 ];
 
-List<String> jobTypeList = [
+const List<String> jobTypeList = [
   'Full Time',
   'Part Time',
   'Contract',
@@ -209,7 +209,7 @@ List<String> jobTypeList = [
   'Other',
 ];
 
-List<String> experienceLevelList = [
+const List<String> experienceLevelList = [
   'Internship',
   'Entry Level',
   'Associate',

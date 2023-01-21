@@ -21,7 +21,7 @@ FilterRequest _$FilterRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FilterRequest {
   List<String>? get textField => throw _privateConstructorUsedError;
-  List<String>? get multiOption => throw _privateConstructorUsedError;
+  List<MultioptionModel>? get multiOption => throw _privateConstructorUsedError;
   String? get singleOption => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $FilterRequestCopyWith<$Res> {
       _$FilterRequestCopyWithImpl<$Res>;
   $Res call(
       {List<String>? textField,
-      List<String>? multiOption,
+      List<MultioptionModel>? multiOption,
       String? singleOption});
 }
 
@@ -64,7 +64,7 @@ class _$FilterRequestCopyWithImpl<$Res>
       multiOption: multiOption == freezed
           ? _value.multiOption
           : multiOption // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<MultioptionModel>?,
       singleOption: singleOption == freezed
           ? _value.singleOption
           : singleOption // ignore: cast_nullable_to_non_nullable
@@ -82,7 +82,7 @@ abstract class _$$_FilterRequestCopyWith<$Res>
   @override
   $Res call(
       {List<String>? textField,
-      List<String>? multiOption,
+      List<MultioptionModel>? multiOption,
       String? singleOption});
 }
 
@@ -111,7 +111,7 @@ class __$$_FilterRequestCopyWithImpl<$Res>
       multiOption: multiOption == freezed
           ? _value._multiOption
           : multiOption // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<MultioptionModel>?,
       singleOption: singleOption == freezed
           ? _value.singleOption
           : singleOption // ignore: cast_nullable_to_non_nullable
@@ -125,7 +125,7 @@ class __$$_FilterRequestCopyWithImpl<$Res>
 class _$_FilterRequest implements _FilterRequest {
   const _$_FilterRequest(
       {final List<String>? textField,
-      final List<String>? multiOption,
+      final List<MultioptionModel>? multiOption,
       this.singleOption})
       : _textField = textField,
         _multiOption = multiOption;
@@ -142,9 +142,9 @@ class _$_FilterRequest implements _FilterRequest {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String>? _multiOption;
+  final List<MultioptionModel>? _multiOption;
   @override
-  List<String>? get multiOption {
+  List<MultioptionModel>? get multiOption {
     final value = _multiOption;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -196,7 +196,7 @@ class _$_FilterRequest implements _FilterRequest {
 abstract class _FilterRequest implements FilterRequest {
   const factory _FilterRequest(
       {final List<String>? textField,
-      final List<String>? multiOption,
+      final List<MultioptionModel>? multiOption,
       final String? singleOption}) = _$_FilterRequest;
 
   factory _FilterRequest.fromJson(Map<String, dynamic> json) =
@@ -205,7 +205,7 @@ abstract class _FilterRequest implements FilterRequest {
   @override
   List<String>? get textField;
   @override
-  List<String>? get multiOption;
+  List<MultioptionModel>? get multiOption;
   @override
   String? get singleOption;
   @override

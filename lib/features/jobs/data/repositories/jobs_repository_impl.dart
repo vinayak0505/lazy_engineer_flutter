@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/features/home/data/models/multioption_model/multioption_model.dart';
 import 'package:lazy_engineer/features/jobs/data/datasources/local/jobs_local_datasource.dart';
 import 'package:lazy_engineer/features/jobs/data/datasources/remote/jobs_remote_datasource.dart';
 import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
@@ -58,10 +59,34 @@ class JobsRepositoryImpl extends JobsRepository {
     try {
       final List<JobDetail> newData = [];
       for (final job in data) {
-        final check = filterCheck(
+        final check = filterTextfeildCheck(
           elementList: [
             job.company,
             job.location,
+          ],
+          filterList: filter,
+        );
+        if (check) newData.add(job);
+      }
+      return newData;
+    } catch (e) {
+      debugPrint(e.toString());
+      return null;
+    }
+  }
+
+  @override
+  Future<List<JobDetail>?> applyMultiOptionFilter(
+    List<MultioptionModel> filter,
+    List<JobDetail> data,
+  ) async {
+    try {
+      final List<JobDetail> newData = [];
+      for (final job in data) {
+        final check = filterMultiOptionCheck(
+          elementList: [
+            job.jobType,
+            job.experienceLevel,
           ],
           filterList: filter,
         );

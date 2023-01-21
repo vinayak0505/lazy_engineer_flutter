@@ -6,9 +6,11 @@ import 'package:lazy_engineer/core/models/filter_request/filter_request.dart';
 import 'package:lazy_engineer/features/components/animated_icon_button.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
+import 'package:lazy_engineer/features/components/multi_option_filter.dart';
 import 'package:lazy_engineer/features/components/single_option_filter.dart';
 import 'package:lazy_engineer/features/components/slide_transition_animation.dart';
 import 'package:lazy_engineer/features/components/text_Field_filter.dart';
+import 'package:lazy_engineer/features/home/data/models/multioption_model/multioption_model.dart';
 import 'package:lazy_engineer/features/home/presentation/cubit/filter/filter_cubit.dart';
 
 class HomeScreenWidget extends StatelessWidget {
@@ -21,12 +23,14 @@ class HomeScreenWidget extends StatelessWidget {
     this.singleOptionFilter,
     this.applyFilter,
     this.extraAppBarSize = 0,
+    this.valueNotifierList,
   });
   final String title;
   final double extraAppBarSize;
   final List<Widget> body;
   final List<String>? textFieldFilter;
-  final List<String>? multiOptionFilter;
+  final List<MultioptionModel>? multiOptionFilter;
+  final List<ValueNotifier<List<String>>>? valueNotifierList;
   final List<String>? singleOptionFilter;
   final Function(FilterRequest filterRequest)? applyFilter;
   @override
@@ -38,10 +42,21 @@ class HomeScreenWidget extends StatelessWidget {
         create: (context) => FilterCubit(),
         child: BlocBuilder<FilterCubit, FilterState>(
           builder: (context, state) {
+            List<MultioptionModel> newList = [];
+            if (multiOptionFilter != null) {
+              for (int i = 0; i < multiOptionFilter!.length; i++) {
+                newList.add(
+                  MultioptionModel(
+                    title: multiOptionFilter![i].title,
+                    body: valueNotifierList![i].value,
+                  ),
+                );
+              }
+            }
             void onPressed() => applyFilter!.call(
                   FilterRequest(
                     textField: state.textField,
-                    multiOption: state.multiOption,
+                    multiOption: newList == [] ? null : newList,
                     singleOption: singleOption.text,
                   ),
                 );
@@ -87,7 +102,11 @@ class HomeScreenWidget extends StatelessWidget {
                               const SizedBox(height: 16),
                             ],
                             if (multiOptionFilter != null) ...[
-                              // MultiOptionFilter(multiOptionFilter!),
+                              MultioptionList(
+                                multiOptionFilter: multiOptionFilter!,
+                                valueNotifierList: valueNotifierList!,
+                              ),
+                              // MultiOptionFilter(list: multiOptionFilter!,selected: ),
                               const SizedBox(height: 16),
                             ],
                             if (singleOptionFilter != null) ...[
@@ -101,7 +120,7 @@ class HomeScreenWidget extends StatelessWidget {
                               CustomButton(
                                 width: 100,
                                 text: apply,
-                                onPressed: () => onPressed(),
+                                onPressed: onPressed,
                               ),
                             const SizedBox(height: 16),
                             const Divider(thickness: 1),
@@ -117,9 +136,7 @@ class HomeScreenWidget extends StatelessWidget {
                         horizontal: 16.0,
                         vertical: 16,
                       ),
-                      child: Column(
-                        children: body,
-                      ),
+                      child: Column(children: body),
                     ),
                   )
                 ],
@@ -132,11 +149,39 @@ class HomeScreenWidget extends StatelessWidget {
   }
 }
 
-class FilterMenu extends StatelessWidget {
-  const FilterMenu({super.key});
+class MultioptionList extends StatelessWidget {
+  const MultioptionList({
+    super.key,
+    required this.multiOptionFilter,
+    required this.valueNotifierList,
+  });
+  final List<MultioptionModel> multiOptionFilter;
+  final List<ValueNotifier<List<String>>> valueNotifierList;
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final theme = Theme.of(context);
+    return ListView.separated(
+      itemCount: multiOptionFilter.length,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      separatorBuilder: (_, __) => const SizedBox(height: 16),
+      itemBuilder: (context, index) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              multiOptionFilter[index].title,
+              style: theme.textTheme.titleLarge,
+            ),
+            const SizedBox(height: 12),
+            MultiOptionFilter(
+              list: multiOptionFilter[index].body,
+              selected: valueNotifierList[index],
+            ),
+          ],
+        );
+      },
+    );
   }
 }

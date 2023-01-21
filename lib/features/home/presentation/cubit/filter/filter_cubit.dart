@@ -1,14 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:lazy_engineer/features/home/data/models/multioption_model/multioption_model.dart';
 
 part 'filter_state.dart';
 part 'filter_cubit.freezed.dart';
 
 class FilterCubit extends Cubit<FilterState> {
-  FilterCubit()
-      : super(
-          const FilterState(isOpen: false),
-        );
+  FilterCubit() : super(const FilterState(isOpen: false));
 
   void toggle() {
     emit(
@@ -30,7 +28,7 @@ class FilterCubit extends Cubit<FilterState> {
     );
   }
 
-  void modifyMultiOption(List<String> list) {
+  void modifyMultiOption(List<MultioptionModel> list) {
     emit(
       FilterState(
         isOpen: state.isOpen,

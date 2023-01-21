@@ -58,7 +58,7 @@ class PapersRepositoryImpl extends PapersRepository {
     try {
       final List<PaperDetail> newData = [];
       for (final paper in data) {
-        final check = filterCheck(
+        final check = filterTextfeildCheck(
           elementList: [
             paper.subject,
             paper.chapter,
