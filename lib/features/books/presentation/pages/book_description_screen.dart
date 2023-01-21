@@ -13,6 +13,10 @@ class BookDescriptionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
+    final String writerString =
+        data?.writer != null ? data!.writer.toString() : '   ';
+    final String allWriters =
+        writerString.substring(1, writerString.length - 1);
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -35,6 +39,7 @@ class BookDescriptionScreen extends StatelessWidget {
                   userId: data?.userId ?? '',
                   file: data?.mediaLink ?? '',
                   image: data?.imageLink ?? '',
+                  pagesValue: data?.pages,
                   bookEditionValue: data?.bookEdition,
                   semesterValue: data?.semester ?? '',
                 ),
@@ -56,10 +61,9 @@ class BookDescriptionScreen extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
-                            child: Wrap(
-                              children:
-                                  data?.writer?.map((p) => Text(p)).toList() ??
-                                      [],
+                            child: Text(
+                              allWriters,
+                              style: theme.textTheme.bodyMedium,
                             ),
                           ),
                         ],
@@ -77,7 +81,7 @@ class BookDescriptionScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
                             child: Text(
-                              '${data?.price}₹',
+                              '${data?.price} ₹',
                               style: theme.textTheme.bodyMedium,
                             ),
                           )

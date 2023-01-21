@@ -17,11 +17,13 @@ class BooksDetailHeader extends StatelessWidget {
     required this.userId,
     this.image,
     required this.semesterValue,
+    this.pagesValue,
     required this.bookEditionValue,
   });
   final String title;
   final String userId;
   final String semesterValue;
+  final int? pagesValue;
   final int? bookEditionValue;
   final String file;
   final String? image;
@@ -57,7 +59,7 @@ class BooksDetailHeader extends StatelessWidget {
                           kRoundedContainer.copyWith(color: Colors.blueGrey),
                       padding: const EdgeInsets.all(4.0),
                       child: Text(
-                        '$pages pages',
+                        '$pagesValue pages',
                         style: theme.textTheme.caption?.copyWith(
                           color: Colors.white,
                         ),
