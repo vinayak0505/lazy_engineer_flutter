@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 
 class FileDataBox extends StatelessWidget {
   const FileDataBox({
     super.key,
-    required this.subject,
-    required this.college,
+    required this.subjectValue,
+    required this.collegeValue,
     required this.title,
-    required this.year,
+    required this.semesterValue,
   });
   final String title;
-  final String subject;
-  final String college;
-  final DateTime year;
+  final String subjectValue;
+  final String collegeValue;
+  final String semesterValue;
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
@@ -25,32 +26,69 @@ class FileDataBox extends StatelessWidget {
           children: [
             Text(
               title,
-              style: theme.textTheme.headline5
-                  ?.copyWith(overflow: TextOverflow.ellipsis),
+              style: theme.textTheme.headline5,
             ),
             const SizedBox(height: 4),
-            RichText(
-              text: TextSpan(
-                style: theme.textTheme.bodyMedium,
-                children: <TextSpan>[
-                  TextSpan(
-                    text: subjectIntended,
-                    style: theme.textTheme.subtitle2,
-                  ),
-                  TextSpan(text: '$subject\n'),
-                  TextSpan(
-                    text: collegeIntended,
-                    style: theme.textTheme.subtitle2,
-                  ),
-                  TextSpan(text: '$college\n'),
-                  TextSpan(
-                    text: yearIntended,
-                    style: theme.textTheme.subtitle2,
-                  ),
-                  TextSpan(text: year.year.toString()),
-                ],
-              ),
-            )
+            Table(
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
+              children: [
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        subject,
+                        style: theme.textTheme.subtitle2,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 4, 0, 4),
+                      child: Text(
+                        subjectValue,
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                    ),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        college,
+                        style: theme.textTheme.subtitle2,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 4, 0, 4),
+                      child: Text(
+                        collegeValue,
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                    )
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        semester,
+                        style: theme.textTheme.subtitle2,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 4, 0, 4),
+                      child: Text(
+                        '${addOrdinals(int.parse(semesterValue))} Semester',
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
       ),

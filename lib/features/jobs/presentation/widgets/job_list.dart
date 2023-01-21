@@ -90,9 +90,12 @@ class JobDataBox extends StatelessWidget {
             const SizedBox(height: 8),
             Align(
               alignment: Alignment.bottomRight,
-              child: Text(
-                date,
-                style: theme.textTheme.overline,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  date,
+                  style: theme.textTheme.overline,
+                ),
               ),
             )
           ],

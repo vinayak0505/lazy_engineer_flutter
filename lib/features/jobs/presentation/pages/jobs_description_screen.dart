@@ -81,7 +81,7 @@ class JobsDescriptionScreen extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Text(
-                'Expected Salary: ${data?.expectedSalary}₹',
+                'Actively Recruiting',
                 style: theme.textTheme.titleMedium,
               )
             ],
@@ -148,7 +148,7 @@ class JobsDescriptionScreen extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            'Expected Salary: ${data?.expectedSalary}₹',
+            'Expected Salary: ₹ ${data?.expectedSalary}',
             style: theme.textTheme.titleLarge,
           ),
           const SizedBox(height: 16),

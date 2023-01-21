@@ -144,9 +144,12 @@ class BooksDetailHeader extends StatelessWidget {
                                 style: theme.textTheme.titleMedium
                                     ?.copyWith(fontWeight: FontWeight.bold),
                               ),
-                              Text(
-                                '${addOrdinals(int.parse(semesterValue))} Semester',
-                                style: theme.textTheme.titleMedium,
+                              Padding(
+                                padding: const EdgeInsets.only(left: 4),
+                                child: Text(
+                                  '${addOrdinals(int.parse(semesterValue))} Semester',
+                                  style: theme.textTheme.titleMedium,
+                                ),
                               )
                             ],
                           ),
@@ -165,9 +168,12 @@ class BooksDetailHeader extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Text(
-                                  '${addOrdinals(bookEditionValue!)} Edition',
-                                  style: theme.textTheme.titleMedium,
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 4),
+                                  child: Text(
+                                    '${addOrdinals(bookEditionValue!)} Edition',
+                                    style: theme.textTheme.titleMedium,
+                                  ),
                                 )
                               ],
                             )

@@ -10,7 +10,7 @@ class QuestionPaperDataBox extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     return Flexible(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,40 +21,66 @@ class QuestionPaperDataBox extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 4),
-            Text(
-              paperDetail.about ?? '',
-              style: theme.textTheme.caption,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
+            Table(
+              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+              defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
+              children: [
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        subject,
+                        style: theme.textTheme.subtitle2,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 4, 0, 4),
+                      child: Text(
+                        paperDetail.subject ?? '',
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                    ),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        topic,
+                        style: theme.textTheme.subtitle2,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 4, 0, 4),
+                      child: Text(
+                        paperDetail.topic ?? '',
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                    )
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        unit,
+                        style: theme.textTheme.subtitle2,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8, 4, 0, 4),
+                      child: Text(
+                        'Unit - ${paperDetail.unit}',
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                    )
+                  ],
+                ),
+              ],
             ),
-            const SizedBox(height: 4),
-            RichText(
-              text: TextSpan(
-                style: theme.textTheme.bodyMedium,
-                children: <TextSpan>[
-                  TextSpan(
-                    text: subjectIntended,
-                    style: theme.textTheme.subtitle2,
-                  ),
-                  TextSpan(text: '${paperDetail.subject}\n'),
-                  TextSpan(
-                    text: typeIntended,
-                    style: theme.textTheme.subtitle2,
-                  ),
-                  TextSpan(text: '${paperDetail.topic}\n'),
-                  TextSpan(
-                    text: collegeIntended,
-                    style: theme.textTheme.subtitle2,
-                  ),
-                  TextSpan(text: '${paperDetail.unit}\n'),
-                  TextSpan(
-                    text: yearIntended,
-                    style: theme.textTheme.subtitle2,
-                  ),
-                  TextSpan(text: '${paperDetail.semester}\n'),
-                ],
-              ),
-            )
           ],
         ),
       ),

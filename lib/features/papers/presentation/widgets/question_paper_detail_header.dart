@@ -59,40 +59,38 @@ class PapersDetailHeader extends StatelessWidget {
                         title,
                         style: theme.textTheme.headline5,
                       ),
-                      const SizedBox(height: 16),
-                        Text(subject, style: theme.textTheme.titleLarge),
-                        const SizedBox(height: 16),
+                      const SizedBox(width: 16),
                       // Row(
                       //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       //   children: [
-                          // IconButton(
-                          //   onPressed: () => read.like(),
-                          //   icon: watch.rating ?? false
-                          //       ? const CustomIcon(
-                          //           AppIcons.likeIcon,
-                          //           height: 26,
-                          //           width: 26,
-                          //         )
-                          //       : const CustomIcon(
-                          //           AppIcons.closeIcon,
-                          //           height: 26,
-                          //           width: 26,
-                          //         ),
-                          // ),
-                          // IconButton(
-                          //   onPressed: () => read.dislike(),
-                          //   icon: watch.rating ?? true
-                          //       ? const CustomIcon(
-                          //           AppIcons.closeIcon,
-                          //           height: 26,
-                          //           width: 26,
-                          //         )
-                          //       : const CustomIcon(
-                          //           AppIcons.dislikeIcon,
-                          //           height: 26,
-                          //           width: 26,
-                          //         ),
-                          // ),
+                      // IconButton(
+                      //   onPressed: () => read.like(),
+                      //   icon: watch.rating ?? false
+                      //       ? const CustomIcon(
+                      //           AppIcons.likeIcon,
+                      //           height: 26,
+                      //           width: 26,
+                      //         )
+                      //       : const CustomIcon(
+                      //           AppIcons.closeIcon,
+                      //           height: 26,
+                      //           width: 26,
+                      //         ),
+                      // ),
+                      // IconButton(
+                      //   onPressed: () => read.dislike(),
+                      //   icon: watch.rating ?? true
+                      //       ? const CustomIcon(
+                      //           AppIcons.closeIcon,
+                      //           height: 26,
+                      //           width: 26,
+                      //         )
+                      //       : const CustomIcon(
+                      //           AppIcons.dislikeIcon,
+                      //           height: 26,
+                      //           width: 26,
+                      //         ),
+                      // ),
                       //     Column(
                       //       children: [
                       //         const CustomIcon(

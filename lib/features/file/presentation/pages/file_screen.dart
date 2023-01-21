@@ -89,9 +89,9 @@ class FileListView extends StatelessWidget {
         image: data[index].imageLink,
         child: FileDataBox(
           title: data[index].title ?? '',
-          college: data[index].college ?? '',
-          subject: data[index].subject ?? '',
-          year: DateTime.now(),
+          collegeValue: data[index].college ?? '',
+          subjectValue: data[index].subject ?? '',
+          semesterValue: data[index].semester ?? '',
         ),
         onPressed: () => context.push(
           '${RouteGenerator.fileDescriptionRoute}/${index + 1}',

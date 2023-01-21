@@ -4,7 +4,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
@@ -18,7 +17,6 @@ import 'package:lazy_engineer/features/upload/presentation/cubit/pdf_to_img/pdf_
 import 'package:lazy_engineer/features/upload/presentation/cubit/upload/upload_cubit.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/success_page.dart';
 import 'package:lazy_engineer/helper/input_validation.dart';
-import 'package:lazy_engineer/navigation/routes.dart';
 
 class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
   const UploadScreenWidget({
@@ -49,7 +47,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
             style: theme.textTheme.headline5,
           ),
           leading: GestureDetector(
-            onTap: () => context.go(RouteGenerator.homeRoute),
+            onTap: () => Navigator.pop(context),
             child: const CustomIcon(
               AppIcons.backArrow,
               margin: EdgeInsets.only(left: 16),

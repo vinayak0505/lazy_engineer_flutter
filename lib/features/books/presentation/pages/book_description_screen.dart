@@ -81,7 +81,7 @@ class BookDescriptionScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
                             child: Text(
-                              '${data?.price} ₹',
+                              '₹ ${data?.price}',
                               style: theme.textTheme.bodyMedium,
                             ),
                           )
