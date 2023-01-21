@@ -60,11 +60,10 @@ class PapersDetailHeader extends StatelessWidget {
                       Text(
                         title,
                         style: theme.textTheme.headline5,
-                        textAlign: TextAlign.justify,
                       ),
                       const SizedBox(height: 16),
                       if (subject != null) ...[
-                        Text(subject!, style: theme.textTheme.titleLarge),
+                        Text(subject, style: theme.textTheme.titleLarge),
                         const SizedBox(height: 16),
                       ],
                       // Row(

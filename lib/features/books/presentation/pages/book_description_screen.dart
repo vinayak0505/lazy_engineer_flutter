@@ -52,11 +52,10 @@ class BookDescriptionScreen extends StatelessWidget {
                             child: Text(
                               writers,
                               style: theme.textTheme.headline5,
-                              textAlign: TextAlign.justify,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
                             child: Wrap(
                               children:
                                   data?.writer?.map((p) => Text(p)).toList() ??
@@ -73,15 +72,13 @@ class BookDescriptionScreen extends StatelessWidget {
                             child: Text(
                               price,
                               style: theme.textTheme.headline5,
-                              textAlign: TextAlign.justify,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
                             child: Text(
                               '${data?.price}₹',
                               style: theme.textTheme.bodyMedium,
-                              textAlign: TextAlign.justify,
                             ),
                           )
                         ],
@@ -98,7 +95,6 @@ class BookDescriptionScreen extends StatelessWidget {
                   Text(
                     data?.about ?? '',
                     style: theme.textTheme.bodyMedium,
-                    textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 16),
                 ],

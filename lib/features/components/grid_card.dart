@@ -52,7 +52,12 @@ class GridCard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
-            child: Text(body, style: theme.textTheme.bodyMedium),
+            child: Text(
+              body,
+              style: theme.textTheme.bodyMedium,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
         ],
       ),

@@ -76,7 +76,6 @@ class BooksDetailHeader extends StatelessWidget {
                       Text(
                         title,
                         style: theme.textTheme.headline5,
-                        textAlign: TextAlign.justify,
                       ),
                       const SizedBox(height: 16),
                       // Row(

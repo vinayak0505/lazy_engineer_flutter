@@ -53,15 +53,13 @@ class NotesDetailScreen extends StatelessWidget {
                             child: Text(
                               subject,
                               style: theme.textTheme.headline5,
-                              textAlign: TextAlign.justify,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
                             child: Text(
                               data?.subject ?? '',
                               style: theme.textTheme.bodyMedium,
-                              textAlign: TextAlign.justify,
                             ),
                           ),
                         ],
@@ -74,15 +72,13 @@ class NotesDetailScreen extends StatelessWidget {
                             child: Text(
                               chapter,
                               style: theme.textTheme.headline5,
-                              textAlign: TextAlign.justify,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
                             child: Text(
                               data?.chapter ?? '',
                               style: theme.textTheme.bodyMedium,
-                              textAlign: TextAlign.justify,
                             ),
                           )
                         ],
@@ -97,15 +93,13 @@ class NotesDetailScreen extends StatelessWidget {
                             child: Text(
                               topic,
                               style: theme.textTheme.headline5,
-                              textAlign: TextAlign.justify,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
                             child: Text(
                               data?.topic ?? '',
                               style: theme.textTheme.bodyMedium,
-                              textAlign: TextAlign.justify,
                             ),
                           )
                         ],
@@ -122,7 +116,6 @@ class NotesDetailScreen extends StatelessWidget {
                   Text(
                     data?.about ?? '',
                     style: theme.textTheme.bodyMedium,
-                    textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 16),
                 ],

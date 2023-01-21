@@ -92,7 +92,7 @@ class TagBottomSheet extends StatelessWidget {
     final theme = Theme.of(context);
     void onTapTag(String tag) {
       cubit.addElement(tag);
-      tagsController.text = tag;
+      tagsController.clear();
       Navigator.pop(context);
     }
 

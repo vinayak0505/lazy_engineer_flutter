@@ -47,19 +47,17 @@ class FileDetailScreen extends StatelessWidget {
                       TableRow(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: const EdgeInsets.symmetric(vertical: 8),
                             child: Text(
                               college,
                               style: theme.textTheme.headline5,
-                              textAlign: TextAlign.justify,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            padding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
                             child: Text(
                               data?.college ?? '',
                               style: theme.textTheme.bodyMedium,
-                              textAlign: TextAlign.justify,
                             ),
                           )
                         ],
@@ -76,7 +74,6 @@ class FileDetailScreen extends StatelessWidget {
                   Text(
                     data?.about ?? '',
                     style: theme.textTheme.bodyMedium,
-                    textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 16),
                 ],

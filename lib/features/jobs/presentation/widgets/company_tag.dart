@@ -25,8 +25,6 @@ class CompanyTag extends StatelessWidget {
           height: 70,
           width: 70,
           radius: 35,
-          isBorder: true,
-          color: Colors.grey.shade400,
         ),
         const SizedBox(width: 12),
         Column(
