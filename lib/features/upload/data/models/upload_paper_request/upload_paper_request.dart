@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:lazy_engineer/assets/constants/strings.dart';
 
 part 'upload_paper_request.freezed.dart';
 part 'upload_paper_request.g.dart';

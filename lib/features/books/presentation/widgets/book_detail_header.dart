@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
-import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/assets/images.dart';
 import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/features/books/data/repositories/books_repository_impl.dart';
 import 'package:lazy_engineer/features/books/presentation/cubit/books_detail_cubit/books_detail_cubit.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
-import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
 
 class BooksDetailHeader extends StatelessWidget {
