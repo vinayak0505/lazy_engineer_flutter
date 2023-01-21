@@ -245,16 +245,25 @@ List<String> questionPaperTags = [
 List<String> notesTags = [
   'Handwritten',
   'Printed',
+  'Self Made',
+  'By Teachers',
 ];
 
 List<String> fileTags = [
   'Handwritten',
   'Printed',
+  'Computer Science',
+  'Electrical',
+  'Information Technology',
+  'Mechanical',
 ];
 
 List<String> bookTags = [
   'Recommended by Teachers',
   'Easy to understand',
+  'Reference Book',
+  'Indian Authors',
+  'Foreign Authors'
 ];
 
 List<String> skillTags = [
