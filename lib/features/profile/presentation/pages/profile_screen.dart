@@ -26,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
               failure: (e) => FailureScreen(e),
               loading: () => const LoadingScreen(),
               success: (isNotEdit, data) {
-                ProfileModal customData =
+                final ProfileModal customData =
                     context.read<ProfileCubit>().userProfile!;
                 return ListView(
                   shrinkWrap: true,

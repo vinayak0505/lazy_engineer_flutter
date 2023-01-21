@@ -4,6 +4,7 @@ import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/config/theme/app_theme.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/components/show_tags_widget.dart';
 import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
 import 'package:lazy_engineer/features/jobs/presentation/widgets/company_tag.dart';
 
@@ -29,41 +30,23 @@ class JobsDescriptionScreen extends StatelessWidget {
         children: [
           Text(
             data?.title ?? '',
-            style: theme.textTheme.headline5,
+            style: theme.textTheme.headline4,
           ),
-          const SizedBox(height: 18),
-          CompanyTag(
-            companyName: data?.company ?? '',
-            icon: data?.mediaLink,
-            description: data?.location ?? '',
-          ),
-          const SizedBox(height: 8),
-          Row(
-            children: [
-              const SizedBox(width: 16),
-              Text(
-                'Date Posted - ',
-                style: theme.textTheme.bodyMedium
-                    ?.copyWith(color: AppThemes.subTitleColor),
-              ),
-              Text(
-                '${data?.datePosted}',
-                style: theme.textTheme.bodyMedium
-                    ?.copyWith(color: AppThemes.subTitleColor),
-              ),
-              // const SizedBox(width: 8),
-              // Text(
-              //   '${data!.noSuchMethod} applicants',
-              //   style: theme.textTheme.bodyMedium
-              //       ?.copyWith(color: AppThemes.subTitleColor),
-              // )
-            ],
+          const SizedBox(height: 16),
+          Text(
+            'Date Posted - ${data?.datePosted}',
+            style: theme.textTheme.bodyMedium
+                ?.copyWith(color: AppThemes.subTitleColor),
           ),
           const SizedBox(height: 12),
           Row(
             children: [
               const SizedBox(width: 8),
-              const CustomIcon(AppIcons.fullTimeIcon),
+              const CustomIcon(
+                AppIcons.jobTypeIcon,
+                width: 22,
+                height: 22,
+              ),
               const SizedBox(width: 12),
               Text(
                 data?.jobType ?? '',
@@ -75,7 +58,11 @@ class JobsDescriptionScreen extends StatelessWidget {
           Row(
             children: [
               const SizedBox(width: 8),
-              const Icon(Icons.stairs_rounded),
+              const CustomIcon(
+                AppIcons.experienceLevelIcon,
+                width: 22,
+                height: 22,
+              ),
               const SizedBox(width: 12),
               Text(
                 data?.experienceLevel ?? '',
@@ -87,7 +74,11 @@ class JobsDescriptionScreen extends StatelessWidget {
           Row(
             children: [
               const SizedBox(width: 8),
-              const Icon(Icons.money),
+              const CustomIcon(
+                AppIcons.recruitmentIcon,
+                width: 22,
+                height: 22,
+              ),
               const SizedBox(width: 12),
               Text(
                 'Expected Salary: ${data?.expectedSalary}₹',
@@ -144,18 +135,8 @@ class JobsDescriptionScreen extends StatelessWidget {
             skillsRequired,
             style: theme.textTheme.headlineSmall,
           ),
+          ShowTagsWidget(data?.skillsNeeded ?? []),
           const SizedBox(height: 8),
-          Wrap(
-            children: data?.skillsNeeded?.map((e) {
-                  if (e == data?.skillsNeeded?.last) {
-                    return Text(e);
-                  } else {
-                    return Text('$e, ');
-                  }
-                }).toList() ??
-                [],
-          ),
-          const SizedBox(height: 16),
           Text(
             jobDescription,
             style: theme.textTheme.headlineSmall,
@@ -164,6 +145,11 @@ class JobsDescriptionScreen extends StatelessWidget {
           Text(
             data?.profile ?? '',
             style: theme.textTheme.bodyMedium,
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'Expected Salary: ${data?.expectedSalary}₹',
+            style: theme.textTheme.titleLarge,
           ),
           const SizedBox(height: 16),
           Text(
@@ -181,6 +167,11 @@ class JobsDescriptionScreen extends StatelessWidget {
           Text(
             data?.aboutCompany ?? '',
             style: theme.textTheme.bodyMedium,
+          ),
+          const SizedBox(height: 16),
+          Text(
+            companyPhotos,
+            style: theme.textTheme.headlineSmall,
           ),
           const SizedBox(height: 16),
           CustomImage(

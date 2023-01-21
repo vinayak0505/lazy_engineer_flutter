@@ -69,33 +69,33 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            //* Pages
-            CustomTextField(
-              controller: pagesController,
-              keyboardType: TextInputType.number,
-              hintText: pages,
-              width: 100,
-              validator: (value) => nullCheckNumValidation(
-                value,
-                pages,
-              ),
-            ),
-            //* Semester
-            CustomDropdown(
-              list: semesterList,
-              keyList: semesterKeyList,
-              width: 130,
-              hintText: semester,
-              controller: semesterController,
-              validator: (value) => nullCheckNumValidation(
-                value,
-                semester,
-              ),
-            ),
-          ],
+        //* Semester
+        Text(semester, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        CustomDropdown(
+          width: 200,
+          hintText: semester,
+          list: semesterList,
+          keyList: semesterKeyList,
+          controller: semesterController,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            semester,
+          ),
+        ),
+        const SizedBox(height: 16),
+        //* Pages
+        Text(pages, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        CustomTextField(
+          controller: pagesController,
+          keyboardType: TextInputType.number,
+          hintText: pages,
+          width: 200,
+          validator: (value) => nullCheckNumValidation(
+            value,
+            pages,
+          ),
         ),
         const SizedBox(height: 16),
         //* BookEdition

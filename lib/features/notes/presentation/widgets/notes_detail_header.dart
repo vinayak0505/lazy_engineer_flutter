@@ -4,6 +4,7 @@ import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/assets/images.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
@@ -15,13 +16,15 @@ class NotesDetailHeader extends StatelessWidget {
     super.key,
     required this.title,
     required this.userId,
-    this.subject,
     required this.fileLink,
     this.imageLink,
+    required this.semesterValue,
+    required this.unitValue,
   });
   final String title;
   final String userId;
-  final String? subject;
+  final String semesterValue;
+  final String unitValue;
   final String fileLink;
   final String? imageLink;
   @override
@@ -60,59 +63,96 @@ class NotesDetailHeader extends StatelessWidget {
                         textAlign: TextAlign.justify,
                       ),
                       const SizedBox(height: 16),
-                      if (subject != null) ...[
-                        Text(subject!, style: theme.textTheme.titleLarge),
-                        const SizedBox(height: 16),
-                      ],
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      // children: [
+                      // IconButton(
+                      //   onPressed: () => read.like(),
+                      //   icon: watch.rating ?? false
+                      //       ? const CustomIcon(
+                      //           AppIcons.likeIcon,
+                      //           height: 26,
+                      //           width: 26,
+                      //         )
+                      //       : const CustomIcon(
+                      //           AppIcons.closeIcon,
+                      //           height: 26,
+                      //           width: 26,
+                      //         ),
+                      // ),
+                      // IconButton(
+                      //   onPressed: () => read.dislike(),
+                      //   icon: watch.rating ?? true
+                      //       ? const CustomIcon(
+                      //           AppIcons.closeIcon,
+                      //           height: 26,
+                      //           width: 26,
+                      //         )
+                      //       : const CustomIcon(
+                      //           AppIcons.dislikeIcon,
+                      //           height: 26,
+                      //           width: 26,
+                      //         ),
+                      // ),
+                      // Column(
+                      //   children: [
+                      //     const CustomIcon(
+                      //       AppIcons.bookIcon,
+                      //       height: 22,
+                      //       width: 22,
+                      //     ),
+                      //     Text(pdf, style: theme.textTheme.bodyText1)
+                      //   ],
+                      // ),
+                      // Column(
+                      //   children: [
+                      //     const CustomIcon(
+                      //       AppIcons.pageIcon,
+                      //       height: 22,
+                      //       width: 22,
+                      //     ),
+                      //     Text(pages, style: theme.textTheme.bodyText1)
+                      //   ],
+                      // )
+
+                      // ],
+                      // ),
+                      Table(
+                        defaultVerticalAlignment:
+                            TableCellVerticalAlignment.middle,
+                        defaultColumnWidth:
+                            const IntrinsicColumnWidth(flex: 4.0),
                         children: [
-                          // IconButton(
-                          //   onPressed: () => read.like(),
-                          //   icon: watch.rating ?? false
-                          //       ? const CustomIcon(
-                          //           AppIcons.likeIcon,
-                          //           height: 26,
-                          //           width: 26,
-                          //         )
-                          //       : const CustomIcon(
-                          //           AppIcons.closeIcon,
-                          //           height: 26,
-                          //           width: 26,
-                          //         ),
-                          // ),
-                          // IconButton(
-                          //   onPressed: () => read.dislike(),
-                          //   icon: watch.rating ?? true
-                          //       ? const CustomIcon(
-                          //           AppIcons.closeIcon,
-                          //           height: 26,
-                          //           width: 26,
-                          //         )
-                          //       : const CustomIcon(
-                          //           AppIcons.dislikeIcon,
-                          //           height: 26,
-                          //           width: 26,
-                          //         ),
-                          // ),
-                          Column(
+                          TableRow(
                             children: [
-                              const CustomIcon(
-                                AppIcons.bookIcon,
-                                height: 22,
-                                width: 22,
+                              Text(
+                                'Semester: ',
+                                style: theme.textTheme.titleMedium
+                                    ?.copyWith(fontWeight: FontWeight.bold),
                               ),
-                              Text(pdf, style: theme.textTheme.bodyText1)
+                              Text(
+                                '${addOrdinals(int.parse(semesterValue))} Semester',
+                                style: theme.textTheme.titleMedium,
+                              )
                             ],
                           ),
-                          Column(
+                          const TableRow(
                             children: [
-                              const CustomIcon(
-                                AppIcons.pageIcon,
-                                height: 22,
-                                width: 22,
+                              SizedBox(height: 8),
+                              SizedBox(height: 8),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Text(
+                                'Unit: ',
+                                style: theme.textTheme.titleMedium
+                                    ?.copyWith(fontWeight: FontWeight.bold),
                               ),
-                              Text(pages, style: theme.textTheme.bodyText1)
+                              Text(
+                                'Unit - $unitValue',
+                                style: theme.textTheme.titleMedium,
+                              )
                             ],
                           )
                         ],

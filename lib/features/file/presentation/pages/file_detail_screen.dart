@@ -33,24 +33,12 @@ class FileDetailScreen extends StatelessWidget {
                 FilesDetailHeader(
                   title: data?.title ?? '',
                   userId: data?.userId ?? '',
-                  subject: data?.subject,
+                  semesterValue: data?.semester ?? '',
                   file: data?.mediaLink ?? '',
                   image: data?.imageLink ?? '',
                 ),
-                const SizedBox(height: 16),
-                if (data?.about != null) ...[
-                  Text(
-                    'Description',
-                    style: theme.textTheme.headline5,
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    data?.about ?? '',
-                    style: theme.textTheme.bodyMedium,
-                    textAlign: TextAlign.justify,
-                  ),
-                  const SizedBox(height: 16),
-                ],
+                const SizedBox(height: 12),
+                ShowTagsWidget(data?.tags ?? []),
                 Table(
                   defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                   defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
@@ -76,32 +64,22 @@ class FileDetailScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                    if (data?.semester != null)
-                      TableRow(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: Text(
-                              semester,
-                              style: theme.textTheme.headline5,
-                              textAlign: TextAlign.justify,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: Text(
-                              data?.semester ?? '',
-                              style: theme.textTheme.bodyMedium,
-                              textAlign: TextAlign.justify,
-                            ),
-                          )
-                        ],
-                      ),
                   ],
                 ),
                 const SizedBox(height: 8),
-                Text(tags, style: theme.textTheme.headlineSmall),
-                ShowTagsWidget(data?.tags ?? []),
+                if (data?.about != null) ...[
+                  Text(
+                    about,
+                    style: theme.textTheme.headline5,
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    data?.about ?? '',
+                    style: theme.textTheme.bodyMedium,
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                ],
               ],
             ),
           ),

@@ -57,30 +57,47 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
         ),
         const SizedBox(height: 16),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //* Semester
-            CustomDropdown(
-              width: 120,
-              list: semesterList,
-              keyList: semesterKeyList,
-              hintText: semester,
-              controller: semesterController,
-              validator: (value) => nullCheckTextValidation(
-                value,
-                semester,
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(semester, style: theme.textTheme.titleLarge),
+                  const SizedBox(height: 12),
+                  CustomDropdown(
+                    list: semesterList,
+                    keyList: semesterKeyList,
+                    hintText: semester,
+                    controller: semesterController,
+                    validator: (value) => nullCheckTextValidation(
+                      value,
+                      semester,
+                    ),
+                  ),
+                ],
               ),
             ),
+            const SizedBox(width: 16),
             //* Unit
-            CustomDropdown(
-              width: 120,
-              list: unitList,
-              keyList: unitKeyList,
-              hintText: unit,
-              controller: unitController,
-              validator: (value) => nullCheckTextValidation(
-                value,
-                unit,
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(unit, style: theme.textTheme.titleLarge),
+                  const SizedBox(height: 12),
+                  CustomDropdown(
+                    list: unitList,
+                    keyList: unitKeyList,
+                    hintText: unit,
+                    controller: unitController,
+                    validator: (value) => nullCheckTextValidation(
+                      value,
+                      unit,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

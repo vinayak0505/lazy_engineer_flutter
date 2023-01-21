@@ -55,10 +55,13 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
         ),
         const SizedBox(height: 16),
         //* Semester
+        Text(semester, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
         CustomDropdown(
-          width: 130,
+          width: 200,
           hintText: semester,
           list: semesterList,
+          keyList: semesterKeyList,
           controller: semesterController,
           validator: (value) => nullCheckTextValidation(
             value,
@@ -68,15 +71,10 @@ class UploadFileScreen extends StatelessWidget with InputValidationMixin {
         const SizedBox(height: 16),
         //* College
         Text(college, style: theme.textTheme.titleLarge),
-        const SizedBox(height: 12),
-        CustomDropdown(
-          hintText: college,
-          list: collegeList,
+        CustomTextField.secondary(
           controller: collegeController,
-          validator: (value) => nullCheckTextValidation(
-            value,
-            college,
-          ),
+          hintText: college,
+          validator: (value) => nullCheckTextValidation(value, college),
         ),
         const SizedBox(height: 16),
         //* Tags

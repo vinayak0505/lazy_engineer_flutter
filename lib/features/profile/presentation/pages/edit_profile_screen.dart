@@ -95,65 +95,71 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             const SizedBox(height: 16.0),
             Text(
               education,
-              style: theme.textTheme.headline6,
+              style: theme.textTheme.headline5,
             ),
             const SizedBox(height: 16.0),
+            //* College
+            Text(college, style: theme.textTheme.titleLarge),
+            CustomTextField.secondary(
+              controller: universityController,
+              hintText: college,
+              validator: (value) => nullCheckTextValidation(value, college),
+            ),
+            const SizedBox(height: 16.0),
+            Text(college, style: theme.textTheme.titleLarge),
+            const SizedBox(height: 12.0),
+            CustomDropdown(
+              list: classList,
+              hintText: classD,
+              controller: classController,
+              dropdownValue: data.userClass.toString(),
+              validator: (value) => nullCheckTextValidation(
+                value,
+                classD,
+              ),
+            ),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Flexible(
-                  child: CustomDropdown(
-                    list: universityList,
-                    hintText: searchUniversity,
-                    controller: universityController,
-                    dropdownValue: data.universityName,
-                    validator: (value) => nullCheckTextValidation(
-                      value,
-                      university,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(semester, style: theme.textTheme.titleLarge),
+                      const SizedBox(height: 12),
+                      CustomDropdown(
+                        list: semesterList,
+                        keyList: semesterKeyList,
+                        hintText: semester,
+                        controller: semesterController,
+                        dropdownValue: semesterList[semesterIndex],
+                        validator: (value) => nullCheckTextValidation(
+                          value,
+                          semester,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(width: 16),
-                CustomDropdown(
-                  width: 150,
-                  list: yearOfAdmissionList,
-                  hintText: yearOfAdmission,
-                  controller: yearOfAdmissionController,
-                  dropdownValue: data.yearOfAdmission.toString(),
-                  validator: (value) => nullCheckTextValidation(
-                    value,
-                    year,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
                 Flexible(
-                  child: CustomDropdown(
-                    list: classList,
-                    hintText: classD,
-                    controller: classController,
-                    dropdownValue: data.userClass.toString(),
-                    validator: (value) => nullCheckTextValidation(
-                      value,
-                      classD,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 16),
-                CustomDropdown(
-                  width: 150,
-                  list: semesterList,
-                  keyList: semesterKeyList,
-                  hintText: semester,
-                  controller: semesterController,
-                  dropdownValue: semesterList[semesterIndex],
-                  validator: (value) => nullCheckTextValidation(
-                    value,
-                    semester,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(year, style: theme.textTheme.titleLarge),
+                      const SizedBox(height: 12),
+                      CustomDropdown(
+                        list: yearOfAdmissionList,
+                        hintText: yearOfAdmission,
+                        controller: yearOfAdmissionController,
+                        dropdownValue: data.yearOfAdmission.toString(),
+                        validator: (value) => nullCheckTextValidation(
+                          value,
+                          year,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

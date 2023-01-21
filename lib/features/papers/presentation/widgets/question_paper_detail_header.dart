@@ -4,6 +4,7 @@ import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/assets/images.dart';
+import 'package:lazy_engineer/core/helper_function.dart';
 import 'package:lazy_engineer/features/components/custom_button.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/components/custom_image.dart';
@@ -17,11 +18,13 @@ class PapersDetailHeader extends StatelessWidget {
     required this.userId,
     required this.file,
     required this.image,
-    this.subject,
+    required this.semesterValue,
+    required this.unitValue,
   });
   final String title;
   final String userId;
-  final String? subject;
+  final String semesterValue;
+  final String unitValue;
   final String file;
   final String image;
   @override
@@ -64,9 +67,9 @@ class PapersDetailHeader extends StatelessWidget {
                         Text(subject!, style: theme.textTheme.titleLarge),
                         const SizedBox(height: 16),
                       ],
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //   children: [
                           // IconButton(
                           //   onPressed: () => read.like(),
                           //   icon: watch.rating ?? false
@@ -95,24 +98,64 @@ class PapersDetailHeader extends StatelessWidget {
                           //           width: 26,
                           //         ),
                           // ),
-                          Column(
+                      //     Column(
+                      //       children: [
+                      //         const CustomIcon(
+                      //           AppIcons.bookIcon,
+                      //           height: 22,
+                      //           width: 22,
+                      //         ),
+                      //         Text(pdf, style: theme.textTheme.bodyText1)
+                      //       ],
+                      //     ),
+                      //     Column(
+                      //       children: [
+                      //         const CustomIcon(
+                      //           AppIcons.pageIcon,
+                      //           height: 22,
+                      //           width: 22,
+                      //         ),
+                      //         Text(pages, style: theme.textTheme.bodyText1)
+                      //       ],
+                      //     )
+                      //   ],
+                      // ),
+                      Table(
+                        defaultVerticalAlignment:
+                            TableCellVerticalAlignment.middle,
+                        defaultColumnWidth:
+                            const IntrinsicColumnWidth(flex: 4.0),
+                        children: [
+                          TableRow(
                             children: [
-                              const CustomIcon(
-                                AppIcons.bookIcon,
-                                height: 22,
-                                width: 22,
+                              Text(
+                                'Semester: ',
+                                style: theme.textTheme.titleMedium
+                                    ?.copyWith(fontWeight: FontWeight.bold),
                               ),
-                              Text(pdf, style: theme.textTheme.bodyText1)
+                              Text(
+                                '${addOrdinals(int.parse(semesterValue))} Semester',
+                                style: theme.textTheme.titleMedium,
+                              )
                             ],
                           ),
-                          Column(
+                          const TableRow(
                             children: [
-                              const CustomIcon(
-                                AppIcons.pageIcon,
-                                height: 22,
-                                width: 22,
+                              SizedBox(height: 8),
+                              SizedBox(height: 8),
+                            ],
+                          ),
+                          TableRow(
+                            children: [
+                              Text(
+                                'Unit: ',
+                                style: theme.textTheme.titleMedium
+                                    ?.copyWith(fontWeight: FontWeight.bold),
                               ),
-                              Text(pages, style: theme.textTheme.bodyText1)
+                              Text(
+                                'Unit - $unitValue',
+                                style: theme.textTheme.titleMedium,
+                              )
                             ],
                           )
                         ],

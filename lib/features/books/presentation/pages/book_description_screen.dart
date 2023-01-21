@@ -35,65 +35,73 @@ class BookDescriptionScreen extends StatelessWidget {
                   userId: data?.userId ?? '',
                   file: data?.mediaLink ?? '',
                   image: data?.imageLink ?? '',
+                  bookEditionValue: data?.bookEdition,
+                  semesterValue: data?.semester ?? '',
                 ),
-                const SizedBox(height: 16),
-                Text(
-                  'About',
-                  style: theme.textTheme.headline5,
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  data?.about ?? '',
-                  style: theme.textTheme.bodyMedium,
-                  textAlign: TextAlign.justify,
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Text('Writers', style: theme.textTheme.headlineSmall),
-                    const SizedBox(width: 80),
-                    Wrap(
-                      children:
-                          data?.writer?.map((p) => Text(p)).toList() ?? [],
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Text(semester, style: theme.textTheme.headlineSmall),
-                    const SizedBox(width: 60),
-                    Text(
-                      data?.semester ?? '',
-                      style: theme.textTheme.bodyText2,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Text('Book Edition', style: theme.textTheme.headlineSmall),
-                    const SizedBox(width: 30),
-                    Text(
-                      data?.bookEdition.toString() ?? '',
-                      style: theme.textTheme.bodyText2,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Text('Price', style: theme.textTheme.headlineSmall),
-                    const SizedBox(width: 110),
-                    Text(
-                      data?.price.toString() ?? '',
-                      style: theme.textTheme.bodyText2,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Text(tags, style: theme.textTheme.headlineSmall),
+                const SizedBox(height: 12),
                 ShowTagsWidget(data?.tags ?? []),
+                Table(
+                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                  defaultColumnWidth: const IntrinsicColumnWidth(flex: 4.0),
+                  children: [
+                    if (data?.writer != null)
+                      TableRow(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              writers,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Wrap(
+                              children:
+                                  data?.writer?.map((p) => Text(p)).toList() ??
+                                      [],
+                            ),
+                          ),
+                        ],
+                      ),
+                    if (data?.price != null)
+                      TableRow(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              price,
+                              style: theme.textTheme.headline5,
+                              textAlign: TextAlign.justify,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              '${data?.price}₹',
+                              style: theme.textTheme.bodyMedium,
+                              textAlign: TextAlign.justify,
+                            ),
+                          )
+                        ],
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                if (data?.about != null) ...[
+                  Text(
+                    about,
+                    style: theme.textTheme.headline5,
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    data?.about ?? '',
+                    style: theme.textTheme.bodyMedium,
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 16),
+                ],
               ],
             ),
           ),

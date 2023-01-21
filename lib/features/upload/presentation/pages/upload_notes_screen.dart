@@ -43,18 +43,6 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
           validator: (value) => nullCheckTextValidation(value, about),
         ),
         const SizedBox(height: 16),
-        //* Semester
-        Text(semester, style: theme.textTheme.titleLarge),
-        const SizedBox(height: 12),
-        CustomDropdown(
-          list: semesterList,
-          keyList: semesterKeyList,
-          width: 130,
-          hintText: semester,
-          controller: semesterController,
-          validator: (value) => nullCheckTextValidation(value, semester),
-        ),
-        const SizedBox(height: 16),
         //* Subject
         Text(subject, style: theme.textTheme.titleLarge),
         CustomTextField.secondary(
@@ -63,24 +51,59 @@ class UploadNotesScreen extends StatelessWidget with InputValidationMixin {
           validator: (value) => nullCheckTextValidation(value, subject),
         ),
         const SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            //* Semester
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(semester, style: theme.textTheme.titleLarge),
+                  const SizedBox(height: 12),
+                  CustomDropdown(
+                    list: semesterList,
+                    keyList: semesterKeyList,
+                    hintText: semester,
+                    controller: semesterController,
+                    validator: (value) => nullCheckTextValidation(
+                      value,
+                      semester,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 16),
+            //* Unit
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(unit, style: theme.textTheme.titleLarge),
+                  const SizedBox(height: 12),
+                  CustomDropdown(
+                    list: unitList,
+                    keyList: unitKeyList,
+                    hintText: unit,
+                    controller: unitController,
+                    validator: (value) => nullCheckTextValidation(
+                      value,
+                      unit,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
         //* College
         Text(college, style: theme.textTheme.titleLarge),
         CustomTextField.secondary(
           controller: collegeController,
           hintText: college,
           validator: (value) => nullCheckTextValidation(value, college),
-        ),
-        const SizedBox(height: 16),
-        //* Unit
-        Text(unit, style: theme.textTheme.titleLarge),
-        const SizedBox(height: 12),
-        CustomDropdown(
-          list: unitList,
-          keyList: unitKeyList,
-          width: 130,
-          hintText: unit,
-          controller: unitController,
-          validator: (value) => nullCheckTextValidation(value, unit),
         ),
         const SizedBox(height: 16),
         //* Chapter

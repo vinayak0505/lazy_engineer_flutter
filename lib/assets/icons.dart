@@ -38,4 +38,7 @@ class AppIcons {
   static const String mobileIcon = 'assets/icons/mobile.svg';
   static const String editIcon = 'assets/icons/edit.svg';
   static const String pdfIcon = 'assets/icons/pdf_file.png';
+  static const String jobTypeIcon = 'assets/icons/job_type.png';
+  static const String experienceLevelIcon = 'assets/icons/experience_level.png';
+  static const String recruitmentIcon = 'assets/icons/recruitment.png';
 }
