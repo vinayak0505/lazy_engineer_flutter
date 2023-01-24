@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/account/presentation/cubit/settings/settings_cubit.dart';
@@ -21,6 +22,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
+    void onPress() {
+      ScaffoldMessenger.of(context).showSnackBar(toBeBuildInFutureSnackBar);
+    }
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -50,10 +55,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 changePassword,
                 style: theme.textTheme.titleMedium,
               ),
+              onTap: onPress,
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             ListTile(
               title: Text(addPaymentMethod, style: theme.textTheme.titleMedium),
+              onTap: onPress,
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             ListTile(
@@ -62,41 +69,50 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 style: theme.textTheme.titleMedium,
               ),
               trailing: BlocBuilder<SettingsCubit, SettingsState>(
-                  builder: (context, state) {
-                return CupertinoSwitch(
-                  value: state.pushNotification,
-                  onChanged: (value) {
-                    context.read<SettingsCubit>().togglePushNotification(newValue: value);
-                  },
-                  activeColor: theme.primaryColor,
-                );
-              },),
+                builder: (context, state) {
+                  return CupertinoSwitch(
+                    value: state.pushNotification,
+                    onChanged: (value) {
+                      context
+                          .read<SettingsCubit>()
+                          .togglePushNotification(newValue: value);
+                    },
+                    activeColor: theme.primaryColor,
+                  );
+                },
+              ),
             ),
             ListTile(
               title: Text(darkMode, style: theme.textTheme.titleMedium),
               trailing: BlocBuilder<SettingsCubit, SettingsState>(
-                  builder: (context, state) {
-                return CupertinoSwitch(
-                  value: state.darkMode,
-                  onChanged: (value) {
-                    context.read<SettingsCubit>().toggleDarkMode(newValue: value);
-                  },
-                  activeColor: theme.primaryColor,
-                );
-              },),
+                builder: (context, state) {
+                  return CupertinoSwitch(
+                    value: state.darkMode,
+                    onChanged: (value) {
+                      context
+                          .read<SettingsCubit>()
+                          .toggleDarkMode(newValue: value);
+                    },
+                    activeColor: theme.primaryColor,
+                  );
+                },
+              ),
             ),
             const Divider(),
             ListTile(
               title: Text(aboutUs, style: theme.textTheme.titleMedium),
+              onTap: onPress,
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             ListTile(
               title: Text(privacyPolicy, style: theme.textTheme.titleMedium),
+              onTap: onPress,
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             ListTile(
               title:
                   Text(termsAndConditions, style: theme.textTheme.titleMedium),
+              onTap: onPress,
               trailing: const CustomIcon(AppIcons.sideArrowIcon),
             ),
             Center(
@@ -104,7 +120,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 text: logOut,
                 onPressed: () async {
                   await context.read<AuthCubit>().signOut();
-                  if(mounted) {
+                  if (mounted) {
                     context.go(RouteGenerator.authRoute);
                   }
                 },

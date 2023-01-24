@@ -96,7 +96,7 @@ class CustomTextField extends StatelessWidget {
             obscureText: obscureText,
             autofocus: autofocus,
             readOnly: readOnly,
-            keyboardType: TextInputType.text,
+            keyboardType: keyboardType,
             onFieldSubmitted: onSubitted,
             validator: validator,
             maxLines: maxLines,

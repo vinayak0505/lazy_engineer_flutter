@@ -30,6 +30,7 @@ class SliderView extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 8),
               networkImage: imageList[index],
               isBorder: true,
+              borderColor: Colors.blueGrey,
               radius: kRoundedRectangleRadius,
               boxFit: BoxFit.fitHeight,
             ),

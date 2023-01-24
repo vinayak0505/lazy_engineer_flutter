@@ -8,6 +8,10 @@ class ProfileRepositoryImpl with ProfileRepository {
     final localDataSource = AuthLocalDataSource();
     return ProfileModal.dummy().copyWith(
       userName: await localDataSource.getUserName(),
+      contact: Contact(
+        email: await localDataSource.getUserEmail(),
+        mobileNumber: '9873424386',
+      ),
     );
   }
 }

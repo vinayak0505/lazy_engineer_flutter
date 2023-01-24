@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
-import 'package:lazy_engineer/config/theme/app_theme.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
 import 'package:lazy_engineer/features/profile/data/models/profile_modal/profile_modal.dart';
 import 'package:lazy_engineer/features/profile/presentation/widgets/upload_view.dart';
@@ -40,18 +39,6 @@ class ProfileScreenView extends StatelessWidget {
           Text(
             data.userDescription ?? '',
             style: theme.textTheme.bodyLarge,
-          ),
-          const SizedBox(height: 20),
-          Center(
-            child: GestureDetector(
-              onTap: () {},
-              child: Text(
-                showMoreC,
-                style: theme.textTheme.labelMedium?.copyWith(
-                  color: AppThemes.subTitleColor,
-                ),
-              ),
-            ),
           ),
           const SizedBox(height: 16),
           Text(

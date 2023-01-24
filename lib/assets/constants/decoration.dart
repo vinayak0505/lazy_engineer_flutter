@@ -42,3 +42,19 @@ TextStyle? errorStyle = ThemeData.light()
     .textTheme
     .labelSmall
     ?.copyWith(color: ThemeData.light().errorColor, fontSize: 12);
+
+final toBeBuildInFutureSnackBar = SnackBar(
+  margin: const EdgeInsets.fromLTRB(24, 0, 24, 64),
+  content: const Text(
+    'To be build in Future',
+    style: TextStyle(
+      fontSize: 16,
+      color: Colors.black,
+    ),
+  ),
+  shape: RoundedRectangleBorder(
+        side: const BorderSide(),
+        borderRadius: BorderRadius.circular(12),
+      ),
+  duration: const Duration(milliseconds: 400),
+);

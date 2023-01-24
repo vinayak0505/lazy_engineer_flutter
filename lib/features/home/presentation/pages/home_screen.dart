@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 import 'package:lazy_engineer/assets/constants/lists.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart';
 import 'package:lazy_engineer/assets/icons.dart';
@@ -11,7 +12,6 @@ import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/components/staggered_view.dart';
 import 'package:lazy_engineer/features/home/data/repositories/home_repository_impl.dart';
 import 'package:lazy_engineer/features/home/presentation/cubit/user/user_cubit.dart';
-import 'package:lazy_engineer/features/home/presentation/widgets/last_opened.dart';
 import 'package:lazy_engineer/features/home/presentation/widgets/slider_view.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
 
@@ -37,9 +37,8 @@ class HomeScreen extends StatelessWidget {
                       return Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          _nametag(theme, user.userName),
+                          _nametag(context, user.userName),
                           const SizedBox(height: 12),
-                          // SearchBar(classList),
                           const SizedBox(height: 28),
                           SliderView(sliderImageList),
                           const SizedBox(height: 24),
@@ -103,7 +102,11 @@ class HomeScreen extends StatelessWidget {
     context.push(nav());
   }
 
-  Widget _nametag(ThemeData theme, String name) {
+  Widget _nametag(BuildContext context, String name) {
+    void onPress() {
+      ScaffoldMessenger.of(context).showSnackBar(toBeBuildInFutureSnackBar);
+    }
+    final ThemeData theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
@@ -129,7 +132,7 @@ class HomeScreen extends StatelessWidget {
               width: 48,
               height: 48,
             ),
-            onTap: () {},
+            onTap: onPress,
           )
         ],
       ),

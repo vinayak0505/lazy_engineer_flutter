@@ -36,7 +36,7 @@ class ProfileModal with _$ProfileModal {
       universityName: 'GTBIT',
       universityAddress: 'Delhi, India',
       userDescription:
-          'user description ================= =========== ============== ============ ======== =======',
+          'BTech Student in English at GTBIT. An Independent and self-motivated Computer Science student.Currently searching for Internship.',
       userUploads: UserUploads(
         notes: 1,
         file: 2,
