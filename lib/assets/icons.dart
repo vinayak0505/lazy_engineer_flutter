@@ -1,6 +1,6 @@
 class AppIcons {
   static const String home = 'assets/icons/home.svg';
-  static const String downlaods = 'assets/icons/downlaods.svg';
+  static const String downloads = 'assets/icons/downloads.svg';
   static const String accounts = 'assets/icons/accounts.svg';
   static const String backArrow = 'assets/icons/back_arrow.svg';
   static const String notifications = 'assets/icons/notification.svg';
@@ -14,6 +14,7 @@ class AppIcons {
   static const String userIcon = 'assets/icons/user.svg';
   static const String filterIcon = 'assets/icons/filter.svg';
   static const String uploadIcon = 'assets/icons/upload.svg';
+  static const String downloadIcon = 'assets/icons/downloadIcon.svg';
   static const String fullTimeIcon = 'assets/icons/full_time.svg';
   static const String employeesIcon = 'assets/icons/employees.svg';
   static const String recruitingIcon = 'assets/icons/recruiting.svg';
@@ -36,4 +37,11 @@ class AppIcons {
   static const String settingsIcon = 'assets/icons/settings.svg';
   static const String mobileIcon = 'assets/icons/mobile.svg';
   static const String editIcon = 'assets/icons/edit.svg';
+  static const String pdfIcon = 'assets/icons/pdf_file.png';
+  static const String jobTypeIcon = 'assets/icons/job_type.png';
+  static const String experienceLevelIcon = 'assets/icons/experience_level.png';
+  static const String recruitmentIcon = 'assets/icons/recruitment.png';
+  static const String logoIcon = 'assets/icons/logo.jpg';
+  static const String hidePasswordIcon = 'assets/icons/hidden.png';
+  static const String showPasswordIcon = 'assets/icons/view.png';
 }

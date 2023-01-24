@@ -22,13 +22,14 @@ UploadNotesRequest _$UploadNotesRequestFromJson(Map<String, dynamic> json) {
 mixin _$UploadNotesRequest {
   String get title => throw _privateConstructorUsedError;
   String? get about => throw _privateConstructorUsedError;
-  int? get semester => throw _privateConstructorUsedError;
+  String get semester => throw _privateConstructorUsedError;
+  dynamic get file => throw _privateConstructorUsedError;
+  dynamic get image => throw _privateConstructorUsedError;
+  List<String>? get tags => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   String? get unit => throw _privateConstructorUsedError;
   String? get chapter => throw _privateConstructorUsedError;
   String? get topic => throw _privateConstructorUsedError;
-  dynamic get link => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,13 +45,14 @@ abstract class $UploadNotesRequestCopyWith<$Res> {
   $Res call(
       {String title,
       String? about,
-      int? semester,
+      String semester,
+      dynamic file,
+      dynamic image,
+      List<String>? tags,
       String? subject,
       String? unit,
       String? chapter,
-      String? topic,
-      dynamic link,
-      List<String> tags});
+      String? topic});
 }
 
 /// @nodoc
@@ -67,12 +69,13 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
     Object? title = freezed,
     Object? about = freezed,
     Object? semester = freezed,
+    Object? file = freezed,
+    Object? image = freezed,
+    Object? tags = freezed,
     Object? subject = freezed,
     Object? unit = freezed,
     Object? chapter = freezed,
     Object? topic = freezed,
-    Object? link = freezed,
-    Object? tags = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
@@ -86,7 +89,19 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
       semester: semester == freezed
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -103,14 +118,6 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      tags: tags == freezed
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
     ));
   }
 }
@@ -125,13 +132,14 @@ abstract class _$$_UploadNotesRequestCopyWith<$Res>
   $Res call(
       {String title,
       String? about,
-      int? semester,
+      String semester,
+      dynamic file,
+      dynamic image,
+      List<String>? tags,
       String? subject,
       String? unit,
       String? chapter,
-      String? topic,
-      dynamic link,
-      List<String> tags});
+      String? topic});
 }
 
 /// @nodoc
@@ -150,12 +158,13 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
     Object? title = freezed,
     Object? about = freezed,
     Object? semester = freezed,
+    Object? file = freezed,
+    Object? image = freezed,
+    Object? tags = freezed,
     Object? subject = freezed,
     Object? unit = freezed,
     Object? chapter = freezed,
     Object? topic = freezed,
-    Object? link = freezed,
-    Object? tags = freezed,
   }) {
     return _then(_$_UploadNotesRequest(
       title: title == freezed
@@ -169,7 +178,19 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
       semester: semester == freezed
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      tags: tags == freezed
+          ? _value._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -186,14 +207,6 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      tags: tags == freezed
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
     ));
   }
 }
@@ -203,14 +216,15 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
 class _$_UploadNotesRequest implements _UploadNotesRequest {
   const _$_UploadNotesRequest(
       {required this.title,
-      this.about,
-      this.semester,
+      required this.about,
+      required this.semester,
+      this.file,
+      this.image,
+      final List<String>? tags,
       this.subject,
       this.unit,
       this.chapter,
-      this.topic,
-      required this.link,
-      required final List<String> tags})
+      this.topic})
       : _tags = tags;
 
   factory _$_UploadNotesRequest.fromJson(Map<String, dynamic> json) =>
@@ -221,7 +235,20 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
   @override
   final String? about;
   @override
-  final int? semester;
+  final String semester;
+  @override
+  final dynamic file;
+  @override
+  final dynamic image;
+  final List<String>? _tags;
+  @override
+  List<String>? get tags {
+    final value = _tags;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? subject;
   @override
@@ -230,18 +257,10 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
   final String? chapter;
   @override
   final String? topic;
-  @override
-  final dynamic link;
-  final List<String> _tags;
-  @override
-  List<String> get tags {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tags);
-  }
 
   @override
   String toString() {
-    return 'UploadNotesRequest(title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, link: $link, tags: $tags)';
+    return 'UploadNotesRequest(title: $title, about: $about, semester: $semester, file: $file, image: $image, tags: $tags, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic)';
   }
 
   @override
@@ -252,12 +271,13 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
+            const DeepCollectionEquality().equals(other.file, file) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.unit, unit) &&
             const DeepCollectionEquality().equals(other.chapter, chapter) &&
-            const DeepCollectionEquality().equals(other.topic, topic) &&
-            const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other._tags, _tags));
+            const DeepCollectionEquality().equals(other.topic, topic));
   }
 
   @JsonKey(ignore: true)
@@ -267,12 +287,13 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(semester),
+      const DeepCollectionEquality().hash(file),
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(unit),
       const DeepCollectionEquality().hash(chapter),
-      const DeepCollectionEquality().hash(topic),
-      const DeepCollectionEquality().hash(link),
-      const DeepCollectionEquality().hash(_tags));
+      const DeepCollectionEquality().hash(topic));
 
   @JsonKey(ignore: true)
   @override
@@ -291,14 +312,15 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
 abstract class _UploadNotesRequest implements UploadNotesRequest {
   const factory _UploadNotesRequest(
       {required final String title,
-      final String? about,
-      final int? semester,
+      required final String? about,
+      required final String semester,
+      final dynamic file,
+      final dynamic image,
+      final List<String>? tags,
       final String? subject,
       final String? unit,
       final String? chapter,
-      final String? topic,
-      required final dynamic link,
-      required final List<String> tags}) = _$_UploadNotesRequest;
+      final String? topic}) = _$_UploadNotesRequest;
 
   factory _UploadNotesRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadNotesRequest.fromJson;
@@ -308,7 +330,13 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
   @override
   String? get about;
   @override
-  int? get semester;
+  String get semester;
+  @override
+  dynamic get file;
+  @override
+  dynamic get image;
+  @override
+  List<String>? get tags;
   @override
   String? get subject;
   @override
@@ -317,10 +345,6 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
   String? get chapter;
   @override
   String? get topic;
-  @override
-  dynamic get link;
-  @override
-  List<String> get tags;
   @override
   @JsonKey(ignore: true)
   _$$_UploadNotesRequestCopyWith<_$_UploadNotesRequest> get copyWith =>

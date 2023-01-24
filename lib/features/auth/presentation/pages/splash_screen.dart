@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/animation.dart';
 import 'package:lottie/lottie.dart';
-import '../../../../assets/animation.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {

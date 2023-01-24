@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../data/models/sign_in_model/sign_in_model.dart';
-import '../../data/models/sign_up_model/sign_up_model.dart';
-import '../../data/repositories/auth_repository_impl.dart';
+import 'package:lazy_engineer/features/auth/data/models/sign_in_model/sign_in_model.dart';
+import 'package:lazy_engineer/features/auth/data/models/sign_up_model/sign_up_model.dart';
+import 'package:lazy_engineer/features/auth/data/repositories/auth_repository_impl.dart';
 
 part 'auth_cubit.freezed.dart';
 part 'auth_state.dart';
@@ -36,9 +36,9 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  void currentState() async {
+  Future<void> currentState() async {
     await Future.delayed(const Duration(seconds: 3));
-    token = repository.getToken();
+    token = await repository.getToken();
     if (token != null) {
       emit(AuthState.authorized(token!));
     } else {
@@ -46,15 +46,16 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  bool getToken() {
-    return repository.getToken() != null ? true : false;
+  Future<bool> getToken() async {
+    token = await repository.getToken();
+    if (token != null) return true;
+    return false;
   }
 
   Future<void> signIn(SignInModel user) async {
     try {
       emit(const AuthState.loading());
       token = await repository.signIn(user);
-      print(token);
       if (token != null) {
         emit(AuthState.authorized(token!));
       } else {

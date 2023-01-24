@@ -6,12 +6,12 @@ part 'settings_state.dart';
 part 'settings_cubit.freezed.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
-  SettingsCubit() : super(const SettingsState(false, false));
+  SettingsCubit() : super(const SettingsState(pushNotification: false, darkMode: false));
 
-  void togglePushNotification(bool newValue) {
+  void togglePushNotification({required bool newValue}) {
     emit(state.copyWith(pushNotification: newValue));
   }
-  void toggleDarkMode(bool newValue) {
+  void toggleDarkMode({required bool newValue}) {
     emit(state.copyWith(darkMode: newValue));
   }
 }

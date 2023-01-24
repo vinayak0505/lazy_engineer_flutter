@@ -1,11 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:lazy_engineer/config/app_config.dart';
+import 'package:lazy_engineer/core/models/base_response/base_response.dart';
+import 'package:lazy_engineer/features/auth/data/models/sign_in_model/sign_in_model.dart';
+import 'package:lazy_engineer/features/auth/data/models/sign_up_model/sign_up_model.dart';
+import 'package:lazy_engineer/features/auth/data/models/user_dto/user_dto.dart';
 import 'package:retrofit/http.dart';
-
-import '../../../../../config/app_config.dart';
-import '../../../../../core/models/base_response/base_response.dart';
-import '../../models/sign_in_model/sign_in_model.dart';
-import '../../models/sign_up_model/sign_up_model.dart';
-import '../../models/user_dto/user_dto.dart';
 
 part 'auth_client.g.dart';
 

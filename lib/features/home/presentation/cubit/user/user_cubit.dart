@@ -1,25 +1,30 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lazy_engineer/features/home/presentation/cubit/user/user_state.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:lazy_engineer/features/auth/data/data_source/local/auth_local_data_source.dart';
+import 'package:lazy_engineer/features/home/domain/repositories/home_repository.dart';
+import 'package:lazy_engineer/model/user.dart';
+import 'package:lazy_engineer/navigation/dio/header.dart';
 
-import '../../../../../model/user.dart';
-import '../../../data/repositories/user_repository.dart';
+part 'user_state.dart';
+part 'user_cubit.freezed.dart';
 
 class UserCubit extends Cubit<UserState> {
-  final UserRepository _repository;
-  UserCubit(this._repository) : super(UserFetchLoadingState()) {
+  final HomeRepository _repository;
+  UserCubit(this._repository) : super(const UserState.loading()) {
     getUser();
   }
-  void getUser() async {
-    emit(UserFetchLoadingState());
+  Future<void> getUser() async {
     try {
-      User? user = await _repository.getUser();
+      final User? user = await _repository.getUser();
+      final String? token = await AuthLocalDataSource().getToken();
+      HeaderValues(token);
       if (user != null) {
-        emit(UserFetchSuccessState(user));
+        emit(UserState.success(user));
       } else {
-        emit(UserFetchLoadingState());
+        emit(const UserState.loading());
       }
     } catch (e) {
-      emit(UserFetchFailureState(e));
+      emit(UserState.failure(e));
     }
   }
 }

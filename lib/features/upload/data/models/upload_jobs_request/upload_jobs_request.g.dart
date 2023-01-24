@@ -8,22 +8,20 @@ part of 'upload_jobs_request.dart';
 
 _$_UploadJobsRequest _$$_UploadJobsRequestFromJson(Map<String, dynamic> json) =>
     _$_UploadJobsRequest(
-      title: json['title'] as String,
-      profile: json['profile'] as String,
-      company: json['company'] as String,
-      aboutCompany: json['aboutCompany'] as String,
-      location: json['location'] as String,
-      jobType: json['jobType'] as String,
-      experienceLevel: json['experienceLevel'] as String,
-      datePosted: json['datePosted'] as String,
+      title: json['title'] as String?,
+      profile: json['profile'] as String?,
+      company: json['company'] as String?,
+      aboutCompany: json['aboutCompany'] as String?,
+      location: json['location'] as String?,
+      jobType: json['jobType'] as String?,
+      experienceLevel: json['experienceLevel'] as String?,
+      datePosted: json['datePosted'] as String?,
       skillsNeeded: (json['skillsNeeded'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      expectedSalary: json['expectedSalary'] as int,
-      numOfEmployees: json['numOfEmployees'] as int,
-      companyPhoto: (json['companyPhoto'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
+      expectedSalary: json['expectedSalary'] as int?,
+      file: json['file'],
+      image: json['image'],
     );
 
 Map<String, dynamic> _$$_UploadJobsRequestToJson(
@@ -39,6 +37,6 @@ Map<String, dynamic> _$$_UploadJobsRequestToJson(
       'datePosted': instance.datePosted,
       'skillsNeeded': instance.skillsNeeded,
       'expectedSalary': instance.expectedSalary,
-      'numOfEmployees': instance.numOfEmployees,
-      'companyPhoto': instance.companyPhoto,
+      'file': instance.file,
+      'image': instance.image,
     };

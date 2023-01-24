@@ -1,17 +1,16 @@
+import 'package:lazy_engineer/features/auth/data/models/user/user_model.dart';
+import 'package:lazy_engineer/features/auth/data/models/user_dto/user_dto.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../models/user/user_model.dart';
-import '../../models/user_dto/user_dto.dart';
 
 class AuthLocalDataSource {
   SharedPreferences? prefs;
+
+  factory AuthLocalDataSource() => _instance;
   AuthLocalDataSource._() {
     _initprefs();
   }
 
   static final AuthLocalDataSource _instance = AuthLocalDataSource._();
-
-  factory AuthLocalDataSource() => _instance;
 
   static const String _tokenKey = 'token';
   static const String _userIdKey = 'user_id';
@@ -25,7 +24,7 @@ class AuthLocalDataSource {
     await prefs!.setString(_tokenKey, user.token);
     await prefs!.setString(_userNameKey, user.userDetail.fullName);
     await prefs!.setString(_emailKey, user.userDetail.email);
-    String? university = user.userDetail.univercity;
+    final String? university = user.userDetail.univercity;
     if (university != null) {
       await prefs?.setString(_universityKey, university);
     }
@@ -33,7 +32,7 @@ class AuthLocalDataSource {
 
   Future<UserModel> getUser() async {
     _initprefs();
-    UserModel user = UserModel(
+    final UserModel user = UserModel(
       token: prefs!.getString(_tokenKey),
       userId: prefs!.getString(_userIdKey),
       userName: prefs!.getString(_userNameKey)!,
@@ -44,22 +43,32 @@ class AuthLocalDataSource {
     return user;
   }
 
-  String? getToken() {
-    _initprefs();
+  Future<String?> getToken() async {
+    await _initprefs();
     return prefs?.getString(_tokenKey);
   }
 
-  String? getId() {
-    _initprefs();
+  Future<String?> getId() async {
+    await _initprefs();
     return prefs?.getString(_userIdKey);
   }
 
+  Future<String?> getUserName() async {
+    await _initprefs();
+    return prefs?.getString(_userNameKey);
+  }
+
+  Future<String?> getUserEmail() async {
+    await _initprefs();
+    return prefs?.getString(_emailKey);
+  }
+
   Future<void> clearUser() async {
-    _initprefs();
+    await _initprefs();
     await prefs?.clear();
   }
 
-  _initprefs() async {
+  Future<void> _initprefs() async {
     prefs = await SharedPreferences.getInstance();
   }
 }

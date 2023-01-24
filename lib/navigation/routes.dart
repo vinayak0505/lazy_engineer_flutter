@@ -1,30 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/features/account/presentation/pages/account_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/auth_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/lazy_engineer.dart';
-import 'package:lazy_engineer/features/account/presentation/pages/account_screen.dart';
-import 'package:lazy_engineer/features/account/presentation/pages/profile_screen.dart';
-import 'package:lazy_engineer/features/account/presentation/pages/settings_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/book_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/practical_file_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/book_screen.dart';
+import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
+import 'package:lazy_engineer/features/books/presentation/pages/book_description_screen.dart';
+import 'package:lazy_engineer/features/books/presentation/pages/book_screen.dart';
+import 'package:lazy_engineer/features/bottom_navigation/ui/bottom_nav_screen.dart';
+import 'package:lazy_engineer/features/components/error_screen.dart';
+import 'package:lazy_engineer/features/download/presentation/pages/download_screen.dart';
+import 'package:lazy_engineer/features/file/data/models/files_response/file_response.dart';
+import 'package:lazy_engineer/features/file/presentation/pages/file_detail_screen.dart';
+import 'package:lazy_engineer/features/file/presentation/pages/file_screen.dart';
 import 'package:lazy_engineer/features/home/presentation/pages/home_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/jobs_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/jobs_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/notes_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/notes_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/practicle_file_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/question_paper_description_screen.dart';
-import 'package:lazy_engineer/features/home/presentation/pages/question_paper_screen.dart';
+import 'package:lazy_engineer/features/jobs/data/models/job_response/job_response.dart';
+import 'package:lazy_engineer/features/jobs/presentation/pages/jobs_description_screen.dart';
+import 'package:lazy_engineer/features/jobs/presentation/pages/jobs_screen.dart';
+import 'package:lazy_engineer/features/notes/data/models/notes_response/note_response.dart';
+import 'package:lazy_engineer/features/notes/presentation/pages/notes_detail_screen.dart';
+import 'package:lazy_engineer/features/notes/presentation/pages/notes_screen.dart';
+import 'package:lazy_engineer/features/papers/data/models/paper_response/paper_response.dart';
+import 'package:lazy_engineer/features/papers/presentation/pages/question_paper_description_screen.dart';
+import 'package:lazy_engineer/features/papers/presentation/pages/question_paper_screen.dart';
+import 'package:lazy_engineer/features/profile/presentation/pages/profile_screen.dart';
+import 'package:lazy_engineer/features/settings/presentation/pages/settings_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_book_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_file_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_job_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_notes_screen.dart';
+import 'package:lazy_engineer/features/upload/presentation/pages/upload_paper_screen.dart';
 import 'package:lazy_engineer/features/upload/presentation/pages/upload_screen.dart';
-import 'package:lazy_engineer/features/components/error_screen.dart';
-
-import '../features/bottom_navigation/ui/bottom_nav_screen.dart';
-import '../features/upload/presentation/pages/upload_paper_screen.dart';
 
 class RouteGenerator {
   static const String initialRoute = '/';
@@ -37,14 +42,15 @@ class RouteGenerator {
   /// Home Screen
   static const String homeRoute = '/home';
   static const String notesRoute = '/home/notes';
-  static const String fileRoute = '/home/practicle_file';
+  static const String notesDescriptionRoute = '/home/notes/notes_description';
+  static const String fileRoute = '/home/practical_file';
+  static const String fileDescriptionRoute =
+      '/home/practical_file/practicle_file_description';
   static const String questionPaperRoute = '/home/question_paper';
   static const String questionPaperDescriptionRoute =
-      '/home/question_paper_description';
+      '/home/question_paper/question_paper_description';
   static const String booksRoute = '/home/books';
-  static const String notesDescriptionRoute = '/home/notes/notes_description';
   static const String bookDescriptionRoute = '/home/books/book_description';
-  static const String fileDescriptionRoute = '/home/practicle_file_description';
   static const String jobsRoute = '/home/jobs';
   static const String jobsDescriptionRoute = '/home/jobs/jobs_description';
 
@@ -56,9 +62,11 @@ class RouteGenerator {
       '/upload/upload_question_paper';
   static const String uploadBooksRoute = '/upload/books';
   static const String uploadJobsRoute = '/upload/jobs';
-  // static const String uploadJobsCompanyPhotoRoute = '/upload/jobs/fullscreen_view';
   static const String uploadPaperRoute = '/upload/question_paper';
   static const String uploadBookRoute = '/upload/books';
+
+  /// Download Screen
+  static const String downloadRoute = '/download';
 
   /// Account Screen
   static const String accountRoute = '/account';
@@ -88,97 +96,112 @@ class RouteGenerator {
       ),
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
-        // path: dashboardRoute,
         builder: (context, state, child) {
-          return BottomNavScreen(child: child);
+          return BottomNavScreen(child);
         },
         routes: [
           GoRoute(
             name: 'Home',
             path: homeRoute,
-            builder: (_, __) => const HomeScreen(),
+            pageBuilder: (_, __) => const NoTransitionPage(
+              child: HomeScreen(),
+            ),
             routes: [
               GoRoute(
-                  path: 'books',
-                  builder: (_, __) => const BookScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'book_description/:id',
-                      pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: BookDescriptionScreen(id: id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'books',
+                builder: (_, __) => const BooksScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'book_description/:id',
+                    pageBuilder: (context, state) {
+                      // String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: BookDescriptionScreen(state.extra as BookDetail?),
+                      );
+                    },
+                  )
+                ],
+              ),
               GoRoute(
-                  path: 'jobs',
-                  builder: (_, __) => const JobsScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'jobs_description/:id',
-                      pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: JobsDescriptionScreen(id: id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'jobs',
+                builder: (_, __) => const JobsScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'jobs_description/:id',
+                    pageBuilder: (context, state) {
+                      // String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: JobsDescriptionScreen(state.extra as JobDetail?),
+                      );
+                    },
+                  )
+                ],
+              ),
               GoRoute(
-                  path: 'notes',
-                  builder: (_, __) => const NotesScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'notes_description/:id',
-                      pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: NotesDescriptionScreen(id: id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'notes',
+                builder: (_, __) => const NotesScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'notes_description/:id',
+                    pageBuilder: (context, state) {
+                      // String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: NotesDetailScreen(state.extra as NoteDetail?),
+                      );
+                    },
+                  )
+                ],
+              ),
               GoRoute(
-                  path: 'question_paper',
-                  builder: (_, __) => const QuestionPaperScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'question_paper_description/:id',
-                      pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: PaperDescriptionScreen(id: id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'question_paper',
+                builder: (_, __) => const QuestionPaperScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'question_paper_description/:id',
+                    pageBuilder: (context, state) {
+                      // String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: PaperDetailScreen(state.extra as PaperDetail?),
+                      );
+                    },
+                  )
+                ],
+              ),
               GoRoute(
-                  path: 'practical_file',
-                  builder: (_, __) => const PracticleFileScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'practical_file_description/:id',
-                      pageBuilder: (context, state) {
-                        int id = int.parse(state.params['id']!);
-                        return MaterialPage<void>(
-                          key: state.pageKey,
-                          child: FileDescriptionScreen(id: id),
-                        );
-                      },
-                    )
-                  ]),
+                path: 'practical_file',
+                builder: (_, __) => const FileScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'practicle_file_description/:id',
+                    pageBuilder: (context, state) {
+                      // String? id = state.params['id'];
+                      return MaterialPage<void>(
+                        key: state.pageKey,
+                        child: FileDetailScreen(state.extra as FileDetail?),
+                      );
+                    },
+                  )
+                ],
+              ),
             ],
+          ),
+          GoRoute(
+            name: 'Download',
+            path: downloadRoute,
+            pageBuilder: (_, __) => const NoTransitionPage(
+              child: DownloadScreen(),
+            ),
           ),
           GoRoute(
             name: 'Upload',
             path: uploadRoute,
-            builder: (_, __) => const UploadScreen(),
+            pageBuilder: (_, __) => const NoTransitionPage(
+              child: UploadScreen(),
+            ),
             routes: [
               GoRoute(
                 path: 'notes',
@@ -214,7 +237,9 @@ class RouteGenerator {
           GoRoute(
             name: 'Account',
             path: accountRoute,
-            builder: (_, __) => const AccountScreen(),
+            pageBuilder: (_, __) => const NoTransitionPage(
+              child: AccountScreen(),
+            ),
             routes: [
               GoRoute(
                 path: 'settings',
@@ -230,5 +255,18 @@ class RouteGenerator {
       ),
     ],
     errorBuilder: (_, __) => const ErrorScreen(),
+  );
+}
+
+CustomTransitionPage buildPageWithDefaultTransition<T>({
+  required BuildContext context,
+  required GoRouterState state,
+  required Widget child,
+}) {
+  return CustomTransitionPage<T>(
+    key: state.pageKey,
+    child: child,
+    transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+        FadeTransition(opacity: animation, child: child),
   );
 }

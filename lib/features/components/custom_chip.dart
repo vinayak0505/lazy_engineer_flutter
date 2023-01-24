@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../assets/icons.dart';
-import 'custom_icon.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
 
 class CustomChip extends StatelessWidget {
-  const CustomChip({Key? key, this.text, this.toDelete, this.icon, this.onDelete})
-      : super(key: key);
+  const CustomChip({super.key, this.text, this.toDelete, this.icon, this.onDelete});
   final String? text;
   final String? icon;
   final bool? toDelete;
@@ -16,7 +15,7 @@ class CustomChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return Chip(
       backgroundColor: const Color(0x14212121),
       deleteIcon:

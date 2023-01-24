@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_button.dart';
 
 class GoogleFacebook extends StatelessWidget {
   const GoogleFacebook({super.key});
@@ -14,6 +14,6 @@ class GoogleFacebook extends StatelessWidget {
       Expanded(
         child: CustomButton.facebook(onPressed: () {}),
       ),
-    ]);
+    ],);
   }
 }

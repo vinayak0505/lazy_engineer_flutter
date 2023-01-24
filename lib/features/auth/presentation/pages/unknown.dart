@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UnknownRoute extends StatelessWidget {
-  const UnknownRoute({Key? key}) : super(key: key);
+  const UnknownRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class UnknownRoute extends StatelessWidget {
           height: 80,
           width: 300,
           decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(10)),
+              color: Colors.blue, borderRadius: BorderRadius.circular(10),),
           child: const Text(
             'Route Not Found!!!',
             style: TextStyle(color: Colors.white, fontSize: 25),

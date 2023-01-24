@@ -1,26 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../assets/constants/decoration.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
 
 class SingleOptionFilter extends FormField<String> {
   SingleOptionFilter({
-    Key? key,
-    FormFieldSetter<String>? onSaved,
-    FormFieldValidator<String>? validator,
+    super.key,
+    super.onSaved,
+    super.validator,
     required List<String> data,
     TextEditingController? controller,
-    AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
-    TextStyle? style,
-    TextStyle? errorStyle,
+    AutovalidateMode super.autovalidateMode = AutovalidateMode.disabled,
     FocusNode? focusNode,
-    String? title,
   }) : super(
-          key: key,
-          onSaved: onSaved,
-          validator: validator,
           initialValue: controller!.text,
-          autovalidateMode: autovalidateMode,
           builder: (FormFieldState<String> state) {
-            final theme = Theme.of(state.context);
+            final ThemeData theme = Theme.of(state.context);
             return Container(
               padding: const EdgeInsets.all(8),
               decoration: kRoundedContainer,
@@ -36,18 +29,21 @@ class SingleOptionFilter extends FormField<String> {
                   leading: Radio<String>(
                       focusNode: focusNode,
                       focusColor: Colors.green,
+                      toggleable: true,
                       value: data[index],
                       groupValue: controller.text,
                       onChanged: (String? value) {
-                        if (value == null) return;
-                        controller.text = value;
+                        controller.text = value ?? '';
                         state.didChange(value);
                         focusNode?.requestFocus();
                         if (focusNode != null) {
                           FocusScope.of(state.context).nextFocus();
                         }
-                      }),
-                  title: Text(data[index], style: theme.textTheme.titleMedium),
+                      },),
+                  title: Text(
+                    data[index],
+                    style: theme.textTheme.titleMedium,
+                  ),
                 ),
               ),
             );

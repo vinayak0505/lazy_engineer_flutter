@@ -21,13 +21,16 @@ UploadPaperRequest _$UploadPaperRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UploadPaperRequest {
   String get title => throw _privateConstructorUsedError;
+  String get about => throw _privateConstructorUsedError;
+  String get semester => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
-  String? get semester => throw _privateConstructorUsedError;
-  int? get year => throw _privateConstructorUsedError;
-  dynamic get link => throw _privateConstructorUsedError;
-  String? get type => throw _privateConstructorUsedError;
-  bool? get solved => throw _privateConstructorUsedError;
+  String? get unit => throw _privateConstructorUsedError;
+  String? get chapter => throw _privateConstructorUsedError;
+  String? get topic => throw _privateConstructorUsedError;
+  String? get fileLink => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
+  dynamic get file => throw _privateConstructorUsedError;
+  dynamic get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,13 +45,16 @@ abstract class $UploadPaperRequestCopyWith<$Res> {
       _$UploadPaperRequestCopyWithImpl<$Res>;
   $Res call(
       {String title,
+      String about,
+      String semester,
       String? subject,
-      String? semester,
-      int? year,
-      dynamic link,
-      String? type,
-      bool? solved,
-      List<String> tags});
+      String? unit,
+      String? chapter,
+      String? topic,
+      String? fileLink,
+      List<String> tags,
+      dynamic file,
+      dynamic image});
 }
 
 /// @nodoc
@@ -63,47 +69,62 @@ class _$UploadPaperRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
-    Object? subject = freezed,
+    Object? about = freezed,
     Object? semester = freezed,
-    Object? year = freezed,
-    Object? link = freezed,
-    Object? type = freezed,
-    Object? solved = freezed,
+    Object? subject = freezed,
+    Object? unit = freezed,
+    Object? chapter = freezed,
+    Object? topic = freezed,
+    Object? fileLink = freezed,
     Object? tags = freezed,
+    Object? file = freezed,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      about: about == freezed
+          ? _value.about
+          : about // ignore: cast_nullable_to_non_nullable
+              as String,
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
+              as String,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
-          ? _value.semester
-          : semester // ignore: cast_nullable_to_non_nullable
+      unit: unit == freezed
+          ? _value.unit
+          : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      year: year == freezed
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
-              as int?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      type: type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      chapter: chapter == freezed
+          ? _value.chapter
+          : chapter // ignore: cast_nullable_to_non_nullable
               as String?,
-      solved: solved == freezed
-          ? _value.solved
-          : solved // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      topic: topic == freezed
+          ? _value.topic
+          : topic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fileLink: fileLink == freezed
+          ? _value.fileLink
+          : fileLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: tags == freezed
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -117,13 +138,16 @@ abstract class _$$_UploadPaperRequestCopyWith<$Res>
   @override
   $Res call(
       {String title,
+      String about,
+      String semester,
       String? subject,
-      String? semester,
-      int? year,
-      dynamic link,
-      String? type,
-      bool? solved,
-      List<String> tags});
+      String? unit,
+      String? chapter,
+      String? topic,
+      String? fileLink,
+      List<String> tags,
+      dynamic file,
+      dynamic image});
 }
 
 /// @nodoc
@@ -140,47 +164,62 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
-    Object? subject = freezed,
+    Object? about = freezed,
     Object? semester = freezed,
-    Object? year = freezed,
-    Object? link = freezed,
-    Object? type = freezed,
-    Object? solved = freezed,
+    Object? subject = freezed,
+    Object? unit = freezed,
+    Object? chapter = freezed,
+    Object? topic = freezed,
+    Object? fileLink = freezed,
     Object? tags = freezed,
+    Object? file = freezed,
+    Object? image = freezed,
   }) {
     return _then(_$_UploadPaperRequest(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      about: about == freezed
+          ? _value.about
+          : about // ignore: cast_nullable_to_non_nullable
+              as String,
+      semester: semester == freezed
+          ? _value.semester
+          : semester // ignore: cast_nullable_to_non_nullable
+              as String,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
-          ? _value.semester
-          : semester // ignore: cast_nullable_to_non_nullable
+      unit: unit == freezed
+          ? _value.unit
+          : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      year: year == freezed
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
-              as int?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      type: type == freezed
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      chapter: chapter == freezed
+          ? _value.chapter
+          : chapter // ignore: cast_nullable_to_non_nullable
               as String?,
-      solved: solved == freezed
-          ? _value.solved
-          : solved // ignore: cast_nullable_to_non_nullable
-              as bool?,
+      topic: topic == freezed
+          ? _value.topic
+          : topic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fileLink: fileLink == freezed
+          ? _value.fileLink
+          : fileLink // ignore: cast_nullable_to_non_nullable
+              as String?,
       tags: tags == freezed
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -190,13 +229,16 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
 class _$_UploadPaperRequest implements _UploadPaperRequest {
   const _$_UploadPaperRequest(
       {required this.title,
+      required this.about,
+      required this.semester,
       this.subject,
-      this.semester,
-      this.year,
-      required this.link,
-      this.type,
-      this.solved,
-      required final List<String> tags})
+      this.unit,
+      this.chapter,
+      this.topic,
+      this.fileLink,
+      required final List<String> tags,
+      this.file,
+      this.image})
       : _tags = tags;
 
   factory _$_UploadPaperRequest.fromJson(Map<String, dynamic> json) =>
@@ -205,17 +247,19 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   @override
   final String title;
   @override
+  final String about;
+  @override
+  final String semester;
+  @override
   final String? subject;
   @override
-  final String? semester;
+  final String? unit;
   @override
-  final int? year;
+  final String? chapter;
   @override
-  final dynamic link;
+  final String? topic;
   @override
-  final String? type;
-  @override
-  final bool? solved;
+  final String? fileLink;
   final List<String> _tags;
   @override
   List<String> get tags {
@@ -224,8 +268,13 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   }
 
   @override
+  final dynamic file;
+  @override
+  final dynamic image;
+
+  @override
   String toString() {
-    return 'UploadPaperRequest(title: $title, subject: $subject, semester: $semester, year: $year, link: $link, type: $type, solved: $solved, tags: $tags)';
+    return 'UploadPaperRequest(title: $title, about: $about, semester: $semester, subject: $subject, unit: $unit, chapter: $chapter, topic: $topic, fileLink: $fileLink, tags: $tags, file: $file, image: $image)';
   }
 
   @override
@@ -234,13 +283,16 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
         (other.runtimeType == runtimeType &&
             other is _$_UploadPaperRequest &&
             const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
+            const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality().equals(other.year, year) &&
-            const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.solved, solved) &&
-            const DeepCollectionEquality().equals(other._tags, _tags));
+            const DeepCollectionEquality().equals(other.subject, subject) &&
+            const DeepCollectionEquality().equals(other.unit, unit) &&
+            const DeepCollectionEquality().equals(other.chapter, chapter) &&
+            const DeepCollectionEquality().equals(other.topic, topic) &&
+            const DeepCollectionEquality().equals(other.fileLink, fileLink) &&
+            const DeepCollectionEquality().equals(other._tags, _tags) &&
+            const DeepCollectionEquality().equals(other.file, file) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @JsonKey(ignore: true)
@@ -248,13 +300,16 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(subject),
+      const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(year),
-      const DeepCollectionEquality().hash(link),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(solved),
-      const DeepCollectionEquality().hash(_tags));
+      const DeepCollectionEquality().hash(subject),
+      const DeepCollectionEquality().hash(unit),
+      const DeepCollectionEquality().hash(chapter),
+      const DeepCollectionEquality().hash(topic),
+      const DeepCollectionEquality().hash(fileLink),
+      const DeepCollectionEquality().hash(_tags),
+      const DeepCollectionEquality().hash(file),
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -273,13 +328,16 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
 abstract class _UploadPaperRequest implements UploadPaperRequest {
   const factory _UploadPaperRequest(
       {required final String title,
+      required final String about,
+      required final String semester,
       final String? subject,
-      final String? semester,
-      final int? year,
-      required final dynamic link,
-      final String? type,
-      final bool? solved,
-      required final List<String> tags}) = _$_UploadPaperRequest;
+      final String? unit,
+      final String? chapter,
+      final String? topic,
+      final String? fileLink,
+      required final List<String> tags,
+      final dynamic file,
+      final dynamic image}) = _$_UploadPaperRequest;
 
   factory _UploadPaperRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadPaperRequest.fromJson;
@@ -287,19 +345,25 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
   @override
   String get title;
   @override
+  String get about;
+  @override
+  String get semester;
+  @override
   String? get subject;
   @override
-  String? get semester;
+  String? get unit;
   @override
-  int? get year;
+  String? get chapter;
   @override
-  dynamic get link;
+  String? get topic;
   @override
-  String? get type;
-  @override
-  bool? get solved;
+  String? get fileLink;
   @override
   List<String> get tags;
+  @override
+  dynamic get file;
+  @override
+  dynamic get image;
   @override
   @JsonKey(ignore: true)
   _$$_UploadPaperRequestCopyWith<_$_UploadPaperRequest> get copyWith =>

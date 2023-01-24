@@ -1,22 +1,40 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../data/repositories/filter_repository.dart';
+import 'package:lazy_engineer/features/home/data/models/multioption_model/multioption_model.dart';
 
 part 'filter_state.dart';
 part 'filter_cubit.freezed.dart';
 
 class FilterCubit extends Cubit<FilterState> {
-  FilterCubit(this._repository) : super(const FilterState.initial(false));
+  FilterCubit() : super(const FilterState(isOpen: false));
 
-  final FilterRepository _repository;
+  void toggle() {
+    emit(
+      FilterState(
+        isOpen: !state.isOpen,
+        textField: state.textField,
+        multiOption: state.multiOption,
+      ),
+    );
+  }
 
-  void getFilter(List<String> multiOption, String singleOption) async {
-    emit(const FilterState.loading());
-    try {
-          bool? getFilter = await _repository.getFilter(multiOption, singleOption);
-          emit(FilterState.success(multiOption, singleOption));
-    } catch (e) {
-      emit(FilterState.failure(e));
-    }
+  void modifyTextField(List<String> list) {
+    emit(
+      FilterState(
+        isOpen: state.isOpen,
+        textField: list,
+        multiOption: state.multiOption,
+      ),
+    );
+  }
+
+  void modifyMultiOption(List<MultioptionModel> list) {
+    emit(
+      FilterState(
+        isOpen: state.isOpen,
+        textField: state.textField,
+        multiOption: list,
+      ),
+    );
   }
 }
