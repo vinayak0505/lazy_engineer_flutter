@@ -40,6 +40,7 @@ class GridCard extends StatelessWidget {
               placeHolder: placeHolder,
               image: image,
               height: 120,
+              padding: const EdgeInsets.all(10),
               radius: kRoundedRectangleRadius,
               onlyTop: true,
               boxFit: BoxFit.fill,
