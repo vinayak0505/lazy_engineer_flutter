@@ -1,15 +1,8 @@
-import '../../../../../model/user.dart';
+part of 'user_cubit.dart';
 
-abstract class UserState {}
-
-class UserFetchSuccessState extends UserState {
-  User user;
-  UserFetchSuccessState(this.user);
+@freezed
+class UserState with _$UserState {
+  const factory UserState.loading() = UserLoading;
+  const factory UserState.success(User data) = UserSuccess;
+  const factory UserState.failure(dynamic e) = UserFailure;
 }
-
-class UserFetchFailureState extends UserState {
-  dynamic e;
-  UserFetchFailureState(this.e);
-}
-
-class UserFetchLoadingState extends UserState {}

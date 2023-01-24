@@ -1,38 +1,43 @@
 import 'dart:io';
-import 'package:dio/dio.dart';
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_icon.dart';
+import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/components/failiure_screen.dart';
 import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/features/upload/data/repositories/upload_repository_impl.dart';
-import 'package:open_app_file/open_app_file.dart';
-import '../../../../assets/constants/decoration.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../assets/icons.dart';
-import '../../../../helper/input_validation.dart';
-import '../../../components/custom_button.dart';
-import '../../../components/custom_icon.dart';
-import '../../../components/custom_image.dart';
-import '../../../components/failiure_screen.dart';
-import '../cubit/upload_cubit.dart';
+import 'package:lazy_engineer/features/upload/presentation/cubit/pdf_to_img/pdf_to_img_cubit.dart';
+import 'package:lazy_engineer/features/upload/presentation/cubit/upload/upload_cubit.dart';
+import 'package:lazy_engineer/features/upload/presentation/widgets/success_page.dart';
+import 'package:lazy_engineer/helper/input_validation.dart';
 
 class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
   const UploadScreenWidget({
-    Key? key,
+    super.key,
     required this.onPressed,
     required this.title,
     required this.body,
-  }) : super(key: key);
-  final void Function(UploadCubit) onPressed;
+    this.buttonText = upload,
+    this.buttonWidth = 100,
+  });
+  final void Function(UploadCubit cubit, File? image) onPressed;
   final String title;
+  final String buttonText;
+  final double buttonWidth;
   final List<Widget> body;
 
   @override
   Widget build(BuildContext context) {
     final formGlobalKey = GlobalKey<FormState>();
-    ThemeData theme = Theme.of(context);
-
+    final ThemeData theme = Theme.of(context);
+    File? documentImage;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -53,16 +58,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
           create: (context) => UploadCubit(UploadRepositoryImpl()),
           child: BlocBuilder<UploadCubit, UploadState>(
             builder: (context, state) {
-              var cubit = context.read<UploadCubit>();
-              File? uploadFile() {
-                if (cubit.pickedFile != null &&
-                    cubit.pickedFile!.extension != 'pdf') {
-                  return File(
-                    cubit.pickedFile!.path.toString(),
-                  );
-                }
-                return null;
-              }
+              final cubit = context.read<UploadCubit>();
 
               File? openFile(PlatformFile data) {
                 if (kIsWeb) {
@@ -76,6 +72,8 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
 
               return state.whenOrNull(
                     loading: () => const LoadingScreen(),
+                    failure: (e) => FailureScreen(e),
+                    success: () => const SuccessPage(),
                   ) ??
                   SingleChildScrollView(
                     child: Padding(
@@ -90,21 +88,31 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                               child: state.whenOrNull(
                                 documentLoading: () => Stack(
                                   alignment: Alignment.center,
-                                  children: [
+                                  children: const [
                                     CustomImage(
                                       width: 200,
                                       height: 200,
-                                      file: uploadFile(),
                                       disableImage: true,
                                     ),
-                                    const CircularProgressIndicator()
+                                    CircularProgressIndicator()
                                   ],
                                 ),
-                                documentSuccess: (data) => CustomImage(
-                                  file: openFile(data),
-                                  width: 200,
-                                  height: 200,
-                                ),
+                                documentSuccess: (data) {
+                                  if (data.extension == 'pdf') {
+                                    return PdfImage(
+                                      data,
+                                      getImage: (image) {
+                                        documentImage = image;
+                                      },
+                                    );
+                                  } else {
+                                    return CustomImage(
+                                      file: openFile(data),
+                                      width: 200,
+                                      height: 200,
+                                    );
+                                  }
+                                },
                               ),
                             ),
                             const SizedBox(height: 8),
@@ -114,12 +122,12 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                                 onPressed: () => context
                                     .read<UploadCubit>()
                                     .uploadDocument(),
-                                text: upload,
-                                width: 100,
+                                text: buttonText,
+                                width: buttonWidth,
                               ),
                             ),
                             //* File
-                            if(!kIsWeb)
+                            if (!kIsWeb)
                               AnimatedSwitcher(
                                 switchInCurve: Curves.easeIn,
                                 duration: const Duration(
@@ -144,7 +152,9 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                             //* Error formfield
                             FormField<String>(
                               validator: (_) => nullCheckTextValidation(
-                                  cubit.pickedFile?.path, 'File'),
+                                cubit.pickedFile?.path,
+                                'File',
+                              ),
                               builder: (state) {
                                 return (state.hasError &&
                                         state.errorText != null)
@@ -167,7 +177,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                                 width: 130,
                                 onPressed: () {
                                   if (formGlobalKey.currentState!.validate()) {
-                                    onPressed(cubit);
+                                    onPressed(cubit, documentImage);
                                   }
                                 },
                               ),
@@ -185,6 +195,36 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
             },
           ),
         ),
+      ),
+    );
+  }
+}
+
+class PdfImage extends StatelessWidget {
+  const PdfImage(this.data, {super.key, required this.getImage});
+  final PlatformFile data;
+  final Function(File image) getImage;
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => PdfToImgCubit(data),
+      child: BlocBuilder<PdfToImgCubit, PdfToImgState>(
+        builder: (context, state) {
+          return state.when(
+            loading: () => const LoadingScreen(),
+            failure: (e) => FailureScreen(e),
+            success: (data) {
+              getImage.call(data);
+              return CustomImage(
+                file: data,
+                height: 200,
+                width: 142,
+                radius: 8,
+                isBorder: true,
+              );
+            },
+          );
+        },
       ),
     );
   }

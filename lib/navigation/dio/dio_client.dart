@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import '../../model/user.dart';
-import 'authorization_inceptors.dart';
-import 'dio_exception.dart';
+import 'package:lazy_engineer/model/user.dart';
+import 'package:lazy_engineer/navigation/dio/authorization_inceptors.dart';
+import 'package:lazy_engineer/navigation/dio/dio_exception.dart';
 
 const apiBaseUrl = 'https://';
 
@@ -14,14 +14,13 @@ class DioClient {
             baseUrl: apiBaseUrl,
             connectTimeout: 5000,
             receiveTimeout: 3000,
-            responseType: ResponseType.json,
           ),
         )..interceptors.add(AuthorizationInterceptor());
 
   Future<User?> getUser({required int id}) async {
     try {
       final response = await _dio.get('/users/$id');
-      return User.fromJson(response.data);
+      return User.fromJson(response.data as Map<String,dynamic>);
     } on DioError catch (err) {
       final errorMessage = DioException.fromDioError(err).toString();
       throw errorMessage;
@@ -34,7 +33,7 @@ class DioClient {
   Future<User?> createUser({required User user}) async {
     try {
       final response = await _dio.post('/users', data: user.toJson());
-      return User.fromJson(response.data);
+      return User.fromJson(response.data as Map<String,dynamic>);
     } on DioError catch (err) {
       final errorMessage = DioException.fromDioError(err).toString();
       throw errorMessage;

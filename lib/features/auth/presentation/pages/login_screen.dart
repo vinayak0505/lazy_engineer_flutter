@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/auth/data/models/sign_in_model/sign_in_model.dart';
+import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
+import 'package:lazy_engineer/features/auth/presentation/widgets/widgets.dart';
+import 'package:lazy_engineer/features/components/custom_button.dart';
+import 'package:lazy_engineer/features/components/custom_text_field.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../assets/icons.dart';
-import '../../../components/custom_button.dart';
-import '../../../components/custom_text_field.dart';
-import '../../data/models/sign_in_model/sign_in_model.dart';
-import '../auth_cubit/auth_cubit.dart';
-import '../widgets/widgets.dart';
 
-class LoginScreen extends StatelessWidget with InputAuthValidationMixin {
-  const LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatelessWidget with InputValidationMixin {
+  const LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final formGlobalKey = GlobalKey<FormState>();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    ThemeData theme = Theme.of(context);
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+    final ThemeData theme = Theme.of(context);
 
     return Align(
       alignment: Alignment.bottomCenter,
@@ -31,6 +31,7 @@ class LoginScreen extends StatelessWidget with InputAuthValidationMixin {
             ),
             boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)],
           ),
+          margin: const EdgeInsets.symmetric(horizontal: 16),
           padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
           child: Form(
             key: formGlobalKey,
@@ -57,17 +58,22 @@ class LoginScreen extends StatelessWidget with InputAuthValidationMixin {
                 ),
                 const SizedBox(height: 4),
                 Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(forgetPassword,
-                        style: theme.textTheme.bodySmall
-                            ?.copyWith(fontWeight: FontWeight.bold))),
-                const SizedBox(height: 18),
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    forgetPassword,
+                    style: theme.textTheme.bodySmall
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const SizedBox(
+                  height: 18,
+                ),
                 CustomButton(
                   text: login,
                   isBig: true,
                   onPressed: () {
                     if (formGlobalKey.currentState!.validate()) {
-                      SignInModel user = SignInModel(
+                      final SignInModel user = SignInModel(
                         email: emailController.text,
                         password: passwordController.text,
                       );

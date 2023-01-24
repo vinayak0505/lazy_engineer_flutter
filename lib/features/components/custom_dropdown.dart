@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
+import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/features/components/custom_icon.dart';
-import '../../assets/constants/decoration.dart';
-import '../../assets/icons.dart';
 
 class CustomDropdown extends FormField<String> {
   CustomDropdown({
-    Key? key,
+    super.key,
     required List<String> list,
     List<String>? keyList,
     String? hintText,
-    FormFieldValidator<String>? validator,
+    super.validator,
     double? width,
     bool isExpanded = true,
     required TextEditingController controller,
     String? dropdownValue,
   }) : super(
-          key: key,
-          validator: validator,
           initialValue: dropdownValue,
           builder: (FormFieldState<String> state) {
             final theme = Theme.of(state.context);
-
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -29,7 +26,8 @@ class CustomDropdown extends FormField<String> {
                   decoration: kRoundedContainer,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: DropdownButton<String>(
-                    elevation: 0,
+                    elevation: 1,
+                    borderRadius: const BorderRadius.all(Radius.circular(8)),
                     underline: const SizedBox(),
                     isExpanded: isExpanded,
                     hint: hintText != null ? Text(hintText) : null,

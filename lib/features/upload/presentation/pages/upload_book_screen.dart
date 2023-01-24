@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/features/components/custom_dropdown.dart';
+import 'package:lazy_engineer/features/components/custom_text_field.dart';
+import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_book_request/upload_book_request.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/upload_screen_widget.dart';
-import '../../../../assets/constants/lists.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../helper/input_validation.dart';
-import '../../../components/custom_dropdown.dart';
-import '../../../components/custom_text_field.dart';
-import '../../../components/tags_widget.dart';
-import '../widgets/writers_list.dart';
+import 'package:lazy_engineer/features/upload/presentation/widgets/writers_list.dart';
+import 'package:lazy_engineer/helper/input_validation.dart';
 
 class UploadBookScreen extends StatelessWidget with InputValidationMixin {
   const UploadBookScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    TextEditingController titleController = TextEditingController();
+    final ThemeData theme = Theme.of(context);
+    final titleController = TextEditingController();
     List<String> writerController = [];
-    TextEditingController subjectController = TextEditingController();
-    TextEditingController aboutController = TextEditingController();
-    TextEditingController pagesController = TextEditingController();
-    TextEditingController semesterController = TextEditingController();
-    TextEditingController bookEditionController = TextEditingController();
-    TextEditingController priceController = TextEditingController();
+    final subjectController = TextEditingController();
+    final aboutController = TextEditingController();
+    final pagesController = TextEditingController();
+    final semesterController = TextEditingController();
+    final bookEditionController = TextEditingController();
+    final priceController = TextEditingController();
     List<String> tagsController = [];
     return UploadScreenWidget(
       title: uploadBook,
@@ -37,11 +38,13 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        //* Writer
-        Text(writer, style: theme.textTheme.titleLarge),
-        WriterListWidget(writerList: (value) {
-          writerController = value;
-        }),
+        //* Writers
+        Text(writers, style: theme.textTheme.titleLarge),
+        WriterListWidget(
+          writerList: (value) {
+            writerController = value;
+          },
+        ),
         const SizedBox(height: 16),
         //* Subject
         Text(subject, style: theme.textTheme.titleLarge),
@@ -66,31 +69,34 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          //* Pages
-          CustomTextField(
-            controller: pagesController,
-            keyboardType: TextInputType.number,
-            hintText: pages,
-            width: 100,
-            validator: (value) => nullCheckNumValidation(
-              value,
-              pages,
-            ),
+        //* Semester
+        Text(semester, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        CustomDropdown(
+          width: 200,
+          hintText: semester,
+          list: semesterList,
+          keyList: semesterKeyList,
+          controller: semesterController,
+          validator: (value) => nullCheckTextValidation(
+            value,
+            semester,
           ),
-          //* Semester
-          CustomDropdown(
-            list: semesterList,
-            keyList: semesterKeyList,
-            width: 130,
-            hintText: semester,
-            controller: semesterController,
-            validator: (value) => nullCheckNumValidation(
-              value,
-              semester,
-            ),
+        ),
+        const SizedBox(height: 16),
+        //* Pages
+        Text(pages, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        CustomTextField(
+          controller: pagesController,
+          keyboardType: TextInputType.number,
+          hintText: pages,
+          width: 200,
+          validator: (value) => nullCheckNumValidation(
+            value,
+            pages,
           ),
-        ]),
+        ),
         const SizedBox(height: 16),
         //* BookEdition
         Text(
@@ -109,27 +115,31 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
         const SizedBox(height: 16),
         //* Price
         Text(price, style: theme.textTheme.titleLarge),
-        Row(mainAxisSize: MainAxisSize.min, children: [
-          CustomTextField.secondary(
-            controller: priceController,
-            hintText: price,
-            width: 100,
-            keyboardType: TextInputType.number,
-            validator: (value) => nullCheckNumValidation(
-              value,
-              price,
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            CustomTextField.secondary(
+              controller: priceController,
+              hintText: price,
+              width: 100,
+              keyboardType: TextInputType.number,
+              validator: (value) => nullCheckNumValidation(
+                value,
+                price,
+              ),
             ),
-          ),
-          Text(
-            rs,
-            style: theme.textTheme.titleLarge,
-          )
-        ]),
+            Text(
+              rs,
+              style: theme.textTheme.titleLarge,
+            )
+          ],
+        ),
         const SizedBox(height: 16),
         //* Tags
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
-        TagsWidget(
+        EditTagsWidget(
+          customTags: bookTags,
           listTags: (value) => tagsController = value,
           validator: (_) => emptyListCheckValidation(
             tagsController,
@@ -137,14 +147,19 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
       ],
-      onPressed: (cubit) {
+      onPressed: (cubit, image) {
         cubit.uploadBook(
-          title: titleController.text,
-          writer: writerController,
-          subject: subjectController.text,
-          pages: int.parse(pagesController.text),
-          bookEdition: int.parse(bookEditionController.text),
-          tags: tagsController,
+          UploadBookRequest(
+            title: titleController.text.trim(),
+            about: aboutController.text.trim(),
+            semester: semesterController.text.trim(),
+            tags: tagsController,
+            writer: writerController,
+            pages: int.parse(pagesController.text),
+            bookEdition: int.parse(bookEditionController.text),
+            price: int.parse(priceController.text),
+          ),
+          image!,
         );
       },
     );

@@ -1,15 +1,17 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:lazy_engineer/config/app_config.dart';
 
+// not able stop changing picture when zoomed
 class FullScreenPhoto extends StatefulWidget {
   const FullScreenPhoto({
     super.key,
-    required this.list,
+    this.list,
+    this.networkImageList,
     required this.index,
   });
-  final List<File> list;
+  final List<File>? list;
+  final List<String>? networkImageList;
   final int index;
 
   @override
@@ -34,9 +36,9 @@ class _FullScreenPhotoState extends State<FullScreenPhoto>
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 300),
-    )..addListener(
-        () => controller.value = animation!.value
-      );
+    )..addListener(() {
+        controller.value = animation!.value;
+      });
     pageController = PageController(initialPage: widget.index);
   }
 
@@ -49,15 +51,14 @@ class _FullScreenPhotoState extends State<FullScreenPhoto>
 
   @override
   Widget build(BuildContext context) {
+    Matrix4 end = Matrix4.identity();
     return Scaffold(
       backgroundColor: Colors.black,
       body: Hero(
         tag: AppConfig.companyPhotoTag,
         child: GestureDetector(
-          onDoubleTapDown: (details) => tapDownDetails = details,
           onTap: () => Navigator.pop(context),
-          // onHorizontalDragEnd: (_) => pageController.animateToPage(++page,
-          //     duration: const Duration(seconds: 1), curve: Curves.easeIn),
+          onDoubleTapDown: (details) => tapDownDetails = details,
           onDoubleTap: () {
             final position = tapDownDetails!.localPosition;
             const double scale = 3;
@@ -66,8 +67,7 @@ class _FullScreenPhotoState extends State<FullScreenPhoto>
             final zoomed = Matrix4.identity()
               ..translate(x, y)
               ..scale(scale);
-            final end =
-                controller.value.isIdentity() ? zoomed : Matrix4.identity();
+            end = controller.value.isIdentity() ? zoomed : Matrix4.identity();
             final Animation<double> curve = CurvedAnimation(
               parent: animationController,
               curve: Curves.easeOut,
@@ -78,14 +78,21 @@ class _FullScreenPhotoState extends State<FullScreenPhoto>
           },
           child: PageView(
             controller: pageController,
-            // physics: const NeverScrollableScrollPhysics(),
             children: [
-              ...widget.list.map(
-                (image) => InteractiveViewer(
-                  transformationController: controller,
-                  child: Image.file(image),
+              if (widget.list != null) 
+                ...widget.list!.map(
+                  (image) => InteractiveViewer(
+                    transformationController: controller,
+                    child: Image.file(image),
+                  ),
                 ),
-              ),
+              if (widget.networkImageList != null)
+              ...widget.networkImageList!.map(
+                  (image) => InteractiveViewer(
+                    transformationController: controller,
+                    child: Image.network(image),
+                  ),
+                ),
             ],
           ),
         ),

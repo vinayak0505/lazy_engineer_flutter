@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/features/components/custom_dropdown.dart';
+import 'package:lazy_engineer/features/components/custom_text_field.dart';
+import 'package:lazy_engineer/features/components/edit_tags_widget.dart';
+import 'package:lazy_engineer/features/upload/data/models/upload_models.dart';
 import 'package:lazy_engineer/features/upload/presentation/widgets/upload_screen_widget.dart';
-import '../../../../assets/constants/lists.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../helper/input_validation.dart';
-import '../../../components/custom_dropdown.dart';
-import '../../../components/custom_text_field.dart';
-import '../../../components/tags_widget.dart';
+import 'package:lazy_engineer/helper/input_validation.dart';
 
 class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
   const UploadPaperScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    TextEditingController titleController = TextEditingController();
-    TextEditingController subjectController = TextEditingController();
-    TextEditingController aboutController = TextEditingController();
-    TextEditingController yearController = TextEditingController();
-    TextEditingController typeController = TextEditingController();
-    bool? solvedController;
+    final ThemeData theme = Theme.of(context);
+    final titleController = TextEditingController();
+    final aboutController = TextEditingController();
+    final subjectController = TextEditingController();
+    final semesterController = TextEditingController();
+    final unitController = TextEditingController();
+    final chapterController = TextEditingController();
+    final topicController = TextEditingController();
     List<String> tagsController = [];
     return UploadScreenWidget(
       title: uploadPaper,
@@ -34,6 +36,15 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
+        //* About
+        Text(about, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 12),
+        CustomTextField.multiLine(
+          controller: aboutController,
+          hintText: aboutNotes,
+          validator: (value) => nullCheckTextValidation(value, about),
+        ),
+        const SizedBox(height: 16),
         //* Subject
         Text(subject, style: theme.textTheme.titleLarge),
         CustomTextField.secondary(
@@ -45,37 +56,80 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
         const SizedBox(height: 16),
-        //* About
-        Text(about, style: theme.textTheme.titleLarge),
-        const SizedBox(height: 12),
-        CustomTextField.multiLine(
-          controller: aboutController,
-          hintText: aboutPaper,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            //* Semester
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(semester, style: theme.textTheme.titleLarge),
+                  const SizedBox(height: 12),
+                  CustomDropdown(
+                    list: semesterList,
+                    keyList: semesterKeyList,
+                    hintText: semester,
+                    controller: semesterController,
+                    validator: (value) => nullCheckTextValidation(
+                      value,
+                      semester,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 16),
+            //* Unit
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(unit, style: theme.textTheme.titleLarge),
+                  const SizedBox(height: 12),
+                  CustomDropdown(
+                    list: unitList,
+                    keyList: unitKeyList,
+                    hintText: unit,
+                    controller: unitController,
+                    validator: (value) => nullCheckTextValidation(
+                      value,
+                      unit,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        //* Chapter
+        Text(chapter, style: theme.textTheme.titleLarge),
+        CustomTextField.secondary(
+          controller: chapterController,
+          hintText: chapter,
           validator: (value) => nullCheckTextValidation(
             value,
-            about,
+            chapter,
           ),
         ),
         const SizedBox(height: 16),
-        //* Year
-        Text(year, style: theme.textTheme.titleLarge),
-        const SizedBox(height: 12),
-        CustomDropdown(
-          width: 120,
-          list: yearList,
-          keyList: yearKeyList,
-          hintText: year,
-          controller: yearController,
+        //* Topic
+        Text(topic, style: theme.textTheme.titleLarge),
+        CustomTextField.secondary(
+          controller: topicController,
+          hintText: topic,
           validator: (value) => nullCheckTextValidation(
             value,
-            year,
+            topic,
           ),
         ),
         const SizedBox(height: 16),
         //* Tags
         Text(tags, style: theme.textTheme.titleLarge),
         const SizedBox(height: 8),
-        TagsWidget(
+        EditTagsWidget(
+          customTags: questionPaperTags,
           listTags: (value) => tagsController = value,
           validator: (_) => emptyListCheckValidation(
             tagsController,
@@ -83,14 +137,19 @@ class UploadPaperScreen extends StatelessWidget with InputValidationMixin {
           ),
         ),
       ],
-      onPressed: (cubit) {
+      onPressed: (cubit, image) {
         cubit.uploadPaper(
-          title: title,
-          subject: subjectController.text,
-          year: int.parse(yearController.text),
-          type: typeController.text,
-          solved: solvedController,
-          tags: tagsController,
+          UploadPaperRequest(
+            title: titleController.text.trim(),
+            about: aboutController.text.trim(),
+            semester: semesterController.text.trim(),
+            subject: subjectController.text.trim(),
+            unit: unitController.text.trim(),
+            chapter: chapterController.text.trim(),
+            topic: topicController.text.trim(),
+            tags: tagsController,
+          ),
+          image!,
         );
       },
     );

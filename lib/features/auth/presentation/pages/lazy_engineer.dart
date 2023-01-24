@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/splash_screen.dart';
+import 'package:lazy_engineer/features/components/loading_screen.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
-import '../../../components/loading_screen.dart';
-import '../auth_cubit/auth_cubit.dart';
 
 class LazyEngineer extends StatelessWidget {
   const LazyEngineer({super.key});

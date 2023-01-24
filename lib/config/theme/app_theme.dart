@@ -25,7 +25,7 @@ class AppThemes {
   static const Color errorColor = Color(0xffE5233B);
   static const Color lightDarkColor = Color(0xffA3A4A6);
 
-  static final appThemeData = {
+  final appThemeData = {
     AppTheme.lightTheme: ThemeData(
       scaffoldBackgroundColor: whiteColor,
       backgroundColor: whiteColor,
@@ -68,18 +68,16 @@ class AppThemes {
                 color: textColorDark,
                 fontWeight: FontWeight.w500,
               ),
-               headline5: const TextStyle(
+              headline5: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
               subtitle2: const TextStyle(
-                color: subTitleColor,
-                fontWeight: FontWeight.bold
-              ),
+                  color: subTitleColor, fontWeight: FontWeight.bold,),
               overline: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: subTitleColor,
               ),
-               bodyText2: const TextStyle(
+              bodyText2: const TextStyle(
                 color: lightDarkColor,
               ),
             ),

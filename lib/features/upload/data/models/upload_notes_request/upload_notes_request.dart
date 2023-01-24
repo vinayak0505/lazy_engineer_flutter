@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'upload_notes_request.freezed.dart';
@@ -5,18 +6,36 @@ part 'upload_notes_request.g.dart';
 
 @freezed
 class UploadNotesRequest with _$UploadNotesRequest {
-    const factory UploadNotesRequest({
-        required String title,
-        String? about,
-        int? semester,
-        String? subject,
-        String? unit,
-        String? chapter,
-        String? topic,
-        required dynamic link,
-        required List<String> tags,
-    }) = _UploadNotesRequest;
+  const factory UploadNotesRequest({
+    required String title,
+    required String? about,
+    required String semester,
+    dynamic file,
+    dynamic image,
+    List<String>? tags,
+    String? subject,
+    String? unit,
+    String? chapter,
+    String? topic,
+  }) = _UploadNotesRequest;
 
   factory UploadNotesRequest.fromJson(Map<String, dynamic> json) =>
       _$UploadNotesRequestFromJson(json);
+}
+
+extension UploadNotesRequestFormData on UploadNotesRequest {
+  FormData toFormData() {
+    return FormData.fromMap({
+      'title': title,
+      'about': about,
+      'semester': semester,
+      'file': file,
+      'image': image,
+      'tags': tags,
+      'subject': subject,
+      'unit': unit,
+      'chapter': chapter,
+      'topic': topic,
+    });
+  }
 }

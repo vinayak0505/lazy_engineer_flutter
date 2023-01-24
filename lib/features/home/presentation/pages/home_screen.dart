@@ -1,42 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../assets/constants/lists.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../assets/icons.dart';
-import '../../../../navigation/routes.dart';
-import '../../../../model/user.dart';
-import '../../../components/custom_text_field.dart';
-import '../../../components/grid_card.dart';
-import '../widgets/slider_view.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/assets/icons.dart';
+import 'package:lazy_engineer/features/components/custom_image.dart';
+import 'package:lazy_engineer/features/components/failiure_screen.dart';
+import 'package:lazy_engineer/features/components/grid_card.dart';
+import 'package:lazy_engineer/features/components/loading_screen.dart';
+import 'package:lazy_engineer/features/components/staggered_view.dart';
+import 'package:lazy_engineer/features/home/data/repositories/home_repository_impl.dart';
+import 'package:lazy_engineer/features/home/presentation/cubit/user/user_cubit.dart';
+import 'package:lazy_engineer/features/home/presentation/widgets/slider_view.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final User user = User.dummy();
-    ThemeData theme = Theme.of(context);
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    final ThemeData theme = Theme.of(context);
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 28),
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-              _nametag(theme, user.userName),
-              const SizedBox(height: 12),
-              _searchBar(theme),
-              const SizedBox(height: 28),
-              SliderView(imageList: sliderImageList),
-              const SizedBox(height: 24),
-              _titleLabel(lastOpened, theme),
-              const SizedBox(height: 140),
-              _titleLabel(categories, theme),
-              const SizedBox(height: 16),
-              _staggeredView()
-            ]),
+            child: BlocProvider(
+              create: (context) => UserCubit(HomeRepositoryImpl()),
+              child: BlocBuilder<UserCubit, UserState>(
+                builder: (context, state) {
+                  return state.when(
+                    loading: () => const LoadingScreen(),
+                    failure: (e) => FailureScreen(e),
+                    success: (user) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _nametag(context, user.userName),
+                          const SizedBox(height: 12),
+                          const SizedBox(height: 28),
+                          SliderView(sliderImageList),
+                          const SizedBox(height: 24),
+                          // _titleLabel(lastOpened, theme),
+                          // const SizedBox(height: 24),
+                          // const LastOpened(),
+                          // const SizedBox(height: 24),
+                          _titleLabel(categories, theme),
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: StaggeredView(
+                              categoriesList
+                                  .map((element) => GridCard.category(element))
+                                  .toList(),
+                              onTap: (context, index) =>
+                                  _navigation(context, index),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
           ),
         ),
       ),
@@ -51,35 +78,6 @@ class HomeScreen extends StatelessWidget {
         title,
         style: theme.textTheme.titleLarge,
       ),
-    );
-  }
-
-  Widget _searchBar(ThemeData theme) {
-    TextEditingController searchController = TextEditingController();
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: CustomTextField(
-          controller: searchController,
-          hintText: searchCourse,
-          suffixIcon: AppIcons.searchIcon),
-    );
-  }
-
-  Widget _staggeredView() {
-    return MasonryGridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      crossAxisCount: 2,
-      itemCount: categoriesList.length,
-      itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-          onTap: () => _navigation(context, index),
-          child: GridCard(data: categoriesList[index]),
-        );
-      },
-      mainAxisSpacing: 8,
-      crossAxisSpacing: 8,
     );
   }
 
@@ -100,40 +98,44 @@ class HomeScreen extends StatelessWidget {
           return RouteGenerator.homeRoute;
       }
     }
+
     context.push(nav());
   }
 
-  Widget _nametag(ThemeData theme, String name) {
+  Widget _nametag(BuildContext context, String name) {
+    void onPress() {
+      ScaffoldMessenger.of(context).showSnackBar(toBeBuildInFutureSnackBar);
+    }
+    final ThemeData theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  hello,
-                  style: theme.textTheme.headline4?.copyWith(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                  ),
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                hello,
+                style: theme.textTheme.headline4?.copyWith(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
                 ),
-                Text(name, style: theme.textTheme.headline4),
-              ],
-            ),
-            const Spacer(),
-            GestureDetector(
-              child: SvgPicture.asset(
-                AppIcons.notificationCircleIcon,
-                width: 48,
-                height: 48,
               ),
-              onTap: () {},
-            )
-          ]),
+              Text(name, style: theme.textTheme.headline4),
+            ],
+          ),
+          const Spacer(),
+          GestureDetector(
+            child: const CustomImage(
+              image: AppIcons.notificationCircleIcon,
+              width: 48,
+              height: 48,
+            ),
+            onTap: onPress,
+          )
+        ],
+      ),
     );
   }
 }

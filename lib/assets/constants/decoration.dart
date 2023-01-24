@@ -20,7 +20,7 @@ BoxDecoration kRoundedBottomNavigator = BoxDecoration(
   ),
 );
 
-BoxDecoration kRoundedBottomContainer = BoxDecoration(
+BoxDecoration kRoundedTopContainer = BoxDecoration(
   color: Colors.white,
   border: Border.all(color: AppThemes.lightDarkColor),
   borderRadius: const BorderRadius.only(
@@ -29,4 +29,32 @@ BoxDecoration kRoundedBottomContainer = BoxDecoration(
   ),
 );
 
-TextStyle? errorStyle = ThemeData.light().textTheme.labelSmall?.copyWith(color: ThemeData.light().errorColor, fontSize: 12);
+BoxDecoration kRoundedBottomContainer = BoxDecoration(
+  color: Colors.white,
+  border: Border.all(color: AppThemes.lightDarkColor),
+  borderRadius: const BorderRadius.only(
+    bottomLeft: Radius.circular(8),
+    bottomRight: Radius.circular(8),
+  ),
+);
+
+TextStyle? errorStyle = ThemeData.light()
+    .textTheme
+    .labelSmall
+    ?.copyWith(color: ThemeData.light().errorColor, fontSize: 12);
+
+final toBeBuildInFutureSnackBar = SnackBar(
+  margin: const EdgeInsets.fromLTRB(24, 0, 24, 64),
+  content: const Text(
+    'To be build in Future',
+    style: TextStyle(
+      fontSize: 16,
+      color: Colors.black,
+    ),
+  ),
+  shape: RoundedRectangleBorder(
+        side: const BorderSide(),
+        borderRadius: BorderRadius.circular(12),
+      ),
+  duration: const Duration(milliseconds: 400),
+);

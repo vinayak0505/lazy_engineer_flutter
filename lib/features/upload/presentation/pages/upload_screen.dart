@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../assets/constants/lists.dart';
-import '../../../../assets/constants/strings.dart';
-import '../../../../navigation/routes.dart';
-import '../../../components/grid_card.dart';
+import 'package:lazy_engineer/assets/constants/lists.dart';
+import 'package:lazy_engineer/assets/constants/strings.dart';
+import 'package:lazy_engineer/features/components/grid_card.dart';
+import 'package:lazy_engineer/features/components/staggered_view.dart';
+import 'package:lazy_engineer/navigation/routes.dart';
 
 class UploadScreen extends StatelessWidget {
-  const UploadScreen({Key? key}) : super(key: key);
+  const UploadScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -20,29 +20,19 @@ class UploadScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 28),
-            child: _staggeredView(),
+            padding: const EdgeInsets.symmetric(
+              vertical: 28,
+              horizontal: 16,
+            ),
+            child: StaggeredView(
+              categoriesList
+                  .map((element) => GridCard.category(element))
+                  .toList(),
+              onTap: (context, index) => _navigation(context, index),
+            ),
           ),
         ),
       ),
-    );
-  }
-
-  Widget _staggeredView() {
-    return MasonryGridView.count(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      crossAxisCount: 2,
-      itemCount: categoriesList.length,
-      itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-          onTap: () => _navigation(context, index),
-          child: GridCard(data: categoriesList[index]),
-        );
-      },
-      mainAxisSpacing: 8,
-      crossAxisSpacing: 8,
     );
   }
 
@@ -63,6 +53,7 @@ class UploadScreen extends StatelessWidget {
           return RouteGenerator.homeRoute;
       }
     }
+
     context.push(nav());
   }
 }

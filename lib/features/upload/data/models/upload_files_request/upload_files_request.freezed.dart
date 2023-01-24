@@ -20,11 +20,13 @@ UploadFilesRequest _$UploadFilesRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UploadFilesRequest {
-  String get title => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get about => throw _privateConstructorUsedError;
   String? get subject => throw _privateConstructorUsedError;
   String? get college => throw _privateConstructorUsedError;
   String? get semester => throw _privateConstructorUsedError;
-  dynamic get link => throw _privateConstructorUsedError;
+  dynamic get file => throw _privateConstructorUsedError;
+  dynamic get image => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,11 +41,13 @@ abstract class $UploadFilesRequestCopyWith<$Res> {
           UploadFilesRequest value, $Res Function(UploadFilesRequest) then) =
       _$UploadFilesRequestCopyWithImpl<$Res>;
   $Res call(
-      {String title,
+      {String? title,
+      String? about,
       String? subject,
       String? college,
       String? semester,
-      dynamic link,
+      dynamic file,
+      dynamic image,
       List<String> tags});
 }
 
@@ -59,17 +63,23 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? about = freezed,
     Object? subject = freezed,
     Object? college = freezed,
     Object? semester = freezed,
-    Object? link = freezed,
+    Object? file = freezed,
+    Object? image = freezed,
     Object? tags = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      about: about == freezed
+          ? _value.about
+          : about // ignore: cast_nullable_to_non_nullable
+              as String?,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -82,9 +92,13 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
       tags: tags == freezed
           ? _value.tags
@@ -102,11 +116,13 @@ abstract class _$$_UploadFilesRequestCopyWith<$Res>
       __$$_UploadFilesRequestCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String title,
+      {String? title,
+      String? about,
       String? subject,
       String? college,
       String? semester,
-      dynamic link,
+      dynamic file,
+      dynamic image,
       List<String> tags});
 }
 
@@ -124,17 +140,23 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? about = freezed,
     Object? subject = freezed,
     Object? college = freezed,
     Object? semester = freezed,
-    Object? link = freezed,
+    Object? file = freezed,
+    Object? image = freezed,
     Object? tags = freezed,
   }) {
     return _then(_$_UploadFilesRequest(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      about: about == freezed
+          ? _value.about
+          : about // ignore: cast_nullable_to_non_nullable
+              as String?,
       subject: subject == freezed
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
@@ -147,9 +169,13 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
       tags: tags == freezed
           ? _value._tags
@@ -163,11 +189,13 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UploadFilesRequest implements _UploadFilesRequest {
   const _$_UploadFilesRequest(
-      {required this.title,
+      {this.title,
+      this.about,
       this.subject,
       this.college,
       this.semester,
-      required this.link,
+      this.file,
+      this.image,
       required final List<String> tags})
       : _tags = tags;
 
@@ -175,7 +203,9 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
       _$$_UploadFilesRequestFromJson(json);
 
   @override
-  final String title;
+  final String? title;
+  @override
+  final String? about;
   @override
   final String? subject;
   @override
@@ -183,7 +213,9 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
   @override
   final String? semester;
   @override
-  final dynamic link;
+  final dynamic file;
+  @override
+  final dynamic image;
   final List<String> _tags;
   @override
   List<String> get tags {
@@ -193,7 +225,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
 
   @override
   String toString() {
-    return 'UploadFilesRequest(title: $title, subject: $subject, college: $college, semester: $semester, link: $link, tags: $tags)';
+    return 'UploadFilesRequest(title: $title, about: $about, subject: $subject, college: $college, semester: $semester, file: $file, image: $image, tags: $tags)';
   }
 
   @override
@@ -202,10 +234,12 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
         (other.runtimeType == runtimeType &&
             other is _$_UploadFilesRequest &&
             const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.about, about) &&
             const DeepCollectionEquality().equals(other.subject, subject) &&
             const DeepCollectionEquality().equals(other.college, college) &&
             const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality().equals(other.link, link) &&
+            const DeepCollectionEquality().equals(other.file, file) &&
+            const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
@@ -214,10 +248,12 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(about),
       const DeepCollectionEquality().hash(subject),
       const DeepCollectionEquality().hash(college),
       const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(link),
+      const DeepCollectionEquality().hash(file),
+      const DeepCollectionEquality().hash(image),
       const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
@@ -236,18 +272,22 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
 
 abstract class _UploadFilesRequest implements UploadFilesRequest {
   const factory _UploadFilesRequest(
-      {required final String title,
+      {final String? title,
+      final String? about,
       final String? subject,
       final String? college,
       final String? semester,
-      required final dynamic link,
+      final dynamic file,
+      final dynamic image,
       required final List<String> tags}) = _$_UploadFilesRequest;
 
   factory _UploadFilesRequest.fromJson(Map<String, dynamic> json) =
       _$_UploadFilesRequest.fromJson;
 
   @override
-  String get title;
+  String? get title;
+  @override
+  String? get about;
   @override
   String? get subject;
   @override
@@ -255,7 +295,9 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
   @override
   String? get semester;
   @override
-  dynamic get link;
+  dynamic get file;
+  @override
+  dynamic get image;
   @override
   List<String> get tags;
   @override

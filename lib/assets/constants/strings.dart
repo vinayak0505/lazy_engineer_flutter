@@ -1,3 +1,5 @@
+const String hiveLazyEngineer = 'lazyEngineer';
+
 const String lazyEngineer = 'Lazy Engineer';
 
 const String home = 'Home';
@@ -19,18 +21,19 @@ const String password = 'Password';
 const String confirmPassword = 'Confirm Password';
 const String forgetPassword = 'Forget Password';
 const String dontHaveAccount = 'Don’t have a account? ';
-const String createOne = 'create one!';
+const String createOne = 'Create one!';
 const String alreadyHaveAccount = 'Already have a account? ';
 const String goToLogin = 'Go to Login';
 const String or = 'OR';
 const String next = 'Next';
 const String classD = 'Class';
 const String university = 'University';
-const String semister = 'Semister';
+const String semester = 'Semester';
 
 const String notes = 'Notes';
 const String files = 'Files';
 const String books = 'Books';
+const String downloads = 'Downloads';
 const String jobs = 'Jobs';
 const String questionPaper = 'Question Paper';
 
@@ -38,7 +41,6 @@ const String subjectIntended = 'Subject :  ';
 const String collegeIntended = 'College :  ';
 const String yearIntended = 'Year :        ';
 const String typeIntended = 'Type :        ';
-
 const String rateThisBook = 'Rate this book';
 const String similarBooks = 'Similar books';
 const String seeAll = 'SEE ALL';
@@ -47,6 +49,10 @@ const String rating = 'Rating';
 const String pages = 'Pages';
 const String ebook = 'E-Book';
 const String physicalBook = 'Physical Book';
+const String save = 'Save';
+const String similarCompanies = 'Similar Companies';
+const String activelyRecruiting = 'Actively recruiting';
+const String noData = 'No Data';
 
 // uplaod
 const String uploadNotes = 'Upload Notes';
@@ -54,16 +60,21 @@ const String uploadPaper = 'Upload Paper';
 const String uploadFile = 'Upload File';
 const String uploadBook = 'Upload Book';
 const String uploadJob = 'Upload Job';
+const String uploadCompanyIcon = 'Upload Company Icon';
 const String title = 'Title';
 const String subject = 'Subject';
+const String writers = 'Writers';
 const String writer = 'Writer';
 const String company = 'Company';
 const String noOfEmployees = 'No. of Employees';
 const String payRange = 'Pay Range';
 const String salary = 'Salary';
+const String branch = 'Branch';
 const String jobDescription = 'Job Description';
+const String userDescription = 'User Description';
 const String minimumQualification = 'Minimum Qualification';
 const String aboutTheCompany = 'About the Company';
+const String aboutJob = 'About Job';
 const String companyPhotos = 'Company Photos';
 const String viewAll = 'View All';
 const String no = 'No.';
@@ -83,8 +94,9 @@ const String jobRequest = 'Job Request';
 const String searchTags = 'Search Tags';
 const String submit = 'Submit';
 const String college = 'College';
-const String semester = 'Semester';
 const String year = 'Year';
+const String type = 'Type';
+const String yearOfAdmission = 'Year of Admission';
 const String price = 'Price';
 const String bookEdition = 'Book Edition';
 const String rs = 'Rs';
@@ -92,7 +104,11 @@ const String unit = 'Unit';
 const String chapter = 'Chapter';
 const String topic = 'Topic';
 const String aboutCompany = 'About Company';
+const String aboutJobProfile = 'About Job Profile';
+const String jobProfile = 'Job Profile';
 const String skillsRequired = 'Skills Required';
+const String apply = 'Apply';
+const String pdf = 'PDF';
 
 // account
 const String settings = 'Settings';
@@ -113,6 +129,7 @@ const String invitePeopleToTheSite = 'Invite people to the site';
 const String whatsNew = 'What’s new';
 const String contact = 'Contact';
 const String mobile = 'Mobile';
+const String mobileNumber = 'Mobile Number';
 const String education = 'Education';
 const String experienceLevel = 'Experience Level';
 const String jobType = 'Job Type';

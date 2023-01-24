@@ -1,72 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lazy_engineer/assets/constants/decoration.dart';
+import 'package:lazy_engineer/core/logic/list/list_cubit.dart';
 
-// class MultiOptionFilter extends FormField<String> {
-//   MultiOptionFilter({
-//     Key? key,
-//     FormFieldSetter<String>? onSaved,
-//     FormFieldValidator<String>? validator,
-//     required List<String> data,
-//     // final Map<String, bool> _map = {};
-//     AutovalidateMode autovalidateMode = AutovalidateMode.disabled,
-//     FocusNode? focusNode,
-//     String? title,
-//   }) : super(
-//           key: key,
-//           onSaved: onSaved,
-//           validator: validator,
-//           // initialValue: controller!.text,
-//           autovalidateMode: autovalidateMode,
-//           builder: (FormFieldState<String> state) {
-//             final theme = Theme.of(state.context);
-//             return Container(
-//               padding: const EdgeInsets.all(8),
-//               decoration: kRoundedContainer,
-//               child: ListView(
-//         children: _map.keys
-//             .map(
-//               (key) => CheckboxListTile(
-//                 value: _map[key],
-//                 onChanged: (value) => setState(() => _map[key] = value!),
-//                 subtitle: Text(key),
-//               ),
-//             )
-//             .toList(),
-//       ),
-//             );
-//           },
-//         );
-// }
+class MultiOptionFilter extends StatelessWidget {
+  final List<String> list;
+  final List<String>? initialValue;
+  final ValueNotifier<List<String>> selected;
 
-class MultiOptionFilter extends StatefulWidget {
   const MultiOptionFilter({
     super.key,
-    required this.map,
-    required this.onSubmit,
-  });
-  final Map<String, bool> map;
-  final void Function(Map<String, bool>) onSubmit;
-
-  @override
-  State<MultiOptionFilter> createState() => _MultiOptionFilterState();
-}
-
-class _MultiOptionFilterState extends State<MultiOptionFilter> {
+    required this.list,
+    required this.selected,
+    this.initialValue,
+  }) : super();
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      children: widget.map.keys
-          .map(
-            (key) => CheckboxListTile(
-              dense: true,
-              controlAffinity: ListTileControlAffinity.leading,
-              value: widget.map[key],
-              onChanged: (value) => setState(() => widget.map[key] = value!),
-              title: Text(key),
-            ),
-          )
-          .toList(),
+    return Center(
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: kRoundedContainer,
+        child: BlocProvider(
+          create: (context) => ListCubit(initialList: initialValue),
+          child: BlocBuilder<ListCubit, List<String>>(
+            builder: (context, state) {
+              final cubit = context.read<ListCubit>();
+              return ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: list.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return CheckboxListTile(
+                    dense: true,
+                    value: state.contains(list[index]),
+                    contentPadding: EdgeInsets.zero,
+                    controlAffinity: ListTileControlAffinity.leading,
+                    onChanged: (value) {
+                      if (value != null) {
+                        if (value) {
+                          cubit.addElement(list[index]);
+                          selected.value.add(list[index]);
+                        } else {
+                          cubit.removeElement(list[index]);
+                          selected.value.remove(list[index]);
+                        }
+                      }
+                    },
+                    title: Text(
+                      list[index],
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  );
+                },
+              );
+            },
+          ),
+        ),
+      ),
     );
   }
 }
