@@ -31,6 +31,7 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
             ),
             boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)],
           ),
+          margin: const EdgeInsets.symmetric(horizontal: 16),
           padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
           child: Form(
             key: formGlobalKey,
@@ -57,11 +58,16 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
                 ),
                 const SizedBox(height: 4),
                 Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(forgetPassword,
-                        style: theme.textTheme.bodySmall
-                            ?.copyWith(fontWeight: FontWeight.bold),),),
-                const SizedBox(height: 18,),
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    forgetPassword,
+                    style: theme.textTheme.bodySmall
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const SizedBox(
+                  height: 18,
+                ),
                 CustomButton(
                   text: login,
                   isBig: true,

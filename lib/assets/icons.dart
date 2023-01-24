@@ -41,4 +41,7 @@ class AppIcons {
   static const String jobTypeIcon = 'assets/icons/job_type.png';
   static const String experienceLevelIcon = 'assets/icons/experience_level.png';
   static const String recruitmentIcon = 'assets/icons/recruitment.png';
+  static const String logoIcon = 'assets/icons/logo.jpg';
+  static const String hidePasswordIcon = 'assets/icons/hidden.png';
+  static const String showPasswordIcon = 'assets/icons/view.png';
 }

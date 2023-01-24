@@ -23,7 +23,9 @@ class CustomTextField extends StatelessWidget {
     this.filled = true,
     this.maxLines = 1,
     this.width,
-    this.focusNode, this.suffixOnPress,
+    this.focusNode,
+    this.suffixOnPress,
+    this.suffixIconSize,
   });
 
   final TextEditingController controller;
@@ -34,6 +36,7 @@ class CustomTextField extends StatelessWidget {
   final bool filled;
   final bool underline;
   final int maxLines;
+  final double? suffixIconSize;
   final double? width;
   final String? hintText;
   final String? labelText;
@@ -110,7 +113,10 @@ class CustomTextField extends StatelessWidget {
                         vertical: 8,
                         horizontal: 12,
                       ),
-                      child: CustomIcon(prefixIcon!),
+                      child: CustomIcon(
+                        prefixIcon!,
+                        color: Colors.black,
+                      ),
                     )
                   : null,
               suffixIcon: suffixIcon != null
@@ -121,7 +127,12 @@ class CustomTextField extends StatelessWidget {
                       ),
                       child: InkWell(
                         onTap: suffixOnPress,
-                        child: CustomIcon(suffixIcon!),
+                        child: CustomIcon(
+                          suffixIcon!,
+                          height: suffixIconSize,
+                          width: suffixIconSize,
+                          color: Colors.black,
+                        ),
                       ),
                     )
                   : null,

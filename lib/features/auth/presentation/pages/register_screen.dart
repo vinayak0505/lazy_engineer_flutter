@@ -22,6 +22,8 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
     final TextEditingController confirmPasswordController =
         TextEditingController();
     final ThemeData theme = Theme.of(context);
+    final passwordObsecureView = ValueNotifier(true);
+    final cPasswordObsecureView = ValueNotifier(true);
     return SingleChildScrollView(
       child: Container(
         decoration: const BoxDecoration(
@@ -32,6 +34,7 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
           ),
           boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 8.0)],
         ),
+        margin: const EdgeInsets.symmetric(horizontal: 16),
         padding: const EdgeInsets.fromLTRB(16, 18, 16, 8),
         child: Form(
           key: formGlobalKey,
@@ -66,25 +69,47 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                 validator: emailValidation,
               ),
               const SizedBox(height: 16),
-              CustomTextField(
-                controller: passwordController,
-                hintText: string.password,
-                prefixIcon: AppIcons.passwordIcon,
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-                validator: passwordValidation,
+              ValueListenableBuilder(
+                valueListenable: passwordObsecureView,
+                builder: (context, _, __) {
+                  return CustomTextField(
+                    controller: passwordController,
+                    hintText: string.password,
+                    prefixIcon: AppIcons.passwordIcon,
+                    suffixIconSize: 22,
+                    suffixIcon: passwordObsecureView.value
+                        ? AppIcons.hidePasswordIcon
+                        : AppIcons.showPasswordIcon,
+                    suffixOnPress: () => passwordObsecureView.value =
+                        !passwordObsecureView.value,
+                    obscureText: passwordObsecureView.value,
+                    keyboardType: TextInputType.visiblePassword,
+                    validator: passwordValidation,
+                  );
+                },
               ),
               const SizedBox(height: 16),
-              CustomTextField(
-                controller: confirmPasswordController,
-                hintText: string.confirmPassword,
-                prefixIcon: AppIcons.passwordIcon,
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-                validator: (value) => confirmPasswordValidation(
-                  value,
-                  passwordController.text,
-                ),
+              ValueListenableBuilder(
+                valueListenable: cPasswordObsecureView,
+                builder: (context, _, __) {
+                  return CustomTextField(
+                    controller: confirmPasswordController,
+                    hintText: string.confirmPassword,
+                    prefixIcon: AppIcons.passwordIcon,
+                    suffixIconSize: 22,
+                    suffixIcon: cPasswordObsecureView.value
+                        ? AppIcons.hidePasswordIcon
+                        : AppIcons.showPasswordIcon,
+                    suffixOnPress: () => cPasswordObsecureView.value =
+                        !cPasswordObsecureView.value,
+                    obscureText: cPasswordObsecureView.value,
+                    keyboardType: TextInputType.visiblePassword,
+                    validator: (value) => confirmPasswordValidation(
+                      value,
+                      passwordController.text,
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 18),
               CustomButton(
