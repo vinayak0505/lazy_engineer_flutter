@@ -42,6 +42,7 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
                 const SizedBox(height: 28),
                 CustomTextField(
                   controller: emailController,
+                  iconColor: Colors.blueGrey,
                   hintText: email,
                   prefixIcon: AppIcons.emailIcon,
                   keyboardType: TextInputType.emailAddress,
@@ -53,6 +54,7 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
                   builder: (context, _, __) {
                     return CustomTextField(
                       controller: passwordController,
+                      iconColor: Colors.blueGrey,
                       hintText: password,
                       prefixIcon: AppIcons.passwordIcon,
                       suffixIconSize: 22,

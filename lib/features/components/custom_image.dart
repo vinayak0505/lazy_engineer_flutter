@@ -133,6 +133,7 @@ class CustomImage extends StatelessWidget {
             width: width,
             alignment: Alignment.center,
             child: CircularProgressIndicator(
+              color: Colors.blueGrey,
               value: loadingProgress.expectedTotalBytes != null
                   ? loadingProgress.cumulativeBytesLoaded /
                       loadingProgress.expectedTotalBytes!

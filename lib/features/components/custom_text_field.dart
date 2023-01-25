@@ -26,6 +26,7 @@ class CustomTextField extends StatelessWidget {
     this.focusNode,
     this.suffixOnPress,
     this.suffixIconSize,
+    this.iconColor,
   });
 
   final TextEditingController controller;
@@ -47,6 +48,7 @@ class CustomTextField extends StatelessWidget {
   final void Function(String value)? onSubitted;
   final void Function(String? value)? onChange;
   final void Function()? suffixOnPress;
+  final Color? iconColor;
   final FocusNode? focusNode;
 
   factory CustomTextField.secondary({
@@ -115,7 +117,7 @@ class CustomTextField extends StatelessWidget {
                       ),
                       child: CustomIcon(
                         prefixIcon!,
-                        color: Colors.black,
+                        color: iconColor,
                       ),
                     )
                   : null,
@@ -131,7 +133,7 @@ class CustomTextField extends StatelessWidget {
                           suffixIcon!,
                           height: suffixIconSize,
                           width: suffixIconSize,
-                          color: Colors.black,
+                          color: iconColor,
                         ),
                       ),
                     )

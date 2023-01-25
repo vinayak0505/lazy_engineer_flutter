@@ -197,7 +197,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
               prefixIcon: AppIcons.mailIcon,
               validator: (value) => nullCheckTextValidation(
                 value,
-                mobileNumber,
+                email,
               ),
             ),
             const SizedBox(height: 16.0),
@@ -207,7 +207,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
               prefixIcon: AppIcons.mobileIcon,
               validator: (value) => nullCheckTextValidation(
                 value,
-                email,
+                mobileNumber,
               ),
             ),
             const SizedBox(height: 16.0),
