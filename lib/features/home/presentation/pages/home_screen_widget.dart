@@ -42,7 +42,7 @@ class HomeScreenWidget extends StatelessWidget {
         create: (context) => FilterCubit(),
         child: BlocBuilder<FilterCubit, FilterState>(
           builder: (context, state) {
-            List<MultioptionModel> newList = [];
+            final List<MultioptionModel> newList = [];
             if (multiOptionFilter != null) {
               for (int i = 0; i < multiOptionFilter!.length; i++) {
                 newList.add(

@@ -32,9 +32,9 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
     final universityController =
         TextEditingController(text: data.universityName);
 
-    ValueNotifier<List<String>> jobTypeValueList =
+    final ValueNotifier<List<String>> jobTypeValueList =
         ValueNotifier(List.empty(growable: true));
-    ValueNotifier<List<String>> experienceLevelValueList =
+    final ValueNotifier<List<String>> experienceLevelValueList =
         ValueNotifier(List.empty(growable: true));
 
     Future<void> onPress() async {

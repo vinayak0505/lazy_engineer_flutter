@@ -19,9 +19,9 @@ class JobsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ValueNotifier<List<String>> jobTypeValueNotifier =
+    final ValueNotifier<List<String>> jobTypeValueNotifier =
         ValueNotifier(List.empty(growable: true));
-    ValueNotifier<List<String>> experienceLevelValueNotifier =
+    final ValueNotifier<List<String>> experienceLevelValueNotifier =
         ValueNotifier(List.empty(growable: true));
     return BlocProvider(
       create: (context) => JobsCubit(JobsRepositoryImpl()),
