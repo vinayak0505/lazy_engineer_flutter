@@ -43,14 +43,14 @@ class ProfileScreenView extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             upload,
-            style: theme.textTheme.headline6,
+            style: theme.textTheme.titleLarge,
           ),
           const SizedBox(height: 8),
           UploadView(data.userUploads!),
           const SizedBox(height: 16),
           Text(
             contact,
-            style: theme.textTheme.headline6,
+            style: theme.textTheme.titleLarge,
           ),
           const SizedBox(height: 6),
           contactRow(
@@ -68,7 +68,7 @@ class ProfileScreenView extends StatelessWidget {
           const SizedBox(height: 14),
           Text(
             education,
-            style: theme.textTheme.headline6,
+            style: theme.textTheme.titleLarge,
           ),
           const SizedBox(height: 8),
           Padding(
@@ -96,7 +96,7 @@ class ProfileScreenView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(experienceLevel, style: theme.textTheme.headline6),
+              Text(experienceLevel, style: theme.textTheme.titleLarge),
               Text(
                 data.experienceLevel.toString(),
                 style: theme.textTheme.bodyLarge,
@@ -107,7 +107,7 @@ class ProfileScreenView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(jobType, style: theme.textTheme.headline6),
+              Text(jobType, style: theme.textTheme.titleLarge),
               Text(
                 data.jobType.toString(),
                 style: theme.textTheme.bodyLarge,
@@ -115,7 +115,7 @@ class ProfileScreenView extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          Text(location, style: theme.textTheme.headline6),
+          Text(location, style: theme.textTheme.titleLarge),
           const SizedBox(height: 8),
           Padding(
             padding: const EdgeInsets.only(left: 16),
@@ -145,8 +145,8 @@ class ProfileScreenView extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: theme.textTheme.subtitle1),
-              Text(body, style: theme.textTheme.subtitle2),
+              Text(title, style: theme.textTheme.titleMedium),
+              Text(body, style: theme.textTheme.titleSmall),
             ],
           )
         ],

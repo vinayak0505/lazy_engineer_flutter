@@ -16,7 +16,7 @@ class AuthBackground extends StatelessWidget {
             alignment: Alignment.topRight,
             child: Text(
               string.lazyEngineer,
-              style: theme.textTheme.headline5?.copyWith(
+              style: theme.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),

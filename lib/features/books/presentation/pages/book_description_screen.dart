@@ -57,7 +57,7 @@ class BookDescriptionScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
                               writers,
-                              style: theme.textTheme.headline5,
+                              style: theme.textTheme.headlineSmall,
                             ),
                           ),
                           Padding(
@@ -76,7 +76,7 @@ class BookDescriptionScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
                               price,
-                              style: theme.textTheme.headline5,
+                              style: theme.textTheme.headlineSmall,
                             ),
                           ),
                           Padding(
@@ -94,7 +94,7 @@ class BookDescriptionScreen extends StatelessWidget {
                 if (data?.about != null) ...[
                   Text(
                     about,
-                    style: theme.textTheme.headline5,
+                    style: theme.textTheme.headlineSmall,
                   ),
                   const SizedBox(height: 12),
                   Text(

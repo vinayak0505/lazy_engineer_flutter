@@ -71,7 +71,7 @@ class HomeScreenWidget extends StatelessWidget {
                       title,
                       maxLines: 2,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.headline4,
+                      style: theme.textTheme.headlineMedium,
                     ),
                     leading: Padding(
                       padding: const EdgeInsets.only(left: 16),

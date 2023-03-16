@@ -32,12 +32,12 @@ class CompanyTag extends StatelessWidget {
           children: [
             Text(
               companyName,
-              style: theme.textTheme.bodyText1?.copyWith(fontSize: 16),
+              style: theme.textTheme.bodyLarge?.copyWith(fontSize: 16),
             ),
             const SizedBox(height: 6),
             Text(
               description,
-              style: theme.textTheme.bodyText2
+              style: theme.textTheme.bodyMedium
                   ?.copyWith(fontWeight: FontWeight.bold, fontSize: 14),
             ),
           ],

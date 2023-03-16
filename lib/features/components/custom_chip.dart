@@ -22,7 +22,7 @@ class CustomChip extends StatelessWidget {
           toDelete ?? true ? const CustomIcon(AppIcons.closeIcon) : null,
       onDeleted: toDelete ?? true ? onDelete : null,
       label: text != null
-          ? Text(text!, style: theme.textTheme.subtitle1)
+          ? Text(text!, style: theme.textTheme.titleMedium)
           : icon != null
               ? CustomIcon(icon!)
               : const SizedBox(),

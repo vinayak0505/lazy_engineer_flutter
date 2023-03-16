@@ -18,7 +18,7 @@ class AccountScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(account, style: theme.textTheme.headline4),
+        title: Text(account, style: theme.textTheme.headlineMedium),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),

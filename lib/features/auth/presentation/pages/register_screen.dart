@@ -47,7 +47,7 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                 alignment: Alignment.topCenter,
                 child: Text(
                   string.registerAccount,
-                  style: theme.textTheme.headline5,
+                  style: theme.textTheme.headlineSmall,
                 ),
               ),
               const SizedBox(height: 28),

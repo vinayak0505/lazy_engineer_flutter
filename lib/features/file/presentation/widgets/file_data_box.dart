@@ -26,7 +26,7 @@ class FileDataBox extends StatelessWidget {
           children: [
             Text(
               title,
-              style: theme.textTheme.headline5,
+              style: theme.textTheme.headlineSmall,
             ),
             const SizedBox(height: 4),
             Table(
@@ -39,7 +39,7 @@ class FileDataBox extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Text(
                         subject,
-                        style: theme.textTheme.subtitle2,
+                        style: theme.textTheme.titleSmall,
                       ),
                     ),
                     Padding(
@@ -57,7 +57,7 @@ class FileDataBox extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Text(
                         college,
-                        style: theme.textTheme.subtitle2,
+                        style: theme.textTheme.titleSmall,
                       ),
                     ),
                     Padding(
@@ -75,7 +75,7 @@ class FileDataBox extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Text(
                         semester,
-                        style: theme.textTheme.subtitle2,
+                        style: theme.textTheme.titleSmall,
                       ),
                     ),
                     Padding(

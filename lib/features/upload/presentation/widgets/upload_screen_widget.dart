@@ -44,7 +44,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
           centerTitle: true,
           title: Text(
             title,
-            style: theme.textTheme.headline5,
+            style: theme.textTheme.headlineSmall,
           ),
           leading: GestureDetector(
             onTap: () => Navigator.pop(context),

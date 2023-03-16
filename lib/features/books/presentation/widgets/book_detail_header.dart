@@ -60,7 +60,7 @@ class BooksDetailHeader extends StatelessWidget {
                       padding: const EdgeInsets.all(4.0),
                       child: Text(
                         '$pagesValue pages',
-                        style: theme.textTheme.caption?.copyWith(
+                        style: theme.textTheme.bodySmall?.copyWith(
                           color: Colors.white,
                         ),
                       ),
@@ -75,7 +75,7 @@ class BooksDetailHeader extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: theme.textTheme.headline5,
+                        style: theme.textTheme.headlineSmall,
                       ),
                       const SizedBox(height: 16),
                       // Row(

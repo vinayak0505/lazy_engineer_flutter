@@ -31,7 +31,7 @@ class JobsDescriptionScreen extends StatelessWidget {
         children: [
           Text(
             data?.title ?? '',
-            style: theme.textTheme.headline4,
+            style: theme.textTheme.headlineMedium,
           ),
           const SizedBox(height: 16),
           Text(

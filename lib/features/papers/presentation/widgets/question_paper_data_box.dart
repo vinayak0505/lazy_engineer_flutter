@@ -17,7 +17,7 @@ class QuestionPaperDataBox extends StatelessWidget {
           children: [
             Text(
               paperDetail.title ?? '',
-              style: theme.textTheme.headline5,
+              style: theme.textTheme.headlineSmall,
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 4),
@@ -31,7 +31,7 @@ class QuestionPaperDataBox extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Text(
                         subject,
-                        style: theme.textTheme.subtitle2,
+                        style: theme.textTheme.titleSmall,
                       ),
                     ),
                     Padding(
@@ -49,7 +49,7 @@ class QuestionPaperDataBox extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Text(
                         topic,
-                        style: theme.textTheme.subtitle2,
+                        style: theme.textTheme.titleSmall,
                       ),
                     ),
                     Padding(
@@ -67,7 +67,7 @@ class QuestionPaperDataBox extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4),
                       child: Text(
                         unit,
-                        style: theme.textTheme.subtitle2,
+                        style: theme.textTheme.titleSmall,
                       ),
                     ),
                     Padding(

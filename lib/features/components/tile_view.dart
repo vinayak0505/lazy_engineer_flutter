@@ -49,7 +49,7 @@ class TileView extends StatelessWidget {
                     padding: const EdgeInsets.all(4.0),
                     child: Text(
                       '$pages pages',
-                      style: theme.textTheme.caption?.copyWith(
+                      style: theme.textTheme.bodySmall?.copyWith(
                         color: Colors.white,
                       ),
                     ),

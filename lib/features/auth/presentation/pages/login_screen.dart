@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
             child: Column(
               children: [
                 const SizedBox(height: 18),
-                Text(loginAccount, style: theme.textTheme.headline5),
+                Text(loginAccount, style: theme.textTheme.headlineSmall),
                 const SizedBox(height: 28),
                 CustomTextField(
                   controller: emailController,

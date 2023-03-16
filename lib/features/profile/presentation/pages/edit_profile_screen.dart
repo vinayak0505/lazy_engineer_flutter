@@ -79,14 +79,14 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(fullName, style: theme.textTheme.headline6),
+            Text(fullName, style: theme.textTheme.titleLarge),
             CustomTextField.secondary(
               controller: fullNameController,
               hintText: fullName,
               validator: usernameValidation,
             ),
             const SizedBox(height: 16.0),
-            Text(description, style: theme.textTheme.headline6),
+            Text(description, style: theme.textTheme.titleLarge),
             const SizedBox(height: 16.0),
             CustomTextField.multiLine(
               controller: descriptionController,
@@ -95,7 +95,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             const SizedBox(height: 16.0),
             Text(
               education,
-              style: theme.textTheme.headline5,
+              style: theme.textTheme.headlineSmall,
             ),
             const SizedBox(height: 16.0),
             //* College
@@ -167,18 +167,18 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             const SizedBox(height: 16.0),
             Text(
               experienceLevel,
-              style: theme.textTheme.headline6,
+              style: theme.textTheme.titleLarge,
             ),
             const SizedBox(height: 12.0),
             MultiOptionFilter(
               list: experienceLevelList,
-              initialValue: ['Internship', 'Associate'],
+              initialValue: const ['Internship', 'Associate'],
               selected: experienceLevelValueList,
             ),
             const SizedBox(height: 16.0),
             Text(
               jobType,
-              style: theme.textTheme.headline6,
+              style: theme.textTheme.titleLarge,
             ),
             const SizedBox(height: 12.0),
             MultiOptionFilter(
@@ -188,7 +188,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             const SizedBox(height: 16.0),
             Text(
               contact,
-              style: theme.textTheme.headline6,
+              style: theme.textTheme.titleLarge,
             ),
             const SizedBox(height: 16.0),
             CustomTextField(
@@ -213,7 +213,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             const SizedBox(height: 16.0),
             Text(
               location,
-              style: theme.textTheme.headline6,
+              style: theme.textTheme.titleLarge,
             ),
             CustomTextField.secondary(
               controller: locationController,

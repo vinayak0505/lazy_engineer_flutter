@@ -66,7 +66,7 @@ class _SearchBarState extends State<SearchBar> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     void showOverlay() {
       if (entry != null) removeOverlay();
-      final overlay = Overlay.of(context)!;
+      final overlay = Overlay.of(context);
       final renderBox = context.findRenderObject()! as RenderBox;
       final size = renderBox.size;
       entry ??= OverlayEntry(
