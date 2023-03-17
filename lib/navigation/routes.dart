@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lazy_engineer/features/account/presentation/pages/account_screen.dart';
+import 'package:lazy_engineer/features/auth/presentation/auth_cubit/auth_cubit.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/auth_screen.dart';
 import 'package:lazy_engineer/features/auth/presentation/pages/lazy_engineer.dart';
 import 'package:lazy_engineer/features/books/data/models/books_response/book_response.dart';
@@ -85,6 +87,17 @@ class RouteGenerator {
     navigatorKey: _rootNavigatorKey,
     debugLogDiagnostics: true,
     initialLocation: initialRoute,
+    redirect: (context, state) {
+      final areweLogin = context.read<AuthCubit>().token != null;
+      print(state.location);
+      if (state.location.contains('/home') && !areweLogin) {
+        return '/auth';
+      }
+      if (state.location == '/auth' && areweLogin) {
+        return '/home';
+      }
+      return null;
+    },
     routes: [
       GoRoute(
         path: initialRoute,
@@ -117,7 +130,8 @@ class RouteGenerator {
                       // String? id = state.params['id'];
                       return MaterialPage<void>(
                         key: state.pageKey,
-                        child: BookDescriptionScreen(state.extra as BookDetail?),
+                        child:
+                            BookDescriptionScreen(state.extra as BookDetail?),
                       );
                     },
                   )
