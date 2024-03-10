@@ -131,7 +131,7 @@ class UploadBookScreen extends StatelessWidget with InputValidationMixin {
             Text(
               rs,
               style: theme.textTheme.titleLarge,
-            )
+            ),
           ],
         ),
         const SizedBox(height: 16),

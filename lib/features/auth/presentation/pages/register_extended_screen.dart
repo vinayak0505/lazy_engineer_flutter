@@ -46,7 +46,7 @@ class RegisterExtendedScreen extends StatelessWidget {
                   hintText: year,
                   list: yearList,
                   controller: yearController,
-                )
+                ),
               ],
             ),
             const SizedBox(height: 48),

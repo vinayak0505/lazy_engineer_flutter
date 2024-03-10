@@ -64,7 +64,7 @@ class BooksDetailHeader extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(width: 16),
@@ -150,7 +150,7 @@ class BooksDetailHeader extends StatelessWidget {
                                   '${addOrdinals(int.parse(semesterValue))} Semester',
                                   style: theme.textTheme.titleMedium,
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           const TableRow(
@@ -174,9 +174,9 @@ class BooksDetailHeader extends StatelessWidget {
                                     '${addOrdinals(bookEditionValue!)} Edition',
                                     style: theme.textTheme.titleMedium,
                                   ),
-                                )
+                                ),
                               ],
-                            )
+                            ),
                         ],
                       ),
                       const SizedBox(height: 16),
@@ -195,10 +195,10 @@ class BooksDetailHeader extends StatelessWidget {
                                 ? 'Book is Downloaded'
                                 : 'Book is not Downloaded',
                           ),
-                        )
+                        ),
                     ],
                   ),
-                )
+                ),
               ],
             );
           },

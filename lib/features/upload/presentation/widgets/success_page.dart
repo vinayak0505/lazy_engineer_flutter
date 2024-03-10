@@ -16,7 +16,7 @@ class SuccessPage extends StatelessWidget {
             'File is Uploaded',
             style: theme.textTheme.headlineLarge,
             textAlign: TextAlign.center,
-          )
+          ),
         ],
       ),
     );

@@ -98,7 +98,7 @@ class JobDataBox extends StatelessWidget {
                   style: theme.textTheme.labelSmall,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

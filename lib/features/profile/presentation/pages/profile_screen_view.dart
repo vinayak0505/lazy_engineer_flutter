@@ -100,7 +100,7 @@ class ProfileScreenView extends StatelessWidget {
               Text(
                 data.experienceLevel.toString(),
                 style: theme.textTheme.bodyLarge,
-              )
+              ),
             ],
           ),
           const SizedBox(height: 16),
@@ -148,7 +148,7 @@ class ProfileScreenView extends StatelessWidget {
               Text(title, style: theme.textTheme.titleMedium),
               Text(body, style: theme.textTheme.titleSmall),
             ],
-          )
+          ),
         ],
       ),
     );

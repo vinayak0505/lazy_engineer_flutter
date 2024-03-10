@@ -79,7 +79,7 @@ class PaperDetailScreen extends StatelessWidget {
                               data?.chapter ?? '',
                               style: theme.textTheme.bodyMedium,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     if (data?.topic != null)
@@ -98,7 +98,7 @@ class PaperDetailScreen extends StatelessWidget {
                               data?.topic ?? '',
                               style: theme.textTheme.bodyMedium,
                             ),
-                          )
+                          ),
                         ],
                       ),
                   ],

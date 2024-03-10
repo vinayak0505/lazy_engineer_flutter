@@ -59,7 +59,7 @@ class CustomDropdown extends FormField<String> {
                 if (state.hasError && state.errorText != null) ...[
                   const SizedBox(height: 8),
                   Text(state.errorText!, style: errorStyle),
-                ]
+                ],
               ],
             );
           },

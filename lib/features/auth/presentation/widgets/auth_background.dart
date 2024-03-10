@@ -22,7 +22,7 @@ class AuthBackground extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 50),
-          Image.asset(image ?? AppImages.authBackgroundImage)
+          Image.asset(image ?? AppImages.authBackgroundImage),
         ],
       ),
     );

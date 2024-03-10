@@ -60,7 +60,7 @@ class FileDetailScreen extends StatelessWidget {
                               data?.college ?? '',
                               style: theme.textTheme.bodyMedium,
                             ),
-                          )
+                          ),
                         ],
                       ),
                   ],

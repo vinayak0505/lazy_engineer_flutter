@@ -66,7 +66,7 @@ class FileDataBox extends StatelessWidget {
                         collegeValue,
                         style: theme.textTheme.bodyMedium,
                       ),
-                    )
+                    ),
                   ],
                 ),
                 TableRow(
@@ -84,7 +84,7 @@ class FileDataBox extends StatelessWidget {
                         '${addOrdinals(int.parse(semesterValue))} Semester',
                         style: theme.textTheme.bodyMedium,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ],

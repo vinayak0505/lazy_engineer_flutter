@@ -101,7 +101,7 @@ List<String> singleOptionFileList = [
   'Smart Sort',
   'Popular',
   'Top Rated',
-  'Newest'
+  'Newest',
 ];
 
 JobsDetailResponse jobsDetail = const JobsDetailResponse(
@@ -231,7 +231,7 @@ List<String> classList = [
   'Computer Science and Engineering',
   'Electrical and Electronics Engineering',
   'Mechanical Engineering',
-  'Electronics & Communication'
+  'Electronics & Communication',
 ];
 
 List<String> universityList = ['GTBIT'];
@@ -269,7 +269,7 @@ List<String> bookTags = [
   'Easy to understand',
   'Reference Book',
   'Indian Authors',
-  'Foreign Authors'
+  'Foreign Authors',
 ];
 
 List<String> skillTags = [

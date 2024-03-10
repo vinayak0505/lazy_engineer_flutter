@@ -8,15 +8,15 @@ import 'package:lazy_engineer/features/components/search_bar/modals/search_enum.
 import 'package:lazy_engineer/features/components/search_bar/search_notes/search_bloc.dart';
 import 'package:lazy_engineer/navigation/routes.dart';
 
-class SearchBar extends StatefulWidget {
-  const SearchBar(this.bloc, this.searchEnum, {super.key});
+class SearchBarWidget extends StatefulWidget {
+  const SearchBarWidget(this.bloc, this.searchEnum, {super.key});
   final SearchBloc bloc;
   final SearchEnum searchEnum;
   @override
-  State<SearchBar> createState() => _SearchBarState();
+  State<SearchBarWidget> createState() => _SearchBarWidgetState();
 }
 
-class _SearchBarState extends State<SearchBar> with TickerProviderStateMixin {
+class _SearchBarWidgetState extends State<SearchBarWidget> with TickerProviderStateMixin {
   late TextEditingController searchController;
   late FocusNode focusNode;
   late AnimationController _animationController;

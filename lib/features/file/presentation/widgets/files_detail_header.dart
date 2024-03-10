@@ -127,7 +127,7 @@ class FilesDetailHeader extends StatelessWidget {
                               Text(
                                 '${addOrdinals(int.parse(semesterValue))} Semester',
                                 style: theme.textTheme.titleMedium,
-                              )
+                              ),
                             ],
                           ),
                         ],
@@ -148,10 +148,10 @@ class FilesDetailHeader extends StatelessWidget {
                                 ? 'File is Downloaded'
                                 : 'File is not Downloaded',
                           ),
-                        )
+                        ),
                     ],
                   ),
-                )
+                ),
               ],
             );
           },

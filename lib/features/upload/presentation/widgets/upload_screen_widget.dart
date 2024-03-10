@@ -86,15 +86,15 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                             //* Document Image
                             Center(
                               child: state.whenOrNull(
-                                documentLoading: () => Stack(
+                                documentLoading: () => const Stack(
                                   alignment: Alignment.center,
-                                  children: const [
+                                  children: [
                                     CustomImage(
                                       width: 200,
                                       height: 200,
                                       disableImage: true,
                                     ),
-                                    CircularProgressIndicator()
+                                    CircularProgressIndicator(),
                                   ],
                                 ),
                                 documentSuccess: (data) {
@@ -186,7 +186,7 @@ class UploadScreenWidget extends StatelessWidget with InputValidationMixin {
                             state.whenOrNull(
                                   failure: (e) => FailureScreen(e),
                                 ) ??
-                                const SizedBox()
+                                const SizedBox(),
                           ],
                         ),
                       ),

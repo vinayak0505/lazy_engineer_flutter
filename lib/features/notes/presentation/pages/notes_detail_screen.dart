@@ -81,7 +81,7 @@ class NotesDetailScreen extends StatelessWidget {
                               data?.chapter ?? '',
                               style: theme.textTheme.bodyMedium,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     if (data?.topic != null)
@@ -102,7 +102,7 @@ class NotesDetailScreen extends StatelessWidget {
                               data?.topic ?? '',
                               style: theme.textTheme.bodyMedium,
                             ),
-                          )
+                          ),
                         ],
                       ),
                   ],

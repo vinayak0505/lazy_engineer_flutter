@@ -71,7 +71,7 @@ class LastSeenCard extends StatelessWidget {
               date,
               style: theme.textTheme.labelSmall,
             ),
-          )
+          ),
         ],
       ),
     );
