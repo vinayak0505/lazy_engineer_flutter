@@ -41,7 +41,7 @@ BoxDecoration kRoundedBottomContainer = BoxDecoration(
 TextStyle? errorStyle = ThemeData.light()
     .textTheme
     .labelSmall
-    ?.copyWith(color: ThemeData.light().errorColor, fontSize: 12);
+    ?.copyWith(color: ThemeData.light().colorScheme.error, fontSize: 12);
 
 final toBeBuildInFutureSnackBar = SnackBar(
   margin: const EdgeInsets.fromLTRB(24, 0, 24, 64),

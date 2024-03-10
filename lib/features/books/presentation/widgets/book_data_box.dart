@@ -26,10 +26,10 @@ class BookDataBox extends StatelessWidget {
           children: [
             Text(
               allWriters.toUpperCase(),
-              style: theme.textTheme.overline,
+              style: theme.textTheme.labelSmall,
             ),
             const SizedBox(height: 8),
-            Text(bookName, style: theme.textTheme.headline5),
+            Text(bookName, style: theme.textTheme.headlineSmall),
             const SizedBox(height: 8),
             Text(
               description,

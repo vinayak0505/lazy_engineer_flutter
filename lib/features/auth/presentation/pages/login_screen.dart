@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
     final ThemeData theme = Theme.of(context);
-
+    final passwordObsecureView = ValueNotifier(true);
     return Align(
       alignment: Alignment.bottomCenter,
       child: SingleChildScrollView(
@@ -38,23 +38,36 @@ class LoginScreen extends StatelessWidget with InputValidationMixin {
             child: Column(
               children: [
                 const SizedBox(height: 18),
-                Text(loginAccount, style: theme.textTheme.headline5),
+                Text(loginAccount, style: theme.textTheme.headlineSmall),
                 const SizedBox(height: 28),
                 CustomTextField(
                   controller: emailController,
+                  iconColor: Colors.blueGrey,
                   hintText: email,
                   prefixIcon: AppIcons.emailIcon,
                   keyboardType: TextInputType.emailAddress,
                   validator: emailValidation,
                 ),
                 const SizedBox(height: 16),
-                CustomTextField(
-                  controller: passwordController,
-                  hintText: password,
-                  prefixIcon: AppIcons.passwordIcon,
-                  obscureText: true,
-                  keyboardType: TextInputType.visiblePassword,
-                  validator: passwordValidation,
+                ValueListenableBuilder(
+                  valueListenable: passwordObsecureView,
+                  builder: (context, _, __) {
+                    return CustomTextField(
+                      controller: passwordController,
+                      iconColor: Colors.blueGrey,
+                      hintText: password,
+                      prefixIcon: AppIcons.passwordIcon,
+                      suffixIconSize: 22,
+                      suffixIcon: passwordObsecureView.value
+                          ? AppIcons.hidePasswordIcon
+                          : AppIcons.showPasswordIcon,
+                      suffixOnPress: () => passwordObsecureView.value =
+                          !passwordObsecureView.value,
+                      obscureText: passwordObsecureView.value,
+                      keyboardType: TextInputType.visiblePassword,
+                      validator: passwordValidation,
+                    );
+                  },
                 ),
                 const SizedBox(height: 4),
                 Align(

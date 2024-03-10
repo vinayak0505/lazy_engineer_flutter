@@ -11,7 +11,7 @@ class FailureScreen extends StatelessWidget {
       child: Text(
         error.toString(),
         style: theme.textTheme.bodyLarge?.copyWith(
-          color: theme.errorColor,
+          color: theme.colorScheme.error,
         ),
       ),
     );

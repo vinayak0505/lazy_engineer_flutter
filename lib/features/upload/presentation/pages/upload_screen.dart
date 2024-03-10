@@ -16,7 +16,7 @@ class UploadScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(upload, style: theme.textTheme.headline4),
+          title: Text(upload, style: theme.textTheme.headlineMedium),
         ),
         body: SingleChildScrollView(
           child: Padding(

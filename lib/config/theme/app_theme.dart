@@ -28,7 +28,6 @@ class AppThemes {
   final appThemeData = {
     AppTheme.lightTheme: ThemeData(
       scaffoldBackgroundColor: whiteColor,
-      backgroundColor: whiteColor,
       appBarTheme: AppBarTheme(
         elevation: 0,
         color: Colors.transparent,
@@ -63,35 +62,34 @@ class AppThemes {
       ),
       textTheme: GoogleFonts.robotoTextTheme(
         Typography.material2018(platform: defaultTargetPlatform).black.copyWith(
-              headline4: const TextStyle(
+              headlineMedium: const TextStyle(
                 fontSize: 38,
                 color: textColorDark,
                 fontWeight: FontWeight.w500,
               ),
-              headline5: const TextStyle(
+              headlineSmall: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
-              subtitle2: const TextStyle(
+              titleSmall: const TextStyle(
                   color: subTitleColor, fontWeight: FontWeight.bold,),
-              overline: const TextStyle(
+              labelSmall: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: subTitleColor,
               ),
-              bodyText2: const TextStyle(
+              bodyMedium: const TextStyle(
                 color: lightDarkColor,
               ),
             ),
-      ),
+      ), 
+      // colorScheme: ColorScheme(background: whiteColor),
     ),
     AppTheme.darkTheme: ThemeData(
       scaffoldBackgroundColor: Colors.black,
-      primarySwatch: Colors.teal,
-      backgroundColor: Colors.black,
       textTheme: const TextTheme(
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
           color: Colors.white,
         ),
-      ),
+      ), colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal).copyWith(background: Colors.black),
     ),
   };
 }

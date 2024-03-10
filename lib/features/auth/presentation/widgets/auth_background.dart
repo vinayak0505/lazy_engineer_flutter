@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:lazy_engineer/assets/constants/strings.dart' as string;
-import 'package:lazy_engineer/assets/icons.dart';
 import 'package:lazy_engineer/assets/images.dart';
-import 'package:lazy_engineer/features/components/custom_image.dart';
 
 class AuthBackground extends StatelessWidget {
   const AuthBackground({super.key, this.image});
@@ -19,7 +16,7 @@ class AuthBackground extends StatelessWidget {
             alignment: Alignment.topRight,
             child: Text(
               string.lazyEngineer,
-              style: theme.textTheme.headline5?.copyWith(
+              style: theme.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),

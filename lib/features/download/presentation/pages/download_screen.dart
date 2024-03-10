@@ -18,7 +18,7 @@ class DownloadScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           download,
-          style: theme.textTheme.headline4,
+          style: theme.textTheme.headlineMedium,
         ),
       ),
       body: BlocProvider(

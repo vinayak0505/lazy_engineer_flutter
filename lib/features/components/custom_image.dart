@@ -39,7 +39,7 @@ class CustomImage extends StatelessWidget {
     this.color,
     this.borderColor = Colors.grey,
     this.margin = EdgeInsets.zero,
-    this.padding = EdgeInsets.zero, 
+    this.padding = EdgeInsets.zero,
     this.placeHolder,
   });
 
@@ -50,6 +50,8 @@ class CustomImage extends StatelessWidget {
       child: Container(
         margin: margin,
         padding: padding,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           color: color,
           border: isBorder ? Border.all(color: borderColor) : null,
@@ -66,30 +68,31 @@ class CustomImage extends StatelessWidget {
                   : BorderRadius.circular(radius),
         ),
         child: ClipRRect(
-            borderRadius: onlyTop
-                ? BorderRadius.only(
-                    topLeft: Radius.circular(radius),
-                    topRight: Radius.circular(radius),
-                  )
-                : onlyLeft
-                    ? BorderRadius.only(
-                        topLeft: Radius.circular(radius),
-                        bottomLeft: Radius.circular(radius),
-                      )
-                    : BorderRadius.circular(radius),
-            child: () {
-              if (file != null) {
-                return _fileImage();
-              } else if (networkImage != null) {
-                return _networkImage();
-              } else if (image == null) {
-                return _noImage();
-              } else if (image!.split('.').last == 'svg') {
-                return _svgImage();
-              } else {
-                return _assetImage();
-              }
-            }(),),
+          borderRadius: onlyTop
+              ? BorderRadius.only(
+                  topLeft: Radius.circular(radius),
+                  topRight: Radius.circular(radius),
+                )
+              : onlyLeft
+                  ? BorderRadius.only(
+                      topLeft: Radius.circular(radius),
+                      bottomLeft: Radius.circular(radius),
+                    )
+                  : BorderRadius.circular(radius),
+          child: () {
+            if (file != null) {
+              return _fileImage();
+            } else if (networkImage != null) {
+              return _networkImage();
+            } else if (image == null) {
+              return _noImage();
+            } else if (image!.split('.').last == 'svg') {
+              return _svgImage();
+            } else {
+              return _assetImage();
+            }
+          }(),
+        ),
       ),
     );
   }
@@ -118,6 +121,27 @@ class CustomImage extends StatelessWidget {
       height: height,
       width: width,
       fit: boxFit,
+      loadingBuilder: (
+        BuildContext context,
+        Widget child,
+        ImageChunkEvent? loadingProgress,
+      ) {
+        if (loadingProgress == null) return child;
+        return Center(
+          child: Container(
+            height: height,
+            width: width,
+            alignment: Alignment.center,
+            child: CircularProgressIndicator(
+              color: Colors.blueGrey,
+              value: loadingProgress.expectedTotalBytes != null
+                  ? loadingProgress.cumulativeBytesLoaded /
+                      loadingProgress.expectedTotalBytes!
+                  : null,
+            ),
+          ),
+        );
+      },
       errorBuilder: (_, __, ___) => Container(
         height: height,
         width: width,

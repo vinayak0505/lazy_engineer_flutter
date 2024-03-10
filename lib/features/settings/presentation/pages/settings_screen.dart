@@ -31,7 +31,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         centerTitle: true,
         title: Text(
           settings,
-          style: theme.textTheme.headline5,
+          style: theme.textTheme.headlineSmall,
         ),
         leading: GestureDetector(
           onTap: () => Navigator.pop(context),

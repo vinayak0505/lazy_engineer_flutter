@@ -51,7 +51,7 @@ class PaperDetailScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
                               subject,
-                              style: theme.textTheme.headline5,
+                              style: theme.textTheme.headlineSmall,
                             ),
                           ),
                           Padding(
@@ -70,7 +70,7 @@ class PaperDetailScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
                               chapter,
-                              style: theme.textTheme.headline5,
+                              style: theme.textTheme.headlineSmall,
                             ),
                           ),
                           Padding(
@@ -89,7 +89,7 @@ class PaperDetailScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             child: Text(
                               topic,
-                              style: theme.textTheme.headline5,
+                              style: theme.textTheme.headlineSmall,
                             ),
                           ),
                           Padding(
@@ -107,7 +107,7 @@ class PaperDetailScreen extends StatelessWidget {
                 if (data?.about != null) ...[
                   Text(
                     about,
-                    style: theme.textTheme.headline5,
+                    style: theme.textTheme.headlineSmall,
                   ),
                   const SizedBox(height: 12),
                   Text(

@@ -51,7 +51,7 @@ class LastSeenCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
               category,
-              style: theme.textTheme.subtitle1,
+              style: theme.textTheme.titleMedium,
             ),
           ),
           if (description != null)
@@ -69,7 +69,7 @@ class LastSeenCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
               date,
-              style: theme.textTheme.overline,
+              style: theme.textTheme.labelSmall,
             ),
           )
         ],

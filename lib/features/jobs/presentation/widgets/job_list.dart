@@ -76,7 +76,7 @@ class JobDataBox extends StatelessWidget {
           children: [
             Text(
               jobTitle,
-              style: theme.textTheme.headline5,
+              style: theme.textTheme.headlineSmall,
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 2),
@@ -84,7 +84,7 @@ class JobDataBox extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               location,
-              style: theme.textTheme.bodyText2,
+              style: theme.textTheme.bodyMedium,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
@@ -95,7 +95,7 @@ class JobDataBox extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   date,
-                  style: theme.textTheme.overline,
+                  style: theme.textTheme.labelSmall,
                 ),
               ),
             )

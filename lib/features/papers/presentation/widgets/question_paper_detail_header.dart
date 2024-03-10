@@ -57,7 +57,7 @@ class PapersDetailHeader extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: theme.textTheme.headline5,
+                        style: theme.textTheme.headlineSmall,
                       ),
                       const SizedBox(width: 16),
                       // Row(

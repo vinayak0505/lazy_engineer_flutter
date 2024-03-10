@@ -26,6 +26,7 @@ class CustomTextField extends StatelessWidget {
     this.focusNode,
     this.suffixOnPress,
     this.suffixIconSize,
+    this.iconColor,
   });
 
   final TextEditingController controller;
@@ -47,6 +48,7 @@ class CustomTextField extends StatelessWidget {
   final void Function(String value)? onSubitted;
   final void Function(String? value)? onChange;
   final void Function()? suffixOnPress;
+  final Color? iconColor;
   final FocusNode? focusNode;
 
   factory CustomTextField.secondary({
@@ -115,7 +117,7 @@ class CustomTextField extends StatelessWidget {
                       ),
                       child: CustomIcon(
                         prefixIcon!,
-                        color: Colors.black,
+                        color: iconColor,
                       ),
                     )
                   : null,
@@ -131,7 +133,7 @@ class CustomTextField extends StatelessWidget {
                           suffixIcon!,
                           height: suffixIconSize,
                           width: suffixIconSize,
-                          color: Colors.black,
+                          color: iconColor,
                         ),
                       ),
                     )
@@ -139,21 +141,24 @@ class CustomTextField extends StatelessWidget {
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               filled: filled,
+              focusedErrorBorder: underline
+                  ? underlineBorder(AppThemes.lightDarkColor)
+                  : circularBorder(AppThemes.lightDarkColor),
               border: underline
-                  ? circularBorder(AppThemes.lightDarkColor)
-                  : underlineBorder(AppThemes.lightDarkColor),
-              enabledBorder: !underline
-                  ? circularBorder(AppThemes.lightDarkColor)
-                  : underlineBorder(AppThemes.lightDarkColor),
-              disabledBorder: !underline
-                  ? circularBorder(AppThemes.lightDarkColor)
-                  : underlineBorder(AppThemes.lightDarkColor),
-              focusedBorder: !underline
-                  ? circularBorder(AppThemes.primaryColor1)
-                  : underlineBorder(AppThemes.primaryColor1),
-              errorBorder: !underline
-                  ? circularBorder(AppThemes.errorColor)
-                  : underlineBorder(AppThemes.errorColor),
+                  ? underlineBorder(AppThemes.lightDarkColor)
+                  : circularBorder(AppThemes.lightDarkColor),
+              enabledBorder: underline
+                  ? underlineBorder(AppThemes.lightDarkColor)
+                  : circularBorder(AppThemes.lightDarkColor),
+              disabledBorder: underline
+                  ? underlineBorder(AppThemes.lightDarkColor)
+                  : circularBorder(AppThemes.lightDarkColor),
+              focusedBorder: underline
+                  ? underlineBorder(AppThemes.primaryColor1)
+                  : circularBorder(AppThemes.primaryColor1),
+              errorBorder: underline
+                  ? underlineBorder(AppThemes.errorColor)
+                  : circularBorder(AppThemes.errorColor),
             ),
           ),
         );

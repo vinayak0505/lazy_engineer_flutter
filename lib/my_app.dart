@@ -22,26 +22,22 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(create: (context) => SettingsCubit()),
       ],
-      child: Builder(
-        builder: (context) {
-          return MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            routerDelegate: route.routerDelegate,
-            routeInformationParser: route.routeInformationParser,
-            routeInformationProvider: route.routeInformationProvider,
-            scrollBehavior: MyScrollBehavior(),
-            theme: AppThemes().appThemeData[AppTheme.lightTheme],
-            builder: (context, child) => GestureDetector(
-              onTap: () {
-                final currentFocus = FocusScope.of(context);
-                if (!currentFocus.hasPrimaryFocus) {
-                  currentFocus.focusedChild?.unfocus();
-                }
-              },
-              child: LayoutTemplate(child: child!),
-            ),
-          );
-        },
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerDelegate: route.routerDelegate,
+        routeInformationParser: route.routeInformationParser,
+        routeInformationProvider: route.routeInformationProvider,
+        scrollBehavior: MyScrollBehavior(),
+        theme: AppThemes().appThemeData[AppTheme.lightTheme],
+        builder: (context, child) => GestureDetector(
+          onTap: () {
+            final currentFocus = FocusScope.of(context);
+            if (!currentFocus.hasPrimaryFocus) {
+              currentFocus.focusedChild?.unfocus();
+            }
+          },
+          child: LayoutTemplate(child: child!),
+        ),
       ),
     );
   }

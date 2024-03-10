@@ -117,22 +117,22 @@ class HomeScreen extends StatelessWidget {
             children: [
               Text(
                 hello,
-                style: theme.textTheme.headline4?.copyWith(
+                style: theme.textTheme.headlineMedium?.copyWith(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              Text(name, style: theme.textTheme.headline4),
+              Text(name, style: theme.textTheme.headlineMedium),
             ],
           ),
           const Spacer(),
           GestureDetector(
+            onTap: onPress,
             child: const CustomImage(
               image: AppIcons.notificationCircleIcon,
               width: 48,
               height: 48,
             ),
-            onTap: onPress,
           )
         ],
       ),
