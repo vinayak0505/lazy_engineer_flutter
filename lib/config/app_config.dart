@@ -1,7 +1,7 @@
 /// [AppConfig] App config class
 class AppConfig {
   /// app data
-  static const String apiBaseUrl = 'https://lazy-engineer.onrender.com';
+  static const String apiBaseUrl = 'https://api.lazyengineer.in';
   static const String signUp = '/auth/signUp';
   static const String signIn = '/auth/signIn';
   static const String signOut = '/auth/signOut';
