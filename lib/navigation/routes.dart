@@ -245,10 +245,10 @@ class RouteGenerator {
                 path: 'settings',
                 builder: (_, __) => const SettingsScreen(),
               ),
-              // GoRoute(
-              //   path: 'profile',
-              //   builder: (_, __) => const ProfileScreen(),
-              // ),
+              GoRoute(
+                path: 'profile',
+                builder: (_, __) => const ProfileScreen(),
+              ),
             ],
           ),
         ],
