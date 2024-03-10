@@ -6,8 +6,9 @@ part of 'last_seen_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_LastSeenResponse _$$_LastSeenResponseFromJson(Map<String, dynamic> json) =>
-    _$_LastSeenResponse(
+_$LastSeenResponseImpl _$$LastSeenResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LastSeenResponseImpl(
       json['title'] as String,
       json['category'] as String,
       json['image'] as String?,
@@ -15,7 +16,8 @@ _$_LastSeenResponse _$$_LastSeenResponseFromJson(Map<String, dynamic> json) =>
       json['lastSeen'] as String,
     );
 
-Map<String, dynamic> _$$_LastSeenResponseToJson(_$_LastSeenResponse instance) =>
+Map<String, dynamic> _$$LastSeenResponseImplToJson(
+        _$LastSeenResponseImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'category': instance.category,

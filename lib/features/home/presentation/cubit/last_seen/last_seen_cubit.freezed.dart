@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'last_seen_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'last_seen_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LastSeenState {
@@ -25,9 +25,9 @@ mixin _$LastSeenState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<LastSeenResponse> data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<LastSeenResponse> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$LastSeenState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LastSeenLoading value)? loading,
-    TResult Function(_LastSeenFailure value)? failure,
-    TResult Function(_LastSeenSuccess value)? success,
+    TResult? Function(_LastSeenLoading value)? loading,
+    TResult? Function(_LastSeenFailure value)? failure,
+    TResult? Function(_LastSeenSuccess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,42 +66,40 @@ mixin _$LastSeenState {
 abstract class $LastSeenStateCopyWith<$Res> {
   factory $LastSeenStateCopyWith(
           LastSeenState value, $Res Function(LastSeenState) then) =
-      _$LastSeenStateCopyWithImpl<$Res>;
+      _$LastSeenStateCopyWithImpl<$Res, LastSeenState>;
 }
 
 /// @nodoc
-class _$LastSeenStateCopyWithImpl<$Res>
+class _$LastSeenStateCopyWithImpl<$Res, $Val extends LastSeenState>
     implements $LastSeenStateCopyWith<$Res> {
   _$LastSeenStateCopyWithImpl(this._value, this._then);
 
-  final LastSeenState _value;
   // ignore: unused_field
-  final $Res Function(LastSeenState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_LastSeenLoadingCopyWith<$Res> {
-  factory _$$_LastSeenLoadingCopyWith(
-          _$_LastSeenLoading value, $Res Function(_$_LastSeenLoading) then) =
-      __$$_LastSeenLoadingCopyWithImpl<$Res>;
+abstract class _$$LastSeenLoadingImplCopyWith<$Res> {
+  factory _$$LastSeenLoadingImplCopyWith(_$LastSeenLoadingImpl value,
+          $Res Function(_$LastSeenLoadingImpl) then) =
+      __$$LastSeenLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LastSeenLoadingCopyWithImpl<$Res>
-    extends _$LastSeenStateCopyWithImpl<$Res>
-    implements _$$_LastSeenLoadingCopyWith<$Res> {
-  __$$_LastSeenLoadingCopyWithImpl(
-      _$_LastSeenLoading _value, $Res Function(_$_LastSeenLoading) _then)
-      : super(_value, (v) => _then(v as _$_LastSeenLoading));
-
-  @override
-  _$_LastSeenLoading get _value => super._value as _$_LastSeenLoading;
+class __$$LastSeenLoadingImplCopyWithImpl<$Res>
+    extends _$LastSeenStateCopyWithImpl<$Res, _$LastSeenLoadingImpl>
+    implements _$$LastSeenLoadingImplCopyWith<$Res> {
+  __$$LastSeenLoadingImplCopyWithImpl(
+      _$LastSeenLoadingImpl _value, $Res Function(_$LastSeenLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LastSeenLoading implements _LastSeenLoading {
-  const _$_LastSeenLoading();
+class _$LastSeenLoadingImpl implements _LastSeenLoading {
+  const _$LastSeenLoadingImpl();
 
   @override
   String toString() {
@@ -109,9 +107,9 @@ class _$_LastSeenLoading implements _LastSeenLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LastSeenLoading);
+        (other.runtimeType == runtimeType && other is _$LastSeenLoadingImpl);
   }
 
   @override
@@ -130,9 +128,9 @@ class _$_LastSeenLoading implements _LastSeenLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<LastSeenResponse> data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<LastSeenResponse> data)? success,
   }) {
     return loading?.call();
   }
@@ -164,9 +162,9 @@ class _$_LastSeenLoading implements _LastSeenLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LastSeenLoading value)? loading,
-    TResult Function(_LastSeenFailure value)? failure,
-    TResult Function(_LastSeenSuccess value)? success,
+    TResult? Function(_LastSeenLoading value)? loading,
+    TResult? Function(_LastSeenFailure value)? failure,
+    TResult? Function(_LastSeenSuccess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -187,34 +185,33 @@ class _$_LastSeenLoading implements _LastSeenLoading {
 }
 
 abstract class _LastSeenLoading implements LastSeenState {
-  const factory _LastSeenLoading() = _$_LastSeenLoading;
+  const factory _LastSeenLoading() = _$LastSeenLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_LastSeenFailureCopyWith<$Res> {
-  factory _$$_LastSeenFailureCopyWith(
-          _$_LastSeenFailure value, $Res Function(_$_LastSeenFailure) then) =
-      __$$_LastSeenFailureCopyWithImpl<$Res>;
+abstract class _$$LastSeenFailureImplCopyWith<$Res> {
+  factory _$$LastSeenFailureImplCopyWith(_$LastSeenFailureImpl value,
+          $Res Function(_$LastSeenFailureImpl) then) =
+      __$$LastSeenFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_LastSeenFailureCopyWithImpl<$Res>
-    extends _$LastSeenStateCopyWithImpl<$Res>
-    implements _$$_LastSeenFailureCopyWith<$Res> {
-  __$$_LastSeenFailureCopyWithImpl(
-      _$_LastSeenFailure _value, $Res Function(_$_LastSeenFailure) _then)
-      : super(_value, (v) => _then(v as _$_LastSeenFailure));
+class __$$LastSeenFailureImplCopyWithImpl<$Res>
+    extends _$LastSeenStateCopyWithImpl<$Res, _$LastSeenFailureImpl>
+    implements _$$LastSeenFailureImplCopyWith<$Res> {
+  __$$LastSeenFailureImplCopyWithImpl(
+      _$LastSeenFailureImpl _value, $Res Function(_$LastSeenFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_LastSeenFailure get _value => super._value as _$_LastSeenFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_LastSeenFailure(
-      e == freezed
+    return _then(_$LastSeenFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -224,8 +221,8 @@ class __$$_LastSeenFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LastSeenFailure implements _LastSeenFailure {
-  const _$_LastSeenFailure(this.e);
+class _$LastSeenFailureImpl implements _LastSeenFailure {
+  const _$LastSeenFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -236,10 +233,10 @@ class _$_LastSeenFailure implements _LastSeenFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LastSeenFailure &&
+            other is _$LastSeenFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -249,8 +246,10 @@ class _$_LastSeenFailure implements _LastSeenFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_LastSeenFailureCopyWith<_$_LastSeenFailure> get copyWith =>
-      __$$_LastSeenFailureCopyWithImpl<_$_LastSeenFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LastSeenFailureImplCopyWith<_$LastSeenFailureImpl> get copyWith =>
+      __$$LastSeenFailureImplCopyWithImpl<_$LastSeenFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -265,9 +264,9 @@ class _$_LastSeenFailure implements _LastSeenFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<LastSeenResponse> data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<LastSeenResponse> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -299,9 +298,9 @@ class _$_LastSeenFailure implements _LastSeenFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LastSeenLoading value)? loading,
-    TResult Function(_LastSeenFailure value)? failure,
-    TResult Function(_LastSeenSuccess value)? success,
+    TResult? Function(_LastSeenLoading value)? loading,
+    TResult? Function(_LastSeenFailure value)? failure,
+    TResult? Function(_LastSeenSuccess value)? success,
   }) {
     return failure?.call(this);
   }
@@ -322,39 +321,38 @@ class _$_LastSeenFailure implements _LastSeenFailure {
 }
 
 abstract class _LastSeenFailure implements LastSeenState {
-  const factory _LastSeenFailure(final dynamic e) = _$_LastSeenFailure;
+  const factory _LastSeenFailure(final dynamic e) = _$LastSeenFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_LastSeenFailureCopyWith<_$_LastSeenFailure> get copyWith =>
+  _$$LastSeenFailureImplCopyWith<_$LastSeenFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_LastSeenSuccessCopyWith<$Res> {
-  factory _$$_LastSeenSuccessCopyWith(
-          _$_LastSeenSuccess value, $Res Function(_$_LastSeenSuccess) then) =
-      __$$_LastSeenSuccessCopyWithImpl<$Res>;
+abstract class _$$LastSeenSuccessImplCopyWith<$Res> {
+  factory _$$LastSeenSuccessImplCopyWith(_$LastSeenSuccessImpl value,
+          $Res Function(_$LastSeenSuccessImpl) then) =
+      __$$LastSeenSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<LastSeenResponse> data});
 }
 
 /// @nodoc
-class __$$_LastSeenSuccessCopyWithImpl<$Res>
-    extends _$LastSeenStateCopyWithImpl<$Res>
-    implements _$$_LastSeenSuccessCopyWith<$Res> {
-  __$$_LastSeenSuccessCopyWithImpl(
-      _$_LastSeenSuccess _value, $Res Function(_$_LastSeenSuccess) _then)
-      : super(_value, (v) => _then(v as _$_LastSeenSuccess));
+class __$$LastSeenSuccessImplCopyWithImpl<$Res>
+    extends _$LastSeenStateCopyWithImpl<$Res, _$LastSeenSuccessImpl>
+    implements _$$LastSeenSuccessImplCopyWith<$Res> {
+  __$$LastSeenSuccessImplCopyWithImpl(
+      _$LastSeenSuccessImpl _value, $Res Function(_$LastSeenSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_LastSeenSuccess get _value => super._value as _$_LastSeenSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$_LastSeenSuccess(
-      data == freezed
+    return _then(_$LastSeenSuccessImpl(
+      null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<LastSeenResponse>,
@@ -364,12 +362,13 @@ class __$$_LastSeenSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LastSeenSuccess implements _LastSeenSuccess {
-  const _$_LastSeenSuccess(final List<LastSeenResponse> data) : _data = data;
+class _$LastSeenSuccessImpl implements _LastSeenSuccess {
+  const _$LastSeenSuccessImpl(final List<LastSeenResponse> data) : _data = data;
 
   final List<LastSeenResponse> _data;
   @override
   List<LastSeenResponse> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -380,10 +379,10 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LastSeenSuccess &&
+            other is _$LastSeenSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -393,8 +392,10 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_LastSeenSuccessCopyWith<_$_LastSeenSuccess> get copyWith =>
-      __$$_LastSeenSuccessCopyWithImpl<_$_LastSeenSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LastSeenSuccessImplCopyWith<_$LastSeenSuccessImpl> get copyWith =>
+      __$$LastSeenSuccessImplCopyWithImpl<_$LastSeenSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -409,9 +410,9 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<LastSeenResponse> data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<LastSeenResponse> data)? success,
   }) {
     return success?.call(data);
   }
@@ -443,9 +444,9 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LastSeenLoading value)? loading,
-    TResult Function(_LastSeenFailure value)? failure,
-    TResult Function(_LastSeenSuccess value)? success,
+    TResult? Function(_LastSeenLoading value)? loading,
+    TResult? Function(_LastSeenFailure value)? failure,
+    TResult? Function(_LastSeenSuccess value)? success,
   }) {
     return success?.call(this);
   }
@@ -467,10 +468,10 @@ class _$_LastSeenSuccess implements _LastSeenSuccess {
 
 abstract class _LastSeenSuccess implements LastSeenState {
   const factory _LastSeenSuccess(final List<LastSeenResponse> data) =
-      _$_LastSeenSuccess;
+      _$LastSeenSuccessImpl;
 
   List<LastSeenResponse> get data;
   @JsonKey(ignore: true)
-  _$$_LastSeenSuccessCopyWith<_$_LastSeenSuccess> get copyWith =>
+  _$$LastSeenSuccessImplCopyWith<_$LastSeenSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

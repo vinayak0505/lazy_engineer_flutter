@@ -6,9 +6,9 @@ part of 'upload_paper_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UploadPaperRequest _$$_UploadPaperRequestFromJson(
+_$UploadPaperRequestImpl _$$UploadPaperRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UploadPaperRequest(
+    _$UploadPaperRequestImpl(
       title: json['title'] as String,
       about: json['about'] as String,
       semester: json['semester'] as String,
@@ -22,8 +22,8 @@ _$_UploadPaperRequest _$$_UploadPaperRequestFromJson(
       image: json['image'],
     );
 
-Map<String, dynamic> _$$_UploadPaperRequestToJson(
-        _$_UploadPaperRequest instance) =>
+Map<String, dynamic> _$$UploadPaperRequestImplToJson(
+        _$UploadPaperRequestImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'about': instance.about,

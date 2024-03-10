@@ -6,9 +6,9 @@ part of 'paper_detail_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PaperDetailResponse _$$_PaperDetailResponseFromJson(
+_$PaperDetailResponseImpl _$$PaperDetailResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_PaperDetailResponse(
+    _$PaperDetailResponseImpl(
       json['title'] as String,
       json['link'],
       json['semester'] as int?,
@@ -20,8 +20,8 @@ _$_PaperDetailResponse _$$_PaperDetailResponseFromJson(
       (json['rating'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_PaperDetailResponseToJson(
-        _$_PaperDetailResponse instance) =>
+Map<String, dynamic> _$$PaperDetailResponseImplToJson(
+        _$PaperDetailResponseImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'link': instance.link,

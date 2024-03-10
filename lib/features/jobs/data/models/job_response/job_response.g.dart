@@ -6,8 +6,8 @@ part of 'job_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_JobResponse _$$_JobResponseFromJson(Map<String, dynamic> json) =>
-    _$_JobResponse(
+_$JobResponseImpl _$$JobResponseImplFromJson(Map<String, dynamic> json) =>
+    _$JobResponseImpl(
       (json['result'] as List<dynamic>?)
           ?.map((e) => JobDetail.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -16,7 +16,7 @@ _$_JobResponse _$$_JobResponseFromJson(Map<String, dynamic> json) =>
       json['limit'] as int?,
     );
 
-Map<String, dynamic> _$$_JobResponseToJson(_$_JobResponse instance) =>
+Map<String, dynamic> _$$JobResponseImplToJson(_$JobResponseImpl instance) =>
     <String, dynamic>{
       'result': instance.result,
       'totalCount': instance.totalCount,
@@ -24,7 +24,8 @@ Map<String, dynamic> _$$_JobResponseToJson(_$_JobResponse instance) =>
       'limit': instance.limit,
     };
 
-_$_JobDetail _$$_JobDetailFromJson(Map<String, dynamic> json) => _$_JobDetail(
+_$JobDetailImpl _$$JobDetailImplFromJson(Map<String, dynamic> json) =>
+    _$JobDetailImpl(
       json['userId'] as String?,
       json['title'] as String?,
       json['profile'] as String?,
@@ -44,7 +45,7 @@ _$_JobDetail _$$_JobDetailFromJson(Map<String, dynamic> json) => _$_JobDetail(
       json['dislike'] as int?,
     );
 
-Map<String, dynamic> _$$_JobDetailToJson(_$_JobDetail instance) =>
+Map<String, dynamic> _$$JobDetailImplToJson(_$JobDetailImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'title': instance.title,

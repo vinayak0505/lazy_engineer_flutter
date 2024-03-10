@@ -9,7 +9,10 @@ part of 'files_client.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _FilesClient implements FilesClient {
-  _FilesClient(this._dio, {this.baseUrl});
+  _FilesClient(
+    this._dio, {
+    this.baseUrl,
+  });
 
   final Dio _dio;
 
@@ -17,16 +20,27 @@ class _FilesClient implements FilesClient {
 
   @override
   Future<BaseResponse<FileResponse>> getFiles() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<FileResponse>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/practicle_file',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<BaseResponse<FileResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/practicle_file',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
     final value = BaseResponse<FileResponse>.fromJson(
       _result.data!,
       (json) => FileResponse.fromJson(json as Map<String, dynamic>),
@@ -35,17 +49,28 @@ class _FilesClient implements FilesClient {
   }
 
   @override
-  Future<BaseResponse<FileResponse>> searchFiles(query) async {
-    const _extra = <String, dynamic>{};
+  Future<BaseResponse<FileResponse>> searchFiles(String query) async {
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<FileResponse>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/home/files/search',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<BaseResponse<FileResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/home/files/search',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
     final value = BaseResponse<FileResponse>.fromJson(
       _result.data!,
       (json) => FileResponse.fromJson(json as Map<String, dynamic>),
@@ -54,17 +79,28 @@ class _FilesClient implements FilesClient {
   }
 
   @override
-  Future<BaseResponse<FileResponse>> applyFilter(query) async {
-    const _extra = <String, dynamic>{};
+  Future<BaseResponse<FileResponse>> applyFilter(FilterRequest query) async {
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'query': query.toJson()};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<FileResponse>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/home/files/search',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<BaseResponse<FileResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/home/files/search',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
     final value = BaseResponse<FileResponse>.fromJson(
       _result.data!,
       (json) => FileResponse.fromJson(json as Map<String, dynamic>),
@@ -73,17 +109,28 @@ class _FilesClient implements FilesClient {
   }
 
   @override
-  Future<BaseResponse<FilesDetailResponse>> getFilesDetail(id) async {
-    const _extra = <String, dynamic>{};
+  Future<BaseResponse<FilesDetailResponse>> getFilesDetail(String id) async {
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = id;
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<FilesDetailResponse>>(
-            Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/home/files/filesDetail',
-                    queryParameters: queryParameters, data: _data)
-                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+        _setStreamType<BaseResponse<FilesDetailResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/home/files/filesDetail',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
     final value = BaseResponse<FilesDetailResponse>.fromJson(
       _result.data!,
       (json) => FilesDetailResponse.fromJson(json as Map<String, dynamic>),
@@ -102,5 +149,22 @@ class _FilesClient implements FilesClient {
       }
     }
     return requestOptions;
+  }
+
+  String _combineBaseUrls(
+    String dioBaseUrl,
+    String? baseUrl,
+  ) {
+    if (baseUrl == null || baseUrl.trim().isEmpty) {
+      return dioBaseUrl;
+    }
+
+    final url = Uri.parse(baseUrl);
+
+    if (url.isAbsolute) {
+      return url.toString();
+    }
+
+    return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'search_jobs_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'search_jobs_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SearchJobsEvent {
@@ -27,57 +27,61 @@ mixin _$SearchJobsEvent {
 abstract class $SearchJobsEventCopyWith<$Res> {
   factory $SearchJobsEventCopyWith(
           SearchJobsEvent value, $Res Function(SearchJobsEvent) then) =
-      _$SearchJobsEventCopyWithImpl<$Res>;
+      _$SearchJobsEventCopyWithImpl<$Res, SearchJobsEvent>;
+  @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class _$SearchJobsEventCopyWithImpl<$Res>
+class _$SearchJobsEventCopyWithImpl<$Res, $Val extends SearchJobsEvent>
     implements $SearchJobsEventCopyWith<$Res> {
   _$SearchJobsEventCopyWithImpl(this._value, this._then);
 
-  final SearchJobsEvent _value;
   // ignore: unused_field
-  final $Res Function(SearchJobsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
+    Object? query = null,
   }) {
     return _then(_value.copyWith(
-      query: query == freezed
+      query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res>
+abstract class _$$StartedImplCopyWith<$Res>
     implements $SearchJobsEventCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+  factory _$$StartedImplCopyWith(
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res> extends _$SearchJobsEventCopyWithImpl<$Res>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
+class __$$StartedImplCopyWithImpl<$Res>
+    extends _$SearchJobsEventCopyWithImpl<$Res, _$StartedImpl>
+    implements _$$StartedImplCopyWith<$Res> {
+  __$$StartedImplCopyWithImpl(
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_Started get _value => super._value as _$_Started;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
+    Object? query = null,
   }) {
-    return _then(_$_Started(
-      query == freezed
+    return _then(_$StartedImpl(
+      null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
@@ -87,8 +91,8 @@ class __$$_StartedCopyWithImpl<$Res> extends _$SearchJobsEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started(this.query);
+class _$StartedImpl implements _Started {
+  const _$StartedImpl(this.query);
 
   @override
   final String query;
@@ -99,31 +103,31 @@ class _$_Started implements _Started {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Started &&
-            const DeepCollectionEquality().equals(other.query, query));
+            other is _$StartedImpl &&
+            (identical(other.query, query) || other.query == query));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(query));
+  int get hashCode => Object.hash(runtimeType, query);
 
   @JsonKey(ignore: true)
   @override
-  _$$_StartedCopyWith<_$_Started> get copyWith =>
-      __$$_StartedCopyWithImpl<_$_Started>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$StartedImplCopyWith<_$StartedImpl> get copyWith =>
+      __$$StartedImplCopyWithImpl<_$StartedImpl>(this, _$identity);
 }
 
 abstract class _Started implements SearchJobsEvent {
-  const factory _Started(final String query) = _$_Started;
+  const factory _Started(final String query) = _$StartedImpl;
 
   @override
   String get query;
   @override
   @JsonKey(ignore: true)
-  _$$_StartedCopyWith<_$_Started> get copyWith =>
+  _$$StartedImplCopyWith<_$StartedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -139,10 +143,10 @@ mixin _$SearchJobsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<JobDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<JobDetail> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -164,10 +168,10 @@ mixin _$SearchJobsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchJobsInitial value)? initial,
-    TResult Function(_SearchJobsLoading value)? loading,
-    TResult Function(_SearchJobsFailure value)? failure,
-    TResult Function(_SearchJobsSuccess value)? success,
+    TResult? Function(_SearchJobsInitial value)? initial,
+    TResult? Function(_SearchJobsLoading value)? loading,
+    TResult? Function(_SearchJobsFailure value)? failure,
+    TResult? Function(_SearchJobsSuccess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,42 +189,40 @@ mixin _$SearchJobsState {
 abstract class $SearchJobsStateCopyWith<$Res> {
   factory $SearchJobsStateCopyWith(
           SearchJobsState value, $Res Function(SearchJobsState) then) =
-      _$SearchJobsStateCopyWithImpl<$Res>;
+      _$SearchJobsStateCopyWithImpl<$Res, SearchJobsState>;
 }
 
 /// @nodoc
-class _$SearchJobsStateCopyWithImpl<$Res>
+class _$SearchJobsStateCopyWithImpl<$Res, $Val extends SearchJobsState>
     implements $SearchJobsStateCopyWith<$Res> {
   _$SearchJobsStateCopyWithImpl(this._value, this._then);
 
-  final SearchJobsState _value;
   // ignore: unused_field
-  final $Res Function(SearchJobsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SearchJobsInitialCopyWith<$Res> {
-  factory _$$_SearchJobsInitialCopyWith(_$_SearchJobsInitial value,
-          $Res Function(_$_SearchJobsInitial) then) =
-      __$$_SearchJobsInitialCopyWithImpl<$Res>;
+abstract class _$$SearchJobsInitialImplCopyWith<$Res> {
+  factory _$$SearchJobsInitialImplCopyWith(_$SearchJobsInitialImpl value,
+          $Res Function(_$SearchJobsInitialImpl) then) =
+      __$$SearchJobsInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SearchJobsInitialCopyWithImpl<$Res>
-    extends _$SearchJobsStateCopyWithImpl<$Res>
-    implements _$$_SearchJobsInitialCopyWith<$Res> {
-  __$$_SearchJobsInitialCopyWithImpl(
-      _$_SearchJobsInitial _value, $Res Function(_$_SearchJobsInitial) _then)
-      : super(_value, (v) => _then(v as _$_SearchJobsInitial));
-
-  @override
-  _$_SearchJobsInitial get _value => super._value as _$_SearchJobsInitial;
+class __$$SearchJobsInitialImplCopyWithImpl<$Res>
+    extends _$SearchJobsStateCopyWithImpl<$Res, _$SearchJobsInitialImpl>
+    implements _$$SearchJobsInitialImplCopyWith<$Res> {
+  __$$SearchJobsInitialImplCopyWithImpl(_$SearchJobsInitialImpl _value,
+      $Res Function(_$SearchJobsInitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SearchJobsInitial implements _SearchJobsInitial {
-  const _$_SearchJobsInitial();
+class _$SearchJobsInitialImpl implements _SearchJobsInitial {
+  const _$SearchJobsInitialImpl();
 
   @override
   String toString() {
@@ -228,9 +230,9 @@ class _$_SearchJobsInitial implements _SearchJobsInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SearchJobsInitial);
+        (other.runtimeType == runtimeType && other is _$SearchJobsInitialImpl);
   }
 
   @override
@@ -250,10 +252,10 @@ class _$_SearchJobsInitial implements _SearchJobsInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<JobDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<JobDetail> data)? success,
   }) {
     return initial?.call();
   }
@@ -287,10 +289,10 @@ class _$_SearchJobsInitial implements _SearchJobsInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchJobsInitial value)? initial,
-    TResult Function(_SearchJobsLoading value)? loading,
-    TResult Function(_SearchJobsFailure value)? failure,
-    TResult Function(_SearchJobsSuccess value)? success,
+    TResult? Function(_SearchJobsInitial value)? initial,
+    TResult? Function(_SearchJobsLoading value)? loading,
+    TResult? Function(_SearchJobsFailure value)? failure,
+    TResult? Function(_SearchJobsSuccess value)? success,
   }) {
     return initial?.call(this);
   }
@@ -312,32 +314,29 @@ class _$_SearchJobsInitial implements _SearchJobsInitial {
 }
 
 abstract class _SearchJobsInitial implements SearchJobsState {
-  const factory _SearchJobsInitial() = _$_SearchJobsInitial;
+  const factory _SearchJobsInitial() = _$SearchJobsInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_SearchJobsLoadingCopyWith<$Res> {
-  factory _$$_SearchJobsLoadingCopyWith(_$_SearchJobsLoading value,
-          $Res Function(_$_SearchJobsLoading) then) =
-      __$$_SearchJobsLoadingCopyWithImpl<$Res>;
+abstract class _$$SearchJobsLoadingImplCopyWith<$Res> {
+  factory _$$SearchJobsLoadingImplCopyWith(_$SearchJobsLoadingImpl value,
+          $Res Function(_$SearchJobsLoadingImpl) then) =
+      __$$SearchJobsLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SearchJobsLoadingCopyWithImpl<$Res>
-    extends _$SearchJobsStateCopyWithImpl<$Res>
-    implements _$$_SearchJobsLoadingCopyWith<$Res> {
-  __$$_SearchJobsLoadingCopyWithImpl(
-      _$_SearchJobsLoading _value, $Res Function(_$_SearchJobsLoading) _then)
-      : super(_value, (v) => _then(v as _$_SearchJobsLoading));
-
-  @override
-  _$_SearchJobsLoading get _value => super._value as _$_SearchJobsLoading;
+class __$$SearchJobsLoadingImplCopyWithImpl<$Res>
+    extends _$SearchJobsStateCopyWithImpl<$Res, _$SearchJobsLoadingImpl>
+    implements _$$SearchJobsLoadingImplCopyWith<$Res> {
+  __$$SearchJobsLoadingImplCopyWithImpl(_$SearchJobsLoadingImpl _value,
+      $Res Function(_$SearchJobsLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SearchJobsLoading implements _SearchJobsLoading {
-  const _$_SearchJobsLoading();
+class _$SearchJobsLoadingImpl implements _SearchJobsLoading {
+  const _$SearchJobsLoadingImpl();
 
   @override
   String toString() {
@@ -345,9 +344,9 @@ class _$_SearchJobsLoading implements _SearchJobsLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SearchJobsLoading);
+        (other.runtimeType == runtimeType && other is _$SearchJobsLoadingImpl);
   }
 
   @override
@@ -367,10 +366,10 @@ class _$_SearchJobsLoading implements _SearchJobsLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<JobDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<JobDetail> data)? success,
   }) {
     return loading?.call();
   }
@@ -404,10 +403,10 @@ class _$_SearchJobsLoading implements _SearchJobsLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchJobsInitial value)? initial,
-    TResult Function(_SearchJobsLoading value)? loading,
-    TResult Function(_SearchJobsFailure value)? failure,
-    TResult Function(_SearchJobsSuccess value)? success,
+    TResult? Function(_SearchJobsInitial value)? initial,
+    TResult? Function(_SearchJobsLoading value)? loading,
+    TResult? Function(_SearchJobsFailure value)? failure,
+    TResult? Function(_SearchJobsSuccess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -429,34 +428,33 @@ class _$_SearchJobsLoading implements _SearchJobsLoading {
 }
 
 abstract class _SearchJobsLoading implements SearchJobsState {
-  const factory _SearchJobsLoading() = _$_SearchJobsLoading;
+  const factory _SearchJobsLoading() = _$SearchJobsLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_SearchJobsFailureCopyWith<$Res> {
-  factory _$$_SearchJobsFailureCopyWith(_$_SearchJobsFailure value,
-          $Res Function(_$_SearchJobsFailure) then) =
-      __$$_SearchJobsFailureCopyWithImpl<$Res>;
+abstract class _$$SearchJobsFailureImplCopyWith<$Res> {
+  factory _$$SearchJobsFailureImplCopyWith(_$SearchJobsFailureImpl value,
+          $Res Function(_$SearchJobsFailureImpl) then) =
+      __$$SearchJobsFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_SearchJobsFailureCopyWithImpl<$Res>
-    extends _$SearchJobsStateCopyWithImpl<$Res>
-    implements _$$_SearchJobsFailureCopyWith<$Res> {
-  __$$_SearchJobsFailureCopyWithImpl(
-      _$_SearchJobsFailure _value, $Res Function(_$_SearchJobsFailure) _then)
-      : super(_value, (v) => _then(v as _$_SearchJobsFailure));
+class __$$SearchJobsFailureImplCopyWithImpl<$Res>
+    extends _$SearchJobsStateCopyWithImpl<$Res, _$SearchJobsFailureImpl>
+    implements _$$SearchJobsFailureImplCopyWith<$Res> {
+  __$$SearchJobsFailureImplCopyWithImpl(_$SearchJobsFailureImpl _value,
+      $Res Function(_$SearchJobsFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SearchJobsFailure get _value => super._value as _$_SearchJobsFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_SearchJobsFailure(
-      e == freezed
+    return _then(_$SearchJobsFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -466,8 +464,8 @@ class __$$_SearchJobsFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchJobsFailure implements _SearchJobsFailure {
-  const _$_SearchJobsFailure(this.e);
+class _$SearchJobsFailureImpl implements _SearchJobsFailure {
+  const _$SearchJobsFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -478,10 +476,10 @@ class _$_SearchJobsFailure implements _SearchJobsFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchJobsFailure &&
+            other is _$SearchJobsFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -491,8 +489,9 @@ class _$_SearchJobsFailure implements _SearchJobsFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SearchJobsFailureCopyWith<_$_SearchJobsFailure> get copyWith =>
-      __$$_SearchJobsFailureCopyWithImpl<_$_SearchJobsFailure>(
+  @pragma('vm:prefer-inline')
+  _$$SearchJobsFailureImplCopyWith<_$SearchJobsFailureImpl> get copyWith =>
+      __$$SearchJobsFailureImplCopyWithImpl<_$SearchJobsFailureImpl>(
           this, _$identity);
 
   @override
@@ -509,10 +508,10 @@ class _$_SearchJobsFailure implements _SearchJobsFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<JobDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<JobDetail> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -546,10 +545,10 @@ class _$_SearchJobsFailure implements _SearchJobsFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchJobsInitial value)? initial,
-    TResult Function(_SearchJobsLoading value)? loading,
-    TResult Function(_SearchJobsFailure value)? failure,
-    TResult Function(_SearchJobsSuccess value)? success,
+    TResult? Function(_SearchJobsInitial value)? initial,
+    TResult? Function(_SearchJobsLoading value)? loading,
+    TResult? Function(_SearchJobsFailure value)? failure,
+    TResult? Function(_SearchJobsSuccess value)? success,
   }) {
     return failure?.call(this);
   }
@@ -571,39 +570,38 @@ class _$_SearchJobsFailure implements _SearchJobsFailure {
 }
 
 abstract class _SearchJobsFailure implements SearchJobsState {
-  const factory _SearchJobsFailure(final dynamic e) = _$_SearchJobsFailure;
+  const factory _SearchJobsFailure(final dynamic e) = _$SearchJobsFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_SearchJobsFailureCopyWith<_$_SearchJobsFailure> get copyWith =>
+  _$$SearchJobsFailureImplCopyWith<_$SearchJobsFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SearchJobsSuccessCopyWith<$Res> {
-  factory _$$_SearchJobsSuccessCopyWith(_$_SearchJobsSuccess value,
-          $Res Function(_$_SearchJobsSuccess) then) =
-      __$$_SearchJobsSuccessCopyWithImpl<$Res>;
+abstract class _$$SearchJobsSuccessImplCopyWith<$Res> {
+  factory _$$SearchJobsSuccessImplCopyWith(_$SearchJobsSuccessImpl value,
+          $Res Function(_$SearchJobsSuccessImpl) then) =
+      __$$SearchJobsSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<JobDetail> data});
 }
 
 /// @nodoc
-class __$$_SearchJobsSuccessCopyWithImpl<$Res>
-    extends _$SearchJobsStateCopyWithImpl<$Res>
-    implements _$$_SearchJobsSuccessCopyWith<$Res> {
-  __$$_SearchJobsSuccessCopyWithImpl(
-      _$_SearchJobsSuccess _value, $Res Function(_$_SearchJobsSuccess) _then)
-      : super(_value, (v) => _then(v as _$_SearchJobsSuccess));
+class __$$SearchJobsSuccessImplCopyWithImpl<$Res>
+    extends _$SearchJobsStateCopyWithImpl<$Res, _$SearchJobsSuccessImpl>
+    implements _$$SearchJobsSuccessImplCopyWith<$Res> {
+  __$$SearchJobsSuccessImplCopyWithImpl(_$SearchJobsSuccessImpl _value,
+      $Res Function(_$SearchJobsSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SearchJobsSuccess get _value => super._value as _$_SearchJobsSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$_SearchJobsSuccess(
-      data == freezed
+    return _then(_$SearchJobsSuccessImpl(
+      null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<JobDetail>,
@@ -613,12 +611,13 @@ class __$$_SearchJobsSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchJobsSuccess implements _SearchJobsSuccess {
-  const _$_SearchJobsSuccess(final List<JobDetail> data) : _data = data;
+class _$SearchJobsSuccessImpl implements _SearchJobsSuccess {
+  const _$SearchJobsSuccessImpl(final List<JobDetail> data) : _data = data;
 
   final List<JobDetail> _data;
   @override
   List<JobDetail> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -629,10 +628,10 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchJobsSuccess &&
+            other is _$SearchJobsSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -642,8 +641,9 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SearchJobsSuccessCopyWith<_$_SearchJobsSuccess> get copyWith =>
-      __$$_SearchJobsSuccessCopyWithImpl<_$_SearchJobsSuccess>(
+  @pragma('vm:prefer-inline')
+  _$$SearchJobsSuccessImplCopyWith<_$SearchJobsSuccessImpl> get copyWith =>
+      __$$SearchJobsSuccessImplCopyWithImpl<_$SearchJobsSuccessImpl>(
           this, _$identity);
 
   @override
@@ -660,10 +660,10 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<JobDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<JobDetail> data)? success,
   }) {
     return success?.call(data);
   }
@@ -697,10 +697,10 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchJobsInitial value)? initial,
-    TResult Function(_SearchJobsLoading value)? loading,
-    TResult Function(_SearchJobsFailure value)? failure,
-    TResult Function(_SearchJobsSuccess value)? success,
+    TResult? Function(_SearchJobsInitial value)? initial,
+    TResult? Function(_SearchJobsLoading value)? loading,
+    TResult? Function(_SearchJobsFailure value)? failure,
+    TResult? Function(_SearchJobsSuccess value)? success,
   }) {
     return success?.call(this);
   }
@@ -723,10 +723,10 @@ class _$_SearchJobsSuccess implements _SearchJobsSuccess {
 
 abstract class _SearchJobsSuccess implements SearchJobsState {
   const factory _SearchJobsSuccess(final List<JobDetail> data) =
-      _$_SearchJobsSuccess;
+      _$SearchJobsSuccessImpl;
 
   List<JobDetail> get data;
   @JsonKey(ignore: true)
-  _$$_SearchJobsSuccessCopyWith<_$_SearchJobsSuccess> get copyWith =>
+  _$$SearchJobsSuccessImplCopyWith<_$SearchJobsSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

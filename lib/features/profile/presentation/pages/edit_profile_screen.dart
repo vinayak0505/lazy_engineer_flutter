@@ -15,44 +15,54 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
   const EditProfileView(this.data, {super.key});
   final ProfileModal data;
 
+//  fullName: string;
+//     email: string;
+//     designation: string | undefined;
+//     company: string | undefined;
+//     university: string | undefined;
+//     bio: string | undefined;
+//     imageLink: string | undefined;
+//     linkedin: string | undefined;
+//     github: string | undefined;
+//     twitter: string | undefined;
+//     instagram: string | undefined;
+//     notesCount: number;
+//     jobsCount: number;
+//     booksCount: number;
+//     papersCount: number;
+//     filesCount: number;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final formGlobalKey = GlobalKey<FormState>();
-    final fullNameController = TextEditingController(text: data.userName);
-    final descriptionController =
-        TextEditingController(text: data.userDescription);
-    final mobileController =
-        TextEditingController(text: data.contact?.mobileNumber);
-    final emailController = TextEditingController(text: data.contact?.email);
-    TextEditingController semesterController = TextEditingController();
-    TextEditingController yearOfAdmissionController = TextEditingController();
-    final classController = TextEditingController();
-    final locationController = TextEditingController(text: data.userAddress);
-    final universityController =
-        TextEditingController(text: data.universityName);
-
-    final ValueNotifier<List<String>> jobTypeValueList =
-        ValueNotifier(List.empty(growable: true));
-    final ValueNotifier<List<String>> experienceLevelValueList =
-        ValueNotifier(List.empty(growable: true));
+    final fullNameController = TextEditingController(text: data.fullName);
+    final emailController = TextEditingController(text: data.email);
+    final designationController = TextEditingController(text: data.designation);
+    final companyController = TextEditingController(text: data.company);
+    final universityController = TextEditingController(text: data.university);
+    final bioController = TextEditingController(text: data.bio);
+    final linkedinController = TextEditingController(text: data.linkedin);
+    final githubController = TextEditingController(text: data.github);
+    final twitterController = TextEditingController(text: data.twitter);
+    final instagramController = TextEditingController(text: data.instagram);
+    // final ValueNotifier<List<String>> jobTypeValueList =
+    //     ValueNotifier(List.empty(growable: true));
+    // final ValueNotifier<List<String>> experienceLevelValueList =
+    //     ValueNotifier(List.empty(growable: true));
 
     Future<void> onPress() async {
       if (formGlobalKey.currentState!.validate()) {
         final data = ProfileModal(
-          userName: fullNameController.text,
-          branch: classController.text,
-          semester: int.parse(semesterController.text),
-          universityName: universityController.text,
-          userDescription: descriptionController.text,
-          contact: Contact(
-            email: emailController.text,
-            mobileNumber: mobileController.text,
-          ),
-          yearOfAdmission: int.parse(yearOfAdmissionController.text),
-          experienceLevel: experienceLevelValueList.value,
-          jobType: jobTypeValueList.value,
-          userAddress: locationController.text,
+          fullName: fullNameController.text,
+          email: emailController.text,
+          designation: designationController.text,
+          company: companyController.text,
+          university: universityController.text,
+          bio: bioController.text,
+          linkedin: linkedinController.text,
+          github: githubController.text,
+          twitter: twitterController.text,
+          instagram: instagramController.text,
         );
         BlocProvider(
           create: (context) => EditProfileCubit(),
@@ -65,13 +75,6 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
       }
     }
 
-    final semesterIndex = semesterKeyList.indexOf(data.semester.toString());
-    semesterController = TextEditingController(
-      text: semesterKeyList[semesterIndex],
-    );
-    yearOfAdmissionController = TextEditingController(
-      text: data.yearOfAdmission.toString(),
-    );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Form(
@@ -89,7 +92,7 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             Text(description, style: theme.textTheme.titleLarge),
             const SizedBox(height: 16.0),
             CustomTextField.multiLine(
-              controller: descriptionController,
+              controller: bioController,
               hintText: description,
             ),
             const SizedBox(height: 16.0),
@@ -106,86 +109,86 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
               validator: (value) => nullCheckTextValidation(value, college),
             ),
             const SizedBox(height: 16.0),
-            Text(college, style: theme.textTheme.titleLarge),
-            const SizedBox(height: 12.0),
-            CustomDropdown(
-              list: classList,
-              hintText: classD,
-              controller: classController,
-              dropdownValue: data.userClass.toString(),
-              validator: (value) => nullCheckTextValidation(
-                value,
-                classD,
-              ),
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Flexible(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(semester, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 12),
-                      CustomDropdown(
-                        list: semesterList,
-                        keyList: semesterKeyList,
-                        hintText: semester,
-                        controller: semesterController,
-                        dropdownValue: semesterList[semesterIndex],
-                        validator: (value) => nullCheckTextValidation(
-                          value,
-                          semester,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Flexible(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(year, style: theme.textTheme.titleLarge),
-                      const SizedBox(height: 12),
-                      CustomDropdown(
-                        list: yearOfAdmissionList,
-                        hintText: yearOfAdmission,
-                        controller: yearOfAdmissionController,
-                        dropdownValue: data.yearOfAdmission.toString(),
-                        validator: (value) => nullCheckTextValidation(
-                          value,
-                          year,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16.0),
-            Text(
-              experienceLevel,
-              style: theme.textTheme.titleLarge,
-            ),
-            const SizedBox(height: 12.0),
-            MultiOptionFilter(
-              list: experienceLevelList,
-              initialValue: const ['Internship', 'Associate'],
-              selected: experienceLevelValueList,
-            ),
-            const SizedBox(height: 16.0),
-            Text(
-              jobType,
-              style: theme.textTheme.titleLarge,
-            ),
-            const SizedBox(height: 12.0),
-            MultiOptionFilter(
-              list: jobTypeList,
-              selected: jobTypeValueList,
-            ),
-            const SizedBox(height: 16.0),
+            // Text(specialization, style: theme.textTheme.titleLarge),
+            // const SizedBox(height: 12.0),
+            // CustomDropdown(
+            //   list: classList,
+            //   hintText: classD,
+            //   controller: classController,
+            //   dropdownValue: data.userClass.toString(),
+            //   validator: (value) => nullCheckTextValidation(
+            //     value,
+            //     classD,
+            //   ),
+            // ),
+            // const SizedBox(height: 16),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     Flexible(
+            //       child: Column(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         children: [
+            //           Text(semester, style: theme.textTheme.titleLarge),
+            //           const SizedBox(height: 12),
+            //           CustomDropdown(
+            //             list: semesterList,
+            //             keyList: semesterKeyList,
+            //             hintText: semester,
+            //             controller: semesterController,
+            //             dropdownValue: semesterList[semesterIndex],
+            //             validator: (value) => nullCheckTextValidation(
+            //               value,
+            //               semester,
+            //             ),
+            //           ),
+            //         ],
+            //       ),
+            //     ),
+            //     const SizedBox(width: 16),
+            //     Flexible(
+            //       child: Column(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         children: [
+            //           Text(year, style: theme.textTheme.titleLarge),
+            //           const SizedBox(height: 12),
+            //           CustomDropdown(
+            //             list: yearOfAdmissionList,
+            //             hintText: yearOfAdmission,
+            //             controller: yearOfAdmissionController,
+            //             dropdownValue: data.yearOfAdmission.toString(),
+            //             validator: (value) => nullCheckTextValidation(
+            //               value,
+            //               year,
+            //             ),
+            //           ),
+            //         ],
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            // const SizedBox(height: 16.0),
+            // Text(
+            //   experienceLevel,
+            //   style: theme.textTheme.titleLarge,
+            // ),
+            // const SizedBox(height: 12.0),
+            // MultiOptionFilter(
+            //   list: experienceLevelList,
+            //   initialValue: const ['Internship', 'Associate'],
+            //   selected: experienceLevelValueList,
+            // ),
+            // const SizedBox(height: 16.0),
+            // Text(
+            //   jobType,
+            //   style: theme.textTheme.titleLarge,
+            // ),
+            // const SizedBox(height: 12.0),
+            // MultiOptionFilter(
+            //   list: jobTypeList,
+            //   selected: jobTypeValueList,
+            // ),
+            // const SizedBox(height: 16.0),
             Text(
               contact,
               style: theme.textTheme.titleLarge,
@@ -193,34 +196,11 @@ class EditProfileView extends StatelessWidget with InputValidationMixin {
             const SizedBox(height: 16.0),
             CustomTextField(
               controller: emailController,
-              hintText: mobileNumber,
+              hintText: email,
               prefixIcon: AppIcons.mailIcon,
               validator: (value) => nullCheckTextValidation(
                 value,
-                mobileNumber,
-              ),
-            ),
-            const SizedBox(height: 16.0),
-            CustomTextField(
-              controller: mobileController,
-              hintText: email,
-              prefixIcon: AppIcons.mobileIcon,
-              validator: (value) => nullCheckTextValidation(
-                value,
                 email,
-              ),
-            ),
-            const SizedBox(height: 16.0),
-            Text(
-              location,
-              style: theme.textTheme.titleLarge,
-            ),
-            CustomTextField.secondary(
-              controller: locationController,
-              hintText: location,
-              validator: (value) => nullCheckTextValidation(
-                value,
-                location,
               ),
             ),
             const SizedBox(height: 32),

@@ -63,7 +63,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       return index < 0 ? 0 : index;
     }
 
-    final int currentIndex = locationToTabIndex(GoRouter.of(context).location);
+    final int currentIndex = locationToTabIndex(GoRouter.of(context).routerDelegate.currentConfiguration.uri.toString());
     // callback used to navigate to the desired tab
     void onItemTapped(BuildContext context, int tabIndex) {
       if (tabIndex != currentIndex) {

@@ -6,8 +6,8 @@ part of 'paper_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PaperResponse _$$_PaperResponseFromJson(Map<String, dynamic> json) =>
-    _$_PaperResponse(
+_$PaperResponseImpl _$$PaperResponseImplFromJson(Map<String, dynamic> json) =>
+    _$PaperResponseImpl(
       (json['result'] as List<dynamic>?)
           ?.map((e) => PaperDetail.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -16,7 +16,7 @@ _$_PaperResponse _$$_PaperResponseFromJson(Map<String, dynamic> json) =>
       json['limit'] as int?,
     );
 
-Map<String, dynamic> _$$_PaperResponseToJson(_$_PaperResponse instance) =>
+Map<String, dynamic> _$$PaperResponseImplToJson(_$PaperResponseImpl instance) =>
     <String, dynamic>{
       'result': instance.result,
       'totalCount': instance.totalCount,
@@ -24,8 +24,8 @@ Map<String, dynamic> _$$_PaperResponseToJson(_$_PaperResponse instance) =>
       'limit': instance.limit,
     };
 
-_$_PaperDetail _$$_PaperDetailFromJson(Map<String, dynamic> json) =>
-    _$_PaperDetail(
+_$PaperDetailImpl _$$PaperDetailImplFromJson(Map<String, dynamic> json) =>
+    _$PaperDetailImpl(
       json['userId'] as String?,
       json['title'] as String?,
       json['about'] as String?,
@@ -42,7 +42,7 @@ _$_PaperDetail _$$_PaperDetailFromJson(Map<String, dynamic> json) =>
       json['dislike'] as int?,
     );
 
-Map<String, dynamic> _$$_PaperDetailToJson(_$_PaperDetail instance) =>
+Map<String, dynamic> _$$PaperDetailImplToJson(_$PaperDetailImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'title': instance.title,

@@ -6,8 +6,8 @@ part of 'download_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DownloadModel _$$_DownloadModelFromJson(Map<String, dynamic> json) =>
-    _$_DownloadModel(
+_$DownloadModelImpl _$$DownloadModelImplFromJson(Map<String, dynamic> json) =>
+    _$DownloadModelImpl(
       notes: FileModel.fromJson(json['notes'] as Map<String, dynamic>),
       files: FileModel.fromJson(json['files'] as Map<String, dynamic>),
       books: FileModel.fromJson(json['books'] as Map<String, dynamic>),
@@ -15,7 +15,7 @@ _$_DownloadModel _$$_DownloadModelFromJson(Map<String, dynamic> json) =>
       papers: FileModel.fromJson(json['papers'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DownloadModelToJson(_$_DownloadModel instance) =>
+Map<String, dynamic> _$$DownloadModelImplToJson(_$DownloadModelImpl instance) =>
     <String, dynamic>{
       'notes': instance.notes,
       'files': instance.files,

@@ -6,8 +6,9 @@ part of 'book_database_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_BookDatabaseModel _$$_BookDatabaseModelFromJson(Map<String, dynamic> json) =>
-    _$_BookDatabaseModel(
+_$BookDatabaseModelImpl _$$BookDatabaseModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BookDatabaseModelImpl(
       id: json['id'] as int?,
       title: json['title'] as String,
       subject: json['subject'] as String,
@@ -19,8 +20,8 @@ _$_BookDatabaseModel _$$_BookDatabaseModelFromJson(Map<String, dynamic> json) =>
       rating: json['rating'] as int,
     );
 
-Map<String, dynamic> _$$_BookDatabaseModelToJson(
-        _$_BookDatabaseModel instance) =>
+Map<String, dynamic> _$$BookDatabaseModelImplToJson(
+        _$BookDatabaseModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

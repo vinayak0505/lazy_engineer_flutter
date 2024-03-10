@@ -6,9 +6,9 @@ part of 'books_detail_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_BooksDetailResponse _$$_BooksDetailResponseFromJson(
+_$BooksDetailResponseImpl _$$BooksDetailResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_BooksDetailResponse(
+    _$BooksDetailResponseImpl(
       json['title'] as String,
       (json['writers'] as List<dynamic>).map((e) => e as String).toList(),
       json['subject'] as String,
@@ -21,8 +21,8 @@ _$_BooksDetailResponse _$$_BooksDetailResponseFromJson(
       (json['rating'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_BooksDetailResponseToJson(
-        _$_BooksDetailResponse instance) =>
+Map<String, dynamic> _$$BooksDetailResponseImplToJson(
+        _$BooksDetailResponseImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'writers': instance.writers,

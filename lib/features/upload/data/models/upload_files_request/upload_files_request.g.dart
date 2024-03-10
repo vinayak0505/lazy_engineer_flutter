@@ -6,9 +6,9 @@ part of 'upload_files_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UploadFilesRequest _$$_UploadFilesRequestFromJson(
+_$UploadFilesRequestImpl _$$UploadFilesRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UploadFilesRequest(
+    _$UploadFilesRequestImpl(
       title: json['title'] as String?,
       about: json['about'] as String?,
       subject: json['subject'] as String?,
@@ -19,8 +19,8 @@ _$_UploadFilesRequest _$$_UploadFilesRequestFromJson(
       tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_UploadFilesRequestToJson(
-        _$_UploadFilesRequest instance) =>
+Map<String, dynamic> _$$UploadFilesRequestImplToJson(
+        _$UploadFilesRequestImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'about': instance.about,

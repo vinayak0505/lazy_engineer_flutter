@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'upload_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'upload_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UploadState {
@@ -29,13 +29,13 @@ mixin _$UploadState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function()? success,
-    TResult Function()? documentLoading,
-    TResult Function(dynamic e)? documentFailure,
-    TResult Function(PlatformFile data)? documentSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function()? success,
+    TResult? Function()? documentLoading,
+    TResult? Function(dynamic e)? documentFailure,
+    TResult? Function(PlatformFile data)? documentSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,13 +63,13 @@ mixin _$UploadState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UploadInitial value)? initial,
-    TResult Function(UploadLoading value)? loading,
-    TResult Function(UploadFailure value)? failure,
-    TResult Function(UploadSuccess value)? success,
-    TResult Function(DocumentLoading value)? documentLoading,
-    TResult Function(DocumentFailure value)? documentFailure,
-    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult? Function(UploadInitial value)? initial,
+    TResult? Function(UploadLoading value)? loading,
+    TResult? Function(UploadFailure value)? failure,
+    TResult? Function(UploadSuccess value)? success,
+    TResult? Function(DocumentLoading value)? documentLoading,
+    TResult? Function(DocumentFailure value)? documentFailure,
+    TResult? Function(DocumentSuccess value)? documentSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,41 +90,40 @@ mixin _$UploadState {
 abstract class $UploadStateCopyWith<$Res> {
   factory $UploadStateCopyWith(
           UploadState value, $Res Function(UploadState) then) =
-      _$UploadStateCopyWithImpl<$Res>;
+      _$UploadStateCopyWithImpl<$Res, UploadState>;
 }
 
 /// @nodoc
-class _$UploadStateCopyWithImpl<$Res> implements $UploadStateCopyWith<$Res> {
+class _$UploadStateCopyWithImpl<$Res, $Val extends UploadState>
+    implements $UploadStateCopyWith<$Res> {
   _$UploadStateCopyWithImpl(this._value, this._then);
 
-  final UploadState _value;
   // ignore: unused_field
-  final $Res Function(UploadState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$UploadInitialCopyWith<$Res> {
-  factory _$$UploadInitialCopyWith(
-          _$UploadInitial value, $Res Function(_$UploadInitial) then) =
-      __$$UploadInitialCopyWithImpl<$Res>;
+abstract class _$$UploadInitialImplCopyWith<$Res> {
+  factory _$$UploadInitialImplCopyWith(
+          _$UploadInitialImpl value, $Res Function(_$UploadInitialImpl) then) =
+      __$$UploadInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UploadInitialCopyWithImpl<$Res>
-    extends _$UploadStateCopyWithImpl<$Res>
-    implements _$$UploadInitialCopyWith<$Res> {
-  __$$UploadInitialCopyWithImpl(
-      _$UploadInitial _value, $Res Function(_$UploadInitial) _then)
-      : super(_value, (v) => _then(v as _$UploadInitial));
-
-  @override
-  _$UploadInitial get _value => super._value as _$UploadInitial;
+class __$$UploadInitialImplCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res, _$UploadInitialImpl>
+    implements _$$UploadInitialImplCopyWith<$Res> {
+  __$$UploadInitialImplCopyWithImpl(
+      _$UploadInitialImpl _value, $Res Function(_$UploadInitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UploadInitial implements UploadInitial {
-  const _$UploadInitial();
+class _$UploadInitialImpl implements UploadInitial {
+  const _$UploadInitialImpl();
 
   @override
   String toString() {
@@ -132,9 +131,9 @@ class _$UploadInitial implements UploadInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UploadInitial);
+        (other.runtimeType == runtimeType && other is _$UploadInitialImpl);
   }
 
   @override
@@ -157,13 +156,13 @@ class _$UploadInitial implements UploadInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function()? success,
-    TResult Function()? documentLoading,
-    TResult Function(dynamic e)? documentFailure,
-    TResult Function(PlatformFile data)? documentSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function()? success,
+    TResult? Function()? documentLoading,
+    TResult? Function(dynamic e)? documentFailure,
+    TResult? Function(PlatformFile data)? documentSuccess,
   }) {
     return initial?.call();
   }
@@ -203,13 +202,13 @@ class _$UploadInitial implements UploadInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UploadInitial value)? initial,
-    TResult Function(UploadLoading value)? loading,
-    TResult Function(UploadFailure value)? failure,
-    TResult Function(UploadSuccess value)? success,
-    TResult Function(DocumentLoading value)? documentLoading,
-    TResult Function(DocumentFailure value)? documentFailure,
-    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult? Function(UploadInitial value)? initial,
+    TResult? Function(UploadLoading value)? loading,
+    TResult? Function(UploadFailure value)? failure,
+    TResult? Function(UploadSuccess value)? success,
+    TResult? Function(DocumentLoading value)? documentLoading,
+    TResult? Function(DocumentFailure value)? documentFailure,
+    TResult? Function(DocumentSuccess value)? documentSuccess,
   }) {
     return initial?.call(this);
   }
@@ -234,32 +233,29 @@ class _$UploadInitial implements UploadInitial {
 }
 
 abstract class UploadInitial implements UploadState {
-  const factory UploadInitial() = _$UploadInitial;
+  const factory UploadInitial() = _$UploadInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$UploadLoadingCopyWith<$Res> {
-  factory _$$UploadLoadingCopyWith(
-          _$UploadLoading value, $Res Function(_$UploadLoading) then) =
-      __$$UploadLoadingCopyWithImpl<$Res>;
+abstract class _$$UploadLoadingImplCopyWith<$Res> {
+  factory _$$UploadLoadingImplCopyWith(
+          _$UploadLoadingImpl value, $Res Function(_$UploadLoadingImpl) then) =
+      __$$UploadLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UploadLoadingCopyWithImpl<$Res>
-    extends _$UploadStateCopyWithImpl<$Res>
-    implements _$$UploadLoadingCopyWith<$Res> {
-  __$$UploadLoadingCopyWithImpl(
-      _$UploadLoading _value, $Res Function(_$UploadLoading) _then)
-      : super(_value, (v) => _then(v as _$UploadLoading));
-
-  @override
-  _$UploadLoading get _value => super._value as _$UploadLoading;
+class __$$UploadLoadingImplCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res, _$UploadLoadingImpl>
+    implements _$$UploadLoadingImplCopyWith<$Res> {
+  __$$UploadLoadingImplCopyWithImpl(
+      _$UploadLoadingImpl _value, $Res Function(_$UploadLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UploadLoading implements UploadLoading {
-  const _$UploadLoading();
+class _$UploadLoadingImpl implements UploadLoading {
+  const _$UploadLoadingImpl();
 
   @override
   String toString() {
@@ -267,9 +263,9 @@ class _$UploadLoading implements UploadLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UploadLoading);
+        (other.runtimeType == runtimeType && other is _$UploadLoadingImpl);
   }
 
   @override
@@ -292,13 +288,13 @@ class _$UploadLoading implements UploadLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function()? success,
-    TResult Function()? documentLoading,
-    TResult Function(dynamic e)? documentFailure,
-    TResult Function(PlatformFile data)? documentSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function()? success,
+    TResult? Function()? documentLoading,
+    TResult? Function(dynamic e)? documentFailure,
+    TResult? Function(PlatformFile data)? documentSuccess,
   }) {
     return loading?.call();
   }
@@ -338,13 +334,13 @@ class _$UploadLoading implements UploadLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UploadInitial value)? initial,
-    TResult Function(UploadLoading value)? loading,
-    TResult Function(UploadFailure value)? failure,
-    TResult Function(UploadSuccess value)? success,
-    TResult Function(DocumentLoading value)? documentLoading,
-    TResult Function(DocumentFailure value)? documentFailure,
-    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult? Function(UploadInitial value)? initial,
+    TResult? Function(UploadLoading value)? loading,
+    TResult? Function(UploadFailure value)? failure,
+    TResult? Function(UploadSuccess value)? success,
+    TResult? Function(DocumentLoading value)? documentLoading,
+    TResult? Function(DocumentFailure value)? documentFailure,
+    TResult? Function(DocumentSuccess value)? documentSuccess,
   }) {
     return loading?.call(this);
   }
@@ -369,34 +365,33 @@ class _$UploadLoading implements UploadLoading {
 }
 
 abstract class UploadLoading implements UploadState {
-  const factory UploadLoading() = _$UploadLoading;
+  const factory UploadLoading() = _$UploadLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$UploadFailureCopyWith<$Res> {
-  factory _$$UploadFailureCopyWith(
-          _$UploadFailure value, $Res Function(_$UploadFailure) then) =
-      __$$UploadFailureCopyWithImpl<$Res>;
+abstract class _$$UploadFailureImplCopyWith<$Res> {
+  factory _$$UploadFailureImplCopyWith(
+          _$UploadFailureImpl value, $Res Function(_$UploadFailureImpl) then) =
+      __$$UploadFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$UploadFailureCopyWithImpl<$Res>
-    extends _$UploadStateCopyWithImpl<$Res>
-    implements _$$UploadFailureCopyWith<$Res> {
-  __$$UploadFailureCopyWithImpl(
-      _$UploadFailure _value, $Res Function(_$UploadFailure) _then)
-      : super(_value, (v) => _then(v as _$UploadFailure));
+class __$$UploadFailureImplCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res, _$UploadFailureImpl>
+    implements _$$UploadFailureImplCopyWith<$Res> {
+  __$$UploadFailureImplCopyWithImpl(
+      _$UploadFailureImpl _value, $Res Function(_$UploadFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$UploadFailure get _value => super._value as _$UploadFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$UploadFailure(
-      e == freezed
+    return _then(_$UploadFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -406,8 +401,8 @@ class __$$UploadFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UploadFailure implements UploadFailure {
-  const _$UploadFailure(this.e);
+class _$UploadFailureImpl implements UploadFailure {
+  const _$UploadFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -418,10 +413,10 @@ class _$UploadFailure implements UploadFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UploadFailure &&
+            other is _$UploadFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -431,8 +426,9 @@ class _$UploadFailure implements UploadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$UploadFailureCopyWith<_$UploadFailure> get copyWith =>
-      __$$UploadFailureCopyWithImpl<_$UploadFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UploadFailureImplCopyWith<_$UploadFailureImpl> get copyWith =>
+      __$$UploadFailureImplCopyWithImpl<_$UploadFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -451,13 +447,13 @@ class _$UploadFailure implements UploadFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function()? success,
-    TResult Function()? documentLoading,
-    TResult Function(dynamic e)? documentFailure,
-    TResult Function(PlatformFile data)? documentSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function()? success,
+    TResult? Function()? documentLoading,
+    TResult? Function(dynamic e)? documentFailure,
+    TResult? Function(PlatformFile data)? documentSuccess,
   }) {
     return failure?.call(e);
   }
@@ -497,13 +493,13 @@ class _$UploadFailure implements UploadFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UploadInitial value)? initial,
-    TResult Function(UploadLoading value)? loading,
-    TResult Function(UploadFailure value)? failure,
-    TResult Function(UploadSuccess value)? success,
-    TResult Function(DocumentLoading value)? documentLoading,
-    TResult Function(DocumentFailure value)? documentFailure,
-    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult? Function(UploadInitial value)? initial,
+    TResult? Function(UploadLoading value)? loading,
+    TResult? Function(UploadFailure value)? failure,
+    TResult? Function(UploadSuccess value)? success,
+    TResult? Function(DocumentLoading value)? documentLoading,
+    TResult? Function(DocumentFailure value)? documentFailure,
+    TResult? Function(DocumentSuccess value)? documentSuccess,
   }) {
     return failure?.call(this);
   }
@@ -528,37 +524,34 @@ class _$UploadFailure implements UploadFailure {
 }
 
 abstract class UploadFailure implements UploadState {
-  const factory UploadFailure(final dynamic e) = _$UploadFailure;
+  const factory UploadFailure(final dynamic e) = _$UploadFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$UploadFailureCopyWith<_$UploadFailure> get copyWith =>
+  _$$UploadFailureImplCopyWith<_$UploadFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UploadSuccessCopyWith<$Res> {
-  factory _$$UploadSuccessCopyWith(
-          _$UploadSuccess value, $Res Function(_$UploadSuccess) then) =
-      __$$UploadSuccessCopyWithImpl<$Res>;
+abstract class _$$UploadSuccessImplCopyWith<$Res> {
+  factory _$$UploadSuccessImplCopyWith(
+          _$UploadSuccessImpl value, $Res Function(_$UploadSuccessImpl) then) =
+      __$$UploadSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UploadSuccessCopyWithImpl<$Res>
-    extends _$UploadStateCopyWithImpl<$Res>
-    implements _$$UploadSuccessCopyWith<$Res> {
-  __$$UploadSuccessCopyWithImpl(
-      _$UploadSuccess _value, $Res Function(_$UploadSuccess) _then)
-      : super(_value, (v) => _then(v as _$UploadSuccess));
-
-  @override
-  _$UploadSuccess get _value => super._value as _$UploadSuccess;
+class __$$UploadSuccessImplCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res, _$UploadSuccessImpl>
+    implements _$$UploadSuccessImplCopyWith<$Res> {
+  __$$UploadSuccessImplCopyWithImpl(
+      _$UploadSuccessImpl _value, $Res Function(_$UploadSuccessImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UploadSuccess implements UploadSuccess {
-  const _$UploadSuccess();
+class _$UploadSuccessImpl implements UploadSuccess {
+  const _$UploadSuccessImpl();
 
   @override
   String toString() {
@@ -566,9 +559,9 @@ class _$UploadSuccess implements UploadSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UploadSuccess);
+        (other.runtimeType == runtimeType && other is _$UploadSuccessImpl);
   }
 
   @override
@@ -591,13 +584,13 @@ class _$UploadSuccess implements UploadSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function()? success,
-    TResult Function()? documentLoading,
-    TResult Function(dynamic e)? documentFailure,
-    TResult Function(PlatformFile data)? documentSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function()? success,
+    TResult? Function()? documentLoading,
+    TResult? Function(dynamic e)? documentFailure,
+    TResult? Function(PlatformFile data)? documentSuccess,
   }) {
     return success?.call();
   }
@@ -637,13 +630,13 @@ class _$UploadSuccess implements UploadSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UploadInitial value)? initial,
-    TResult Function(UploadLoading value)? loading,
-    TResult Function(UploadFailure value)? failure,
-    TResult Function(UploadSuccess value)? success,
-    TResult Function(DocumentLoading value)? documentLoading,
-    TResult Function(DocumentFailure value)? documentFailure,
-    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult? Function(UploadInitial value)? initial,
+    TResult? Function(UploadLoading value)? loading,
+    TResult? Function(UploadFailure value)? failure,
+    TResult? Function(UploadSuccess value)? success,
+    TResult? Function(DocumentLoading value)? documentLoading,
+    TResult? Function(DocumentFailure value)? documentFailure,
+    TResult? Function(DocumentSuccess value)? documentSuccess,
   }) {
     return success?.call(this);
   }
@@ -668,32 +661,29 @@ class _$UploadSuccess implements UploadSuccess {
 }
 
 abstract class UploadSuccess implements UploadState {
-  const factory UploadSuccess() = _$UploadSuccess;
+  const factory UploadSuccess() = _$UploadSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$DocumentLoadingCopyWith<$Res> {
-  factory _$$DocumentLoadingCopyWith(
-          _$DocumentLoading value, $Res Function(_$DocumentLoading) then) =
-      __$$DocumentLoadingCopyWithImpl<$Res>;
+abstract class _$$DocumentLoadingImplCopyWith<$Res> {
+  factory _$$DocumentLoadingImplCopyWith(_$DocumentLoadingImpl value,
+          $Res Function(_$DocumentLoadingImpl) then) =
+      __$$DocumentLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DocumentLoadingCopyWithImpl<$Res>
-    extends _$UploadStateCopyWithImpl<$Res>
-    implements _$$DocumentLoadingCopyWith<$Res> {
-  __$$DocumentLoadingCopyWithImpl(
-      _$DocumentLoading _value, $Res Function(_$DocumentLoading) _then)
-      : super(_value, (v) => _then(v as _$DocumentLoading));
-
-  @override
-  _$DocumentLoading get _value => super._value as _$DocumentLoading;
+class __$$DocumentLoadingImplCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res, _$DocumentLoadingImpl>
+    implements _$$DocumentLoadingImplCopyWith<$Res> {
+  __$$DocumentLoadingImplCopyWithImpl(
+      _$DocumentLoadingImpl _value, $Res Function(_$DocumentLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DocumentLoading implements DocumentLoading {
-  const _$DocumentLoading();
+class _$DocumentLoadingImpl implements DocumentLoading {
+  const _$DocumentLoadingImpl();
 
   @override
   String toString() {
@@ -701,9 +691,9 @@ class _$DocumentLoading implements DocumentLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DocumentLoading);
+        (other.runtimeType == runtimeType && other is _$DocumentLoadingImpl);
   }
 
   @override
@@ -726,13 +716,13 @@ class _$DocumentLoading implements DocumentLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function()? success,
-    TResult Function()? documentLoading,
-    TResult Function(dynamic e)? documentFailure,
-    TResult Function(PlatformFile data)? documentSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function()? success,
+    TResult? Function()? documentLoading,
+    TResult? Function(dynamic e)? documentFailure,
+    TResult? Function(PlatformFile data)? documentSuccess,
   }) {
     return documentLoading?.call();
   }
@@ -772,13 +762,13 @@ class _$DocumentLoading implements DocumentLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UploadInitial value)? initial,
-    TResult Function(UploadLoading value)? loading,
-    TResult Function(UploadFailure value)? failure,
-    TResult Function(UploadSuccess value)? success,
-    TResult Function(DocumentLoading value)? documentLoading,
-    TResult Function(DocumentFailure value)? documentFailure,
-    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult? Function(UploadInitial value)? initial,
+    TResult? Function(UploadLoading value)? loading,
+    TResult? Function(UploadFailure value)? failure,
+    TResult? Function(UploadSuccess value)? success,
+    TResult? Function(DocumentLoading value)? documentLoading,
+    TResult? Function(DocumentFailure value)? documentFailure,
+    TResult? Function(DocumentSuccess value)? documentSuccess,
   }) {
     return documentLoading?.call(this);
   }
@@ -803,34 +793,33 @@ class _$DocumentLoading implements DocumentLoading {
 }
 
 abstract class DocumentLoading implements UploadState {
-  const factory DocumentLoading() = _$DocumentLoading;
+  const factory DocumentLoading() = _$DocumentLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$DocumentFailureCopyWith<$Res> {
-  factory _$$DocumentFailureCopyWith(
-          _$DocumentFailure value, $Res Function(_$DocumentFailure) then) =
-      __$$DocumentFailureCopyWithImpl<$Res>;
+abstract class _$$DocumentFailureImplCopyWith<$Res> {
+  factory _$$DocumentFailureImplCopyWith(_$DocumentFailureImpl value,
+          $Res Function(_$DocumentFailureImpl) then) =
+      __$$DocumentFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$DocumentFailureCopyWithImpl<$Res>
-    extends _$UploadStateCopyWithImpl<$Res>
-    implements _$$DocumentFailureCopyWith<$Res> {
-  __$$DocumentFailureCopyWithImpl(
-      _$DocumentFailure _value, $Res Function(_$DocumentFailure) _then)
-      : super(_value, (v) => _then(v as _$DocumentFailure));
+class __$$DocumentFailureImplCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res, _$DocumentFailureImpl>
+    implements _$$DocumentFailureImplCopyWith<$Res> {
+  __$$DocumentFailureImplCopyWithImpl(
+      _$DocumentFailureImpl _value, $Res Function(_$DocumentFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$DocumentFailure get _value => super._value as _$DocumentFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$DocumentFailure(
-      e == freezed
+    return _then(_$DocumentFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -840,8 +829,8 @@ class __$$DocumentFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DocumentFailure implements DocumentFailure {
-  const _$DocumentFailure(this.e);
+class _$DocumentFailureImpl implements DocumentFailure {
+  const _$DocumentFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -852,10 +841,10 @@ class _$DocumentFailure implements DocumentFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DocumentFailure &&
+            other is _$DocumentFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -865,8 +854,10 @@ class _$DocumentFailure implements DocumentFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$DocumentFailureCopyWith<_$DocumentFailure> get copyWith =>
-      __$$DocumentFailureCopyWithImpl<_$DocumentFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DocumentFailureImplCopyWith<_$DocumentFailureImpl> get copyWith =>
+      __$$DocumentFailureImplCopyWithImpl<_$DocumentFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -885,13 +876,13 @@ class _$DocumentFailure implements DocumentFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function()? success,
-    TResult Function()? documentLoading,
-    TResult Function(dynamic e)? documentFailure,
-    TResult Function(PlatformFile data)? documentSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function()? success,
+    TResult? Function()? documentLoading,
+    TResult? Function(dynamic e)? documentFailure,
+    TResult? Function(PlatformFile data)? documentSuccess,
   }) {
     return documentFailure?.call(e);
   }
@@ -931,13 +922,13 @@ class _$DocumentFailure implements DocumentFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UploadInitial value)? initial,
-    TResult Function(UploadLoading value)? loading,
-    TResult Function(UploadFailure value)? failure,
-    TResult Function(UploadSuccess value)? success,
-    TResult Function(DocumentLoading value)? documentLoading,
-    TResult Function(DocumentFailure value)? documentFailure,
-    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult? Function(UploadInitial value)? initial,
+    TResult? Function(UploadLoading value)? loading,
+    TResult? Function(UploadFailure value)? failure,
+    TResult? Function(UploadSuccess value)? success,
+    TResult? Function(DocumentLoading value)? documentLoading,
+    TResult? Function(DocumentFailure value)? documentFailure,
+    TResult? Function(DocumentSuccess value)? documentSuccess,
   }) {
     return documentFailure?.call(this);
   }
@@ -962,39 +953,38 @@ class _$DocumentFailure implements DocumentFailure {
 }
 
 abstract class DocumentFailure implements UploadState {
-  const factory DocumentFailure(final dynamic e) = _$DocumentFailure;
+  const factory DocumentFailure(final dynamic e) = _$DocumentFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$DocumentFailureCopyWith<_$DocumentFailure> get copyWith =>
+  _$$DocumentFailureImplCopyWith<_$DocumentFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DocumentSuccessCopyWith<$Res> {
-  factory _$$DocumentSuccessCopyWith(
-          _$DocumentSuccess value, $Res Function(_$DocumentSuccess) then) =
-      __$$DocumentSuccessCopyWithImpl<$Res>;
+abstract class _$$DocumentSuccessImplCopyWith<$Res> {
+  factory _$$DocumentSuccessImplCopyWith(_$DocumentSuccessImpl value,
+          $Res Function(_$DocumentSuccessImpl) then) =
+      __$$DocumentSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({PlatformFile data});
 }
 
 /// @nodoc
-class __$$DocumentSuccessCopyWithImpl<$Res>
-    extends _$UploadStateCopyWithImpl<$Res>
-    implements _$$DocumentSuccessCopyWith<$Res> {
-  __$$DocumentSuccessCopyWithImpl(
-      _$DocumentSuccess _value, $Res Function(_$DocumentSuccess) _then)
-      : super(_value, (v) => _then(v as _$DocumentSuccess));
+class __$$DocumentSuccessImplCopyWithImpl<$Res>
+    extends _$UploadStateCopyWithImpl<$Res, _$DocumentSuccessImpl>
+    implements _$$DocumentSuccessImplCopyWith<$Res> {
+  __$$DocumentSuccessImplCopyWithImpl(
+      _$DocumentSuccessImpl _value, $Res Function(_$DocumentSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$DocumentSuccess get _value => super._value as _$DocumentSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$DocumentSuccess(
-      data == freezed
+    return _then(_$DocumentSuccessImpl(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as PlatformFile,
@@ -1004,8 +994,8 @@ class __$$DocumentSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DocumentSuccess implements DocumentSuccess {
-  const _$DocumentSuccess(this.data);
+class _$DocumentSuccessImpl implements DocumentSuccess {
+  const _$DocumentSuccessImpl(this.data);
 
   @override
   final PlatformFile data;
@@ -1016,21 +1006,22 @@ class _$DocumentSuccess implements DocumentSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DocumentSuccess &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$DocumentSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
-  _$$DocumentSuccessCopyWith<_$DocumentSuccess> get copyWith =>
-      __$$DocumentSuccessCopyWithImpl<_$DocumentSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DocumentSuccessImplCopyWith<_$DocumentSuccessImpl> get copyWith =>
+      __$$DocumentSuccessImplCopyWithImpl<_$DocumentSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1049,13 +1040,13 @@ class _$DocumentSuccess implements DocumentSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function()? success,
-    TResult Function()? documentLoading,
-    TResult Function(dynamic e)? documentFailure,
-    TResult Function(PlatformFile data)? documentSuccess,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function()? success,
+    TResult? Function()? documentLoading,
+    TResult? Function(dynamic e)? documentFailure,
+    TResult? Function(PlatformFile data)? documentSuccess,
   }) {
     return documentSuccess?.call(data);
   }
@@ -1095,13 +1086,13 @@ class _$DocumentSuccess implements DocumentSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UploadInitial value)? initial,
-    TResult Function(UploadLoading value)? loading,
-    TResult Function(UploadFailure value)? failure,
-    TResult Function(UploadSuccess value)? success,
-    TResult Function(DocumentLoading value)? documentLoading,
-    TResult Function(DocumentFailure value)? documentFailure,
-    TResult Function(DocumentSuccess value)? documentSuccess,
+    TResult? Function(UploadInitial value)? initial,
+    TResult? Function(UploadLoading value)? loading,
+    TResult? Function(UploadFailure value)? failure,
+    TResult? Function(UploadSuccess value)? success,
+    TResult? Function(DocumentLoading value)? documentLoading,
+    TResult? Function(DocumentFailure value)? documentFailure,
+    TResult? Function(DocumentSuccess value)? documentSuccess,
   }) {
     return documentSuccess?.call(this);
   }
@@ -1126,10 +1117,11 @@ class _$DocumentSuccess implements DocumentSuccess {
 }
 
 abstract class DocumentSuccess implements UploadState {
-  const factory DocumentSuccess(final PlatformFile data) = _$DocumentSuccess;
+  const factory DocumentSuccess(final PlatformFile data) =
+      _$DocumentSuccessImpl;
 
   PlatformFile get data;
   @JsonKey(ignore: true)
-  _$$DocumentSuccessCopyWith<_$DocumentSuccess> get copyWith =>
+  _$$DocumentSuccessImplCopyWith<_$DocumentSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

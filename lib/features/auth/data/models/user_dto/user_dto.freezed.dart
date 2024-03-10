@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user_dto.dart';
 
@@ -12,7 +12,7 @@ part of 'user_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
   return _UserDto.fromJson(json);
@@ -31,51 +31,57 @@ mixin _$UserDto {
 /// @nodoc
 abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
-      _$UserDtoCopyWithImpl<$Res>;
+      _$UserDtoCopyWithImpl<$Res, UserDto>;
+  @useResult
   $Res call({String token, UserDetail userDetail});
 
   $UserDetailCopyWith<$Res> get userDetail;
 }
 
 /// @nodoc
-class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
+class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
+    implements $UserDtoCopyWith<$Res> {
   _$UserDtoCopyWithImpl(this._value, this._then);
 
-  final UserDto _value;
   // ignore: unused_field
-  final $Res Function(UserDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
-    Object? userDetail = freezed,
+    Object? token = null,
+    Object? userDetail = null,
   }) {
     return _then(_value.copyWith(
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      userDetail: userDetail == freezed
+      userDetail: null == userDetail
           ? _value.userDetail
           : userDetail // ignore: cast_nullable_to_non_nullable
               as UserDetail,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserDetailCopyWith<$Res> get userDetail {
     return $UserDetailCopyWith<$Res>(_value.userDetail, (value) {
-      return _then(_value.copyWith(userDetail: value));
+      return _then(_value.copyWith(userDetail: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
-  factory _$$_UserDtoCopyWith(
-          _$_UserDto value, $Res Function(_$_UserDto) then) =
-      __$$_UserDtoCopyWithImpl<$Res>;
+abstract class _$$UserDtoImplCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
+  factory _$$UserDtoImplCopyWith(
+          _$UserDtoImpl value, $Res Function(_$UserDtoImpl) then) =
+      __$$UserDtoImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String token, UserDetail userDetail});
 
   @override
@@ -83,25 +89,25 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
-    implements _$$_UserDtoCopyWith<$Res> {
-  __$$_UserDtoCopyWithImpl(_$_UserDto _value, $Res Function(_$_UserDto) _then)
-      : super(_value, (v) => _then(v as _$_UserDto));
+class __$$UserDtoImplCopyWithImpl<$Res>
+    extends _$UserDtoCopyWithImpl<$Res, _$UserDtoImpl>
+    implements _$$UserDtoImplCopyWith<$Res> {
+  __$$UserDtoImplCopyWithImpl(
+      _$UserDtoImpl _value, $Res Function(_$UserDtoImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_UserDto get _value => super._value as _$_UserDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
-    Object? userDetail = freezed,
+    Object? token = null,
+    Object? userDetail = null,
   }) {
-    return _then(_$_UserDto(
-      token == freezed
+    return _then(_$UserDtoImpl(
+      null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      userDetail == freezed
+      null == userDetail
           ? _value.userDetail
           : userDetail // ignore: cast_nullable_to_non_nullable
               as UserDetail,
@@ -111,11 +117,11 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserDto implements _UserDto {
-  const _$_UserDto(this.token, this.userDetail);
+class _$UserDtoImpl implements _UserDto {
+  const _$UserDtoImpl(this.token, this.userDetail);
 
-  factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
-      _$$_UserDtoFromJson(json);
+  factory _$UserDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserDtoImplFromJson(json);
 
   @override
   final String token;
@@ -128,30 +134,28 @@ class _$_UserDto implements _UserDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserDto &&
-            const DeepCollectionEquality().equals(other.token, token) &&
-            const DeepCollectionEquality()
-                .equals(other.userDetail, userDetail));
+            other is _$UserDtoImpl &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.userDetail, userDetail) ||
+                other.userDetail == userDetail));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(token),
-      const DeepCollectionEquality().hash(userDetail));
+  int get hashCode => Object.hash(runtimeType, token, userDetail);
 
   @JsonKey(ignore: true)
   @override
-  _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>
-      __$$_UserDtoCopyWithImpl<_$_UserDto>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UserDtoImplCopyWith<_$UserDtoImpl> get copyWith =>
+      __$$UserDtoImplCopyWithImpl<_$UserDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserDtoToJson(
+    return _$$UserDtoImplToJson(
       this,
     );
   }
@@ -159,9 +163,9 @@ class _$_UserDto implements _UserDto {
 
 abstract class _UserDto implements UserDto {
   const factory _UserDto(final String token, final UserDetail userDetail) =
-      _$_UserDto;
+      _$UserDtoImpl;
 
-  factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
+  factory _UserDto.fromJson(Map<String, dynamic> json) = _$UserDtoImpl.fromJson;
 
   @override
   String get token;
@@ -169,7 +173,7 @@ abstract class _UserDto implements UserDto {
   UserDetail get userDetail;
   @override
   @JsonKey(ignore: true)
-  _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>
+  _$$UserDtoImplCopyWith<_$UserDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -195,7 +199,8 @@ mixin _$UserDetail {
 abstract class $UserDetailCopyWith<$Res> {
   factory $UserDetailCopyWith(
           UserDetail value, $Res Function(UserDetail) then) =
-      _$UserDetailCopyWithImpl<$Res>;
+      _$UserDetailCopyWithImpl<$Res, UserDetail>;
+  @useResult
   $Res call(
       {String fullName,
       String email,
@@ -205,53 +210,57 @@ abstract class $UserDetailCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserDetailCopyWithImpl<$Res> implements $UserDetailCopyWith<$Res> {
+class _$UserDetailCopyWithImpl<$Res, $Val extends UserDetail>
+    implements $UserDetailCopyWith<$Res> {
   _$UserDetailCopyWithImpl(this._value, this._then);
 
-  final UserDetail _value;
   // ignore: unused_field
-  final $Res Function(UserDetail) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fullName = freezed,
-    Object? email = freezed,
-    Object? password = freezed,
+    Object? fullName = null,
+    Object? email = null,
+    Object? password = null,
     Object? univercity = freezed,
-    Object? timeCreated = freezed,
+    Object? timeCreated = null,
   }) {
     return _then(_value.copyWith(
-      fullName: fullName == freezed
+      fullName: null == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      univercity: univercity == freezed
+      univercity: freezed == univercity
           ? _value.univercity
           : univercity // ignore: cast_nullable_to_non_nullable
               as String?,
-      timeCreated: timeCreated == freezed
+      timeCreated: null == timeCreated
           ? _value.timeCreated
           : timeCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UserDetailCopyWith<$Res>
+abstract class _$$UserDetailImplCopyWith<$Res>
     implements $UserDetailCopyWith<$Res> {
-  factory _$$_UserDetailCopyWith(
-          _$_UserDetail value, $Res Function(_$_UserDetail) then) =
-      __$$_UserDetailCopyWithImpl<$Res>;
+  factory _$$UserDetailImplCopyWith(
+          _$UserDetailImpl value, $Res Function(_$UserDetailImpl) then) =
+      __$$UserDetailImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String fullName,
       String email,
@@ -261,41 +270,40 @@ abstract class _$$_UserDetailCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserDetailCopyWithImpl<$Res> extends _$UserDetailCopyWithImpl<$Res>
-    implements _$$_UserDetailCopyWith<$Res> {
-  __$$_UserDetailCopyWithImpl(
-      _$_UserDetail _value, $Res Function(_$_UserDetail) _then)
-      : super(_value, (v) => _then(v as _$_UserDetail));
+class __$$UserDetailImplCopyWithImpl<$Res>
+    extends _$UserDetailCopyWithImpl<$Res, _$UserDetailImpl>
+    implements _$$UserDetailImplCopyWith<$Res> {
+  __$$UserDetailImplCopyWithImpl(
+      _$UserDetailImpl _value, $Res Function(_$UserDetailImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_UserDetail get _value => super._value as _$_UserDetail;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? fullName = freezed,
-    Object? email = freezed,
-    Object? password = freezed,
+    Object? fullName = null,
+    Object? email = null,
+    Object? password = null,
     Object? univercity = freezed,
-    Object? timeCreated = freezed,
+    Object? timeCreated = null,
   }) {
-    return _then(_$_UserDetail(
-      fullName == freezed
+    return _then(_$UserDetailImpl(
+      null == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
               as String,
-      email == freezed
+      null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password == freezed
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      univercity == freezed
+      freezed == univercity
           ? _value.univercity
           : univercity // ignore: cast_nullable_to_non_nullable
               as String?,
-      timeCreated == freezed
+      null == timeCreated
           ? _value.timeCreated
           : timeCreated // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -305,12 +313,12 @@ class __$$_UserDetailCopyWithImpl<$Res> extends _$UserDetailCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserDetail implements _UserDetail {
-  const _$_UserDetail(this.fullName, this.email, this.password, this.univercity,
-      this.timeCreated);
+class _$UserDetailImpl implements _UserDetail {
+  const _$UserDetailImpl(this.fullName, this.email, this.password,
+      this.univercity, this.timeCreated);
 
-  factory _$_UserDetail.fromJson(Map<String, dynamic> json) =>
-      _$$_UserDetailFromJson(json);
+  factory _$UserDetailImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserDetailImplFromJson(json);
 
   @override
   final String fullName;
@@ -329,37 +337,35 @@ class _$_UserDetail implements _UserDetail {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserDetail &&
-            const DeepCollectionEquality().equals(other.fullName, fullName) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality()
-                .equals(other.univercity, univercity) &&
-            const DeepCollectionEquality()
-                .equals(other.timeCreated, timeCreated));
+            other is _$UserDetailImpl &&
+            (identical(other.fullName, fullName) ||
+                other.fullName == fullName) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.univercity, univercity) ||
+                other.univercity == univercity) &&
+            (identical(other.timeCreated, timeCreated) ||
+                other.timeCreated == timeCreated));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(fullName),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(univercity),
-      const DeepCollectionEquality().hash(timeCreated));
+      runtimeType, fullName, email, password, univercity, timeCreated);
 
   @JsonKey(ignore: true)
   @override
-  _$$_UserDetailCopyWith<_$_UserDetail> get copyWith =>
-      __$$_UserDetailCopyWithImpl<_$_UserDetail>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UserDetailImplCopyWith<_$UserDetailImpl> get copyWith =>
+      __$$UserDetailImplCopyWithImpl<_$UserDetailImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserDetailToJson(
+    return _$$UserDetailImplToJson(
       this,
     );
   }
@@ -371,10 +377,10 @@ abstract class _UserDetail implements UserDetail {
       final String email,
       final String password,
       final String? univercity,
-      final DateTime timeCreated) = _$_UserDetail;
+      final DateTime timeCreated) = _$UserDetailImpl;
 
   factory _UserDetail.fromJson(Map<String, dynamic> json) =
-      _$_UserDetail.fromJson;
+      _$UserDetailImpl.fromJson;
 
   @override
   String get fullName;
@@ -388,6 +394,6 @@ abstract class _UserDetail implements UserDetail {
   DateTime get timeCreated;
   @override
   @JsonKey(ignore: true)
-  _$$_UserDetailCopyWith<_$_UserDetail> get copyWith =>
+  _$$UserDetailImplCopyWith<_$UserDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

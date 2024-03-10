@@ -6,8 +6,8 @@ part of 'file_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FileResponse _$$_FileResponseFromJson(Map<String, dynamic> json) =>
-    _$_FileResponse(
+_$FileResponseImpl _$$FileResponseImplFromJson(Map<String, dynamic> json) =>
+    _$FileResponseImpl(
       (json['result'] as List<dynamic>?)
           ?.map((e) => FileDetail.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -16,7 +16,7 @@ _$_FileResponse _$$_FileResponseFromJson(Map<String, dynamic> json) =>
       json['limit'] as int?,
     );
 
-Map<String, dynamic> _$$_FileResponseToJson(_$_FileResponse instance) =>
+Map<String, dynamic> _$$FileResponseImplToJson(_$FileResponseImpl instance) =>
     <String, dynamic>{
       'result': instance.result,
       'totalCount': instance.totalCount,
@@ -24,8 +24,8 @@ Map<String, dynamic> _$$_FileResponseToJson(_$_FileResponse instance) =>
       'limit': instance.limit,
     };
 
-_$_FileDetail _$$_FileDetailFromJson(Map<String, dynamic> json) =>
-    _$_FileDetail(
+_$FileDetailImpl _$$FileDetailImplFromJson(Map<String, dynamic> json) =>
+    _$FileDetailImpl(
       json['userId'] as String?,
       json['title'] as String?,
       json['about'] as String?,
@@ -39,7 +39,7 @@ _$_FileDetail _$$_FileDetailFromJson(Map<String, dynamic> json) =>
       (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_FileDetailToJson(_$_FileDetail instance) =>
+Map<String, dynamic> _$$FileDetailImplToJson(_$FileDetailImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'title': instance.title,

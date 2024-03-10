@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'papers_detail_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'papers_detail_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PapersDetailState {
@@ -28,69 +28,71 @@ mixin _$PapersDetailState {
 abstract class $PapersDetailStateCopyWith<$Res> {
   factory $PapersDetailStateCopyWith(
           PapersDetailState value, $Res Function(PapersDetailState) then) =
-      _$PapersDetailStateCopyWithImpl<$Res>;
+      _$PapersDetailStateCopyWithImpl<$Res, PapersDetailState>;
+  @useResult
   $Res call({bool? rating, bool? isDownloaded});
 }
 
 /// @nodoc
-class _$PapersDetailStateCopyWithImpl<$Res>
+class _$PapersDetailStateCopyWithImpl<$Res, $Val extends PapersDetailState>
     implements $PapersDetailStateCopyWith<$Res> {
   _$PapersDetailStateCopyWithImpl(this._value, this._then);
 
-  final PapersDetailState _value;
   // ignore: unused_field
-  final $Res Function(PapersDetailState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? rating = freezed,
     Object? isDownloaded = freezed,
   }) {
     return _then(_value.copyWith(
-      rating: rating == freezed
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isDownloaded: isDownloaded == freezed
+      isDownloaded: freezed == isDownloaded
           ? _value.isDownloaded
           : isDownloaded // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$PapersDetailCopyWith<$Res>
+abstract class _$$PapersDetailImplCopyWith<$Res>
     implements $PapersDetailStateCopyWith<$Res> {
-  factory _$$PapersDetailCopyWith(
-          _$PapersDetail value, $Res Function(_$PapersDetail) then) =
-      __$$PapersDetailCopyWithImpl<$Res>;
+  factory _$$PapersDetailImplCopyWith(
+          _$PapersDetailImpl value, $Res Function(_$PapersDetailImpl) then) =
+      __$$PapersDetailImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool? rating, bool? isDownloaded});
 }
 
 /// @nodoc
-class __$$PapersDetailCopyWithImpl<$Res>
-    extends _$PapersDetailStateCopyWithImpl<$Res>
-    implements _$$PapersDetailCopyWith<$Res> {
-  __$$PapersDetailCopyWithImpl(
-      _$PapersDetail _value, $Res Function(_$PapersDetail) _then)
-      : super(_value, (v) => _then(v as _$PapersDetail));
+class __$$PapersDetailImplCopyWithImpl<$Res>
+    extends _$PapersDetailStateCopyWithImpl<$Res, _$PapersDetailImpl>
+    implements _$$PapersDetailImplCopyWith<$Res> {
+  __$$PapersDetailImplCopyWithImpl(
+      _$PapersDetailImpl _value, $Res Function(_$PapersDetailImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$PapersDetail get _value => super._value as _$PapersDetail;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? rating = freezed,
     Object? isDownloaded = freezed,
   }) {
-    return _then(_$PapersDetail(
-      rating: rating == freezed
+    return _then(_$PapersDetailImpl(
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isDownloaded: isDownloaded == freezed
+      isDownloaded: freezed == isDownloaded
           ? _value.isDownloaded
           : isDownloaded // ignore: cast_nullable_to_non_nullable
               as bool?,
@@ -100,8 +102,8 @@ class __$$PapersDetailCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PapersDetail implements PapersDetail {
-  const _$PapersDetail({this.rating, this.isDownloaded});
+class _$PapersDetailImpl implements PapersDetail {
+  const _$PapersDetailImpl({this.rating, this.isDownloaded});
 
   @override
   final bool? rating;
@@ -114,30 +116,28 @@ class _$PapersDetail implements PapersDetail {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PapersDetail &&
-            const DeepCollectionEquality().equals(other.rating, rating) &&
-            const DeepCollectionEquality()
-                .equals(other.isDownloaded, isDownloaded));
+            other is _$PapersDetailImpl &&
+            (identical(other.rating, rating) || other.rating == rating) &&
+            (identical(other.isDownloaded, isDownloaded) ||
+                other.isDownloaded == isDownloaded));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(rating),
-      const DeepCollectionEquality().hash(isDownloaded));
+  int get hashCode => Object.hash(runtimeType, rating, isDownloaded);
 
   @JsonKey(ignore: true)
   @override
-  _$$PapersDetailCopyWith<_$PapersDetail> get copyWith =>
-      __$$PapersDetailCopyWithImpl<_$PapersDetail>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PapersDetailImplCopyWith<_$PapersDetailImpl> get copyWith =>
+      __$$PapersDetailImplCopyWithImpl<_$PapersDetailImpl>(this, _$identity);
 }
 
 abstract class PapersDetail implements PapersDetailState {
   const factory PapersDetail({final bool? rating, final bool? isDownloaded}) =
-      _$PapersDetail;
+      _$PapersDetailImpl;
 
   @override
   bool? get rating;
@@ -145,6 +145,6 @@ abstract class PapersDetail implements PapersDetailState {
   bool? get isDownloaded;
   @override
   @JsonKey(ignore: true)
-  _$$PapersDetailCopyWith<_$PapersDetail> get copyWith =>
+  _$$PapersDetailImplCopyWith<_$PapersDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

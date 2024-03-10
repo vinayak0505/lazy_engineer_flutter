@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'search_books_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'search_books_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SearchBooksEvent {
@@ -27,58 +27,61 @@ mixin _$SearchBooksEvent {
 abstract class $SearchBooksEventCopyWith<$Res> {
   factory $SearchBooksEventCopyWith(
           SearchBooksEvent value, $Res Function(SearchBooksEvent) then) =
-      _$SearchBooksEventCopyWithImpl<$Res>;
+      _$SearchBooksEventCopyWithImpl<$Res, SearchBooksEvent>;
+  @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class _$SearchBooksEventCopyWithImpl<$Res>
+class _$SearchBooksEventCopyWithImpl<$Res, $Val extends SearchBooksEvent>
     implements $SearchBooksEventCopyWith<$Res> {
   _$SearchBooksEventCopyWithImpl(this._value, this._then);
 
-  final SearchBooksEvent _value;
   // ignore: unused_field
-  final $Res Function(SearchBooksEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
+    Object? query = null,
   }) {
     return _then(_value.copyWith(
-      query: query == freezed
+      query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res>
+abstract class _$$StartedImplCopyWith<$Res>
     implements $SearchBooksEventCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+  factory _$$StartedImplCopyWith(
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$SearchBooksEventCopyWithImpl<$Res>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
+class __$$StartedImplCopyWithImpl<$Res>
+    extends _$SearchBooksEventCopyWithImpl<$Res, _$StartedImpl>
+    implements _$$StartedImplCopyWith<$Res> {
+  __$$StartedImplCopyWithImpl(
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_Started get _value => super._value as _$_Started;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
+    Object? query = null,
   }) {
-    return _then(_$_Started(
-      query == freezed
+    return _then(_$StartedImpl(
+      null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
@@ -88,8 +91,8 @@ class __$$_StartedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started(this.query);
+class _$StartedImpl implements _Started {
+  const _$StartedImpl(this.query);
 
   @override
   final String query;
@@ -100,31 +103,31 @@ class _$_Started implements _Started {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Started &&
-            const DeepCollectionEquality().equals(other.query, query));
+            other is _$StartedImpl &&
+            (identical(other.query, query) || other.query == query));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(query));
+  int get hashCode => Object.hash(runtimeType, query);
 
   @JsonKey(ignore: true)
   @override
-  _$$_StartedCopyWith<_$_Started> get copyWith =>
-      __$$_StartedCopyWithImpl<_$_Started>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$StartedImplCopyWith<_$StartedImpl> get copyWith =>
+      __$$StartedImplCopyWithImpl<_$StartedImpl>(this, _$identity);
 }
 
 abstract class _Started implements SearchBooksEvent {
-  const factory _Started(final String query) = _$_Started;
+  const factory _Started(final String query) = _$StartedImpl;
 
   @override
   String get query;
   @override
   @JsonKey(ignore: true)
-  _$$_StartedCopyWith<_$_Started> get copyWith =>
+  _$$StartedImplCopyWith<_$StartedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -140,10 +143,10 @@ mixin _$SearchBooksState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<BookDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<BookDetail> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -165,10 +168,10 @@ mixin _$SearchBooksState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchBooksInitial value)? initial,
-    TResult Function(_SearchBooksLoading value)? loading,
-    TResult Function(_SearchBooksFailure value)? failure,
-    TResult Function(_SearchBooksSuccess value)? success,
+    TResult? Function(_SearchBooksInitial value)? initial,
+    TResult? Function(_SearchBooksLoading value)? loading,
+    TResult? Function(_SearchBooksFailure value)? failure,
+    TResult? Function(_SearchBooksSuccess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -186,42 +189,40 @@ mixin _$SearchBooksState {
 abstract class $SearchBooksStateCopyWith<$Res> {
   factory $SearchBooksStateCopyWith(
           SearchBooksState value, $Res Function(SearchBooksState) then) =
-      _$SearchBooksStateCopyWithImpl<$Res>;
+      _$SearchBooksStateCopyWithImpl<$Res, SearchBooksState>;
 }
 
 /// @nodoc
-class _$SearchBooksStateCopyWithImpl<$Res>
+class _$SearchBooksStateCopyWithImpl<$Res, $Val extends SearchBooksState>
     implements $SearchBooksStateCopyWith<$Res> {
   _$SearchBooksStateCopyWithImpl(this._value, this._then);
 
-  final SearchBooksState _value;
   // ignore: unused_field
-  final $Res Function(SearchBooksState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SearchBooksInitialCopyWith<$Res> {
-  factory _$$_SearchBooksInitialCopyWith(_$_SearchBooksInitial value,
-          $Res Function(_$_SearchBooksInitial) then) =
-      __$$_SearchBooksInitialCopyWithImpl<$Res>;
+abstract class _$$SearchBooksInitialImplCopyWith<$Res> {
+  factory _$$SearchBooksInitialImplCopyWith(_$SearchBooksInitialImpl value,
+          $Res Function(_$SearchBooksInitialImpl) then) =
+      __$$SearchBooksInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SearchBooksInitialCopyWithImpl<$Res>
-    extends _$SearchBooksStateCopyWithImpl<$Res>
-    implements _$$_SearchBooksInitialCopyWith<$Res> {
-  __$$_SearchBooksInitialCopyWithImpl(
-      _$_SearchBooksInitial _value, $Res Function(_$_SearchBooksInitial) _then)
-      : super(_value, (v) => _then(v as _$_SearchBooksInitial));
-
-  @override
-  _$_SearchBooksInitial get _value => super._value as _$_SearchBooksInitial;
+class __$$SearchBooksInitialImplCopyWithImpl<$Res>
+    extends _$SearchBooksStateCopyWithImpl<$Res, _$SearchBooksInitialImpl>
+    implements _$$SearchBooksInitialImplCopyWith<$Res> {
+  __$$SearchBooksInitialImplCopyWithImpl(_$SearchBooksInitialImpl _value,
+      $Res Function(_$SearchBooksInitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SearchBooksInitial implements _SearchBooksInitial {
-  const _$_SearchBooksInitial();
+class _$SearchBooksInitialImpl implements _SearchBooksInitial {
+  const _$SearchBooksInitialImpl();
 
   @override
   String toString() {
@@ -229,9 +230,9 @@ class _$_SearchBooksInitial implements _SearchBooksInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SearchBooksInitial);
+        (other.runtimeType == runtimeType && other is _$SearchBooksInitialImpl);
   }
 
   @override
@@ -251,10 +252,10 @@ class _$_SearchBooksInitial implements _SearchBooksInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<BookDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<BookDetail> data)? success,
   }) {
     return initial?.call();
   }
@@ -288,10 +289,10 @@ class _$_SearchBooksInitial implements _SearchBooksInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchBooksInitial value)? initial,
-    TResult Function(_SearchBooksLoading value)? loading,
-    TResult Function(_SearchBooksFailure value)? failure,
-    TResult Function(_SearchBooksSuccess value)? success,
+    TResult? Function(_SearchBooksInitial value)? initial,
+    TResult? Function(_SearchBooksLoading value)? loading,
+    TResult? Function(_SearchBooksFailure value)? failure,
+    TResult? Function(_SearchBooksSuccess value)? success,
   }) {
     return initial?.call(this);
   }
@@ -313,32 +314,29 @@ class _$_SearchBooksInitial implements _SearchBooksInitial {
 }
 
 abstract class _SearchBooksInitial implements SearchBooksState {
-  const factory _SearchBooksInitial() = _$_SearchBooksInitial;
+  const factory _SearchBooksInitial() = _$SearchBooksInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_SearchBooksLoadingCopyWith<$Res> {
-  factory _$$_SearchBooksLoadingCopyWith(_$_SearchBooksLoading value,
-          $Res Function(_$_SearchBooksLoading) then) =
-      __$$_SearchBooksLoadingCopyWithImpl<$Res>;
+abstract class _$$SearchBooksLoadingImplCopyWith<$Res> {
+  factory _$$SearchBooksLoadingImplCopyWith(_$SearchBooksLoadingImpl value,
+          $Res Function(_$SearchBooksLoadingImpl) then) =
+      __$$SearchBooksLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SearchBooksLoadingCopyWithImpl<$Res>
-    extends _$SearchBooksStateCopyWithImpl<$Res>
-    implements _$$_SearchBooksLoadingCopyWith<$Res> {
-  __$$_SearchBooksLoadingCopyWithImpl(
-      _$_SearchBooksLoading _value, $Res Function(_$_SearchBooksLoading) _then)
-      : super(_value, (v) => _then(v as _$_SearchBooksLoading));
-
-  @override
-  _$_SearchBooksLoading get _value => super._value as _$_SearchBooksLoading;
+class __$$SearchBooksLoadingImplCopyWithImpl<$Res>
+    extends _$SearchBooksStateCopyWithImpl<$Res, _$SearchBooksLoadingImpl>
+    implements _$$SearchBooksLoadingImplCopyWith<$Res> {
+  __$$SearchBooksLoadingImplCopyWithImpl(_$SearchBooksLoadingImpl _value,
+      $Res Function(_$SearchBooksLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SearchBooksLoading implements _SearchBooksLoading {
-  const _$_SearchBooksLoading();
+class _$SearchBooksLoadingImpl implements _SearchBooksLoading {
+  const _$SearchBooksLoadingImpl();
 
   @override
   String toString() {
@@ -346,9 +344,9 @@ class _$_SearchBooksLoading implements _SearchBooksLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SearchBooksLoading);
+        (other.runtimeType == runtimeType && other is _$SearchBooksLoadingImpl);
   }
 
   @override
@@ -368,10 +366,10 @@ class _$_SearchBooksLoading implements _SearchBooksLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<BookDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<BookDetail> data)? success,
   }) {
     return loading?.call();
   }
@@ -405,10 +403,10 @@ class _$_SearchBooksLoading implements _SearchBooksLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchBooksInitial value)? initial,
-    TResult Function(_SearchBooksLoading value)? loading,
-    TResult Function(_SearchBooksFailure value)? failure,
-    TResult Function(_SearchBooksSuccess value)? success,
+    TResult? Function(_SearchBooksInitial value)? initial,
+    TResult? Function(_SearchBooksLoading value)? loading,
+    TResult? Function(_SearchBooksFailure value)? failure,
+    TResult? Function(_SearchBooksSuccess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -430,34 +428,33 @@ class _$_SearchBooksLoading implements _SearchBooksLoading {
 }
 
 abstract class _SearchBooksLoading implements SearchBooksState {
-  const factory _SearchBooksLoading() = _$_SearchBooksLoading;
+  const factory _SearchBooksLoading() = _$SearchBooksLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_SearchBooksFailureCopyWith<$Res> {
-  factory _$$_SearchBooksFailureCopyWith(_$_SearchBooksFailure value,
-          $Res Function(_$_SearchBooksFailure) then) =
-      __$$_SearchBooksFailureCopyWithImpl<$Res>;
+abstract class _$$SearchBooksFailureImplCopyWith<$Res> {
+  factory _$$SearchBooksFailureImplCopyWith(_$SearchBooksFailureImpl value,
+          $Res Function(_$SearchBooksFailureImpl) then) =
+      __$$SearchBooksFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_SearchBooksFailureCopyWithImpl<$Res>
-    extends _$SearchBooksStateCopyWithImpl<$Res>
-    implements _$$_SearchBooksFailureCopyWith<$Res> {
-  __$$_SearchBooksFailureCopyWithImpl(
-      _$_SearchBooksFailure _value, $Res Function(_$_SearchBooksFailure) _then)
-      : super(_value, (v) => _then(v as _$_SearchBooksFailure));
+class __$$SearchBooksFailureImplCopyWithImpl<$Res>
+    extends _$SearchBooksStateCopyWithImpl<$Res, _$SearchBooksFailureImpl>
+    implements _$$SearchBooksFailureImplCopyWith<$Res> {
+  __$$SearchBooksFailureImplCopyWithImpl(_$SearchBooksFailureImpl _value,
+      $Res Function(_$SearchBooksFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SearchBooksFailure get _value => super._value as _$_SearchBooksFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_SearchBooksFailure(
-      e == freezed
+    return _then(_$SearchBooksFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -467,8 +464,8 @@ class __$$_SearchBooksFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchBooksFailure implements _SearchBooksFailure {
-  const _$_SearchBooksFailure(this.e);
+class _$SearchBooksFailureImpl implements _SearchBooksFailure {
+  const _$SearchBooksFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -479,10 +476,10 @@ class _$_SearchBooksFailure implements _SearchBooksFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchBooksFailure &&
+            other is _$SearchBooksFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -492,8 +489,9 @@ class _$_SearchBooksFailure implements _SearchBooksFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SearchBooksFailureCopyWith<_$_SearchBooksFailure> get copyWith =>
-      __$$_SearchBooksFailureCopyWithImpl<_$_SearchBooksFailure>(
+  @pragma('vm:prefer-inline')
+  _$$SearchBooksFailureImplCopyWith<_$SearchBooksFailureImpl> get copyWith =>
+      __$$SearchBooksFailureImplCopyWithImpl<_$SearchBooksFailureImpl>(
           this, _$identity);
 
   @override
@@ -510,10 +508,10 @@ class _$_SearchBooksFailure implements _SearchBooksFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<BookDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<BookDetail> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -547,10 +545,10 @@ class _$_SearchBooksFailure implements _SearchBooksFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchBooksInitial value)? initial,
-    TResult Function(_SearchBooksLoading value)? loading,
-    TResult Function(_SearchBooksFailure value)? failure,
-    TResult Function(_SearchBooksSuccess value)? success,
+    TResult? Function(_SearchBooksInitial value)? initial,
+    TResult? Function(_SearchBooksLoading value)? loading,
+    TResult? Function(_SearchBooksFailure value)? failure,
+    TResult? Function(_SearchBooksSuccess value)? success,
   }) {
     return failure?.call(this);
   }
@@ -572,39 +570,38 @@ class _$_SearchBooksFailure implements _SearchBooksFailure {
 }
 
 abstract class _SearchBooksFailure implements SearchBooksState {
-  const factory _SearchBooksFailure(final dynamic e) = _$_SearchBooksFailure;
+  const factory _SearchBooksFailure(final dynamic e) = _$SearchBooksFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_SearchBooksFailureCopyWith<_$_SearchBooksFailure> get copyWith =>
+  _$$SearchBooksFailureImplCopyWith<_$SearchBooksFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SearchBooksSuccessCopyWith<$Res> {
-  factory _$$_SearchBooksSuccessCopyWith(_$_SearchBooksSuccess value,
-          $Res Function(_$_SearchBooksSuccess) then) =
-      __$$_SearchBooksSuccessCopyWithImpl<$Res>;
+abstract class _$$SearchBooksSuccessImplCopyWith<$Res> {
+  factory _$$SearchBooksSuccessImplCopyWith(_$SearchBooksSuccessImpl value,
+          $Res Function(_$SearchBooksSuccessImpl) then) =
+      __$$SearchBooksSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<BookDetail> data});
 }
 
 /// @nodoc
-class __$$_SearchBooksSuccessCopyWithImpl<$Res>
-    extends _$SearchBooksStateCopyWithImpl<$Res>
-    implements _$$_SearchBooksSuccessCopyWith<$Res> {
-  __$$_SearchBooksSuccessCopyWithImpl(
-      _$_SearchBooksSuccess _value, $Res Function(_$_SearchBooksSuccess) _then)
-      : super(_value, (v) => _then(v as _$_SearchBooksSuccess));
+class __$$SearchBooksSuccessImplCopyWithImpl<$Res>
+    extends _$SearchBooksStateCopyWithImpl<$Res, _$SearchBooksSuccessImpl>
+    implements _$$SearchBooksSuccessImplCopyWith<$Res> {
+  __$$SearchBooksSuccessImplCopyWithImpl(_$SearchBooksSuccessImpl _value,
+      $Res Function(_$SearchBooksSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SearchBooksSuccess get _value => super._value as _$_SearchBooksSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$_SearchBooksSuccess(
-      data == freezed
+    return _then(_$SearchBooksSuccessImpl(
+      null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<BookDetail>,
@@ -614,12 +611,13 @@ class __$$_SearchBooksSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchBooksSuccess implements _SearchBooksSuccess {
-  const _$_SearchBooksSuccess(final List<BookDetail> data) : _data = data;
+class _$SearchBooksSuccessImpl implements _SearchBooksSuccess {
+  const _$SearchBooksSuccessImpl(final List<BookDetail> data) : _data = data;
 
   final List<BookDetail> _data;
   @override
   List<BookDetail> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -630,10 +628,10 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchBooksSuccess &&
+            other is _$SearchBooksSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -643,8 +641,9 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SearchBooksSuccessCopyWith<_$_SearchBooksSuccess> get copyWith =>
-      __$$_SearchBooksSuccessCopyWithImpl<_$_SearchBooksSuccess>(
+  @pragma('vm:prefer-inline')
+  _$$SearchBooksSuccessImplCopyWith<_$SearchBooksSuccessImpl> get copyWith =>
+      __$$SearchBooksSuccessImplCopyWithImpl<_$SearchBooksSuccessImpl>(
           this, _$identity);
 
   @override
@@ -661,10 +660,10 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<BookDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<BookDetail> data)? success,
   }) {
     return success?.call(data);
   }
@@ -698,10 +697,10 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchBooksInitial value)? initial,
-    TResult Function(_SearchBooksLoading value)? loading,
-    TResult Function(_SearchBooksFailure value)? failure,
-    TResult Function(_SearchBooksSuccess value)? success,
+    TResult? Function(_SearchBooksInitial value)? initial,
+    TResult? Function(_SearchBooksLoading value)? loading,
+    TResult? Function(_SearchBooksFailure value)? failure,
+    TResult? Function(_SearchBooksSuccess value)? success,
   }) {
     return success?.call(this);
   }
@@ -724,10 +723,10 @@ class _$_SearchBooksSuccess implements _SearchBooksSuccess {
 
 abstract class _SearchBooksSuccess implements SearchBooksState {
   const factory _SearchBooksSuccess(final List<BookDetail> data) =
-      _$_SearchBooksSuccess;
+      _$SearchBooksSuccessImpl;
 
   List<BookDetail> get data;
   @JsonKey(ignore: true)
-  _$$_SearchBooksSuccessCopyWith<_$_SearchBooksSuccess> get copyWith =>
+  _$$SearchBooksSuccessImplCopyWith<_$SearchBooksSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

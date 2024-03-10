@@ -6,9 +6,9 @@ part of 'files_detail_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FilesDetailResponse _$$_FilesDetailResponseFromJson(
+_$FilesDetailResponseImpl _$$FilesDetailResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_FilesDetailResponse(
+    _$FilesDetailResponseImpl(
       json['title'] as String,
       json['link'],
       json['about'] as String?,
@@ -19,8 +19,8 @@ _$_FilesDetailResponse _$$_FilesDetailResponseFromJson(
       (json['rating'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_FilesDetailResponseToJson(
-        _$_FilesDetailResponse instance) =>
+Map<String, dynamic> _$$FilesDetailResponseImplToJson(
+        _$FilesDetailResponseImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'link': instance.link,

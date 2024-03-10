@@ -6,8 +6,8 @@ part of 'filter_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FilterRequest _$$_FilterRequestFromJson(Map<String, dynamic> json) =>
-    _$_FilterRequest(
+_$FilterRequestImpl _$$FilterRequestImplFromJson(Map<String, dynamic> json) =>
+    _$FilterRequestImpl(
       textField: (json['textField'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -17,7 +17,7 @@ _$_FilterRequest _$$_FilterRequestFromJson(Map<String, dynamic> json) =>
       singleOption: json['singleOption'] as String?,
     );
 
-Map<String, dynamic> _$$_FilterRequestToJson(_$_FilterRequest instance) =>
+Map<String, dynamic> _$$FilterRequestImplToJson(_$FilterRequestImpl instance) =>
     <String, dynamic>{
       'textField': instance.textField,
       'multiOption': instance.multiOption,

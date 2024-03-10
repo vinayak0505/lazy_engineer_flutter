@@ -8,7 +8,7 @@ class DioException implements Exception {
       case DioErrorType.cancel:
         errorMessage = 'Request to the server was cancelled.';
         break;
-      case DioErrorType.connectTimeout:
+      case DioErrorType.connectionTimeout:
         errorMessage = 'Connection timed out.';
         break;
       case DioErrorType.receiveTimeout:
@@ -17,11 +17,11 @@ class DioException implements Exception {
       case DioErrorType.sendTimeout:
         errorMessage = 'Request send timeout.';
         break;
-      case DioErrorType.response:
+      case DioErrorType.badResponse:
         errorMessage = _handleStatusCode(dioError.response?.statusCode);
         break;
-      case DioErrorType.other:
-        if (dioError.message.contains('SocketException')) {
+      case DioErrorType.unknown:
+        if (dioError.message?.contains('SocketException') ?? false) {
           errorMessage = 'No Internet.';
           break;
         }

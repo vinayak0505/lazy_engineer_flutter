@@ -6,8 +6,9 @@ part of 'upload_book_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UploadBookRequest _$$_UploadBookRequestFromJson(Map<String, dynamic> json) =>
-    _$_UploadBookRequest(
+_$UploadBookRequestImpl _$$UploadBookRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UploadBookRequestImpl(
       title: json['title'] as String,
       about: json['about'] as String,
       semester: json['semester'] as String,
@@ -22,8 +23,8 @@ _$_UploadBookRequest _$$_UploadBookRequestFromJson(Map<String, dynamic> json) =>
       image: json['image'],
     );
 
-Map<String, dynamic> _$$_UploadBookRequestToJson(
-        _$_UploadBookRequest instance) =>
+Map<String, dynamic> _$$UploadBookRequestImplToJson(
+        _$UploadBookRequestImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'about': instance.about,

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'search_papers_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'search_papers_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SearchPapersEvent {
@@ -27,58 +27,61 @@ mixin _$SearchPapersEvent {
 abstract class $SearchPapersEventCopyWith<$Res> {
   factory $SearchPapersEventCopyWith(
           SearchPapersEvent value, $Res Function(SearchPapersEvent) then) =
-      _$SearchPapersEventCopyWithImpl<$Res>;
+      _$SearchPapersEventCopyWithImpl<$Res, SearchPapersEvent>;
+  @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class _$SearchPapersEventCopyWithImpl<$Res>
+class _$SearchPapersEventCopyWithImpl<$Res, $Val extends SearchPapersEvent>
     implements $SearchPapersEventCopyWith<$Res> {
   _$SearchPapersEventCopyWithImpl(this._value, this._then);
 
-  final SearchPapersEvent _value;
   // ignore: unused_field
-  final $Res Function(SearchPapersEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
+    Object? query = null,
   }) {
     return _then(_value.copyWith(
-      query: query == freezed
+      query: null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res>
+abstract class _$$StartedImplCopyWith<$Res>
     implements $SearchPapersEventCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+  factory _$$StartedImplCopyWith(
+          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
+      __$$StartedImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String query});
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$SearchPapersEventCopyWithImpl<$Res>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
+class __$$StartedImplCopyWithImpl<$Res>
+    extends _$SearchPapersEventCopyWithImpl<$Res, _$StartedImpl>
+    implements _$$StartedImplCopyWith<$Res> {
+  __$$StartedImplCopyWithImpl(
+      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_Started get _value => super._value as _$_Started;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? query = freezed,
+    Object? query = null,
   }) {
-    return _then(_$_Started(
-      query == freezed
+    return _then(_$StartedImpl(
+      null == query
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as String,
@@ -88,8 +91,8 @@ class __$$_StartedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started(this.query);
+class _$StartedImpl implements _Started {
+  const _$StartedImpl(this.query);
 
   @override
   final String query;
@@ -100,31 +103,31 @@ class _$_Started implements _Started {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Started &&
-            const DeepCollectionEquality().equals(other.query, query));
+            other is _$StartedImpl &&
+            (identical(other.query, query) || other.query == query));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(query));
+  int get hashCode => Object.hash(runtimeType, query);
 
   @JsonKey(ignore: true)
   @override
-  _$$_StartedCopyWith<_$_Started> get copyWith =>
-      __$$_StartedCopyWithImpl<_$_Started>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$StartedImplCopyWith<_$StartedImpl> get copyWith =>
+      __$$StartedImplCopyWithImpl<_$StartedImpl>(this, _$identity);
 }
 
 abstract class _Started implements SearchPapersEvent {
-  const factory _Started(final String query) = _$_Started;
+  const factory _Started(final String query) = _$StartedImpl;
 
   @override
   String get query;
   @override
   @JsonKey(ignore: true)
-  _$$_StartedCopyWith<_$_Started> get copyWith =>
+  _$$StartedImplCopyWith<_$StartedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -140,10 +143,10 @@ mixin _$SearchPapersState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<PaperDetail> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -165,10 +168,10 @@ mixin _$SearchPapersState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchPapersInitial value)? initial,
-    TResult Function(_SearchPapersLoading value)? loading,
-    TResult Function(_SearchPapersFailure value)? failure,
-    TResult Function(_SearchPapersSuccess value)? success,
+    TResult? Function(_SearchPapersInitial value)? initial,
+    TResult? Function(_SearchPapersLoading value)? loading,
+    TResult? Function(_SearchPapersFailure value)? failure,
+    TResult? Function(_SearchPapersSuccess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -186,42 +189,40 @@ mixin _$SearchPapersState {
 abstract class $SearchPapersStateCopyWith<$Res> {
   factory $SearchPapersStateCopyWith(
           SearchPapersState value, $Res Function(SearchPapersState) then) =
-      _$SearchPapersStateCopyWithImpl<$Res>;
+      _$SearchPapersStateCopyWithImpl<$Res, SearchPapersState>;
 }
 
 /// @nodoc
-class _$SearchPapersStateCopyWithImpl<$Res>
+class _$SearchPapersStateCopyWithImpl<$Res, $Val extends SearchPapersState>
     implements $SearchPapersStateCopyWith<$Res> {
   _$SearchPapersStateCopyWithImpl(this._value, this._then);
 
-  final SearchPapersState _value;
   // ignore: unused_field
-  final $Res Function(SearchPapersState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SearchPapersInitialCopyWith<$Res> {
-  factory _$$_SearchPapersInitialCopyWith(_$_SearchPapersInitial value,
-          $Res Function(_$_SearchPapersInitial) then) =
-      __$$_SearchPapersInitialCopyWithImpl<$Res>;
+abstract class _$$SearchPapersInitialImplCopyWith<$Res> {
+  factory _$$SearchPapersInitialImplCopyWith(_$SearchPapersInitialImpl value,
+          $Res Function(_$SearchPapersInitialImpl) then) =
+      __$$SearchPapersInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SearchPapersInitialCopyWithImpl<$Res>
-    extends _$SearchPapersStateCopyWithImpl<$Res>
-    implements _$$_SearchPapersInitialCopyWith<$Res> {
-  __$$_SearchPapersInitialCopyWithImpl(_$_SearchPapersInitial _value,
-      $Res Function(_$_SearchPapersInitial) _then)
-      : super(_value, (v) => _then(v as _$_SearchPapersInitial));
-
-  @override
-  _$_SearchPapersInitial get _value => super._value as _$_SearchPapersInitial;
+class __$$SearchPapersInitialImplCopyWithImpl<$Res>
+    extends _$SearchPapersStateCopyWithImpl<$Res, _$SearchPapersInitialImpl>
+    implements _$$SearchPapersInitialImplCopyWith<$Res> {
+  __$$SearchPapersInitialImplCopyWithImpl(_$SearchPapersInitialImpl _value,
+      $Res Function(_$SearchPapersInitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SearchPapersInitial implements _SearchPapersInitial {
-  const _$_SearchPapersInitial();
+class _$SearchPapersInitialImpl implements _SearchPapersInitial {
+  const _$SearchPapersInitialImpl();
 
   @override
   String toString() {
@@ -229,9 +230,10 @@ class _$_SearchPapersInitial implements _SearchPapersInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SearchPapersInitial);
+        (other.runtimeType == runtimeType &&
+            other is _$SearchPapersInitialImpl);
   }
 
   @override
@@ -251,10 +253,10 @@ class _$_SearchPapersInitial implements _SearchPapersInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<PaperDetail> data)? success,
   }) {
     return initial?.call();
   }
@@ -288,10 +290,10 @@ class _$_SearchPapersInitial implements _SearchPapersInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchPapersInitial value)? initial,
-    TResult Function(_SearchPapersLoading value)? loading,
-    TResult Function(_SearchPapersFailure value)? failure,
-    TResult Function(_SearchPapersSuccess value)? success,
+    TResult? Function(_SearchPapersInitial value)? initial,
+    TResult? Function(_SearchPapersLoading value)? loading,
+    TResult? Function(_SearchPapersFailure value)? failure,
+    TResult? Function(_SearchPapersSuccess value)? success,
   }) {
     return initial?.call(this);
   }
@@ -313,32 +315,29 @@ class _$_SearchPapersInitial implements _SearchPapersInitial {
 }
 
 abstract class _SearchPapersInitial implements SearchPapersState {
-  const factory _SearchPapersInitial() = _$_SearchPapersInitial;
+  const factory _SearchPapersInitial() = _$SearchPapersInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_SearchPapersLoadingCopyWith<$Res> {
-  factory _$$_SearchPapersLoadingCopyWith(_$_SearchPapersLoading value,
-          $Res Function(_$_SearchPapersLoading) then) =
-      __$$_SearchPapersLoadingCopyWithImpl<$Res>;
+abstract class _$$SearchPapersLoadingImplCopyWith<$Res> {
+  factory _$$SearchPapersLoadingImplCopyWith(_$SearchPapersLoadingImpl value,
+          $Res Function(_$SearchPapersLoadingImpl) then) =
+      __$$SearchPapersLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SearchPapersLoadingCopyWithImpl<$Res>
-    extends _$SearchPapersStateCopyWithImpl<$Res>
-    implements _$$_SearchPapersLoadingCopyWith<$Res> {
-  __$$_SearchPapersLoadingCopyWithImpl(_$_SearchPapersLoading _value,
-      $Res Function(_$_SearchPapersLoading) _then)
-      : super(_value, (v) => _then(v as _$_SearchPapersLoading));
-
-  @override
-  _$_SearchPapersLoading get _value => super._value as _$_SearchPapersLoading;
+class __$$SearchPapersLoadingImplCopyWithImpl<$Res>
+    extends _$SearchPapersStateCopyWithImpl<$Res, _$SearchPapersLoadingImpl>
+    implements _$$SearchPapersLoadingImplCopyWith<$Res> {
+  __$$SearchPapersLoadingImplCopyWithImpl(_$SearchPapersLoadingImpl _value,
+      $Res Function(_$SearchPapersLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SearchPapersLoading implements _SearchPapersLoading {
-  const _$_SearchPapersLoading();
+class _$SearchPapersLoadingImpl implements _SearchPapersLoading {
+  const _$SearchPapersLoadingImpl();
 
   @override
   String toString() {
@@ -346,9 +345,10 @@ class _$_SearchPapersLoading implements _SearchPapersLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SearchPapersLoading);
+        (other.runtimeType == runtimeType &&
+            other is _$SearchPapersLoadingImpl);
   }
 
   @override
@@ -368,10 +368,10 @@ class _$_SearchPapersLoading implements _SearchPapersLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<PaperDetail> data)? success,
   }) {
     return loading?.call();
   }
@@ -405,10 +405,10 @@ class _$_SearchPapersLoading implements _SearchPapersLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchPapersInitial value)? initial,
-    TResult Function(_SearchPapersLoading value)? loading,
-    TResult Function(_SearchPapersFailure value)? failure,
-    TResult Function(_SearchPapersSuccess value)? success,
+    TResult? Function(_SearchPapersInitial value)? initial,
+    TResult? Function(_SearchPapersLoading value)? loading,
+    TResult? Function(_SearchPapersFailure value)? failure,
+    TResult? Function(_SearchPapersSuccess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -430,34 +430,33 @@ class _$_SearchPapersLoading implements _SearchPapersLoading {
 }
 
 abstract class _SearchPapersLoading implements SearchPapersState {
-  const factory _SearchPapersLoading() = _$_SearchPapersLoading;
+  const factory _SearchPapersLoading() = _$SearchPapersLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_SearchPapersFailureCopyWith<$Res> {
-  factory _$$_SearchPapersFailureCopyWith(_$_SearchPapersFailure value,
-          $Res Function(_$_SearchPapersFailure) then) =
-      __$$_SearchPapersFailureCopyWithImpl<$Res>;
+abstract class _$$SearchPapersFailureImplCopyWith<$Res> {
+  factory _$$SearchPapersFailureImplCopyWith(_$SearchPapersFailureImpl value,
+          $Res Function(_$SearchPapersFailureImpl) then) =
+      __$$SearchPapersFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_SearchPapersFailureCopyWithImpl<$Res>
-    extends _$SearchPapersStateCopyWithImpl<$Res>
-    implements _$$_SearchPapersFailureCopyWith<$Res> {
-  __$$_SearchPapersFailureCopyWithImpl(_$_SearchPapersFailure _value,
-      $Res Function(_$_SearchPapersFailure) _then)
-      : super(_value, (v) => _then(v as _$_SearchPapersFailure));
+class __$$SearchPapersFailureImplCopyWithImpl<$Res>
+    extends _$SearchPapersStateCopyWithImpl<$Res, _$SearchPapersFailureImpl>
+    implements _$$SearchPapersFailureImplCopyWith<$Res> {
+  __$$SearchPapersFailureImplCopyWithImpl(_$SearchPapersFailureImpl _value,
+      $Res Function(_$SearchPapersFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SearchPapersFailure get _value => super._value as _$_SearchPapersFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_SearchPapersFailure(
-      e == freezed
+    return _then(_$SearchPapersFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -467,8 +466,8 @@ class __$$_SearchPapersFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchPapersFailure implements _SearchPapersFailure {
-  const _$_SearchPapersFailure(this.e);
+class _$SearchPapersFailureImpl implements _SearchPapersFailure {
+  const _$SearchPapersFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -479,10 +478,10 @@ class _$_SearchPapersFailure implements _SearchPapersFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchPapersFailure &&
+            other is _$SearchPapersFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -492,8 +491,9 @@ class _$_SearchPapersFailure implements _SearchPapersFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SearchPapersFailureCopyWith<_$_SearchPapersFailure> get copyWith =>
-      __$$_SearchPapersFailureCopyWithImpl<_$_SearchPapersFailure>(
+  @pragma('vm:prefer-inline')
+  _$$SearchPapersFailureImplCopyWith<_$SearchPapersFailureImpl> get copyWith =>
+      __$$SearchPapersFailureImplCopyWithImpl<_$SearchPapersFailureImpl>(
           this, _$identity);
 
   @override
@@ -510,10 +510,10 @@ class _$_SearchPapersFailure implements _SearchPapersFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<PaperDetail> data)? success,
   }) {
     return failure?.call(e);
   }
@@ -547,10 +547,10 @@ class _$_SearchPapersFailure implements _SearchPapersFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchPapersInitial value)? initial,
-    TResult Function(_SearchPapersLoading value)? loading,
-    TResult Function(_SearchPapersFailure value)? failure,
-    TResult Function(_SearchPapersSuccess value)? success,
+    TResult? Function(_SearchPapersInitial value)? initial,
+    TResult? Function(_SearchPapersLoading value)? loading,
+    TResult? Function(_SearchPapersFailure value)? failure,
+    TResult? Function(_SearchPapersSuccess value)? success,
   }) {
     return failure?.call(this);
   }
@@ -572,39 +572,39 @@ class _$_SearchPapersFailure implements _SearchPapersFailure {
 }
 
 abstract class _SearchPapersFailure implements SearchPapersState {
-  const factory _SearchPapersFailure(final dynamic e) = _$_SearchPapersFailure;
+  const factory _SearchPapersFailure(final dynamic e) =
+      _$SearchPapersFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_SearchPapersFailureCopyWith<_$_SearchPapersFailure> get copyWith =>
+  _$$SearchPapersFailureImplCopyWith<_$SearchPapersFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SearchPapersSuccessCopyWith<$Res> {
-  factory _$$_SearchPapersSuccessCopyWith(_$_SearchPapersSuccess value,
-          $Res Function(_$_SearchPapersSuccess) then) =
-      __$$_SearchPapersSuccessCopyWithImpl<$Res>;
+abstract class _$$SearchPapersSuccessImplCopyWith<$Res> {
+  factory _$$SearchPapersSuccessImplCopyWith(_$SearchPapersSuccessImpl value,
+          $Res Function(_$SearchPapersSuccessImpl) then) =
+      __$$SearchPapersSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<PaperDetail> data});
 }
 
 /// @nodoc
-class __$$_SearchPapersSuccessCopyWithImpl<$Res>
-    extends _$SearchPapersStateCopyWithImpl<$Res>
-    implements _$$_SearchPapersSuccessCopyWith<$Res> {
-  __$$_SearchPapersSuccessCopyWithImpl(_$_SearchPapersSuccess _value,
-      $Res Function(_$_SearchPapersSuccess) _then)
-      : super(_value, (v) => _then(v as _$_SearchPapersSuccess));
+class __$$SearchPapersSuccessImplCopyWithImpl<$Res>
+    extends _$SearchPapersStateCopyWithImpl<$Res, _$SearchPapersSuccessImpl>
+    implements _$$SearchPapersSuccessImplCopyWith<$Res> {
+  __$$SearchPapersSuccessImplCopyWithImpl(_$SearchPapersSuccessImpl _value,
+      $Res Function(_$SearchPapersSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SearchPapersSuccess get _value => super._value as _$_SearchPapersSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$_SearchPapersSuccess(
-      data == freezed
+    return _then(_$SearchPapersSuccessImpl(
+      null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<PaperDetail>,
@@ -614,12 +614,13 @@ class __$$_SearchPapersSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SearchPapersSuccess implements _SearchPapersSuccess {
-  const _$_SearchPapersSuccess(final List<PaperDetail> data) : _data = data;
+class _$SearchPapersSuccessImpl implements _SearchPapersSuccess {
+  const _$SearchPapersSuccessImpl(final List<PaperDetail> data) : _data = data;
 
   final List<PaperDetail> _data;
   @override
   List<PaperDetail> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -630,10 +631,10 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SearchPapersSuccess &&
+            other is _$SearchPapersSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -643,8 +644,9 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SearchPapersSuccessCopyWith<_$_SearchPapersSuccess> get copyWith =>
-      __$$_SearchPapersSuccessCopyWithImpl<_$_SearchPapersSuccess>(
+  @pragma('vm:prefer-inline')
+  _$$SearchPapersSuccessImplCopyWith<_$SearchPapersSuccessImpl> get copyWith =>
+      __$$SearchPapersSuccessImplCopyWithImpl<_$SearchPapersSuccessImpl>(
           this, _$identity);
 
   @override
@@ -661,10 +663,10 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(List<PaperDetail> data)? success,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(List<PaperDetail> data)? success,
   }) {
     return success?.call(data);
   }
@@ -698,10 +700,10 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SearchPapersInitial value)? initial,
-    TResult Function(_SearchPapersLoading value)? loading,
-    TResult Function(_SearchPapersFailure value)? failure,
-    TResult Function(_SearchPapersSuccess value)? success,
+    TResult? Function(_SearchPapersInitial value)? initial,
+    TResult? Function(_SearchPapersLoading value)? loading,
+    TResult? Function(_SearchPapersFailure value)? failure,
+    TResult? Function(_SearchPapersSuccess value)? success,
   }) {
     return success?.call(this);
   }
@@ -724,10 +726,10 @@ class _$_SearchPapersSuccess implements _SearchPapersSuccess {
 
 abstract class _SearchPapersSuccess implements SearchPapersState {
   const factory _SearchPapersSuccess(final List<PaperDetail> data) =
-      _$_SearchPapersSuccess;
+      _$SearchPapersSuccessImpl;
 
   List<PaperDetail> get data;
   @JsonKey(ignore: true)
-  _$$_SearchPapersSuccessCopyWith<_$_SearchPapersSuccess> get copyWith =>
+  _$$SearchPapersSuccessImplCopyWith<_$SearchPapersSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

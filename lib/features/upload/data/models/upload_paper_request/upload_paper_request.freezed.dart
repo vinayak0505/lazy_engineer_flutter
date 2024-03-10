@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'upload_paper_request.dart';
 
@@ -12,7 +12,7 @@ part of 'upload_paper_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UploadPaperRequest _$UploadPaperRequestFromJson(Map<String, dynamic> json) {
   return _UploadPaperRequest.fromJson(json);
@@ -42,7 +42,8 @@ mixin _$UploadPaperRequest {
 abstract class $UploadPaperRequestCopyWith<$Res> {
   factory $UploadPaperRequestCopyWith(
           UploadPaperRequest value, $Res Function(UploadPaperRequest) then) =
-      _$UploadPaperRequestCopyWithImpl<$Res>;
+      _$UploadPaperRequestCopyWithImpl<$Res, UploadPaperRequest>;
+  @useResult
   $Res call(
       {String title,
       String about,
@@ -58,84 +59,87 @@ abstract class $UploadPaperRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UploadPaperRequestCopyWithImpl<$Res>
+class _$UploadPaperRequestCopyWithImpl<$Res, $Val extends UploadPaperRequest>
     implements $UploadPaperRequestCopyWith<$Res> {
   _$UploadPaperRequestCopyWithImpl(this._value, this._then);
 
-  final UploadPaperRequest _value;
   // ignore: unused_field
-  final $Res Function(UploadPaperRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? about = freezed,
-    Object? semester = freezed,
+    Object? title = null,
+    Object? about = null,
+    Object? semester = null,
     Object? subject = freezed,
     Object? unit = freezed,
     Object? chapter = freezed,
     Object? topic = freezed,
     Object? fileLink = freezed,
-    Object? tags = freezed,
+    Object? tags = null,
     Object? file = freezed,
     Object? image = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      about: about == freezed
+      about: null == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String,
-      semester: semester == freezed
+      semester: null == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      chapter: chapter == freezed
+      chapter: freezed == chapter
           ? _value.chapter
           : chapter // ignore: cast_nullable_to_non_nullable
               as String?,
-      topic: topic == freezed
+      topic: freezed == topic
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
-      fileLink: fileLink == freezed
+      fileLink: freezed == fileLink
           ? _value.fileLink
           : fileLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags: tags == freezed
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UploadPaperRequestCopyWith<$Res>
+abstract class _$$UploadPaperRequestImplCopyWith<$Res>
     implements $UploadPaperRequestCopyWith<$Res> {
-  factory _$$_UploadPaperRequestCopyWith(_$_UploadPaperRequest value,
-          $Res Function(_$_UploadPaperRequest) then) =
-      __$$_UploadPaperRequestCopyWithImpl<$Res>;
+  factory _$$UploadPaperRequestImplCopyWith(_$UploadPaperRequestImpl value,
+          $Res Function(_$UploadPaperRequestImpl) then) =
+      __$$UploadPaperRequestImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       String about,
@@ -151,72 +155,70 @@ abstract class _$$_UploadPaperRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UploadPaperRequestCopyWithImpl<$Res>
-    extends _$UploadPaperRequestCopyWithImpl<$Res>
-    implements _$$_UploadPaperRequestCopyWith<$Res> {
-  __$$_UploadPaperRequestCopyWithImpl(
-      _$_UploadPaperRequest _value, $Res Function(_$_UploadPaperRequest) _then)
-      : super(_value, (v) => _then(v as _$_UploadPaperRequest));
+class __$$UploadPaperRequestImplCopyWithImpl<$Res>
+    extends _$UploadPaperRequestCopyWithImpl<$Res, _$UploadPaperRequestImpl>
+    implements _$$UploadPaperRequestImplCopyWith<$Res> {
+  __$$UploadPaperRequestImplCopyWithImpl(_$UploadPaperRequestImpl _value,
+      $Res Function(_$UploadPaperRequestImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_UploadPaperRequest get _value => super._value as _$_UploadPaperRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? about = freezed,
-    Object? semester = freezed,
+    Object? title = null,
+    Object? about = null,
+    Object? semester = null,
     Object? subject = freezed,
     Object? unit = freezed,
     Object? chapter = freezed,
     Object? topic = freezed,
     Object? fileLink = freezed,
-    Object? tags = freezed,
+    Object? tags = null,
     Object? file = freezed,
     Object? image = freezed,
   }) {
-    return _then(_$_UploadPaperRequest(
-      title: title == freezed
+    return _then(_$UploadPaperRequestImpl(
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      about: about == freezed
+      about: null == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String,
-      semester: semester == freezed
+      semester: null == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      chapter: chapter == freezed
+      chapter: freezed == chapter
           ? _value.chapter
           : chapter // ignore: cast_nullable_to_non_nullable
               as String?,
-      topic: topic == freezed
+      topic: freezed == topic
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
-      fileLink: fileLink == freezed
+      fileLink: freezed == fileLink
           ? _value.fileLink
           : fileLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags: tags == freezed
+      tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -226,8 +228,8 @@ class __$$_UploadPaperRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UploadPaperRequest implements _UploadPaperRequest {
-  const _$_UploadPaperRequest(
+class _$UploadPaperRequestImpl implements _UploadPaperRequest {
+  const _$UploadPaperRequestImpl(
       {required this.title,
       required this.about,
       required this.semester,
@@ -241,8 +243,8 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
       this.image})
       : _tags = tags;
 
-  factory _$_UploadPaperRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UploadPaperRequestFromJson(json);
+  factory _$UploadPaperRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UploadPaperRequestImplFromJson(json);
 
   @override
   final String title;
@@ -263,6 +265,7 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   final List<String> _tags;
   @override
   List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tags);
   }
@@ -278,18 +281,20 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UploadPaperRequest &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.unit, unit) &&
-            const DeepCollectionEquality().equals(other.chapter, chapter) &&
-            const DeepCollectionEquality().equals(other.topic, topic) &&
-            const DeepCollectionEquality().equals(other.fileLink, fileLink) &&
+            other is _$UploadPaperRequestImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.about, about) || other.about == about) &&
+            (identical(other.semester, semester) ||
+                other.semester == semester) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.chapter, chapter) || other.chapter == chapter) &&
+            (identical(other.topic, topic) || other.topic == topic) &&
+            (identical(other.fileLink, fileLink) ||
+                other.fileLink == fileLink) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other.file, file) &&
             const DeepCollectionEquality().equals(other.image, image));
@@ -299,27 +304,28 @@ class _$_UploadPaperRequest implements _UploadPaperRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(unit),
-      const DeepCollectionEquality().hash(chapter),
-      const DeepCollectionEquality().hash(topic),
-      const DeepCollectionEquality().hash(fileLink),
+      title,
+      about,
+      semester,
+      subject,
+      unit,
+      chapter,
+      topic,
+      fileLink,
       const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(file),
       const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UploadPaperRequestCopyWith<_$_UploadPaperRequest> get copyWith =>
-      __$$_UploadPaperRequestCopyWithImpl<_$_UploadPaperRequest>(
+  @pragma('vm:prefer-inline')
+  _$$UploadPaperRequestImplCopyWith<_$UploadPaperRequestImpl> get copyWith =>
+      __$$UploadPaperRequestImplCopyWithImpl<_$UploadPaperRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UploadPaperRequestToJson(
+    return _$$UploadPaperRequestImplToJson(
       this,
     );
   }
@@ -337,10 +343,10 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
       final String? fileLink,
       required final List<String> tags,
       final dynamic file,
-      final dynamic image}) = _$_UploadPaperRequest;
+      final dynamic image}) = _$UploadPaperRequestImpl;
 
   factory _UploadPaperRequest.fromJson(Map<String, dynamic> json) =
-      _$_UploadPaperRequest.fromJson;
+      _$UploadPaperRequestImpl.fromJson;
 
   @override
   String get title;
@@ -366,6 +372,6 @@ abstract class _UploadPaperRequest implements UploadPaperRequest {
   dynamic get image;
   @override
   @JsonKey(ignore: true)
-  _$$_UploadPaperRequestCopyWith<_$_UploadPaperRequest> get copyWith =>
+  _$$UploadPaperRequestImplCopyWith<_$UploadPaperRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

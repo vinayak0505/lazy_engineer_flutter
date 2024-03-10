@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'upload_notes_request.dart';
 
@@ -12,7 +12,7 @@ part of 'upload_notes_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UploadNotesRequest _$UploadNotesRequestFromJson(Map<String, dynamic> json) {
   return _UploadNotesRequest.fromJson(json);
@@ -41,7 +41,8 @@ mixin _$UploadNotesRequest {
 abstract class $UploadNotesRequestCopyWith<$Res> {
   factory $UploadNotesRequestCopyWith(
           UploadNotesRequest value, $Res Function(UploadNotesRequest) then) =
-      _$UploadNotesRequestCopyWithImpl<$Res>;
+      _$UploadNotesRequestCopyWithImpl<$Res, UploadNotesRequest>;
+  @useResult
   $Res call(
       {String title,
       String? about,
@@ -56,19 +57,21 @@ abstract class $UploadNotesRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UploadNotesRequestCopyWithImpl<$Res>
+class _$UploadNotesRequestCopyWithImpl<$Res, $Val extends UploadNotesRequest>
     implements $UploadNotesRequestCopyWith<$Res> {
   _$UploadNotesRequestCopyWithImpl(this._value, this._then);
 
-  final UploadNotesRequest _value;
   // ignore: unused_field
-  final $Res Function(UploadNotesRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
+    Object? title = null,
     Object? about = freezed,
-    Object? semester = freezed,
+    Object? semester = null,
     Object? file = freezed,
     Object? image = freezed,
     Object? tags = freezed,
@@ -78,57 +81,58 @@ class _$UploadNotesRequestCopyWithImpl<$Res>
     Object? topic = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      about: about == freezed
+      about: freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
+      semester: null == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      tags: tags == freezed
+      tags: freezed == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      chapter: chapter == freezed
+      chapter: freezed == chapter
           ? _value.chapter
           : chapter // ignore: cast_nullable_to_non_nullable
               as String?,
-      topic: topic == freezed
+      topic: freezed == topic
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UploadNotesRequestCopyWith<$Res>
+abstract class _$$UploadNotesRequestImplCopyWith<$Res>
     implements $UploadNotesRequestCopyWith<$Res> {
-  factory _$$_UploadNotesRequestCopyWith(_$_UploadNotesRequest value,
-          $Res Function(_$_UploadNotesRequest) then) =
-      __$$_UploadNotesRequestCopyWithImpl<$Res>;
+  factory _$$UploadNotesRequestImplCopyWith(_$UploadNotesRequestImpl value,
+          $Res Function(_$UploadNotesRequestImpl) then) =
+      __$$UploadNotesRequestImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       String? about,
@@ -143,21 +147,19 @@ abstract class _$$_UploadNotesRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UploadNotesRequestCopyWithImpl<$Res>
-    extends _$UploadNotesRequestCopyWithImpl<$Res>
-    implements _$$_UploadNotesRequestCopyWith<$Res> {
-  __$$_UploadNotesRequestCopyWithImpl(
-      _$_UploadNotesRequest _value, $Res Function(_$_UploadNotesRequest) _then)
-      : super(_value, (v) => _then(v as _$_UploadNotesRequest));
+class __$$UploadNotesRequestImplCopyWithImpl<$Res>
+    extends _$UploadNotesRequestCopyWithImpl<$Res, _$UploadNotesRequestImpl>
+    implements _$$UploadNotesRequestImplCopyWith<$Res> {
+  __$$UploadNotesRequestImplCopyWithImpl(_$UploadNotesRequestImpl _value,
+      $Res Function(_$UploadNotesRequestImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_UploadNotesRequest get _value => super._value as _$_UploadNotesRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
+    Object? title = null,
     Object? about = freezed,
-    Object? semester = freezed,
+    Object? semester = null,
     Object? file = freezed,
     Object? image = freezed,
     Object? tags = freezed,
@@ -166,44 +168,44 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
     Object? chapter = freezed,
     Object? topic = freezed,
   }) {
-    return _then(_$_UploadNotesRequest(
-      title: title == freezed
+    return _then(_$UploadNotesRequestImpl(
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      about: about == freezed
+      about: freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
+      semester: null == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      tags: tags == freezed
+      tags: freezed == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      chapter: chapter == freezed
+      chapter: freezed == chapter
           ? _value.chapter
           : chapter // ignore: cast_nullable_to_non_nullable
               as String?,
-      topic: topic == freezed
+      topic: freezed == topic
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -213,8 +215,8 @@ class __$$_UploadNotesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UploadNotesRequest implements _UploadNotesRequest {
-  const _$_UploadNotesRequest(
+class _$UploadNotesRequestImpl implements _UploadNotesRequest {
+  const _$UploadNotesRequestImpl(
       {required this.title,
       required this.about,
       required this.semester,
@@ -227,8 +229,8 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
       this.topic})
       : _tags = tags;
 
-  factory _$_UploadNotesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UploadNotesRequestFromJson(json);
+  factory _$UploadNotesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UploadNotesRequestImplFromJson(json);
 
   @override
   final String title;
@@ -245,6 +247,7 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
   List<String>? get tags {
     final value = _tags;
     if (value == null) return null;
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -264,46 +267,48 @@ class _$_UploadNotesRequest implements _UploadNotesRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UploadNotesRequest &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
+            other is _$UploadNotesRequestImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.about, about) || other.about == about) &&
+            (identical(other.semester, semester) ||
+                other.semester == semester) &&
             const DeepCollectionEquality().equals(other.file, file) &&
             const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.unit, unit) &&
-            const DeepCollectionEquality().equals(other.chapter, chapter) &&
-            const DeepCollectionEquality().equals(other.topic, topic));
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.chapter, chapter) || other.chapter == chapter) &&
+            (identical(other.topic, topic) || other.topic == topic));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(semester),
+      title,
+      about,
+      semester,
       const DeepCollectionEquality().hash(file),
       const DeepCollectionEquality().hash(image),
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(unit),
-      const DeepCollectionEquality().hash(chapter),
-      const DeepCollectionEquality().hash(topic));
+      subject,
+      unit,
+      chapter,
+      topic);
 
   @JsonKey(ignore: true)
   @override
-  _$$_UploadNotesRequestCopyWith<_$_UploadNotesRequest> get copyWith =>
-      __$$_UploadNotesRequestCopyWithImpl<_$_UploadNotesRequest>(
+  @pragma('vm:prefer-inline')
+  _$$UploadNotesRequestImplCopyWith<_$UploadNotesRequestImpl> get copyWith =>
+      __$$UploadNotesRequestImplCopyWithImpl<_$UploadNotesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UploadNotesRequestToJson(
+    return _$$UploadNotesRequestImplToJson(
       this,
     );
   }
@@ -320,10 +325,10 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
       final String? subject,
       final String? unit,
       final String? chapter,
-      final String? topic}) = _$_UploadNotesRequest;
+      final String? topic}) = _$UploadNotesRequestImpl;
 
   factory _UploadNotesRequest.fromJson(Map<String, dynamic> json) =
-      _$_UploadNotesRequest.fromJson;
+      _$UploadNotesRequestImpl.fromJson;
 
   @override
   String get title;
@@ -347,6 +352,6 @@ abstract class _UploadNotesRequest implements UploadNotesRequest {
   String? get topic;
   @override
   @JsonKey(ignore: true)
-  _$$_UploadNotesRequestCopyWith<_$_UploadNotesRequest> get copyWith =>
+  _$$UploadNotesRequestImplCopyWith<_$UploadNotesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -35,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         const CustomImage(image: AppImages.header),
                         CustomImage(
-                          image: customData.userPic ?? AppImages.profileImage,
+                          image: customData.imageLink ?? AppImages.profileImage,
                           height: 110,
                           width: 110,
                           radius: 55,

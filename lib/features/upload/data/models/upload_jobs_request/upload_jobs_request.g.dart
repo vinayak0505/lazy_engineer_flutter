@@ -6,8 +6,9 @@ part of 'upload_jobs_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UploadJobsRequest _$$_UploadJobsRequestFromJson(Map<String, dynamic> json) =>
-    _$_UploadJobsRequest(
+_$UploadJobsRequestImpl _$$UploadJobsRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UploadJobsRequestImpl(
       title: json['title'] as String?,
       profile: json['profile'] as String?,
       company: json['company'] as String?,
@@ -24,8 +25,8 @@ _$_UploadJobsRequest _$$_UploadJobsRequestFromJson(Map<String, dynamic> json) =>
       image: json['image'],
     );
 
-Map<String, dynamic> _$$_UploadJobsRequestToJson(
-        _$_UploadJobsRequest instance) =>
+Map<String, dynamic> _$$UploadJobsRequestImplToJson(
+        _$UploadJobsRequestImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'profile': instance.profile,

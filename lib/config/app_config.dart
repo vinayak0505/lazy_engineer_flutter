@@ -39,6 +39,6 @@ class AppConfig {
   /// tag
   static const String companyPhotoTag = 'company_photo';
 
-  static const int connectTimeout = 30000;
-  static const int receiveTimeout = 30000;
+  static const Duration connectTimeout = Duration(seconds: 30);
+  static const Duration receiveTimeout = Duration(seconds: 30);
 }
