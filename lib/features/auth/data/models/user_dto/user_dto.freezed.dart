@@ -185,9 +185,7 @@ UserDetail _$UserDetailFromJson(Map<String, dynamic> json) {
 mixin _$UserDetail {
   String get fullName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
   String? get univercity => throw _privateConstructorUsedError;
-  DateTime get timeCreated => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -201,12 +199,7 @@ abstract class $UserDetailCopyWith<$Res> {
           UserDetail value, $Res Function(UserDetail) then) =
       _$UserDetailCopyWithImpl<$Res, UserDetail>;
   @useResult
-  $Res call(
-      {String fullName,
-      String email,
-      String password,
-      String? univercity,
-      DateTime timeCreated});
+  $Res call({String fullName, String email, String? univercity});
 }
 
 /// @nodoc
@@ -224,9 +217,7 @@ class _$UserDetailCopyWithImpl<$Res, $Val extends UserDetail>
   $Res call({
     Object? fullName = null,
     Object? email = null,
-    Object? password = null,
     Object? univercity = freezed,
-    Object? timeCreated = null,
   }) {
     return _then(_value.copyWith(
       fullName: null == fullName
@@ -237,18 +228,10 @@ class _$UserDetailCopyWithImpl<$Res, $Val extends UserDetail>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
       univercity: freezed == univercity
           ? _value.univercity
           : univercity // ignore: cast_nullable_to_non_nullable
               as String?,
-      timeCreated: null == timeCreated
-          ? _value.timeCreated
-          : timeCreated // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ) as $Val);
   }
 }
@@ -261,12 +244,7 @@ abstract class _$$UserDetailImplCopyWith<$Res>
       __$$UserDetailImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String fullName,
-      String email,
-      String password,
-      String? univercity,
-      DateTime timeCreated});
+  $Res call({String fullName, String email, String? univercity});
 }
 
 /// @nodoc
@@ -282,9 +260,7 @@ class __$$UserDetailImplCopyWithImpl<$Res>
   $Res call({
     Object? fullName = null,
     Object? email = null,
-    Object? password = null,
     Object? univercity = freezed,
-    Object? timeCreated = null,
   }) {
     return _then(_$UserDetailImpl(
       null == fullName
@@ -295,18 +271,10 @@ class __$$UserDetailImplCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
       freezed == univercity
           ? _value.univercity
           : univercity // ignore: cast_nullable_to_non_nullable
               as String?,
-      null == timeCreated
-          ? _value.timeCreated
-          : timeCreated // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ));
   }
 }
@@ -314,8 +282,7 @@ class __$$UserDetailImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserDetailImpl implements _UserDetail {
-  const _$UserDetailImpl(this.fullName, this.email, this.password,
-      this.univercity, this.timeCreated);
+  const _$UserDetailImpl(this.fullName, this.email, this.univercity);
 
   factory _$UserDetailImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserDetailImplFromJson(json);
@@ -325,15 +292,11 @@ class _$UserDetailImpl implements _UserDetail {
   @override
   final String email;
   @override
-  final String password;
-  @override
   final String? univercity;
-  @override
-  final DateTime timeCreated;
 
   @override
   String toString() {
-    return 'UserDetail(fullName: $fullName, email: $email, password: $password, univercity: $univercity, timeCreated: $timeCreated)';
+    return 'UserDetail(fullName: $fullName, email: $email, univercity: $univercity)';
   }
 
   @override
@@ -344,18 +307,13 @@ class _$UserDetailImpl implements _UserDetail {
             (identical(other.fullName, fullName) ||
                 other.fullName == fullName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
             (identical(other.univercity, univercity) ||
-                other.univercity == univercity) &&
-            (identical(other.timeCreated, timeCreated) ||
-                other.timeCreated == timeCreated));
+                other.univercity == univercity));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, fullName, email, password, univercity, timeCreated);
+  int get hashCode => Object.hash(runtimeType, fullName, email, univercity);
 
   @JsonKey(ignore: true)
   @override
@@ -373,11 +331,8 @@ class _$UserDetailImpl implements _UserDetail {
 
 abstract class _UserDetail implements UserDetail {
   const factory _UserDetail(
-      final String fullName,
-      final String email,
-      final String password,
-      final String? univercity,
-      final DateTime timeCreated) = _$UserDetailImpl;
+          final String fullName, final String email, final String? univercity) =
+      _$UserDetailImpl;
 
   factory _UserDetail.fromJson(Map<String, dynamic> json) =
       _$UserDetailImpl.fromJson;
@@ -387,11 +342,7 @@ abstract class _UserDetail implements UserDetail {
   @override
   String get email;
   @override
-  String get password;
-  @override
   String? get univercity;
-  @override
-  DateTime get timeCreated;
   @override
   @JsonKey(ignore: true)
   _$$UserDetailImplCopyWith<_$UserDetailImpl> get copyWith =>

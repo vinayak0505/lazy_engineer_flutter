@@ -19,9 +19,7 @@ class UserDetail with _$UserDetail {
   const factory UserDetail(
     String fullName,
     String email,
-    String password,
     String? univercity,
-    DateTime timeCreated,
   ) = _UserDetail;
 
   factory UserDetail.fromJson(Map<String, dynamic> json) =>
