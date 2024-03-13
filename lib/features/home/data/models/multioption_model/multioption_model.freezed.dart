@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'multioption_model.dart';
 
@@ -12,7 +12,7 @@ part of 'multioption_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MultioptionModel _$MultioptionModelFromJson(Map<String, dynamic> json) {
   return _MultioptionModel.fromJson(json);
@@ -33,69 +33,71 @@ mixin _$MultioptionModel {
 abstract class $MultioptionModelCopyWith<$Res> {
   factory $MultioptionModelCopyWith(
           MultioptionModel value, $Res Function(MultioptionModel) then) =
-      _$MultioptionModelCopyWithImpl<$Res>;
+      _$MultioptionModelCopyWithImpl<$Res, MultioptionModel>;
+  @useResult
   $Res call({String title, List<String> body});
 }
 
 /// @nodoc
-class _$MultioptionModelCopyWithImpl<$Res>
+class _$MultioptionModelCopyWithImpl<$Res, $Val extends MultioptionModel>
     implements $MultioptionModelCopyWith<$Res> {
   _$MultioptionModelCopyWithImpl(this._value, this._then);
 
-  final MultioptionModel _value;
   // ignore: unused_field
-  final $Res Function(MultioptionModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? body = freezed,
+    Object? title = null,
+    Object? body = null,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      body: body == freezed
+      body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
               as List<String>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_MultioptionModelCopyWith<$Res>
+abstract class _$$MultioptionModelImplCopyWith<$Res>
     implements $MultioptionModelCopyWith<$Res> {
-  factory _$$_MultioptionModelCopyWith(
-          _$_MultioptionModel value, $Res Function(_$_MultioptionModel) then) =
-      __$$_MultioptionModelCopyWithImpl<$Res>;
+  factory _$$MultioptionModelImplCopyWith(_$MultioptionModelImpl value,
+          $Res Function(_$MultioptionModelImpl) then) =
+      __$$MultioptionModelImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String title, List<String> body});
 }
 
 /// @nodoc
-class __$$_MultioptionModelCopyWithImpl<$Res>
-    extends _$MultioptionModelCopyWithImpl<$Res>
-    implements _$$_MultioptionModelCopyWith<$Res> {
-  __$$_MultioptionModelCopyWithImpl(
-      _$_MultioptionModel _value, $Res Function(_$_MultioptionModel) _then)
-      : super(_value, (v) => _then(v as _$_MultioptionModel));
+class __$$MultioptionModelImplCopyWithImpl<$Res>
+    extends _$MultioptionModelCopyWithImpl<$Res, _$MultioptionModelImpl>
+    implements _$$MultioptionModelImplCopyWith<$Res> {
+  __$$MultioptionModelImplCopyWithImpl(_$MultioptionModelImpl _value,
+      $Res Function(_$MultioptionModelImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_MultioptionModel get _value => super._value as _$_MultioptionModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? body = freezed,
+    Object? title = null,
+    Object? body = null,
   }) {
-    return _then(_$_MultioptionModel(
-      title: title == freezed
+    return _then(_$MultioptionModelImpl(
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      body: body == freezed
+      body: null == body
           ? _value._body
           : body // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -105,19 +107,20 @@ class __$$_MultioptionModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MultioptionModel implements _MultioptionModel {
-  const _$_MultioptionModel(
+class _$MultioptionModelImpl implements _MultioptionModel {
+  const _$MultioptionModelImpl(
       {required this.title, required final List<String> body})
       : _body = body;
 
-  factory _$_MultioptionModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MultioptionModelFromJson(json);
+  factory _$MultioptionModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MultioptionModelImplFromJson(json);
 
   @override
   final String title;
   final List<String> _body;
   @override
   List<String> get body {
+    if (_body is EqualUnmodifiableListView) return _body;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_body);
   }
@@ -128,29 +131,29 @@ class _$_MultioptionModel implements _MultioptionModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MultioptionModel &&
-            const DeepCollectionEquality().equals(other.title, title) &&
+            other is _$MultioptionModelImpl &&
+            (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality().equals(other._body, _body));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(_body));
+      runtimeType, title, const DeepCollectionEquality().hash(_body));
 
   @JsonKey(ignore: true)
   @override
-  _$$_MultioptionModelCopyWith<_$_MultioptionModel> get copyWith =>
-      __$$_MultioptionModelCopyWithImpl<_$_MultioptionModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$MultioptionModelImplCopyWith<_$MultioptionModelImpl> get copyWith =>
+      __$$MultioptionModelImplCopyWithImpl<_$MultioptionModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MultioptionModelToJson(
+    return _$$MultioptionModelImplToJson(
       this,
     );
   }
@@ -159,10 +162,10 @@ class _$_MultioptionModel implements _MultioptionModel {
 abstract class _MultioptionModel implements MultioptionModel {
   const factory _MultioptionModel(
       {required final String title,
-      required final List<String> body}) = _$_MultioptionModel;
+      required final List<String> body}) = _$MultioptionModelImpl;
 
   factory _MultioptionModel.fromJson(Map<String, dynamic> json) =
-      _$_MultioptionModel.fromJson;
+      _$MultioptionModelImpl.fromJson;
 
   @override
   String get title;
@@ -170,6 +173,6 @@ abstract class _MultioptionModel implements MultioptionModel {
   List<String> get body;
   @override
   @JsonKey(ignore: true)
-  _$$_MultioptionModelCopyWith<_$_MultioptionModel> get copyWith =>
+  _$$MultioptionModelImplCopyWith<_$MultioptionModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

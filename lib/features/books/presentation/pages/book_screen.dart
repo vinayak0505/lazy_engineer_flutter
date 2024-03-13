@@ -56,7 +56,7 @@ class BooksScreen extends StatelessWidget {
                     create: (_) => SearchBloc(data),
                     child: BlocBuilder<SearchBloc, List<dynamic>>(
                       builder: (searchContext, state) {
-                        return SearchBar(
+                        return SearchBarWidget(
                           BlocProvider.of<SearchBloc>(searchContext),
                           SearchEnum.book,
                         );
@@ -64,7 +64,7 @@ class BooksScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  BookListView(data)
+                  BookListView(data),
                 ],
               );
             },

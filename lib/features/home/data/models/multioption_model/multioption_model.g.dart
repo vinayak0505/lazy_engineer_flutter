@@ -6,13 +6,15 @@ part of 'multioption_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MultioptionModel _$$_MultioptionModelFromJson(Map<String, dynamic> json) =>
-    _$_MultioptionModel(
+_$MultioptionModelImpl _$$MultioptionModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MultioptionModelImpl(
       title: json['title'] as String,
       body: (json['body'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_MultioptionModelToJson(_$_MultioptionModel instance) =>
+Map<String, dynamic> _$$MultioptionModelImplToJson(
+        _$MultioptionModelImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'body': instance.body,

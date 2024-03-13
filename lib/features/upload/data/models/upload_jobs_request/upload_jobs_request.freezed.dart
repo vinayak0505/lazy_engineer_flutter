@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'upload_jobs_request.dart';
 
@@ -12,7 +12,7 @@ part of 'upload_jobs_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UploadJobsRequest _$UploadJobsRequestFromJson(Map<String, dynamic> json) {
   return _UploadJobsRequest.fromJson(json);
@@ -43,7 +43,8 @@ mixin _$UploadJobsRequest {
 abstract class $UploadJobsRequestCopyWith<$Res> {
   factory $UploadJobsRequestCopyWith(
           UploadJobsRequest value, $Res Function(UploadJobsRequest) then) =
-      _$UploadJobsRequestCopyWithImpl<$Res>;
+      _$UploadJobsRequestCopyWithImpl<$Res, UploadJobsRequest>;
+  @useResult
   $Res call(
       {String? title,
       String? profile,
@@ -60,14 +61,16 @@ abstract class $UploadJobsRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UploadJobsRequestCopyWithImpl<$Res>
+class _$UploadJobsRequestCopyWithImpl<$Res, $Val extends UploadJobsRequest>
     implements $UploadJobsRequestCopyWith<$Res> {
   _$UploadJobsRequestCopyWithImpl(this._value, this._then);
 
-  final UploadJobsRequest _value;
   // ignore: unused_field
-  final $Res Function(UploadJobsRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? title = freezed,
@@ -78,71 +81,72 @@ class _$UploadJobsRequestCopyWithImpl<$Res>
     Object? jobType = freezed,
     Object? experienceLevel = freezed,
     Object? datePosted = freezed,
-    Object? skillsNeeded = freezed,
+    Object? skillsNeeded = null,
     Object? expectedSalary = freezed,
     Object? file = freezed,
     Object? image = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      profile: profile == freezed
+      profile: freezed == profile
           ? _value.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as String?,
-      company: company == freezed
+      company: freezed == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String?,
-      aboutCompany: aboutCompany == freezed
+      aboutCompany: freezed == aboutCompany
           ? _value.aboutCompany
           : aboutCompany // ignore: cast_nullable_to_non_nullable
               as String?,
-      location: location == freezed
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String?,
-      jobType: jobType == freezed
+      jobType: freezed == jobType
           ? _value.jobType
           : jobType // ignore: cast_nullable_to_non_nullable
               as String?,
-      experienceLevel: experienceLevel == freezed
+      experienceLevel: freezed == experienceLevel
           ? _value.experienceLevel
           : experienceLevel // ignore: cast_nullable_to_non_nullable
               as String?,
-      datePosted: datePosted == freezed
+      datePosted: freezed == datePosted
           ? _value.datePosted
           : datePosted // ignore: cast_nullable_to_non_nullable
               as String?,
-      skillsNeeded: skillsNeeded == freezed
+      skillsNeeded: null == skillsNeeded
           ? _value.skillsNeeded
           : skillsNeeded // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      expectedSalary: expectedSalary == freezed
+      expectedSalary: freezed == expectedSalary
           ? _value.expectedSalary
           : expectedSalary // ignore: cast_nullable_to_non_nullable
               as int?,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UploadJobsRequestCopyWith<$Res>
+abstract class _$$UploadJobsRequestImplCopyWith<$Res>
     implements $UploadJobsRequestCopyWith<$Res> {
-  factory _$$_UploadJobsRequestCopyWith(_$_UploadJobsRequest value,
-          $Res Function(_$_UploadJobsRequest) then) =
-      __$$_UploadJobsRequestCopyWithImpl<$Res>;
+  factory _$$UploadJobsRequestImplCopyWith(_$UploadJobsRequestImpl value,
+          $Res Function(_$UploadJobsRequestImpl) then) =
+      __$$UploadJobsRequestImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? title,
       String? profile,
@@ -159,16 +163,14 @@ abstract class _$$_UploadJobsRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UploadJobsRequestCopyWithImpl<$Res>
-    extends _$UploadJobsRequestCopyWithImpl<$Res>
-    implements _$$_UploadJobsRequestCopyWith<$Res> {
-  __$$_UploadJobsRequestCopyWithImpl(
-      _$_UploadJobsRequest _value, $Res Function(_$_UploadJobsRequest) _then)
-      : super(_value, (v) => _then(v as _$_UploadJobsRequest));
+class __$$UploadJobsRequestImplCopyWithImpl<$Res>
+    extends _$UploadJobsRequestCopyWithImpl<$Res, _$UploadJobsRequestImpl>
+    implements _$$UploadJobsRequestImplCopyWith<$Res> {
+  __$$UploadJobsRequestImplCopyWithImpl(_$UploadJobsRequestImpl _value,
+      $Res Function(_$UploadJobsRequestImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_UploadJobsRequest get _value => super._value as _$_UploadJobsRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? title = freezed,
@@ -179,57 +181,57 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
     Object? jobType = freezed,
     Object? experienceLevel = freezed,
     Object? datePosted = freezed,
-    Object? skillsNeeded = freezed,
+    Object? skillsNeeded = null,
     Object? expectedSalary = freezed,
     Object? file = freezed,
     Object? image = freezed,
   }) {
-    return _then(_$_UploadJobsRequest(
-      title: title == freezed
+    return _then(_$UploadJobsRequestImpl(
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      profile: profile == freezed
+      profile: freezed == profile
           ? _value.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as String?,
-      company: company == freezed
+      company: freezed == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String?,
-      aboutCompany: aboutCompany == freezed
+      aboutCompany: freezed == aboutCompany
           ? _value.aboutCompany
           : aboutCompany // ignore: cast_nullable_to_non_nullable
               as String?,
-      location: location == freezed
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String?,
-      jobType: jobType == freezed
+      jobType: freezed == jobType
           ? _value.jobType
           : jobType // ignore: cast_nullable_to_non_nullable
               as String?,
-      experienceLevel: experienceLevel == freezed
+      experienceLevel: freezed == experienceLevel
           ? _value.experienceLevel
           : experienceLevel // ignore: cast_nullable_to_non_nullable
               as String?,
-      datePosted: datePosted == freezed
+      datePosted: freezed == datePosted
           ? _value.datePosted
           : datePosted // ignore: cast_nullable_to_non_nullable
               as String?,
-      skillsNeeded: skillsNeeded == freezed
+      skillsNeeded: null == skillsNeeded
           ? _value._skillsNeeded
           : skillsNeeded // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      expectedSalary: expectedSalary == freezed
+      expectedSalary: freezed == expectedSalary
           ? _value.expectedSalary
           : expectedSalary // ignore: cast_nullable_to_non_nullable
               as int?,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -239,8 +241,8 @@ class __$$_UploadJobsRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UploadJobsRequest implements _UploadJobsRequest {
-  const _$_UploadJobsRequest(
+class _$UploadJobsRequestImpl implements _UploadJobsRequest {
+  const _$UploadJobsRequestImpl(
       {this.title,
       this.profile,
       this.company,
@@ -255,8 +257,8 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
       this.image})
       : _skillsNeeded = skillsNeeded;
 
-  factory _$_UploadJobsRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UploadJobsRequestFromJson(json);
+  factory _$UploadJobsRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UploadJobsRequestImplFromJson(json);
 
   @override
   final String? title;
@@ -277,6 +279,7 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
   final List<String> _skillsNeeded;
   @override
   List<String> get skillsNeeded {
+    if (_skillsNeeded is EqualUnmodifiableListView) return _skillsNeeded;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_skillsNeeded);
   }
@@ -294,25 +297,26 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UploadJobsRequest &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.profile, profile) &&
-            const DeepCollectionEquality().equals(other.company, company) &&
-            const DeepCollectionEquality()
-                .equals(other.aboutCompany, aboutCompany) &&
-            const DeepCollectionEquality().equals(other.location, location) &&
-            const DeepCollectionEquality().equals(other.jobType, jobType) &&
-            const DeepCollectionEquality()
-                .equals(other.experienceLevel, experienceLevel) &&
-            const DeepCollectionEquality()
-                .equals(other.datePosted, datePosted) &&
+            other is _$UploadJobsRequestImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.profile, profile) || other.profile == profile) &&
+            (identical(other.company, company) || other.company == company) &&
+            (identical(other.aboutCompany, aboutCompany) ||
+                other.aboutCompany == aboutCompany) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
+            (identical(other.jobType, jobType) || other.jobType == jobType) &&
+            (identical(other.experienceLevel, experienceLevel) ||
+                other.experienceLevel == experienceLevel) &&
+            (identical(other.datePosted, datePosted) ||
+                other.datePosted == datePosted) &&
             const DeepCollectionEquality()
                 .equals(other._skillsNeeded, _skillsNeeded) &&
-            const DeepCollectionEquality()
-                .equals(other.expectedSalary, expectedSalary) &&
+            (identical(other.expectedSalary, expectedSalary) ||
+                other.expectedSalary == expectedSalary) &&
             const DeepCollectionEquality().equals(other.file, file) &&
             const DeepCollectionEquality().equals(other.image, image));
   }
@@ -321,28 +325,29 @@ class _$_UploadJobsRequest implements _UploadJobsRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(profile),
-      const DeepCollectionEquality().hash(company),
-      const DeepCollectionEquality().hash(aboutCompany),
-      const DeepCollectionEquality().hash(location),
-      const DeepCollectionEquality().hash(jobType),
-      const DeepCollectionEquality().hash(experienceLevel),
-      const DeepCollectionEquality().hash(datePosted),
+      title,
+      profile,
+      company,
+      aboutCompany,
+      location,
+      jobType,
+      experienceLevel,
+      datePosted,
       const DeepCollectionEquality().hash(_skillsNeeded),
-      const DeepCollectionEquality().hash(expectedSalary),
+      expectedSalary,
       const DeepCollectionEquality().hash(file),
       const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UploadJobsRequestCopyWith<_$_UploadJobsRequest> get copyWith =>
-      __$$_UploadJobsRequestCopyWithImpl<_$_UploadJobsRequest>(
+  @pragma('vm:prefer-inline')
+  _$$UploadJobsRequestImplCopyWith<_$UploadJobsRequestImpl> get copyWith =>
+      __$$UploadJobsRequestImplCopyWithImpl<_$UploadJobsRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UploadJobsRequestToJson(
+    return _$$UploadJobsRequestImplToJson(
       this,
     );
   }
@@ -361,10 +366,10 @@ abstract class _UploadJobsRequest implements UploadJobsRequest {
       required final List<String> skillsNeeded,
       final int? expectedSalary,
       final dynamic file,
-      final dynamic image}) = _$_UploadJobsRequest;
+      final dynamic image}) = _$UploadJobsRequestImpl;
 
   factory _UploadJobsRequest.fromJson(Map<String, dynamic> json) =
-      _$_UploadJobsRequest.fromJson;
+      _$UploadJobsRequestImpl.fromJson;
 
   @override
   String? get title;
@@ -392,6 +397,6 @@ abstract class _UploadJobsRequest implements UploadJobsRequest {
   dynamic get image;
   @override
   @JsonKey(ignore: true)
-  _$$_UploadJobsRequestCopyWith<_$_UploadJobsRequest> get copyWith =>
+  _$$UploadJobsRequestImplCopyWith<_$UploadJobsRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

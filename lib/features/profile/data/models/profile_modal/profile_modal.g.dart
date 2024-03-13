@@ -6,74 +6,42 @@ part of 'profile_modal.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProfileModal _$$_ProfileModalFromJson(Map<String, dynamic> json) =>
-    _$_ProfileModal(
-      userName: json['userName'] as String?,
-      userPic: json['userPic'] as String?,
-      userClass: json['userClass'] as String?,
-      branch: json['branch'] as String?,
-      semester: json['semester'] as int?,
-      universityName: json['universityName'] as String?,
-      universityAddress: json['universityAddress'] as String?,
-      userDescription: json['userDescription'] as String?,
-      userUploads: json['userUploads'] == null
-          ? null
-          : UserUploads.fromJson(json['userUploads'] as Map<String, dynamic>),
-      contact: json['contact'] == null
-          ? null
-          : Contact.fromJson(json['contact'] as Map<String, dynamic>),
-      yearOfAdmission: json['yearOfAdmission'] as int?,
-      experienceLevel: (json['experienceLevel'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      jobType:
-          (json['jobType'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      userAddress: json['userAddress'] as String?,
-    );
-
-Map<String, dynamic> _$$_ProfileModalToJson(_$_ProfileModal instance) =>
-    <String, dynamic>{
-      'userName': instance.userName,
-      'userPic': instance.userPic,
-      'userClass': instance.userClass,
-      'branch': instance.branch,
-      'semester': instance.semester,
-      'universityName': instance.universityName,
-      'universityAddress': instance.universityAddress,
-      'userDescription': instance.userDescription,
-      'userUploads': instance.userUploads,
-      'contact': instance.contact,
-      'yearOfAdmission': instance.yearOfAdmission,
-      'experienceLevel': instance.experienceLevel,
-      'jobType': instance.jobType,
-      'userAddress': instance.userAddress,
-    };
-
-_$_Contact _$$_ContactFromJson(Map<String, dynamic> json) => _$_Contact(
+_$ProfileModalImpl _$$ProfileModalImplFromJson(Map<String, dynamic> json) =>
+    _$ProfileModalImpl(
+      fullName: json['fullName'] as String?,
       email: json['email'] as String?,
-      mobileNumber: json['mobileNumber'] as String?,
+      designation: json['designation'] as String?,
+      company: json['company'] as String?,
+      university: json['university'] as String?,
+      bio: json['bio'] as String?,
+      imageLink: json['imageLink'] as String?,
+      linkedin: json['linkedin'] as String?,
+      github: json['github'] as String?,
+      twitter: json['twitter'] as String?,
+      instagram: json['instagram'] as String?,
+      notesCount: json['notesCount'] as int? ?? 0,
+      jobsCount: json['jobsCount'] as int? ?? 0,
+      booksCount: json['booksCount'] as int? ?? 0,
+      papersCount: json['papersCount'] as int? ?? 0,
+      filesCount: json['filesCount'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_ContactToJson(_$_Contact instance) =>
+Map<String, dynamic> _$$ProfileModalImplToJson(_$ProfileModalImpl instance) =>
     <String, dynamic>{
+      'fullName': instance.fullName,
       'email': instance.email,
-      'mobileNumber': instance.mobileNumber,
-    };
-
-_$_UserDescription _$$_UserDescriptionFromJson(Map<String, dynamic> json) =>
-    _$_UserDescription(
-      notes: json['notes'] as int?,
-      file: json['file'] as int?,
-      paper: json['paper'] as int?,
-      book: json['book'] as int?,
-      jobRequest: json['jobRequest'] as int?,
-    );
-
-Map<String, dynamic> _$$_UserDescriptionToJson(_$_UserDescription instance) =>
-    <String, dynamic>{
-      'notes': instance.notes,
-      'file': instance.file,
-      'paper': instance.paper,
-      'book': instance.book,
-      'jobRequest': instance.jobRequest,
+      'designation': instance.designation,
+      'company': instance.company,
+      'university': instance.university,
+      'bio': instance.bio,
+      'imageLink': instance.imageLink,
+      'linkedin': instance.linkedin,
+      'github': instance.github,
+      'twitter': instance.twitter,
+      'instagram': instance.instagram,
+      'notesCount': instance.notesCount,
+      'jobsCount': instance.jobsCount,
+      'booksCount': instance.booksCount,
+      'papersCount': instance.papersCount,
+      'filesCount': instance.filesCount,
     };

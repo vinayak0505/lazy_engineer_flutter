@@ -133,7 +133,7 @@ class HomeScreen extends StatelessWidget {
               width: 48,
               height: 48,
             ),
-          )
+          ),
         ],
       ),
     );

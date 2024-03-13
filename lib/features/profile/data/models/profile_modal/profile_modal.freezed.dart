@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'profile_modal.dart';
 
@@ -12,7 +12,7 @@ part of 'profile_modal.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ProfileModal _$ProfileModalFromJson(Map<String, dynamic> json) {
   return _ProfileModal.fromJson(json);
@@ -20,20 +20,22 @@ ProfileModal _$ProfileModalFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProfileModal {
-  String? get userName => throw _privateConstructorUsedError;
-  String? get userPic => throw _privateConstructorUsedError;
-  String? get userClass => throw _privateConstructorUsedError;
-  String? get branch => throw _privateConstructorUsedError;
-  int? get semester => throw _privateConstructorUsedError;
-  String? get universityName => throw _privateConstructorUsedError;
-  String? get universityAddress => throw _privateConstructorUsedError;
-  String? get userDescription => throw _privateConstructorUsedError;
-  UserUploads? get userUploads => throw _privateConstructorUsedError;
-  Contact? get contact => throw _privateConstructorUsedError;
-  int? get yearOfAdmission => throw _privateConstructorUsedError;
-  List<String>? get experienceLevel => throw _privateConstructorUsedError;
-  List<String>? get jobType => throw _privateConstructorUsedError;
-  String? get userAddress => throw _privateConstructorUsedError;
+  String? get fullName => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get designation => throw _privateConstructorUsedError;
+  String? get company => throw _privateConstructorUsedError;
+  String? get university => throw _privateConstructorUsedError;
+  String? get bio => throw _privateConstructorUsedError;
+  String? get imageLink => throw _privateConstructorUsedError;
+  String? get linkedin => throw _privateConstructorUsedError;
+  String? get github => throw _privateConstructorUsedError;
+  String? get twitter => throw _privateConstructorUsedError;
+  String? get instagram => throw _privateConstructorUsedError;
+  int get notesCount => throw _privateConstructorUsedError;
+  int get jobsCount => throw _privateConstructorUsedError;
+  int get booksCount => throw _privateConstructorUsedError;
+  int get papersCount => throw _privateConstructorUsedError;
+  int get filesCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,380 +47,381 @@ mixin _$ProfileModal {
 abstract class $ProfileModalCopyWith<$Res> {
   factory $ProfileModalCopyWith(
           ProfileModal value, $Res Function(ProfileModal) then) =
-      _$ProfileModalCopyWithImpl<$Res>;
+      _$ProfileModalCopyWithImpl<$Res, ProfileModal>;
+  @useResult
   $Res call(
-      {String? userName,
-      String? userPic,
-      String? userClass,
-      String? branch,
-      int? semester,
-      String? universityName,
-      String? universityAddress,
-      String? userDescription,
-      UserUploads? userUploads,
-      Contact? contact,
-      int? yearOfAdmission,
-      List<String>? experienceLevel,
-      List<String>? jobType,
-      String? userAddress});
-
-  $UserUploadsCopyWith<$Res>? get userUploads;
-  $ContactCopyWith<$Res>? get contact;
+      {String? fullName,
+      String? email,
+      String? designation,
+      String? company,
+      String? university,
+      String? bio,
+      String? imageLink,
+      String? linkedin,
+      String? github,
+      String? twitter,
+      String? instagram,
+      int notesCount,
+      int jobsCount,
+      int booksCount,
+      int papersCount,
+      int filesCount});
 }
 
 /// @nodoc
-class _$ProfileModalCopyWithImpl<$Res> implements $ProfileModalCopyWith<$Res> {
+class _$ProfileModalCopyWithImpl<$Res, $Val extends ProfileModal>
+    implements $ProfileModalCopyWith<$Res> {
   _$ProfileModalCopyWithImpl(this._value, this._then);
 
-  final ProfileModal _value;
   // ignore: unused_field
-  final $Res Function(ProfileModal) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userName = freezed,
-    Object? userPic = freezed,
-    Object? userClass = freezed,
-    Object? branch = freezed,
-    Object? semester = freezed,
-    Object? universityName = freezed,
-    Object? universityAddress = freezed,
-    Object? userDescription = freezed,
-    Object? userUploads = freezed,
-    Object? contact = freezed,
-    Object? yearOfAdmission = freezed,
-    Object? experienceLevel = freezed,
-    Object? jobType = freezed,
-    Object? userAddress = freezed,
+    Object? fullName = freezed,
+    Object? email = freezed,
+    Object? designation = freezed,
+    Object? company = freezed,
+    Object? university = freezed,
+    Object? bio = freezed,
+    Object? imageLink = freezed,
+    Object? linkedin = freezed,
+    Object? github = freezed,
+    Object? twitter = freezed,
+    Object? instagram = freezed,
+    Object? notesCount = null,
+    Object? jobsCount = null,
+    Object? booksCount = null,
+    Object? papersCount = null,
+    Object? filesCount = null,
   }) {
     return _then(_value.copyWith(
-      userName: userName == freezed
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
+      fullName: freezed == fullName
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
               as String?,
-      userPic: userPic == freezed
-          ? _value.userPic
-          : userPic // ignore: cast_nullable_to_non_nullable
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      userClass: userClass == freezed
-          ? _value.userClass
-          : userClass // ignore: cast_nullable_to_non_nullable
+      designation: freezed == designation
+          ? _value.designation
+          : designation // ignore: cast_nullable_to_non_nullable
               as String?,
-      branch: branch == freezed
-          ? _value.branch
-          : branch // ignore: cast_nullable_to_non_nullable
+      company: freezed == company
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
-          ? _value.semester
-          : semester // ignore: cast_nullable_to_non_nullable
-              as int?,
-      universityName: universityName == freezed
-          ? _value.universityName
-          : universityName // ignore: cast_nullable_to_non_nullable
+      university: freezed == university
+          ? _value.university
+          : university // ignore: cast_nullable_to_non_nullable
               as String?,
-      universityAddress: universityAddress == freezed
-          ? _value.universityAddress
-          : universityAddress // ignore: cast_nullable_to_non_nullable
+      bio: freezed == bio
+          ? _value.bio
+          : bio // ignore: cast_nullable_to_non_nullable
               as String?,
-      userDescription: userDescription == freezed
-          ? _value.userDescription
-          : userDescription // ignore: cast_nullable_to_non_nullable
+      imageLink: freezed == imageLink
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      userUploads: userUploads == freezed
-          ? _value.userUploads
-          : userUploads // ignore: cast_nullable_to_non_nullable
-              as UserUploads?,
-      contact: contact == freezed
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as Contact?,
-      yearOfAdmission: yearOfAdmission == freezed
-          ? _value.yearOfAdmission
-          : yearOfAdmission // ignore: cast_nullable_to_non_nullable
-              as int?,
-      experienceLevel: experienceLevel == freezed
-          ? _value.experienceLevel
-          : experienceLevel // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      jobType: jobType == freezed
-          ? _value.jobType
-          : jobType // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      userAddress: userAddress == freezed
-          ? _value.userAddress
-          : userAddress // ignore: cast_nullable_to_non_nullable
+      linkedin: freezed == linkedin
+          ? _value.linkedin
+          : linkedin // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
-  }
-
-  @override
-  $UserUploadsCopyWith<$Res>? get userUploads {
-    if (_value.userUploads == null) {
-      return null;
-    }
-
-    return $UserUploadsCopyWith<$Res>(_value.userUploads!, (value) {
-      return _then(_value.copyWith(userUploads: value));
-    });
-  }
-
-  @override
-  $ContactCopyWith<$Res>? get contact {
-    if (_value.contact == null) {
-      return null;
-    }
-
-    return $ContactCopyWith<$Res>(_value.contact!, (value) {
-      return _then(_value.copyWith(contact: value));
-    });
+      github: freezed == github
+          ? _value.github
+          : github // ignore: cast_nullable_to_non_nullable
+              as String?,
+      twitter: freezed == twitter
+          ? _value.twitter
+          : twitter // ignore: cast_nullable_to_non_nullable
+              as String?,
+      instagram: freezed == instagram
+          ? _value.instagram
+          : instagram // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notesCount: null == notesCount
+          ? _value.notesCount
+          : notesCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      jobsCount: null == jobsCount
+          ? _value.jobsCount
+          : jobsCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      booksCount: null == booksCount
+          ? _value.booksCount
+          : booksCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      papersCount: null == papersCount
+          ? _value.papersCount
+          : papersCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      filesCount: null == filesCount
+          ? _value.filesCount
+          : filesCount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_ProfileModalCopyWith<$Res>
+abstract class _$$ProfileModalImplCopyWith<$Res>
     implements $ProfileModalCopyWith<$Res> {
-  factory _$$_ProfileModalCopyWith(
-          _$_ProfileModal value, $Res Function(_$_ProfileModal) then) =
-      __$$_ProfileModalCopyWithImpl<$Res>;
+  factory _$$ProfileModalImplCopyWith(
+          _$ProfileModalImpl value, $Res Function(_$ProfileModalImpl) then) =
+      __$$ProfileModalImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
-      {String? userName,
-      String? userPic,
-      String? userClass,
-      String? branch,
-      int? semester,
-      String? universityName,
-      String? universityAddress,
-      String? userDescription,
-      UserUploads? userUploads,
-      Contact? contact,
-      int? yearOfAdmission,
-      List<String>? experienceLevel,
-      List<String>? jobType,
-      String? userAddress});
-
-  @override
-  $UserUploadsCopyWith<$Res>? get userUploads;
-  @override
-  $ContactCopyWith<$Res>? get contact;
+      {String? fullName,
+      String? email,
+      String? designation,
+      String? company,
+      String? university,
+      String? bio,
+      String? imageLink,
+      String? linkedin,
+      String? github,
+      String? twitter,
+      String? instagram,
+      int notesCount,
+      int jobsCount,
+      int booksCount,
+      int papersCount,
+      int filesCount});
 }
 
 /// @nodoc
-class __$$_ProfileModalCopyWithImpl<$Res>
-    extends _$ProfileModalCopyWithImpl<$Res>
-    implements _$$_ProfileModalCopyWith<$Res> {
-  __$$_ProfileModalCopyWithImpl(
-      _$_ProfileModal _value, $Res Function(_$_ProfileModal) _then)
-      : super(_value, (v) => _then(v as _$_ProfileModal));
+class __$$ProfileModalImplCopyWithImpl<$Res>
+    extends _$ProfileModalCopyWithImpl<$Res, _$ProfileModalImpl>
+    implements _$$ProfileModalImplCopyWith<$Res> {
+  __$$ProfileModalImplCopyWithImpl(
+      _$ProfileModalImpl _value, $Res Function(_$ProfileModalImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_ProfileModal get _value => super._value as _$_ProfileModal;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userName = freezed,
-    Object? userPic = freezed,
-    Object? userClass = freezed,
-    Object? branch = freezed,
-    Object? semester = freezed,
-    Object? universityName = freezed,
-    Object? universityAddress = freezed,
-    Object? userDescription = freezed,
-    Object? userUploads = freezed,
-    Object? contact = freezed,
-    Object? yearOfAdmission = freezed,
-    Object? experienceLevel = freezed,
-    Object? jobType = freezed,
-    Object? userAddress = freezed,
+    Object? fullName = freezed,
+    Object? email = freezed,
+    Object? designation = freezed,
+    Object? company = freezed,
+    Object? university = freezed,
+    Object? bio = freezed,
+    Object? imageLink = freezed,
+    Object? linkedin = freezed,
+    Object? github = freezed,
+    Object? twitter = freezed,
+    Object? instagram = freezed,
+    Object? notesCount = null,
+    Object? jobsCount = null,
+    Object? booksCount = null,
+    Object? papersCount = null,
+    Object? filesCount = null,
   }) {
-    return _then(_$_ProfileModal(
-      userName: userName == freezed
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
+    return _then(_$ProfileModalImpl(
+      fullName: freezed == fullName
+          ? _value.fullName
+          : fullName // ignore: cast_nullable_to_non_nullable
               as String?,
-      userPic: userPic == freezed
-          ? _value.userPic
-          : userPic // ignore: cast_nullable_to_non_nullable
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      userClass: userClass == freezed
-          ? _value.userClass
-          : userClass // ignore: cast_nullable_to_non_nullable
+      designation: freezed == designation
+          ? _value.designation
+          : designation // ignore: cast_nullable_to_non_nullable
               as String?,
-      branch: branch == freezed
-          ? _value.branch
-          : branch // ignore: cast_nullable_to_non_nullable
+      company: freezed == company
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
-          ? _value.semester
-          : semester // ignore: cast_nullable_to_non_nullable
-              as int?,
-      universityName: universityName == freezed
-          ? _value.universityName
-          : universityName // ignore: cast_nullable_to_non_nullable
+      university: freezed == university
+          ? _value.university
+          : university // ignore: cast_nullable_to_non_nullable
               as String?,
-      universityAddress: universityAddress == freezed
-          ? _value.universityAddress
-          : universityAddress // ignore: cast_nullable_to_non_nullable
+      bio: freezed == bio
+          ? _value.bio
+          : bio // ignore: cast_nullable_to_non_nullable
               as String?,
-      userDescription: userDescription == freezed
-          ? _value.userDescription
-          : userDescription // ignore: cast_nullable_to_non_nullable
+      imageLink: freezed == imageLink
+          ? _value.imageLink
+          : imageLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      userUploads: userUploads == freezed
-          ? _value.userUploads
-          : userUploads // ignore: cast_nullable_to_non_nullable
-              as UserUploads?,
-      contact: contact == freezed
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as Contact?,
-      yearOfAdmission: yearOfAdmission == freezed
-          ? _value.yearOfAdmission
-          : yearOfAdmission // ignore: cast_nullable_to_non_nullable
-              as int?,
-      experienceLevel: experienceLevel == freezed
-          ? _value._experienceLevel
-          : experienceLevel // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      jobType: jobType == freezed
-          ? _value._jobType
-          : jobType // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      userAddress: userAddress == freezed
-          ? _value.userAddress
-          : userAddress // ignore: cast_nullable_to_non_nullable
+      linkedin: freezed == linkedin
+          ? _value.linkedin
+          : linkedin // ignore: cast_nullable_to_non_nullable
               as String?,
+      github: freezed == github
+          ? _value.github
+          : github // ignore: cast_nullable_to_non_nullable
+              as String?,
+      twitter: freezed == twitter
+          ? _value.twitter
+          : twitter // ignore: cast_nullable_to_non_nullable
+              as String?,
+      instagram: freezed == instagram
+          ? _value.instagram
+          : instagram // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notesCount: null == notesCount
+          ? _value.notesCount
+          : notesCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      jobsCount: null == jobsCount
+          ? _value.jobsCount
+          : jobsCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      booksCount: null == booksCount
+          ? _value.booksCount
+          : booksCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      papersCount: null == papersCount
+          ? _value.papersCount
+          : papersCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      filesCount: null == filesCount
+          ? _value.filesCount
+          : filesCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProfileModal implements _ProfileModal {
-  const _$_ProfileModal(
-      {this.userName,
-      this.userPic,
-      this.userClass,
-      this.branch,
-      this.semester,
-      this.universityName,
-      this.universityAddress,
-      this.userDescription,
-      this.userUploads,
-      this.contact,
-      this.yearOfAdmission,
-      final List<String>? experienceLevel,
-      final List<String>? jobType,
-      this.userAddress})
-      : _experienceLevel = experienceLevel,
-        _jobType = jobType;
+class _$ProfileModalImpl implements _ProfileModal {
+  const _$ProfileModalImpl(
+      {this.fullName,
+      this.email,
+      this.designation,
+      this.company,
+      this.university,
+      this.bio,
+      this.imageLink,
+      this.linkedin,
+      this.github,
+      this.twitter,
+      this.instagram,
+      this.notesCount = 0,
+      this.jobsCount = 0,
+      this.booksCount = 0,
+      this.papersCount = 0,
+      this.filesCount = 0});
 
-  factory _$_ProfileModal.fromJson(Map<String, dynamic> json) =>
-      _$$_ProfileModalFromJson(json);
-
-  @override
-  final String? userName;
-  @override
-  final String? userPic;
-  @override
-  final String? userClass;
-  @override
-  final String? branch;
-  @override
-  final int? semester;
-  @override
-  final String? universityName;
-  @override
-  final String? universityAddress;
-  @override
-  final String? userDescription;
-  @override
-  final UserUploads? userUploads;
-  @override
-  final Contact? contact;
-  @override
-  final int? yearOfAdmission;
-  final List<String>? _experienceLevel;
-  @override
-  List<String>? get experienceLevel {
-    final value = _experienceLevel;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<String>? _jobType;
-  @override
-  List<String>? get jobType {
-    final value = _jobType;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  factory _$ProfileModalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProfileModalImplFromJson(json);
 
   @override
-  final String? userAddress;
+  final String? fullName;
+  @override
+  final String? email;
+  @override
+  final String? designation;
+  @override
+  final String? company;
+  @override
+  final String? university;
+  @override
+  final String? bio;
+  @override
+  final String? imageLink;
+  @override
+  final String? linkedin;
+  @override
+  final String? github;
+  @override
+  final String? twitter;
+  @override
+  final String? instagram;
+  @override
+  @JsonKey()
+  final int notesCount;
+  @override
+  @JsonKey()
+  final int jobsCount;
+  @override
+  @JsonKey()
+  final int booksCount;
+  @override
+  @JsonKey()
+  final int papersCount;
+  @override
+  @JsonKey()
+  final int filesCount;
 
   @override
   String toString() {
-    return 'ProfileModal(userName: $userName, userPic: $userPic, userClass: $userClass, branch: $branch, semester: $semester, universityName: $universityName, universityAddress: $universityAddress, userDescription: $userDescription, userUploads: $userUploads, contact: $contact, yearOfAdmission: $yearOfAdmission, experienceLevel: $experienceLevel, jobType: $jobType, userAddress: $userAddress)';
+    return 'ProfileModal(fullName: $fullName, email: $email, designation: $designation, company: $company, university: $university, bio: $bio, imageLink: $imageLink, linkedin: $linkedin, github: $github, twitter: $twitter, instagram: $instagram, notesCount: $notesCount, jobsCount: $jobsCount, booksCount: $booksCount, papersCount: $papersCount, filesCount: $filesCount)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProfileModal &&
-            const DeepCollectionEquality().equals(other.userName, userName) &&
-            const DeepCollectionEquality().equals(other.userPic, userPic) &&
-            const DeepCollectionEquality().equals(other.userClass, userClass) &&
-            const DeepCollectionEquality().equals(other.branch, branch) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality()
-                .equals(other.universityName, universityName) &&
-            const DeepCollectionEquality()
-                .equals(other.universityAddress, universityAddress) &&
-            const DeepCollectionEquality()
-                .equals(other.userDescription, userDescription) &&
-            const DeepCollectionEquality()
-                .equals(other.userUploads, userUploads) &&
-            const DeepCollectionEquality().equals(other.contact, contact) &&
-            const DeepCollectionEquality()
-                .equals(other.yearOfAdmission, yearOfAdmission) &&
-            const DeepCollectionEquality()
-                .equals(other._experienceLevel, _experienceLevel) &&
-            const DeepCollectionEquality().equals(other._jobType, _jobType) &&
-            const DeepCollectionEquality()
-                .equals(other.userAddress, userAddress));
+            other is _$ProfileModalImpl &&
+            (identical(other.fullName, fullName) ||
+                other.fullName == fullName) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.designation, designation) ||
+                other.designation == designation) &&
+            (identical(other.company, company) || other.company == company) &&
+            (identical(other.university, university) ||
+                other.university == university) &&
+            (identical(other.bio, bio) || other.bio == bio) &&
+            (identical(other.imageLink, imageLink) ||
+                other.imageLink == imageLink) &&
+            (identical(other.linkedin, linkedin) ||
+                other.linkedin == linkedin) &&
+            (identical(other.github, github) || other.github == github) &&
+            (identical(other.twitter, twitter) || other.twitter == twitter) &&
+            (identical(other.instagram, instagram) ||
+                other.instagram == instagram) &&
+            (identical(other.notesCount, notesCount) ||
+                other.notesCount == notesCount) &&
+            (identical(other.jobsCount, jobsCount) ||
+                other.jobsCount == jobsCount) &&
+            (identical(other.booksCount, booksCount) ||
+                other.booksCount == booksCount) &&
+            (identical(other.papersCount, papersCount) ||
+                other.papersCount == papersCount) &&
+            (identical(other.filesCount, filesCount) ||
+                other.filesCount == filesCount));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(userName),
-      const DeepCollectionEquality().hash(userPic),
-      const DeepCollectionEquality().hash(userClass),
-      const DeepCollectionEquality().hash(branch),
-      const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(universityName),
-      const DeepCollectionEquality().hash(universityAddress),
-      const DeepCollectionEquality().hash(userDescription),
-      const DeepCollectionEquality().hash(userUploads),
-      const DeepCollectionEquality().hash(contact),
-      const DeepCollectionEquality().hash(yearOfAdmission),
-      const DeepCollectionEquality().hash(_experienceLevel),
-      const DeepCollectionEquality().hash(_jobType),
-      const DeepCollectionEquality().hash(userAddress));
+      fullName,
+      email,
+      designation,
+      company,
+      university,
+      bio,
+      imageLink,
+      linkedin,
+      github,
+      twitter,
+      instagram,
+      notesCount,
+      jobsCount,
+      booksCount,
+      papersCount,
+      filesCount);
 
   @JsonKey(ignore: true)
   @override
-  _$$_ProfileModalCopyWith<_$_ProfileModal> get copyWith =>
-      __$$_ProfileModalCopyWithImpl<_$_ProfileModal>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ProfileModalImplCopyWith<_$ProfileModalImpl> get copyWith =>
+      __$$ProfileModalImplCopyWithImpl<_$ProfileModalImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProfileModalToJson(
+    return _$$ProfileModalImplToJson(
       this,
     );
   }
@@ -426,410 +429,60 @@ class _$_ProfileModal implements _ProfileModal {
 
 abstract class _ProfileModal implements ProfileModal {
   const factory _ProfileModal(
-      {final String? userName,
-      final String? userPic,
-      final String? userClass,
-      final String? branch,
-      final int? semester,
-      final String? universityName,
-      final String? universityAddress,
-      final String? userDescription,
-      final UserUploads? userUploads,
-      final Contact? contact,
-      final int? yearOfAdmission,
-      final List<String>? experienceLevel,
-      final List<String>? jobType,
-      final String? userAddress}) = _$_ProfileModal;
+      {final String? fullName,
+      final String? email,
+      final String? designation,
+      final String? company,
+      final String? university,
+      final String? bio,
+      final String? imageLink,
+      final String? linkedin,
+      final String? github,
+      final String? twitter,
+      final String? instagram,
+      final int notesCount,
+      final int jobsCount,
+      final int booksCount,
+      final int papersCount,
+      final int filesCount}) = _$ProfileModalImpl;
 
   factory _ProfileModal.fromJson(Map<String, dynamic> json) =
-      _$_ProfileModal.fromJson;
+      _$ProfileModalImpl.fromJson;
 
   @override
-  String? get userName;
-  @override
-  String? get userPic;
-  @override
-  String? get userClass;
-  @override
-  String? get branch;
-  @override
-  int? get semester;
-  @override
-  String? get universityName;
-  @override
-  String? get universityAddress;
-  @override
-  String? get userDescription;
-  @override
-  UserUploads? get userUploads;
-  @override
-  Contact? get contact;
-  @override
-  int? get yearOfAdmission;
-  @override
-  List<String>? get experienceLevel;
-  @override
-  List<String>? get jobType;
-  @override
-  String? get userAddress;
-  @override
-  @JsonKey(ignore: true)
-  _$$_ProfileModalCopyWith<_$_ProfileModal> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Contact _$ContactFromJson(Map<String, dynamic> json) {
-  return _Contact.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Contact {
-  String? get email => throw _privateConstructorUsedError;
-  String? get mobileNumber => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ContactCopyWith<Contact> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ContactCopyWith<$Res> {
-  factory $ContactCopyWith(Contact value, $Res Function(Contact) then) =
-      _$ContactCopyWithImpl<$Res>;
-  $Res call({String? email, String? mobileNumber});
-}
-
-/// @nodoc
-class _$ContactCopyWithImpl<$Res> implements $ContactCopyWith<$Res> {
-  _$ContactCopyWithImpl(this._value, this._then);
-
-  final Contact _value;
-  // ignore: unused_field
-  final $Res Function(Contact) _then;
-
-  @override
-  $Res call({
-    Object? email = freezed,
-    Object? mobileNumber = freezed,
-  }) {
-    return _then(_value.copyWith(
-      email: email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mobileNumber: mobileNumber == freezed
-          ? _value.mobileNumber
-          : mobileNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$$_ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
-  factory _$$_ContactCopyWith(
-          _$_Contact value, $Res Function(_$_Contact) then) =
-      __$$_ContactCopyWithImpl<$Res>;
-  @override
-  $Res call({String? email, String? mobileNumber});
-}
-
-/// @nodoc
-class __$$_ContactCopyWithImpl<$Res> extends _$ContactCopyWithImpl<$Res>
-    implements _$$_ContactCopyWith<$Res> {
-  __$$_ContactCopyWithImpl(_$_Contact _value, $Res Function(_$_Contact) _then)
-      : super(_value, (v) => _then(v as _$_Contact));
-
-  @override
-  _$_Contact get _value => super._value as _$_Contact;
-
-  @override
-  $Res call({
-    Object? email = freezed,
-    Object? mobileNumber = freezed,
-  }) {
-    return _then(_$_Contact(
-      email: email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mobileNumber: mobileNumber == freezed
-          ? _value.mobileNumber
-          : mobileNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_Contact implements _Contact {
-  const _$_Contact({this.email, this.mobileNumber});
-
-  factory _$_Contact.fromJson(Map<String, dynamic> json) =>
-      _$$_ContactFromJson(json);
-
-  @override
-  final String? email;
-  @override
-  final String? mobileNumber;
-
-  @override
-  String toString() {
-    return 'Contact(email: $email, mobileNumber: $mobileNumber)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Contact &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality()
-                .equals(other.mobileNumber, mobileNumber));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(mobileNumber));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_ContactCopyWith<_$_Contact> get copyWith =>
-      __$$_ContactCopyWithImpl<_$_Contact>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_ContactToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Contact implements Contact {
-  const factory _Contact({final String? email, final String? mobileNumber}) =
-      _$_Contact;
-
-  factory _Contact.fromJson(Map<String, dynamic> json) = _$_Contact.fromJson;
-
+  String? get fullName;
   @override
   String? get email;
   @override
-  String? get mobileNumber;
+  String? get designation;
+  @override
+  String? get company;
+  @override
+  String? get university;
+  @override
+  String? get bio;
+  @override
+  String? get imageLink;
+  @override
+  String? get linkedin;
+  @override
+  String? get github;
+  @override
+  String? get twitter;
+  @override
+  String? get instagram;
+  @override
+  int get notesCount;
+  @override
+  int get jobsCount;
+  @override
+  int get booksCount;
+  @override
+  int get papersCount;
+  @override
+  int get filesCount;
   @override
   @JsonKey(ignore: true)
-  _$$_ContactCopyWith<_$_Contact> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-UserUploads _$UserUploadsFromJson(Map<String, dynamic> json) {
-  return _UserDescription.fromJson(json);
-}
-
-/// @nodoc
-mixin _$UserUploads {
-  int? get notes => throw _privateConstructorUsedError;
-  int? get file => throw _privateConstructorUsedError;
-  int? get paper => throw _privateConstructorUsedError;
-  int? get book => throw _privateConstructorUsedError;
-  int? get jobRequest => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $UserUploadsCopyWith<UserUploads> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UserUploadsCopyWith<$Res> {
-  factory $UserUploadsCopyWith(
-          UserUploads value, $Res Function(UserUploads) then) =
-      _$UserUploadsCopyWithImpl<$Res>;
-  $Res call({int? notes, int? file, int? paper, int? book, int? jobRequest});
-}
-
-/// @nodoc
-class _$UserUploadsCopyWithImpl<$Res> implements $UserUploadsCopyWith<$Res> {
-  _$UserUploadsCopyWithImpl(this._value, this._then);
-
-  final UserUploads _value;
-  // ignore: unused_field
-  final $Res Function(UserUploads) _then;
-
-  @override
-  $Res call({
-    Object? notes = freezed,
-    Object? file = freezed,
-    Object? paper = freezed,
-    Object? book = freezed,
-    Object? jobRequest = freezed,
-  }) {
-    return _then(_value.copyWith(
-      notes: notes == freezed
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as int?,
-      file: file == freezed
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as int?,
-      paper: paper == freezed
-          ? _value.paper
-          : paper // ignore: cast_nullable_to_non_nullable
-              as int?,
-      book: book == freezed
-          ? _value.book
-          : book // ignore: cast_nullable_to_non_nullable
-              as int?,
-      jobRequest: jobRequest == freezed
-          ? _value.jobRequest
-          : jobRequest // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$$_UserDescriptionCopyWith<$Res>
-    implements $UserUploadsCopyWith<$Res> {
-  factory _$$_UserDescriptionCopyWith(
-          _$_UserDescription value, $Res Function(_$_UserDescription) then) =
-      __$$_UserDescriptionCopyWithImpl<$Res>;
-  @override
-  $Res call({int? notes, int? file, int? paper, int? book, int? jobRequest});
-}
-
-/// @nodoc
-class __$$_UserDescriptionCopyWithImpl<$Res>
-    extends _$UserUploadsCopyWithImpl<$Res>
-    implements _$$_UserDescriptionCopyWith<$Res> {
-  __$$_UserDescriptionCopyWithImpl(
-      _$_UserDescription _value, $Res Function(_$_UserDescription) _then)
-      : super(_value, (v) => _then(v as _$_UserDescription));
-
-  @override
-  _$_UserDescription get _value => super._value as _$_UserDescription;
-
-  @override
-  $Res call({
-    Object? notes = freezed,
-    Object? file = freezed,
-    Object? paper = freezed,
-    Object? book = freezed,
-    Object? jobRequest = freezed,
-  }) {
-    return _then(_$_UserDescription(
-      notes: notes == freezed
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as int?,
-      file: file == freezed
-          ? _value.file
-          : file // ignore: cast_nullable_to_non_nullable
-              as int?,
-      paper: paper == freezed
-          ? _value.paper
-          : paper // ignore: cast_nullable_to_non_nullable
-              as int?,
-      book: book == freezed
-          ? _value.book
-          : book // ignore: cast_nullable_to_non_nullable
-              as int?,
-      jobRequest: jobRequest == freezed
-          ? _value.jobRequest
-          : jobRequest // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_UserDescription implements _UserDescription {
-  const _$_UserDescription(
-      {this.notes, this.file, this.paper, this.book, this.jobRequest});
-
-  factory _$_UserDescription.fromJson(Map<String, dynamic> json) =>
-      _$$_UserDescriptionFromJson(json);
-
-  @override
-  final int? notes;
-  @override
-  final int? file;
-  @override
-  final int? paper;
-  @override
-  final int? book;
-  @override
-  final int? jobRequest;
-
-  @override
-  String toString() {
-    return 'UserUploads(notes: $notes, file: $file, paper: $paper, book: $book, jobRequest: $jobRequest)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_UserDescription &&
-            const DeepCollectionEquality().equals(other.notes, notes) &&
-            const DeepCollectionEquality().equals(other.file, file) &&
-            const DeepCollectionEquality().equals(other.paper, paper) &&
-            const DeepCollectionEquality().equals(other.book, book) &&
-            const DeepCollectionEquality()
-                .equals(other.jobRequest, jobRequest));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(notes),
-      const DeepCollectionEquality().hash(file),
-      const DeepCollectionEquality().hash(paper),
-      const DeepCollectionEquality().hash(book),
-      const DeepCollectionEquality().hash(jobRequest));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_UserDescriptionCopyWith<_$_UserDescription> get copyWith =>
-      __$$_UserDescriptionCopyWithImpl<_$_UserDescription>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_UserDescriptionToJson(
-      this,
-    );
-  }
-}
-
-abstract class _UserDescription implements UserUploads {
-  const factory _UserDescription(
-      {final int? notes,
-      final int? file,
-      final int? paper,
-      final int? book,
-      final int? jobRequest}) = _$_UserDescription;
-
-  factory _UserDescription.fromJson(Map<String, dynamic> json) =
-      _$_UserDescription.fromJson;
-
-  @override
-  int? get notes;
-  @override
-  int? get file;
-  @override
-  int? get paper;
-  @override
-  int? get book;
-  @override
-  int? get jobRequest;
-  @override
-  @JsonKey(ignore: true)
-  _$$_UserDescriptionCopyWith<_$_UserDescription> get copyWith =>
+  _$$ProfileModalImplCopyWith<_$ProfileModalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

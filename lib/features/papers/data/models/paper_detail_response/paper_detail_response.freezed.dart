@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'paper_detail_response.dart';
 
@@ -12,7 +12,7 @@ part of 'paper_detail_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PaperDetailResponse _$PaperDetailResponseFromJson(Map<String, dynamic> json) {
   return _PaperDetailResponse.fromJson(json);
@@ -40,7 +40,8 @@ mixin _$PaperDetailResponse {
 abstract class $PaperDetailResponseCopyWith<$Res> {
   factory $PaperDetailResponseCopyWith(
           PaperDetailResponse value, $Res Function(PaperDetailResponse) then) =
-      _$PaperDetailResponseCopyWithImpl<$Res>;
+      _$PaperDetailResponseCopyWithImpl<$Res, PaperDetailResponse>;
+  @useResult
   $Res call(
       {String title,
       dynamic link,
@@ -54,74 +55,77 @@ abstract class $PaperDetailResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PaperDetailResponseCopyWithImpl<$Res>
+class _$PaperDetailResponseCopyWithImpl<$Res, $Val extends PaperDetailResponse>
     implements $PaperDetailResponseCopyWith<$Res> {
   _$PaperDetailResponseCopyWithImpl(this._value, this._then);
 
-  final PaperDetailResponse _value;
   // ignore: unused_field
-  final $Res Function(PaperDetailResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
+    Object? title = null,
     Object? link = freezed,
     Object? semester = freezed,
     Object? year = freezed,
-    Object? subject = freezed,
+    Object? subject = null,
     Object? type = freezed,
     Object? solved = freezed,
-    Object? tags = freezed,
-    Object? rating = freezed,
+    Object? tags = null,
+    Object? rating = null,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      link: link == freezed
+      link: freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      semester: semester == freezed
+      semester: freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as int?,
-      year: year == freezed
+      year: freezed == year
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as int?,
-      subject: subject == freezed
+      subject: null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      solved: solved == freezed
+      solved: freezed == solved
           ? _value.solved
           : solved // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags: tags == freezed
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
+      rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_PaperDetailResponseCopyWith<$Res>
+abstract class _$$PaperDetailResponseImplCopyWith<$Res>
     implements $PaperDetailResponseCopyWith<$Res> {
-  factory _$$_PaperDetailResponseCopyWith(_$_PaperDetailResponse value,
-          $Res Function(_$_PaperDetailResponse) then) =
-      __$$_PaperDetailResponseCopyWithImpl<$Res>;
+  factory _$$PaperDetailResponseImplCopyWith(_$PaperDetailResponseImpl value,
+          $Res Function(_$PaperDetailResponseImpl) then) =
+      __$$PaperDetailResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       dynamic link,
@@ -135,62 +139,60 @@ abstract class _$$_PaperDetailResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PaperDetailResponseCopyWithImpl<$Res>
-    extends _$PaperDetailResponseCopyWithImpl<$Res>
-    implements _$$_PaperDetailResponseCopyWith<$Res> {
-  __$$_PaperDetailResponseCopyWithImpl(_$_PaperDetailResponse _value,
-      $Res Function(_$_PaperDetailResponse) _then)
-      : super(_value, (v) => _then(v as _$_PaperDetailResponse));
+class __$$PaperDetailResponseImplCopyWithImpl<$Res>
+    extends _$PaperDetailResponseCopyWithImpl<$Res, _$PaperDetailResponseImpl>
+    implements _$$PaperDetailResponseImplCopyWith<$Res> {
+  __$$PaperDetailResponseImplCopyWithImpl(_$PaperDetailResponseImpl _value,
+      $Res Function(_$PaperDetailResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_PaperDetailResponse get _value => super._value as _$_PaperDetailResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
+    Object? title = null,
     Object? link = freezed,
     Object? semester = freezed,
     Object? year = freezed,
-    Object? subject = freezed,
+    Object? subject = null,
     Object? type = freezed,
     Object? solved = freezed,
-    Object? tags = freezed,
-    Object? rating = freezed,
+    Object? tags = null,
+    Object? rating = null,
   }) {
-    return _then(_$_PaperDetailResponse(
-      title == freezed
+    return _then(_$PaperDetailResponseImpl(
+      null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      link == freezed
+      freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      semester == freezed
+      freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as int?,
-      year == freezed
+      freezed == year
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as int?,
-      subject == freezed
+      null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String,
-      type == freezed
+      freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
-      solved == freezed
+      freezed == solved
           ? _value.solved
           : solved // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags == freezed
+      null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating == freezed
+      null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
@@ -200,8 +202,8 @@ class __$$_PaperDetailResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PaperDetailResponse implements _PaperDetailResponse {
-  const _$_PaperDetailResponse(
+class _$PaperDetailResponseImpl implements _PaperDetailResponse {
+  const _$PaperDetailResponseImpl(
       this.title,
       this.link,
       this.semester,
@@ -213,8 +215,8 @@ class _$_PaperDetailResponse implements _PaperDetailResponse {
       this.rating)
       : _tags = tags;
 
-  factory _$_PaperDetailResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_PaperDetailResponseFromJson(json);
+  factory _$PaperDetailResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PaperDetailResponseImplFromJson(json);
 
   @override
   final String title;
@@ -233,6 +235,7 @@ class _$_PaperDetailResponse implements _PaperDetailResponse {
   final List<String> _tags;
   @override
   List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tags);
   }
@@ -246,44 +249,46 @@ class _$_PaperDetailResponse implements _PaperDetailResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PaperDetailResponse &&
-            const DeepCollectionEquality().equals(other.title, title) &&
+            other is _$PaperDetailResponseImpl &&
+            (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality().equals(other.year, year) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.solved, solved) &&
+            (identical(other.semester, semester) ||
+                other.semester == semester) &&
+            (identical(other.year, year) || other.year == year) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.solved, solved) || other.solved == solved) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            (identical(other.rating, rating) || other.rating == rating));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
+      title,
       const DeepCollectionEquality().hash(link),
-      const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(year),
-      const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(solved),
+      semester,
+      year,
+      subject,
+      type,
+      solved,
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(rating));
+      rating);
 
   @JsonKey(ignore: true)
   @override
-  _$$_PaperDetailResponseCopyWith<_$_PaperDetailResponse> get copyWith =>
-      __$$_PaperDetailResponseCopyWithImpl<_$_PaperDetailResponse>(
+  @pragma('vm:prefer-inline')
+  _$$PaperDetailResponseImplCopyWith<_$PaperDetailResponseImpl> get copyWith =>
+      __$$PaperDetailResponseImplCopyWithImpl<_$PaperDetailResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PaperDetailResponseToJson(
+    return _$$PaperDetailResponseImplToJson(
       this,
     );
   }
@@ -299,10 +304,10 @@ abstract class _PaperDetailResponse implements PaperDetailResponse {
       final String? type,
       final String? solved,
       final List<String> tags,
-      final double rating) = _$_PaperDetailResponse;
+      final double rating) = _$PaperDetailResponseImpl;
 
   factory _PaperDetailResponse.fromJson(Map<String, dynamic> json) =
-      _$_PaperDetailResponse.fromJson;
+      _$PaperDetailResponseImpl.fromJson;
 
   @override
   String get title;
@@ -324,6 +329,6 @@ abstract class _PaperDetailResponse implements PaperDetailResponse {
   double get rating;
   @override
   @JsonKey(ignore: true)
-  _$$_PaperDetailResponseCopyWith<_$_PaperDetailResponse> get copyWith =>
+  _$$PaperDetailResponseImplCopyWith<_$PaperDetailResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

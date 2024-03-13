@@ -45,7 +45,7 @@ class JobsScreen extends StatelessWidget {
                 ],
                 valueNotifierList: [
                   jobTypeValueNotifier,
-                  experienceLevelValueNotifier
+                  experienceLevelValueNotifier,
                 ],
                 multiOptionFilter: const [
                   MultioptionModel(
@@ -71,7 +71,7 @@ class JobsScreen extends StatelessWidget {
                     create: (_) => SearchBloc(data),
                     child: BlocBuilder<SearchBloc, List<dynamic>>(
                       builder: (searchContext, state) {
-                        return SearchBar(
+                        return SearchBarWidget(
                           BlocProvider.of<SearchBloc>(searchContext),
                           SearchEnum.jobs,
                         );
@@ -79,7 +79,7 @@ class JobsScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  JobList(data)
+                  JobList(data),
                 ],
               );
             },

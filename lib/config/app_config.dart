@@ -1,7 +1,7 @@
 /// [AppConfig] App config class
 class AppConfig {
   /// app data
-  static const String apiBaseUrl = 'https://lazy-engineer.onrender.com';
+  static const String apiBaseUrl = 'https://api.lazyengineer.in';
   static const String signUp = '/auth/signUp';
   static const String signIn = '/auth/signIn';
   static const String signOut = '/auth/signOut';
@@ -39,6 +39,6 @@ class AppConfig {
   /// tag
   static const String companyPhotoTag = 'company_photo';
 
-  static const int connectTimeout = 30000;
-  static const int receiveTimeout = 30000;
+  static const Duration connectTimeout = Duration(seconds: 30);
+  static const Duration receiveTimeout = Duration(seconds: 30);
 }

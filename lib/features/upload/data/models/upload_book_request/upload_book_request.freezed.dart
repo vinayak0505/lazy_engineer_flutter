@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'upload_book_request.dart';
 
@@ -12,7 +12,7 @@ part of 'upload_book_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UploadBookRequest _$UploadBookRequestFromJson(Map<String, dynamic> json) {
   return _UploadBookRequest.fromJson(json);
@@ -42,7 +42,8 @@ mixin _$UploadBookRequest {
 abstract class $UploadBookRequestCopyWith<$Res> {
   factory $UploadBookRequestCopyWith(
           UploadBookRequest value, $Res Function(UploadBookRequest) then) =
-      _$UploadBookRequestCopyWithImpl<$Res>;
+      _$UploadBookRequestCopyWithImpl<$Res, UploadBookRequest>;
+  @useResult
   $Res call(
       {String title,
       String about,
@@ -58,22 +59,24 @@ abstract class $UploadBookRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UploadBookRequestCopyWithImpl<$Res>
+class _$UploadBookRequestCopyWithImpl<$Res, $Val extends UploadBookRequest>
     implements $UploadBookRequestCopyWith<$Res> {
   _$UploadBookRequestCopyWithImpl(this._value, this._then);
 
-  final UploadBookRequest _value;
   // ignore: unused_field
-  final $Res Function(UploadBookRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? about = freezed,
-    Object? semester = freezed,
+    Object? title = null,
+    Object? about = null,
+    Object? semester = null,
     Object? fileLink = freezed,
-    Object? tags = freezed,
-    Object? writer = freezed,
+    Object? tags = null,
+    Object? writer = null,
     Object? pages = freezed,
     Object? bookEdition = freezed,
     Object? price = freezed,
@@ -81,61 +84,62 @@ class _$UploadBookRequestCopyWithImpl<$Res>
     Object? image = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      about: about == freezed
+      about: null == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String,
-      semester: semester == freezed
+      semester: null == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String,
-      fileLink: fileLink == freezed
+      fileLink: freezed == fileLink
           ? _value.fileLink
           : fileLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags: tags == freezed
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      writer: writer == freezed
+      writer: null == writer
           ? _value.writer
           : writer // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      pages: pages == freezed
+      pages: freezed == pages
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int?,
-      bookEdition: bookEdition == freezed
+      bookEdition: freezed == bookEdition
           ? _value.bookEdition
           : bookEdition // ignore: cast_nullable_to_non_nullable
               as int?,
-      price: price == freezed
+      price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int?,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UploadBookRequestCopyWith<$Res>
+abstract class _$$UploadBookRequestImplCopyWith<$Res>
     implements $UploadBookRequestCopyWith<$Res> {
-  factory _$$_UploadBookRequestCopyWith(_$_UploadBookRequest value,
-          $Res Function(_$_UploadBookRequest) then) =
-      __$$_UploadBookRequestCopyWithImpl<$Res>;
+  factory _$$UploadBookRequestImplCopyWith(_$UploadBookRequestImpl value,
+          $Res Function(_$UploadBookRequestImpl) then) =
+      __$$UploadBookRequestImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       String about,
@@ -151,72 +155,70 @@ abstract class _$$_UploadBookRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UploadBookRequestCopyWithImpl<$Res>
-    extends _$UploadBookRequestCopyWithImpl<$Res>
-    implements _$$_UploadBookRequestCopyWith<$Res> {
-  __$$_UploadBookRequestCopyWithImpl(
-      _$_UploadBookRequest _value, $Res Function(_$_UploadBookRequest) _then)
-      : super(_value, (v) => _then(v as _$_UploadBookRequest));
+class __$$UploadBookRequestImplCopyWithImpl<$Res>
+    extends _$UploadBookRequestCopyWithImpl<$Res, _$UploadBookRequestImpl>
+    implements _$$UploadBookRequestImplCopyWith<$Res> {
+  __$$UploadBookRequestImplCopyWithImpl(_$UploadBookRequestImpl _value,
+      $Res Function(_$UploadBookRequestImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_UploadBookRequest get _value => super._value as _$_UploadBookRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? about = freezed,
-    Object? semester = freezed,
+    Object? title = null,
+    Object? about = null,
+    Object? semester = null,
     Object? fileLink = freezed,
-    Object? tags = freezed,
-    Object? writer = freezed,
+    Object? tags = null,
+    Object? writer = null,
     Object? pages = freezed,
     Object? bookEdition = freezed,
     Object? price = freezed,
     Object? file = freezed,
     Object? image = freezed,
   }) {
-    return _then(_$_UploadBookRequest(
-      title: title == freezed
+    return _then(_$UploadBookRequestImpl(
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      about: about == freezed
+      about: null == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String,
-      semester: semester == freezed
+      semester: null == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String,
-      fileLink: fileLink == freezed
+      fileLink: freezed == fileLink
           ? _value.fileLink
           : fileLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags: tags == freezed
+      tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      writer: writer == freezed
+      writer: null == writer
           ? _value._writer
           : writer // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      pages: pages == freezed
+      pages: freezed == pages
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int?,
-      bookEdition: bookEdition == freezed
+      bookEdition: freezed == bookEdition
           ? _value.bookEdition
           : bookEdition // ignore: cast_nullable_to_non_nullable
               as int?,
-      price: price == freezed
+      price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int?,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -226,8 +228,8 @@ class __$$_UploadBookRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UploadBookRequest implements _UploadBookRequest {
-  const _$_UploadBookRequest(
+class _$UploadBookRequestImpl implements _UploadBookRequest {
+  const _$UploadBookRequestImpl(
       {required this.title,
       required this.about,
       required this.semester,
@@ -242,8 +244,8 @@ class _$_UploadBookRequest implements _UploadBookRequest {
       : _tags = tags,
         _writer = writer;
 
-  factory _$_UploadBookRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UploadBookRequestFromJson(json);
+  factory _$UploadBookRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UploadBookRequestImplFromJson(json);
 
   @override
   final String title;
@@ -256,6 +258,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
   final List<String> _tags;
   @override
   List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tags);
   }
@@ -263,6 +266,7 @@ class _$_UploadBookRequest implements _UploadBookRequest {
   final List<String> _writer;
   @override
   List<String> get writer {
+    if (_writer is EqualUnmodifiableListView) return _writer;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_writer);
   }
@@ -284,20 +288,22 @@ class _$_UploadBookRequest implements _UploadBookRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UploadBookRequest &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality().equals(other.fileLink, fileLink) &&
+            other is _$UploadBookRequestImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.about, about) || other.about == about) &&
+            (identical(other.semester, semester) ||
+                other.semester == semester) &&
+            (identical(other.fileLink, fileLink) ||
+                other.fileLink == fileLink) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other._writer, _writer) &&
-            const DeepCollectionEquality().equals(other.pages, pages) &&
-            const DeepCollectionEquality()
-                .equals(other.bookEdition, bookEdition) &&
-            const DeepCollectionEquality().equals(other.price, price) &&
+            (identical(other.pages, pages) || other.pages == pages) &&
+            (identical(other.bookEdition, bookEdition) ||
+                other.bookEdition == bookEdition) &&
+            (identical(other.price, price) || other.price == price) &&
             const DeepCollectionEquality().equals(other.file, file) &&
             const DeepCollectionEquality().equals(other.image, image));
   }
@@ -306,27 +312,28 @@ class _$_UploadBookRequest implements _UploadBookRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(fileLink),
+      title,
+      about,
+      semester,
+      fileLink,
       const DeepCollectionEquality().hash(_tags),
       const DeepCollectionEquality().hash(_writer),
-      const DeepCollectionEquality().hash(pages),
-      const DeepCollectionEquality().hash(bookEdition),
-      const DeepCollectionEquality().hash(price),
+      pages,
+      bookEdition,
+      price,
       const DeepCollectionEquality().hash(file),
       const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UploadBookRequestCopyWith<_$_UploadBookRequest> get copyWith =>
-      __$$_UploadBookRequestCopyWithImpl<_$_UploadBookRequest>(
+  @pragma('vm:prefer-inline')
+  _$$UploadBookRequestImplCopyWith<_$UploadBookRequestImpl> get copyWith =>
+      __$$UploadBookRequestImplCopyWithImpl<_$UploadBookRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UploadBookRequestToJson(
+    return _$$UploadBookRequestImplToJson(
       this,
     );
   }
@@ -344,10 +351,10 @@ abstract class _UploadBookRequest implements UploadBookRequest {
       final int? bookEdition,
       final int? price,
       final dynamic file,
-      final dynamic image}) = _$_UploadBookRequest;
+      final dynamic image}) = _$UploadBookRequestImpl;
 
   factory _UploadBookRequest.fromJson(Map<String, dynamic> json) =
-      _$_UploadBookRequest.fromJson;
+      _$UploadBookRequestImpl.fromJson;
 
   @override
   String get title;
@@ -373,6 +380,6 @@ abstract class _UploadBookRequest implements UploadBookRequest {
   dynamic get image;
   @override
   @JsonKey(ignore: true)
-  _$$_UploadBookRequestCopyWith<_$_UploadBookRequest> get copyWith =>
+  _$$UploadBookRequestImplCopyWith<_$UploadBookRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'edit_profile_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'edit_profile_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$EditProfileState {
@@ -26,10 +26,10 @@ mixin _$EditProfileState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(ProfileModal data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? initial,
+    TResult? Function(ProfileModal data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$EditProfileState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EditProfileInitial value)? initial,
-    TResult Function(EditProfileSuccess value)? success,
-    TResult Function(EditProfileLoading value)? loading,
-    TResult Function(EditProfileFailure value)? failure,
+    TResult? Function(EditProfileInitial value)? initial,
+    TResult? Function(EditProfileSuccess value)? success,
+    TResult? Function(EditProfileLoading value)? loading,
+    TResult? Function(EditProfileFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,42 +72,40 @@ mixin _$EditProfileState {
 abstract class $EditProfileStateCopyWith<$Res> {
   factory $EditProfileStateCopyWith(
           EditProfileState value, $Res Function(EditProfileState) then) =
-      _$EditProfileStateCopyWithImpl<$Res>;
+      _$EditProfileStateCopyWithImpl<$Res, EditProfileState>;
 }
 
 /// @nodoc
-class _$EditProfileStateCopyWithImpl<$Res>
+class _$EditProfileStateCopyWithImpl<$Res, $Val extends EditProfileState>
     implements $EditProfileStateCopyWith<$Res> {
   _$EditProfileStateCopyWithImpl(this._value, this._then);
 
-  final EditProfileState _value;
   // ignore: unused_field
-  final $Res Function(EditProfileState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$EditProfileInitialCopyWith<$Res> {
-  factory _$$EditProfileInitialCopyWith(_$EditProfileInitial value,
-          $Res Function(_$EditProfileInitial) then) =
-      __$$EditProfileInitialCopyWithImpl<$Res>;
+abstract class _$$EditProfileInitialImplCopyWith<$Res> {
+  factory _$$EditProfileInitialImplCopyWith(_$EditProfileInitialImpl value,
+          $Res Function(_$EditProfileInitialImpl) then) =
+      __$$EditProfileInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EditProfileInitialCopyWithImpl<$Res>
-    extends _$EditProfileStateCopyWithImpl<$Res>
-    implements _$$EditProfileInitialCopyWith<$Res> {
-  __$$EditProfileInitialCopyWithImpl(
-      _$EditProfileInitial _value, $Res Function(_$EditProfileInitial) _then)
-      : super(_value, (v) => _then(v as _$EditProfileInitial));
-
-  @override
-  _$EditProfileInitial get _value => super._value as _$EditProfileInitial;
+class __$$EditProfileInitialImplCopyWithImpl<$Res>
+    extends _$EditProfileStateCopyWithImpl<$Res, _$EditProfileInitialImpl>
+    implements _$$EditProfileInitialImplCopyWith<$Res> {
+  __$$EditProfileInitialImplCopyWithImpl(_$EditProfileInitialImpl _value,
+      $Res Function(_$EditProfileInitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EditProfileInitial implements EditProfileInitial {
-  const _$EditProfileInitial();
+class _$EditProfileInitialImpl implements EditProfileInitial {
+  const _$EditProfileInitialImpl();
 
   @override
   String toString() {
@@ -115,9 +113,9 @@ class _$EditProfileInitial implements EditProfileInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EditProfileInitial);
+        (other.runtimeType == runtimeType && other is _$EditProfileInitialImpl);
   }
 
   @override
@@ -137,10 +135,10 @@ class _$EditProfileInitial implements EditProfileInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(ProfileModal data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? initial,
+    TResult? Function(ProfileModal data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) {
     return initial?.call();
   }
@@ -174,10 +172,10 @@ class _$EditProfileInitial implements EditProfileInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EditProfileInitial value)? initial,
-    TResult Function(EditProfileSuccess value)? success,
-    TResult Function(EditProfileLoading value)? loading,
-    TResult Function(EditProfileFailure value)? failure,
+    TResult? Function(EditProfileInitial value)? initial,
+    TResult? Function(EditProfileSuccess value)? success,
+    TResult? Function(EditProfileLoading value)? loading,
+    TResult? Function(EditProfileFailure value)? failure,
   }) {
     return initial?.call(this);
   }
@@ -199,36 +197,35 @@ class _$EditProfileInitial implements EditProfileInitial {
 }
 
 abstract class EditProfileInitial implements EditProfileState {
-  const factory EditProfileInitial() = _$EditProfileInitial;
+  const factory EditProfileInitial() = _$EditProfileInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$EditProfileSuccessCopyWith<$Res> {
-  factory _$$EditProfileSuccessCopyWith(_$EditProfileSuccess value,
-          $Res Function(_$EditProfileSuccess) then) =
-      __$$EditProfileSuccessCopyWithImpl<$Res>;
+abstract class _$$EditProfileSuccessImplCopyWith<$Res> {
+  factory _$$EditProfileSuccessImplCopyWith(_$EditProfileSuccessImpl value,
+          $Res Function(_$EditProfileSuccessImpl) then) =
+      __$$EditProfileSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({ProfileModal data});
 
   $ProfileModalCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class __$$EditProfileSuccessCopyWithImpl<$Res>
-    extends _$EditProfileStateCopyWithImpl<$Res>
-    implements _$$EditProfileSuccessCopyWith<$Res> {
-  __$$EditProfileSuccessCopyWithImpl(
-      _$EditProfileSuccess _value, $Res Function(_$EditProfileSuccess) _then)
-      : super(_value, (v) => _then(v as _$EditProfileSuccess));
+class __$$EditProfileSuccessImplCopyWithImpl<$Res>
+    extends _$EditProfileStateCopyWithImpl<$Res, _$EditProfileSuccessImpl>
+    implements _$$EditProfileSuccessImplCopyWith<$Res> {
+  __$$EditProfileSuccessImplCopyWithImpl(_$EditProfileSuccessImpl _value,
+      $Res Function(_$EditProfileSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$EditProfileSuccess get _value => super._value as _$EditProfileSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$EditProfileSuccess(
-      data == freezed
+    return _then(_$EditProfileSuccessImpl(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as ProfileModal,
@@ -236,6 +233,7 @@ class __$$EditProfileSuccessCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ProfileModalCopyWith<$Res> get data {
     return $ProfileModalCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -245,8 +243,8 @@ class __$$EditProfileSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EditProfileSuccess implements EditProfileSuccess {
-  const _$EditProfileSuccess(this.data);
+class _$EditProfileSuccessImpl implements EditProfileSuccess {
+  const _$EditProfileSuccessImpl(this.data);
 
   @override
   final ProfileModal data;
@@ -257,21 +255,21 @@ class _$EditProfileSuccess implements EditProfileSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EditProfileSuccess &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$EditProfileSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
-  _$$EditProfileSuccessCopyWith<_$EditProfileSuccess> get copyWith =>
-      __$$EditProfileSuccessCopyWithImpl<_$EditProfileSuccess>(
+  @pragma('vm:prefer-inline')
+  _$$EditProfileSuccessImplCopyWith<_$EditProfileSuccessImpl> get copyWith =>
+      __$$EditProfileSuccessImplCopyWithImpl<_$EditProfileSuccessImpl>(
           this, _$identity);
 
   @override
@@ -288,10 +286,10 @@ class _$EditProfileSuccess implements EditProfileSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(ProfileModal data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? initial,
+    TResult? Function(ProfileModal data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) {
     return success?.call(data);
   }
@@ -325,10 +323,10 @@ class _$EditProfileSuccess implements EditProfileSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EditProfileInitial value)? initial,
-    TResult Function(EditProfileSuccess value)? success,
-    TResult Function(EditProfileLoading value)? loading,
-    TResult Function(EditProfileFailure value)? failure,
+    TResult? Function(EditProfileInitial value)? initial,
+    TResult? Function(EditProfileSuccess value)? success,
+    TResult? Function(EditProfileLoading value)? loading,
+    TResult? Function(EditProfileFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -351,37 +349,34 @@ class _$EditProfileSuccess implements EditProfileSuccess {
 
 abstract class EditProfileSuccess implements EditProfileState {
   const factory EditProfileSuccess(final ProfileModal data) =
-      _$EditProfileSuccess;
+      _$EditProfileSuccessImpl;
 
   ProfileModal get data;
   @JsonKey(ignore: true)
-  _$$EditProfileSuccessCopyWith<_$EditProfileSuccess> get copyWith =>
+  _$$EditProfileSuccessImplCopyWith<_$EditProfileSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EditProfileLoadingCopyWith<$Res> {
-  factory _$$EditProfileLoadingCopyWith(_$EditProfileLoading value,
-          $Res Function(_$EditProfileLoading) then) =
-      __$$EditProfileLoadingCopyWithImpl<$Res>;
+abstract class _$$EditProfileLoadingImplCopyWith<$Res> {
+  factory _$$EditProfileLoadingImplCopyWith(_$EditProfileLoadingImpl value,
+          $Res Function(_$EditProfileLoadingImpl) then) =
+      __$$EditProfileLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EditProfileLoadingCopyWithImpl<$Res>
-    extends _$EditProfileStateCopyWithImpl<$Res>
-    implements _$$EditProfileLoadingCopyWith<$Res> {
-  __$$EditProfileLoadingCopyWithImpl(
-      _$EditProfileLoading _value, $Res Function(_$EditProfileLoading) _then)
-      : super(_value, (v) => _then(v as _$EditProfileLoading));
-
-  @override
-  _$EditProfileLoading get _value => super._value as _$EditProfileLoading;
+class __$$EditProfileLoadingImplCopyWithImpl<$Res>
+    extends _$EditProfileStateCopyWithImpl<$Res, _$EditProfileLoadingImpl>
+    implements _$$EditProfileLoadingImplCopyWith<$Res> {
+  __$$EditProfileLoadingImplCopyWithImpl(_$EditProfileLoadingImpl _value,
+      $Res Function(_$EditProfileLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EditProfileLoading implements EditProfileLoading {
-  const _$EditProfileLoading();
+class _$EditProfileLoadingImpl implements EditProfileLoading {
+  const _$EditProfileLoadingImpl();
 
   @override
   String toString() {
@@ -389,9 +384,9 @@ class _$EditProfileLoading implements EditProfileLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EditProfileLoading);
+        (other.runtimeType == runtimeType && other is _$EditProfileLoadingImpl);
   }
 
   @override
@@ -411,10 +406,10 @@ class _$EditProfileLoading implements EditProfileLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(ProfileModal data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? initial,
+    TResult? Function(ProfileModal data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) {
     return loading?.call();
   }
@@ -448,10 +443,10 @@ class _$EditProfileLoading implements EditProfileLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EditProfileInitial value)? initial,
-    TResult Function(EditProfileSuccess value)? success,
-    TResult Function(EditProfileLoading value)? loading,
-    TResult Function(EditProfileFailure value)? failure,
+    TResult? Function(EditProfileInitial value)? initial,
+    TResult? Function(EditProfileSuccess value)? success,
+    TResult? Function(EditProfileLoading value)? loading,
+    TResult? Function(EditProfileFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -473,34 +468,33 @@ class _$EditProfileLoading implements EditProfileLoading {
 }
 
 abstract class EditProfileLoading implements EditProfileState {
-  const factory EditProfileLoading() = _$EditProfileLoading;
+  const factory EditProfileLoading() = _$EditProfileLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$EditProfileFailureCopyWith<$Res> {
-  factory _$$EditProfileFailureCopyWith(_$EditProfileFailure value,
-          $Res Function(_$EditProfileFailure) then) =
-      __$$EditProfileFailureCopyWithImpl<$Res>;
+abstract class _$$EditProfileFailureImplCopyWith<$Res> {
+  factory _$$EditProfileFailureImplCopyWith(_$EditProfileFailureImpl value,
+          $Res Function(_$EditProfileFailureImpl) then) =
+      __$$EditProfileFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$EditProfileFailureCopyWithImpl<$Res>
-    extends _$EditProfileStateCopyWithImpl<$Res>
-    implements _$$EditProfileFailureCopyWith<$Res> {
-  __$$EditProfileFailureCopyWithImpl(
-      _$EditProfileFailure _value, $Res Function(_$EditProfileFailure) _then)
-      : super(_value, (v) => _then(v as _$EditProfileFailure));
+class __$$EditProfileFailureImplCopyWithImpl<$Res>
+    extends _$EditProfileStateCopyWithImpl<$Res, _$EditProfileFailureImpl>
+    implements _$$EditProfileFailureImplCopyWith<$Res> {
+  __$$EditProfileFailureImplCopyWithImpl(_$EditProfileFailureImpl _value,
+      $Res Function(_$EditProfileFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$EditProfileFailure get _value => super._value as _$EditProfileFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$EditProfileFailure(
-      e == freezed
+    return _then(_$EditProfileFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -510,8 +504,8 @@ class __$$EditProfileFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EditProfileFailure implements EditProfileFailure {
-  const _$EditProfileFailure(this.e);
+class _$EditProfileFailureImpl implements EditProfileFailure {
+  const _$EditProfileFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -522,10 +516,10 @@ class _$EditProfileFailure implements EditProfileFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EditProfileFailure &&
+            other is _$EditProfileFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -535,8 +529,9 @@ class _$EditProfileFailure implements EditProfileFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$EditProfileFailureCopyWith<_$EditProfileFailure> get copyWith =>
-      __$$EditProfileFailureCopyWithImpl<_$EditProfileFailure>(
+  @pragma('vm:prefer-inline')
+  _$$EditProfileFailureImplCopyWith<_$EditProfileFailureImpl> get copyWith =>
+      __$$EditProfileFailureImplCopyWithImpl<_$EditProfileFailureImpl>(
           this, _$identity);
 
   @override
@@ -553,10 +548,10 @@ class _$EditProfileFailure implements EditProfileFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(ProfileModal data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? initial,
+    TResult? Function(ProfileModal data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
   }
@@ -590,10 +585,10 @@ class _$EditProfileFailure implements EditProfileFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EditProfileInitial value)? initial,
-    TResult Function(EditProfileSuccess value)? success,
-    TResult Function(EditProfileLoading value)? loading,
-    TResult Function(EditProfileFailure value)? failure,
+    TResult? Function(EditProfileInitial value)? initial,
+    TResult? Function(EditProfileSuccess value)? success,
+    TResult? Function(EditProfileLoading value)? loading,
+    TResult? Function(EditProfileFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -615,10 +610,10 @@ class _$EditProfileFailure implements EditProfileFailure {
 }
 
 abstract class EditProfileFailure implements EditProfileState {
-  const factory EditProfileFailure(final dynamic e) = _$EditProfileFailure;
+  const factory EditProfileFailure(final dynamic e) = _$EditProfileFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$EditProfileFailureCopyWith<_$EditProfileFailure> get copyWith =>
+  _$$EditProfileFailureImplCopyWith<_$EditProfileFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

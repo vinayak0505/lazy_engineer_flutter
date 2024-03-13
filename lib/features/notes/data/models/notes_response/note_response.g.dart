@@ -6,8 +6,8 @@ part of 'note_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NoteResponse _$$_NoteResponseFromJson(Map<String, dynamic> json) =>
-    _$_NoteResponse(
+_$NoteResponseImpl _$$NoteResponseImplFromJson(Map<String, dynamic> json) =>
+    _$NoteResponseImpl(
       (json['result'] as List<dynamic>?)
           ?.map((e) => NoteDetail.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -16,7 +16,7 @@ _$_NoteResponse _$$_NoteResponseFromJson(Map<String, dynamic> json) =>
       json['limit'] as int?,
     );
 
-Map<String, dynamic> _$$_NoteResponseToJson(_$_NoteResponse instance) =>
+Map<String, dynamic> _$$NoteResponseImplToJson(_$NoteResponseImpl instance) =>
     <String, dynamic>{
       'result': instance.result,
       'totalCount': instance.totalCount,
@@ -24,8 +24,8 @@ Map<String, dynamic> _$$_NoteResponseToJson(_$_NoteResponse instance) =>
       'limit': instance.limit,
     };
 
-_$_NoteDetail _$$_NoteDetailFromJson(Map<String, dynamic> json) =>
-    _$_NoteDetail(
+_$NoteDetailImpl _$$NoteDetailImplFromJson(Map<String, dynamic> json) =>
+    _$NoteDetailImpl(
       json['userId'] as String?,
       json['title'] as String?,
       json['about'] as String?,
@@ -41,7 +41,7 @@ _$_NoteDetail _$$_NoteDetailFromJson(Map<String, dynamic> json) =>
       json['dislike'] as int?,
     );
 
-Map<String, dynamic> _$$_NoteDetailToJson(_$_NoteDetail instance) =>
+Map<String, dynamic> _$$NoteDetailImplToJson(_$NoteDetailImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'title': instance.title,

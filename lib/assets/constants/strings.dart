@@ -94,6 +94,7 @@ const String jobRequest = 'Job Request';
 const String searchTags = 'Search Tags';
 const String submit = 'Submit';
 const String college = 'College';
+const String specialization = 'specialization';
 const String year = 'Year';
 const String type = 'Type';
 const String yearOfAdmission = 'Year of Admission';

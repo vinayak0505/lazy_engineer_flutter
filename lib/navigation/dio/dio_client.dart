@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:lazy_engineer/model/user.dart';
 import 'package:lazy_engineer/navigation/dio/authorization_inceptors.dart';
-import 'package:lazy_engineer/navigation/dio/dio_exception.dart';
+import 'package:lazy_engineer/navigation/dio/dio_exception.dart' as Exception;
 
 const apiBaseUrl = 'https://';
 
@@ -12,8 +12,8 @@ class DioClient {
       : _dio = Dio(
           BaseOptions(
             baseUrl: apiBaseUrl,
-            connectTimeout: 5000,
-            receiveTimeout: 3000,
+            connectTimeout: Duration(seconds: 10),
+            receiveTimeout: Duration(seconds: 10),
           ),
         )..interceptors.add(AuthorizationInterceptor());
 
@@ -22,7 +22,7 @@ class DioClient {
       final response = await _dio.get('/users/$id');
       return User.fromJson(response.data as Map<String,dynamic>);
     } on DioError catch (err) {
-      final errorMessage = DioException.fromDioError(err).toString();
+      final errorMessage = Exception.DioException.fromDioError(err).toString();
       throw errorMessage;
     } catch (e) {
       debugPrint(e.toString());
@@ -35,7 +35,7 @@ class DioClient {
       final response = await _dio.post('/users', data: user.toJson());
       return User.fromJson(response.data as Map<String,dynamic>);
     } on DioError catch (err) {
-      final errorMessage = DioException.fromDioError(err).toString();
+      final errorMessage = Exception.DioException.fromDioError(err).toString();
       throw errorMessage;
     } catch (e) {
       throw e.toString();
@@ -48,7 +48,7 @@ class DioClient {
     try {
       await _dio.delete('/users/$id');
     } on DioError catch (err) {
-      final errorMessage = DioException.fromDioError(err).toString();
+      final errorMessage = Exception.DioException.fromDioError(err).toString();
       throw errorMessage;
     } catch (e) {
       debugPrint(e.toString());

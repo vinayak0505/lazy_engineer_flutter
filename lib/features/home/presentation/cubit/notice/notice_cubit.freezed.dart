@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'notice_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'notice_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NoticeState {
@@ -25,9 +25,9 @@ mixin _$NoticeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(dynamic data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$NoticeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NoticeLoading value)? loading,
-    TResult Function(_NoticeFailure value)? failure,
-    TResult Function(_NoticeSuccess value)? success,
+    TResult? Function(_NoticeLoading value)? loading,
+    TResult? Function(_NoticeFailure value)? failure,
+    TResult? Function(_NoticeSuccess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,41 +66,40 @@ mixin _$NoticeState {
 abstract class $NoticeStateCopyWith<$Res> {
   factory $NoticeStateCopyWith(
           NoticeState value, $Res Function(NoticeState) then) =
-      _$NoticeStateCopyWithImpl<$Res>;
+      _$NoticeStateCopyWithImpl<$Res, NoticeState>;
 }
 
 /// @nodoc
-class _$NoticeStateCopyWithImpl<$Res> implements $NoticeStateCopyWith<$Res> {
+class _$NoticeStateCopyWithImpl<$Res, $Val extends NoticeState>
+    implements $NoticeStateCopyWith<$Res> {
   _$NoticeStateCopyWithImpl(this._value, this._then);
 
-  final NoticeState _value;
   // ignore: unused_field
-  final $Res Function(NoticeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_NoticeLoadingCopyWith<$Res> {
-  factory _$$_NoticeLoadingCopyWith(
-          _$_NoticeLoading value, $Res Function(_$_NoticeLoading) then) =
-      __$$_NoticeLoadingCopyWithImpl<$Res>;
+abstract class _$$NoticeLoadingImplCopyWith<$Res> {
+  factory _$$NoticeLoadingImplCopyWith(
+          _$NoticeLoadingImpl value, $Res Function(_$NoticeLoadingImpl) then) =
+      __$$NoticeLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NoticeLoadingCopyWithImpl<$Res>
-    extends _$NoticeStateCopyWithImpl<$Res>
-    implements _$$_NoticeLoadingCopyWith<$Res> {
-  __$$_NoticeLoadingCopyWithImpl(
-      _$_NoticeLoading _value, $Res Function(_$_NoticeLoading) _then)
-      : super(_value, (v) => _then(v as _$_NoticeLoading));
-
-  @override
-  _$_NoticeLoading get _value => super._value as _$_NoticeLoading;
+class __$$NoticeLoadingImplCopyWithImpl<$Res>
+    extends _$NoticeStateCopyWithImpl<$Res, _$NoticeLoadingImpl>
+    implements _$$NoticeLoadingImplCopyWith<$Res> {
+  __$$NoticeLoadingImplCopyWithImpl(
+      _$NoticeLoadingImpl _value, $Res Function(_$NoticeLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NoticeLoading implements _NoticeLoading {
-  const _$_NoticeLoading();
+class _$NoticeLoadingImpl implements _NoticeLoading {
+  const _$NoticeLoadingImpl();
 
   @override
   String toString() {
@@ -108,9 +107,9 @@ class _$_NoticeLoading implements _NoticeLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NoticeLoading);
+        (other.runtimeType == runtimeType && other is _$NoticeLoadingImpl);
   }
 
   @override
@@ -129,9 +128,9 @@ class _$_NoticeLoading implements _NoticeLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(dynamic data)? success,
   }) {
     return loading?.call();
   }
@@ -163,9 +162,9 @@ class _$_NoticeLoading implements _NoticeLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NoticeLoading value)? loading,
-    TResult Function(_NoticeFailure value)? failure,
-    TResult Function(_NoticeSuccess value)? success,
+    TResult? Function(_NoticeLoading value)? loading,
+    TResult? Function(_NoticeFailure value)? failure,
+    TResult? Function(_NoticeSuccess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -186,34 +185,33 @@ class _$_NoticeLoading implements _NoticeLoading {
 }
 
 abstract class _NoticeLoading implements NoticeState {
-  const factory _NoticeLoading() = _$_NoticeLoading;
+  const factory _NoticeLoading() = _$NoticeLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_NoticeFailureCopyWith<$Res> {
-  factory _$$_NoticeFailureCopyWith(
-          _$_NoticeFailure value, $Res Function(_$_NoticeFailure) then) =
-      __$$_NoticeFailureCopyWithImpl<$Res>;
+abstract class _$$NoticeFailureImplCopyWith<$Res> {
+  factory _$$NoticeFailureImplCopyWith(
+          _$NoticeFailureImpl value, $Res Function(_$NoticeFailureImpl) then) =
+      __$$NoticeFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_NoticeFailureCopyWithImpl<$Res>
-    extends _$NoticeStateCopyWithImpl<$Res>
-    implements _$$_NoticeFailureCopyWith<$Res> {
-  __$$_NoticeFailureCopyWithImpl(
-      _$_NoticeFailure _value, $Res Function(_$_NoticeFailure) _then)
-      : super(_value, (v) => _then(v as _$_NoticeFailure));
+class __$$NoticeFailureImplCopyWithImpl<$Res>
+    extends _$NoticeStateCopyWithImpl<$Res, _$NoticeFailureImpl>
+    implements _$$NoticeFailureImplCopyWith<$Res> {
+  __$$NoticeFailureImplCopyWithImpl(
+      _$NoticeFailureImpl _value, $Res Function(_$NoticeFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_NoticeFailure get _value => super._value as _$_NoticeFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_NoticeFailure(
-      e == freezed
+    return _then(_$NoticeFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -223,8 +221,8 @@ class __$$_NoticeFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NoticeFailure implements _NoticeFailure {
-  const _$_NoticeFailure(this.e);
+class _$NoticeFailureImpl implements _NoticeFailure {
+  const _$NoticeFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -235,10 +233,10 @@ class _$_NoticeFailure implements _NoticeFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NoticeFailure &&
+            other is _$NoticeFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -248,8 +246,9 @@ class _$_NoticeFailure implements _NoticeFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_NoticeFailureCopyWith<_$_NoticeFailure> get copyWith =>
-      __$$_NoticeFailureCopyWithImpl<_$_NoticeFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NoticeFailureImplCopyWith<_$NoticeFailureImpl> get copyWith =>
+      __$$NoticeFailureImplCopyWithImpl<_$NoticeFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -264,9 +263,9 @@ class _$_NoticeFailure implements _NoticeFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(dynamic data)? success,
   }) {
     return failure?.call(e);
   }
@@ -298,9 +297,9 @@ class _$_NoticeFailure implements _NoticeFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NoticeLoading value)? loading,
-    TResult Function(_NoticeFailure value)? failure,
-    TResult Function(_NoticeSuccess value)? success,
+    TResult? Function(_NoticeLoading value)? loading,
+    TResult? Function(_NoticeFailure value)? failure,
+    TResult? Function(_NoticeSuccess value)? success,
   }) {
     return failure?.call(this);
   }
@@ -321,39 +320,38 @@ class _$_NoticeFailure implements _NoticeFailure {
 }
 
 abstract class _NoticeFailure implements NoticeState {
-  const factory _NoticeFailure(final dynamic e) = _$_NoticeFailure;
+  const factory _NoticeFailure(final dynamic e) = _$NoticeFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_NoticeFailureCopyWith<_$_NoticeFailure> get copyWith =>
+  _$$NoticeFailureImplCopyWith<_$NoticeFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_NoticeSuccessCopyWith<$Res> {
-  factory _$$_NoticeSuccessCopyWith(
-          _$_NoticeSuccess value, $Res Function(_$_NoticeSuccess) then) =
-      __$$_NoticeSuccessCopyWithImpl<$Res>;
+abstract class _$$NoticeSuccessImplCopyWith<$Res> {
+  factory _$$NoticeSuccessImplCopyWith(
+          _$NoticeSuccessImpl value, $Res Function(_$NoticeSuccessImpl) then) =
+      __$$NoticeSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic data});
 }
 
 /// @nodoc
-class __$$_NoticeSuccessCopyWithImpl<$Res>
-    extends _$NoticeStateCopyWithImpl<$Res>
-    implements _$$_NoticeSuccessCopyWith<$Res> {
-  __$$_NoticeSuccessCopyWithImpl(
-      _$_NoticeSuccess _value, $Res Function(_$_NoticeSuccess) _then)
-      : super(_value, (v) => _then(v as _$_NoticeSuccess));
+class __$$NoticeSuccessImplCopyWithImpl<$Res>
+    extends _$NoticeStateCopyWithImpl<$Res, _$NoticeSuccessImpl>
+    implements _$$NoticeSuccessImplCopyWith<$Res> {
+  __$$NoticeSuccessImplCopyWithImpl(
+      _$NoticeSuccessImpl _value, $Res Function(_$NoticeSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_NoticeSuccess get _value => super._value as _$_NoticeSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$_NoticeSuccess(
-      data == freezed
+    return _then(_$NoticeSuccessImpl(
+      freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -363,8 +361,8 @@ class __$$_NoticeSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NoticeSuccess implements _NoticeSuccess {
-  const _$_NoticeSuccess(this.data);
+class _$NoticeSuccessImpl implements _NoticeSuccess {
+  const _$NoticeSuccessImpl(this.data);
 
   @override
   final dynamic data;
@@ -375,10 +373,10 @@ class _$_NoticeSuccess implements _NoticeSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NoticeSuccess &&
+            other is _$NoticeSuccessImpl &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -388,8 +386,9 @@ class _$_NoticeSuccess implements _NoticeSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_NoticeSuccessCopyWith<_$_NoticeSuccess> get copyWith =>
-      __$$_NoticeSuccessCopyWithImpl<_$_NoticeSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NoticeSuccessImplCopyWith<_$NoticeSuccessImpl> get copyWith =>
+      __$$NoticeSuccessImplCopyWithImpl<_$NoticeSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -404,9 +403,9 @@ class _$_NoticeSuccess implements _NoticeSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(dynamic data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(dynamic data)? success,
   }) {
     return success?.call(data);
   }
@@ -438,9 +437,9 @@ class _$_NoticeSuccess implements _NoticeSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NoticeLoading value)? loading,
-    TResult Function(_NoticeFailure value)? failure,
-    TResult Function(_NoticeSuccess value)? success,
+    TResult? Function(_NoticeLoading value)? loading,
+    TResult? Function(_NoticeFailure value)? failure,
+    TResult? Function(_NoticeSuccess value)? success,
   }) {
     return success?.call(this);
   }
@@ -461,10 +460,10 @@ class _$_NoticeSuccess implements _NoticeSuccess {
 }
 
 abstract class _NoticeSuccess implements NoticeState {
-  const factory _NoticeSuccess(final dynamic data) = _$_NoticeSuccess;
+  const factory _NoticeSuccess(final dynamic data) = _$NoticeSuccessImpl;
 
   dynamic get data;
   @JsonKey(ignore: true)
-  _$$_NoticeSuccessCopyWith<_$_NoticeSuccess> get copyWith =>
+  _$$NoticeSuccessImplCopyWith<_$NoticeSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

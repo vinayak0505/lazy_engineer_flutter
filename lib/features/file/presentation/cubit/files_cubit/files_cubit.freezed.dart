@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'files_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'files_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$FilesState {
@@ -25,9 +25,9 @@ mixin _$FilesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<FileDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<FileDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$FilesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FilesLoading value)? loading,
-    TResult Function(_FilesSuccess value)? success,
-    TResult Function(_FilesFailure value)? failure,
+    TResult? Function(_FilesLoading value)? loading,
+    TResult? Function(_FilesSuccess value)? success,
+    TResult? Function(_FilesFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,40 +66,40 @@ mixin _$FilesState {
 abstract class $FilesStateCopyWith<$Res> {
   factory $FilesStateCopyWith(
           FilesState value, $Res Function(FilesState) then) =
-      _$FilesStateCopyWithImpl<$Res>;
+      _$FilesStateCopyWithImpl<$Res, FilesState>;
 }
 
 /// @nodoc
-class _$FilesStateCopyWithImpl<$Res> implements $FilesStateCopyWith<$Res> {
+class _$FilesStateCopyWithImpl<$Res, $Val extends FilesState>
+    implements $FilesStateCopyWith<$Res> {
   _$FilesStateCopyWithImpl(this._value, this._then);
 
-  final FilesState _value;
   // ignore: unused_field
-  final $Res Function(FilesState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_FilesLoadingCopyWith<$Res> {
-  factory _$$_FilesLoadingCopyWith(
-          _$_FilesLoading value, $Res Function(_$_FilesLoading) then) =
-      __$$_FilesLoadingCopyWithImpl<$Res>;
+abstract class _$$FilesLoadingImplCopyWith<$Res> {
+  factory _$$FilesLoadingImplCopyWith(
+          _$FilesLoadingImpl value, $Res Function(_$FilesLoadingImpl) then) =
+      __$$FilesLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_FilesLoadingCopyWithImpl<$Res> extends _$FilesStateCopyWithImpl<$Res>
-    implements _$$_FilesLoadingCopyWith<$Res> {
-  __$$_FilesLoadingCopyWithImpl(
-      _$_FilesLoading _value, $Res Function(_$_FilesLoading) _then)
-      : super(_value, (v) => _then(v as _$_FilesLoading));
-
-  @override
-  _$_FilesLoading get _value => super._value as _$_FilesLoading;
+class __$$FilesLoadingImplCopyWithImpl<$Res>
+    extends _$FilesStateCopyWithImpl<$Res, _$FilesLoadingImpl>
+    implements _$$FilesLoadingImplCopyWith<$Res> {
+  __$$FilesLoadingImplCopyWithImpl(
+      _$FilesLoadingImpl _value, $Res Function(_$FilesLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_FilesLoading implements _FilesLoading {
-  const _$_FilesLoading();
+class _$FilesLoadingImpl implements _FilesLoading {
+  const _$FilesLoadingImpl();
 
   @override
   String toString() {
@@ -107,9 +107,9 @@ class _$_FilesLoading implements _FilesLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_FilesLoading);
+        (other.runtimeType == runtimeType && other is _$FilesLoadingImpl);
   }
 
   @override
@@ -128,9 +128,9 @@ class _$_FilesLoading implements _FilesLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<FileDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<FileDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return loading?.call();
   }
@@ -162,9 +162,9 @@ class _$_FilesLoading implements _FilesLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FilesLoading value)? loading,
-    TResult Function(_FilesSuccess value)? success,
-    TResult Function(_FilesFailure value)? failure,
+    TResult? Function(_FilesLoading value)? loading,
+    TResult? Function(_FilesSuccess value)? success,
+    TResult? Function(_FilesFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -185,33 +185,33 @@ class _$_FilesLoading implements _FilesLoading {
 }
 
 abstract class _FilesLoading implements FilesState {
-  const factory _FilesLoading() = _$_FilesLoading;
+  const factory _FilesLoading() = _$FilesLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_FilesSuccessCopyWith<$Res> {
-  factory _$$_FilesSuccessCopyWith(
-          _$_FilesSuccess value, $Res Function(_$_FilesSuccess) then) =
-      __$$_FilesSuccessCopyWithImpl<$Res>;
+abstract class _$$FilesSuccessImplCopyWith<$Res> {
+  factory _$$FilesSuccessImplCopyWith(
+          _$FilesSuccessImpl value, $Res Function(_$FilesSuccessImpl) then) =
+      __$$FilesSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<FileDetail> data});
 }
 
 /// @nodoc
-class __$$_FilesSuccessCopyWithImpl<$Res> extends _$FilesStateCopyWithImpl<$Res>
-    implements _$$_FilesSuccessCopyWith<$Res> {
-  __$$_FilesSuccessCopyWithImpl(
-      _$_FilesSuccess _value, $Res Function(_$_FilesSuccess) _then)
-      : super(_value, (v) => _then(v as _$_FilesSuccess));
+class __$$FilesSuccessImplCopyWithImpl<$Res>
+    extends _$FilesStateCopyWithImpl<$Res, _$FilesSuccessImpl>
+    implements _$$FilesSuccessImplCopyWith<$Res> {
+  __$$FilesSuccessImplCopyWithImpl(
+      _$FilesSuccessImpl _value, $Res Function(_$FilesSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_FilesSuccess get _value => super._value as _$_FilesSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$_FilesSuccess(
-      data == freezed
+    return _then(_$FilesSuccessImpl(
+      null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<FileDetail>,
@@ -221,12 +221,13 @@ class __$$_FilesSuccessCopyWithImpl<$Res> extends _$FilesStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FilesSuccess implements _FilesSuccess {
-  const _$_FilesSuccess(final List<FileDetail> data) : _data = data;
+class _$FilesSuccessImpl implements _FilesSuccess {
+  const _$FilesSuccessImpl(final List<FileDetail> data) : _data = data;
 
   final List<FileDetail> _data;
   @override
   List<FileDetail> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -237,10 +238,10 @@ class _$_FilesSuccess implements _FilesSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FilesSuccess &&
+            other is _$FilesSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -250,8 +251,9 @@ class _$_FilesSuccess implements _FilesSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_FilesSuccessCopyWith<_$_FilesSuccess> get copyWith =>
-      __$$_FilesSuccessCopyWithImpl<_$_FilesSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FilesSuccessImplCopyWith<_$FilesSuccessImpl> get copyWith =>
+      __$$FilesSuccessImplCopyWithImpl<_$FilesSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -266,9 +268,9 @@ class _$_FilesSuccess implements _FilesSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<FileDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<FileDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return success?.call(data);
   }
@@ -300,9 +302,9 @@ class _$_FilesSuccess implements _FilesSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FilesLoading value)? loading,
-    TResult Function(_FilesSuccess value)? success,
-    TResult Function(_FilesFailure value)? failure,
+    TResult? Function(_FilesLoading value)? loading,
+    TResult? Function(_FilesSuccess value)? success,
+    TResult? Function(_FilesFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -323,38 +325,38 @@ class _$_FilesSuccess implements _FilesSuccess {
 }
 
 abstract class _FilesSuccess implements FilesState {
-  const factory _FilesSuccess(final List<FileDetail> data) = _$_FilesSuccess;
+  const factory _FilesSuccess(final List<FileDetail> data) = _$FilesSuccessImpl;
 
   List<FileDetail> get data;
   @JsonKey(ignore: true)
-  _$$_FilesSuccessCopyWith<_$_FilesSuccess> get copyWith =>
+  _$$FilesSuccessImplCopyWith<_$FilesSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_FilesFailureCopyWith<$Res> {
-  factory _$$_FilesFailureCopyWith(
-          _$_FilesFailure value, $Res Function(_$_FilesFailure) then) =
-      __$$_FilesFailureCopyWithImpl<$Res>;
+abstract class _$$FilesFailureImplCopyWith<$Res> {
+  factory _$$FilesFailureImplCopyWith(
+          _$FilesFailureImpl value, $Res Function(_$FilesFailureImpl) then) =
+      __$$FilesFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_FilesFailureCopyWithImpl<$Res> extends _$FilesStateCopyWithImpl<$Res>
-    implements _$$_FilesFailureCopyWith<$Res> {
-  __$$_FilesFailureCopyWithImpl(
-      _$_FilesFailure _value, $Res Function(_$_FilesFailure) _then)
-      : super(_value, (v) => _then(v as _$_FilesFailure));
+class __$$FilesFailureImplCopyWithImpl<$Res>
+    extends _$FilesStateCopyWithImpl<$Res, _$FilesFailureImpl>
+    implements _$$FilesFailureImplCopyWith<$Res> {
+  __$$FilesFailureImplCopyWithImpl(
+      _$FilesFailureImpl _value, $Res Function(_$FilesFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_FilesFailure get _value => super._value as _$_FilesFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_FilesFailure(
-      e == freezed
+    return _then(_$FilesFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -364,8 +366,8 @@ class __$$_FilesFailureCopyWithImpl<$Res> extends _$FilesStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FilesFailure implements _FilesFailure {
-  const _$_FilesFailure(this.e);
+class _$FilesFailureImpl implements _FilesFailure {
+  const _$FilesFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -376,10 +378,10 @@ class _$_FilesFailure implements _FilesFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FilesFailure &&
+            other is _$FilesFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -389,8 +391,9 @@ class _$_FilesFailure implements _FilesFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_FilesFailureCopyWith<_$_FilesFailure> get copyWith =>
-      __$$_FilesFailureCopyWithImpl<_$_FilesFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FilesFailureImplCopyWith<_$FilesFailureImpl> get copyWith =>
+      __$$FilesFailureImplCopyWithImpl<_$FilesFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -405,9 +408,9 @@ class _$_FilesFailure implements _FilesFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<FileDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<FileDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
   }
@@ -439,9 +442,9 @@ class _$_FilesFailure implements _FilesFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FilesLoading value)? loading,
-    TResult Function(_FilesSuccess value)? success,
-    TResult Function(_FilesFailure value)? failure,
+    TResult? Function(_FilesLoading value)? loading,
+    TResult? Function(_FilesSuccess value)? success,
+    TResult? Function(_FilesFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -462,10 +465,10 @@ class _$_FilesFailure implements _FilesFailure {
 }
 
 abstract class _FilesFailure implements FilesState {
-  const factory _FilesFailure(final dynamic e) = _$_FilesFailure;
+  const factory _FilesFailure(final dynamic e) = _$FilesFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_FilesFailureCopyWith<_$_FilesFailure> get copyWith =>
+  _$$FilesFailureImplCopyWith<_$FilesFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

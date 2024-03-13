@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'jobs_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'jobs_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$JobsState {
@@ -25,9 +25,9 @@ mixin _$JobsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<JobDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<JobDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$JobsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_JobsLoading value)? loading,
-    TResult Function(_JobsSuccess value)? success,
-    TResult Function(_JobsFailure value)? failure,
+    TResult? Function(_JobsLoading value)? loading,
+    TResult? Function(_JobsSuccess value)? success,
+    TResult? Function(_JobsFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,40 +65,40 @@ mixin _$JobsState {
 /// @nodoc
 abstract class $JobsStateCopyWith<$Res> {
   factory $JobsStateCopyWith(JobsState value, $Res Function(JobsState) then) =
-      _$JobsStateCopyWithImpl<$Res>;
+      _$JobsStateCopyWithImpl<$Res, JobsState>;
 }
 
 /// @nodoc
-class _$JobsStateCopyWithImpl<$Res> implements $JobsStateCopyWith<$Res> {
+class _$JobsStateCopyWithImpl<$Res, $Val extends JobsState>
+    implements $JobsStateCopyWith<$Res> {
   _$JobsStateCopyWithImpl(this._value, this._then);
 
-  final JobsState _value;
   // ignore: unused_field
-  final $Res Function(JobsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_JobsLoadingCopyWith<$Res> {
-  factory _$$_JobsLoadingCopyWith(
-          _$_JobsLoading value, $Res Function(_$_JobsLoading) then) =
-      __$$_JobsLoadingCopyWithImpl<$Res>;
+abstract class _$$JobsLoadingImplCopyWith<$Res> {
+  factory _$$JobsLoadingImplCopyWith(
+          _$JobsLoadingImpl value, $Res Function(_$JobsLoadingImpl) then) =
+      __$$JobsLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_JobsLoadingCopyWithImpl<$Res> extends _$JobsStateCopyWithImpl<$Res>
-    implements _$$_JobsLoadingCopyWith<$Res> {
-  __$$_JobsLoadingCopyWithImpl(
-      _$_JobsLoading _value, $Res Function(_$_JobsLoading) _then)
-      : super(_value, (v) => _then(v as _$_JobsLoading));
-
-  @override
-  _$_JobsLoading get _value => super._value as _$_JobsLoading;
+class __$$JobsLoadingImplCopyWithImpl<$Res>
+    extends _$JobsStateCopyWithImpl<$Res, _$JobsLoadingImpl>
+    implements _$$JobsLoadingImplCopyWith<$Res> {
+  __$$JobsLoadingImplCopyWithImpl(
+      _$JobsLoadingImpl _value, $Res Function(_$JobsLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_JobsLoading implements _JobsLoading {
-  const _$_JobsLoading();
+class _$JobsLoadingImpl implements _JobsLoading {
+  const _$JobsLoadingImpl();
 
   @override
   String toString() {
@@ -106,9 +106,9 @@ class _$_JobsLoading implements _JobsLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_JobsLoading);
+        (other.runtimeType == runtimeType && other is _$JobsLoadingImpl);
   }
 
   @override
@@ -127,9 +127,9 @@ class _$_JobsLoading implements _JobsLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<JobDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<JobDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return loading?.call();
   }
@@ -161,9 +161,9 @@ class _$_JobsLoading implements _JobsLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_JobsLoading value)? loading,
-    TResult Function(_JobsSuccess value)? success,
-    TResult Function(_JobsFailure value)? failure,
+    TResult? Function(_JobsLoading value)? loading,
+    TResult? Function(_JobsSuccess value)? success,
+    TResult? Function(_JobsFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -184,33 +184,33 @@ class _$_JobsLoading implements _JobsLoading {
 }
 
 abstract class _JobsLoading implements JobsState {
-  const factory _JobsLoading() = _$_JobsLoading;
+  const factory _JobsLoading() = _$JobsLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_JobsSuccessCopyWith<$Res> {
-  factory _$$_JobsSuccessCopyWith(
-          _$_JobsSuccess value, $Res Function(_$_JobsSuccess) then) =
-      __$$_JobsSuccessCopyWithImpl<$Res>;
+abstract class _$$JobsSuccessImplCopyWith<$Res> {
+  factory _$$JobsSuccessImplCopyWith(
+          _$JobsSuccessImpl value, $Res Function(_$JobsSuccessImpl) then) =
+      __$$JobsSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<JobDetail> data});
 }
 
 /// @nodoc
-class __$$_JobsSuccessCopyWithImpl<$Res> extends _$JobsStateCopyWithImpl<$Res>
-    implements _$$_JobsSuccessCopyWith<$Res> {
-  __$$_JobsSuccessCopyWithImpl(
-      _$_JobsSuccess _value, $Res Function(_$_JobsSuccess) _then)
-      : super(_value, (v) => _then(v as _$_JobsSuccess));
+class __$$JobsSuccessImplCopyWithImpl<$Res>
+    extends _$JobsStateCopyWithImpl<$Res, _$JobsSuccessImpl>
+    implements _$$JobsSuccessImplCopyWith<$Res> {
+  __$$JobsSuccessImplCopyWithImpl(
+      _$JobsSuccessImpl _value, $Res Function(_$JobsSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_JobsSuccess get _value => super._value as _$_JobsSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$_JobsSuccess(
-      data == freezed
+    return _then(_$JobsSuccessImpl(
+      null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<JobDetail>,
@@ -220,12 +220,13 @@ class __$$_JobsSuccessCopyWithImpl<$Res> extends _$JobsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_JobsSuccess implements _JobsSuccess {
-  const _$_JobsSuccess(final List<JobDetail> data) : _data = data;
+class _$JobsSuccessImpl implements _JobsSuccess {
+  const _$JobsSuccessImpl(final List<JobDetail> data) : _data = data;
 
   final List<JobDetail> _data;
   @override
   List<JobDetail> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -236,10 +237,10 @@ class _$_JobsSuccess implements _JobsSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_JobsSuccess &&
+            other is _$JobsSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -249,8 +250,9 @@ class _$_JobsSuccess implements _JobsSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_JobsSuccessCopyWith<_$_JobsSuccess> get copyWith =>
-      __$$_JobsSuccessCopyWithImpl<_$_JobsSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$JobsSuccessImplCopyWith<_$JobsSuccessImpl> get copyWith =>
+      __$$JobsSuccessImplCopyWithImpl<_$JobsSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -265,9 +267,9 @@ class _$_JobsSuccess implements _JobsSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<JobDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<JobDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return success?.call(data);
   }
@@ -299,9 +301,9 @@ class _$_JobsSuccess implements _JobsSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_JobsLoading value)? loading,
-    TResult Function(_JobsSuccess value)? success,
-    TResult Function(_JobsFailure value)? failure,
+    TResult? Function(_JobsLoading value)? loading,
+    TResult? Function(_JobsSuccess value)? success,
+    TResult? Function(_JobsFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -322,38 +324,38 @@ class _$_JobsSuccess implements _JobsSuccess {
 }
 
 abstract class _JobsSuccess implements JobsState {
-  const factory _JobsSuccess(final List<JobDetail> data) = _$_JobsSuccess;
+  const factory _JobsSuccess(final List<JobDetail> data) = _$JobsSuccessImpl;
 
   List<JobDetail> get data;
   @JsonKey(ignore: true)
-  _$$_JobsSuccessCopyWith<_$_JobsSuccess> get copyWith =>
+  _$$JobsSuccessImplCopyWith<_$JobsSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_JobsFailureCopyWith<$Res> {
-  factory _$$_JobsFailureCopyWith(
-          _$_JobsFailure value, $Res Function(_$_JobsFailure) then) =
-      __$$_JobsFailureCopyWithImpl<$Res>;
+abstract class _$$JobsFailureImplCopyWith<$Res> {
+  factory _$$JobsFailureImplCopyWith(
+          _$JobsFailureImpl value, $Res Function(_$JobsFailureImpl) then) =
+      __$$JobsFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_JobsFailureCopyWithImpl<$Res> extends _$JobsStateCopyWithImpl<$Res>
-    implements _$$_JobsFailureCopyWith<$Res> {
-  __$$_JobsFailureCopyWithImpl(
-      _$_JobsFailure _value, $Res Function(_$_JobsFailure) _then)
-      : super(_value, (v) => _then(v as _$_JobsFailure));
+class __$$JobsFailureImplCopyWithImpl<$Res>
+    extends _$JobsStateCopyWithImpl<$Res, _$JobsFailureImpl>
+    implements _$$JobsFailureImplCopyWith<$Res> {
+  __$$JobsFailureImplCopyWithImpl(
+      _$JobsFailureImpl _value, $Res Function(_$JobsFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_JobsFailure get _value => super._value as _$_JobsFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_JobsFailure(
-      e == freezed
+    return _then(_$JobsFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -363,8 +365,8 @@ class __$$_JobsFailureCopyWithImpl<$Res> extends _$JobsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_JobsFailure implements _JobsFailure {
-  const _$_JobsFailure(this.e);
+class _$JobsFailureImpl implements _JobsFailure {
+  const _$JobsFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -375,10 +377,10 @@ class _$_JobsFailure implements _JobsFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_JobsFailure &&
+            other is _$JobsFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -388,8 +390,9 @@ class _$_JobsFailure implements _JobsFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_JobsFailureCopyWith<_$_JobsFailure> get copyWith =>
-      __$$_JobsFailureCopyWithImpl<_$_JobsFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$JobsFailureImplCopyWith<_$JobsFailureImpl> get copyWith =>
+      __$$JobsFailureImplCopyWithImpl<_$JobsFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -404,9 +407,9 @@ class _$_JobsFailure implements _JobsFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<JobDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<JobDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
   }
@@ -438,9 +441,9 @@ class _$_JobsFailure implements _JobsFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_JobsLoading value)? loading,
-    TResult Function(_JobsSuccess value)? success,
-    TResult Function(_JobsFailure value)? failure,
+    TResult? Function(_JobsLoading value)? loading,
+    TResult? Function(_JobsSuccess value)? success,
+    TResult? Function(_JobsFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -461,10 +464,10 @@ class _$_JobsFailure implements _JobsFailure {
 }
 
 abstract class _JobsFailure implements JobsState {
-  const factory _JobsFailure(final dynamic e) = _$_JobsFailure;
+  const factory _JobsFailure(final dynamic e) = _$JobsFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_JobsFailureCopyWith<_$_JobsFailure> get copyWith =>
+  _$$JobsFailureImplCopyWith<_$JobsFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,9 +6,9 @@ part of 'notes_detail_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_NotesDetailResponse _$$_NotesDetailResponseFromJson(
+_$NotesDetailResponseImpl _$$NotesDetailResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NotesDetailResponse(
+    _$NotesDetailResponseImpl(
       json['title'] as String,
       json['link'] as String?,
       json['about'] as String?,
@@ -21,8 +21,8 @@ _$_NotesDetailResponse _$$_NotesDetailResponseFromJson(
       (json['rating'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_NotesDetailResponseToJson(
-        _$_NotesDetailResponse instance) =>
+Map<String, dynamic> _$$NotesDetailResponseImplToJson(
+        _$NotesDetailResponseImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'link': instance.link,

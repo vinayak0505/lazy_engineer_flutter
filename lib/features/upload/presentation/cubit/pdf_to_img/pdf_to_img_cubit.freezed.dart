@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'pdf_to_img_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'pdf_to_img_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PdfToImgState {
@@ -25,9 +25,9 @@ mixin _$PdfToImgState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(File data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(File data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$PdfToImgState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PdfToImgLoading value)? loading,
-    TResult Function(PdfToImgFailure value)? failure,
-    TResult Function(PdfToImgSuccess value)? success,
+    TResult? Function(PdfToImgLoading value)? loading,
+    TResult? Function(PdfToImgFailure value)? failure,
+    TResult? Function(PdfToImgSuccess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,42 +66,40 @@ mixin _$PdfToImgState {
 abstract class $PdfToImgStateCopyWith<$Res> {
   factory $PdfToImgStateCopyWith(
           PdfToImgState value, $Res Function(PdfToImgState) then) =
-      _$PdfToImgStateCopyWithImpl<$Res>;
+      _$PdfToImgStateCopyWithImpl<$Res, PdfToImgState>;
 }
 
 /// @nodoc
-class _$PdfToImgStateCopyWithImpl<$Res>
+class _$PdfToImgStateCopyWithImpl<$Res, $Val extends PdfToImgState>
     implements $PdfToImgStateCopyWith<$Res> {
   _$PdfToImgStateCopyWithImpl(this._value, this._then);
 
-  final PdfToImgState _value;
   // ignore: unused_field
-  final $Res Function(PdfToImgState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$PdfToImgLoadingCopyWith<$Res> {
-  factory _$$PdfToImgLoadingCopyWith(
-          _$PdfToImgLoading value, $Res Function(_$PdfToImgLoading) then) =
-      __$$PdfToImgLoadingCopyWithImpl<$Res>;
+abstract class _$$PdfToImgLoadingImplCopyWith<$Res> {
+  factory _$$PdfToImgLoadingImplCopyWith(_$PdfToImgLoadingImpl value,
+          $Res Function(_$PdfToImgLoadingImpl) then) =
+      __$$PdfToImgLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PdfToImgLoadingCopyWithImpl<$Res>
-    extends _$PdfToImgStateCopyWithImpl<$Res>
-    implements _$$PdfToImgLoadingCopyWith<$Res> {
-  __$$PdfToImgLoadingCopyWithImpl(
-      _$PdfToImgLoading _value, $Res Function(_$PdfToImgLoading) _then)
-      : super(_value, (v) => _then(v as _$PdfToImgLoading));
-
-  @override
-  _$PdfToImgLoading get _value => super._value as _$PdfToImgLoading;
+class __$$PdfToImgLoadingImplCopyWithImpl<$Res>
+    extends _$PdfToImgStateCopyWithImpl<$Res, _$PdfToImgLoadingImpl>
+    implements _$$PdfToImgLoadingImplCopyWith<$Res> {
+  __$$PdfToImgLoadingImplCopyWithImpl(
+      _$PdfToImgLoadingImpl _value, $Res Function(_$PdfToImgLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PdfToImgLoading implements PdfToImgLoading {
-  const _$PdfToImgLoading();
+class _$PdfToImgLoadingImpl implements PdfToImgLoading {
+  const _$PdfToImgLoadingImpl();
 
   @override
   String toString() {
@@ -109,9 +107,9 @@ class _$PdfToImgLoading implements PdfToImgLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PdfToImgLoading);
+        (other.runtimeType == runtimeType && other is _$PdfToImgLoadingImpl);
   }
 
   @override
@@ -130,9 +128,9 @@ class _$PdfToImgLoading implements PdfToImgLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(File data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(File data)? success,
   }) {
     return loading?.call();
   }
@@ -164,9 +162,9 @@ class _$PdfToImgLoading implements PdfToImgLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PdfToImgLoading value)? loading,
-    TResult Function(PdfToImgFailure value)? failure,
-    TResult Function(PdfToImgSuccess value)? success,
+    TResult? Function(PdfToImgLoading value)? loading,
+    TResult? Function(PdfToImgFailure value)? failure,
+    TResult? Function(PdfToImgSuccess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -187,34 +185,33 @@ class _$PdfToImgLoading implements PdfToImgLoading {
 }
 
 abstract class PdfToImgLoading implements PdfToImgState {
-  const factory PdfToImgLoading() = _$PdfToImgLoading;
+  const factory PdfToImgLoading() = _$PdfToImgLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$PdfToImgFailureCopyWith<$Res> {
-  factory _$$PdfToImgFailureCopyWith(
-          _$PdfToImgFailure value, $Res Function(_$PdfToImgFailure) then) =
-      __$$PdfToImgFailureCopyWithImpl<$Res>;
+abstract class _$$PdfToImgFailureImplCopyWith<$Res> {
+  factory _$$PdfToImgFailureImplCopyWith(_$PdfToImgFailureImpl value,
+          $Res Function(_$PdfToImgFailureImpl) then) =
+      __$$PdfToImgFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$PdfToImgFailureCopyWithImpl<$Res>
-    extends _$PdfToImgStateCopyWithImpl<$Res>
-    implements _$$PdfToImgFailureCopyWith<$Res> {
-  __$$PdfToImgFailureCopyWithImpl(
-      _$PdfToImgFailure _value, $Res Function(_$PdfToImgFailure) _then)
-      : super(_value, (v) => _then(v as _$PdfToImgFailure));
+class __$$PdfToImgFailureImplCopyWithImpl<$Res>
+    extends _$PdfToImgStateCopyWithImpl<$Res, _$PdfToImgFailureImpl>
+    implements _$$PdfToImgFailureImplCopyWith<$Res> {
+  __$$PdfToImgFailureImplCopyWithImpl(
+      _$PdfToImgFailureImpl _value, $Res Function(_$PdfToImgFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$PdfToImgFailure get _value => super._value as _$PdfToImgFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$PdfToImgFailure(
-      e == freezed
+    return _then(_$PdfToImgFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -224,8 +221,8 @@ class __$$PdfToImgFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PdfToImgFailure implements PdfToImgFailure {
-  const _$PdfToImgFailure(this.e);
+class _$PdfToImgFailureImpl implements PdfToImgFailure {
+  const _$PdfToImgFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -236,10 +233,10 @@ class _$PdfToImgFailure implements PdfToImgFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PdfToImgFailure &&
+            other is _$PdfToImgFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -249,8 +246,10 @@ class _$PdfToImgFailure implements PdfToImgFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$PdfToImgFailureCopyWith<_$PdfToImgFailure> get copyWith =>
-      __$$PdfToImgFailureCopyWithImpl<_$PdfToImgFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PdfToImgFailureImplCopyWith<_$PdfToImgFailureImpl> get copyWith =>
+      __$$PdfToImgFailureImplCopyWithImpl<_$PdfToImgFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -265,9 +264,9 @@ class _$PdfToImgFailure implements PdfToImgFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(File data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(File data)? success,
   }) {
     return failure?.call(e);
   }
@@ -299,9 +298,9 @@ class _$PdfToImgFailure implements PdfToImgFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PdfToImgLoading value)? loading,
-    TResult Function(PdfToImgFailure value)? failure,
-    TResult Function(PdfToImgSuccess value)? success,
+    TResult? Function(PdfToImgLoading value)? loading,
+    TResult? Function(PdfToImgFailure value)? failure,
+    TResult? Function(PdfToImgSuccess value)? success,
   }) {
     return failure?.call(this);
   }
@@ -322,39 +321,38 @@ class _$PdfToImgFailure implements PdfToImgFailure {
 }
 
 abstract class PdfToImgFailure implements PdfToImgState {
-  const factory PdfToImgFailure(final dynamic e) = _$PdfToImgFailure;
+  const factory PdfToImgFailure(final dynamic e) = _$PdfToImgFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$PdfToImgFailureCopyWith<_$PdfToImgFailure> get copyWith =>
+  _$$PdfToImgFailureImplCopyWith<_$PdfToImgFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PdfToImgSuccessCopyWith<$Res> {
-  factory _$$PdfToImgSuccessCopyWith(
-          _$PdfToImgSuccess value, $Res Function(_$PdfToImgSuccess) then) =
-      __$$PdfToImgSuccessCopyWithImpl<$Res>;
+abstract class _$$PdfToImgSuccessImplCopyWith<$Res> {
+  factory _$$PdfToImgSuccessImplCopyWith(_$PdfToImgSuccessImpl value,
+          $Res Function(_$PdfToImgSuccessImpl) then) =
+      __$$PdfToImgSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({File data});
 }
 
 /// @nodoc
-class __$$PdfToImgSuccessCopyWithImpl<$Res>
-    extends _$PdfToImgStateCopyWithImpl<$Res>
-    implements _$$PdfToImgSuccessCopyWith<$Res> {
-  __$$PdfToImgSuccessCopyWithImpl(
-      _$PdfToImgSuccess _value, $Res Function(_$PdfToImgSuccess) _then)
-      : super(_value, (v) => _then(v as _$PdfToImgSuccess));
+class __$$PdfToImgSuccessImplCopyWithImpl<$Res>
+    extends _$PdfToImgStateCopyWithImpl<$Res, _$PdfToImgSuccessImpl>
+    implements _$$PdfToImgSuccessImplCopyWith<$Res> {
+  __$$PdfToImgSuccessImplCopyWithImpl(
+      _$PdfToImgSuccessImpl _value, $Res Function(_$PdfToImgSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$PdfToImgSuccess get _value => super._value as _$PdfToImgSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$PdfToImgSuccess(
-      data == freezed
+    return _then(_$PdfToImgSuccessImpl(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as File,
@@ -364,8 +362,8 @@ class __$$PdfToImgSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PdfToImgSuccess implements PdfToImgSuccess {
-  const _$PdfToImgSuccess(this.data);
+class _$PdfToImgSuccessImpl implements PdfToImgSuccess {
+  const _$PdfToImgSuccessImpl(this.data);
 
   @override
   final File data;
@@ -376,21 +374,22 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PdfToImgSuccess &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$PdfToImgSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
-  _$$PdfToImgSuccessCopyWith<_$PdfToImgSuccess> get copyWith =>
-      __$$PdfToImgSuccessCopyWithImpl<_$PdfToImgSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PdfToImgSuccessImplCopyWith<_$PdfToImgSuccessImpl> get copyWith =>
+      __$$PdfToImgSuccessImplCopyWithImpl<_$PdfToImgSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -405,9 +404,9 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(File data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(File data)? success,
   }) {
     return success?.call(data);
   }
@@ -439,9 +438,9 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(PdfToImgLoading value)? loading,
-    TResult Function(PdfToImgFailure value)? failure,
-    TResult Function(PdfToImgSuccess value)? success,
+    TResult? Function(PdfToImgLoading value)? loading,
+    TResult? Function(PdfToImgFailure value)? failure,
+    TResult? Function(PdfToImgSuccess value)? success,
   }) {
     return success?.call(this);
   }
@@ -462,10 +461,10 @@ class _$PdfToImgSuccess implements PdfToImgSuccess {
 }
 
 abstract class PdfToImgSuccess implements PdfToImgState {
-  const factory PdfToImgSuccess(final File data) = _$PdfToImgSuccess;
+  const factory PdfToImgSuccess(final File data) = _$PdfToImgSuccessImpl;
 
   File get data;
   @JsonKey(ignore: true)
-  _$$PdfToImgSuccessCopyWith<_$PdfToImgSuccess> get copyWith =>
+  _$$PdfToImgSuccessImplCopyWith<_$PdfToImgSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

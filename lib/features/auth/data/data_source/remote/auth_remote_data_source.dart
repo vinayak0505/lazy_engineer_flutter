@@ -14,10 +14,7 @@ class AuthRemoteDataSource {
     final Dio dio = Dio();
     dio.interceptors.add(PrettyDioLogger());
     dio.options.headers = {};
-    final AuthClient client = AuthClient(
-      dio,
-      baseUrl: AppConfig.apiBaseUrl,
-    );
+    final AuthClient client = AuthClient(dio, baseUrl: AppConfig.apiBaseUrl);
     return AuthRemoteDataSource._(client);
   }
 

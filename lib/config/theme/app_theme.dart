@@ -28,6 +28,7 @@ class AppThemes {
   final appThemeData = {
     AppTheme.lightTheme: ThemeData(
       scaffoldBackgroundColor: whiteColor,
+      backgroundColor: whiteColor,
       appBarTheme: AppBarTheme(
         elevation: 0,
         color: Colors.transparent,
@@ -80,16 +81,17 @@ class AppThemes {
                 color: lightDarkColor,
               ),
             ),
-      ), 
-      // colorScheme: ColorScheme(background: whiteColor),
+      ),
     ),
     AppTheme.darkTheme: ThemeData(
       scaffoldBackgroundColor: Colors.black,
+      primarySwatch: Colors.teal,
+      backgroundColor: Colors.black,
       textTheme: const TextTheme(
         bodyLarge: TextStyle(
           color: Colors.white,
         ),
-      ), colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.teal).copyWith(background: Colors.black),
+      ),
     ),
   };
 }

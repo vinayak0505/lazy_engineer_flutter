@@ -58,7 +58,7 @@ class QuestionPaperDataBox extends StatelessWidget {
                         paperDetail.topic ?? '',
                         style: theme.textTheme.bodyMedium,
                       ),
-                    )
+                    ),
                   ],
                 ),
                 TableRow(
@@ -76,7 +76,7 @@ class QuestionPaperDataBox extends StatelessWidget {
                         'Unit - ${paperDetail.unit}',
                         style: theme.textTheme.bodyMedium,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ],

@@ -129,7 +129,7 @@ class PapersDetailHeader extends StatelessWidget {
                               Text(
                                 '${addOrdinals(int.parse(semesterValue))} Semester',
                                 style: theme.textTheme.titleMedium,
-                              )
+                              ),
                             ],
                           ),
                           const TableRow(
@@ -148,9 +148,9 @@ class PapersDetailHeader extends StatelessWidget {
                               Text(
                                 'Unit - $unitValue',
                                 style: theme.textTheme.titleMedium,
-                              )
+                              ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
@@ -169,10 +169,10 @@ class PapersDetailHeader extends StatelessWidget {
                                 ? 'Paper is Downloaded'
                                 : 'Paper is not Downloaded',
                           ),
-                        )
+                        ),
                     ],
                   ),
-                )
+                ),
               ],
             );
           },

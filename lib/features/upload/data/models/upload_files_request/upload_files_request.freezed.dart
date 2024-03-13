@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'upload_files_request.dart';
 
@@ -12,7 +12,7 @@ part of 'upload_files_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 UploadFilesRequest _$UploadFilesRequestFromJson(Map<String, dynamic> json) {
   return _UploadFilesRequest.fromJson(json);
@@ -39,7 +39,8 @@ mixin _$UploadFilesRequest {
 abstract class $UploadFilesRequestCopyWith<$Res> {
   factory $UploadFilesRequestCopyWith(
           UploadFilesRequest value, $Res Function(UploadFilesRequest) then) =
-      _$UploadFilesRequestCopyWithImpl<$Res>;
+      _$UploadFilesRequestCopyWithImpl<$Res, UploadFilesRequest>;
+  @useResult
   $Res call(
       {String? title,
       String? about,
@@ -52,14 +53,16 @@ abstract class $UploadFilesRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UploadFilesRequestCopyWithImpl<$Res>
+class _$UploadFilesRequestCopyWithImpl<$Res, $Val extends UploadFilesRequest>
     implements $UploadFilesRequestCopyWith<$Res> {
   _$UploadFilesRequestCopyWithImpl(this._value, this._then);
 
-  final UploadFilesRequest _value;
   // ignore: unused_field
-  final $Res Function(UploadFilesRequest) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? title = freezed,
@@ -69,52 +72,53 @@ class _$UploadFilesRequestCopyWithImpl<$Res>
     Object? semester = freezed,
     Object? file = freezed,
     Object? image = freezed,
-    Object? tags = freezed,
+    Object? tags = null,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      about: about == freezed
+      about: freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      college: college == freezed
+      college: freezed == college
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
+      semester: freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String?,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      tags: tags == freezed
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UploadFilesRequestCopyWith<$Res>
+abstract class _$$UploadFilesRequestImplCopyWith<$Res>
     implements $UploadFilesRequestCopyWith<$Res> {
-  factory _$$_UploadFilesRequestCopyWith(_$_UploadFilesRequest value,
-          $Res Function(_$_UploadFilesRequest) then) =
-      __$$_UploadFilesRequestCopyWithImpl<$Res>;
+  factory _$$UploadFilesRequestImplCopyWith(_$UploadFilesRequestImpl value,
+          $Res Function(_$UploadFilesRequestImpl) then) =
+      __$$UploadFilesRequestImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? title,
       String? about,
@@ -127,16 +131,14 @@ abstract class _$$_UploadFilesRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UploadFilesRequestCopyWithImpl<$Res>
-    extends _$UploadFilesRequestCopyWithImpl<$Res>
-    implements _$$_UploadFilesRequestCopyWith<$Res> {
-  __$$_UploadFilesRequestCopyWithImpl(
-      _$_UploadFilesRequest _value, $Res Function(_$_UploadFilesRequest) _then)
-      : super(_value, (v) => _then(v as _$_UploadFilesRequest));
+class __$$UploadFilesRequestImplCopyWithImpl<$Res>
+    extends _$UploadFilesRequestCopyWithImpl<$Res, _$UploadFilesRequestImpl>
+    implements _$$UploadFilesRequestImplCopyWith<$Res> {
+  __$$UploadFilesRequestImplCopyWithImpl(_$UploadFilesRequestImpl _value,
+      $Res Function(_$UploadFilesRequestImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_UploadFilesRequest get _value => super._value as _$_UploadFilesRequest;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? title = freezed,
@@ -146,38 +148,38 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
     Object? semester = freezed,
     Object? file = freezed,
     Object? image = freezed,
-    Object? tags = freezed,
+    Object? tags = null,
   }) {
-    return _then(_$_UploadFilesRequest(
-      title: title == freezed
+    return _then(_$UploadFilesRequestImpl(
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      about: about == freezed
+      about: freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      college: college == freezed
+      college: freezed == college
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
+      semester: freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String?,
-      file: file == freezed
+      file: freezed == file
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      tags: tags == freezed
+      tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -187,8 +189,8 @@ class __$$_UploadFilesRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UploadFilesRequest implements _UploadFilesRequest {
-  const _$_UploadFilesRequest(
+class _$UploadFilesRequestImpl implements _UploadFilesRequest {
+  const _$UploadFilesRequestImpl(
       {this.title,
       this.about,
       this.subject,
@@ -199,8 +201,8 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
       required final List<String> tags})
       : _tags = tags;
 
-  factory _$_UploadFilesRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_UploadFilesRequestFromJson(json);
+  factory _$UploadFilesRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UploadFilesRequestImplFromJson(json);
 
   @override
   final String? title;
@@ -219,6 +221,7 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
   final List<String> _tags;
   @override
   List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tags);
   }
@@ -229,15 +232,16 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UploadFilesRequest &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.college, college) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
+            other is _$UploadFilesRequestImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.about, about) || other.about == about) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.college, college) || other.college == college) &&
+            (identical(other.semester, semester) ||
+                other.semester == semester) &&
             const DeepCollectionEquality().equals(other.file, file) &&
             const DeepCollectionEquality().equals(other.image, image) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
@@ -247,24 +251,25 @@ class _$_UploadFilesRequest implements _UploadFilesRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(college),
-      const DeepCollectionEquality().hash(semester),
+      title,
+      about,
+      subject,
+      college,
+      semester,
       const DeepCollectionEquality().hash(file),
       const DeepCollectionEquality().hash(image),
       const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
   @override
-  _$$_UploadFilesRequestCopyWith<_$_UploadFilesRequest> get copyWith =>
-      __$$_UploadFilesRequestCopyWithImpl<_$_UploadFilesRequest>(
+  @pragma('vm:prefer-inline')
+  _$$UploadFilesRequestImplCopyWith<_$UploadFilesRequestImpl> get copyWith =>
+      __$$UploadFilesRequestImplCopyWithImpl<_$UploadFilesRequestImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UploadFilesRequestToJson(
+    return _$$UploadFilesRequestImplToJson(
       this,
     );
   }
@@ -279,10 +284,10 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
       final String? semester,
       final dynamic file,
       final dynamic image,
-      required final List<String> tags}) = _$_UploadFilesRequest;
+      required final List<String> tags}) = _$UploadFilesRequestImpl;
 
   factory _UploadFilesRequest.fromJson(Map<String, dynamic> json) =
-      _$_UploadFilesRequest.fromJson;
+      _$UploadFilesRequestImpl.fromJson;
 
   @override
   String? get title;
@@ -302,6 +307,6 @@ abstract class _UploadFilesRequest implements UploadFilesRequest {
   List<String> get tags;
   @override
   @JsonKey(ignore: true)
-  _$$_UploadFilesRequestCopyWith<_$_UploadFilesRequest> get copyWith =>
+  _$$UploadFilesRequestImplCopyWith<_$UploadFilesRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

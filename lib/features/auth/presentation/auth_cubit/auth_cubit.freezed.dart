@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'auth_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AuthState {
@@ -26,10 +26,10 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token)? authorized,
-    TResult Function(String? error)? unathorized,
-    TResult Function()? loading,
-    TResult Function()? initial,
+    TResult? Function(String token)? authorized,
+    TResult? Function(String? error)? unathorized,
+    TResult? Function()? loading,
+    TResult? Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Authorized value)? authorized,
-    TResult Function(UnAuthorized value)? unathorized,
-    TResult Function(AuthLoading value)? loading,
-    TResult Function(AuthInitial value)? initial,
+    TResult? Function(Authorized value)? authorized,
+    TResult? Function(UnAuthorized value)? unathorized,
+    TResult? Function(AuthLoading value)? loading,
+    TResult? Function(AuthInitial value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,42 +71,44 @@ mixin _$AuthState {
 /// @nodoc
 abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
-      _$AuthStateCopyWithImpl<$Res>;
+      _$AuthStateCopyWithImpl<$Res, AuthState>;
 }
 
 /// @nodoc
-class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
+class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
+    implements $AuthStateCopyWith<$Res> {
   _$AuthStateCopyWithImpl(this._value, this._then);
 
-  final AuthState _value;
   // ignore: unused_field
-  final $Res Function(AuthState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$AuthorizedCopyWith<$Res> {
-  factory _$$AuthorizedCopyWith(
-          _$Authorized value, $Res Function(_$Authorized) then) =
-      __$$AuthorizedCopyWithImpl<$Res>;
+abstract class _$$AuthorizedImplCopyWith<$Res> {
+  factory _$$AuthorizedImplCopyWith(
+          _$AuthorizedImpl value, $Res Function(_$AuthorizedImpl) then) =
+      __$$AuthorizedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String token});
 }
 
 /// @nodoc
-class __$$AuthorizedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$AuthorizedCopyWith<$Res> {
-  __$$AuthorizedCopyWithImpl(
-      _$Authorized _value, $Res Function(_$Authorized) _then)
-      : super(_value, (v) => _then(v as _$Authorized));
+class __$$AuthorizedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthorizedImpl>
+    implements _$$AuthorizedImplCopyWith<$Res> {
+  __$$AuthorizedImplCopyWithImpl(
+      _$AuthorizedImpl _value, $Res Function(_$AuthorizedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$Authorized get _value => super._value as _$Authorized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? token = freezed,
+    Object? token = null,
   }) {
-    return _then(_$Authorized(
-      token == freezed
+    return _then(_$AuthorizedImpl(
+      null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
@@ -116,8 +118,8 @@ class __$$AuthorizedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Authorized implements Authorized {
-  const _$Authorized(this.token);
+class _$AuthorizedImpl implements Authorized {
+  const _$AuthorizedImpl(this.token);
 
   @override
   final String token;
@@ -128,21 +130,21 @@ class _$Authorized implements Authorized {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$Authorized &&
-            const DeepCollectionEquality().equals(other.token, token));
+            other is _$AuthorizedImpl &&
+            (identical(other.token, token) || other.token == token));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(token));
+  int get hashCode => Object.hash(runtimeType, token);
 
   @JsonKey(ignore: true)
   @override
-  _$$AuthorizedCopyWith<_$Authorized> get copyWith =>
-      __$$AuthorizedCopyWithImpl<_$Authorized>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$AuthorizedImplCopyWith<_$AuthorizedImpl> get copyWith =>
+      __$$AuthorizedImplCopyWithImpl<_$AuthorizedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -158,10 +160,10 @@ class _$Authorized implements Authorized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token)? authorized,
-    TResult Function(String? error)? unathorized,
-    TResult Function()? loading,
-    TResult Function()? initial,
+    TResult? Function(String token)? authorized,
+    TResult? Function(String? error)? unathorized,
+    TResult? Function()? loading,
+    TResult? Function()? initial,
   }) {
     return authorized?.call(token);
   }
@@ -195,10 +197,10 @@ class _$Authorized implements Authorized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Authorized value)? authorized,
-    TResult Function(UnAuthorized value)? unathorized,
-    TResult Function(AuthLoading value)? loading,
-    TResult Function(AuthInitial value)? initial,
+    TResult? Function(Authorized value)? authorized,
+    TResult? Function(UnAuthorized value)? unathorized,
+    TResult? Function(AuthLoading value)? loading,
+    TResult? Function(AuthInitial value)? initial,
   }) {
     return authorized?.call(this);
   }
@@ -220,38 +222,38 @@ class _$Authorized implements Authorized {
 }
 
 abstract class Authorized implements AuthState {
-  const factory Authorized(final String token) = _$Authorized;
+  const factory Authorized(final String token) = _$AuthorizedImpl;
 
   String get token;
   @JsonKey(ignore: true)
-  _$$AuthorizedCopyWith<_$Authorized> get copyWith =>
+  _$$AuthorizedImplCopyWith<_$AuthorizedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UnAuthorizedCopyWith<$Res> {
-  factory _$$UnAuthorizedCopyWith(
-          _$UnAuthorized value, $Res Function(_$UnAuthorized) then) =
-      __$$UnAuthorizedCopyWithImpl<$Res>;
+abstract class _$$UnAuthorizedImplCopyWith<$Res> {
+  factory _$$UnAuthorizedImplCopyWith(
+          _$UnAuthorizedImpl value, $Res Function(_$UnAuthorizedImpl) then) =
+      __$$UnAuthorizedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$UnAuthorizedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$UnAuthorizedCopyWith<$Res> {
-  __$$UnAuthorizedCopyWithImpl(
-      _$UnAuthorized _value, $Res Function(_$UnAuthorized) _then)
-      : super(_value, (v) => _then(v as _$UnAuthorized));
+class __$$UnAuthorizedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$UnAuthorizedImpl>
+    implements _$$UnAuthorizedImplCopyWith<$Res> {
+  __$$UnAuthorizedImplCopyWithImpl(
+      _$UnAuthorizedImpl _value, $Res Function(_$UnAuthorizedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$UnAuthorized get _value => super._value as _$UnAuthorized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$UnAuthorized(
-      error == freezed
+    return _then(_$UnAuthorizedImpl(
+      freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -261,8 +263,8 @@ class __$$UnAuthorizedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UnAuthorized implements UnAuthorized {
-  const _$UnAuthorized(this.error);
+class _$UnAuthorizedImpl implements UnAuthorized {
+  const _$UnAuthorizedImpl(this.error);
 
   @override
   final String? error;
@@ -273,21 +275,21 @@ class _$UnAuthorized implements UnAuthorized {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UnAuthorized &&
-            const DeepCollectionEquality().equals(other.error, error));
+            other is _$UnAuthorizedImpl &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
-  _$$UnAuthorizedCopyWith<_$UnAuthorized> get copyWith =>
-      __$$UnAuthorizedCopyWithImpl<_$UnAuthorized>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UnAuthorizedImplCopyWith<_$UnAuthorizedImpl> get copyWith =>
+      __$$UnAuthorizedImplCopyWithImpl<_$UnAuthorizedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -303,10 +305,10 @@ class _$UnAuthorized implements UnAuthorized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token)? authorized,
-    TResult Function(String? error)? unathorized,
-    TResult Function()? loading,
-    TResult Function()? initial,
+    TResult? Function(String token)? authorized,
+    TResult? Function(String? error)? unathorized,
+    TResult? Function()? loading,
+    TResult? Function()? initial,
   }) {
     return unathorized?.call(error);
   }
@@ -340,10 +342,10 @@ class _$UnAuthorized implements UnAuthorized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Authorized value)? authorized,
-    TResult Function(UnAuthorized value)? unathorized,
-    TResult Function(AuthLoading value)? loading,
-    TResult Function(AuthInitial value)? initial,
+    TResult? Function(Authorized value)? authorized,
+    TResult? Function(UnAuthorized value)? unathorized,
+    TResult? Function(AuthLoading value)? loading,
+    TResult? Function(AuthInitial value)? initial,
   }) {
     return unathorized?.call(this);
   }
@@ -365,36 +367,34 @@ class _$UnAuthorized implements UnAuthorized {
 }
 
 abstract class UnAuthorized implements AuthState {
-  const factory UnAuthorized(final String? error) = _$UnAuthorized;
+  const factory UnAuthorized(final String? error) = _$UnAuthorizedImpl;
 
   String? get error;
   @JsonKey(ignore: true)
-  _$$UnAuthorizedCopyWith<_$UnAuthorized> get copyWith =>
+  _$$UnAuthorizedImplCopyWith<_$UnAuthorizedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AuthLoadingCopyWith<$Res> {
-  factory _$$AuthLoadingCopyWith(
-          _$AuthLoading value, $Res Function(_$AuthLoading) then) =
-      __$$AuthLoadingCopyWithImpl<$Res>;
+abstract class _$$AuthLoadingImplCopyWith<$Res> {
+  factory _$$AuthLoadingImplCopyWith(
+          _$AuthLoadingImpl value, $Res Function(_$AuthLoadingImpl) then) =
+      __$$AuthLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AuthLoadingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$AuthLoadingCopyWith<$Res> {
-  __$$AuthLoadingCopyWithImpl(
-      _$AuthLoading _value, $Res Function(_$AuthLoading) _then)
-      : super(_value, (v) => _then(v as _$AuthLoading));
-
-  @override
-  _$AuthLoading get _value => super._value as _$AuthLoading;
+class __$$AuthLoadingImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthLoadingImpl>
+    implements _$$AuthLoadingImplCopyWith<$Res> {
+  __$$AuthLoadingImplCopyWithImpl(
+      _$AuthLoadingImpl _value, $Res Function(_$AuthLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AuthLoading implements AuthLoading {
-  const _$AuthLoading();
+class _$AuthLoadingImpl implements AuthLoading {
+  const _$AuthLoadingImpl();
 
   @override
   String toString() {
@@ -402,9 +402,9 @@ class _$AuthLoading implements AuthLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AuthLoading);
+        (other.runtimeType == runtimeType && other is _$AuthLoadingImpl);
   }
 
   @override
@@ -424,10 +424,10 @@ class _$AuthLoading implements AuthLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token)? authorized,
-    TResult Function(String? error)? unathorized,
-    TResult Function()? loading,
-    TResult Function()? initial,
+    TResult? Function(String token)? authorized,
+    TResult? Function(String? error)? unathorized,
+    TResult? Function()? loading,
+    TResult? Function()? initial,
   }) {
     return loading?.call();
   }
@@ -461,10 +461,10 @@ class _$AuthLoading implements AuthLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Authorized value)? authorized,
-    TResult Function(UnAuthorized value)? unathorized,
-    TResult Function(AuthLoading value)? loading,
-    TResult Function(AuthInitial value)? initial,
+    TResult? Function(Authorized value)? authorized,
+    TResult? Function(UnAuthorized value)? unathorized,
+    TResult? Function(AuthLoading value)? loading,
+    TResult? Function(AuthInitial value)? initial,
   }) {
     return loading?.call(this);
   }
@@ -486,31 +486,29 @@ class _$AuthLoading implements AuthLoading {
 }
 
 abstract class AuthLoading implements AuthState {
-  const factory AuthLoading() = _$AuthLoading;
+  const factory AuthLoading() = _$AuthLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$AuthInitialCopyWith<$Res> {
-  factory _$$AuthInitialCopyWith(
-          _$AuthInitial value, $Res Function(_$AuthInitial) then) =
-      __$$AuthInitialCopyWithImpl<$Res>;
+abstract class _$$AuthInitialImplCopyWith<$Res> {
+  factory _$$AuthInitialImplCopyWith(
+          _$AuthInitialImpl value, $Res Function(_$AuthInitialImpl) then) =
+      __$$AuthInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AuthInitialCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$AuthInitialCopyWith<$Res> {
-  __$$AuthInitialCopyWithImpl(
-      _$AuthInitial _value, $Res Function(_$AuthInitial) _then)
-      : super(_value, (v) => _then(v as _$AuthInitial));
-
-  @override
-  _$AuthInitial get _value => super._value as _$AuthInitial;
+class __$$AuthInitialImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthInitialImpl>
+    implements _$$AuthInitialImplCopyWith<$Res> {
+  __$$AuthInitialImplCopyWithImpl(
+      _$AuthInitialImpl _value, $Res Function(_$AuthInitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AuthInitial implements AuthInitial {
-  const _$AuthInitial();
+class _$AuthInitialImpl implements AuthInitial {
+  const _$AuthInitialImpl();
 
   @override
   String toString() {
@@ -518,9 +516,9 @@ class _$AuthInitial implements AuthInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AuthInitial);
+        (other.runtimeType == runtimeType && other is _$AuthInitialImpl);
   }
 
   @override
@@ -540,10 +538,10 @@ class _$AuthInitial implements AuthInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token)? authorized,
-    TResult Function(String? error)? unathorized,
-    TResult Function()? loading,
-    TResult Function()? initial,
+    TResult? Function(String token)? authorized,
+    TResult? Function(String? error)? unathorized,
+    TResult? Function()? loading,
+    TResult? Function()? initial,
   }) {
     return initial?.call();
   }
@@ -577,10 +575,10 @@ class _$AuthInitial implements AuthInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Authorized value)? authorized,
-    TResult Function(UnAuthorized value)? unathorized,
-    TResult Function(AuthLoading value)? loading,
-    TResult Function(AuthInitial value)? initial,
+    TResult? Function(Authorized value)? authorized,
+    TResult? Function(UnAuthorized value)? unathorized,
+    TResult? Function(AuthLoading value)? loading,
+    TResult? Function(AuthInitial value)? initial,
   }) {
     return initial?.call(this);
   }
@@ -602,5 +600,5 @@ class _$AuthInitial implements AuthInitial {
 }
 
 abstract class AuthInitial implements AuthState {
-  const factory AuthInitial() = _$AuthInitial;
+  const factory AuthInitial() = _$AuthInitialImpl;
 }

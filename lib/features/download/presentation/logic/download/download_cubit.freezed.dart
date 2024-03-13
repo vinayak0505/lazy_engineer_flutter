@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'download_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'download_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DownloadState {
@@ -25,9 +25,9 @@ mixin _$DownloadState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(DownloadModel data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(DownloadModel data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$DownloadState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DownloadLoading value)? loading,
-    TResult Function(DownloadFailure value)? failure,
-    TResult Function(DownloadSuccess value)? success,
+    TResult? Function(DownloadLoading value)? loading,
+    TResult? Function(DownloadFailure value)? failure,
+    TResult? Function(DownloadSuccess value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,42 +66,40 @@ mixin _$DownloadState {
 abstract class $DownloadStateCopyWith<$Res> {
   factory $DownloadStateCopyWith(
           DownloadState value, $Res Function(DownloadState) then) =
-      _$DownloadStateCopyWithImpl<$Res>;
+      _$DownloadStateCopyWithImpl<$Res, DownloadState>;
 }
 
 /// @nodoc
-class _$DownloadStateCopyWithImpl<$Res>
+class _$DownloadStateCopyWithImpl<$Res, $Val extends DownloadState>
     implements $DownloadStateCopyWith<$Res> {
   _$DownloadStateCopyWithImpl(this._value, this._then);
 
-  final DownloadState _value;
   // ignore: unused_field
-  final $Res Function(DownloadState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$DownloadLoadingCopyWith<$Res> {
-  factory _$$DownloadLoadingCopyWith(
-          _$DownloadLoading value, $Res Function(_$DownloadLoading) then) =
-      __$$DownloadLoadingCopyWithImpl<$Res>;
+abstract class _$$DownloadLoadingImplCopyWith<$Res> {
+  factory _$$DownloadLoadingImplCopyWith(_$DownloadLoadingImpl value,
+          $Res Function(_$DownloadLoadingImpl) then) =
+      __$$DownloadLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DownloadLoadingCopyWithImpl<$Res>
-    extends _$DownloadStateCopyWithImpl<$Res>
-    implements _$$DownloadLoadingCopyWith<$Res> {
-  __$$DownloadLoadingCopyWithImpl(
-      _$DownloadLoading _value, $Res Function(_$DownloadLoading) _then)
-      : super(_value, (v) => _then(v as _$DownloadLoading));
-
-  @override
-  _$DownloadLoading get _value => super._value as _$DownloadLoading;
+class __$$DownloadLoadingImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DownloadLoadingImpl>
+    implements _$$DownloadLoadingImplCopyWith<$Res> {
+  __$$DownloadLoadingImplCopyWithImpl(
+      _$DownloadLoadingImpl _value, $Res Function(_$DownloadLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DownloadLoading implements DownloadLoading {
-  const _$DownloadLoading();
+class _$DownloadLoadingImpl implements DownloadLoading {
+  const _$DownloadLoadingImpl();
 
   @override
   String toString() {
@@ -109,9 +107,9 @@ class _$DownloadLoading implements DownloadLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DownloadLoading);
+        (other.runtimeType == runtimeType && other is _$DownloadLoadingImpl);
   }
 
   @override
@@ -130,9 +128,9 @@ class _$DownloadLoading implements DownloadLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(DownloadModel data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(DownloadModel data)? success,
   }) {
     return loading?.call();
   }
@@ -164,9 +162,9 @@ class _$DownloadLoading implements DownloadLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DownloadLoading value)? loading,
-    TResult Function(DownloadFailure value)? failure,
-    TResult Function(DownloadSuccess value)? success,
+    TResult? Function(DownloadLoading value)? loading,
+    TResult? Function(DownloadFailure value)? failure,
+    TResult? Function(DownloadSuccess value)? success,
   }) {
     return loading?.call(this);
   }
@@ -187,34 +185,33 @@ class _$DownloadLoading implements DownloadLoading {
 }
 
 abstract class DownloadLoading implements DownloadState {
-  const factory DownloadLoading() = _$DownloadLoading;
+  const factory DownloadLoading() = _$DownloadLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$DownloadFailureCopyWith<$Res> {
-  factory _$$DownloadFailureCopyWith(
-          _$DownloadFailure value, $Res Function(_$DownloadFailure) then) =
-      __$$DownloadFailureCopyWithImpl<$Res>;
+abstract class _$$DownloadFailureImplCopyWith<$Res> {
+  factory _$$DownloadFailureImplCopyWith(_$DownloadFailureImpl value,
+          $Res Function(_$DownloadFailureImpl) then) =
+      __$$DownloadFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$DownloadFailureCopyWithImpl<$Res>
-    extends _$DownloadStateCopyWithImpl<$Res>
-    implements _$$DownloadFailureCopyWith<$Res> {
-  __$$DownloadFailureCopyWithImpl(
-      _$DownloadFailure _value, $Res Function(_$DownloadFailure) _then)
-      : super(_value, (v) => _then(v as _$DownloadFailure));
+class __$$DownloadFailureImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DownloadFailureImpl>
+    implements _$$DownloadFailureImplCopyWith<$Res> {
+  __$$DownloadFailureImplCopyWithImpl(
+      _$DownloadFailureImpl _value, $Res Function(_$DownloadFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$DownloadFailure get _value => super._value as _$DownloadFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$DownloadFailure(
-      e == freezed
+    return _then(_$DownloadFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -224,8 +221,8 @@ class __$$DownloadFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DownloadFailure implements DownloadFailure {
-  const _$DownloadFailure(this.e);
+class _$DownloadFailureImpl implements DownloadFailure {
+  const _$DownloadFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -236,10 +233,10 @@ class _$DownloadFailure implements DownloadFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DownloadFailure &&
+            other is _$DownloadFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -249,8 +246,10 @@ class _$DownloadFailure implements DownloadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$DownloadFailureCopyWith<_$DownloadFailure> get copyWith =>
-      __$$DownloadFailureCopyWithImpl<_$DownloadFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DownloadFailureImplCopyWith<_$DownloadFailureImpl> get copyWith =>
+      __$$DownloadFailureImplCopyWithImpl<_$DownloadFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -265,9 +264,9 @@ class _$DownloadFailure implements DownloadFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(DownloadModel data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(DownloadModel data)? success,
   }) {
     return failure?.call(e);
   }
@@ -299,9 +298,9 @@ class _$DownloadFailure implements DownloadFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DownloadLoading value)? loading,
-    TResult Function(DownloadFailure value)? failure,
-    TResult Function(DownloadSuccess value)? success,
+    TResult? Function(DownloadLoading value)? loading,
+    TResult? Function(DownloadFailure value)? failure,
+    TResult? Function(DownloadSuccess value)? success,
   }) {
     return failure?.call(this);
   }
@@ -322,41 +321,40 @@ class _$DownloadFailure implements DownloadFailure {
 }
 
 abstract class DownloadFailure implements DownloadState {
-  const factory DownloadFailure(final dynamic e) = _$DownloadFailure;
+  const factory DownloadFailure(final dynamic e) = _$DownloadFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$DownloadFailureCopyWith<_$DownloadFailure> get copyWith =>
+  _$$DownloadFailureImplCopyWith<_$DownloadFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DownloadSuccessCopyWith<$Res> {
-  factory _$$DownloadSuccessCopyWith(
-          _$DownloadSuccess value, $Res Function(_$DownloadSuccess) then) =
-      __$$DownloadSuccessCopyWithImpl<$Res>;
+abstract class _$$DownloadSuccessImplCopyWith<$Res> {
+  factory _$$DownloadSuccessImplCopyWith(_$DownloadSuccessImpl value,
+          $Res Function(_$DownloadSuccessImpl) then) =
+      __$$DownloadSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({DownloadModel data});
 
   $DownloadModelCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class __$$DownloadSuccessCopyWithImpl<$Res>
-    extends _$DownloadStateCopyWithImpl<$Res>
-    implements _$$DownloadSuccessCopyWith<$Res> {
-  __$$DownloadSuccessCopyWithImpl(
-      _$DownloadSuccess _value, $Res Function(_$DownloadSuccess) _then)
-      : super(_value, (v) => _then(v as _$DownloadSuccess));
+class __$$DownloadSuccessImplCopyWithImpl<$Res>
+    extends _$DownloadStateCopyWithImpl<$Res, _$DownloadSuccessImpl>
+    implements _$$DownloadSuccessImplCopyWith<$Res> {
+  __$$DownloadSuccessImplCopyWithImpl(
+      _$DownloadSuccessImpl _value, $Res Function(_$DownloadSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$DownloadSuccess get _value => super._value as _$DownloadSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$DownloadSuccess(
-      data == freezed
+    return _then(_$DownloadSuccessImpl(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as DownloadModel,
@@ -364,6 +362,7 @@ class __$$DownloadSuccessCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DownloadModelCopyWith<$Res> get data {
     return $DownloadModelCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -373,8 +372,8 @@ class __$$DownloadSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DownloadSuccess implements DownloadSuccess {
-  const _$DownloadSuccess(this.data);
+class _$DownloadSuccessImpl implements DownloadSuccess {
+  const _$DownloadSuccessImpl(this.data);
 
   @override
   final DownloadModel data;
@@ -385,21 +384,22 @@ class _$DownloadSuccess implements DownloadSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DownloadSuccess &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$DownloadSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
-  _$$DownloadSuccessCopyWith<_$DownloadSuccess> get copyWith =>
-      __$$DownloadSuccessCopyWithImpl<_$DownloadSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$DownloadSuccessImplCopyWith<_$DownloadSuccessImpl> get copyWith =>
+      __$$DownloadSuccessImplCopyWithImpl<_$DownloadSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -414,9 +414,9 @@ class _$DownloadSuccess implements DownloadSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
-    TResult Function(DownloadModel data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
+    TResult? Function(DownloadModel data)? success,
   }) {
     return success?.call(data);
   }
@@ -448,9 +448,9 @@ class _$DownloadSuccess implements DownloadSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DownloadLoading value)? loading,
-    TResult Function(DownloadFailure value)? failure,
-    TResult Function(DownloadSuccess value)? success,
+    TResult? Function(DownloadLoading value)? loading,
+    TResult? Function(DownloadFailure value)? failure,
+    TResult? Function(DownloadSuccess value)? success,
   }) {
     return success?.call(this);
   }
@@ -471,10 +471,11 @@ class _$DownloadSuccess implements DownloadSuccess {
 }
 
 abstract class DownloadSuccess implements DownloadState {
-  const factory DownloadSuccess(final DownloadModel data) = _$DownloadSuccess;
+  const factory DownloadSuccess(final DownloadModel data) =
+      _$DownloadSuccessImpl;
 
   DownloadModel get data;
   @JsonKey(ignore: true)
-  _$$DownloadSuccessCopyWith<_$DownloadSuccess> get copyWith =>
+  _$$DownloadSuccessImplCopyWith<_$DownloadSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

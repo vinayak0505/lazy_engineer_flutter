@@ -52,7 +52,7 @@ class JobsDescriptionScreen extends StatelessWidget {
               Text(
                 data?.jobType ?? '',
                 style: theme.textTheme.titleMedium,
-              )
+              ),
             ],
           ),
           const SizedBox(height: 4),
@@ -68,7 +68,7 @@ class JobsDescriptionScreen extends StatelessWidget {
               Text(
                 data?.experienceLevel ?? '',
                 style: theme.textTheme.titleMedium,
-              )
+              ),
             ],
           ),
           const SizedBox(height: 4),
@@ -84,7 +84,7 @@ class JobsDescriptionScreen extends StatelessWidget {
               Text(
                 'Actively Recruiting',
                 style: theme.textTheme.titleMedium,
-              )
+              ),
             ],
           ),
           // Row(

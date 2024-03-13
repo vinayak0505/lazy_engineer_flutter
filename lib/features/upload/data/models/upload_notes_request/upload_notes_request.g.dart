@@ -6,9 +6,9 @@ part of 'upload_notes_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UploadNotesRequest _$$_UploadNotesRequestFromJson(
+_$UploadNotesRequestImpl _$$UploadNotesRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$_UploadNotesRequest(
+    _$UploadNotesRequestImpl(
       title: json['title'] as String,
       about: json['about'] as String?,
       semester: json['semester'] as String,
@@ -21,8 +21,8 @@ _$_UploadNotesRequest _$$_UploadNotesRequestFromJson(
       topic: json['topic'] as String?,
     );
 
-Map<String, dynamic> _$$_UploadNotesRequestToJson(
-        _$_UploadNotesRequest instance) =>
+Map<String, dynamic> _$$UploadNotesRequestImplToJson(
+        _$UploadNotesRequestImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'about': instance.about,

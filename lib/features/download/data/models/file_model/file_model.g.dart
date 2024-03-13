@@ -6,12 +6,13 @@ part of 'file_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FileModel _$$_FileModelFromJson(Map<String, dynamic> json) => _$_FileModel(
+_$FileModelImpl _$$FileModelImplFromJson(Map<String, dynamic> json) =>
+    _$FileModelImpl(
       key: (json['key'] as List<dynamic>).map((e) => e as String).toList(),
       value: (json['value'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_FileModelToJson(_$_FileModel instance) =>
+Map<String, dynamic> _$$FileModelImplToJson(_$FileModelImpl instance) =>
     <String, dynamic>{
       'key': instance.key,
       'value': instance.value,

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'profile_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'profile_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ProfileState {
@@ -25,9 +25,9 @@ mixin _$ProfileState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal? data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function(bool isNotEdit, ProfileModal? data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$ProfileState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileFailure value)? failure,
+    TResult? Function(ProfileSuccess value)? success,
+    TResult? Function(ProfileLoading value)? loading,
+    TResult? Function(ProfileFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,50 +66,51 @@ mixin _$ProfileState {
 abstract class $ProfileStateCopyWith<$Res> {
   factory $ProfileStateCopyWith(
           ProfileState value, $Res Function(ProfileState) then) =
-      _$ProfileStateCopyWithImpl<$Res>;
+      _$ProfileStateCopyWithImpl<$Res, ProfileState>;
 }
 
 /// @nodoc
-class _$ProfileStateCopyWithImpl<$Res> implements $ProfileStateCopyWith<$Res> {
+class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
+    implements $ProfileStateCopyWith<$Res> {
   _$ProfileStateCopyWithImpl(this._value, this._then);
 
-  final ProfileState _value;
   // ignore: unused_field
-  final $Res Function(ProfileState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$ProfileSuccessCopyWith<$Res> {
-  factory _$$ProfileSuccessCopyWith(
-          _$ProfileSuccess value, $Res Function(_$ProfileSuccess) then) =
-      __$$ProfileSuccessCopyWithImpl<$Res>;
+abstract class _$$ProfileSuccessImplCopyWith<$Res> {
+  factory _$$ProfileSuccessImplCopyWith(_$ProfileSuccessImpl value,
+          $Res Function(_$ProfileSuccessImpl) then) =
+      __$$ProfileSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isNotEdit, ProfileModal? data});
 
   $ProfileModalCopyWith<$Res>? get data;
 }
 
 /// @nodoc
-class __$$ProfileSuccessCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res>
-    implements _$$ProfileSuccessCopyWith<$Res> {
-  __$$ProfileSuccessCopyWithImpl(
-      _$ProfileSuccess _value, $Res Function(_$ProfileSuccess) _then)
-      : super(_value, (v) => _then(v as _$ProfileSuccess));
+class __$$ProfileSuccessImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileSuccessImpl>
+    implements _$$ProfileSuccessImplCopyWith<$Res> {
+  __$$ProfileSuccessImplCopyWithImpl(
+      _$ProfileSuccessImpl _value, $Res Function(_$ProfileSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$ProfileSuccess get _value => super._value as _$ProfileSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isNotEdit = freezed,
+    Object? isNotEdit = null,
     Object? data = freezed,
   }) {
-    return _then(_$ProfileSuccess(
-      isNotEdit: isNotEdit == freezed
+    return _then(_$ProfileSuccessImpl(
+      isNotEdit: null == isNotEdit
           ? _value.isNotEdit
           : isNotEdit // ignore: cast_nullable_to_non_nullable
               as bool,
-      data: data == freezed
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as ProfileModal?,
@@ -117,6 +118,7 @@ class __$$ProfileSuccessCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ProfileModalCopyWith<$Res>? get data {
     if (_value.data == null) {
       return null;
@@ -130,8 +132,8 @@ class __$$ProfileSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileSuccess implements ProfileSuccess {
-  const _$ProfileSuccess({required this.isNotEdit, this.data});
+class _$ProfileSuccessImpl implements ProfileSuccess {
+  const _$ProfileSuccessImpl({required this.isNotEdit, this.data});
 
   @override
   final bool isNotEdit;
@@ -144,24 +146,24 @@ class _$ProfileSuccess implements ProfileSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProfileSuccess &&
-            const DeepCollectionEquality().equals(other.isNotEdit, isNotEdit) &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$ProfileSuccessImpl &&
+            (identical(other.isNotEdit, isNotEdit) ||
+                other.isNotEdit == isNotEdit) &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(isNotEdit),
-      const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, isNotEdit, data);
 
   @JsonKey(ignore: true)
   @override
-  _$$ProfileSuccessCopyWith<_$ProfileSuccess> get copyWith =>
-      __$$ProfileSuccessCopyWithImpl<_$ProfileSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ProfileSuccessImplCopyWith<_$ProfileSuccessImpl> get copyWith =>
+      __$$ProfileSuccessImplCopyWithImpl<_$ProfileSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -176,9 +178,9 @@ class _$ProfileSuccess implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal? data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function(bool isNotEdit, ProfileModal? data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) {
     return success?.call(isNotEdit, data);
   }
@@ -210,9 +212,9 @@ class _$ProfileSuccess implements ProfileSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileFailure value)? failure,
+    TResult? Function(ProfileSuccess value)? success,
+    TResult? Function(ProfileLoading value)? loading,
+    TResult? Function(ProfileFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -235,38 +237,35 @@ class _$ProfileSuccess implements ProfileSuccess {
 abstract class ProfileSuccess implements ProfileState {
   const factory ProfileSuccess(
       {required final bool isNotEdit,
-      final ProfileModal? data}) = _$ProfileSuccess;
+      final ProfileModal? data}) = _$ProfileSuccessImpl;
 
   bool get isNotEdit;
   ProfileModal? get data;
   @JsonKey(ignore: true)
-  _$$ProfileSuccessCopyWith<_$ProfileSuccess> get copyWith =>
+  _$$ProfileSuccessImplCopyWith<_$ProfileSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ProfileLoadingCopyWith<$Res> {
-  factory _$$ProfileLoadingCopyWith(
-          _$ProfileLoading value, $Res Function(_$ProfileLoading) then) =
-      __$$ProfileLoadingCopyWithImpl<$Res>;
+abstract class _$$ProfileLoadingImplCopyWith<$Res> {
+  factory _$$ProfileLoadingImplCopyWith(_$ProfileLoadingImpl value,
+          $Res Function(_$ProfileLoadingImpl) then) =
+      __$$ProfileLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ProfileLoadingCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res>
-    implements _$$ProfileLoadingCopyWith<$Res> {
-  __$$ProfileLoadingCopyWithImpl(
-      _$ProfileLoading _value, $Res Function(_$ProfileLoading) _then)
-      : super(_value, (v) => _then(v as _$ProfileLoading));
-
-  @override
-  _$ProfileLoading get _value => super._value as _$ProfileLoading;
+class __$$ProfileLoadingImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileLoadingImpl>
+    implements _$$ProfileLoadingImplCopyWith<$Res> {
+  __$$ProfileLoadingImplCopyWithImpl(
+      _$ProfileLoadingImpl _value, $Res Function(_$ProfileLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$ProfileLoading implements ProfileLoading {
-  const _$ProfileLoading();
+class _$ProfileLoadingImpl implements ProfileLoading {
+  const _$ProfileLoadingImpl();
 
   @override
   String toString() {
@@ -274,9 +273,9 @@ class _$ProfileLoading implements ProfileLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ProfileLoading);
+        (other.runtimeType == runtimeType && other is _$ProfileLoadingImpl);
   }
 
   @override
@@ -295,9 +294,9 @@ class _$ProfileLoading implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal? data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function(bool isNotEdit, ProfileModal? data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) {
     return loading?.call();
   }
@@ -329,9 +328,9 @@ class _$ProfileLoading implements ProfileLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileFailure value)? failure,
+    TResult? Function(ProfileSuccess value)? success,
+    TResult? Function(ProfileLoading value)? loading,
+    TResult? Function(ProfileFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -352,34 +351,33 @@ class _$ProfileLoading implements ProfileLoading {
 }
 
 abstract class ProfileLoading implements ProfileState {
-  const factory ProfileLoading() = _$ProfileLoading;
+  const factory ProfileLoading() = _$ProfileLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ProfileFailureCopyWith<$Res> {
-  factory _$$ProfileFailureCopyWith(
-          _$ProfileFailure value, $Res Function(_$ProfileFailure) then) =
-      __$$ProfileFailureCopyWithImpl<$Res>;
+abstract class _$$ProfileFailureImplCopyWith<$Res> {
+  factory _$$ProfileFailureImplCopyWith(_$ProfileFailureImpl value,
+          $Res Function(_$ProfileFailureImpl) then) =
+      __$$ProfileFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$ProfileFailureCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res>
-    implements _$$ProfileFailureCopyWith<$Res> {
-  __$$ProfileFailureCopyWithImpl(
-      _$ProfileFailure _value, $Res Function(_$ProfileFailure) _then)
-      : super(_value, (v) => _then(v as _$ProfileFailure));
+class __$$ProfileFailureImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileFailureImpl>
+    implements _$$ProfileFailureImplCopyWith<$Res> {
+  __$$ProfileFailureImplCopyWithImpl(
+      _$ProfileFailureImpl _value, $Res Function(_$ProfileFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$ProfileFailure get _value => super._value as _$ProfileFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$ProfileFailure(
-      e == freezed
+    return _then(_$ProfileFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -389,8 +387,8 @@ class __$$ProfileFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileFailure implements ProfileFailure {
-  const _$ProfileFailure(this.e);
+class _$ProfileFailureImpl implements ProfileFailure {
+  const _$ProfileFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -401,10 +399,10 @@ class _$ProfileFailure implements ProfileFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProfileFailure &&
+            other is _$ProfileFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -414,8 +412,10 @@ class _$ProfileFailure implements ProfileFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$ProfileFailureCopyWith<_$ProfileFailure> get copyWith =>
-      __$$ProfileFailureCopyWithImpl<_$ProfileFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ProfileFailureImplCopyWith<_$ProfileFailureImpl> get copyWith =>
+      __$$ProfileFailureImplCopyWithImpl<_$ProfileFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -430,9 +430,9 @@ class _$ProfileFailure implements ProfileFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isNotEdit, ProfileModal? data)? success,
-    TResult Function()? loading,
-    TResult Function(dynamic e)? failure,
+    TResult? Function(bool isNotEdit, ProfileModal? data)? success,
+    TResult? Function()? loading,
+    TResult? Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
   }
@@ -464,9 +464,9 @@ class _$ProfileFailure implements ProfileFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ProfileSuccess value)? success,
-    TResult Function(ProfileLoading value)? loading,
-    TResult Function(ProfileFailure value)? failure,
+    TResult? Function(ProfileSuccess value)? success,
+    TResult? Function(ProfileLoading value)? loading,
+    TResult? Function(ProfileFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -487,10 +487,10 @@ class _$ProfileFailure implements ProfileFailure {
 }
 
 abstract class ProfileFailure implements ProfileState {
-  const factory ProfileFailure(final dynamic e) = _$ProfileFailure;
+  const factory ProfileFailure(final dynamic e) = _$ProfileFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$ProfileFailureCopyWith<_$ProfileFailure> get copyWith =>
+  _$$ProfileFailureImplCopyWith<_$ProfileFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

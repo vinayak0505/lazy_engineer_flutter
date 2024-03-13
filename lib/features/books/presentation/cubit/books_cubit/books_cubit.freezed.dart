@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'books_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'books_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BooksState {
@@ -25,9 +25,9 @@ mixin _$BooksState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<BookDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<BookDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$BooksState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_BooksLoading value)? loading,
-    TResult Function(_BooksSuccess value)? success,
-    TResult Function(_BooksFailure value)? failure,
+    TResult? Function(_BooksLoading value)? loading,
+    TResult? Function(_BooksSuccess value)? success,
+    TResult? Function(_BooksFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,40 +66,40 @@ mixin _$BooksState {
 abstract class $BooksStateCopyWith<$Res> {
   factory $BooksStateCopyWith(
           BooksState value, $Res Function(BooksState) then) =
-      _$BooksStateCopyWithImpl<$Res>;
+      _$BooksStateCopyWithImpl<$Res, BooksState>;
 }
 
 /// @nodoc
-class _$BooksStateCopyWithImpl<$Res> implements $BooksStateCopyWith<$Res> {
+class _$BooksStateCopyWithImpl<$Res, $Val extends BooksState>
+    implements $BooksStateCopyWith<$Res> {
   _$BooksStateCopyWithImpl(this._value, this._then);
 
-  final BooksState _value;
   // ignore: unused_field
-  final $Res Function(BooksState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_BooksLoadingCopyWith<$Res> {
-  factory _$$_BooksLoadingCopyWith(
-          _$_BooksLoading value, $Res Function(_$_BooksLoading) then) =
-      __$$_BooksLoadingCopyWithImpl<$Res>;
+abstract class _$$BooksLoadingImplCopyWith<$Res> {
+  factory _$$BooksLoadingImplCopyWith(
+          _$BooksLoadingImpl value, $Res Function(_$BooksLoadingImpl) then) =
+      __$$BooksLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_BooksLoadingCopyWithImpl<$Res> extends _$BooksStateCopyWithImpl<$Res>
-    implements _$$_BooksLoadingCopyWith<$Res> {
-  __$$_BooksLoadingCopyWithImpl(
-      _$_BooksLoading _value, $Res Function(_$_BooksLoading) _then)
-      : super(_value, (v) => _then(v as _$_BooksLoading));
-
-  @override
-  _$_BooksLoading get _value => super._value as _$_BooksLoading;
+class __$$BooksLoadingImplCopyWithImpl<$Res>
+    extends _$BooksStateCopyWithImpl<$Res, _$BooksLoadingImpl>
+    implements _$$BooksLoadingImplCopyWith<$Res> {
+  __$$BooksLoadingImplCopyWithImpl(
+      _$BooksLoadingImpl _value, $Res Function(_$BooksLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_BooksLoading implements _BooksLoading {
-  const _$_BooksLoading();
+class _$BooksLoadingImpl implements _BooksLoading {
+  const _$BooksLoadingImpl();
 
   @override
   String toString() {
@@ -107,9 +107,9 @@ class _$_BooksLoading implements _BooksLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_BooksLoading);
+        (other.runtimeType == runtimeType && other is _$BooksLoadingImpl);
   }
 
   @override
@@ -128,9 +128,9 @@ class _$_BooksLoading implements _BooksLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<BookDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<BookDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return loading?.call();
   }
@@ -162,9 +162,9 @@ class _$_BooksLoading implements _BooksLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_BooksLoading value)? loading,
-    TResult Function(_BooksSuccess value)? success,
-    TResult Function(_BooksFailure value)? failure,
+    TResult? Function(_BooksLoading value)? loading,
+    TResult? Function(_BooksSuccess value)? success,
+    TResult? Function(_BooksFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -185,33 +185,33 @@ class _$_BooksLoading implements _BooksLoading {
 }
 
 abstract class _BooksLoading implements BooksState {
-  const factory _BooksLoading() = _$_BooksLoading;
+  const factory _BooksLoading() = _$BooksLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_BooksSuccessCopyWith<$Res> {
-  factory _$$_BooksSuccessCopyWith(
-          _$_BooksSuccess value, $Res Function(_$_BooksSuccess) then) =
-      __$$_BooksSuccessCopyWithImpl<$Res>;
+abstract class _$$BooksSuccessImplCopyWith<$Res> {
+  factory _$$BooksSuccessImplCopyWith(
+          _$BooksSuccessImpl value, $Res Function(_$BooksSuccessImpl) then) =
+      __$$BooksSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<BookDetail> data});
 }
 
 /// @nodoc
-class __$$_BooksSuccessCopyWithImpl<$Res> extends _$BooksStateCopyWithImpl<$Res>
-    implements _$$_BooksSuccessCopyWith<$Res> {
-  __$$_BooksSuccessCopyWithImpl(
-      _$_BooksSuccess _value, $Res Function(_$_BooksSuccess) _then)
-      : super(_value, (v) => _then(v as _$_BooksSuccess));
+class __$$BooksSuccessImplCopyWithImpl<$Res>
+    extends _$BooksStateCopyWithImpl<$Res, _$BooksSuccessImpl>
+    implements _$$BooksSuccessImplCopyWith<$Res> {
+  __$$BooksSuccessImplCopyWithImpl(
+      _$BooksSuccessImpl _value, $Res Function(_$BooksSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_BooksSuccess get _value => super._value as _$_BooksSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$_BooksSuccess(
-      data == freezed
+    return _then(_$BooksSuccessImpl(
+      null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<BookDetail>,
@@ -221,12 +221,13 @@ class __$$_BooksSuccessCopyWithImpl<$Res> extends _$BooksStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BooksSuccess implements _BooksSuccess {
-  const _$_BooksSuccess(final List<BookDetail> data) : _data = data;
+class _$BooksSuccessImpl implements _BooksSuccess {
+  const _$BooksSuccessImpl(final List<BookDetail> data) : _data = data;
 
   final List<BookDetail> _data;
   @override
   List<BookDetail> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -237,10 +238,10 @@ class _$_BooksSuccess implements _BooksSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BooksSuccess &&
+            other is _$BooksSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -250,8 +251,9 @@ class _$_BooksSuccess implements _BooksSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_BooksSuccessCopyWith<_$_BooksSuccess> get copyWith =>
-      __$$_BooksSuccessCopyWithImpl<_$_BooksSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$BooksSuccessImplCopyWith<_$BooksSuccessImpl> get copyWith =>
+      __$$BooksSuccessImplCopyWithImpl<_$BooksSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -266,9 +268,9 @@ class _$_BooksSuccess implements _BooksSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<BookDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<BookDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return success?.call(data);
   }
@@ -300,9 +302,9 @@ class _$_BooksSuccess implements _BooksSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_BooksLoading value)? loading,
-    TResult Function(_BooksSuccess value)? success,
-    TResult Function(_BooksFailure value)? failure,
+    TResult? Function(_BooksLoading value)? loading,
+    TResult? Function(_BooksSuccess value)? success,
+    TResult? Function(_BooksFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -323,38 +325,38 @@ class _$_BooksSuccess implements _BooksSuccess {
 }
 
 abstract class _BooksSuccess implements BooksState {
-  const factory _BooksSuccess(final List<BookDetail> data) = _$_BooksSuccess;
+  const factory _BooksSuccess(final List<BookDetail> data) = _$BooksSuccessImpl;
 
   List<BookDetail> get data;
   @JsonKey(ignore: true)
-  _$$_BooksSuccessCopyWith<_$_BooksSuccess> get copyWith =>
+  _$$BooksSuccessImplCopyWith<_$BooksSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_BooksFailureCopyWith<$Res> {
-  factory _$$_BooksFailureCopyWith(
-          _$_BooksFailure value, $Res Function(_$_BooksFailure) then) =
-      __$$_BooksFailureCopyWithImpl<$Res>;
+abstract class _$$BooksFailureImplCopyWith<$Res> {
+  factory _$$BooksFailureImplCopyWith(
+          _$BooksFailureImpl value, $Res Function(_$BooksFailureImpl) then) =
+      __$$BooksFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_BooksFailureCopyWithImpl<$Res> extends _$BooksStateCopyWithImpl<$Res>
-    implements _$$_BooksFailureCopyWith<$Res> {
-  __$$_BooksFailureCopyWithImpl(
-      _$_BooksFailure _value, $Res Function(_$_BooksFailure) _then)
-      : super(_value, (v) => _then(v as _$_BooksFailure));
+class __$$BooksFailureImplCopyWithImpl<$Res>
+    extends _$BooksStateCopyWithImpl<$Res, _$BooksFailureImpl>
+    implements _$$BooksFailureImplCopyWith<$Res> {
+  __$$BooksFailureImplCopyWithImpl(
+      _$BooksFailureImpl _value, $Res Function(_$BooksFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_BooksFailure get _value => super._value as _$_BooksFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_BooksFailure(
-      e == freezed
+    return _then(_$BooksFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -364,8 +366,8 @@ class __$$_BooksFailureCopyWithImpl<$Res> extends _$BooksStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BooksFailure implements _BooksFailure {
-  const _$_BooksFailure(this.e);
+class _$BooksFailureImpl implements _BooksFailure {
+  const _$BooksFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -376,10 +378,10 @@ class _$_BooksFailure implements _BooksFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BooksFailure &&
+            other is _$BooksFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -389,8 +391,9 @@ class _$_BooksFailure implements _BooksFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_BooksFailureCopyWith<_$_BooksFailure> get copyWith =>
-      __$$_BooksFailureCopyWithImpl<_$_BooksFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$BooksFailureImplCopyWith<_$BooksFailureImpl> get copyWith =>
+      __$$BooksFailureImplCopyWithImpl<_$BooksFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -405,9 +408,9 @@ class _$_BooksFailure implements _BooksFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<BookDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<BookDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
   }
@@ -439,9 +442,9 @@ class _$_BooksFailure implements _BooksFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_BooksLoading value)? loading,
-    TResult Function(_BooksSuccess value)? success,
-    TResult Function(_BooksFailure value)? failure,
+    TResult? Function(_BooksLoading value)? loading,
+    TResult? Function(_BooksSuccess value)? success,
+    TResult? Function(_BooksFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -462,10 +465,10 @@ class _$_BooksFailure implements _BooksFailure {
 }
 
 abstract class _BooksFailure implements BooksState {
-  const factory _BooksFailure(final dynamic e) = _$_BooksFailure;
+  const factory _BooksFailure(final dynamic e) = _$BooksFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_BooksFailureCopyWith<_$_BooksFailure> get copyWith =>
+  _$$BooksFailureImplCopyWith<_$BooksFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

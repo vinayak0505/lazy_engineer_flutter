@@ -85,7 +85,7 @@ class BookDescriptionScreen extends StatelessWidget {
                               '₹ ${data?.price}',
                               style: theme.textTheme.bodyMedium,
                             ),
-                          )
+                          ),
                         ],
                       ),
                   ],

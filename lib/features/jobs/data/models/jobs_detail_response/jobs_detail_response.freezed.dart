@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'jobs_detail_response.dart';
 
@@ -12,7 +12,7 @@ part of 'jobs_detail_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 JobsDetailResponse _$JobsDetailResponseFromJson(Map<String, dynamic> json) {
   return _JobsDetailResponse.fromJson(json);
@@ -50,7 +50,8 @@ mixin _$JobsDetailResponse {
 abstract class $JobsDetailResponseCopyWith<$Res> {
   factory $JobsDetailResponseCopyWith(
           JobsDetailResponse value, $Res Function(JobsDetailResponse) then) =
-      _$JobsDetailResponseCopyWithImpl<$Res>;
+      _$JobsDetailResponseCopyWithImpl<$Res, JobsDetailResponse>;
+  @useResult
   $Res call(
       {String title,
       String jobProfile,
@@ -75,130 +76,134 @@ abstract class $JobsDetailResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$JobsDetailResponseCopyWithImpl<$Res>
+class _$JobsDetailResponseCopyWithImpl<$Res, $Val extends JobsDetailResponse>
     implements $JobsDetailResponseCopyWith<$Res> {
   _$JobsDetailResponseCopyWithImpl(this._value, this._then);
 
-  final JobsDetailResponse _value;
   // ignore: unused_field
-  final $Res Function(JobsDetailResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? jobProfile = freezed,
-    Object? company = freezed,
+    Object? title = null,
+    Object? jobProfile = null,
+    Object? company = null,
     Object? link = freezed,
-    Object? aboutCompany = freezed,
-    Object? location = freezed,
+    Object? aboutCompany = null,
+    Object? location = null,
     Object? jobType = freezed,
-    Object? experienceLevel = freezed,
+    Object? experienceLevel = null,
     Object? datePosted = freezed,
     Object? applicants = freezed,
     Object? isActivelyRecruiting = freezed,
     Object? payRange = freezed,
-    Object? skillsNeeded = freezed,
+    Object? skillsNeeded = null,
     Object? exceptedSalary = freezed,
     Object? noOfEmployees = freezed,
     Object? noOfFollowers = freezed,
-    Object? companyImages = freezed,
-    Object? rating = freezed,
+    Object? companyImages = null,
+    Object? rating = null,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      jobProfile: jobProfile == freezed
+      jobProfile: null == jobProfile
           ? _value.jobProfile
           : jobProfile // ignore: cast_nullable_to_non_nullable
               as String,
-      company: company == freezed
+      company: null == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String,
-      link: link == freezed
+      link: freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      aboutCompany: aboutCompany == freezed
+      aboutCompany: null == aboutCompany
           ? _value.aboutCompany
           : aboutCompany // ignore: cast_nullable_to_non_nullable
               as String,
-      location: location == freezed
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String,
-      jobType: jobType == freezed
+      jobType: freezed == jobType
           ? _value.jobType
           : jobType // ignore: cast_nullable_to_non_nullable
               as String?,
-      experienceLevel: experienceLevel == freezed
+      experienceLevel: null == experienceLevel
           ? _value.experienceLevel
           : experienceLevel // ignore: cast_nullable_to_non_nullable
               as String,
-      datePosted: datePosted == freezed
+      datePosted: freezed == datePosted
           ? _value.datePosted
           : datePosted // ignore: cast_nullable_to_non_nullable
               as String?,
-      applicants: applicants == freezed
+      applicants: freezed == applicants
           ? _value.applicants
           : applicants // ignore: cast_nullable_to_non_nullable
               as int?,
-      isActivelyRecruiting: isActivelyRecruiting == freezed
+      isActivelyRecruiting: freezed == isActivelyRecruiting
           ? _value.isActivelyRecruiting
           : isActivelyRecruiting // ignore: cast_nullable_to_non_nullable
               as bool?,
-      payRange: payRange == freezed
+      payRange: freezed == payRange
           ? _value.payRange
           : payRange // ignore: cast_nullable_to_non_nullable
               as PayRange?,
-      skillsNeeded: skillsNeeded == freezed
+      skillsNeeded: null == skillsNeeded
           ? _value.skillsNeeded
           : skillsNeeded // ignore: cast_nullable_to_non_nullable
               as String,
-      exceptedSalary: exceptedSalary == freezed
+      exceptedSalary: freezed == exceptedSalary
           ? _value.exceptedSalary
           : exceptedSalary // ignore: cast_nullable_to_non_nullable
               as int?,
-      noOfEmployees: noOfEmployees == freezed
+      noOfEmployees: freezed == noOfEmployees
           ? _value.noOfEmployees
           : noOfEmployees // ignore: cast_nullable_to_non_nullable
               as int?,
-      noOfFollowers: noOfFollowers == freezed
+      noOfFollowers: freezed == noOfFollowers
           ? _value.noOfFollowers
           : noOfFollowers // ignore: cast_nullable_to_non_nullable
               as int?,
-      companyImages: companyImages == freezed
+      companyImages: null == companyImages
           ? _value.companyImages
           : companyImages // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
+      rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $PayRangeCopyWith<$Res>? get payRange {
     if (_value.payRange == null) {
       return null;
     }
 
     return $PayRangeCopyWith<$Res>(_value.payRange!, (value) {
-      return _then(_value.copyWith(payRange: value));
+      return _then(_value.copyWith(payRange: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_JobsDetailResponseCopyWith<$Res>
+abstract class _$$JobsDetailResponseImplCopyWith<$Res>
     implements $JobsDetailResponseCopyWith<$Res> {
-  factory _$$_JobsDetailResponseCopyWith(_$_JobsDetailResponse value,
-          $Res Function(_$_JobsDetailResponse) then) =
-      __$$_JobsDetailResponseCopyWithImpl<$Res>;
+  factory _$$JobsDetailResponseImplCopyWith(_$JobsDetailResponseImpl value,
+          $Res Function(_$JobsDetailResponseImpl) then) =
+      __$$JobsDetailResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       String jobProfile,
@@ -224,107 +229,105 @@ abstract class _$$_JobsDetailResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_JobsDetailResponseCopyWithImpl<$Res>
-    extends _$JobsDetailResponseCopyWithImpl<$Res>
-    implements _$$_JobsDetailResponseCopyWith<$Res> {
-  __$$_JobsDetailResponseCopyWithImpl(
-      _$_JobsDetailResponse _value, $Res Function(_$_JobsDetailResponse) _then)
-      : super(_value, (v) => _then(v as _$_JobsDetailResponse));
+class __$$JobsDetailResponseImplCopyWithImpl<$Res>
+    extends _$JobsDetailResponseCopyWithImpl<$Res, _$JobsDetailResponseImpl>
+    implements _$$JobsDetailResponseImplCopyWith<$Res> {
+  __$$JobsDetailResponseImplCopyWithImpl(_$JobsDetailResponseImpl _value,
+      $Res Function(_$JobsDetailResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_JobsDetailResponse get _value => super._value as _$_JobsDetailResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? jobProfile = freezed,
-    Object? company = freezed,
+    Object? title = null,
+    Object? jobProfile = null,
+    Object? company = null,
     Object? link = freezed,
-    Object? aboutCompany = freezed,
-    Object? location = freezed,
+    Object? aboutCompany = null,
+    Object? location = null,
     Object? jobType = freezed,
-    Object? experienceLevel = freezed,
+    Object? experienceLevel = null,
     Object? datePosted = freezed,
     Object? applicants = freezed,
     Object? isActivelyRecruiting = freezed,
     Object? payRange = freezed,
-    Object? skillsNeeded = freezed,
+    Object? skillsNeeded = null,
     Object? exceptedSalary = freezed,
     Object? noOfEmployees = freezed,
     Object? noOfFollowers = freezed,
-    Object? companyImages = freezed,
-    Object? rating = freezed,
+    Object? companyImages = null,
+    Object? rating = null,
   }) {
-    return _then(_$_JobsDetailResponse(
-      title == freezed
+    return _then(_$JobsDetailResponseImpl(
+      null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      jobProfile == freezed
+      null == jobProfile
           ? _value.jobProfile
           : jobProfile // ignore: cast_nullable_to_non_nullable
               as String,
-      company == freezed
+      null == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String,
-      link == freezed
+      freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      aboutCompany == freezed
+      null == aboutCompany
           ? _value.aboutCompany
           : aboutCompany // ignore: cast_nullable_to_non_nullable
               as String,
-      location == freezed
+      null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String,
-      jobType == freezed
+      freezed == jobType
           ? _value.jobType
           : jobType // ignore: cast_nullable_to_non_nullable
               as String?,
-      experienceLevel == freezed
+      null == experienceLevel
           ? _value.experienceLevel
           : experienceLevel // ignore: cast_nullable_to_non_nullable
               as String,
-      datePosted == freezed
+      freezed == datePosted
           ? _value.datePosted
           : datePosted // ignore: cast_nullable_to_non_nullable
               as String?,
-      applicants == freezed
+      freezed == applicants
           ? _value.applicants
           : applicants // ignore: cast_nullable_to_non_nullable
               as int?,
-      isActivelyRecruiting == freezed
+      freezed == isActivelyRecruiting
           ? _value.isActivelyRecruiting
           : isActivelyRecruiting // ignore: cast_nullable_to_non_nullable
               as bool?,
-      payRange == freezed
+      freezed == payRange
           ? _value.payRange
           : payRange // ignore: cast_nullable_to_non_nullable
               as PayRange?,
-      skillsNeeded == freezed
+      null == skillsNeeded
           ? _value.skillsNeeded
           : skillsNeeded // ignore: cast_nullable_to_non_nullable
               as String,
-      exceptedSalary == freezed
+      freezed == exceptedSalary
           ? _value.exceptedSalary
           : exceptedSalary // ignore: cast_nullable_to_non_nullable
               as int?,
-      noOfEmployees == freezed
+      freezed == noOfEmployees
           ? _value.noOfEmployees
           : noOfEmployees // ignore: cast_nullable_to_non_nullable
               as int?,
-      noOfFollowers == freezed
+      freezed == noOfFollowers
           ? _value.noOfFollowers
           : noOfFollowers // ignore: cast_nullable_to_non_nullable
               as int?,
-      companyImages == freezed
+      null == companyImages
           ? _value._companyImages
           : companyImages // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating == freezed
+      null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
@@ -334,8 +337,8 @@ class __$$_JobsDetailResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_JobsDetailResponse implements _JobsDetailResponse {
-  const _$_JobsDetailResponse(
+class _$JobsDetailResponseImpl implements _JobsDetailResponse {
+  const _$JobsDetailResponseImpl(
       this.title,
       this.jobProfile,
       this.company,
@@ -356,8 +359,8 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
       this.rating)
       : _companyImages = companyImages;
 
-  factory _$_JobsDetailResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_JobsDetailResponseFromJson(json);
+  factory _$JobsDetailResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$JobsDetailResponseImplFromJson(json);
 
   @override
   final String title;
@@ -395,6 +398,7 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
   final List<String> _companyImages;
   @override
   List<String> get companyImages {
+    if (_companyImages is EqualUnmodifiableListView) return _companyImages;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_companyImages);
   }
@@ -408,73 +412,76 @@ class _$_JobsDetailResponse implements _JobsDetailResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_JobsDetailResponse &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality()
-                .equals(other.jobProfile, jobProfile) &&
-            const DeepCollectionEquality().equals(other.company, company) &&
+            other is _$JobsDetailResponseImpl &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.jobProfile, jobProfile) ||
+                other.jobProfile == jobProfile) &&
+            (identical(other.company, company) || other.company == company) &&
             const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality()
-                .equals(other.aboutCompany, aboutCompany) &&
-            const DeepCollectionEquality().equals(other.location, location) &&
-            const DeepCollectionEquality().equals(other.jobType, jobType) &&
-            const DeepCollectionEquality()
-                .equals(other.experienceLevel, experienceLevel) &&
-            const DeepCollectionEquality()
-                .equals(other.datePosted, datePosted) &&
-            const DeepCollectionEquality()
-                .equals(other.applicants, applicants) &&
-            const DeepCollectionEquality()
-                .equals(other.isActivelyRecruiting, isActivelyRecruiting) &&
-            const DeepCollectionEquality().equals(other.payRange, payRange) &&
-            const DeepCollectionEquality()
-                .equals(other.skillsNeeded, skillsNeeded) &&
-            const DeepCollectionEquality()
-                .equals(other.exceptedSalary, exceptedSalary) &&
-            const DeepCollectionEquality()
-                .equals(other.noOfEmployees, noOfEmployees) &&
-            const DeepCollectionEquality()
-                .equals(other.noOfFollowers, noOfFollowers) &&
+            (identical(other.aboutCompany, aboutCompany) ||
+                other.aboutCompany == aboutCompany) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
+            (identical(other.jobType, jobType) || other.jobType == jobType) &&
+            (identical(other.experienceLevel, experienceLevel) ||
+                other.experienceLevel == experienceLevel) &&
+            (identical(other.datePosted, datePosted) ||
+                other.datePosted == datePosted) &&
+            (identical(other.applicants, applicants) ||
+                other.applicants == applicants) &&
+            (identical(other.isActivelyRecruiting, isActivelyRecruiting) ||
+                other.isActivelyRecruiting == isActivelyRecruiting) &&
+            (identical(other.payRange, payRange) ||
+                other.payRange == payRange) &&
+            (identical(other.skillsNeeded, skillsNeeded) ||
+                other.skillsNeeded == skillsNeeded) &&
+            (identical(other.exceptedSalary, exceptedSalary) ||
+                other.exceptedSalary == exceptedSalary) &&
+            (identical(other.noOfEmployees, noOfEmployees) ||
+                other.noOfEmployees == noOfEmployees) &&
+            (identical(other.noOfFollowers, noOfFollowers) ||
+                other.noOfFollowers == noOfFollowers) &&
             const DeepCollectionEquality()
                 .equals(other._companyImages, _companyImages) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            (identical(other.rating, rating) || other.rating == rating));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(jobProfile),
-      const DeepCollectionEquality().hash(company),
+      title,
+      jobProfile,
+      company,
       const DeepCollectionEquality().hash(link),
-      const DeepCollectionEquality().hash(aboutCompany),
-      const DeepCollectionEquality().hash(location),
-      const DeepCollectionEquality().hash(jobType),
-      const DeepCollectionEquality().hash(experienceLevel),
-      const DeepCollectionEquality().hash(datePosted),
-      const DeepCollectionEquality().hash(applicants),
-      const DeepCollectionEquality().hash(isActivelyRecruiting),
-      const DeepCollectionEquality().hash(payRange),
-      const DeepCollectionEquality().hash(skillsNeeded),
-      const DeepCollectionEquality().hash(exceptedSalary),
-      const DeepCollectionEquality().hash(noOfEmployees),
-      const DeepCollectionEquality().hash(noOfFollowers),
+      aboutCompany,
+      location,
+      jobType,
+      experienceLevel,
+      datePosted,
+      applicants,
+      isActivelyRecruiting,
+      payRange,
+      skillsNeeded,
+      exceptedSalary,
+      noOfEmployees,
+      noOfFollowers,
       const DeepCollectionEquality().hash(_companyImages),
-      const DeepCollectionEquality().hash(rating));
+      rating);
 
   @JsonKey(ignore: true)
   @override
-  _$$_JobsDetailResponseCopyWith<_$_JobsDetailResponse> get copyWith =>
-      __$$_JobsDetailResponseCopyWithImpl<_$_JobsDetailResponse>(
+  @pragma('vm:prefer-inline')
+  _$$JobsDetailResponseImplCopyWith<_$JobsDetailResponseImpl> get copyWith =>
+      __$$JobsDetailResponseImplCopyWithImpl<_$JobsDetailResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_JobsDetailResponseToJson(
+    return _$$JobsDetailResponseImplToJson(
       this,
     );
   }
@@ -499,10 +506,10 @@ abstract class _JobsDetailResponse implements JobsDetailResponse {
       final int? noOfEmployees,
       final int? noOfFollowers,
       final List<String> companyImages,
-      final double rating) = _$_JobsDetailResponse;
+      final double rating) = _$JobsDetailResponseImpl;
 
   factory _JobsDetailResponse.fromJson(Map<String, dynamic> json) =
-      _$_JobsDetailResponse.fromJson;
+      _$JobsDetailResponseImpl.fromJson;
 
   @override
   String get title;
@@ -542,7 +549,7 @@ abstract class _JobsDetailResponse implements JobsDetailResponse {
   double get rating;
   @override
   @JsonKey(ignore: true)
-  _$$_JobsDetailResponseCopyWith<_$_JobsDetailResponse> get copyWith =>
+  _$$JobsDetailResponseImplCopyWith<_$JobsDetailResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -564,66 +571,71 @@ mixin _$PayRange {
 /// @nodoc
 abstract class $PayRangeCopyWith<$Res> {
   factory $PayRangeCopyWith(PayRange value, $Res Function(PayRange) then) =
-      _$PayRangeCopyWithImpl<$Res>;
+      _$PayRangeCopyWithImpl<$Res, PayRange>;
+  @useResult
   $Res call({int? high, int? low});
 }
 
 /// @nodoc
-class _$PayRangeCopyWithImpl<$Res> implements $PayRangeCopyWith<$Res> {
+class _$PayRangeCopyWithImpl<$Res, $Val extends PayRange>
+    implements $PayRangeCopyWith<$Res> {
   _$PayRangeCopyWithImpl(this._value, this._then);
 
-  final PayRange _value;
   // ignore: unused_field
-  final $Res Function(PayRange) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? high = freezed,
     Object? low = freezed,
   }) {
     return _then(_value.copyWith(
-      high: high == freezed
+      high: freezed == high
           ? _value.high
           : high // ignore: cast_nullable_to_non_nullable
               as int?,
-      low: low == freezed
+      low: freezed == low
           ? _value.low
           : low // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_PayRangeCopyWith<$Res> implements $PayRangeCopyWith<$Res> {
-  factory _$$_PayRangeCopyWith(
-          _$_PayRange value, $Res Function(_$_PayRange) then) =
-      __$$_PayRangeCopyWithImpl<$Res>;
+abstract class _$$PayRangeImplCopyWith<$Res>
+    implements $PayRangeCopyWith<$Res> {
+  factory _$$PayRangeImplCopyWith(
+          _$PayRangeImpl value, $Res Function(_$PayRangeImpl) then) =
+      __$$PayRangeImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int? high, int? low});
 }
 
 /// @nodoc
-class __$$_PayRangeCopyWithImpl<$Res> extends _$PayRangeCopyWithImpl<$Res>
-    implements _$$_PayRangeCopyWith<$Res> {
-  __$$_PayRangeCopyWithImpl(
-      _$_PayRange _value, $Res Function(_$_PayRange) _then)
-      : super(_value, (v) => _then(v as _$_PayRange));
+class __$$PayRangeImplCopyWithImpl<$Res>
+    extends _$PayRangeCopyWithImpl<$Res, _$PayRangeImpl>
+    implements _$$PayRangeImplCopyWith<$Res> {
+  __$$PayRangeImplCopyWithImpl(
+      _$PayRangeImpl _value, $Res Function(_$PayRangeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_PayRange get _value => super._value as _$_PayRange;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? high = freezed,
     Object? low = freezed,
   }) {
-    return _then(_$_PayRange(
-      high: high == freezed
+    return _then(_$PayRangeImpl(
+      high: freezed == high
           ? _value.high
           : high // ignore: cast_nullable_to_non_nullable
               as int?,
-      low: low == freezed
+      low: freezed == low
           ? _value.low
           : low // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -633,11 +645,11 @@ class __$$_PayRangeCopyWithImpl<$Res> extends _$PayRangeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PayRange implements _PayRange {
-  const _$_PayRange({this.high, this.low});
+class _$PayRangeImpl implements _PayRange {
+  const _$PayRangeImpl({this.high, this.low});
 
-  factory _$_PayRange.fromJson(Map<String, dynamic> json) =>
-      _$$_PayRangeFromJson(json);
+  factory _$PayRangeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PayRangeImplFromJson(json);
 
   @override
   final int? high;
@@ -650,38 +662,37 @@ class _$_PayRange implements _PayRange {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PayRange &&
-            const DeepCollectionEquality().equals(other.high, high) &&
-            const DeepCollectionEquality().equals(other.low, low));
+            other is _$PayRangeImpl &&
+            (identical(other.high, high) || other.high == high) &&
+            (identical(other.low, low) || other.low == low));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(high),
-      const DeepCollectionEquality().hash(low));
+  int get hashCode => Object.hash(runtimeType, high, low);
 
   @JsonKey(ignore: true)
   @override
-  _$$_PayRangeCopyWith<_$_PayRange> get copyWith =>
-      __$$_PayRangeCopyWithImpl<_$_PayRange>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$PayRangeImplCopyWith<_$PayRangeImpl> get copyWith =>
+      __$$PayRangeImplCopyWithImpl<_$PayRangeImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PayRangeToJson(
+    return _$$PayRangeImplToJson(
       this,
     );
   }
 }
 
 abstract class _PayRange implements PayRange {
-  const factory _PayRange({final int? high, final int? low}) = _$_PayRange;
+  const factory _PayRange({final int? high, final int? low}) = _$PayRangeImpl;
 
-  factory _PayRange.fromJson(Map<String, dynamic> json) = _$_PayRange.fromJson;
+  factory _PayRange.fromJson(Map<String, dynamic> json) =
+      _$PayRangeImpl.fromJson;
 
   @override
   int? get high;
@@ -689,6 +700,6 @@ abstract class _PayRange implements PayRange {
   int? get low;
   @override
   @JsonKey(ignore: true)
-  _$$_PayRangeCopyWith<_$_PayRange> get copyWith =>
+  _$$PayRangeImplCopyWith<_$PayRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'files_detail_response.dart';
 
@@ -12,7 +12,7 @@ part of 'files_detail_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FilesDetailResponse _$FilesDetailResponseFromJson(Map<String, dynamic> json) {
   return _FilesDetailResponse.fromJson(json);
@@ -39,7 +39,8 @@ mixin _$FilesDetailResponse {
 abstract class $FilesDetailResponseCopyWith<$Res> {
   factory $FilesDetailResponseCopyWith(
           FilesDetailResponse value, $Res Function(FilesDetailResponse) then) =
-      _$FilesDetailResponseCopyWithImpl<$Res>;
+      _$FilesDetailResponseCopyWithImpl<$Res, FilesDetailResponse>;
+  @useResult
   $Res call(
       {String title,
       dynamic link,
@@ -52,69 +53,72 @@ abstract class $FilesDetailResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FilesDetailResponseCopyWithImpl<$Res>
+class _$FilesDetailResponseCopyWithImpl<$Res, $Val extends FilesDetailResponse>
     implements $FilesDetailResponseCopyWith<$Res> {
   _$FilesDetailResponseCopyWithImpl(this._value, this._then);
 
-  final FilesDetailResponse _value;
   // ignore: unused_field
-  final $Res Function(FilesDetailResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
+    Object? title = null,
     Object? link = freezed,
     Object? about = freezed,
     Object? college = freezed,
-    Object? semester = freezed,
-    Object? subject = freezed,
-    Object? tags = freezed,
-    Object? rating = freezed,
+    Object? semester = null,
+    Object? subject = null,
+    Object? tags = null,
+    Object? rating = null,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      link: link == freezed
+      link: freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      about: about == freezed
+      about: freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      college: college == freezed
+      college: freezed == college
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
+      semester: null == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as int,
-      subject: subject == freezed
+      subject: null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String,
-      tags: tags == freezed
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating: rating == freezed
+      rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_FilesDetailResponseCopyWith<$Res>
+abstract class _$$FilesDetailResponseImplCopyWith<$Res>
     implements $FilesDetailResponseCopyWith<$Res> {
-  factory _$$_FilesDetailResponseCopyWith(_$_FilesDetailResponse value,
-          $Res Function(_$_FilesDetailResponse) then) =
-      __$$_FilesDetailResponseCopyWithImpl<$Res>;
+  factory _$$FilesDetailResponseImplCopyWith(_$FilesDetailResponseImpl value,
+          $Res Function(_$FilesDetailResponseImpl) then) =
+      __$$FilesDetailResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       dynamic link,
@@ -127,57 +131,55 @@ abstract class _$$_FilesDetailResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FilesDetailResponseCopyWithImpl<$Res>
-    extends _$FilesDetailResponseCopyWithImpl<$Res>
-    implements _$$_FilesDetailResponseCopyWith<$Res> {
-  __$$_FilesDetailResponseCopyWithImpl(_$_FilesDetailResponse _value,
-      $Res Function(_$_FilesDetailResponse) _then)
-      : super(_value, (v) => _then(v as _$_FilesDetailResponse));
+class __$$FilesDetailResponseImplCopyWithImpl<$Res>
+    extends _$FilesDetailResponseCopyWithImpl<$Res, _$FilesDetailResponseImpl>
+    implements _$$FilesDetailResponseImplCopyWith<$Res> {
+  __$$FilesDetailResponseImplCopyWithImpl(_$FilesDetailResponseImpl _value,
+      $Res Function(_$FilesDetailResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_FilesDetailResponse get _value => super._value as _$_FilesDetailResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
+    Object? title = null,
     Object? link = freezed,
     Object? about = freezed,
     Object? college = freezed,
-    Object? semester = freezed,
-    Object? subject = freezed,
-    Object? tags = freezed,
-    Object? rating = freezed,
+    Object? semester = null,
+    Object? subject = null,
+    Object? tags = null,
+    Object? rating = null,
   }) {
-    return _then(_$_FilesDetailResponse(
-      title == freezed
+    return _then(_$FilesDetailResponseImpl(
+      null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      link == freezed
+      freezed == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      about == freezed
+      freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      college == freezed
+      freezed == college
           ? _value.college
           : college // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester == freezed
+      null == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as int,
-      subject == freezed
+      null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String,
-      tags == freezed
+      null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      rating == freezed
+      null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
@@ -187,13 +189,20 @@ class __$$_FilesDetailResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FilesDetailResponse implements _FilesDetailResponse {
-  const _$_FilesDetailResponse(this.title, this.link, this.about, this.college,
-      this.semester, this.subject, final List<String> tags, this.rating)
+class _$FilesDetailResponseImpl implements _FilesDetailResponse {
+  const _$FilesDetailResponseImpl(
+      this.title,
+      this.link,
+      this.about,
+      this.college,
+      this.semester,
+      this.subject,
+      final List<String> tags,
+      this.rating)
       : _tags = tags;
 
-  factory _$_FilesDetailResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_FilesDetailResponseFromJson(json);
+  factory _$FilesDetailResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FilesDetailResponseImplFromJson(json);
 
   @override
   final String title;
@@ -210,6 +219,7 @@ class _$_FilesDetailResponse implements _FilesDetailResponse {
   final List<String> _tags;
   @override
   List<String> get tags {
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tags);
   }
@@ -223,42 +233,44 @@ class _$_FilesDetailResponse implements _FilesDetailResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FilesDetailResponse &&
-            const DeepCollectionEquality().equals(other.title, title) &&
+            other is _$FilesDetailResponseImpl &&
+            (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.college, college) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
+            (identical(other.about, about) || other.about == about) &&
+            (identical(other.college, college) || other.college == college) &&
+            (identical(other.semester, semester) ||
+                other.semester == semester) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            (identical(other.rating, rating) || other.rating == rating));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(title),
+      title,
       const DeepCollectionEquality().hash(link),
-      const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(college),
-      const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(subject),
+      about,
+      college,
+      semester,
+      subject,
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(rating));
+      rating);
 
   @JsonKey(ignore: true)
   @override
-  _$$_FilesDetailResponseCopyWith<_$_FilesDetailResponse> get copyWith =>
-      __$$_FilesDetailResponseCopyWithImpl<_$_FilesDetailResponse>(
+  @pragma('vm:prefer-inline')
+  _$$FilesDetailResponseImplCopyWith<_$FilesDetailResponseImpl> get copyWith =>
+      __$$FilesDetailResponseImplCopyWithImpl<_$FilesDetailResponseImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FilesDetailResponseToJson(
+    return _$$FilesDetailResponseImplToJson(
       this,
     );
   }
@@ -273,10 +285,10 @@ abstract class _FilesDetailResponse implements FilesDetailResponse {
       final int semester,
       final String subject,
       final List<String> tags,
-      final double rating) = _$_FilesDetailResponse;
+      final double rating) = _$FilesDetailResponseImpl;
 
   factory _FilesDetailResponse.fromJson(Map<String, dynamic> json) =
-      _$_FilesDetailResponse.fromJson;
+      _$FilesDetailResponseImpl.fromJson;
 
   @override
   String get title;
@@ -296,6 +308,6 @@ abstract class _FilesDetailResponse implements FilesDetailResponse {
   double get rating;
   @override
   @JsonKey(ignore: true)
-  _$$_FilesDetailResponseCopyWith<_$_FilesDetailResponse> get copyWith =>
+  _$$FilesDetailResponseImplCopyWith<_$FilesDetailResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

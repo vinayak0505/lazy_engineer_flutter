@@ -130,7 +130,7 @@ class NotesDetailHeader extends StatelessWidget {
                               Text(
                                 '${addOrdinals(int.parse(semesterValue))} Semester',
                                 style: theme.textTheme.titleMedium,
-                              )
+                              ),
                             ],
                           ),
                           const TableRow(
@@ -149,9 +149,9 @@ class NotesDetailHeader extends StatelessWidget {
                               Text(
                                 'Unit - $unitValue',
                                 style: theme.textTheme.titleMedium,
-                              )
+                              ),
                             ],
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(height: 16),
@@ -170,10 +170,10 @@ class NotesDetailHeader extends StatelessWidget {
                                 ? 'Note File is Downloaded'
                                 : 'Notes File is not Downloaded',
                           ),
-                        )
+                        ),
                     ],
                   ),
-                )
+                ),
               ],
             );
           },

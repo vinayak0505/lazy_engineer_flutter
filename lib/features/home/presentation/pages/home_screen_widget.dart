@@ -42,7 +42,8 @@ class HomeScreenWidget extends StatelessWidget {
         create: (context) => FilterCubit(),
         child: BlocBuilder<FilterCubit, FilterState>(
           builder: (context, state) {
-            final List<MultioptionModel> newList = [];
+            // ignore: prefer_final_locals
+            List<MultioptionModel> newList = [];
             if (multiOptionFilter != null) {
               for (int i = 0; i < multiOptionFilter!.length; i++) {
                 newList.add(
@@ -138,7 +139,7 @@ class HomeScreenWidget extends StatelessWidget {
                       ),
                       child: Column(children: body),
                     ),
-                  )
+                  ),
                 ],
               ),
             );

@@ -18,12 +18,12 @@ class AuthScreen extends StatelessWidget {
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: context.read<AuthCubit>().controller,
-        children: [
-          Stack(children: const [
+        children: const [
+          Stack(children: [
             AuthBackground(),
             LoginScreen(),
           ],),
-          Stack(alignment: AlignmentDirectional.bottomCenter, children: const [
+          Stack(alignment: AlignmentDirectional.bottomCenter, children: [
             AuthBackground(),
             RegisterScreen(),
           ],),

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'book_database_model.dart';
 
@@ -12,7 +12,7 @@ part of 'book_database_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 BookDatabaseModel _$BookDatabaseModelFromJson(Map<String, dynamic> json) {
   return _BookDatabaseModel.fromJson(json);
@@ -40,7 +40,8 @@ mixin _$BookDatabaseModel {
 abstract class $BookDatabaseModelCopyWith<$Res> {
   factory $BookDatabaseModelCopyWith(
           BookDatabaseModel value, $Res Function(BookDatabaseModel) then) =
-      _$BookDatabaseModelCopyWithImpl<$Res>;
+      _$BookDatabaseModelCopyWithImpl<$Res, BookDatabaseModel>;
+  @useResult
   $Res call(
       {int? id,
       String title,
@@ -54,74 +55,77 @@ abstract class $BookDatabaseModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BookDatabaseModelCopyWithImpl<$Res>
+class _$BookDatabaseModelCopyWithImpl<$Res, $Val extends BookDatabaseModel>
     implements $BookDatabaseModelCopyWith<$Res> {
   _$BookDatabaseModelCopyWithImpl(this._value, this._then);
 
-  final BookDatabaseModel _value;
   // ignore: unused_field
-  final $Res Function(BookDatabaseModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? title = freezed,
-    Object? subject = freezed,
+    Object? title = null,
+    Object? subject = null,
     Object? about = freezed,
-    Object? pages = freezed,
+    Object? pages = null,
     Object? semester = freezed,
-    Object? bookEdition = freezed,
+    Object? bookEdition = null,
     Object? price = freezed,
-    Object? rating = freezed,
+    Object? rating = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      subject: subject == freezed
+      subject: null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String,
-      about: about == freezed
+      about: freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      pages: pages == freezed
+      pages: null == pages
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      semester: semester == freezed
+      semester: freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as int?,
-      bookEdition: bookEdition == freezed
+      bookEdition: null == bookEdition
           ? _value.bookEdition
           : bookEdition // ignore: cast_nullable_to_non_nullable
               as int,
-      price: price == freezed
+      price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int?,
-      rating: rating == freezed
+      rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_BookDatabaseModelCopyWith<$Res>
+abstract class _$$BookDatabaseModelImplCopyWith<$Res>
     implements $BookDatabaseModelCopyWith<$Res> {
-  factory _$$_BookDatabaseModelCopyWith(_$_BookDatabaseModel value,
-          $Res Function(_$_BookDatabaseModel) then) =
-      __$$_BookDatabaseModelCopyWithImpl<$Res>;
+  factory _$$BookDatabaseModelImplCopyWith(_$BookDatabaseModelImpl value,
+          $Res Function(_$BookDatabaseModelImpl) then) =
+      __$$BookDatabaseModelImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int? id,
       String title,
@@ -135,62 +139,60 @@ abstract class _$$_BookDatabaseModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BookDatabaseModelCopyWithImpl<$Res>
-    extends _$BookDatabaseModelCopyWithImpl<$Res>
-    implements _$$_BookDatabaseModelCopyWith<$Res> {
-  __$$_BookDatabaseModelCopyWithImpl(
-      _$_BookDatabaseModel _value, $Res Function(_$_BookDatabaseModel) _then)
-      : super(_value, (v) => _then(v as _$_BookDatabaseModel));
+class __$$BookDatabaseModelImplCopyWithImpl<$Res>
+    extends _$BookDatabaseModelCopyWithImpl<$Res, _$BookDatabaseModelImpl>
+    implements _$$BookDatabaseModelImplCopyWith<$Res> {
+  __$$BookDatabaseModelImplCopyWithImpl(_$BookDatabaseModelImpl _value,
+      $Res Function(_$BookDatabaseModelImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_BookDatabaseModel get _value => super._value as _$_BookDatabaseModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? title = freezed,
-    Object? subject = freezed,
+    Object? title = null,
+    Object? subject = null,
     Object? about = freezed,
-    Object? pages = freezed,
+    Object? pages = null,
     Object? semester = freezed,
-    Object? bookEdition = freezed,
+    Object? bookEdition = null,
     Object? price = freezed,
-    Object? rating = freezed,
+    Object? rating = null,
   }) {
-    return _then(_$_BookDatabaseModel(
-      id: id == freezed
+    return _then(_$BookDatabaseModelImpl(
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      subject: subject == freezed
+      subject: null == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String,
-      about: about == freezed
+      about: freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      pages: pages == freezed
+      pages: null == pages
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      semester: semester == freezed
+      semester: freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as int?,
-      bookEdition: bookEdition == freezed
+      bookEdition: null == bookEdition
           ? _value.bookEdition
           : bookEdition // ignore: cast_nullable_to_non_nullable
               as int,
-      price: price == freezed
+      price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as int?,
-      rating: rating == freezed
+      rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as int,
@@ -200,8 +202,8 @@ class __$$_BookDatabaseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BookDatabaseModel implements _BookDatabaseModel {
-  const _$_BookDatabaseModel(
+class _$BookDatabaseModelImpl implements _BookDatabaseModel {
+  const _$BookDatabaseModelImpl(
       {this.id,
       required this.title,
       required this.subject,
@@ -212,8 +214,8 @@ class _$_BookDatabaseModel implements _BookDatabaseModel {
       this.price,
       required this.rating});
 
-  factory _$_BookDatabaseModel.fromJson(Map<String, dynamic> json) =>
-      _$$_BookDatabaseModelFromJson(json);
+  factory _$BookDatabaseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BookDatabaseModelImplFromJson(json);
 
   @override
   final int? id;
@@ -240,45 +242,38 @@ class _$_BookDatabaseModel implements _BookDatabaseModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BookDatabaseModel &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.pages, pages) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality()
-                .equals(other.bookEdition, bookEdition) &&
-            const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            other is _$BookDatabaseModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.about, about) || other.about == about) &&
+            (identical(other.pages, pages) || other.pages == pages) &&
+            (identical(other.semester, semester) ||
+                other.semester == semester) &&
+            (identical(other.bookEdition, bookEdition) ||
+                other.bookEdition == bookEdition) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.rating, rating) || other.rating == rating));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(pages),
-      const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(bookEdition),
-      const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(rating));
+  int get hashCode => Object.hash(runtimeType, id, title, subject, about, pages,
+      semester, bookEdition, price, rating);
 
   @JsonKey(ignore: true)
   @override
-  _$$_BookDatabaseModelCopyWith<_$_BookDatabaseModel> get copyWith =>
-      __$$_BookDatabaseModelCopyWithImpl<_$_BookDatabaseModel>(
+  @pragma('vm:prefer-inline')
+  _$$BookDatabaseModelImplCopyWith<_$BookDatabaseModelImpl> get copyWith =>
+      __$$BookDatabaseModelImplCopyWithImpl<_$BookDatabaseModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BookDatabaseModelToJson(
+    return _$$BookDatabaseModelImplToJson(
       this,
     );
   }
@@ -294,10 +289,10 @@ abstract class _BookDatabaseModel implements BookDatabaseModel {
       final int? semester,
       required final int bookEdition,
       final int? price,
-      required final int rating}) = _$_BookDatabaseModel;
+      required final int rating}) = _$BookDatabaseModelImpl;
 
   factory _BookDatabaseModel.fromJson(Map<String, dynamic> json) =
-      _$_BookDatabaseModel.fromJson;
+      _$BookDatabaseModelImpl.fromJson;
 
   @override
   int? get id;
@@ -319,6 +314,6 @@ abstract class _BookDatabaseModel implements BookDatabaseModel {
   int get rating;
   @override
   @JsonKey(ignore: true)
-  _$$_BookDatabaseModelCopyWith<_$_BookDatabaseModel> get copyWith =>
+  _$$BookDatabaseModelImplCopyWith<_$BookDatabaseModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

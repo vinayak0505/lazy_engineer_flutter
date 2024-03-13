@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'user_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'user_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserState {
@@ -25,9 +25,9 @@ mixin _$UserState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(User data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(User data)? success,
+    TResult? Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$UserState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UserLoading value)? loading,
-    TResult Function(UserSuccess value)? success,
-    TResult Function(UserFailure value)? failure,
+    TResult? Function(UserLoading value)? loading,
+    TResult? Function(UserSuccess value)? success,
+    TResult? Function(UserFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,40 +65,40 @@ mixin _$UserState {
 /// @nodoc
 abstract class $UserStateCopyWith<$Res> {
   factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
-      _$UserStateCopyWithImpl<$Res>;
+      _$UserStateCopyWithImpl<$Res, UserState>;
 }
 
 /// @nodoc
-class _$UserStateCopyWithImpl<$Res> implements $UserStateCopyWith<$Res> {
+class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
+    implements $UserStateCopyWith<$Res> {
   _$UserStateCopyWithImpl(this._value, this._then);
 
-  final UserState _value;
   // ignore: unused_field
-  final $Res Function(UserState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$UserLoadingCopyWith<$Res> {
-  factory _$$UserLoadingCopyWith(
-          _$UserLoading value, $Res Function(_$UserLoading) then) =
-      __$$UserLoadingCopyWithImpl<$Res>;
+abstract class _$$UserLoadingImplCopyWith<$Res> {
+  factory _$$UserLoadingImplCopyWith(
+          _$UserLoadingImpl value, $Res Function(_$UserLoadingImpl) then) =
+      __$$UserLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserLoadingCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
-    implements _$$UserLoadingCopyWith<$Res> {
-  __$$UserLoadingCopyWithImpl(
-      _$UserLoading _value, $Res Function(_$UserLoading) _then)
-      : super(_value, (v) => _then(v as _$UserLoading));
-
-  @override
-  _$UserLoading get _value => super._value as _$UserLoading;
+class __$$UserLoadingImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserLoadingImpl>
+    implements _$$UserLoadingImplCopyWith<$Res> {
+  __$$UserLoadingImplCopyWithImpl(
+      _$UserLoadingImpl _value, $Res Function(_$UserLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$UserLoading implements UserLoading {
-  const _$UserLoading();
+class _$UserLoadingImpl implements UserLoading {
+  const _$UserLoadingImpl();
 
   @override
   String toString() {
@@ -106,9 +106,9 @@ class _$UserLoading implements UserLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserLoading);
+        (other.runtimeType == runtimeType && other is _$UserLoadingImpl);
   }
 
   @override
@@ -127,9 +127,9 @@ class _$UserLoading implements UserLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(User data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(User data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return loading?.call();
   }
@@ -161,9 +161,9 @@ class _$UserLoading implements UserLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UserLoading value)? loading,
-    TResult Function(UserSuccess value)? success,
-    TResult Function(UserFailure value)? failure,
+    TResult? Function(UserLoading value)? loading,
+    TResult? Function(UserSuccess value)? success,
+    TResult? Function(UserFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -184,35 +184,35 @@ class _$UserLoading implements UserLoading {
 }
 
 abstract class UserLoading implements UserState {
-  const factory UserLoading() = _$UserLoading;
+  const factory UserLoading() = _$UserLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$UserSuccessCopyWith<$Res> {
-  factory _$$UserSuccessCopyWith(
-          _$UserSuccess value, $Res Function(_$UserSuccess) then) =
-      __$$UserSuccessCopyWithImpl<$Res>;
+abstract class _$$UserSuccessImplCopyWith<$Res> {
+  factory _$$UserSuccessImplCopyWith(
+          _$UserSuccessImpl value, $Res Function(_$UserSuccessImpl) then) =
+      __$$UserSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({User data});
 
   $UserCopyWith<$Res> get data;
 }
 
 /// @nodoc
-class __$$UserSuccessCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
-    implements _$$UserSuccessCopyWith<$Res> {
-  __$$UserSuccessCopyWithImpl(
-      _$UserSuccess _value, $Res Function(_$UserSuccess) _then)
-      : super(_value, (v) => _then(v as _$UserSuccess));
+class __$$UserSuccessImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserSuccessImpl>
+    implements _$$UserSuccessImplCopyWith<$Res> {
+  __$$UserSuccessImplCopyWithImpl(
+      _$UserSuccessImpl _value, $Res Function(_$UserSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$UserSuccess get _value => super._value as _$UserSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$UserSuccess(
-      data == freezed
+    return _then(_$UserSuccessImpl(
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as User,
@@ -220,6 +220,7 @@ class __$$UserSuccessCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get data {
     return $UserCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
@@ -229,8 +230,8 @@ class __$$UserSuccessCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserSuccess implements UserSuccess {
-  const _$UserSuccess(this.data);
+class _$UserSuccessImpl implements UserSuccess {
+  const _$UserSuccessImpl(this.data);
 
   @override
   final User data;
@@ -241,21 +242,21 @@ class _$UserSuccess implements UserSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserSuccess &&
-            const DeepCollectionEquality().equals(other.data, data));
+            other is _$UserSuccessImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
-  _$$UserSuccessCopyWith<_$UserSuccess> get copyWith =>
-      __$$UserSuccessCopyWithImpl<_$UserSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UserSuccessImplCopyWith<_$UserSuccessImpl> get copyWith =>
+      __$$UserSuccessImplCopyWithImpl<_$UserSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -270,9 +271,9 @@ class _$UserSuccess implements UserSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(User data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(User data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return success?.call(data);
   }
@@ -304,9 +305,9 @@ class _$UserSuccess implements UserSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UserLoading value)? loading,
-    TResult Function(UserSuccess value)? success,
-    TResult Function(UserFailure value)? failure,
+    TResult? Function(UserLoading value)? loading,
+    TResult? Function(UserSuccess value)? success,
+    TResult? Function(UserFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -327,38 +328,38 @@ class _$UserSuccess implements UserSuccess {
 }
 
 abstract class UserSuccess implements UserState {
-  const factory UserSuccess(final User data) = _$UserSuccess;
+  const factory UserSuccess(final User data) = _$UserSuccessImpl;
 
   User get data;
   @JsonKey(ignore: true)
-  _$$UserSuccessCopyWith<_$UserSuccess> get copyWith =>
+  _$$UserSuccessImplCopyWith<_$UserSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserFailureCopyWith<$Res> {
-  factory _$$UserFailureCopyWith(
-          _$UserFailure value, $Res Function(_$UserFailure) then) =
-      __$$UserFailureCopyWithImpl<$Res>;
+abstract class _$$UserFailureImplCopyWith<$Res> {
+  factory _$$UserFailureImplCopyWith(
+          _$UserFailureImpl value, $Res Function(_$UserFailureImpl) then) =
+      __$$UserFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$UserFailureCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
-    implements _$$UserFailureCopyWith<$Res> {
-  __$$UserFailureCopyWithImpl(
-      _$UserFailure _value, $Res Function(_$UserFailure) _then)
-      : super(_value, (v) => _then(v as _$UserFailure));
+class __$$UserFailureImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserFailureImpl>
+    implements _$$UserFailureImplCopyWith<$Res> {
+  __$$UserFailureImplCopyWithImpl(
+      _$UserFailureImpl _value, $Res Function(_$UserFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$UserFailure get _value => super._value as _$UserFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$UserFailure(
-      e == freezed
+    return _then(_$UserFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -368,8 +369,8 @@ class __$$UserFailureCopyWithImpl<$Res> extends _$UserStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserFailure implements UserFailure {
-  const _$UserFailure(this.e);
+class _$UserFailureImpl implements UserFailure {
+  const _$UserFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -380,10 +381,10 @@ class _$UserFailure implements UserFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserFailure &&
+            other is _$UserFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -393,8 +394,9 @@ class _$UserFailure implements UserFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$UserFailureCopyWith<_$UserFailure> get copyWith =>
-      __$$UserFailureCopyWithImpl<_$UserFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UserFailureImplCopyWith<_$UserFailureImpl> get copyWith =>
+      __$$UserFailureImplCopyWithImpl<_$UserFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -409,9 +411,9 @@ class _$UserFailure implements UserFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(User data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(User data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
   }
@@ -443,9 +445,9 @@ class _$UserFailure implements UserFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(UserLoading value)? loading,
-    TResult Function(UserSuccess value)? success,
-    TResult Function(UserFailure value)? failure,
+    TResult? Function(UserLoading value)? loading,
+    TResult? Function(UserSuccess value)? success,
+    TResult? Function(UserFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -466,10 +468,10 @@ class _$UserFailure implements UserFailure {
 }
 
 abstract class UserFailure implements UserState {
-  const factory UserFailure(final dynamic e) = _$UserFailure;
+  const factory UserFailure(final dynamic e) = _$UserFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$UserFailureCopyWith<_$UserFailure> get copyWith =>
+  _$$UserFailureImplCopyWith<_$UserFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

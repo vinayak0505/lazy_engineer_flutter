@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'notes_cubit.dart';
 
@@ -12,7 +12,7 @@ part of 'notes_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NotesState {
@@ -25,9 +25,9 @@ mixin _$NotesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<NoteDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<NoteDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$NotesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotesLoading value)? loading,
-    TResult Function(_NotesSuccess value)? success,
-    TResult Function(_NotesFailure value)? failure,
+    TResult? Function(_NotesLoading value)? loading,
+    TResult? Function(_NotesSuccess value)? success,
+    TResult? Function(_NotesFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,40 +66,40 @@ mixin _$NotesState {
 abstract class $NotesStateCopyWith<$Res> {
   factory $NotesStateCopyWith(
           NotesState value, $Res Function(NotesState) then) =
-      _$NotesStateCopyWithImpl<$Res>;
+      _$NotesStateCopyWithImpl<$Res, NotesState>;
 }
 
 /// @nodoc
-class _$NotesStateCopyWithImpl<$Res> implements $NotesStateCopyWith<$Res> {
+class _$NotesStateCopyWithImpl<$Res, $Val extends NotesState>
+    implements $NotesStateCopyWith<$Res> {
   _$NotesStateCopyWithImpl(this._value, this._then);
 
-  final NotesState _value;
   // ignore: unused_field
-  final $Res Function(NotesState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_NotesLoadingCopyWith<$Res> {
-  factory _$$_NotesLoadingCopyWith(
-          _$_NotesLoading value, $Res Function(_$_NotesLoading) then) =
-      __$$_NotesLoadingCopyWithImpl<$Res>;
+abstract class _$$NotesLoadingImplCopyWith<$Res> {
+  factory _$$NotesLoadingImplCopyWith(
+          _$NotesLoadingImpl value, $Res Function(_$NotesLoadingImpl) then) =
+      __$$NotesLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NotesLoadingCopyWithImpl<$Res> extends _$NotesStateCopyWithImpl<$Res>
-    implements _$$_NotesLoadingCopyWith<$Res> {
-  __$$_NotesLoadingCopyWithImpl(
-      _$_NotesLoading _value, $Res Function(_$_NotesLoading) _then)
-      : super(_value, (v) => _then(v as _$_NotesLoading));
-
-  @override
-  _$_NotesLoading get _value => super._value as _$_NotesLoading;
+class __$$NotesLoadingImplCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$NotesLoadingImpl>
+    implements _$$NotesLoadingImplCopyWith<$Res> {
+  __$$NotesLoadingImplCopyWithImpl(
+      _$NotesLoadingImpl _value, $Res Function(_$NotesLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NotesLoading implements _NotesLoading {
-  const _$_NotesLoading();
+class _$NotesLoadingImpl implements _NotesLoading {
+  const _$NotesLoadingImpl();
 
   @override
   String toString() {
@@ -107,9 +107,9 @@ class _$_NotesLoading implements _NotesLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NotesLoading);
+        (other.runtimeType == runtimeType && other is _$NotesLoadingImpl);
   }
 
   @override
@@ -128,9 +128,9 @@ class _$_NotesLoading implements _NotesLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<NoteDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<NoteDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return loading?.call();
   }
@@ -162,9 +162,9 @@ class _$_NotesLoading implements _NotesLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotesLoading value)? loading,
-    TResult Function(_NotesSuccess value)? success,
-    TResult Function(_NotesFailure value)? failure,
+    TResult? Function(_NotesLoading value)? loading,
+    TResult? Function(_NotesSuccess value)? success,
+    TResult? Function(_NotesFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -185,33 +185,33 @@ class _$_NotesLoading implements _NotesLoading {
 }
 
 abstract class _NotesLoading implements NotesState {
-  const factory _NotesLoading() = _$_NotesLoading;
+  const factory _NotesLoading() = _$NotesLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_NotesSuccessCopyWith<$Res> {
-  factory _$$_NotesSuccessCopyWith(
-          _$_NotesSuccess value, $Res Function(_$_NotesSuccess) then) =
-      __$$_NotesSuccessCopyWithImpl<$Res>;
+abstract class _$$NotesSuccessImplCopyWith<$Res> {
+  factory _$$NotesSuccessImplCopyWith(
+          _$NotesSuccessImpl value, $Res Function(_$NotesSuccessImpl) then) =
+      __$$NotesSuccessImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<NoteDetail> data});
 }
 
 /// @nodoc
-class __$$_NotesSuccessCopyWithImpl<$Res> extends _$NotesStateCopyWithImpl<$Res>
-    implements _$$_NotesSuccessCopyWith<$Res> {
-  __$$_NotesSuccessCopyWithImpl(
-      _$_NotesSuccess _value, $Res Function(_$_NotesSuccess) _then)
-      : super(_value, (v) => _then(v as _$_NotesSuccess));
+class __$$NotesSuccessImplCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$NotesSuccessImpl>
+    implements _$$NotesSuccessImplCopyWith<$Res> {
+  __$$NotesSuccessImplCopyWithImpl(
+      _$NotesSuccessImpl _value, $Res Function(_$NotesSuccessImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_NotesSuccess get _value => super._value as _$_NotesSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
-    return _then(_$_NotesSuccess(
-      data == freezed
+    return _then(_$NotesSuccessImpl(
+      null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<NoteDetail>,
@@ -221,12 +221,13 @@ class __$$_NotesSuccessCopyWithImpl<$Res> extends _$NotesStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NotesSuccess implements _NotesSuccess {
-  const _$_NotesSuccess(final List<NoteDetail> data) : _data = data;
+class _$NotesSuccessImpl implements _NotesSuccess {
+  const _$NotesSuccessImpl(final List<NoteDetail> data) : _data = data;
 
   final List<NoteDetail> _data;
   @override
   List<NoteDetail> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
   }
@@ -237,10 +238,10 @@ class _$_NotesSuccess implements _NotesSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesSuccess &&
+            other is _$NotesSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -250,8 +251,9 @@ class _$_NotesSuccess implements _NotesSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$$_NotesSuccessCopyWith<_$_NotesSuccess> get copyWith =>
-      __$$_NotesSuccessCopyWithImpl<_$_NotesSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NotesSuccessImplCopyWith<_$NotesSuccessImpl> get copyWith =>
+      __$$NotesSuccessImplCopyWithImpl<_$NotesSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -266,9 +268,9 @@ class _$_NotesSuccess implements _NotesSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<NoteDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<NoteDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return success?.call(data);
   }
@@ -300,9 +302,9 @@ class _$_NotesSuccess implements _NotesSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotesLoading value)? loading,
-    TResult Function(_NotesSuccess value)? success,
-    TResult Function(_NotesFailure value)? failure,
+    TResult? Function(_NotesLoading value)? loading,
+    TResult? Function(_NotesSuccess value)? success,
+    TResult? Function(_NotesFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -323,38 +325,38 @@ class _$_NotesSuccess implements _NotesSuccess {
 }
 
 abstract class _NotesSuccess implements NotesState {
-  const factory _NotesSuccess(final List<NoteDetail> data) = _$_NotesSuccess;
+  const factory _NotesSuccess(final List<NoteDetail> data) = _$NotesSuccessImpl;
 
   List<NoteDetail> get data;
   @JsonKey(ignore: true)
-  _$$_NotesSuccessCopyWith<_$_NotesSuccess> get copyWith =>
+  _$$NotesSuccessImplCopyWith<_$NotesSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_NotesFailureCopyWith<$Res> {
-  factory _$$_NotesFailureCopyWith(
-          _$_NotesFailure value, $Res Function(_$_NotesFailure) then) =
-      __$$_NotesFailureCopyWithImpl<$Res>;
+abstract class _$$NotesFailureImplCopyWith<$Res> {
+  factory _$$NotesFailureImplCopyWith(
+          _$NotesFailureImpl value, $Res Function(_$NotesFailureImpl) then) =
+      __$$NotesFailureImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic e});
 }
 
 /// @nodoc
-class __$$_NotesFailureCopyWithImpl<$Res> extends _$NotesStateCopyWithImpl<$Res>
-    implements _$$_NotesFailureCopyWith<$Res> {
-  __$$_NotesFailureCopyWithImpl(
-      _$_NotesFailure _value, $Res Function(_$_NotesFailure) _then)
-      : super(_value, (v) => _then(v as _$_NotesFailure));
+class __$$NotesFailureImplCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$NotesFailureImpl>
+    implements _$$NotesFailureImplCopyWith<$Res> {
+  __$$NotesFailureImplCopyWithImpl(
+      _$NotesFailureImpl _value, $Res Function(_$NotesFailureImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_NotesFailure get _value => super._value as _$_NotesFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? e = freezed,
   }) {
-    return _then(_$_NotesFailure(
-      e == freezed
+    return _then(_$NotesFailureImpl(
+      freezed == e
           ? _value.e
           : e // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -364,8 +366,8 @@ class __$$_NotesFailureCopyWithImpl<$Res> extends _$NotesStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NotesFailure implements _NotesFailure {
-  const _$_NotesFailure(this.e);
+class _$NotesFailureImpl implements _NotesFailure {
+  const _$NotesFailureImpl(this.e);
 
   @override
   final dynamic e;
@@ -376,10 +378,10 @@ class _$_NotesFailure implements _NotesFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NotesFailure &&
+            other is _$NotesFailureImpl &&
             const DeepCollectionEquality().equals(other.e, e));
   }
 
@@ -389,8 +391,9 @@ class _$_NotesFailure implements _NotesFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$$_NotesFailureCopyWith<_$_NotesFailure> get copyWith =>
-      __$$_NotesFailureCopyWithImpl<_$_NotesFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NotesFailureImplCopyWith<_$NotesFailureImpl> get copyWith =>
+      __$$NotesFailureImplCopyWithImpl<_$NotesFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -405,9 +408,9 @@ class _$_NotesFailure implements _NotesFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<NoteDetail> data)? success,
-    TResult Function(dynamic e)? failure,
+    TResult? Function()? loading,
+    TResult? Function(List<NoteDetail> data)? success,
+    TResult? Function(dynamic e)? failure,
   }) {
     return failure?.call(e);
   }
@@ -439,9 +442,9 @@ class _$_NotesFailure implements _NotesFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotesLoading value)? loading,
-    TResult Function(_NotesSuccess value)? success,
-    TResult Function(_NotesFailure value)? failure,
+    TResult? Function(_NotesLoading value)? loading,
+    TResult? Function(_NotesSuccess value)? success,
+    TResult? Function(_NotesFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -462,10 +465,10 @@ class _$_NotesFailure implements _NotesFailure {
 }
 
 abstract class _NotesFailure implements NotesState {
-  const factory _NotesFailure(final dynamic e) = _$_NotesFailure;
+  const factory _NotesFailure(final dynamic e) = _$NotesFailureImpl;
 
   dynamic get e;
   @JsonKey(ignore: true)
-  _$$_NotesFailureCopyWith<_$_NotesFailure> get copyWith =>
+  _$$NotesFailureImplCopyWith<_$NotesFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

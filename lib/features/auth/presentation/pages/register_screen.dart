@@ -50,10 +50,11 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                   style: theme.textTheme.headlineSmall,
                 ),
               ),
-              const SizedBox(height: 28),
+              const SizedBox(
+                height: 28,
+              ),
               CustomTextField(
                 controller: fullNameController,
-                iconColor: Colors.blueGrey,
                 hintText: string.fullName,
                 prefixIcon: AppIcons.userIcon,
                 keyboardType: TextInputType.name,
@@ -62,7 +63,7 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
               const SizedBox(height: 16),
               CustomTextField(
                 controller: emailController,
-                iconColor: Colors.blueGrey,
+                hintText: string.email,
                 prefixIcon: AppIcons.emailIcon,
                 keyboardType: TextInputType.emailAddress,
                 validator: emailValidation,
@@ -73,7 +74,6 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                 builder: (context, _, __) {
                   return CustomTextField(
                     controller: passwordController,
-                    iconColor: Colors.blueGrey,
                     hintText: string.password,
                     prefixIcon: AppIcons.passwordIcon,
                     suffixIconSize: 22,
@@ -94,7 +94,6 @@ class RegisterScreen extends StatelessWidget with InputValidationMixin {
                 builder: (context, _, __) {
                   return CustomTextField(
                     controller: confirmPasswordController,
-                    iconColor: Colors.blueGrey,
                     hintText: string.confirmPassword,
                     prefixIcon: AppIcons.passwordIcon,
                     suffixIconSize: 22,

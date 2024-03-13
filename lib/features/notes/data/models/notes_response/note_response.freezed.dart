@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'note_response.dart';
 
@@ -12,7 +12,7 @@ part of 'note_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 NoteResponse _$NoteResponseFromJson(Map<String, dynamic> json) {
   return _NoteResponse.fromJson(json);
@@ -35,18 +35,22 @@ mixin _$NoteResponse {
 abstract class $NoteResponseCopyWith<$Res> {
   factory $NoteResponseCopyWith(
           NoteResponse value, $Res Function(NoteResponse) then) =
-      _$NoteResponseCopyWithImpl<$Res>;
+      _$NoteResponseCopyWithImpl<$Res, NoteResponse>;
+  @useResult
   $Res call({List<NoteDetail>? result, int? totalCount, int? skip, int? limit});
 }
 
 /// @nodoc
-class _$NoteResponseCopyWithImpl<$Res> implements $NoteResponseCopyWith<$Res> {
+class _$NoteResponseCopyWithImpl<$Res, $Val extends NoteResponse>
+    implements $NoteResponseCopyWith<$Res> {
   _$NoteResponseCopyWithImpl(this._value, this._then);
 
-  final NoteResponse _value;
   // ignore: unused_field
-  final $Res Function(NoteResponse) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? result = freezed,
@@ -55,47 +59,46 @@ class _$NoteResponseCopyWithImpl<$Res> implements $NoteResponseCopyWith<$Res> {
     Object? limit = freezed,
   }) {
     return _then(_value.copyWith(
-      result: result == freezed
+      result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as List<NoteDetail>?,
-      totalCount: totalCount == freezed
+      totalCount: freezed == totalCount
           ? _value.totalCount
           : totalCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      skip: skip == freezed
+      skip: freezed == skip
           ? _value.skip
           : skip // ignore: cast_nullable_to_non_nullable
               as int?,
-      limit: limit == freezed
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_NoteResponseCopyWith<$Res>
+abstract class _$$NoteResponseImplCopyWith<$Res>
     implements $NoteResponseCopyWith<$Res> {
-  factory _$$_NoteResponseCopyWith(
-          _$_NoteResponse value, $Res Function(_$_NoteResponse) then) =
-      __$$_NoteResponseCopyWithImpl<$Res>;
+  factory _$$NoteResponseImplCopyWith(
+          _$NoteResponseImpl value, $Res Function(_$NoteResponseImpl) then) =
+      __$$NoteResponseImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<NoteDetail>? result, int? totalCount, int? skip, int? limit});
 }
 
 /// @nodoc
-class __$$_NoteResponseCopyWithImpl<$Res>
-    extends _$NoteResponseCopyWithImpl<$Res>
-    implements _$$_NoteResponseCopyWith<$Res> {
-  __$$_NoteResponseCopyWithImpl(
-      _$_NoteResponse _value, $Res Function(_$_NoteResponse) _then)
-      : super(_value, (v) => _then(v as _$_NoteResponse));
+class __$$NoteResponseImplCopyWithImpl<$Res>
+    extends _$NoteResponseCopyWithImpl<$Res, _$NoteResponseImpl>
+    implements _$$NoteResponseImplCopyWith<$Res> {
+  __$$NoteResponseImplCopyWithImpl(
+      _$NoteResponseImpl _value, $Res Function(_$NoteResponseImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_NoteResponse get _value => super._value as _$_NoteResponse;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? result = freezed,
@@ -103,20 +106,20 @@ class __$$_NoteResponseCopyWithImpl<$Res>
     Object? skip = freezed,
     Object? limit = freezed,
   }) {
-    return _then(_$_NoteResponse(
-      result == freezed
+    return _then(_$NoteResponseImpl(
+      freezed == result
           ? _value._result
           : result // ignore: cast_nullable_to_non_nullable
               as List<NoteDetail>?,
-      totalCount == freezed
+      freezed == totalCount
           ? _value.totalCount
           : totalCount // ignore: cast_nullable_to_non_nullable
               as int?,
-      skip == freezed
+      freezed == skip
           ? _value.skip
           : skip // ignore: cast_nullable_to_non_nullable
               as int?,
-      limit == freezed
+      freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -126,19 +129,20 @@ class __$$_NoteResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NoteResponse implements _NoteResponse {
-  const _$_NoteResponse(
+class _$NoteResponseImpl implements _NoteResponse {
+  const _$NoteResponseImpl(
       final List<NoteDetail>? result, this.totalCount, this.skip, this.limit)
       : _result = result;
 
-  factory _$_NoteResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_NoteResponseFromJson(json);
+  factory _$NoteResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoteResponseImplFromJson(json);
 
   final List<NoteDetail>? _result;
   @override
   List<NoteDetail>? get result {
     final value = _result;
     if (value == null) return null;
+    if (_result is EqualUnmodifiableListView) return _result;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -156,34 +160,31 @@ class _$_NoteResponse implements _NoteResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NoteResponse &&
+            other is _$NoteResponseImpl &&
             const DeepCollectionEquality().equals(other._result, _result) &&
-            const DeepCollectionEquality()
-                .equals(other.totalCount, totalCount) &&
-            const DeepCollectionEquality().equals(other.skip, skip) &&
-            const DeepCollectionEquality().equals(other.limit, limit));
+            (identical(other.totalCount, totalCount) ||
+                other.totalCount == totalCount) &&
+            (identical(other.skip, skip) || other.skip == skip) &&
+            (identical(other.limit, limit) || other.limit == limit));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_result),
-      const DeepCollectionEquality().hash(totalCount),
-      const DeepCollectionEquality().hash(skip),
-      const DeepCollectionEquality().hash(limit));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_result), totalCount, skip, limit);
 
   @JsonKey(ignore: true)
   @override
-  _$$_NoteResponseCopyWith<_$_NoteResponse> get copyWith =>
-      __$$_NoteResponseCopyWithImpl<_$_NoteResponse>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NoteResponseImplCopyWith<_$NoteResponseImpl> get copyWith =>
+      __$$NoteResponseImplCopyWithImpl<_$NoteResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NoteResponseToJson(
+    return _$$NoteResponseImplToJson(
       this,
     );
   }
@@ -194,10 +195,10 @@ abstract class _NoteResponse implements NoteResponse {
       final List<NoteDetail>? result,
       final int? totalCount,
       final int? skip,
-      final int? limit) = _$_NoteResponse;
+      final int? limit) = _$NoteResponseImpl;
 
   factory _NoteResponse.fromJson(Map<String, dynamic> json) =
-      _$_NoteResponse.fromJson;
+      _$NoteResponseImpl.fromJson;
 
   @override
   List<NoteDetail>? get result;
@@ -209,7 +210,7 @@ abstract class _NoteResponse implements NoteResponse {
   int? get limit;
   @override
   @JsonKey(ignore: true)
-  _$$_NoteResponseCopyWith<_$_NoteResponse> get copyWith =>
+  _$$NoteResponseImplCopyWith<_$NoteResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -243,7 +244,8 @@ mixin _$NoteDetail {
 abstract class $NoteDetailCopyWith<$Res> {
   factory $NoteDetailCopyWith(
           NoteDetail value, $Res Function(NoteDetail) then) =
-      _$NoteDetailCopyWithImpl<$Res>;
+      _$NoteDetailCopyWithImpl<$Res, NoteDetail>;
+  @useResult
   $Res call(
       {String? userId,
       String? title,
@@ -261,13 +263,16 @@ abstract class $NoteDetailCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NoteDetailCopyWithImpl<$Res> implements $NoteDetailCopyWith<$Res> {
+class _$NoteDetailCopyWithImpl<$Res, $Val extends NoteDetail>
+    implements $NoteDetailCopyWith<$Res> {
   _$NoteDetailCopyWithImpl(this._value, this._then);
 
-  final NoteDetail _value;
   // ignore: unused_field
-  final $Res Function(NoteDetail) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userId = freezed,
@@ -285,69 +290,70 @@ class _$NoteDetailCopyWithImpl<$Res> implements $NoteDetailCopyWith<$Res> {
     Object? dislike = freezed,
   }) {
     return _then(_value.copyWith(
-      userId: userId == freezed
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      about: about == freezed
+      about: freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester: semester == freezed
+      semester: freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String?,
-      subject: subject == freezed
+      subject: freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      unit: unit == freezed
+      unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      chapter: chapter == freezed
+      chapter: freezed == chapter
           ? _value.chapter
           : chapter // ignore: cast_nullable_to_non_nullable
               as String?,
-      topic: topic == freezed
+      topic: freezed == topic
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags: tags == freezed
+      tags: freezed == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      mediaLink: mediaLink == freezed
+      mediaLink: freezed == mediaLink
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageLink: imageLink == freezed
+      imageLink: freezed == imageLink
           ? _value.imageLink
           : imageLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      like: like == freezed
+      like: freezed == like
           ? _value.like
           : like // ignore: cast_nullable_to_non_nullable
               as int?,
-      dislike: dislike == freezed
+      dislike: freezed == dislike
           ? _value.dislike
           : dislike // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_NoteDetailCopyWith<$Res>
+abstract class _$$NoteDetailImplCopyWith<$Res>
     implements $NoteDetailCopyWith<$Res> {
-  factory _$$_NoteDetailCopyWith(
-          _$_NoteDetail value, $Res Function(_$_NoteDetail) then) =
-      __$$_NoteDetailCopyWithImpl<$Res>;
+  factory _$$NoteDetailImplCopyWith(
+          _$NoteDetailImpl value, $Res Function(_$NoteDetailImpl) then) =
+      __$$NoteDetailImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? userId,
       String? title,
@@ -365,15 +371,14 @@ abstract class _$$_NoteDetailCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NoteDetailCopyWithImpl<$Res> extends _$NoteDetailCopyWithImpl<$Res>
-    implements _$$_NoteDetailCopyWith<$Res> {
-  __$$_NoteDetailCopyWithImpl(
-      _$_NoteDetail _value, $Res Function(_$_NoteDetail) _then)
-      : super(_value, (v) => _then(v as _$_NoteDetail));
+class __$$NoteDetailImplCopyWithImpl<$Res>
+    extends _$NoteDetailCopyWithImpl<$Res, _$NoteDetailImpl>
+    implements _$$NoteDetailImplCopyWith<$Res> {
+  __$$NoteDetailImplCopyWithImpl(
+      _$NoteDetailImpl _value, $Res Function(_$NoteDetailImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_NoteDetail get _value => super._value as _$_NoteDetail;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? userId = freezed,
@@ -390,56 +395,56 @@ class __$$_NoteDetailCopyWithImpl<$Res> extends _$NoteDetailCopyWithImpl<$Res>
     Object? like = freezed,
     Object? dislike = freezed,
   }) {
-    return _then(_$_NoteDetail(
-      userId == freezed
+    return _then(_$NoteDetailImpl(
+      freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
-      title == freezed
+      freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      about == freezed
+      freezed == about
           ? _value.about
           : about // ignore: cast_nullable_to_non_nullable
               as String?,
-      semester == freezed
+      freezed == semester
           ? _value.semester
           : semester // ignore: cast_nullable_to_non_nullable
               as String?,
-      subject == freezed
+      freezed == subject
           ? _value.subject
           : subject // ignore: cast_nullable_to_non_nullable
               as String?,
-      unit == freezed
+      freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
-      chapter == freezed
+      freezed == chapter
           ? _value.chapter
           : chapter // ignore: cast_nullable_to_non_nullable
               as String?,
-      topic == freezed
+      freezed == topic
           ? _value.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags == freezed
+      freezed == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      mediaLink == freezed
+      freezed == mediaLink
           ? _value.mediaLink
           : mediaLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageLink == freezed
+      freezed == imageLink
           ? _value.imageLink
           : imageLink // ignore: cast_nullable_to_non_nullable
               as String?,
-      like == freezed
+      freezed == like
           ? _value.like
           : like // ignore: cast_nullable_to_non_nullable
               as int?,
-      dislike == freezed
+      freezed == dislike
           ? _value.dislike
           : dislike // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -449,8 +454,8 @@ class __$$_NoteDetailCopyWithImpl<$Res> extends _$NoteDetailCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_NoteDetail implements _NoteDetail {
-  const _$_NoteDetail(
+class _$NoteDetailImpl implements _NoteDetail {
+  const _$NoteDetailImpl(
       this.userId,
       this.title,
       this.about,
@@ -466,8 +471,8 @@ class _$_NoteDetail implements _NoteDetail {
       this.dislike)
       : _tags = tags;
 
-  factory _$_NoteDetail.fromJson(Map<String, dynamic> json) =>
-      _$$_NoteDetailFromJson(json);
+  factory _$NoteDetailImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoteDetailImplFromJson(json);
 
   @override
   final String? userId;
@@ -490,6 +495,7 @@ class _$_NoteDetail implements _NoteDetail {
   List<String>? get tags {
     final value = _tags;
     if (value == null) return null;
+    if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -509,51 +515,55 @@ class _$_NoteDetail implements _NoteDetail {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NoteDetail &&
-            const DeepCollectionEquality().equals(other.userId, userId) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.about, about) &&
-            const DeepCollectionEquality().equals(other.semester, semester) &&
-            const DeepCollectionEquality().equals(other.subject, subject) &&
-            const DeepCollectionEquality().equals(other.unit, unit) &&
-            const DeepCollectionEquality().equals(other.chapter, chapter) &&
-            const DeepCollectionEquality().equals(other.topic, topic) &&
+            other is _$NoteDetailImpl &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.about, about) || other.about == about) &&
+            (identical(other.semester, semester) ||
+                other.semester == semester) &&
+            (identical(other.subject, subject) || other.subject == subject) &&
+            (identical(other.unit, unit) || other.unit == unit) &&
+            (identical(other.chapter, chapter) || other.chapter == chapter) &&
+            (identical(other.topic, topic) || other.topic == topic) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other.mediaLink, mediaLink) &&
-            const DeepCollectionEquality().equals(other.imageLink, imageLink) &&
-            const DeepCollectionEquality().equals(other.like, like) &&
-            const DeepCollectionEquality().equals(other.dislike, dislike));
+            (identical(other.mediaLink, mediaLink) ||
+                other.mediaLink == mediaLink) &&
+            (identical(other.imageLink, imageLink) ||
+                other.imageLink == imageLink) &&
+            (identical(other.like, like) || other.like == like) &&
+            (identical(other.dislike, dislike) || other.dislike == dislike));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(userId),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(about),
-      const DeepCollectionEquality().hash(semester),
-      const DeepCollectionEquality().hash(subject),
-      const DeepCollectionEquality().hash(unit),
-      const DeepCollectionEquality().hash(chapter),
-      const DeepCollectionEquality().hash(topic),
+      userId,
+      title,
+      about,
+      semester,
+      subject,
+      unit,
+      chapter,
+      topic,
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(mediaLink),
-      const DeepCollectionEquality().hash(imageLink),
-      const DeepCollectionEquality().hash(like),
-      const DeepCollectionEquality().hash(dislike));
+      mediaLink,
+      imageLink,
+      like,
+      dislike);
 
   @JsonKey(ignore: true)
   @override
-  _$$_NoteDetailCopyWith<_$_NoteDetail> get copyWith =>
-      __$$_NoteDetailCopyWithImpl<_$_NoteDetail>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NoteDetailImplCopyWith<_$NoteDetailImpl> get copyWith =>
+      __$$NoteDetailImplCopyWithImpl<_$NoteDetailImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NoteDetailToJson(
+    return _$$NoteDetailImplToJson(
       this,
     );
   }
@@ -573,10 +583,10 @@ abstract class _NoteDetail implements NoteDetail {
       final String? mediaLink,
       final String? imageLink,
       final int? like,
-      final int? dislike) = _$_NoteDetail;
+      final int? dislike) = _$NoteDetailImpl;
 
   factory _NoteDetail.fromJson(Map<String, dynamic> json) =
-      _$_NoteDetail.fromJson;
+      _$NoteDetailImpl.fromJson;
 
   @override
   String? get userId;
@@ -606,6 +616,6 @@ abstract class _NoteDetail implements NoteDetail {
   int? get dislike;
   @override
   @JsonKey(ignore: true)
-  _$$_NoteDetailCopyWith<_$_NoteDetail> get copyWith =>
+  _$$NoteDetailImplCopyWith<_$NoteDetailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

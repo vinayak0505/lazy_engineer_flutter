@@ -6,9 +6,9 @@ part of 'jobs_detail_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_JobsDetailResponse _$$_JobsDetailResponseFromJson(
+_$JobsDetailResponseImpl _$$JobsDetailResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$_JobsDetailResponse(
+    _$JobsDetailResponseImpl(
       json['title'] as String,
       json['jobProfile'] as String,
       json['company'] as String,
@@ -31,8 +31,8 @@ _$_JobsDetailResponse _$$_JobsDetailResponseFromJson(
       (json['rating'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_JobsDetailResponseToJson(
-        _$_JobsDetailResponse instance) =>
+Map<String, dynamic> _$$JobsDetailResponseImplToJson(
+        _$JobsDetailResponseImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'jobProfile': instance.jobProfile,
@@ -54,12 +54,13 @@ Map<String, dynamic> _$$_JobsDetailResponseToJson(
       'rating': instance.rating,
     };
 
-_$_PayRange _$$_PayRangeFromJson(Map<String, dynamic> json) => _$_PayRange(
+_$PayRangeImpl _$$PayRangeImplFromJson(Map<String, dynamic> json) =>
+    _$PayRangeImpl(
       high: json['high'] as int?,
       low: json['low'] as int?,
     );
 
-Map<String, dynamic> _$$_PayRangeToJson(_$_PayRange instance) =>
+Map<String, dynamic> _$$PayRangeImplToJson(_$PayRangeImpl instance) =>
     <String, dynamic>{
       'high': instance.high,
       'low': instance.low,

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'file_model.dart';
 
@@ -12,7 +12,7 @@ part of 'file_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 FileModel _$FileModelFromJson(Map<String, dynamic> json) {
   return _FileModel.fromJson(json);
@@ -32,66 +32,71 @@ mixin _$FileModel {
 /// @nodoc
 abstract class $FileModelCopyWith<$Res> {
   factory $FileModelCopyWith(FileModel value, $Res Function(FileModel) then) =
-      _$FileModelCopyWithImpl<$Res>;
+      _$FileModelCopyWithImpl<$Res, FileModel>;
+  @useResult
   $Res call({List<String> key, List<String> value});
 }
 
 /// @nodoc
-class _$FileModelCopyWithImpl<$Res> implements $FileModelCopyWith<$Res> {
+class _$FileModelCopyWithImpl<$Res, $Val extends FileModel>
+    implements $FileModelCopyWith<$Res> {
   _$FileModelCopyWithImpl(this._value, this._then);
 
-  final FileModel _value;
   // ignore: unused_field
-  final $Res Function(FileModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
-    Object? value = freezed,
+    Object? key = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      key: key == freezed
+      key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as List<String>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_FileModelCopyWith<$Res> implements $FileModelCopyWith<$Res> {
-  factory _$$_FileModelCopyWith(
-          _$_FileModel value, $Res Function(_$_FileModel) then) =
-      __$$_FileModelCopyWithImpl<$Res>;
+abstract class _$$FileModelImplCopyWith<$Res>
+    implements $FileModelCopyWith<$Res> {
+  factory _$$FileModelImplCopyWith(
+          _$FileModelImpl value, $Res Function(_$FileModelImpl) then) =
+      __$$FileModelImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<String> key, List<String> value});
 }
 
 /// @nodoc
-class __$$_FileModelCopyWithImpl<$Res> extends _$FileModelCopyWithImpl<$Res>
-    implements _$$_FileModelCopyWith<$Res> {
-  __$$_FileModelCopyWithImpl(
-      _$_FileModel _value, $Res Function(_$_FileModel) _then)
-      : super(_value, (v) => _then(v as _$_FileModel));
+class __$$FileModelImplCopyWithImpl<$Res>
+    extends _$FileModelCopyWithImpl<$Res, _$FileModelImpl>
+    implements _$$FileModelImplCopyWith<$Res> {
+  __$$FileModelImplCopyWithImpl(
+      _$FileModelImpl _value, $Res Function(_$FileModelImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_FileModel get _value => super._value as _$_FileModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
-    Object? value = freezed,
+    Object? key = null,
+    Object? value = null,
   }) {
-    return _then(_$_FileModel(
-      key: key == freezed
+    return _then(_$FileModelImpl(
+      key: null == key
           ? _value._key
           : key // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      value: value == freezed
+      value: null == value
           ? _value._value
           : value // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -101,18 +106,19 @@ class __$$_FileModelCopyWithImpl<$Res> extends _$FileModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FileModel implements _FileModel {
-  const _$_FileModel(
+class _$FileModelImpl implements _FileModel {
+  const _$FileModelImpl(
       {required final List<String> key, required final List<String> value})
       : _key = key,
         _value = value;
 
-  factory _$_FileModel.fromJson(Map<String, dynamic> json) =>
-      _$$_FileModelFromJson(json);
+  factory _$FileModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FileModelImplFromJson(json);
 
   final List<String> _key;
   @override
   List<String> get key {
+    if (_key is EqualUnmodifiableListView) return _key;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_key);
   }
@@ -120,6 +126,7 @@ class _$_FileModel implements _FileModel {
   final List<String> _value;
   @override
   List<String> get value {
+    if (_value is EqualUnmodifiableListView) return _value;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_value);
   }
@@ -130,10 +137,10 @@ class _$_FileModel implements _FileModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FileModel &&
+            other is _$FileModelImpl &&
             const DeepCollectionEquality().equals(other._key, _key) &&
             const DeepCollectionEquality().equals(other._value, _value));
   }
@@ -147,12 +154,13 @@ class _$_FileModel implements _FileModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_FileModelCopyWith<_$_FileModel> get copyWith =>
-      __$$_FileModelCopyWithImpl<_$_FileModel>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$FileModelImplCopyWith<_$FileModelImpl> get copyWith =>
+      __$$FileModelImplCopyWithImpl<_$FileModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FileModelToJson(
+    return _$$FileModelImplToJson(
       this,
     );
   }
@@ -161,10 +169,10 @@ class _$_FileModel implements _FileModel {
 abstract class _FileModel implements FileModel {
   const factory _FileModel(
       {required final List<String> key,
-      required final List<String> value}) = _$_FileModel;
+      required final List<String> value}) = _$FileModelImpl;
 
   factory _FileModel.fromJson(Map<String, dynamic> json) =
-      _$_FileModel.fromJson;
+      _$FileModelImpl.fromJson;
 
   @override
   List<String> get key;
@@ -172,6 +180,6 @@ abstract class _FileModel implements FileModel {
   List<String> get value;
   @override
   @JsonKey(ignore: true)
-  _$$_FileModelCopyWith<_$_FileModel> get copyWith =>
+  _$$FileModelImplCopyWith<_$FileModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

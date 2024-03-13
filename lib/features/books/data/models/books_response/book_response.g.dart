@@ -6,8 +6,8 @@ part of 'book_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_BookResponse _$$_BookResponseFromJson(Map<String, dynamic> json) =>
-    _$_BookResponse(
+_$BookResponseImpl _$$BookResponseImplFromJson(Map<String, dynamic> json) =>
+    _$BookResponseImpl(
       (json['result'] as List<dynamic>?)
           ?.map((e) => BookDetail.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -16,7 +16,7 @@ _$_BookResponse _$$_BookResponseFromJson(Map<String, dynamic> json) =>
       json['limit'] as int?,
     );
 
-Map<String, dynamic> _$$_BookResponseToJson(_$_BookResponse instance) =>
+Map<String, dynamic> _$$BookResponseImplToJson(_$BookResponseImpl instance) =>
     <String, dynamic>{
       'result': instance.result,
       'totalCount': instance.totalCount,
@@ -24,8 +24,8 @@ Map<String, dynamic> _$$_BookResponseToJson(_$_BookResponse instance) =>
       'limit': instance.limit,
     };
 
-_$_BookDetail _$$_BookDetailFromJson(Map<String, dynamic> json) =>
-    _$_BookDetail(
+_$BookDetailImpl _$$BookDetailImplFromJson(Map<String, dynamic> json) =>
+    _$BookDetailImpl(
       json['userId'] as String?,
       json['title'] as String?,
       json['about'] as String?,
@@ -42,7 +42,7 @@ _$_BookDetail _$$_BookDetailFromJson(Map<String, dynamic> json) =>
       json['dislike'] as int?,
     );
 
-Map<String, dynamic> _$$_BookDetailToJson(_$_BookDetail instance) =>
+Map<String, dynamic> _$$BookDetailImplToJson(_$BookDetailImpl instance) =>
     <String, dynamic>{
       'userId': instance.userId,
       'title': instance.title,
