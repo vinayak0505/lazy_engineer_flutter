@@ -35,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         const CustomImage(image: AppImages.header),
                         CustomImage(
-                          image: customData.imageLink ?? AppImages.profileImage,
+                          image: ((customData.imageLink == null) || customData.imageLink!.isNotEmpty) ? customData.imageLink : AppImages.anonymousProfile,
                           height: 110,
                           width: 110,
                           radius: 55,

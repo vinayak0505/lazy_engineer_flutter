@@ -65,13 +65,13 @@ FilesDetailResponse filesDetail = const FilesDetailResponse(
   4.5,
 );
 String jobImage =
-    'https://img.fresherslive.com/assets-images/job-alert/origin/2022/05/25/google-inc-recruitment-2022-apply-online-program-manager-job-vacancy-1653464735.png';
-String jobImage1 =
     'https://static.vecteezy.com/system/resources/previews/001/871/563/non_2x/online-advertising-for-job-search-websites-with-work-for-us-words-concept-ilustration-can-use-for-landing-page-template-ui-web-mobile-app-poster-banner-flyer-background-advertisement-free-vector.jpg';
+String jobImage1 =
+    'https://i.pinimg.com/564x/06/c2/27/06c22702991fa3c0971f7f0ffeb9d84d.jpg';
 String jobImage2 =
     'https://thumbs.dreamstime.com/z/hiring-vacancy-advertisement-template-trendy-job-banner-poster-flyer-yellow-white-black-colors-minimalistic-187792107.jpg';
 String jobImage3 =
-    'https://i.pinimg.com/564x/06/c2/27/06c22702991fa3c0971f7f0ffeb9d84d.jpg';
+    'https://img.fresherslive.com/assets-images/job-alert/origin/2022/05/25/google-inc-recruitment-2022-apply-online-program-manager-job-vacancy-1653464735.png';
 List<String> sliderImageList = [
   jobImage,
   jobImage1,

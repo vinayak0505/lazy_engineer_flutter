@@ -56,10 +56,12 @@ class CustomTextField extends StatelessWidget {
     String? hintText,
     double? width,
     String? Function(String? value)? validator,
+    FocusNode? focusNode,
     void Function(String)? onSubitted,
   }) {
     return CustomTextField(
       controller: controller,
+      focusNode: focusNode,
       prefixIcon: prefixIcon,
       hintText: hintText,
       keyboardType: keyboardType,
